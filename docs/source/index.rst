@@ -1,22 +1,16 @@
-Welcome to Lumache's documentation!
-===================================
+Welcome to the Mountain Green Cover Index's documentation!
+==========================================================
 
-**Lumache** (/lu'make/) is a Python library for cooks and food lovers
-that creates recipes mixing random ingredients.
-It pulls data from the `Open Food Facts database <https://world.openfoodfacts.org/>`_
-and offers a *simple* and *intuitive* API.
+Documentation to the Mountain Green Cover Index tools developed by FAO and WCMC:
 
-Check out the :doc:`usage` section for further information, including
-how to :ref:`installation` the project.
-
-.. note::
-
-   This project is under active development.
+- Sepal module: Read the docs in `SEPAL MGCI documentation <https://docs.sepal.io/en/latest/modules/dwn/sepal_mgci.html>`_.
+- R script
+- QGIS workflow
 
 Contents
 --------
 
 .. toctree::
 
-   usage
-   api
+   qgis
+   r
