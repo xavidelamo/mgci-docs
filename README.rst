@@ -1,9 +1,8 @@
-Template for the Read the Docs tutorial
-=======================================
+Mountain Green Cover Index Documentation
+========================================
 
-This GitHub template includes fictional Python library
-with some basic Sphinx docs.
+Documentation to the Mountain Green Cover Index tools developed by FAO and WCMC:
 
-Read the tutorial here:
-
-https://docs.readthedocs.io/en/stable/tutorial/
+- Sepal module: Read the docs in `SEPAL MGCI documentation <https://docs.sepal.io/en/latest/modules/dwn/sepal_mgci.html>`_.
+- R script
+- QGIS workflow
