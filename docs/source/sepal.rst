@@ -139,7 +139,7 @@ As well as the mountain descriptor layer, this panel will help you to use your l
 Use default dataset
 :::::::::::::::::::
 
-By selecting default, the module will use the `land cover time series map <http://maps.elie.ucl.ac.be/CCI/viewer/index.php>` produced by the European Space Agency (ESA) under the Climate Initiative (CCI) reclassified under the 6 IPCC classes, and you just have to select the year of interest in the dropdown menu, available to select the band.
+By selecting default, the module will use the `land cover time series map <http://maps.elie.ucl.ac.be/CCI/viewer/index.php>`_ produced by the European Space Agency (ESA) under the Climate Initiative (CCI) reclassified under the 6 IPCC classes, and you just have to select the year of interest in the dropdown menu, available to select the band.
 
 .. image:: https://raw.githubusercontent.com/dfguerrerom/sepal_mgci/master/doc/img/3_default.PNG
 
@@ -157,8 +157,8 @@ If you do not have a reclassification matrix, —after selecting the dataset and
 
 Alternatively, if you have a reclassification table, it means that you do not have to manually fill up all the new values, instead you could use this table to match the old values with the new ones, if a value in your dataset is not present in the reclassify table, the new value will be empty, so you will have to manually select the new value.
 
-.. tip:: ¿What is a reclassification matrix table?
-    A reclassification matrix is a comma separated values (CSV) table used to reclassify old pixel values into new ones. You can a csv file with only two values per line, the first one refers the `from` value, while the second the `target` value.
+.. tip:: What is a reclassification matrix table?:
+    A reclassification matrix is a comma separated values (CSV) file used to reclassify old pixel values into new ones. The CSV file file only has to contain two values per line, the first one refers the `from` value, while the second is the `target` value.
 
 Display results
 ^^^^^^^^^^^^^^^
@@ -169,13 +169,39 @@ Once you have reclassified the new values or used the default dataset, you can d
 .. tip:: Remember that the MGCI is only calculated over the mountan classes, so the vegetation layer will maskout the areas where there is not presence of a mountain class.
 
 
+MGCI calculation
+----------------
+
+Once you have set the inputs in the previous steps, the module will calculate the area of every IPCC class into each mountain class range as well as the overall result. The module has the option to do the calculation using the planimetric area or the `real surface area <https://www.fs.fed.us/rm/pubs_other/rmrs_2004_jenness_j001.pdf>`_. 
 
 
-   
-Dashboard
----------
+Calculation
+^^^^^^^^^^^
 
-The module will calculate the area of every IPCC class into each Kapos range as well as the overall result.
+Depending on the size of your area of interest and whether you are using the real surface area or not, the process could take longer. As we explained in the previous sections, the calculation of the land cover/use area per mountain class as well as the MGCI is done in GEE, which means that the computation is restricted by the GEE available resources, one of this limitations is the time to get the results on the fly (see `computation time out <https://developers.google.com/earth-engine/guides/debugging#timed-out>`_), so any computation that takes more than five minutes will throw an exception.
+
+To overcome this limitation, the process will be excecuted as a task —which are operations that are capable of running much longer than the standard timeout (see `gee tasks <https://developers.google.com/earth-engine/guides/playground#tasks-tab>`_ )—. If the computation is created as a task, you will see a similar message as the shown below and to get the results, please see the :ref:`calculation from task<_calculation_from_task>` section, otherwise, the result will be displayed on the dashboard (see :ref:`dashboard <_display>`).
+
+.. image:: https://raw.githubusercontent.com/dfguerrerom/sepal_mgci/master/doc/img/4_computation_timeout.PNG
+
+
+.. _calculation_from_task:
+Calculation from task
+^^^^^^^^^^^^^^^^^^^^^
+
+
+
+.. _display:
+Display dashboard
+^^^^^^^^^^^^^^^^^
+
+Export results
+^^^^^^^^^^^^^^
+
+
+
+
+
 
 ..:warning: The module will only display the IPCC classes. The user has to reclassify the values from 1 to 6, otherwise, the module will nest those classes into the "other lands" class (6). 
 
