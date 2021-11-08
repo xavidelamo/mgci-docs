@@ -155,19 +155,18 @@ If you do not have a reclassification matrix, —after selecting the dataset and
 
 .. tip:: After manually reclasify your dataset, you can use the save button to store the table as a CSV file and you can use it later instead of manually filling up the table.
 
-Alternatively, if you have a reclassification table, it means that you do not have to manually fill up all the new values, instead you could use this table to match the old values with the new ones, if a value in your dataset is not present in the reclassify table, the new value will be emmpty, so you will have to manually select the new value.
+Alternatively, if you have a reclassification table, it means that you do not have to manually fill up all the new values, instead you could use this table to match the old values with the new ones, if a value in your dataset is not present in the reclassify table, the new value will be empty, so you will have to manually select the new value.
 
-.. tip:: 
+.. tip:: ¿What is a reclassification matrix table?
+    A reclassification matrix is a comma separated values (CSV) table used to reclassify old pixel values into new ones. You can a csv file with only two values per line, the first one refers the `from` value, while the second the `target` value.
 
-  ¿What is a reclassification matrix table?
-  =========================================
-  A reclassification matrix is a comma separated values (CSV) table used to reclassify old pixel values into new ones. It will store the 
+Display results
+^^^^^^^^^^^^^^^
 
-The reclassification table has to be uploaded 
+Once you have reclassified the new values or used the default dataset, you can display the land use/cover map in the map by clicking over the "display map" button. Depending on your area of interest, the map should look like this:
 
-Sometimes when you have a custom land use/cover dataset, 
 
-When using a custom land use/cover dataset, 
+.. tip:: Remember that the MGCI is only calculated over the mountan classes, so the vegetation layer will maskout the areas where there is not presence of a mountain class.
 
 
 
