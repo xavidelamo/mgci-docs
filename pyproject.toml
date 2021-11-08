@@ -1,8 +1,4 @@
-[build-system]
-requires = ["flit_core >=3.2,<4"]
-build-backend = "flit_core.buildapi"
-
 [project]
-name = "lumache"
-authors = [{name = "Graziella", email = "graziella@lumache"}]
+name = "SDG 15.4.2: Mountain Green Cover Index"
+authors = [{name = "FAO - WCMC"}]
 dynamic = ["version", "description"]
