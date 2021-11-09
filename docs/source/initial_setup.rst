@@ -1,3 +1,5 @@
+.. _RST Initial setup:
+
 2. Initial set-up 
 ===============
 
