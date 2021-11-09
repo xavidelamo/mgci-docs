@@ -1,5 +1,3 @@
-.. _my-reference-label:
-
 2. Initial set-up 
 ===============
 
