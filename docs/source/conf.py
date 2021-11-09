@@ -1,10 +1,12 @@
 # Configuration file for the Sphinx documentation builder.
 
+from datetime import datetime
+
 # -- Project information
 
-project = 'Lumache'
-copyright = '2021, Graziella'
-author = 'Graziella'
+project = "SDG 15.4.2: Mountain Green Cover Index"
+copyright = f"2021 - FAO SEPAL - WCMC"
+author = 'FAO SEPAL - WCMC'
 
 release = '0.1'
 version = '0.1.0'
