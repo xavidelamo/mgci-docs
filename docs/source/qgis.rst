@@ -8,10 +8,11 @@ Initial set-up
 --------------
 put link to initial set up document
 
- 
+Introduction
+------------
 
-This section of the tutorial explains in detail how to carry out this
-analysis in QGIS, using the Costa Rica as a case study using a 90m
+This section of the documentation explains in detail how to carry out this
+analysis step-by-step in QGIS, using the Costa Rica as a case study using a 90m
 resolution DEM from Copernicus. This section assumes that the user has
 already downloaded the DEM and a LULC dataset (see section 2 and the
 Annexes for further information).
