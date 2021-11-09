@@ -4,6 +4,11 @@ Definition
 ----------
 
 The Mountain Green Cover Index (MGCI) is designed to measure the extent and the changes of green vegetation in mountain areas - i.e. forest, shrubs, trees, pastureland, cropland, etc. – to monitor progress towards the mountain target. MGCI is defined as the percentage of green cover over the total surface of the mountain region of a given country and for a given reporting year. The index aims to monitor the evolution of the green cover and thus assess the status of conservation of mountain ecosystems.
+
+Please see the full metadata
+`here <https://unstats.un.org/sdgs/metadata/files/Metadata-15-04-02.pdf>`__
+for further information about the indicator.
+    
 2. Initial set-up 
 ===============
 
