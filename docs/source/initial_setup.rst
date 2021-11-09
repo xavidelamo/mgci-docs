@@ -1,4 +1,4 @@
-.. _RST Initial setup:
+.. _my-reference-label:
 
 2. Initial set-up 
 ===============
