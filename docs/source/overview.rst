@@ -1,5 +1,5 @@
-Introduction to MGCI
-====================
+1. Introduction to MGCI
+=======================
 
     The Mountain Green Cover Index (MGCI) is designed to measure the
     extent and the changes of green vegetation in mountain areas - i.e.
