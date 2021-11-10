@@ -1,7 +1,7 @@
 .. contents:: **Table of Contents**
 
-2. .. rubric:: Annexes
-      :name: annexes
+Annexes
+======================
 
 Installing R (additional screengrabs to support users)
 ------------------------------------------------------
