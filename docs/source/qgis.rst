@@ -77,19 +77,19 @@ If you need to define a custom projection, follow the instructions in Box 1
 | -  Click the **Validate** button to check that the parameters are valid and then **OK** to save the custom projection                                                 |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Next change the project for the QGIS to your chosen equal area
+Next change the projection set for the QGIS project to your chosen equal area
 projection. In this example it is the custom projection that was defined
 in Box 1.
 
 -  Click on the project projection **EPSG: 4326** in the bottom right
    hand corner of your QGIS project
 
-|image36|
+   |image36|
 
 -  In the Project Properties dialogue window search for the chosen
    projection in the **Filter** tab
 
-|image37|
+   |image37|
 
 -  Once located click on the equal area projection to set your QGIS
    project to be displayed in the chosen projection. E.g. in this
@@ -107,9 +107,9 @@ equal area projection
 
 -  In the processing toolbox search for the **Reproject** tool
 
-|image39|
+   |image39|
 
-|image40|
+   |image40|
 
 -  Set the Input layer to be the **country boundary**
 
@@ -131,7 +131,7 @@ descriptor layer generation.
 -  In the processing toolbox search for the **minimum bounding geometry
    tool**
 
-|image41|
+   |image41|
 
 -  Select your **projected** **country boundary** for the Input layer
 
@@ -158,7 +158,7 @@ This has generated the bounding box. The next step adds the 10km buffer.
 
 -  Click **Run** to run the tool.
 
-|image42|
+   |image42|
 
 If you change the symbology to semi-transparent symbol and draw it over
 the original bounding box you should be able to see the additional
@@ -189,9 +189,9 @@ QGIS.
 -  From the QGIS main toolbar click on **Layer>>Add Layer>>Add Raster
    Layer** to add the LULC file to your QGIS session.
 
-|image44|
+   |image44|
 
-|image45|
+   |image45|
 
 -  Click **Add**
 
@@ -207,7 +207,7 @@ Global ESA CCI LULC netcdf file however contains 7 different layers
 -  Click **Close** to close the Data Source Manager: Raster dialogue
    window
 
-|image46|
+   |image46|
 
 Next check that the LULC layer has correct projection information and
 appears in the correct place in the QGIS project.
@@ -273,7 +273,7 @@ appears in the correct place in the QGIS project.
 
    (see screengrab below)
 
-|image50|\ |image51|
+   |image50|\ |image51|
 
 -  \ **Click Run** to run the tool
 
@@ -283,7 +283,7 @@ added should be added to the map canvas\ **.**
 -  Right click on the clipped LULC dataset (i.e. in this example the
    LULC\_clip\_LAEA\_BUF10 layer) and click **properties>>Symbology**
 
-|image52|
+   |image52|
 
 -  Change the render type to **Palleted/Unique Values**
 
