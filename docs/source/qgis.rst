@@ -339,9 +339,8 @@ The layer should now show all the National LULC classes for Costa Rica.
 When using a vector LULC dataset the data will also need to be projected
 to an equal area projection.
 
--  If the dataset is not already in an equal area projection,
-search for **reproject** in the processing toolbox
-
+-  If the dataset is not already in an equal area projection, search for **reproject** in the processing toolbox
+   
    |image58| 
 
 -  Select the **National** **LULC vector dataset** for the **Input
