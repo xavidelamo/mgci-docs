@@ -357,7 +357,7 @@ important to choose an output resolution that is appropriate for the
 scale of the vector dataset. (see Box 2).
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| .. rubric:: **BOX 2: Conversion between nominal scale and resolution**:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| .. rubric:: **BOX 2: Conversion between nominal scale and resolution**:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 |    :name: box-2-conversion-between-nominal-scale-and-resolution                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | The scale of a vector dataset is usually expressed in a similar way to paper maps, i.e. in a ratio to show the amount of reduction from the real world e.g. 1:50,000. A country’s vector LULC map will have been created a particular scale. determined by the Minimum Mapping Unit. i.e. the size of the smallest feature. A nominal scale is will have been assigned to the dataset to reflect the scale at which the data were collected and mapped. Conversion to raster requires this scale to be converted to a resolution, i.e. an appropriate pixel size for the scale of the data. Table X provides some general guidance / suggestions for such conversion.   |
@@ -611,8 +611,6 @@ section 5.1 should be used.
 
 -  Click **Run** to run the tool
 
-   (see screen grab on next page)
-
    |image75|
 
 The new clipped DEM dataset in the equal area projection should be added
@@ -651,7 +649,7 @@ one UTM zone)**
 The first step is to create a latitude grid. (a grid of the
 y-coordinates in geographic coordinate system) [4]_.
 
--  In the Processing toolbox search for r.latlong
+-  In the Processing toolbox search for **r.latlong**
 
    |image78|
 
@@ -659,17 +657,19 @@ y-coordinates in geographic coordinate system) [4]_.
    geographic coordinate system not the projected one)** for the **Input
    Layer**
 
--  |image79|\ Set the **GRASS GIS 7 region extent** to be calculated
+-  Set the **GRASS GIS 7 region extent** to be calculated
    from **merged DEM dataset**
 
 -  Set the **LatLon** output to e.g. latitude\_grid\_ epsg4326.tif
-
+   
+   |image79|
+   
 -  Click **Run** to run the tool
 
-  A map showing greyscale latitude bands is added to the
-   QGIS project
- 
-  |image80|
+A map showing greyscale latitude bands is added to the
+QGIS project
+
+|image80|
 
 The second step is to compute the cosine of the latitude layer.
 
