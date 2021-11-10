@@ -1,5 +1,9 @@
 5.  MGCI QGIS workflow
 ==================
+
+.. contents:: Table of Contents
+
+
 Definition 
 ----------
 Put link to overview document
@@ -27,9 +31,9 @@ datasets.
 -  Add a country boundary layer to QGIS **Layer>>Add Layer>>Add Vector
    Layer**
 
-    |image32|
+   |image32|
 
-    |image33|\ |image34|
+   |image33|\ |image34|
 
 -  Click **Add** and **Close** to close the Data Source Manager: Vector
    dialogue window
@@ -52,11 +56,10 @@ meridian set to -84 and the latitude of origin to 8.5.
 Costa Rica does have a National Projection (see https://epsg.io/5367)
 which may be an alternative to the Lambert Azimuthal Equal Area.
 
-If you need to define a custom projection, follow the instructions in
-Box 1
+If you need to define a custom projection, follow the instructions in Box 1
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| .. rubric:: BOX 1: Defining a custom projection                                                                                                                       |
+| .. rubric:: **BOX 1: Defining a custom projection**:                                                                                                                  |
 |    :name: box-1-defining-a-custom-projection                                                                                                                          |
 |                                                                                                                                                                       |
 | -  From the main menu click **settings>>custom projections**                                                                                                          |
@@ -69,10 +72,9 @@ Box 1
 |                                                                                                                                                                       |
 |    +proj=laea +lat\_0=8.5 +lon\_0=-84 +x\_0=0 +y\_0=0 +datum=WGS84 +units=m +no\_defs                                                                                 |
 |                                                                                                                                                                       |
-| |image35|                                                                                                                                                             |
+|    |image35|                                                                                                                                                          |
 |                                                                                                                                                                       |
 | -  Click the **Validate** button to check that the parameters are valid and then **OK** to save the custom projection                                                 |
-+=======================================================================================================================================================================+
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Next change the project for the QGIS to your chosen equal area
@@ -249,7 +251,7 @@ appears in the correct place in the QGIS project.
 -  Double click on the **Clip raster by mask layer** under the GDAL
    toolset
 
-    |image49|
+   |image49|
 
 -  Select the **LULC dataset** for the **Input Layer**
 
@@ -287,15 +289,15 @@ added should be added to the map canvas\ **.**
 
 -  Click **Classify** and then **OK**
 
-|image53|
+   |image53|
 
 You should now see the unique LULC classes present within the AOI for
 the country.
 
+|image54|
+
 (b) Project LULC raster (FOR NATIONALDATASETS ONLY):
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-|image54|
 
 -  search for **project** in the processing toolbox.
 
@@ -315,7 +317,7 @@ the country.
 
 -  Click **Run** to run the tool
 
-|image55|
+   |image55|
 
 The new projected LULC dataset in the equal area projection should be
 added should be added to the map canvas\ **.**
@@ -327,12 +329,9 @@ added should be added to the map canvas\ **.**
 
 -  Click **Classify** and then **OK**
 
-    |image56|\ |image57|
+   |image56|\ |image57|
 
 The layer should now show all the National LULC classes for Costa Rica.
-
- 
-~
 
 5.2.3 Steps when using a vector LULC dataset
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -350,7 +349,7 @@ search for **reproject** in the processing toolbox
 
 -  Set the **reprojected** output layer e.g. **LULC\_vector\_LAEA.shp**
 
-    |image59|
+   |image59|
 
 The next step is to rasterize the LULC data. When converting it is
 important to choose an output resolution that is appropriate for the
@@ -421,7 +420,9 @@ scale of the vector dataset. (see Box 2).
 +=========================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================+
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-|image61|\ Once the resolution to convert the vector dataset to has been
+|image61|
+
+Once the resolution to convert the vector dataset to has been
 determined the vector dataset can be converted to Raster.
 
 -  In the processing toolbox search for **Rasterize.**
@@ -460,7 +461,7 @@ added should be added to the map canvas\ **.**
 
 -  Click **Classify** and then **OK**
 
-|image62|\ |image63|
+   |image62|\ |image63|
 
 The layer should now show all the National LULC classes for Costa Rica.
 
@@ -479,7 +480,7 @@ LULC types on the left and the IPCC reclass values on the right.
    the ESA CII or National landcover dataset to the 6 IPCC landcover
    classes
 
-|image64|
+   |image64|
 
 -  |image65|\ Search for **reclass** in the processing toolbox and
    double click on **r.reclass**
@@ -493,7 +494,7 @@ LULC types on the left and the IPCC reclass values on the right.
 
 -  Click **Run** to run the tool
 
-|image66|
+   |image66|
 
 The new **VegetationDescriptor** layer is added to the map.
 
@@ -534,12 +535,11 @@ Copernicus data can be found in the Annexs).
 -  From the QGIS main toolbar click on **Layer>>Add Layer>>Add Raster
    Layer** to add the DEM tiles to your QGIS session.
 
-|image69|
+   |image69|
 
-Click **Open** and then **Add.** The DEM tiles will be added to the QGIS
-project
+-  Click **Open** and then **Add.** The DEM tiles will be added to the QGIS project
 
-|image70|\ The next step is to merge the DEM tiles into a single raster.
+   |image70|\ The next step is to merge the DEM tiles into a single raster.
 
 -  Search for **Merge** in the processing toolbox window
 
@@ -566,7 +566,7 @@ project
 
 The merged DEM is added to the QGIS project.
 
-|image74|
+   |image74|
 
 5.3.2 Clip and project merged DEM
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -607,7 +607,7 @@ section 5.1 should be used.
 
    (see screen grab on next page)
 
-|image75|
+   |image75|
 
 The new clipped DEM dataset in the equal area projection should be added
 should be added to the map canvas\ **.**
