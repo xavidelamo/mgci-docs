@@ -1,5 +1,5 @@
 5.  MGCI QGIS workflow
-==================
+======================
 
 .. contents:: **Table of Contents**
 
