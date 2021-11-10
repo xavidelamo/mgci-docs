@@ -1,7 +1,7 @@
 5.  MGCI QGIS workflow
 ==================
 
-.. contents:: Table of Contents
+.. contents:: **Table of Contents**
 
 
 Definition 
@@ -339,16 +339,18 @@ The layer should now show all the National LULC classes for Costa Rica.
 When using a vector LULC dataset the data will also need to be projected
 to an equal area projection.
 
-|image58|\ If the dataset is not already in an equal area projection,
+-  If the dataset is not already in an equal area projection,
 search for **reproject** in the processing toolbox
+
+   |image58| 
 
 -  Select the **National** **LULC vector dataset** for the **Input
    Layer**
 
 -  Select the **Project CRS** for the **Target CRS**
 
--  Set the **reprojected** output layer e.g. **LULC\_vector\_LAEA.shp**
-
+-  Set the **reprojected** output layer e.g. **LULC_vector_LAEA.shp**
+   
    |image59|
 
 The next step is to rasterize the LULC data. When converting it is
@@ -482,8 +484,11 @@ LULC types on the left and the IPCC reclass values on the right.
 
    |image64|
 
--  |image65|\ Search for **reclass** in the processing toolbox and
-   double click on **r.reclass**
+-  Search for **reclass** in the processing toolbox
+   
+   |image65|
+
+-  Double click on **r.reclass**
 
 -  Select the LULC output(from step 5.2.1, 5.2.2 or 5.2.3) as the
    **input raster layer**
@@ -539,9 +544,11 @@ Copernicus data can be found in the Annexs).
 
 -  Click **Open** and then **Add.** The DEM tiles will be added to the QGIS project
 
-   |image70|\ The next step is to merge the DEM tiles into a single raster.
-
+   The next step is to merge the DEM tiles into a single raster.
+   
 -  Search for **Merge** in the processing toolbox window
+  
+   |image70|
 
 -  Double click the **GDAL Merge tool**.
 
@@ -601,7 +608,7 @@ section 5.1 should be used.
 -  Tick **Use Input Layer Data Type**
 
 -  Set the output **Clipped (mask)** e.g. to
-   DEM\_copernicus\_merge\_AOI\_LAEA.tif
+   DEM_copernicus_merge_AOI_LAEA.tif
 
 -  Click **Run** to run the tool
 
@@ -630,8 +637,7 @@ generated in UTM using the simple QGIS Slope tool
 -  Select the DEM clipped to the AOI in UTM projection as the Elevation
    layer
 
--  Set the **Slope** output to e.g. SLOPE\_copernicus
-   \_merge\_AOI\_UTM.tif
+-  Set the **Slope** output to e.g. SLOPE_copernicus_merge_AOI_UTM.tif
 
 -  Click **Run** to Run the tool
 
@@ -642,10 +648,13 @@ referenced in section 2.3.4
 **Methods for slope generation in QGIS (for countries covering more than
 one UTM zone)**
 
-|image78|\ The first step is to create a latitude grid. (a grid of the
+
+The first step is to create a latitude grid. (a grid of the
 y-coordinates in geographic coordinate system) [4]_.
 
 -  In the Processing toolbox search for r.latlong
+
+   |image78|
 
 -  Select the **merged DEM dataset (the initial version that is in
    geographic coordinate system not the projected one)** for the **Input
@@ -658,8 +667,10 @@ y-coordinates in geographic coordinate system) [4]_.
 
 -  Click **Run** to run the tool
 
-   |image80|\ A map showing greyscale latitude bands is added to the
+  A map showing greyscale latitude bands is added to the
    QGIS project
+ 
+  |image80|
 
 The second step is to compute the cosine of the latitude layer.
 
@@ -689,7 +700,9 @@ World Mercator EPSG 3395 (and not pseudo or web Mercator).
 
 |image83|
 
--  |image84|\ In the processing toolbox search for **reproject**
+-  In the processing toolbox search for **reproject**
+
+   |image84|
 
 -  Double click on the **Warp (reproject)** tool under the **GDAL**
    toolset
@@ -711,7 +724,7 @@ World Mercator EPSG 3395 (and not pseudo or web Mercator).
 
 -  Click **Run** to run the tool
 
-|image85|
+   |image85|
 
 Then reproject the cos\_latitude grid in the same way
 
@@ -729,8 +742,10 @@ as an angle in degrees
 
 -  In the processing toolbox search for **Slope**
 
--  |image86|\ Double click on the **slope** tool under **Raster
+-  Double click on the **slope** tool under **Raster
    analysis** in the **GDAL** toolset.
+   
+   |image86|
 
    We will use this tool instead of the other slope tools as it has the
    option for slope to be calculated as a percent
@@ -746,15 +761,17 @@ as an angle in degrees
 
 -  Click **Run** to run the tool
 
-|image87|
+   |image87|
 
 The fifth step is to divide this percent slope by the projected
 cosine(latitude) raster in World Mercator.
 
 -  In the processing toolbox search for **Raster Calculator**
 
--  |image88|\ Double click on the **Raster Calculator** under the
+-  Double click on the **Raster Calculator** under the
    **Raster analysis** toolset
+   
+   |image88|
 
 -  In the expression window type the expression
 
@@ -779,7 +796,7 @@ required in the generation of the mountain descriptor layer.
 -  Double click on the **Raster Calculator** under the **Raster
    analysis** toolset
 
-|image90|
+   |image90|
 
 -  In the expression window type the expression
 
@@ -821,7 +838,7 @@ area projection and be clipped to the AOI.
 
    (see screen grab on next page)
 
-|image91|\ |image92|
+   |image91|\ |image92|
 
 The new clipped DEM dataset in the equal area projection should be added
 should be added to the map canvas\ **.**
@@ -889,7 +906,7 @@ whole number.
 -  Set the output **Neighbors layer** e.g. to
    FOCMIN\_copernicus\_merge\_AOI\_LAEA
 
-|image95|
+  |image95|
 
 The two new focal maximum and focal minimum layers in the equal area
 projection should have been added to the map canvas\ **.**
@@ -998,7 +1015,7 @@ map canvas\ **.**
 -  To improve the symbology, right click on the new layer and click
    **properties** and then **symbology**
 
-    |image108|
+   |image108|
 
 At the bottom of the layer properties dialogue window click the
 **style** button and then load the predefined style file
@@ -1025,9 +1042,9 @@ class among their neighbours.
 
 -  Set the output layer to e.g. **non\_mountain\_areas\_LAEA.tif**
 
-|image111|
+   |image111|
 
-|image112|
+   |image112|
 
 You can see that the resultant non-mountains output dataset has value 1
 for nonmountains and 0 for mountains. We need to set the 0 values to no
@@ -1041,14 +1058,16 @@ data.
 (("non\_mountain\_areas\_LAEA@1">0)\*1 +
 ("non\_mountain\_areas\_LAEA@1"<=0)\*0)
 
-|image113|
+   |image113|
 
-|image114|
+   |image114|
 
 We can now use this layer to clump the the pixels into groups of
 connected pixels
 
--  |image115|\ In the **Processing Toolbox** search for **r.clump**
+-  In the **Processing Toolbox** search for **r.clump**
+
+   |image115|
 
 -  Double click on the **r.clumps tool** under the GRASS toolset
 
@@ -1068,7 +1087,7 @@ connected pixels
 
 -  Click **Run** to run the tool
 
-|image116|
+   |image116|
 
 You can see that the resultant clumped non-mountains output dataset
 which has a different value for each clump.
@@ -1102,7 +1121,7 @@ We can now use this clumped layer to select and reclass clumps < 25sqkm
 
 -  Click **Run** to run the tool
 
-|image118|
+   |image118|
 
 If we zoom in to look at the output we can see the pixels that are
 smaller than 25km2 in purple.
@@ -1142,7 +1161,7 @@ according to the predominant class among their neighbours.
 
 -  Click **Run** to run the tool
 
-|image120|
+   |image120|
 
 Copy the Kapos mountain class symbology to the new
 K1\_to\_K6\_AOI\_LAEA\_interim2.tif
@@ -1155,7 +1174,7 @@ K1\_to\_K6\_AOI\_LAEA\_interim2.tif
 -  Then right click on the new 1-6 interim Kapos plus filled neighbors
    layer e.g. K1\_to\_K6\_AOI\_LAEA\_interim2.tif and paste style
 
-|image121|
+   |image121|
 
 See that the smallest of the identified isolated pixels < 25km2 have
 been classified correctly into Kapos classes 1-6 but the larger ones are
@@ -1253,7 +1272,7 @@ descriptions
 -  Set the reclassified output name to be
    **MountainDescriptor\_LAEA.tif**
 
-|image133|
+   |image133|
 
 Copy and paste the style from the previous layer to shade and label the
 classes in the MountainDescriptor\_LAEA.tif within the QGIS session.
@@ -1265,11 +1284,13 @@ The Mountain Descriptor layer is now complete
 5.4 Generation of Real Surface Area raster
 ------------------------------------------
 
-|image135|\ The final layer that needs generating is the Real Surface
+The final layer that needs generating is the Real Surface
 Area raster from the DEM. The tools should have all been tested to check
 your R integration is working in Section 2.1.
 
 -  In the processing toolbox expand the R-tools
+
+   |image135|
 
 -  Expand Raster Processing and double-click on Create RSA raster V1
 
@@ -1277,7 +1298,9 @@ your R integration is working in Section 2.1.
 
 -  Set the cellsize to the resolution of your DEM in metres
 
--  |image136|\ Set an output name RealSufaceArea\_LAEA.tif
+-  Set an output name RealSufaceArea\_LAEA.tif
+
+   |image136|
 
 -  Click Run to run the tool
 
