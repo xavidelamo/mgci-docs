@@ -906,7 +906,7 @@ whole number.
 -  Set the output **Neighbors layer** e.g. to
    FOCMIN\_copernicus\_merge\_AOI\_LAEA
 
-  |image95|
+   |image95|
 
 The two new focal maximum and focal minimum layers in the equal area
 projection should have been added to the map canvas\ **.**
@@ -934,7 +934,7 @@ expression in the **raster calculator**
 
 -  Click **Run** to run the tool
 
-    |image99|
+   |image99|
 
 The local elevation range in the equal area projection should have been
 added to the map canvas\ **.**
