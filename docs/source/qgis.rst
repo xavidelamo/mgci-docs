@@ -572,7 +572,7 @@ Copernicus data can be found in the Annexs).
 
 The merged DEM is added to the QGIS project.
 
-   |image74|
+|image74|
 
 5.3.2 Clip and project merged DEM
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
