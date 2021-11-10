@@ -294,12 +294,12 @@ added should be added to the map canvas\ **.**
 You should now see the unique LULC classes present within the AOI for
 the country.
 
-|image54|
-
 (b) Project LULC raster (FOR NATIONALDATASETS ONLY):
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  search for **project** in the processing toolbox.
+
+   |image54|
 
 -  Double click on the GDAL tool **Warp (reproject)**
 
