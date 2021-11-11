@@ -1,5 +1,5 @@
-5.  MGCI QGIS workflow
-======================
+MGCI QGIS workflow
+==================
 
 .. contents:: **Table of Contents**
 
@@ -25,8 +25,8 @@ For this tutorial we are using Costa Rica as an example country for
 processing the MGCI, the Copernicus 90m DEM and Global ESA CCI LULC
 datasets.
 
-5.1 Define projection and generate an AOI
------------------------------------------
+Define projection and generate an AOI
+-------------------------------------
 
 -  Add a country boundary layer to QGIS **Layer>>Add Layer>>Add Vector
    Layer**
@@ -170,16 +170,16 @@ The output is a bounding box 10km larger than the bounding box for the
 country. This will be used as the Area of Interest (AOI) when preparing
 the various layers for the MGCI analysis.
 
-5.2 Preparation of Vegetation descriptor layer
-----------------------------------------------
+Preparation of Vegetation descriptor layer
+------------------------------------------
 
 The development of vegetation descriptor layer starts with either a
 raster or vector landuse landcover (LULC) dataset. Follow either section
 5.2.1 if your LULC dataset is a raster data or 5.2.2 if your LULC
 dataset is a vector.
 
-5.2.1 Steps when using a raster dataset 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Steps when using a raster dataset 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To demonstrate the steps for processing a raster LULC dataset we will
 use the Global ESA CCI LULC dataset. This dataset is provided in netcdf
@@ -333,8 +333,8 @@ added should be added to the map canvas\ **.**
 
 The layer should now show all the National LULC classes for Costa Rica.
 
-5.2.3 Steps when using a vector LULC dataset
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Steps when using a vector LULC dataset
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When using a vector LULC dataset the data will also need to be projected
 to an equal area projection.
@@ -466,8 +466,8 @@ added should be added to the map canvas\ **.**
 
 The layer should now show all the National LULC classes for Costa Rica.
 
-5.2.4 Reclassify to IPCC landcover types
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Reclassify to IPCC landcover types
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The next step is to reclassify the LULC map prepared in 5.2.1, 5.2.2 or
 5.2.3 into the 6 MGCI vegetation descriptor LULC types.
@@ -519,8 +519,8 @@ can see that the actual layer only has 6 values.
 
    |image68|
 
-5.3 Preparation of Mountain descriptor 
----------------------------------------
+Preparation of Mountain descriptor 
+----------------------------------
 
 Users should have read section 2.3.4 Choice of DEM and selected a DEM
 for use in the analysis before starting this section as the generation
@@ -529,8 +529,8 @@ of the mountain descriptor layer requires a DEM as the input source.
 In this tutorial the Copernicus 90m source DEM has been chosen as an
 example.
 
-5.3.1 Merging DEM tiles into a single DEM 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Merging DEM tiles into a single DEM 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The DEM tiles covering the full extent of Costa Rica have been download
 from Copernicus using their AWS client. (Instructions for download of
@@ -574,8 +574,8 @@ The merged DEM is added to the QGIS project.
 
 |image74|
 
-5.3.2 Clip and project merged DEM
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Clip and project merged DEM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The DEM tiles are likely to cover a much wider area than the country
 being analysed therefore it is important to crop the extent to minimise
@@ -621,202 +621,212 @@ should be added to the map canvas\ **.**
 5.3.4 Generating slope layer from layer DEM
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Users should have read section 2.3.4 Choice of DEM and selected a DEM
-for use in the analysis before starting this section as the generation
-of the mountain descriptor layer requires a DEM as the input source.
+In, this section, depending on whether your country falls within a
+single or multiple UTM Zones and the projection selected in section 5.1
+Define projection and generate an AOI, the projection used for the slope
+calculation will differ as it is important to use an equidistant
+projection to reduce errors in slope calculation. An overview of slope
+calculation methods is provided in section 2.3.2.
 
 IF your country falls within **a single UTM Zone only** ***AND*** **you
-have used the UTM projection for the previous steps**, slope can be
-generated in UTM using the simple QGIS Slope tool
+have used the UTM projection for the previous steps**, or **if the
+projection you are using has equidistant properties**, slope can be
+generated in the same projection as the rest of the analysis, otherwise
+please follow instruction in **BOX 3** for creating a custom equidistant
+projection before following the next steps.
 
-|image77|
+-  
+-  
 
--  Select the DEM clipped to the AOI in UTM projection as the Elevation
-   layer
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| .. rubric:: BOX 3: Defining a custom Azimuthal Equidistant projection                                                                                                 |
+|    :name: box-3-defining-a-custom-azimuthal-equidistant-projection                                                                                                    |
+|                                                                                                                                                                       |
+| -  From the main menu click **settings>>custom projections**                                                                                                          |
+|                                                                                                                                                                       |
+| -  Click the **+** button to a new custom projection                                                                                                                  |
+|                                                                                                                                                                       |
+| -  Give the custom projection a **name** e.g. in this example **CRI\_AZ\_EQUI**                                                                                       |
+|                                                                                                                                                                       |
+| -  Copy the following projection information into the **parameters** box, changing the lat and lon highlighted in yellow to the centre lat and lon of your country.   |
+|                                                                                                                                                                       |
+|    PROJCRS["Custom\_Azimuthal\_Equidistant",                                                                                                                          |
+|                                                                                                                                                                       |
+|    BASEGEOGCRS["WGS 84",                                                                                                                                              |
+|                                                                                                                                                                       |
+|    DATUM["World Geodetic System 1984",                                                                                                                                |
+|                                                                                                                                                                       |
+|    ELLIPSOID["WGS 84",6378137,298.257223563,                                                                                                                          |
+|                                                                                                                                                                       |
+|    LENGTHUNIT["metre",1],                                                                                                                                             |
+|                                                                                                                                                                       |
+|    ID["EPSG",7030]]],                                                                                                                                                 |
+|                                                                                                                                                                       |
+|    PRIMEM["Greenwich",0,                                                                                                                                              |
+|                                                                                                                                                                       |
+|    ANGLEUNIT["Degree",0.0174532925199433]]],                                                                                                                          |
+|                                                                                                                                                                       |
+|    CONVERSION["unnamed",                                                                                                                                              |
+|                                                                                                                                                                       |
+|    METHOD["Modified Azimuthal Equidistant",                                                                                                                           |
+|                                                                                                                                                                       |
+|    ID["EPSG",9832]],                                                                                                                                                  |
+|                                                                                                                                                                       |
+|    PARAMETER["Latitude of natural origin",8.5,                                                                                                                        |
+|                                                                                                                                                                       |
+|    ANGLEUNIT["Degree",0.0174532925199433],                                                                                                                            |
+|                                                                                                                                                                       |
+|    ID["EPSG",8801]],                                                                                                                                                  |
+|                                                                                                                                                                       |
+|    PARAMETER["Longitude of natural origin",-84,                                                                                                                       |
+|                                                                                                                                                                       |
+|    ANGLEUNIT["Degree",0.0174532925199433],                                                                                                                            |
+|                                                                                                                                                                       |
+|    ID["EPSG",8802]],                                                                                                                                                  |
+|                                                                                                                                                                       |
+|    PARAMETER["False easting",0,                                                                                                                                       |
+|                                                                                                                                                                       |
+|    LENGTHUNIT["metre",1],                                                                                                                                             |
+|                                                                                                                                                                       |
+|    ID["EPSG",8806]],                                                                                                                                                  |
+|                                                                                                                                                                       |
+|    PARAMETER["False northing",0,                                                                                                                                      |
+|                                                                                                                                                                       |
+|    LENGTHUNIT["metre",1],                                                                                                                                             |
+|                                                                                                                                                                       |
+|    ID["EPSG",8807]]],                                                                                                                                                 |
+|                                                                                                                                                                       |
+|    CS[Cartesian,2],                                                                                                                                                   |
+|                                                                                                                                                                       |
+|    AXIS["(E)",east,                                                                                                                                                   |
+|                                                                                                                                                                       |
+|    ORDER[1],                                                                                                                                                          |
+|                                                                                                                                                                       |
+|    LENGTHUNIT["metre",1,                                                                                                                                              |
+|                                                                                                                                                                       |
+|    ID["EPSG",9001]]],                                                                                                                                                 |
+|                                                                                                                                                                       |
+|    AXIS["(N)",north,                                                                                                                                                  |
+|                                                                                                                                                                       |
+|    ORDER[2],                                                                                                                                                          |
+|                                                                                                                                                                       |
+|    LENGTHUNIT["metre",1,                                                                                                                                              |
+|                                                                                                                                                                       |
+|    ID["EPSG",9001]]]]                                                                                                                                                 |
+|                                                                                                                                                                       |
+| |image77|                                                                                                                                                             |
+|                                                                                                                                                                       |
+| -  Click the **Validate** button to check that the parameters are valid and then **OK** to save the custom projection                                                 |
+|                                                                                                                                                                       |
+|     Next, In the **processing toolbox** search for **reproject**                                                                                                      |
+|                                                                                                                                                                       |
+| -  Double click on the **Warp (reproject)** tool under the **GDAL toolset**                                                                                           |
+|                                                                                                                                                                       |
+| -  Set the Input layer to be the **merged DEM in geographic coordinate system**                                                                                       |
+|                                                                                                                                                                       |
+|    *Note: it is important not to use the one that has already been projected as this can introduce errors into the DEM *                                              |
+|                                                                                                                                                                       |
+| -  Set the Source CRS to be **EPSG: 4326 (Geographic)**                                                                                                               |
+|                                                                                                                                                                       |
+| -  Set the Target CRS to be **your custom equidistant projection** e.g. CRI\_AZ\_EQUI                                                                                 |
+|                                                                                                                                                                       |
+| -  Set the resampling method to Nearest Neighbour                                                                                                                     |
+|                                                                                                                                                                       |
+| -  Set the output file resolution to the resolution of the DEM in meters e.g. 90m in this example                                                                     |
+|                                                                                                                                                                       |
+| -  Set the Reprojected output to e.g. **DEM\_copernicus\_merge\_CRI\_AZ\_EQUI.tif**                                                                                   |
+|                                                                                                                                                                       |
+| -  Click Run to run the tool                                                                                                                                          |
+|                                                                                                                                                                       |
+| |image78|                                                                                                                                                             |
+|                                                                                                                                                                       |
+| The reprojected layer is added to the QGIS project. Slope can now be generated from this layer                                                                        |
++=======================================================================================================================================================================+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
--  Set the **Slope** output to e.g. SLOPE_copernicus_merge_AOI_UTM.tif
+-  
+-  
+-  
+-  
+-  
 
--  Click **Run** to Run the tool
+-  
+-  
+-  
 
-***IF*** your country crosses ***multiple UTM Zones*** skip the above
-step and follow the slope calculation steps outlined in below and
-referenced in section 2.3.4
+-  
+-  
+-  
 
-**Methods for slope generation in QGIS (for countries covering more than
-one UTM zone)**
+-  
+-  
 
-
-The first step is to create a latitude grid. (a grid of the
-y-coordinates in geographic coordinate system) [4]_.
-
--  In the Processing toolbox search for **r.latlong**
-
-   |image78|
-
--  Select the **merged DEM dataset (the initial version that is in
-   geographic coordinate system not the projected one)** for the **Input
-   Layer**
-
--  Set the **GRASS GIS 7 region extent** to be calculated
-   from **merged DEM dataset**
-
--  Set the **LatLon** output to e.g. latitude\_grid\_ epsg4326.tif
-   
-   |image79|
-   
--  Click **Run** to run the tool
-
-A map showing greyscale latitude bands is added to the
-QGIS project
-
-|image80|
-
-The second step is to compute the cosine of the latitude layer.
-
--  In the processing toolbox search for **Raster Calculator**
-
-   |image81|
-
--  Double click on the **Raster Calculator** under the **Raster
-   analysis** toolset
-
-   |image82|
-
--  In the expression window type the COS expression
-
-   e.g. **cos("latitude\_grid\_epsg4326@1")**
-
--  Set the **reference layer** to be the **latitude\_grid** raster.
-
--  Set the **Output** to e.g. cos\_latitude\_grid\_ epsg4326.tif
-
--  Click **Run** to run the tool
-
-The third step is to project both the DEM and the cosine of the latitude
-using a Mercator projection in which scale is true at the Equator. This
-means a straight forward Mercator with a central meridian of 0 e.g.
-World Mercator EPSG 3395 (and not pseudo or web Mercator).
-
-|image83|
-
--  In the processing toolbox search for **reproject**
-
-   |image84|
-
--  Double click on the **Warp (reproject)** tool under the **GDAL**
-   toolset
-
--  Set the **Input layer** to be the **merged DEM in geographic
-   coordinate system**
-
--  Set the **Source CRS** to be **EPSG: 4326 (Geographic)**
-
--  Set the **Target CRS** to be **EPSG: 3395 (World Mercator)**
-
--  Set the **resampling method** to Nearest Neighbour
-
--  Set the **output file resolution** to the resolution of the DEM in
-   meters e.g. **90**\ m in this example
-
--  Set the **Reprojected** output to e.g.
-   **DEM\_copernicus\_merge\_WorldMercator.tif**
-
--  Click **Run** to run the tool
-
-   |image85|
-
-Then reproject the cos\_latitude grid in the same way
-
--  Set the **Input layer** to be the **cos\_latitude\_grid\_epsg4326**
-   (in geographic coordinate system)
-
--  Set the **Reprojected** output to e.g.
-   **cos\_latitude\_grid\_WorldMercator.tif**
-
-The two reprojected layers are added to the QGIS project.
-
-The fourth step is to compute the slope of the World Mercator DEM. This
-needs to be generated as a pure slope in the form of percent. i.e. NOT
-as an angle in degrees
+-  
+-  
+-  
+-  
+-  
+-  
+-  
 
 -  In the processing toolbox search for **Slope**
 
--  Double click on the **slope** tool under **Raster
-   analysis** in the **GDAL** toolset.
-   
-   |image86|
+-  Double click on the **slope** tool under **Raster analysis** in the
+   **GDAL** toolset.
 
-   We will use this tool instead of the other slope tools as it has the
-   option for slope to be calculated as a percent
+-  *We will use this tool instead of the* *basic QGIS slope tool* *as it
+   has an option to compute edges which means it looks at edge pixels
+   and no data values*.
 
--  Set the **Input layer** to be the
-   **DEM\_copernicus\_merge\_WorldMercator.tif**
+-  Set the **Input layer** to be the reprojected DEM i.e. the
+   equidistant version unless, as specified above, your country falls
+   within a single UTM Zone only *AND* you have used the UTM projection
+   for the previous steps, or if the projection you are using has
+   equidistant properties e.g. in this example
+   **DEM\_copernicus\_merge\_CRI\_AZ\_EQUI.tif** , the projected
+   equidistant DEM generated from BOX 3.
 
--  Tick **Slope** **expressed** as percent instead of degrees
+-  
+-  Tick **compute edges**
 
--  Tick **compute edged**
-
--  Set the **Slope** output to e.g. **PERCSLOPE\_Wmercator.tif**
-
--  Click **Run** to run the tool
-
-   |image87|
-
-The fifth step is to divide this percent slope by the projected
-cosine(latitude) raster in World Mercator.
-
--  In the processing toolbox search for **Raster Calculator**
-
--  Double click on the **Raster Calculator** under the
-   **Raster analysis** toolset
-   
-   |image88|
-
--  In the expression window type the expression
-
-   e.g. **"PERCSLOPE\_Wmercator@1" /
-   "cos\_latitude\_grid\_WorldMercator@1"**
-
--  Set the **reference layer** to be the **percent** **slope** raster.
-
--  Set the **Output** to e.g. **PERCSLOPE\_Wmercator\_COScorrected.tif**
+-  Set the **Slope** output to e.g.
+   **DEM\_copernicus\_merge\_SLOPE\_CRI\_AZ\_EQUI.tif**
 
 -  Click **Run** to run the tool
 
-   (screengrab on next page)
+|image79|
 
-   |image89|
+-  
+-  
+-  
 
-The sixth step is to convert the slope to degrees as these units are
-required in the generation of the mountain descriptor layer.
+-  
+-  
+-  
 
--  In the processing toolbox search for **Raster Calculator** again
+-  
+-  
+-  
 
--  Double click on the **Raster Calculator** under the **Raster
-   analysis** toolset
+-  
 
-   |image90|
-
--  In the expression window type the expression
-
-   **atan("PERCSLOPE\_Wmercator\_COScorrected@1" /100) /3.14159\*180**
-
--  Click **Run** to run the tool
-
-Finally the slope raster can be projected to the main analysis equal
-area projection and be clipped to the AOI.
+The slope raster can now be projected to the main analysis equal area
+projection and be clipped to the AOI.
 
 -  In the processing toolbox search for **Clip**.
 
 -  Double click on the **Clip raster by mask layer** under the GDAL
    toolset
 
--  Select the **merged DEM dataset** for the **Input Layer**
+-  Select the **slope raster** for the **Input Layer**
 
-   e.g. SLOPE\_Wmercator\_COScorrected\_DEG
+   e.g. **DEM\_copernicus\_merge\_SLOPE\_CRI\_AZ\_EQUI.tif**
 
 -  Select the **AOI** **buffered bounding box layer** for the **Mask
    Layer**
+
+-  Select the **Source CRS** of the input slope dataset e.g.
+   **CRI\_AZ\_EQUI**
 
 -  Select the **Project CRS** for the **Target CRS**
 
@@ -831,19 +841,21 @@ area projection and be clipped to the AOI.
 -  Tick **Use Input Layer Data Type**
 
 -  Set the output **Clipped (mask)** e.g. to
-   DEM\_copernicus\_merge\_AOI\_LAEA\_SLOPE
+   **DEM\_copernicus\_merge\_AOI\_LAEA\_SLOPE.tif**
 
 -  Click **Run** to run the tool
 
-   (see screen grab on next page)
+|image80|
 
-   |image91|\ |image92|
+The new **clipped** **SLOPE dataset in the equal area projection**
+should be added should be added to the map canvas\ **.**
+
 
 The new clipped DEM dataset in the equal area projection should be added
 should be added to the map canvas\ **.**
 
-5.3.5 Generating local elevation range from DEM
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Generating local elevation range from DEM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 For Kapos classes 5 and 6 a 7km local elevation range is required for
 the identification of areas that occur in regions with significant
@@ -994,8 +1006,8 @@ AND"LocalElevationRange7km\_AOI\_LAEA@1" >= 300
 
 |image106|
 
-5.3.7 Generate an interim mountain layer with classes 1-6
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Generate an interim mountain layer with classes 1-6
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 We can now use the following expression in the raster calculator to add
 the different classes into a single map where class 1 has a value of 1,
@@ -1023,8 +1035,8 @@ At the bottom of the layer properties dialogue window click the
 
 |image110|
 
-5.3.8 Filling isolated pixels within mountain areas and merging into classes 1-6
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Filling isolated pixels within mountain areas and merging into classes 1-6
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The last part of the mountain descriptor layer generation is to identify
 isolated ‘non-mountain’ grid cells ( < 25km\ :sup:`2` in size)occurring
@@ -1280,8 +1292,8 @@ classes in the MountainDescriptor\_LAEA.tif within the QGIS session.
 
 The Mountain Descriptor layer is now complete
 
-5.4 Generation of Real Surface Area raster
-------------------------------------------
+Generation of Real Surface Area raster
+--------------------------------------
 
 The final layer that needs generating is the Real Surface
 Area raster from the DEM. The tools should have all been tested to check
@@ -1305,8 +1317,8 @@ your R integration is working in Section 2.1.
 
    |image137|
 
-5.5 Aligning mountain and vegetation descriptor layers 
--------------------------------------------------------
+Aligning mountain and vegetation descriptor layers 
+--------------------------------------------------
 
 Now that we have 3 raster datasets in their native resolutions we need
 to bring the datasets together and ensure that correct aggregation is
@@ -1320,8 +1332,8 @@ layer at 300m resolution.
 We can use the Align tool in QGIS to aggregate and align the 2 higher
 resolution rasters to the 300m Vegetation Descriptor layer
 
-5.6 Computation of Mountain Green Cover Index
----------------------------------------------
+Computation of Mountain Green Cover Index
+-----------------------------------------
 
 We can use the r.stats tool to generate a csv file containing both
 planimetric area, real surface area and disaggregations of mountain and
@@ -1333,8 +1345,8 @@ disaggregation
 
 |image139|
 
-5.7 Export to standard reporting table
---------------------------------------
+Export to standard reporting table
+----------------------------------
 
 .. |image0| image:: media/image2.png
    :width: 6.26806in
