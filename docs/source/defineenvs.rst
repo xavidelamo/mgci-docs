@@ -75,7 +75,7 @@ in wrong slope calculations particularly near the poles.
 
 .. rubric:: Footnotes
 
-.. [#f3] for more information ee https://gis.stackexchange.com/questions/14750/using-srtm-global-dem-for-slope-calculation/40456#40456. 
+.. [#f3] further discussion can be found at https://gis.stackexchange.com/questions/14750/using-srtm-global-dem-for-slope-calculation/40456#40456. 
 
 **Selected slope method for GEE:**
 
