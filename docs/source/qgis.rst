@@ -636,8 +636,17 @@ please follow instruction in **BOX 3** for creating a custom equidistant
 projection before following the next steps.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|.. topic:: Your Topic Title                                                                                                                                            |
+|                                                                                                                                                                       |
+|    Subsequent indented lines comprise                                                                                                                                 |
+|    the body of the topic, and are                                                                                                                                     |
+|    interpreted as body elements.                                                                                                                                      |
++=======================================================================================================================================================================+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **BOX 3: Defining a custom Azimuthal Equidistant projection**:                                                                                            |
-|    :name: box-3-defining-a-custom-azimuthal-equidistant-projection                                                                                                    |
+|    :name: box-3-defining-a-custom-azimuthal-equidistant-projectio                                                                                                     |
 |                                                                                                                                                                       |
 | -  From the main menu click **settings>>custom projections**                                                                                                          |
 | -  Click the **+** button to a new custom projection                                                                                                                  |
