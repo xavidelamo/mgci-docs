@@ -640,11 +640,14 @@ projection before following the next steps.
 |    :name: box-3-defining-a-custom-azimuthal-equidistant-projection                                                                                                    |
 |                                                                                                                                                                       |
 | -  From the main menu click **settings>>custom projections**                                                                                                          |
+|                                                                                                                                                                       |
 | -  Click the **+** button to a new custom projection                                                                                                                  |
+|                                                                                                                                                                       |
 | -  Give the custom projection a **name** e.g. in this example **CRI\_AZ\_EQUI**                                                                                       |
+|                                                                                                                                                                       |
 | -  Copy the following projection information into the **parameters** box, changing the lat and lon highlighted in yellow to the centre lat and lon of your country.   |
 |                                                                                                                                                                       |
-|    PROJCRS["Custom\_Azimuthal\_Equidistant",\                                                                                                                         |
+|    PROJCRS["Custom\_Azimuthal\_Equidistant",                                                                                                                          |
 |    BASEGEOGCRS["WGS 84",                                                                                                                                              |
 |    DATUM["World Geodetic System 1984",                                                                                                                                |
 |    ELLIPSOID["WGS 84",6378137,298.257223563,                                                                                                                          |
@@ -677,7 +680,7 @@ projection before following the next steps.
 |    LENGTHUNIT["metre",1,                                                                                                                                              |
 |    ID["EPSG",9001]]]]                                                                                                                                                 |
 |                                                                                                                                                                       |
-| |image77|                                                                                                                                                             |
+|    |image77|                                                                                                                                                          |
 |                                                                                                                                                                       |
 | -  Click the **Validate** button to check that the parameters are valid and then **OK** to save the custom projection                                                 |
 | -  Next, In the **processing toolbox** search for **reproject**                                                                                                       |
@@ -691,10 +694,10 @@ projection before following the next steps.
 | -  Set the Reprojected output to e.g. **DEM\_copernicus\_merge\_CRI\_AZ\_EQUI.tif**                                                                                   |
 | -  Click Run to run the tool                                                                                                                                          |
 |                                                                                                                                                                       |
-| |image78|                                                                                                                                                             |
+|    |image78|                                                                                                                                                          |
 |                                                                                                                                                                       |
-| The reprojected layer is added to the QGIS project. Slope can now be generated from this layer                                                                        |
-+=======================================================================================================================================================================+
+| The reprojected layer is added to the QGIS project. Slope can now be generated from this layer                                                                        | 
+| -  Click the **Validate** button to check that the parameters are valid and then **OK** to save the custom projection                                                 |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 -  In the processing toolbox search for **Slope**
@@ -724,19 +727,6 @@ projection before following the next steps.
 
 |image79|
 
--  
--  
--  
-
--  
--  
--  
-
--  
--  
--  
-
--  
 
 The slope raster can now be projected to the main analysis equal area
 projection and be clipped to the AOI.
@@ -778,9 +768,6 @@ projection and be clipped to the AOI.
 The new **clipped** **SLOPE dataset in the equal area projection**
 should be added should be added to the map canvas\ **.**
 
-
-The new clipped DEM dataset in the equal area projection should be added
-should be added to the map canvas\ **.**
 
 Generating local elevation range from DEM
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
