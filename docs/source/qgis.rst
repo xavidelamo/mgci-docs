@@ -81,10 +81,10 @@ If you need to define a custom projection, follow the instructions in Box 1
 |    CONVERSION["unnamed",                                                                                                                                              |
 |    METHOD["Lambert Azimuthal Equal Area",                                                                                                                             |
 |    ID["EPSG",9820]],                                                                                                                                                  |
-|    PARAMETER["Latitude of natural origin",8.5,                                                                                                                        |
+|    **PARAMETER["Latitude of natural origin",8.5**,                                                                                                                    |
 |    ANGLEUNIT["Degree",0.0174532925199433],                                                                                                                            |
 |    ID["EPSG",8801]],                                                                                                                                                  |
-|    PARAMETER["Longitude of natural origin",-84,                                                                                                                       |
+|    **PARAMETER["Longitude of natural origin",-84**,                                                                                                                   |
 |    ANGLEUNIT["Degree",0.0174532925199433],                                                                                                                            |
 |    ID["EPSG",8802]],                                                                                                                                                  |
 |    PARAMETER["False easting",0,                                                                                                                                       |
@@ -658,10 +658,10 @@ projection before following the next steps.
 |    CONVERSION["unnamed",                                                                                                                                              |
 |    METHOD["Modified Azimuthal Equidistant",                                                                                                                           |
 |    ID["EPSG",9832]],                                                                                                                                                  |
-|    PARAMETER["Latitude of natural origin",8.5,                                                                                                                        |
+|    **PARAMETER["Latitude of natural origin",8.5**,                                                                                                                    |
 |    ANGLEUNIT["Degree",0.0174532925199433],                                                                                                                            |
 |    ID["EPSG",8801]],                                                                                                                                                  |
-|    PARAMETER["Longitude of natural origin",-84,                                                                                                                       |
+|    **PARAMETER["Longitude of natural origin",-84**,                                                                                                                   |
 |    ANGLEUNIT["Degree",0.0174532925199433],                                                                                                                            |
 |    ID["EPSG",8802]],                                                                                                                                                  |
 |    PARAMETER["False easting",0,                                                                                                                                       |
