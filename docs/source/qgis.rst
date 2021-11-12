@@ -373,12 +373,21 @@ scale of the vector dataset. (see Box 2).
 |                                                                                                                                                                       |
 |    To calculate map scale there are two parameters:  ground resolution and screen resolution.                                                                         |
 |                                                                                                                                                                       |
+|    .. math:: scale = 1: (resolution * PPI / 0.0254)  or    resolution = scale * 0.0254/PPI                                                                            |
 |                                                                                                                                                                       |
 |                                                                                                                                                                       |
+|    **Where**   :                                                                                                                                                      |
+|    **resolution** =  ground resolution (the size in (m) that a pixel represents.                                                                                      |
+|    **PPI** =  the screen resolution (pixels number that every inch contains on the screen (default 96dpi).                                                            |
+|    **0.0254** = (m/inch),  the unit conversion between meter and inches.                                                                                              |
+|    **scale** = nominal scale of vector dataset                                                                                                                        |
 |                                                                                                                                                                       |
+|    (source: https://enonline.supermap.com/iExpress9D/Appendix/scale.htm)                                                                                              |
 |                                                                                                                                                                       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|image61|
+
+
+
 
 Once the resolution to convert the vector dataset to has been
 determined the vector dataset can be converted to Raster.
