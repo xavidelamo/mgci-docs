@@ -680,7 +680,7 @@ projection before following the next steps.
 |    LENGTHUNIT["metre",1,                                                                                                                                              |
 |    ID["EPSG",9001]]]]                                                                                                                                                 |
 |                                                                                                                                                                       |
-|    |image77|                                                                                                                                                          |
+|    |image78|                                                                                                                                                          |
 |                                                                                                                                                                       |
 | -  Click the **Validate** button to check that the parameters are valid and then **OK** to save the custom projection                                                 |
 | -  Next, In the **processing toolbox** search for **reproject**                                                                                                       |
@@ -694,7 +694,7 @@ projection before following the next steps.
 | -  Set the Reprojected output to e.g. **DEM\_copernicus\_merge\_CRI\_AZ\_EQUI.tif**                                                                                   |
 | -  Click Run to run the tool                                                                                                                                          |
 |                                                                                                                                                                       |
-|    |image78|                                                                                                                                                          |
+|    |image79|                                                                                                                                                          |
 |                                                                                                                                                                       |
 | The reprojected layer is added to the QGIS project. Slope can now be generated from this layer                                                                        | 
 | -  Click the **Validate** button to check that the parameters are valid and then **OK** to save the custom projection                                                 |
@@ -702,6 +702,8 @@ projection before following the next steps.
 
 -  In the processing toolbox search for **Slope**
 
+   |image80|   
+   
 -  Double click on the **slope** tool under **Raster analysis** in the
    **GDAL** toolset.
 
@@ -725,7 +727,7 @@ projection before following the next steps.
 
 -  Click **Run** to run the tool
 
-|image79|
+|image82|
 
 
 The slope raster can now be projected to the main analysis equal area
@@ -763,7 +765,7 @@ projection and be clipped to the AOI.
 
 -  Click **Run** to run the tool
 
-|image80|
+|image96|
 
 The new **clipped** **SLOPE dataset in the equal area projection**
 should be added should be added to the map canvas\ **.**
