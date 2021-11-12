@@ -246,7 +246,7 @@ appears in the correct place in the QGIS project.
 (a) Clip and project LULC raster (FOR REGIONAL/GLOBAL DATASETS ONLY):
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  In the processing toolbox search for **Clip**.
+-  In the processing toolbox search for **Clip**
 
 -  Double click on the **Clip raster by mask layer** under the GDAL
    toolset
@@ -386,13 +386,12 @@ scale of the vector dataset. (see Box 2).
 |                                                                                                                                                                       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
-
-
 Once the resolution to convert the vector dataset to has been
 determined the vector dataset can be converted to Raster.
 
 -  In the processing toolbox search for **Rasterize.**
+
+   |image54|
 
 -  Double click on the GDAL **Rasterize (vector to raster)** tool
 
