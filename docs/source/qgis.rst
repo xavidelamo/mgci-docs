@@ -635,11 +635,8 @@ generated in the same projection as the rest of the analysis, otherwise
 please follow instruction in **BOX 3** for creating a custom equidistant
 projection before following the next steps.
 
--  
--  
-
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| .. rubric:: **BOX 3: Defining a custom Azimuthal Equidistant projection**:                                                                                            |
+| .. rubric:: **BOX 3: Defining a custom Azimuthal Equidistant projection** :                                                                                            |
 |    :name: box-3-defining-a-custom-azimuthal-equidistant-projection                                                                                                    |
 |                                                                                                                                                                       |
 | -  From the main menu click **settings>>custom projections**                                                                                                          |
@@ -699,31 +696,6 @@ projection before following the next steps.
 | The reprojected layer is added to the QGIS project. Slope can now be generated from this layer                                                                        |
 +=======================================================================================================================================================================+
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
--  
--  
--  
--  
--  
-
--  
--  
--  
-
--  
--  
--  
-
--  
--  
-
--  
--  
--  
--  
--  
--  
--  
 
 -  In the processing toolbox search for **Slope**
 
