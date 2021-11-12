@@ -70,7 +70,38 @@ If you need to define a custom projection, follow the instructions in Box 1
 |                                                                                                                                                                       |
 | -  Copy the following projection information into the **parameters** box, changing the lat and lon highlighted in yellow to the centre lat and lon of your country.   |
 |                                                                                                                                                                       |
-|    +proj=laea +lat\_0=8.5 +lon\_0=-84 +x\_0=0 +y\_0=0 +datum=WGS84 +units=m +no\_defs                                                                                 |
+|    PROJCRS["Custom\_Azimuthal\_Azimuthal\_Equal\_Area",                                                                                                               |
+|    BASEGEOGCRS["WGS 84",                                                                                                                                              |
+|    DATUM["World Geodetic System 1984",                                                                                                                                |
+|    ELLIPSOID["WGS 84",6378137,298.257223563,                                                                                                                          |
+|    LENGTHUNIT["metre",1],                                                                                                                                             |
+|    ID["EPSG",6326]]],                                                                                                                                                 |
+|    PRIMEM["Greenwich",0,                                                                                                                                              |
+|    ANGLEUNIT["Degree",0.0174532925199433]]],                                                                                                                          |
+|    CONVERSION["unnamed",                                                                                                                                              |
+|    METHOD["Lambert Azimuthal Equal Area",                                                                                                                             |
+|    ID["EPSG",9820]],                                                                                                                                                  |
+|    PARAMETER["Latitude of natural origin",8.5,                                                                                                                        |
+|    ANGLEUNIT["Degree",0.0174532925199433],                                                                                                                            |
+|    ID["EPSG",8801]],                                                                                                                                                  |
+|    PARAMETER["Longitude of natural origin",-84,                                                                                                                       |
+|    ANGLEUNIT["Degree",0.0174532925199433],                                                                                                                            |
+|    ID["EPSG",8802]],                                                                                                                                                  |
+|    PARAMETER["False easting",0,                                                                                                                                       |
+|    LENGTHUNIT["metre",1],                                                                                                                                             |
+|    ID["EPSG",8806]],                                                                                                                                                  |
+|    PARAMETER["False northing",0,                                                                                                                                      |
+|    LENGTHUNIT["metre",1],                                                                                                                                             |
+|    ID["EPSG",8807]]],                                                                                                                                                 |
+|    CS[Cartesian,2],                                                                                                                                                   |
+|    AXIS["(E)",east,                                                                                                                                                   |
+|    ORDER[1],                                                                                                                                                          |
+|    LENGTHUNIT["metre",1,                                                                                                                                              |
+|    ID["EPSG",9001]]],                                                                                                                                                 |
+|    AXIS["(N)",north,                                                                                                                                                  |
+|    ORDER[2],                                                                                                                                                          |
+|    LENGTHUNIT["metre",1,                                                                                                                                              |
+|    ID["EPSG",9001]]]]                                                                                                                                                 |
 |                                                                                                                                                                       |
 |    |image35|                                                                                                                                                          |
 |                                                                                                                                                                       |
