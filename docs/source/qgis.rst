@@ -585,7 +585,9 @@ the generation of the mountain descriptor layer require neighbouring
 pixels to be analyses therefore the buffered bounding box generated in
 section 5.1 should be used.
 
--  In the processing toolbox search for **Clip**.
+-  In the processing toolbox search for **Clip**
+
+   |image54|
 
 -  Double click on the **Clip raster by mask layer** under the GDAL
    toolset
@@ -608,10 +610,12 @@ section 5.1 should be used.
 
 -  Set the output **Clipped (mask)** e.g. to
    DEM_copernicus_merge_AOI_LAEA.tif
-
+   
+  |image96|
+  
 -  Click **Run** to run the tool
 
-   |image75|
+   
 
 The new clipped DEM dataset in the equal area projection should be added
 should be added to the map canvas\ **.**
@@ -684,6 +688,9 @@ projection before following the next steps.
 |                                                                                                                                                                       |
 | -  Click the **Validate** button to check that the parameters are valid and then **OK** to save the custom projection                                                 |
 | -  Next, In the **processing toolbox** search for **reproject**                                                                                                       |
+|                                                                                                                                                                       |
+|    |image54|                                                                                                                                                          |
+|                                                                                                                                                                       |
 | -  Double click on the **Warp (reproject)** tool under the **GDAL toolset**                                                                                           |
 | -  Set the Input layer to be the **merged DEM in geographic coordinate system**                                                                                       |
 |    *Note: it is important not to use the one that has already been projected as this can introduce errors into the DEM *                                              |
@@ -735,6 +742,8 @@ projection and be clipped to the AOI.
 
 -  In the processing toolbox search for **Clip**.
 
+  |image49|
+  
 -  Double click on the **Clip raster by mask layer** under the GDAL
    toolset
 
