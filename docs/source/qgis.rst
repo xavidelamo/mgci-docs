@@ -356,6 +356,14 @@ The next step is to rasterize the LULC data. When converting it is
 important to choose an output resolution that is appropriate for the
 scale of the vector dataset. (see Box 2).
 
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| .. rubric:: **BOX 2: Conversion between nominal scale and resolution**:                                                                                               |       |                                                                                                                                                                       |
+|    :name: box-2-conversation-between-nominal-scale-and-resolution                                                                                                     |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
+
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **BOX 2: Conversion between nominal scale and resolution**:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 |    :name: box-2-conversion-between-nominal-scale-and-resolution                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
@@ -726,7 +734,6 @@ projection before following the next steps.
    **DEM\_copernicus\_merge\_CRI\_AZ\_EQUI.tif** , the projected
    equidistant DEM generated from BOX 3.
 
--  
 -  Tick **compute edges**
 
 -  Set the **Slope** output to e.g.
