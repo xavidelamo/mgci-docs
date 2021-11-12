@@ -644,17 +644,19 @@ projection before following the next steps.
 |    interpreted as body elements.                                                                                                                                      |
 +=======================================================================================================================================================================+
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. class:: left
 
+This paragraph will be centered.
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **BOX 3: Defining a custom Azimuthal Equidistant projection**:                                                                                            |
-|    :name: box-3-defining-a-custom-azimuthal-equidistant-projectio                                                                                                     |
+|    :name: box-3-defining-a-custom-azimuthal-equidistant-projection                                                                                                    |
 |                                                                                                                                                                       |
 | -  From the main menu click **settings>>custom projections**                                                                                                          |
 | -  Click the **+** button to a new custom projection                                                                                                                  |
 | -  Give the custom projection a **name** e.g. in this example **CRI\_AZ\_EQUI**                                                                                       |
 | -  Copy the following projection information into the **parameters** box, changing the lat and lon highlighted in yellow to the centre lat and lon of your country.   |
 |                                                                                                                                                                       |
-|    PROJCRS["Custom\_Azimuthal\_Equidistant",                                                                                                                          |
+|    PROJCRS["Custom\_Azimuthal\_Equidistant",\                                                                                                                         |
 |    BASEGEOGCRS["WGS 84",                                                                                                                                              |
 |    DATUM["World Geodetic System 1984",                                                                                                                                |
 |    ELLIPSOID["WGS 84",6378137,298.257223563,                                                                                                                          |
