@@ -639,103 +639,59 @@ projection before following the next steps.
 -  
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| .. rubric:: BOX 3: Defining a custom Azimuthal Equidistant projection                                                                                                 |
+| .. rubric:: **BOX 3: Defining a custom Azimuthal Equidistant projection**:                                                                                            |
 |    :name: box-3-defining-a-custom-azimuthal-equidistant-projection                                                                                                    |
 |                                                                                                                                                                       |
 | -  From the main menu click **settings>>custom projections**                                                                                                          |
-|                                                                                                                                                                       |
 | -  Click the **+** button to a new custom projection                                                                                                                  |
-|                                                                                                                                                                       |
 | -  Give the custom projection a **name** e.g. in this example **CRI\_AZ\_EQUI**                                                                                       |
-|                                                                                                                                                                       |
 | -  Copy the following projection information into the **parameters** box, changing the lat and lon highlighted in yellow to the centre lat and lon of your country.   |
 |                                                                                                                                                                       |
 |    PROJCRS["Custom\_Azimuthal\_Equidistant",                                                                                                                          |
-|                                                                                                                                                                       |
 |    BASEGEOGCRS["WGS 84",                                                                                                                                              |
-|                                                                                                                                                                       |
 |    DATUM["World Geodetic System 1984",                                                                                                                                |
-|                                                                                                                                                                       |
 |    ELLIPSOID["WGS 84",6378137,298.257223563,                                                                                                                          |
-|                                                                                                                                                                       |
 |    LENGTHUNIT["metre",1],                                                                                                                                             |
-|                                                                                                                                                                       |
 |    ID["EPSG",7030]]],                                                                                                                                                 |
-|                                                                                                                                                                       |
 |    PRIMEM["Greenwich",0,                                                                                                                                              |
-|                                                                                                                                                                       |
 |    ANGLEUNIT["Degree",0.0174532925199433]]],                                                                                                                          |
-|                                                                                                                                                                       |
 |    CONVERSION["unnamed",                                                                                                                                              |
-|                                                                                                                                                                       |
 |    METHOD["Modified Azimuthal Equidistant",                                                                                                                           |
-|                                                                                                                                                                       |
 |    ID["EPSG",9832]],                                                                                                                                                  |
-|                                                                                                                                                                       |
 |    PARAMETER["Latitude of natural origin",8.5,                                                                                                                        |
-|                                                                                                                                                                       |
 |    ANGLEUNIT["Degree",0.0174532925199433],                                                                                                                            |
-|                                                                                                                                                                       |
 |    ID["EPSG",8801]],                                                                                                                                                  |
-|                                                                                                                                                                       |
 |    PARAMETER["Longitude of natural origin",-84,                                                                                                                       |
-|                                                                                                                                                                       |
 |    ANGLEUNIT["Degree",0.0174532925199433],                                                                                                                            |
-|                                                                                                                                                                       |
 |    ID["EPSG",8802]],                                                                                                                                                  |
-|                                                                                                                                                                       |
 |    PARAMETER["False easting",0,                                                                                                                                       |
-|                                                                                                                                                                       |
 |    LENGTHUNIT["metre",1],                                                                                                                                             |
-|                                                                                                                                                                       |
 |    ID["EPSG",8806]],                                                                                                                                                  |
-|                                                                                                                                                                       |
 |    PARAMETER["False northing",0,                                                                                                                                      |
-|                                                                                                                                                                       |
 |    LENGTHUNIT["metre",1],                                                                                                                                             |
-|                                                                                                                                                                       |
 |    ID["EPSG",8807]]],                                                                                                                                                 |
-|                                                                                                                                                                       |
 |    CS[Cartesian,2],                                                                                                                                                   |
-|                                                                                                                                                                       |
 |    AXIS["(E)",east,                                                                                                                                                   |
-|                                                                                                                                                                       |
 |    ORDER[1],                                                                                                                                                          |
-|                                                                                                                                                                       |
 |    LENGTHUNIT["metre",1,                                                                                                                                              |
-|                                                                                                                                                                       |
 |    ID["EPSG",9001]]],                                                                                                                                                 |
-|                                                                                                                                                                       |
 |    AXIS["(N)",north,                                                                                                                                                  |
-|                                                                                                                                                                       |
 |    ORDER[2],                                                                                                                                                          |
-|                                                                                                                                                                       |
 |    LENGTHUNIT["metre",1,                                                                                                                                              |
-|                                                                                                                                                                       |
 |    ID["EPSG",9001]]]]                                                                                                                                                 |
 |                                                                                                                                                                       |
 | |image77|                                                                                                                                                             |
 |                                                                                                                                                                       |
 | -  Click the **Validate** button to check that the parameters are valid and then **OK** to save the custom projection                                                 |
-|                                                                                                                                                                       |
-|     Next, In the **processing toolbox** search for **reproject**                                                                                                      |
-|                                                                                                                                                                       |
+| -  Next, In the **processing toolbox** search for **reproject**                                                                                                       |
 | -  Double click on the **Warp (reproject)** tool under the **GDAL toolset**                                                                                           |
-|                                                                                                                                                                       |
 | -  Set the Input layer to be the **merged DEM in geographic coordinate system**                                                                                       |
-|                                                                                                                                                                       |
 |    *Note: it is important not to use the one that has already been projected as this can introduce errors into the DEM *                                              |
-|                                                                                                                                                                       |
 | -  Set the Source CRS to be **EPSG: 4326 (Geographic)**                                                                                                               |
-|                                                                                                                                                                       |
 | -  Set the Target CRS to be **your custom equidistant projection** e.g. CRI\_AZ\_EQUI                                                                                 |
-|                                                                                                                                                                       |
 | -  Set the resampling method to Nearest Neighbour                                                                                                                     |
-|                                                                                                                                                                       |
 | -  Set the output file resolution to the resolution of the DEM in meters e.g. 90m in this example                                                                     |
-|                                                                                                                                                                       |
 | -  Set the Reprojected output to e.g. **DEM\_copernicus\_merge\_CRI\_AZ\_EQUI.tif**                                                                                   |
-|                                                                                                                                                                       |
 | -  Click Run to run the tool                                                                                                                                          |
 |                                                                                                                                                                       |
 | |image78|                                                                                                                                                             |
