@@ -726,7 +726,6 @@ projection before following the next steps.
    **DEM\_copernicus\_merge\_CRI\_AZ\_EQUI.tif** , the projected
    equidistant DEM generated from BOX 3.
 
--  
 -  Tick **compute edges**
 
 -  Set the **Slope** output to e.g.
