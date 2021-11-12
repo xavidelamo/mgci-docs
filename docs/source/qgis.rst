@@ -635,8 +635,9 @@ generated in the same projection as the rest of the analysis, otherwise
 please follow instruction in **BOX 3** for creating a custom equidistant
 projection before following the next steps.
 
+.. topic:: Your Topic Title:   
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|.. topic:: Your Topic Title                                                                                                                                            |
+|    topic:                                                                                                                                                                   |
 |                                                                                                                                                                       |
 |    Subsequent indented lines comprise                                                                                                                                 |
 |    the body of the topic, and are                                                                                                                                     |
