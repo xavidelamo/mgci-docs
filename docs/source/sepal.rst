@@ -97,7 +97,12 @@ SEPAL interface
 
 If you are new to SEPAL, it is recommended to take a look over the interface and familiarize yourself with the main tools. A detailed description of the features can be consulted in the `interface documentation <https://docs.sepal.io/en/latest/setup/presentation.html#sepal-interface>`_. 
 
-To open SEPAL-MGCI :sub:`beta` use the `apps tab <https://docs.sepal.io/en/latest/setup/presentation.html#apps-tab>`_ and navigate through the pages, or type into the search box "Mountain Green Cover Index", click over the app drawer and wait patiently until the SEPAL-MGCI :sub:`beta` module is displayed in your session (it may take a few minutes). The module should look like the below image:
+To open SEPAL-MGCI :sub:`beta` use the `apps tab <https://docs.sepal.io/en/latest/setup/presentation.html#apps-tab>`_ and navigate through the pages, or type into the search box "Mountain Green Cover Index", click over the app drawer and wait patiently until the SEPAL-MGCI :sub:`beta` module is displayed in your session (it may take a few minutes). The module should look like the following image:
+
+.. image:: https://github.com/dfguerrerom/sepal_mgci/blob/master/doc/img/0_app_overview.PNG
+   :align: center
+   :width: 600
+   :alt: MGCI module
 
 SEPAL-MGCI :sub:`beta` module
 -----------------------------
