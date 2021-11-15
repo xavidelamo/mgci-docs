@@ -61,19 +61,18 @@ Where:
 - **Vegetation descriptor layer**: The vegetation descriptor layer categorizes land cover into green and non-green areas. Green vegetation includes both natural vegetation and vegetation resulting from anthropic activity (e.g. crops, afforestation, etc.). Non-green areas include very sparsely vegetated areas, bare land, water, permanent ice/snow and urban areas. The vegetation description layer is derived from a land cover map, where land cover categories are classified into IPCC categories and then in green/non-green areas. 
 - **Mountain descriptor layer**:  The mountain descriptor layer consists in a map of mountain classes following the UNEP-WCMC classification (Kapos et al. 2000). The UNEP-WCMC classification classifies the world mountain areas according altitude, slope and elevation range into the following categories.
 
-
-.. _mountain_classes:
-.. csv-table:: Mountain classes
-   :header: "UNEP-WCMC Mountain Class", "Description"
-   :widths: auto
-   :align: center
-
-   "1","Elevation > 4.500 meters"
-   "2","Elevation 3.500–4.500 meters"
-   "3","Elevation 2.500–3.500 meters"
-   "4","Elevation 1.500–2.500 meters and slope > 2"
-   "5","Elevation 1.000–1.500 meters and slope > 5 or local elevation range (LER 7 kilometer radius) > 300 meters"
-   "6","Elevation 300–1.000 meters and local elevation range (7 kilometer radius) > 300 meters"
+  .. _mountain_classes:
+  .. csv-table:: Mountain classes
+     :header: "UNEP-WCMC Mountain Class", "Description"
+     :widths: auto
+     :align: center
+  
+     "1","Elevation > 4.500 meters"
+     "2","Elevation 3.500–4.500 meters"
+     "3","Elevation 2.500–3.500 meters"
+     "4","Elevation 1.500–2.500 meters and slope > 2"
+     "5","Elevation 1.000–1.500 meters and slope > 5 or local elevation range (LER 7 kilometer radius) > 300 meters"
+     "6","Elevation 300–1.000 meters and local elevation range (7 kilometer radius) > 300 meters"
 
 SEPAL-MGCI :sub:`beta` allows the user to compute each of these description layers to then calculate MGCI values for any given area using both global and user-provided data. The results of this analysis can then be exported to a set of standardized reporting tables where MGCI values are disaggregated by mountain class and IPCC land category, as specified in the metadata of SDG Indicator 15.4.2.
 
@@ -173,7 +172,7 @@ Custom dataset
 
 As all the processing is done in GEE, so all the inputs have to be uploaded as an `earth engine asset <https://developers.google.com/earth-engine/guides/asset_manager>`_. When you are using a custom dataset, it has to be stored in your GEE account (it could be private) or in a third-party account as a public asset. The dropdown menu will query all the assets in your GEE folder that matches the Image type. You can select it from the dropdown or write/paste it directly.
 
-After clicking the button, the module will create the mountain descriptor layer, and it will be automatically displayed on the map.
+After clicking the :guilabel:`Create UNEP-WCMC Mountain Class Map` button, the module will create the mountain descriptor layer, and it will be automatically displayed on the map.
 
 .. image:: https://raw.githubusercontent.com/dfguerrerom/sepal_mgci/master/doc/img/2_mountain_descriptor.PNG
    :align: center
@@ -188,7 +187,7 @@ This section of SEPAL-MGCI :sub:`beta` produces the vegetation descriptor layer 
 Questionnaire
 ^^^^^^^^^^^^^
 
-Here you have to indicate the land cover map that you wish to use to compute the vegetation descriptor layer. If you wish to use your own land cover map, select “yes”. If you select “no”, SEPAL-MGCI :sub:`beta` will use the CCI Land Cover datasets developed by the European Space Agency for the years 1992-2018 at 300 meters resolution to produce the vegetation descriptor layer for the selected area of interest.
+Here you have to indicate the land cover map that you wish to use to compute the vegetation descriptor layer. If you wish to use your own land cover map, select :guilabel:`yes`. If you select :guilabel:`no`, SEPAL-MGCI :sub:`beta` will use the CCI Land Cover datasets developed by the European Space Agency for the years 1992-2018 at 300 meters resolution to produce the vegetation descriptor layer for the selected area of interest.
 
 .. image:: https://raw.githubusercontent.com/dfguerrerom/sepal_mgci/master/doc/img/3_questionnaire.PNG
    :align: center
@@ -208,7 +207,7 @@ SEPAL-MGCI :sub:`beta` will use the ESA-CCI Land Cover dataset and you just have
 If you have selected 'Yes'
 ::::::::::::::::::::::::::
 
-Similarly to the mountain description layer, to be able to use your own land cover map you would need upload it first in your GEE account or in a third-party account as a public asset. The dropdown menu will query all the assets in your GEE folder that matches the Image type. You can select it from the dropdown or directly copy and paste the link to the dataset.
+Similarly to the mountain description layer, to be able to use your own land cover map you would need upload it first in your GEE account or in a third-party account as a public asset (see `how to upload files to gee <https://docs.sepal.io/en/latest/setup/gee.html#upload-files-to-gee>`_). The dropdown menu will query all the assets in your GEE folder that matches the Image type. You can select it from the dropdown or directly copy and paste the link to the dataset.
 
 .. image:: https://raw.githubusercontent.com/dfguerrerom/sepal_mgci/master/doc/img/3_custom.PNG
    :align: center
@@ -220,6 +219,13 @@ To allow SEPAL-MGCI :sub:`beta` to create an IPCC land cover class map using the
 - Upload a table in a csv format (reclassification matrix) showing how the IPCC land cover equivalent of the classes of your land cover map. See its structure in :ref:`reclassification matrix <reclass_table>`. To provide the information in this way, click on :guilabel:`yes` below the question 'Do you have a reclassification matrix table in a csv format'?.
 
   After having the table in the SEPAL enviroment, click over the :guilabel:`Filename` and navigate trhough the folders and select your table.
+  
+
+  .. image:: https://raw.githubusercontent.com/dfguerrerom/sepal_mgci/master/doc/img/3_search_table_and_load.PNG
+     :align: center
+     :width: 600
+     :alt: Search and load table
+
 
 .. _reclass_table:
 .. tip:: What is a reclassification matrix table?:
