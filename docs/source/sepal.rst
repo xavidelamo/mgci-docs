@@ -254,4 +254,3 @@ After the calculation is done, the export button will become available. To downl
 .. image:: https://raw.githubusercontent.com/dfguerrerom/sepal_mgci/master/doc/img/4_dashboard_export.PNG
    :align: center
    :width: 600
-
