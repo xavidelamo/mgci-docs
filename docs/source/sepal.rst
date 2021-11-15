@@ -19,6 +19,7 @@ Authors
 ^^^^^^^
 
 SEPAL-MGCI :sub:`beta` has been developed by the Food and Agriculture Organization (FAO) of the United Nations, and has been funded by Norway's International Climate and Forest Iniciative (NICFI) and....
+
 Contributors to SEPAL-MGCI :sub:`beta` and its documentation include Daniel Guerrero, Pierrick Rambaud, Corinna Ravilious and Xavier de Lamo.
 
 Acknowledgements
@@ -26,22 +27,23 @@ Acknowledgements
 
 License
 ^^^^^^^
-SEPAL-MGCI :sub:`beta` is free and open source. It is licensed undera `MIT license <https://opensource.org/licenses/MIT>`_ . The documentation is made available under the terms of the Creative Commons Attribution 4.0 International License (CC BY 4.0). The boundaries, names and designations used do not imply official endorsement or acceptance by the United Nations.
+SEPAL-MGCI :sub:`beta` is free and open source. It is licensed under `MIT license <https://opensource.org/licenses/MIT>`_ . The documentation is made available under the terms of the Creative Commons Attribution 4.0 International License (CC BY 4.0). The boundaries, names and designations used do not imply official endorsement or acceptance by the United Nations.
 
 Data sources
 ^^^^^^^^^^^^
 
 SEPAL-MGCI draws on a number of global data sources to allow the computation of the SDG 15.4.2 indicator when national data is not available. The datasets described below have been made available by the following organizations under separate terms as indicated in their respective metadata.
-Land cover: European Space Agency (ESA) Climate Change Initiative (CCI) Land cover 
-Digital Elevation Model: The Shuttle Radar Topography Mission (SRTM), available at `Google Earth Engine <https://developers.google.com/earth-engine/datasets/catalog/CGIAR_SRTM90_V4>`_
-Administrative Boundaries: FAO GAUL: Global Administrative Unit Layers 2015, available at `Google Earth Engine <https://developers.google.com/earth-engine/datasets/catalog/FAO_GAUL_2015_level1>`_
+
+- Land cover: European Space Agency (ESA) Climate Change Initiative (CCI) Land cover 
+- Digital Elevation Model: The Shuttle Radar Topography Mission (SRTM), available at `Google Earth Engine <https://developers.google.com/earth-engine/datasets/catalog/CGIAR_SRTM90_V4>`_.
+Administrative Boundaries: FAO GAUL: Global Administrative Unit Layers 2015, available at `Google Earth Engine <https://developers.google.com/earth-engine/datasets/catalog/FAO_GAUL_2015_level1>`_.
 
 .. note:: The  Administrative Boundaries provided in SEPAL-MGCI are in the public domain. The designations employed and the presentation of material on this map do not imply the expression of any opinion whatsoever on the part of the Secretariat of the United Nations concerning the legal status of any country, territory, city or area or of its authorities, or concerning the delimitation of its frontiers or boundaries. If using SEPAL-MGCI for official purposes, it is recommended that users use an official boundary provided by the designated office of their country.
 
 Background
 ^^^^^^^^^^
 
-SDG Indicator 15.4.2 – Mountain Green Cover Index (MGCI) is one of the two indicators under SDG Target 15.4, which aims to ‘’ensure the conservation of mountain ecosystems, including their biodiversity, to enhance their capacity to provide benefits which are essential for sustainable development’’. The Food and Agriculture Organization (FAO) of the United Nations is the custodian agency of this indicator. The Mountain Green Cover Index (MGCI) is designed to measure the extent and the changes of green vegetation in mountain areas to monitor progress towards SDG Target 15.4.
+SDG Indicator 15.4.2 – Mountain Green Cover Index (MGCI) is one of the two indicators under SDG Target 15.4, which aims to "*ensure the conservation of mountain ecosystems, including their biodiversity, to enhance their capacity to provide benefits which are essential for sustainable development*". The Food and Agriculture Organization (FAO) of the United Nations is the custodian agency of this indicator. The Mountain Green Cover Index (MGCI) is designed to measure the extent and the changes of green vegetation in mountain areas to monitor progress towards SDG Target 15.4.
 
 The MGCI is defined as the ratio of the mountain green cover area to the total mountain area:
 
@@ -75,13 +77,14 @@ SEPAL-MGCI :sub:`beta` allows the user to compute each of these description laye
 References
 ^^^^^^^^^^
 
-Kapos, V., Rhind, J., Edwards, M., Prince, M., & Ravillous, C. (2000). Developing a map of the world’s mountain forests. In M. F. Price , & N. Butt (Eds.), Forests in Sustainable Mountain Development: A State-of-Knowledge Report for 2000 (pp. 4-9). Wallingford: CAB International.  
-Penman, J., Gytarsky, M., Hiraishi, T., Krug, T., Kruger, D., Pipatti, R., Buendia, L., Miwa, K., Ngara, T., Tanabe, K. (2003). Good Practice Guidance for Land Use, Land-use Change and Forestry. Good Practice Guidance for Land Use, Land-use Change and Forestry. 
+- Kapos, V., Rhind, J., Edwards, M., Prince, M., & Ravillous, C. (2000). Developing a map of the world’s mountain forests. In M. F. Price , & N. Butt (Eds.), Forests in Sustainable Mountain Development: A State-of-Knowledge Report for 2000 (pp. 4-9). Wallingford: CAB International.  
+- Penman, J., Gytarsky, M., Hiraishi, T., Krug, T., Kruger, D., Pipatti, R., Buendia, L., Miwa, K., Ngara, T., Tanabe, K. (2003). Good Practice Guidance for Land Use, Land-use Change and Forestry. Good Practice Guidance for Land Use, Land-use Change and Forestry. 
 
 Before using SEPAL-MGCI :sub:`beta`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To run the MGCI SEPAL module you will need a web browser, an Internet connection, and a SEPAL and Google Earth Engine (GEE) account:
+
 - SEPAL: is the environment where the SEPAL-MGCI :sub:`beta` is deployed and therefore displayed. To create a SEPAL account, please follow the `registration steps <https://docs.sepal.io/en/latest/setup/register.html#sign-up-to-sepal>`_ and then familiarize yourself with the tool by exploring its interface.
 - Google Earth Engine (GEE): SEPAL-MGCI :sub:`beta` has been built under the GEE Python API, which means that all the computational steps are done through the GEE servers. To open a GEE account, please follow the `registration steps <https://docs.sepal.io/en/latest/setup/gee.html#create-a-gee-account>`_ and don't forget to `initialize the home folder <https://docs.sepal.io/en/latest/setup/gee.html#initialize-the-home-folder>`_.
 - Connect your SEPAL and GEE accounts: the last step is to connect both accounts, you can achieve this by following the `step-by-step <https://docs.sepal.io/en/latest/setup/gee.html#connection-between-gee-and-sepal>`_.
@@ -90,6 +93,7 @@ SEPAL interface
 ---------------
 
 If you are new to SEPAL, it is recommended to take a look over the interface and familiarize yourself with the main tools. A detailed description of the features can be consulted in the `interface documentation <https://docs.sepal.io/en/latest/setup/presentation.html#sepal-interface>`_. 
+
 -To open SEPAL-MGCI :sub:`beta` use the `apps tab <https://docs.sepal.io/en/latest/setup/presentation.html#apps-tab>`_ and navigate through the pages, or type into the search box "Mountain Green Cover Index". 
 - Click over the app drawer and wait patiently until the SEPAL-MGCI :sub:`beta` module is displayed in your session (it may take a few minutes). The module should look like the below image:
 
@@ -98,14 +102,15 @@ SEPAL-MGCI :sub:`beta` module
 
 SEPAL-MGCI :sub:`beta`, as any other SEPAL module is divided into two main sections:
 
-- Process drawers: where you can find the processing steps to accomplish the goal of the module. SEPAL-MGCI :sub:`beta` is composed by 4 steps:
+- **Process drawers**: where you can find the processing steps to accomplish the goal of the module. SEPAL-MGCI :sub:`beta` is composed by 4 steps:
 
   - Area of interest selection
   - Mountain descriptor
   - Vegetation descriptor
   - MGCI results
+  
 
-- Help drawers: used to describe the tool, objectives and give a background about how it was developed:
+- **Help drawers**: used to describe the tool, objectives and give a background about how it was developed:
 
   - Source code: the module was developed under a `MIT license <https://opensource.org/licenses/MIT>`_, which means that the development is freely accessible and the code is public. It will link you to the GitHub repository of the module.
   - Wiki: It will point to the latest documentation on SEPAL-MGCI :sub:`beta`. This is where you can start learning the workflow and features of the module.
@@ -124,15 +129,17 @@ The calculation of the MGCI will be restricted to a specific area of interest. I
    
 - Custom layers
    - Vector file: 
-   - GEE Asset name: `Upload an asset in GEE <https://docs.sepal.io/en/latest/setup/gee.html#upload-files-to-gee>`_
+   - GEE Asset name: see how to `upload an asset in GEE <https://docs.sepal.io/en/latest/setup/gee.html#upload-files-to-gee>`_
    
 As all the processing is done in GEE, all custom layers have to be previously stored as an `earth engine asset <https://developers.google.com/earth-engine/guides/asset_manager>`_ in your GEE account (it could be private) or in a third-party account as a public asset (see `how to upload an asset in GEE <https://docs.sepal.io/en/latest/setup/gee.html#upload-files-to-gee>`_). The dropdown menu will query all the assets in your GEE folder that matches the Image type. You can select it from the dropdown or write/paste it directly.
 
-.. warning:: The  Administrative Boundaries provided in SEPAL-MGCI are in the public domain. The designations employed and the presentation of material on this map do not imply the expression of any opinion whatsoever on the part of the Secretariat of the United Nations concerning the legal status of any country, territory, city or area or of its authorities, or concerning the delimitation of its frontiers or boundaries. If using SEPAL-MGCI for official purposes, it is recommended that users use an official boundary provided by the designated office of their country.After selecting the desired area, click over the :guilabel:`Select these inputs` button and the map will show up your selection.
+.. warning:: The  Administrative Boundaries provided in SEPAL-MGCI are in the public domain. The designations employed and the presentation of material on this map do not imply the expression of any opinion whatsoever on the part of the Secretariat of the United Nations concerning the legal status of any country, territory, city or area or of its authorities, or concerning the delimitation of its frontiers or boundaries. If using SEPAL-MGCI for official purposes, it is recommended that users use an official boundary provided by the designated office of their country.
+
+After selecting the desired area, click over the :guilabel:`Select these inputs` button and the map will show up your selection.
 
 .. note:: 
 
-    You can only select one area of interest. In some cases, depending on the input data, the process could take longer (see `calculation <calculation>`).
+    You can only select one area of interest. In some cases, depending on the input data, the process could take longer (see :ref:`calculation <calculation>`).
 
 .. image:: https://raw.githubusercontent.com/dfguerrerom/sepal_mgci/master/doc/img/1_aoi_selection.PNG
    :align: center
@@ -216,11 +223,8 @@ To allow SEPAL-MGCI :sub:`beta` to create an IPCC land cover class map using the
    
        "311", "1"
        "111", "5"
-       "232", "3"
-       "233", "3"
-       "333", "6"
-       "511", "4"
        "...","..."
+       "511", "4"
    
    To upload a classification table, please see the `how to exchange files in SEPAL <https://docs.sepal.io/en/latest/setup/filezilla.html#exchange-files-with-sepal>`_.
 
