@@ -147,7 +147,7 @@ After selecting the desired area, click over the :guilabel:`Select AOI` button a
    :align: center
    :width: 600
    :alt: AOI selection
-|
+
 Mountain descriptor layer 
 -------------------------
 
@@ -162,7 +162,7 @@ Here you have to indicate the DEM dataset you wish to use to develop the mountai
    :align: center
    :width: 300
    :alt: DEM questionnaire
-|
+
 Custom dataset
 ::::::::::::::
 
@@ -174,7 +174,7 @@ After clicking the button, the module will create the mountain descriptor layer,
    :align: center
    :width: 600
    :alt: Mountain layer example
-|
+
 Vegetation descriptor layer
 ---------------------------
 
@@ -189,7 +189,7 @@ Here you have to indicate the land cover map that you wish to use to compute the
    :align: center
    :width: 600
    :alt: Vegetation descriptor questionnaire
-|
+
 If you have selected 'No'
 :::::::::::::::::::::::::
 
@@ -199,7 +199,7 @@ SEPAL-MGCI :sub:`beta` will use the ESA-CCI Land Cover dataset and you just have
    :align: center
    :width: 600
    :alt: Default classification
-|
+
 If you have selected 'Yes'
 ::::::::::::::::::::::::::
 
@@ -209,7 +209,7 @@ Similarly to the mountain description layer, to be able to use your own land cov
    :align: center
    :width: 600
    :alt: Custom classification
-|
+
 To allow SEPAL-MGCI :sub:`beta` to create an IPCC land cover class map using the land cover map you have provided, you will need to specify how the land cover classes of your map have to be reclassified into the :ref:`six IPCC classes <ipcc_classes>`.  You can do this in two different ways:
 
 - Upload a table in a csv format (reclassification matrix) showing how the IPCC land cover equivalent of the classes of your land cover map. See its structure in :ref:`reclassification matrix <reclass_table>`. To provide the information in this way, click on :guilabel:`yes` below the question 'Do you have a reclassification matrix table in a csv format'?.
@@ -239,7 +239,7 @@ To allow SEPAL-MGCI :sub:`beta` to create an IPCC land cover class map using the
    :align: center
    :width: 600
    :alt: Reclassify table
-|
+
 .. tip:: After manually reclassifying your dataset, you can use the :guilabel:`save` button to store the table as a CSV file and you can use it later instead of manually filling up the table.
  
 Display results
@@ -251,7 +251,7 @@ Once you have reclassified the new values or used the default dataset, you can d
    :align: center
    :width: 600
    :alt: Vegetation layer example map
-|
+
 .. tip:: Remember that the MGCI is only calculated over the mountain classes, so the vegetation layer will mask out the areas where there is no presence of a mountain class.
 
 MGCI calculation
@@ -270,14 +270,14 @@ Depending on the size of your area of interest and whether you are using the rea
    :align: center
    :width: 600
    :alt: Dashboard calculation
-|
+
 To overcome this limitation, the process will be executed as a task —which are operations that are capable of running much longer than the standard timeout (see `gee tasks <https://developers.google.com/earth-engine/guides/playground#tasks-tab>`_)—. If the computation is created as a task, you will see a similar message as the shown in the below image, and to get the results, please see the :ref:`calculation from task <calculation_from_task>` section, otherwise, the result will be displayed on the dashboard (see :ref:`dashboard <display>`).
 
 .. image:: https://raw.githubusercontent.com/dfguerrerom/sepal_mgci/master/doc/img/4_computation_timeout.PNG
    :align: center
    :width: 600
    :alt: Computation timed out
-|
+
 .. _calculation_from_task:
 Calculation from task
 ^^^^^^^^^^^^^^^^^^^^^
@@ -316,5 +316,5 @@ After the calculation is done, the export button will become available. To gener
    :align: center
    :width: 600
    :alt: Export report
-|
+
 Once the process is done, the alert message will show you where the report files are stored, to download them, you can use any of the options available at `exchange files in SEPAL <https://docs.sepal.io/en/latest/setup/filezilla.html#exchange-files-with-sepal>`_.
