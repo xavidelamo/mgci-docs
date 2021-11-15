@@ -218,7 +218,7 @@ To allow SEPAL-MGCI :sub:`beta` to create an IPCC land cover class map using the
 
 - Upload a table in a csv format (reclassification matrix) showing how the IPCC land cover equivalent of the classes of your land cover map. See its structure in :ref:`reclassification matrix <reclass_table>`. To provide the information in this way, click on :guilabel:`yes` below the question 'Do you have a reclassification matrix table in a csv format'?.
 
-  After having the table in the SEPAL enviroment, click over the :guilabel:`Filename` and navigate trhough the folders and select your table.
+  After having the table in the SEPAL enviroment, click over the :guilabel:`Filename`, navigate trhough the folders, select your table and click over the :guilabel:`load` button.
   
 
   .. image:: https://raw.githubusercontent.com/dfguerrerom/sepal_mgci/master/doc/img/3_search_table_and_load.PNG
@@ -227,21 +227,21 @@ To allow SEPAL-MGCI :sub:`beta` to create an IPCC land cover class map using the
      :alt: Search and load table
 
 
-.. _reclass_table:
-.. tip:: What is a reclassification matrix table?:
-    A reclassification matrix is a comma-separated values (CSV) file used to reclassify old pixel values into new ones. The CSV file only has to contain two values per line, the first one refers to the `from` value, while the second is the `target` value, just as it is described in the following table:
+  .. _reclass_table:
+  .. tip:: What is a reclassification matrix table?:
+      A reclassification matrix is a comma-separated values (CSV) file used to reclassify old pixel values into new ones. The CSV file only has to contain two values per line, the first one refers to the `from` value, while the second is the `target` value, just as it is described in the following table:
     
-    .. csv-table:: Reclassification table example
-       :header: "Origin class", "Target class"
-       :widths: auto
-       :align: center
+      .. csv-table:: Reclassification table example
+         :header: "Origin class", "Target class"
+         :widths: auto
+         :align: center
    
-       "311", "1"
-       "111", "5"
-       "...","..."
-       "511", "4"
+         "311", "1"
+         "111", "5"
+         "...","..."
+         "511", "4"
    
-   To upload a classification table, please see the `how to exchange files in SEPAL <https://docs.sepal.io/en/latest/setup/filezilla.html#exchange-files-with-sepal>`_.
+     To upload a classification table, please see the `how to exchange files in SEPAL <https://docs.sepal.io/en/latest/setup/filezilla.html#exchange-files-with-sepal>`_.
 
 
 - Directly specify the reclassification rules by clicking on :guilabel:`get table` and manually indicate the IPCC land cover equivalent (in the destination class column) of each of the land cover classes of your custom dataset (in the original class column) in the interactive table.  To provide the reclassification matrix using this method click on “No” below the question “Do you have a reclassification matrix table in a csv format’’?
