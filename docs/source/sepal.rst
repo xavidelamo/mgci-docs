@@ -13,7 +13,7 @@ SEPAL-MGCI :sub:`beta` was developed by the Food and Agriculture Organization (F
 
 SEPAL-MGCI :sub:`beta` is built on SEPAL (System for Earth Observation Data Access, Processing, and Analysis for Land Monitoring), an open-source cloud-based platform which allow users to query and process satellite data quickly and efficiently, tailor products for local needs and produce sophisticated and relevant geospatial analyses quickly. 
 
-SEPAL-MGCI is in a beta stage and therefore it is still under development. Please contact the SEPAL-MGCI :sub:`beta` team with any comments or suggestions. If you have specific bugs to report or improvements to the tool that you would like to suggest, you can also submit them via email to the maintainer (Daniel.GuerreroMachado@fao.org) or in Github’s issue tracker for SEPAL-MGCI :sub:`beta`.
+SEPAL-MGCI is in a beta stage and therefore it is still under development. Please contact the SEPAL-MGCI :sub:`beta` team with any comments or suggestions. If you have specific bugs to report or improvements to the tool that you would like to suggest, please use the `GitHub’s issue tracker <https://github.com/dfguerrerom/sepal_mgci/issues>`_ of the SEPAL-MGCI :sub:`beta` module and do follow the `contribution guidelines <https://github.com/dfguerrerom/sepal_mgci/blob/master/CONTRIBUTE.md>`_.
 
 Authors 
 ^^^^^^^
