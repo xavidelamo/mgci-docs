@@ -34,16 +34,19 @@ Data sources
 
 SEPAL-MGCI draws on a number of global data sources to allow the computation of the SDG 15.4.2 indicator when national data is not available. The datasets described below have been made available by the following organizations under separate terms as indicated in their respective metadata.
 
-- Land cover: European Space Agency (ESA) Climate Change Initiative (CCI) Land cover 
+- Land cover: European Space Agency (ESA) Climate Change Initiative (CCI) Land cover.
 - Digital Elevation Model: The Shuttle Radar Topography Mission (SRTM), available at `Google Earth Engine <https://developers.google.com/earth-engine/datasets/catalog/CGIAR_SRTM90_V4>`_.
-Administrative Boundaries: FAO GAUL: Global Administrative Unit Layers 2015, available at `Google Earth Engine <https://developers.google.com/earth-engine/datasets/catalog/FAO_GAUL_2015_level1>`_.
+- Administrative Boundaries: FAO GAUL: Global Administrative Unit Layers 2015, available at `Google Earth Engine <https://developers.google.com/earth-engine/datasets/catalog/FAO_GAUL_2015_level1>`_.
 
 .. note:: The  Administrative Boundaries provided in SEPAL-MGCI are in the public domain. The designations employed and the presentation of material on this map do not imply the expression of any opinion whatsoever on the part of the Secretariat of the United Nations concerning the legal status of any country, territory, city or area or of its authorities, or concerning the delimitation of its frontiers or boundaries. If using SEPAL-MGCI for official purposes, it is recommended that users use an official boundary provided by the designated office of their country.
 
 Background
 ^^^^^^^^^^
 
-SDG Indicator 15.4.2 – Mountain Green Cover Index (MGCI) is one of the two indicators under SDG Target 15.4, which aims to "*ensure the conservation of mountain ecosystems, including their biodiversity, to enhance their capacity to provide benefits which are essential for sustainable development*". The Food and Agriculture Organization (FAO) of the United Nations is the custodian agency of this indicator. The Mountain Green Cover Index (MGCI) is designed to measure the extent and the changes of green vegetation in mountain areas to monitor progress towards SDG Target 15.4.
+SDG Indicator 15.4.2 – Mountain Green Cover Index (MGCI) is one of the two indicators under SDG Target 15.4, which aims to:
+
+    "*ensure the conservation of mountain ecosystems, including their biodiversity, to enhance their capacity to provide benefits which are essential for sustainable development*". 
+The Food and Agriculture Organization (FAO) of the United Nations is the custodian agency of this indicator. The Mountain Green Cover Index (MGCI) is designed to measure the extent and the changes of green vegetation in mountain areas to monitor progress towards SDG Target 15.4.
 
 The MGCI is defined as the ratio of the mountain green cover area to the total mountain area:
 
@@ -94,8 +97,7 @@ SEPAL interface
 
 If you are new to SEPAL, it is recommended to take a look over the interface and familiarize yourself with the main tools. A detailed description of the features can be consulted in the `interface documentation <https://docs.sepal.io/en/latest/setup/presentation.html#sepal-interface>`_. 
 
--To open SEPAL-MGCI :sub:`beta` use the `apps tab <https://docs.sepal.io/en/latest/setup/presentation.html#apps-tab>`_ and navigate through the pages, or type into the search box "Mountain Green Cover Index". 
-- Click over the app drawer and wait patiently until the SEPAL-MGCI :sub:`beta` module is displayed in your session (it may take a few minutes). The module should look like the below image:
+To open SEPAL-MGCI :sub:`beta` use the `apps tab <https://docs.sepal.io/en/latest/setup/presentation.html#apps-tab>`_ and navigate through the pages, or type into the search box "Mountain Green Cover Index", click over the app drawer and wait patiently until the SEPAL-MGCI :sub:`beta` module is displayed in your session (it may take a few minutes). The module should look like the below image:
 
 SEPAL-MGCI :sub:`beta` module
 -----------------------------
@@ -144,6 +146,7 @@ After selecting the desired area, click over the :guilabel:`Select these inputs`
 .. image:: https://raw.githubusercontent.com/dfguerrerom/sepal_mgci/master/doc/img/1_aoi_selection.PNG
    :align: center
    :width: 600
+   :alt: AOI selection
 
 
 Mountain descriptor layer 
@@ -159,6 +162,7 @@ Here you have to indicate the DEM dataset you wish to use to develop the mountai
 .. image:: https://raw.githubusercontent.com/dfguerrerom/sepal_mgci/master/doc/img/2_questionaire.PNG
    :align: center
    :width: 300
+   :alt: DEM questionnaire
 
 
 Custom dataset
@@ -171,6 +175,7 @@ After clicking the button, the module will create the mountain descriptor layer,
 .. image:: https://raw.githubusercontent.com/dfguerrerom/sepal_mgci/master/doc/img/2_mountain_descriptor.PNG
    :align: center
    :width: 600
+   :alt: Mountain layer example
 
 
 Vegetation descriptor layer
@@ -186,16 +191,18 @@ Here you have to indicate the land cover map that you wish to use to compute the
 .. image:: https://raw.githubusercontent.com/dfguerrerom/sepal_mgci/master/doc/img/3_questionnaire.PNG
    :align: center
    :width: 600
+   :alt: Vegetation descriptor questionnaire
 
 
 If you have selected 'No'
 :::::::::::::::::::::::::
 
-SEPAL-MGCI :sub:`beta` will use the ESA-CCI Land Cover dataset and you just have to select in the dropdown menu the year for which you want to compute the analysis (“select band/property”). Once you have selected the year, click on ‘display on map” to create an IPCC land cover class.
+SEPAL-MGCI :sub:`beta` will use the ESA-CCI Land Cover dataset and you just have to select in the dropdown menu the year for which you want to compute the analysis (“select band/property”). Once you have selected the year, click on :guilabel:`display on map` to create an IPCC land cover class.
 
 .. image:: https://raw.githubusercontent.com/dfguerrerom/sepal_mgci/master/doc/img/3_default.PNG
    :align: center
    :width: 600
+   :alt: Default classification
 
 If you have selected 'Yes'
 ::::::::::::::::::::::::::
@@ -205,6 +212,7 @@ Similarly to the mountain description layer, to be able to use your own land cov
 .. image:: https://raw.githubusercontent.com/dfguerrerom/sepal_mgci/master/doc/img/3_custom.PNG
    :align: center
    :width: 600
+   :alt: Custom classification
 
 To allow SEPAL-MGCI :sub:`beta` to create an IPCC land cover class map using the land cover map you have provided, you will need to specify how the land cover classes of your map have to be reclassified into the :ref:`six IPCC classes <ipcc_classes>`.  You can do this in two different ways:
 
@@ -234,6 +242,7 @@ To allow SEPAL-MGCI :sub:`beta` to create an IPCC land cover class map using the
 .. image:: https://raw.githubusercontent.com/dfguerrerom/sepal_mgci/master/doc/img/3_1_reclassify_table.PNG
    :align: center
    :width: 600
+   :alt: Reclassify table
 
 .. tip:: After manually reclassifying your dataset, you can use the :guilabel:`save` button to store the table as a CSV file and you can use it later instead of manually filling up the table.
  
@@ -245,6 +254,7 @@ Once you have reclassified the new values or used the default dataset, you can d
 .. image:: https://raw.githubusercontent.com/dfguerrerom/sepal_mgci/master/doc/img/3_3_vegetation_descriptor_2.PNG
    :align: center
    :width: 600
+   :alt: Vegetation layer example map
 
 .. tip:: Remember that the MGCI is only calculated over the mountain classes, so the vegetation layer will mask out the areas where there is no presence of a mountain class.
 
@@ -265,6 +275,7 @@ Depending on the size of your area of interest and whether you are using the rea
 .. image:: https://raw.githubusercontent.com/dfguerrerom/sepal_mgci/master/doc/img/4_dashboard_1_calculation.PNG
    :align: center
    :width: 600
+   :alt: Dashboard calculation
 
 
 To overcome this limitation, the process will be executed as a task —which are operations that are capable of running much longer than the standard timeout (see `gee tasks <https://developers.google.com/earth-engine/guides/playground#tasks-tab>`_)—. If the computation is created as a task, you will see a similar message as the shown in the below image, and to get the results, please see the :ref:`calculation from task <calculation_from_task>` section, otherwise, the result will be displayed on the dashboard (see :ref:`dashboard <display>`).
@@ -272,6 +283,7 @@ To overcome this limitation, the process will be executed as a task —which are
 .. image:: https://raw.githubusercontent.com/dfguerrerom/sepal_mgci/master/doc/img/4_computation_timeout.PNG
    :align: center
    :width: 600
+   :alt: Computation timed out
 
 
 .. _calculation_from_task:
@@ -285,6 +297,7 @@ If the computation can't be done on the fly, a new file containing the id of the
 .. image:: https://raw.githubusercontent.com/dfguerrerom/sepal_mgci/master/doc/img/4_dashboard_tasks.PNG
    :align: center
    :width: 600
+   :alt: Download from task
 
 
 .. _display:
@@ -311,5 +324,6 @@ After the calculation is done, the export button will become available. To gener
 .. image:: https://raw.githubusercontent.com/dfguerrerom/sepal_mgci/master/doc/img/4_dashboard_export.PNG
    :align: center
    :width: 600
+   :alt: Export report
 
 Once the process is done, the alert message will show you where the report files are stored, to download them, you can use any of the options available at `exchange files in SEPAL <https://docs.sepal.io/en/latest/setup/filezilla.html#exchange-files-with-sepal>`_.
