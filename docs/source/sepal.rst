@@ -317,7 +317,7 @@ No matter if you the computation is done on the fly or if you have used the task
 Export results
 ^^^^^^^^^^^^^^
 
-After the calculation is done, the export button will become available. To generate the report, you have to enter the name of the institution you belong to and click on :guilable:`export reporting tables` for the year of the land use/cover map. The report will consists in the following three files:
+After the calculation is done, the export button will become available. To generate the report, you have to enter the name of the institution you belong to and click on :guilabel:`export reporting tables` for the year of the land use/cover map. The report will consists in the following three files:
 
 - ER_MTN_GRNCOV: Mountain green cover area (skqm).
 - ER_MTN_GRNCVI: Mountain Green Cover Index.
