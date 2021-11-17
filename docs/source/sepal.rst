@@ -18,7 +18,7 @@ SEPAL-MGCI is in a beta stage and therefore it is still under development. Pleas
 Authors 
 ^^^^^^^
 
-SEPAL-MGCI :sub:`beta` has been developed by the Food and Agriculture Organization (FAO) of the United Nations, and has been funded by Norway's International Climate and Forest Iniciative (NICFI).
+SEPAL-MGCI :sub:`beta` has been developed by the Food and Agriculture Organization (FAO) of the United Nations. 
 
 Contributors to SEPAL-MGCI :sub:`beta` and its documentation include Daniel Guerrero, Pierrick Rambaud, Corinna Ravilious and Xavier de Lamo.
 
