@@ -221,13 +221,13 @@ the various layers for the MGCI analysis.
 |                                                                                                                                                                       |
 | In the custom MGCI toolbox this step is run by the tool                                                                                                               |
 |                                                                                                                                                                       |
-| |image172|                                                                                                                                                            |       |                                                                                                                                                                       |
-| The user selects the **country boundary** and sets **3** **output                                                                                                     |       
-| files** then clicks **Run** to tun the tool                                                                                                                           |
+| |image172|                                                                                                                                                            |
 |                                                                                                                                                                       |
-| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |  
+| The user selects the **country boundary** and sets **three output files** then clicks **Run** to tun the tool                                                         |
 |                                                                                                                                                                       |
-|  |image230|                                                                                                                                                           |
+| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
+|                                                                                                                                                                       |
+|  |image173|                                                                                                                                                           |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Preparation of Vegetation descriptor layer
@@ -1814,9 +1814,9 @@ Export to standard reporting table
 .. |image171| image:: media/image171.png
    :width: 6.26806in
    :height: 4.75764in
-.. |image172| image:: media/image172.png
+.. |image172| image:: media/i1_aoi_tool.png
    :width: 6.26806in
    :height: 4.75764in
-.. |image230| image:: media/image230.png
+.. |image173| image:: media/i1_aoi_workflow.png
    :width: 6.26806in
    :height: 4.75764in
