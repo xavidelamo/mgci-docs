@@ -21,12 +21,23 @@ resolution DEM from Copernicus. This section assumes that the user has
 already downloaded the DEM and a LULC dataset (see section 2 and the
 Annexes for further information).
 
-For this tutorial we are using Costa Rica as an example country for
-processing the MGCI, the Copernicus 90m DEM and Global ESA CCI LULC
-datasets.
+The tutorial outlines in detail the steps all the tools used for
+individual steps in the processing toolbox as well as providing a custom
+toolbox to group and run the steps to help speed up the analysis and
+allow for easier repeat processing.
+
+|image170|
+
+For each step or group of steps, the tutorial
+follow the structure of a detailed description of the exact steps that are running within the toolbox tool followed by the
+equivalent processing steps in the MGCI toolbox.
 
 Define projection and generate an AOI
 -------------------------------------
+The first step is to define an Area of Interest (AOI) for the analysis. This should go beyond the country
+bundary as outlined in the **Definning analysis environments** section of the tutorial.
+
+**The instructions below show and explain the manaul steps without the MGCI toolbox:**
 
 -  Add a country boundary layer to QGIS **Layer>>Add Layer>>Add Vector
    Layer**
@@ -200,6 +211,24 @@ buffered area.
 The output is a bounding box 10km larger than the bounding box for the
 country. This will be used as the Area of Interest (AOI) when preparing
 the various layers for the MGCI analysis.
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| .. rubric:: **MGCI Toolbox A. Generic: 1. Define projection and generate an AOI**:                                                                                    |
+|    :name: define_projection                                                                                                                                           |
+| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
+| Before running the tool users do need to create custom projection in their QGIS project                                                                               |
+| as indicated in Box 1 outlined in the section above.                                                                                                                  |
+|                                                                                                                                                                       |
+| In the custom MGCI toolbox this step is run by the tool                                                                                                               |
+|                                                                                                                                                                       |
+| |image172|                                                                                                                                                            |       |                                                                                                                                                                       |
+| The user selects the **country boundary** and sets **3** **output                                                                                                     |       
+| files** then clicks **Run** to tun the tool                                                                                                                           |
+|                                                                                                                                                                       |
+| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |  
+|                                                                                                                                                                       |
+|  |image230|                                                                                                                                                           |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Preparation of Vegetation descriptor layer
 ------------------------------------------
@@ -1779,3 +1808,15 @@ Export to standard reporting table
 .. |image169| image:: media/image166.png
    :width: 6.26806in
    :height: 1.02222in
+.. |image170| image:: media/image170.png
+   :width: 6.26806in
+   :height: 4.75764in
+.. |image171| image:: media/image171.png
+   :width: 6.26806in
+   :height: 4.75764in
+.. |image172| image:: media/image172.png
+   :width: 6.26806in
+   :height: 4.75764in
+.. |image230| image:: media/image230.png
+   :width: 6.26806in
+   :height: 4.75764in
