@@ -227,7 +227,7 @@ the various layers for the MGCI analysis.
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
 |                                                                                                                                                                       |
-|  |image173|                                                                                                                                                           |
+| |image173|                                                                                                                                                            |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Preparation of Vegetation descriptor layer
