@@ -219,7 +219,7 @@ the various layers for the MGCI analysis.
 | Before running the tool users do need to create custom projection in their QGIS project                                                                               |
 | as indicated in Box 1 outlined in the section above.                                                                                                                  |
 |                                                                                                                                                                       |
-| In the custom MGCI toolbox this step is run by the tool                                                                                                               |
+| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
 |                                                                                                                                                                       |
 | |image172|                                                                                                                                                            |
 |                                                                                                                                                                       |
@@ -353,6 +353,25 @@ added should be added to the map canvas\ **.**
 
 You should now see the unique LULC classes present within the AOI for
 the country.
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| .. rubric:: **MGCI Toolbox A. VegetationDescriptor: 2 (a) Clip and project LULC raster (FOR REGIONAL/GLOBAL DATASETS)**:                                              |
+|    :name: veg_desc_clip_raster_a                                                                                                                                      |
+| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
+| Before running the tool users need to check that they know the projection of their LUUC dataset and it is faling in the correct place geographically.                 |
+| as outlined in the section above.                                                                                                                                     |
+|                                                                                                                                                                       |
+| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
+|                                                                                                                                                                       |
+| |image174|                                                                                                                                                            |
+|                                                                                                                                                                       |
+| The user selects the **country boundary** and sets **three output files** then clicks **Run** to tun the tool                                                         |
+|                                                                                                                                                                       |
+| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
+|                                                                                                                                                                       |
+| |image175|                                                                                                                                                            |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 
 (b) Project LULC raster (FOR NATIONALDATASETS ONLY):
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
