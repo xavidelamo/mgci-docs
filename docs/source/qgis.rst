@@ -26,7 +26,7 @@ individual steps in the processing toolbox as well as providing a custom
 toolbox to group and run the steps to help speed up the analysis and
 allow for easier repeat processing.
 
-|image170|
+|imagetoolbox|
 
 For each step or group of steps, the tutorial
 follow the structure of a detailed description of the exact steps that are running within the toolbox tool followed by the
@@ -2088,7 +2088,7 @@ Export to standard reporting table
 .. |image169| image:: media_QGIS/image166.png
    :width: 6.26806in
    :height: 1.02222in
-.. |image170| image:: media_QGIS/image170.png
+.. |imagetoolbox| image:: media_QGIS/imagetoolbox.png
    :width: 6.26806in
    :height: 4.75764in
 .. |image171| image:: media_QGIS/image171.png
