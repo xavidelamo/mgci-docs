@@ -596,8 +596,6 @@ can see that the actual layer only has 6 values.
 | .. rubric:: **MGCI Toolbox A2c. VegetationDescriptor: Generate Vegetation Descriptor Layer**:                                                                         |
 |    :name: toolbox_A3                                                                                                                                                  |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
-| Before running the tool users need to check that they know the projection of their LUUC dataset and it is faling in the correct place geographically.                 |
-| as outlined in the section above.                                                                                                                                     |
 |                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
 |                                                                                                                                                                       |
@@ -668,7 +666,7 @@ The merged DEM is added to the QGIS project.
 | .. rubric:: **MGCI Toolbox B1. MountainDescriptor: Merging DEM tiles into a single DEM**:                                                                             |
 |    :name: toolbox_B1                                                                                                                                                  |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
-| Before running the tool users need to check that they know the projection of their LUUC dataset and it is faling in the correct place geographically.                 |
+| Before running the tool users need to check that they know the projection of their DEM dataset and it is faling in the correct place geographically.                 |
 | as outlined in the section above.                                                                                                                                     |
 |                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
@@ -732,8 +730,6 @@ should be added to the map canvas\ **.**
 | .. rubric:: **MGCI Toolbox B2. MountainDescriptor: Clip and project merged DEM to EQUAL AREA PROJECTION**:                                                            |
 |    :name: toolbox_B2                                                                                                                                                  |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
-| Before running the tool users need to check that they know the projection of their LUUC dataset and it is faling in the correct place geographically.                 |
-| as outlined in the section above.                                                                                                                                     |
 |                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
 |                                                                                                                                                                       |
@@ -829,13 +825,12 @@ projection before following the next steps.
   
    |image79|
  
- The reprojected layer is added to the QGIS project. Slope can now be generated from this layer             
+ The reprojected layer is added to the QGIS project. 
+ 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **MGCI Toolbox B3. MountainDescriptor: Project merged DEM to Equidistant projection**:                                                                    |
 |    :name: toolbox_B2                                                                                                                                                  |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
-| Before running the tool users need to check that they know the projection of their LUUC dataset and it is faling in the correct place geographically.                 |
-| as outlined in the section above.                                                                                                                                     |
 |                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
 |                                                                                                                                                                       |
@@ -846,8 +841,7 @@ projection before following the next steps.
 | |imageB3|                                                                                                                                                             |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
-
+Slope can now be generated from this layer
 
 -  In the processing toolbox search for **Slope**
 
@@ -876,8 +870,6 @@ projection before following the next steps.
 -  Click **Run** to run the tool
 
 |image82|
-
-
 
 The slope raster can now be projected to the main analysis equal area
 projection and be clipped to the AOI.
@@ -920,7 +912,19 @@ projection and be clipped to the AOI.
 
 The new **clipped** **SLOPE dataset in the equal area projection** is now added should be added to the map canvas\ **.**
 
-
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| .. rubric:: **MGCI Toolbox B4. MountainDescriptor: Generating slope from DEM in Equidistant projection and re-projecting to equal area**:                             |
+|    :name: toolbox_B2                                                                                                                                                  |
+| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
+|                                                                                                                                                                       |
+| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
+|                                                                                                                                                                       |
+| |imageB3|                                                                                                                                                             |
+|                                                                                                                                                                       |
+| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
+|                                                                                                                                                                       |
+| |imageB3|                                                                                                                                                             |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Generating local elevation range from DEM
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -931,7 +935,7 @@ relief, even though elevations may not be especially high, and
 conversely high-elevation areas with little local relief. This local
 elevation range is generated by defining a 7km radius of interest around
 each grid cell and calculating the difference between the maximum and
-minimum values within a neighborhood. In QGIS the focal functions only
+minimum values within a neighborhood. In QGIS the focal functions gives the option for calculating the range but only
 allow for the specification of the neighborhood size in pixels (i.e.
 number of cells) so therefore, when running the next steps the size of
 the neighborhhod will be influenced by the cellsize of the DEM.
@@ -959,7 +963,7 @@ whole number.
 -  Select the **Input Raster Layer to** the Projected DEM clipped to the
    AOI
 
--  Set the **neighborhood operation** to **Maximum**
+-  Set the **neighborhood operation** to **Range**
 
 -  Set the **neighborhood size to** 55 (determined by:
    7000/90\*(5000/7000))
@@ -975,52 +979,28 @@ whole number.
 
 -  Click **Run** to run the tool
 
-   |image94|
-
-   Repeat the step for the focal minimum using the same parameters but
-   this time
-
--  Set the **neighborhood operation** to **Maximum**
-
--  Set the output **Neighbors layer** e.g. to
-   FOCMIN\_copernicus\_merge\_AOI\_LAEA
-
-   |image95|
-
-The two new focal maximum and focal minimum layers in the equal area
-projection should have been added to the map canvas\ **.**
-
-|image96| |image97|\ |image98|
-
-The **local elevation** **range** can now be calculated using a simple
-expression in the **raster calculator**
-
--  In the processing toolbox search for **Raster Calculator**
-
--  Double click on the **Raster Calculator** under the **Raster
-   analysis** toolset
-
--  In the expression window type the following expression
-
-   "FOCMAX\_copernicus\_merge\_AOI\_LAEA\_@1" -
-   "FOCMIN\_copernicus\_merge\_AOI\_LAEA\_@1"
-
--  Set the **reference layer** to either of the focal grids or the
-   projected DEM clipped to the AOI e.g.
-   DEM\_copernicus\_merge\_AOI\_LAEA raster.
-
--  Set the **Output** to e.g. LocalElevationRange7km\_AOI\_LAEA\_.tif
-
--  Click **Run** to run the tool
-
-   |image99|
-
-The local elevation range in the equal area projection should have been
+ |image99|
+ 
+ |image100| 
+ 
+TThe local elevation range in the equal area projection should have been
 added to the map canvas\ **.**
 
-|image100|
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| .. rubric:: **MGCI Toolbox B5. MountainDescriptor: Generate local elevation range from DEM**:                                                                         |
+|    :name: toolbox_B5                                                                                                                                                  |
+| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
+|                                                                                                                                                                       |
+| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
+|                                                                                                                                                                       |
+| |imageB4|                                                                                                                                                             |
+|                                                                                                                                                                       |
+| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
+|                                                                                                                                                                       |
+| |imageB4|                                                                                                                                                             |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-\ **5.3.6 Generating layers for each Kapos mountain class**
+**Generating layers for each Kapos mountain class**
 
 We now have all the inputs required for generating the mountain classes
 for the mountain descriptor layer. We will use the raster calculator to
@@ -1074,6 +1054,20 @@ AND"LocalElevationRange7km\_AOI\_LAEA@1" >= 300
 
 |image106|
 
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| .. rubric:: **MGCI Toolbox B6. MountainDescriptor: Generating layers for each Kapos mountain class**:                                                                 |
+|    :name: toolbox_B6                                                                                                                                                  |
+| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
+|                                                                                                                                                                       |
+| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
+|                                                                                                                                                                       |
+| |imageB4|                                                                                                                                                             |
+|                                                                                                                                                                       |
+| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
+|                                                                                                                                                                       |
+| |imageB4|                                                                                                                                                             |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Generate an interim mountain layer with classes 1-6
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1103,7 +1097,22 @@ At the bottom of the layer properties dialogue window click the
 
 |image110|
 
-Filling isolated pixels within mountain areas and merging into classes 1-6
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| .. rubric:: **MGCI Toolbox B7. MountainDescriptor: Generate Mountain Descriptor layer (EXCLUDING isolated pixels from class 7)**:                                     |
+|    :name: toolbox_B7                                                                                                                                                  |
+| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
+|                                                                                                                                                                       |
+| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
+|                                                                                                                                                                       |
+| |imageB7|                                                                                                                                                             |
+|                                                                                                                                                                       |
+| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
+|                                                                                                                                                                       |
+| |imageB7|                                                                                                                                                             |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
+Filling isolated pixels within mountain areas and merging into classes 1-6 (****NOTE: This step is still in development****)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The last part of the mountain descriptor layer generation is to identify
@@ -1384,6 +1393,21 @@ your R integration is working in Section 2.1.
 -  Click Run to run the tool
 
    |image137|
+   
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| .. rubric:: **MGCI Toolbox C1. Generate Real Surface Area raster from DEM**:                                                                                          |
+|    :name: toolbox_C1                                                                                                                                                  |
+| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
+|                                                                                                                                                                       |
+| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
+|                                                                                                                                                                       |
+| |imageC1|                                                                                                                                                             |
+|                                                                                                                                                                       |
+| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
+|                                                                                                                                                                       |
+| |imageC1|                                                                                                                                                             |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 
 Aligning mountain and vegetation descriptor layers 
 --------------------------------------------------
@@ -1400,21 +1424,159 @@ layer at 300m resolution.
 We can use the Align tool in QGIS to aggregate and align the 2 higher
 resolution rasters to the 300m Vegetation Descriptor layer
 
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| .. rubric:: **MGCI Toolbox D1. Generic: Aggregate rasters to resolution of Vegetation Descriptor**:                                                                   |
+|    :name: toolbox_D1                                                                                                                                                  |
+| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
+|                                                                                                                                                                       |
+| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
+|                                                                                                                                                                       |
+| |imageD1|                                                                                                                                                             |
+|                                                                                                                                                                       |
+| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
+|                                                                                                                                                                       |
+| |imageD1|                                                                                                                                                             |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Aggregation to standard resolution and clipping to country
+----------------------------------------------------------
+Combine mountain and vegetation descriptor layers
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| .. rubric:: **MGCI Toolbox D2. Generic: Combine mountain and vegetation rasters**:                                                                                    |
+|    :name: toolbox_D2                                                                                                                                                  |
+| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
+|                                                                                                                                                                       |
+| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
+|                                                                                                                                                                       |
+| |imageD2|                                                                                                                                                             |
+|                                                                                                                                                                       |
+| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
+|                                                                                                                                                                       |
+| |imageD2|                                                                                                                                                             |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Clip layers to country boundary
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| .. rubric:: **MGCI Toolbox D3. Generic:  Clip to country boundary**:                                                                                                  |
+|    :name: toolbox_D3                                                                                                                                                  |
+| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
+|                                                                                                                                                                       |
+| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
+|                                                                                                                                                                       |
+| |imageD3|                                                                                                                                                             |
+|                                                                                                                                                                       |
+| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
+|                                                                                                                                                                       |
+| |imageD3|                                                                                                                                                             |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 Computation of Mountain Green Cover Index
 -----------------------------------------
+Generate Real Surface Area and Planimetric Area Statistics
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We can use the r.stats tool to generate a csv file containing both
-planimetric area, real surface area and disaggregations of mountain and
-LULC classes. This summary table can then be used to calculate and
-summarise the data at the various levels of aggregation and
-disaggregation
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| .. rubric:: **E1. MGCI:  Generate RSA and Planimetric Area Statistics**:                                                                                              |
+|    :name: toolbox_D3                                                                                                                                                  |
+| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
+|                                                                                                                                                                       |
+| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
+|                                                                                                                                                                       |
+| |imageE1|                                                                                                                                                             |
+|                                                                                                                                                                       |
+| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
+|                                                                                                                                                                       |
+| |imageE1|                                                                                                                                                             |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-|image138|
 
-|image139|
+Create summary statistics by LULC class
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| .. rubric:: **E2. MGCI: Summarise Mountain Area by LULC Class**:                                                                                                      |
+|    :name: toolbox_E2                                                                                                                                                  |
+| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
+|                                                                                                                                                                       |
+| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
+|                                                                                                                                                                       |
+| |imageE2|                                                                                                                                                             |
+|                                                                                                                                                                       |
+| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
+|                                                                                                                                                                       |
+| |imageE2|                                                                                                                                                             |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Create summary statistics by green cover and Mountain class
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| .. rubric:: **E3. MGCI:  Calculate GC and MGCI by Kapos class**:                                                                                                      |
+|    :name: toolbox_E1                                                                                                                                                  |
+| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
+|                                                                                                                                                                       |
+| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
+|                                                                                                                                                                       |
+| |imageE3|                                                                                                                                                             |
+|                                                                                                                                                                       |
+| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
+|                                                                                                                                                                       |
+| |imageE3|                                                                                                                                                             |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Create summary statistics by green cover and Mountain class
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Export to standard reporting table
 ----------------------------------
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| .. rubric:: **F1: Formatting ReportingTable: ER_MTN_TOTL_276**:                                                                                                       |
+|    :name: toolbox_F1                                                                                                                                                  |
+| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
+|                                                                                                                                                                       |
+| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
+|                                                                                                                                                                       |
+| |imageF1|                                                                                                                                                             |
+|                                                                                                                                                                       |
+| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
+|                                                                                                                                                                       |
+| |imageF1|                                                                                                                                                             |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| .. rubric:: **F2: Formatting ReportingTable: ER_MNT_GRNCOV**:                                                                                                         |
+|    :name: toolbox_F1                                                                                                                                                  |
+| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
+|                                                                                                                                                                       |
+| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
+|                                                                                                                                                                       |
+| |imageF2|                                                                                                                                                             |
+|                                                                                                                                                                       |
+| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
+|                                                                                                                                                                       |
+| |imageF2|                                                                                                                                                             |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| .. rubric:: **F3: Formatting Reporting Table: ER_MTN_GRNCVI_276**:                                                                                                    |
+|    :name: toolbox_F3                                                                                                                                                  |
+| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
+|                                                                                                                                                                       |
+| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
+|                                                                                                                                                                       |
+| |imageF3|                                                                                                                                                             |
+|                                                                                                                                                                       |
+| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
+|                                                                                                                                                                       |
+| |imageF3|                                                                                                                                                             |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
+
 
 .. |image0| image:: media_QGIS/image2.png
    :width: 6.26806in
