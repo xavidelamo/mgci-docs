@@ -26,7 +26,7 @@ individual steps in the processing toolbox as well as providing a custom
 toolbox to group and run the steps to help speed up the analysis and
 allow for easier repeat processing.
 
-|image170|
+|imagetoolbox|
 
 For each step or group of steps, the tutorial
 follow the structure of a detailed description of the exact steps that are running within the toolbox tool followed by the
@@ -1490,7 +1490,7 @@ Generate Real Surface Area and Planimetric Area Statistics
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
 |                                                                                                                                                                       |
-| |imageE1_w|                                                                                                                                                             |
+| |imageE1_w|                                                                                                                                                           |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -1544,7 +1544,7 @@ Export to standard reporting table
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
 |                                                                                                                                                                       |
-| |imageF1_w|                                                                                                                                                             |
+| |imageF1_w|                                                                                                                                                           |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1558,7 +1558,7 @@ Export to standard reporting table
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
 |                                                                                                                                                                       |
-| |imageF2_w|                                                                                                                                                             |
+| |imageF2_w|                                                                                                                                                           |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1572,7 +1572,7 @@ Export to standard reporting table
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
 |                                                                                                                                                                       |
-| |imageF3_w|                                                                                                                                                             |
+| |imageF3_w|                                                                                                                                                           |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -2088,7 +2088,7 @@ Export to standard reporting table
 .. |image169| image:: media_QGIS/image166.png
    :width: 6.26806in
    :height: 1.02222in
-.. |image170| image:: media_QGIS/image170.png
+.. |imagetoolbox| image:: media_QGIS/Toolbox_images/toolbox.PNG
    :width: 6.26806in
    :height: 4.75764in
 .. |image171| image:: media_QGIS/image171.png
@@ -2214,39 +2214,39 @@ Export to standard reporting table
 .. |imageD3_w| image:: media_QGIS/Toolbox_images/D3_w.png
    :width: 6.26806in
    :height: 4.75764in 
-.. |imageE1| image:: media_QGIS/Toolbox_images/E1.png
+.. |imageE1| image:: media_QGIS/Toolbox_images/E1.PNG
    :width: 6.26806in
    :height: 4.75764in   
-.. |imageE1_w| image:: media_QGIS/Toolbox_images/E1_w.png
+.. |imageE1_w| image:: media_QGIS/Toolbox_images/E1_w.PNG
    :width: 6.26806in
    :height: 4.75764in 
-.. |imageE2| image:: media_QGIS/Toolbox_images/E2.png
+.. |imageE2| image:: media_QGIS/Toolbox_images/E2.PNG
    :width: 6.26806in
    :height: 4.75764in   
-.. |imageE2_w| image:: media_QGIS/Toolbox_images/E2_w.png
+.. |imageE2_w| image:: media_QGIS/Toolbox_images/E2_w.PNG
    :width: 6.26806in
    :height: 4.75764in 
-.. |imageE3| image:: media_QGIS/Toolbox_images/E3.png
+.. |imageE3| image:: media_QGIS/Toolbox_images/E3.PNG
    :width: 6.26806in
    :height: 4.75764in   
-.. |imageE3_w| image:: media_QGIS/Toolbox_images/E3_w.png
+.. |imageE3_w| image:: media_QGIS/Toolbox_images/E3_w.PNG
    :width: 6.26806in
    :height: 4.75764in 
-.. |imageF1| image:: media_QGIS/Toolbox_images/F1.png
+.. |imageF1| image:: media_QGIS/Toolbox_images/F1.PNG
    :width: 6.26806in
    :height: 4.75764in   
-.. |imageF1_w| image:: media_QGIS/Toolbox_images/F1_w.png
+.. |imageF1_w| image:: media_QGIS/Toolbox_images/F1_w.PNG
    :width: 6.26806in
    :height: 4.75764in 
-.. |imageF2| image:: media_QGIS/Toolbox_images/F2.png
+.. |imageF2| image:: media_QGIS/Toolbox_images/F2.PNG
    :width: 6.26806in
    :height: 4.75764in   
-.. |imageF2_w| image:: media_QGIS/Toolbox_images/F2_w.png
+.. |imageF2_w| image:: media_QGIS/Toolbox_images/F2_w.PNG
    :width: 6.26806in
    :height: 4.75764in 
-.. |imageF3| image:: media_QGIS/Toolbox_images/F3.png
+.. |imageF3| image:: media_QGIS/Toolbox_images/F3.PNG
    :width: 6.26806in
    :height: 4.75764in   
-.. |imageF3_w| image:: media_QGIS/Toolbox_images/F3_w.png
+.. |imageF3_w| image:: media_QGIS/Toolbox_images/F3_w.PNG
    :width: 6.26806in
    :height: 4.75764in 
