@@ -1,3 +1,20 @@
+MGCI QGIS workflow
+==================
+
+.. contents:: **Table of Contents**
+
+
+Definition 
+----------
+Put link to overview document
+    
+Initial set-up
+--------------
+put link to initial set up document
+
+Introduction
+------------
+
 This section of the tutorial explains in detail how to carry out this
 analysis in R, using Costa Rica as a case study using a 90m resolution
 DEM from Copernicus and Global ESA CCI LULC datasets.
@@ -23,7 +40,7 @@ required packages, and set your working folder.
 
 |image0|
 
-**4.1 Define projection and generate an AOI **
+**Define projection and generate an AOI**
 
 Add a country or area of interest boundary layer. Input a polygon
 shapefile representing the boundary of your area of interest.
@@ -55,12 +72,12 @@ generation.   
 
 |image3|
 
-**4.2** **Preparation of Vegetation descriptor layer **
+**Preparation of Vegetation descriptor layer **
 
 The development of vegetation descriptor layer starts with either a
 raster or vector landuse landcover (LULC) dataset.
 
-**4.2.1** **Steps when using a raster dataset  **
+**Steps when using a raster dataset  **
 
 To demonstrate the steps for processing a raster LULC dataset we will
 use the Global ESA CCI LULC dataset. Input the LULC layer. If the
@@ -89,7 +106,7 @@ the area of interest (skip this step for national datasets)
 
 |image8|
 
-**4.2.2** **Steps when using a vector LULC dataset **
+**Steps when using a vector LULC dataset **
 
 First, input the LULC dataset in vector format. When using a vector LULC
 dataset the data will also need to be projected to an equal area
@@ -110,7 +127,7 @@ template raster.
 
 |image10|
 
-**4.2.4** **Reclassify to IPCC landcover types **
+**Reclassify to IPCC landcover types**
 
 The next step is to reclassify the LULC map prepared in the previous
 steps into the 6 MGCI vegetation descriptor LULC types. 
@@ -120,7 +137,7 @@ to the 6 IPCC landcover classes (SEE SECTION 5.2.4 FOR MORE DETAILS)
 
 |image11|
 
-**4.3** **Preparation of Mountain descriptor  **
+**Preparation of Mountain descriptor**
 
 Users should have read section 2.3.4 Choice of DEM and selected a DEM
 for use in the analysis before starting this section as the generation
@@ -133,7 +150,7 @@ Input the DEM raster.
 
 |image12|
 
-**4.3.1** **Merging DEM tiles into a single DEM  **
+**Merging DEM tiles into a single DEM**
 
 If you have multiple DEM raster tiles, follow the steps below to merge
 them. In this example, the DEM tiles covering the full extent of Costa
@@ -143,7 +160,7 @@ be found in the Annexs). 
 
 |image13|
 
-**4.3.2. Clip and project merged DEM**
+**Clip and project merged DEM**
 
 The DEM tiles are likely to cover a much wider area than the country
 being analysed therefore it is important to crop the extent to minimise
@@ -173,7 +190,7 @@ OR (ADD TEXT)
 
 |image16|
 
-**4.3.5** **Generating local elevation range from DEM **
+** **Generating local elevation range from DEM**
 
 For Kapos classes 5 and 6 a 7km local elevation range is required for
 the identification of areas that occur in regions with significant
@@ -185,7 +202,7 @@ minimum values within a neighborhood. 
 
 |image17|
 
-**5.3.6** **Generating layers for each Kapos mountain class** 
+**Generating layers for each Kapos mountain class** 
 
 We now have all the inputs required for generating the mountain classes
 for the mountain descriptor layer. We will reclassify the DEM raster
@@ -207,14 +224,14 @@ class 6: >=300 & <1000 & local elevation range >=300
 
 |image18|
 
-**4.3.7** **Generate an interim mountain layer with classes 1-6 **
+**Generate an interim mountain layer with classes 1-6**
 
 The next step is to create a mosaic of all the classes into a single
 raster where class 1 has a value of 1, class2 a value of 2, etc. 
 
 |image19|
 
-**4.4** **Generation of Real Surface Area raster **
+**Generation of Real Surface Area raster**
 
 The final layer that needs generating is the Real Surface Area raster
 from the DEM. The following code generates the real surface area raster
@@ -235,8 +252,7 @@ This step uses the function ‘as.matrix’ to convert the DEM raster into a
 matrix with the same number of columns and rows of your DEM raster.
 There are instructions within the R script to check if that is true.
 
-**Step 3: Get coordinate information from DEM raster and assigns it to
-new object called m1.**
+**Step 3: Get coordinate information from DEM raster and assigns it to new object called m1**
 
 This step uses the function ‘rasterToPoints’ to create a numeric object
 of type double from the cropped raster. The resulting object has 3
@@ -247,8 +263,7 @@ It uses function ‘as.vector’ assigned to each of one of the two
 coordinates columns to create numeric lists with the coordinates of the
 cells.
 
-**Step 4: Calculate the real surface area of each grid cell within the
-DEM**
+**Step 4: Calculate the real surface area of each grid cell within the DEM**
 
 This step uses the ‘surfaceArea’ function from package ‘sp’. Information
 about this function can be found on page 105 of the package ‘sp’
@@ -265,8 +280,7 @@ cells within the DEM.
 It crops the resulting matrix ‘rsa’ to create a matrix with just the
 columns and rows of the area of interest.
 
-**Step 5: Combine matrix with real surface area values and object with
-coordinate information**
+**Step 5: Combine matrix with real surface area values and object with coordinate information**
 
 This step uses the function ‘as.vector’ assigned to the transposed
 matrix ‘rsa’.
@@ -286,16 +300,14 @@ raster.
 It adopts the projection of the original DEM raster ‘r’ on the newly
 created raster ‘r2’ (that has the real surface area of each pixel).
 
-**Step 7: Sum the real surface area of all pixels within the study
-area**
+**Step 7: Sum the real surface area of all pixels within the study area**
 
 This last step uses the cellStats function to sum values of all cells
 within the created raster ‘r2’.
 
-**4.5 Mountain Green Cover Index Calculation**
+**Mountain Green Cover Index Calculation**
 
-***4.5.1** **Aggregating mountain and RSA layers to resolution of
-vegetation descriptor ***\ **  **
+**Aggregating mountain and RSA layers to resolution of vegetation descriptor**
 
 Now that we have 3 raster datasets in their native resolutions we need
 to bring the datasets together and ensure that correct aggregation is
@@ -316,8 +328,7 @@ the coarser resolution one.
 
 |image22|
 
-***4.5.2** **Combining vegetation and mountain classes into single
-layer***\ ** **
+**Combining vegetation and mountain classes into single layer**
 
 As the MGCI required disaggregation by both the 6 LULC class and the 6
 Mountain Class, we will combine the two datasets together to form a
@@ -330,7 +341,7 @@ Mountain descriptor layer.
 
 |image23|
 
-***4.5.3** **Clip layers to country boundary***\ ** **
+**Clip layers to country boundary**
 
 At this stage we can now clip the final aggregated datasets to the
 country boundary (remember that up to this point we have used a bounding
@@ -338,7 +349,7 @@ box of the country boundary buffered out by 10km).
 
 |image24|
 
-***4.5.4** **Generate Zonal statistics ***\ ** **
+**Generate Zonal statistics**
 
 The data are now in a consistent format and clipped to the country
 boundary, so we can now generate the statistics required for the MGCI
