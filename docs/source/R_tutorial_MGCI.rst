@@ -88,7 +88,7 @@ First, input the LULC dataset in vector format. When using a vector LULC dataset
 
 |image9|
 
-The next step is to rasterize the LULC data. When converting it is important to choose an output resolution that is appropriate for the scale of the vector dataset. (SEE SECTION 5.2.3? FOR MORE DETAILS). Once the resolution to convert the vector dataset to has been determined the vector dataset can be converted to Raster. First, create a template raster with the required resolution (needs to be determined), extent and projection (same as input layer) and then convert the vector to raster format with resolution, extent and projection same as that of the template raster.
+The next step is to rasterize the LULC data. When converting it is important to choose an output resolution that is appropriate for the scale of the vector dataset (**see section Defining analysis environments and data selection** for more detail). Once the resolution to convert the vector dataset to has been determined the vector dataset can be converted to Raster. First, create a template raster with the required resolution (needs to be determined), extent and projection (same as input layer) and then convert the vector to raster format with resolution, extent and projection same as that of the template raster.
 
 |image10|
 
@@ -97,14 +97,14 @@ Reclassify to IPCC landcover types
 
 The next step is to reclassify the LULC map prepared in the previous steps into the 6 MGCI vegetation descriptor LULC types. 
 
-Reclassify the LULC types from the ESA CII or National landcover dataset to the 6 IPCC landcover classes (SEE SECTION 5.2.4 FOR MORE DETAILS)
+Reclassify the LULC types from the ESA CII or National landcover dataset to the 6 IPCC landcover classes (**see section Defining analysis environments and data selection** for more detail)
 
 |image11|
 
 Preparation of Mountain descriptor
 ----------------------------------
 
-Users should have read section 2.3.4 Choice of DEM and selected a DEM for use in the analysis before starting this section as the generation of the mountain descriptor layer requires a DEM as the input source.  
+Users should have read section **Defining analysis environments and data selection** on choice of DEM and selected a DEM for use in the analysis before starting this section as the generation of the mountain descriptor layer requires a DEM as the input source.  
 
 In this tutorial the Copernicus 90m source DEM has been chosen as an example. 
 
@@ -115,7 +115,7 @@ Input the DEM raster.
 Merging DEM tiles into a single DEM
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you have multiple DEM raster tiles, follow the steps below to merge them. In this example, the DEM tiles covering the full extent of Costa Rica have been download from Copernicus using their AWS client. (Instructions for download of Copernicus data can be found in the Annexs). 
+If you have multiple DEM raster tiles, follow the steps below to merge them. In this example, the DEM tiles covering the full extent of Costa Rica have been download from Copernicus using their AWS client. (Instructions for download of Copernicus data can be found in the **Annexs**). 
 
 |image13|
 
@@ -130,7 +130,7 @@ Clip the DEM to area of interest after projecting to equal area projection
 Generating slope layer from DEM layer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-IF your country falls within a single UTM Zone only AND you have used the UTM projection for the previous steps, or if the projection you are using has equidistant properties, slope can be generated in the same projection as the rest of the analysis, otherwise please follow instruction in BOX 3 (SEE SECTION 5.3.4) for creating a custom equidistant projection before following the next steps.
+IF your country falls within a single UTM Zone only AND you have used the UTM projection for the previous steps, or if the projection you are using has equidistant properties, slope can be generated in the same projection as the rest of the analysis, otherwise please generate a custom equidistant azimuthal projection by changing the **+lat_0 = 8.5** and the **+lon_0 = -84** parameters in the example qquidistant azimuthal projection to the central latitude and longitude of your area of interest.
 
 |image15|
 
@@ -259,7 +259,7 @@ We will also calculate the planimetric area. For this, we will create a raster t
 
 |image26|
 
-We can now generate a summary table containing realsurface area and planimetric area calculations for LULC classes with each Kapos mountain class.
+We can now generate a summary table containing real surface area and planimetric area calculations for LULC classes with each Kapos mountain class.
 
 |image27|
 
