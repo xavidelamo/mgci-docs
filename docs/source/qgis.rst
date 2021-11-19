@@ -2088,7 +2088,7 @@ Export to standard reporting table
 .. |image169| image:: media_QGIS/image166.png
    :width: 6.26806in
    :height: 1.02222in
-.. |imagetoolbox| image:: media_QGIS/imagetoolbox.png
+.. |imagetoolbox| image:: media_QGIS/Toolbox_images/imagetoolbox.png
    :width: 6.26806in
    :height: 4.75764in
 .. |image171| image:: media_QGIS/image171.png
