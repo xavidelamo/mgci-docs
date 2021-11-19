@@ -1,0 +1,341 @@
+<!DOCTYPE model>
+<Option type="Map">
+  <Option name="children" type="Map">
+    <Option name="gdal:cliprasterbymasklayer_1" type="Map">
+      <Option name="active" type="bool" value="true"/>
+      <Option name="alg_config"/>
+      <Option name="alg_id" type="QString" value="gdal:cliprasterbymasklayer"/>
+      <Option name="color" type="QString" value=""/>
+      <Option name="comment" type="Map">
+        <Option name="color" type="QString" value=""/>
+        <Option name="component_description" type="QString" value=""/>
+        <Option name="component_height" type="double" value="60"/>
+        <Option name="component_pos_x" type="double" value="496"/>
+        <Option name="component_pos_y" type="double" value="155"/>
+        <Option name="component_width" type="double" value="100"/>
+        <Option name="outputs_collapsed" type="bool" value="true"/>
+        <Option name="parameters_collapsed" type="bool" value="true"/>
+      </Option>
+      <Option name="component_description" type="QString" value="Clip raster by mask layer"/>
+      <Option name="component_height" type="double" value="30"/>
+      <Option name="component_pos_x" type="double" value="258.00050390526576"/>
+      <Option name="component_pos_y" type="double" value="310.0683172135067"/>
+      <Option name="component_width" type="double" value="200"/>
+      <Option name="dependencies"/>
+      <Option name="id" type="QString" value="gdal:cliprasterbymasklayer_1"/>
+      <Option name="outputs" type="Map">
+        <Option name="Output Clipped Raster: DEM_merge_AOI_LAEA" type="Map">
+          <Option name="child_id" type="QString" value="gdal:cliprasterbymasklayer_1"/>
+          <Option name="color" type="QString" value=""/>
+          <Option name="comment" type="Map">
+            <Option name="color" type="QString" value=""/>
+            <Option name="component_description" type="QString" value=""/>
+            <Option name="component_height" type="double" value="60"/>
+            <Option name="component_pos_x" type="double" value="0"/>
+            <Option name="component_pos_y" type="double" value="0"/>
+            <Option name="component_width" type="double" value="100"/>
+            <Option name="outputs_collapsed" type="bool" value="true"/>
+            <Option name="parameters_collapsed" type="bool" value="true"/>
+          </Option>
+          <Option name="component_description" type="QString" value="Output Clipped Raster: DEM_merge_AOI_LAEA"/>
+          <Option name="component_height" type="double" value="46.80000000000001"/>
+          <Option name="component_pos_x" type="double" value="262.8005039052657"/>
+          <Option name="component_pos_y" type="double" value="392.2683172135067"/>
+          <Option name="component_width" type="double" value="200"/>
+          <Option name="default_value" type="invalid"/>
+          <Option name="mandatory" type="bool" value="false"/>
+          <Option name="name" type="QString" value="Output Clipped Raster: DEM_merge_AOI_LAEA"/>
+          <Option name="output_name" type="QString" value="OUTPUT"/>
+          <Option name="outputs_collapsed" type="bool" value="true"/>
+          <Option name="parameters_collapsed" type="bool" value="true"/>
+        </Option>
+      </Option>
+      <Option name="outputs_collapsed" type="bool" value="true"/>
+      <Option name="parameters_collapsed" type="bool" value="true"/>
+      <Option name="params" type="Map">
+        <Option name="ALPHA_BAND" type="List">
+          <Option type="Map">
+            <Option name="source" type="int" value="2"/>
+            <Option name="static_value" type="bool" value="false"/>
+          </Option>
+        </Option>
+        <Option name="CROP_TO_CUTLINE" type="List">
+          <Option type="Map">
+            <Option name="source" type="int" value="2"/>
+            <Option name="static_value" type="bool" value="true"/>
+          </Option>
+        </Option>
+        <Option name="DATA_TYPE" type="List">
+          <Option type="Map">
+            <Option name="source" type="int" value="2"/>
+            <Option name="static_value" type="int" value="0"/>
+          </Option>
+        </Option>
+        <Option name="EXTRA" type="List">
+          <Option type="Map">
+            <Option name="source" type="int" value="2"/>
+            <Option name="static_value" type="QString" value=""/>
+          </Option>
+        </Option>
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option name="parameter_name" type="QString" value="LULCraster"/>
+            <Option name="source" type="int" value="0"/>
+          </Option>
+        </Option>
+        <Option name="KEEP_RESOLUTION" type="List">
+          <Option type="Map">
+            <Option name="source" type="int" value="2"/>
+            <Option name="static_value" type="bool" value="false"/>
+          </Option>
+        </Option>
+        <Option name="MASK" type="List">
+          <Option type="Map">
+            <Option name="parameter_name" type="QString" value="VectorAOIbufferedboundingbox"/>
+            <Option name="source" type="int" value="0"/>
+          </Option>
+        </Option>
+        <Option name="MULTITHREADING" type="List">
+          <Option type="Map">
+            <Option name="source" type="int" value="2"/>
+            <Option name="static_value" type="bool" value="false"/>
+          </Option>
+        </Option>
+        <Option name="NODATA" type="List">
+          <Option type="Map">
+            <Option name="source" type="int" value="2"/>
+            <Option name="static_value" type="invalid"/>
+          </Option>
+        </Option>
+        <Option name="OPTIONS" type="List">
+          <Option type="Map">
+            <Option name="source" type="int" value="2"/>
+            <Option name="static_value" type="QString" value=""/>
+          </Option>
+        </Option>
+        <Option name="SET_RESOLUTION" type="List">
+          <Option type="Map">
+            <Option name="source" type="int" value="2"/>
+            <Option name="static_value" type="bool" value="true"/>
+          </Option>
+        </Option>
+        <Option name="SOURCE_CRS" type="List">
+          <Option type="Map">
+            <Option name="parameter_name" type="QString" value="SourceCRS"/>
+            <Option name="source" type="int" value="0"/>
+          </Option>
+        </Option>
+        <Option name="TARGET_CRS" type="List">
+          <Option type="Map">
+            <Option name="parameter_name" type="QString" value="TargetCRS"/>
+            <Option name="source" type="int" value="0"/>
+          </Option>
+        </Option>
+        <Option name="X_RESOLUTION" type="List">
+          <Option type="Map">
+            <Option name="parameter_name" type="QString" value="outputresolution1"/>
+            <Option name="source" type="int" value="0"/>
+          </Option>
+        </Option>
+        <Option name="Y_RESOLUTION" type="List">
+          <Option type="Map">
+            <Option name="parameter_name" type="QString" value="outputresolution1"/>
+            <Option name="source" type="int" value="0"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+  </Option>
+  <Option name="designerParameterValues"/>
+  <Option name="groupBoxes"/>
+  <Option name="help" type="Map">
+    <Option name="ALG_DESC" type="QString" value="The Mountain Green Cover Index (MGCI) is designed to measure the extent and the changes of green vegetation in mountain areas - i.e. forest, shrubs, trees, pastureland, cropland, etc. – to monitor progress towards the mountain target in SDG 15.4.2.&#xa;&#xa;The MGCI toolbox helps users to run the steps required for creating the Mountain Green Cover Index and report to standard reporting tables. &#xa;&#xa;Starting from any DEM or Land use land cover map the tools generate a mountain descriptor layer, a vegetation descriptor layer, area calculation  (both planimetric and real surface area)  and the calculation of the MGCI.&#xa;&#xa; This toolbox has an accompanying tutorial and equivalent tutorials and scripts for R software and a Goggle Earth Engine App in the SEPAL bug-data platform for forest and land monitoring. &#xa;&#xa;The DEM tiles are likely to cover a much wider area than the country being analysed therefore it is important to crop the extent to minimise processing time. As indicated in the tutorial the country boundary is not used to clip the dataset directly as the various calculations during the generation of the mountain descriptor layer require neighbouring pixels to be analyses therefore the buffered bounding box AOI generated in tool A1."/>
+    <Option name="LULCraster" type="QString" value="Input merged DEM raster"/>
+    <Option name="SourceCRS" type="QString" value="set the input source of the DEM raster"/>
+    <Option name="TargetCRS" type="QString" value="set the output source to be the chosen Equal Area Projection"/>
+    <Option name="VectorAOIbufferedboundingbox" type="QString" value="Input the vector AOI in equal area projection generated in tool A1 (to be used to clip the DEM to the area of interest)."/>
+    <Option name="gdal:cliprasterbymasklayer_1:Output Clipped Raster: DEM_merge_AOI_LAEA" type="QString" value="Output  DEM raster clipped to AOI"/>
+    <Option name="outputresolution1" type="QString" value="Set the output resolution in metres (should be the equivalent resoltuion of the source DEM)"/>
+  </Option>
+  <Option name="modelVariables"/>
+  <Option name="model_group" type="QString" value="MGCI"/>
+  <Option name="model_name" type="QString" value="B2. MountainDescriptor: Clip and project merged DEM to EQUAL AREA PROJECTION"/>
+  <Option name="parameterDefinitions" type="Map">
+    <Option name="LULCraster" type="Map">
+      <Option name="default" type="invalid"/>
+      <Option name="defaultGui" type="invalid"/>
+      <Option name="description" type="QString" value="Input:  DEM RASTER (i.e. merged tiles)"/>
+      <Option name="flags" type="int" value="0"/>
+      <Option name="help" type="QString" value="Input merged DEM raster"/>
+      <Option name="metadata"/>
+      <Option name="name" type="QString" value="LULCraster"/>
+      <Option name="parameter_type" type="QString" value="raster"/>
+    </Option>
+    <Option name="SourceCRS" type="Map">
+      <Option name="default" type="QString" value="EPSG:4326"/>
+      <Option name="defaultGui" type="invalid"/>
+      <Option name="description" type="QString" value="Input: Source CRS"/>
+      <Option name="flags" type="int" value="0"/>
+      <Option name="help" type="QString" value="set the input source of the DEM raster"/>
+      <Option name="metadata"/>
+      <Option name="name" type="QString" value="SourceCRS"/>
+      <Option name="parameter_type" type="QString" value="crs"/>
+    </Option>
+    <Option name="TargetCRS" type="Map">
+      <Option name="default" type="QString" value="USER:100028"/>
+      <Option name="defaultGui" type="invalid"/>
+      <Option name="description" type="QString" value="Input: Target CRS"/>
+      <Option name="flags" type="int" value="0"/>
+      <Option name="help" type="QString" value="set the output source to be the chosen Equal Area Projection"/>
+      <Option name="metadata"/>
+      <Option name="name" type="QString" value="TargetCRS"/>
+      <Option name="parameter_type" type="QString" value="crs"/>
+    </Option>
+    <Option name="VectorAOIbufferedboundingbox" type="Map">
+      <Option name="data_types" type="List">
+        <Option type="int" value="2"/>
+      </Option>
+      <Option name="default" type="invalid"/>
+      <Option name="defaultGui" type="invalid"/>
+      <Option name="description" type="QString" value="Input: Vector AOI (buffered bounding box)"/>
+      <Option name="flags" type="int" value="0"/>
+      <Option name="help" type="QString" value="Input the vector AOI in equal area projection generated in tool A1 (to be used to clip the DEM to the area of interest)."/>
+      <Option name="metadata"/>
+      <Option name="name" type="QString" value="VectorAOIbufferedboundingbox"/>
+      <Option name="parameter_type" type="QString" value="vector"/>
+    </Option>
+    <Option name="gdal:cliprasterbymasklayer_1:Output Clipped Raster: DEM_merge_AOI_LAEA" type="Map">
+      <Option name="create_by_default" type="bool" value="true"/>
+      <Option name="default" type="invalid"/>
+      <Option name="defaultGui" type="invalid"/>
+      <Option name="description" type="QString" value="Output Clipped Raster: DEM_merge_AOI_LAEA"/>
+      <Option name="flags" type="int" value="0"/>
+      <Option name="help" type="QString" value=""/>
+      <Option name="metadata"/>
+      <Option name="name" type="QString" value="gdal:cliprasterbymasklayer_1:Output Clipped Raster: DEM_merge_AOI_LAEA"/>
+      <Option name="parameter_type" type="QString" value="rasterDestination"/>
+      <Option name="supports_non_file_outputs" type="bool" value="false"/>
+    </Option>
+    <Option name="outputresolution1" type="Map">
+      <Option name="data_type" type="int" value="1"/>
+      <Option name="default" type="double" value="90"/>
+      <Option name="defaultGui" type="invalid"/>
+      <Option name="description" type="QString" value="Input: output resolution (in metres)"/>
+      <Option name="flags" type="int" value="0"/>
+      <Option name="help" type="QString" value="Set the output resolution in metres (should be the equivalent resoltuion of the source DEM)"/>
+      <Option name="max" type="double" value="10000"/>
+      <Option name="metadata"/>
+      <Option name="min" type="double" value="0"/>
+      <Option name="name" type="QString" value="outputresolution1"/>
+      <Option name="parameter_type" type="QString" value="number"/>
+    </Option>
+  </Option>
+  <Option name="parameterOrder"/>
+  <Option name="parameters" type="Map">
+    <Option name="LULCraster" type="Map">
+      <Option name="color" type="QString" value=""/>
+      <Option name="comment" type="Map">
+        <Option name="color" type="QString" value=""/>
+        <Option name="component_description" type="QString" value=""/>
+        <Option name="component_height" type="double" value="60"/>
+        <Option name="component_pos_x" type="double" value="357"/>
+        <Option name="component_pos_y" type="double" value="34"/>
+        <Option name="component_width" type="double" value="100"/>
+        <Option name="outputs_collapsed" type="bool" value="true"/>
+        <Option name="parameters_collapsed" type="bool" value="true"/>
+      </Option>
+      <Option name="component_description" type="QString" value="LULCraster"/>
+      <Option name="component_height" type="double" value="56.32647919334022"/>
+      <Option name="component_pos_x" type="double" value="102.9128830065662"/>
+      <Option name="component_pos_y" type="double" value="97.47242969750258"/>
+      <Option name="component_width" type="double" value="148.2603441981479"/>
+      <Option name="name" type="QString" value="LULCraster"/>
+      <Option name="outputs_collapsed" type="bool" value="true"/>
+      <Option name="parameters_collapsed" type="bool" value="true"/>
+    </Option>
+    <Option name="SourceCRS" type="Map">
+      <Option name="color" type="QString" value=""/>
+      <Option name="comment" type="Map">
+        <Option name="color" type="QString" value=""/>
+        <Option name="component_description" type="QString" value=""/>
+        <Option name="component_height" type="double" value="60"/>
+        <Option name="component_pos_x" type="double" value="729"/>
+        <Option name="component_pos_y" type="double" value="221"/>
+        <Option name="component_width" type="double" value="100"/>
+        <Option name="outputs_collapsed" type="bool" value="true"/>
+        <Option name="parameters_collapsed" type="bool" value="true"/>
+      </Option>
+      <Option name="component_description" type="QString" value="SourceCRS"/>
+      <Option name="component_height" type="double" value="30"/>
+      <Option name="component_pos_x" type="double" value="484.9185061779814"/>
+      <Option name="component_pos_y" type="double" value="63.33579527048913"/>
+      <Option name="component_width" type="double" value="200"/>
+      <Option name="name" type="QString" value="SourceCRS"/>
+      <Option name="outputs_collapsed" type="bool" value="true"/>
+      <Option name="parameters_collapsed" type="bool" value="true"/>
+    </Option>
+    <Option name="TargetCRS" type="Map">
+      <Option name="color" type="QString" value=""/>
+      <Option name="comment" type="Map">
+        <Option name="color" type="QString" value=""/>
+        <Option name="component_description" type="QString" value=""/>
+        <Option name="component_height" type="double" value="60"/>
+        <Option name="component_pos_x" type="double" value="730"/>
+        <Option name="component_pos_y" type="double" value="318"/>
+        <Option name="component_width" type="double" value="100"/>
+        <Option name="outputs_collapsed" type="bool" value="true"/>
+        <Option name="parameters_collapsed" type="bool" value="true"/>
+      </Option>
+      <Option name="component_description" type="QString" value="TargetCRS"/>
+      <Option name="component_height" type="double" value="30"/>
+      <Option name="component_pos_x" type="double" value="497.8543014484708"/>
+      <Option name="component_pos_y" type="double" value="135.9245489276587"/>
+      <Option name="component_width" type="double" value="200"/>
+      <Option name="name" type="QString" value="TargetCRS"/>
+      <Option name="outputs_collapsed" type="bool" value="true"/>
+      <Option name="parameters_collapsed" type="bool" value="true"/>
+    </Option>
+    <Option name="VectorAOIbufferedboundingbox" type="Map">
+      <Option name="color" type="QString" value=""/>
+      <Option name="comment" type="Map">
+        <Option name="color" type="QString" value=""/>
+        <Option name="component_description" type="QString" value=""/>
+        <Option name="component_height" type="double" value="60"/>
+        <Option name="component_pos_x" type="double" value="587"/>
+        <Option name="component_pos_y" type="double" value="41"/>
+        <Option name="component_width" type="double" value="100"/>
+        <Option name="outputs_collapsed" type="bool" value="true"/>
+        <Option name="parameters_collapsed" type="bool" value="true"/>
+      </Option>
+      <Option name="component_description" type="QString" value="VectorAOIbufferedboundingbox"/>
+      <Option name="component_height" type="double" value="60.93361305217477"/>
+      <Option name="component_pos_x" type="double" value="278.45606408852274"/>
+      <Option name="component_pos_y" type="double" value="57.92908098991676"/>
+      <Option name="component_width" type="double" value="140.107259835151"/>
+      <Option name="name" type="QString" value="VectorAOIbufferedboundingbox"/>
+      <Option name="outputs_collapsed" type="bool" value="true"/>
+      <Option name="parameters_collapsed" type="bool" value="true"/>
+    </Option>
+    <Option name="outputresolution1" type="Map">
+      <Option name="color" type="QString" value=""/>
+      <Option name="comment" type="Map">
+        <Option name="color" type="QString" value=""/>
+        <Option name="component_description" type="QString" value=""/>
+        <Option name="component_height" type="double" value="60"/>
+        <Option name="component_pos_x" type="double" value="827"/>
+        <Option name="component_pos_y" type="double" value="452"/>
+        <Option name="component_width" type="double" value="100"/>
+        <Option name="outputs_collapsed" type="bool" value="true"/>
+        <Option name="parameters_collapsed" type="bool" value="true"/>
+      </Option>
+      <Option name="component_description" type="QString" value="outputresolution1"/>
+      <Option name="component_height" type="double" value="39.6060427496773"/>
+      <Option name="component_pos_x" type="double" value="496.25740612193465"/>
+      <Option name="component_pos_y" type="double" value="225.47352080665976"/>
+      <Option name="component_width" type="double" value="171.95937906530716"/>
+      <Option name="name" type="QString" value="outputresolution1"/>
+      <Option name="outputs_collapsed" type="bool" value="true"/>
+      <Option name="parameters_collapsed" type="bool" value="true"/>
+    </Option>
+  </Option>
+</Option>

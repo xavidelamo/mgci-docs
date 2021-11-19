@@ -1,0 +1,380 @@
+<!DOCTYPE model>
+<Option type="Map">
+  <Option name="children" type="Map">
+    <Option name="native:buffer_1" type="Map">
+      <Option name="active" type="bool" value="true"/>
+      <Option name="alg_config"/>
+      <Option name="alg_id" type="QString" value="native:buffer"/>
+      <Option name="color" type="QString" value=""/>
+      <Option name="comment" type="Map">
+        <Option name="color" type="QString" value=""/>
+        <Option name="component_description" type="QString" value=""/>
+        <Option name="component_height" type="double" value="60"/>
+        <Option name="component_pos_x" type="double" value="481"/>
+        <Option name="component_pos_y" type="double" value="423"/>
+        <Option name="component_width" type="double" value="100"/>
+        <Option name="outputs_collapsed" type="bool" value="true"/>
+        <Option name="parameters_collapsed" type="bool" value="true"/>
+      </Option>
+      <Option name="component_description" type="QString" value="Buffer"/>
+      <Option name="component_height" type="double" value="30"/>
+      <Option name="component_pos_x" type="double" value="198.40727783176766"/>
+      <Option name="component_pos_y" type="double" value="410.57751862649815"/>
+      <Option name="component_width" type="double" value="200"/>
+      <Option name="dependencies"/>
+      <Option name="id" type="QString" value="native:buffer_1"/>
+      <Option name="outputs" type="Map">
+        <Option name="New Output Layer: buffered bounds forming Area of Interest layer AOI_LAEA" type="Map">
+          <Option name="child_id" type="QString" value="native:buffer_1"/>
+          <Option name="color" type="QString" value=""/>
+          <Option name="comment" type="Map">
+            <Option name="color" type="QString" value=""/>
+            <Option name="component_description" type="QString" value=""/>
+            <Option name="component_height" type="double" value="60"/>
+            <Option name="component_pos_x" type="double" value="0"/>
+            <Option name="component_pos_y" type="double" value="0"/>
+            <Option name="component_width" type="double" value="100"/>
+            <Option name="outputs_collapsed" type="bool" value="true"/>
+            <Option name="parameters_collapsed" type="bool" value="true"/>
+          </Option>
+          <Option name="component_description" type="QString" value="New Output Layer: buffered bounds forming Area of Interest layer AOI_LAEA"/>
+          <Option name="component_height" type="double" value="67"/>
+          <Option name="component_pos_x" type="double" value="398.40727783176766"/>
+          <Option name="component_pos_y" type="double" value="474.07751862649815"/>
+          <Option name="component_width" type="double" value="200"/>
+          <Option name="default_value" type="invalid"/>
+          <Option name="mandatory" type="bool" value="false"/>
+          <Option name="name" type="QString" value="New Output Layer: buffered bounds forming Area of Interest layer AOI_LAEA"/>
+          <Option name="output_name" type="QString" value="OUTPUT"/>
+          <Option name="outputs_collapsed" type="bool" value="true"/>
+          <Option name="parameters_collapsed" type="bool" value="true"/>
+        </Option>
+      </Option>
+      <Option name="outputs_collapsed" type="bool" value="true"/>
+      <Option name="parameters_collapsed" type="bool" value="true"/>
+      <Option name="params" type="Map">
+        <Option name="DISSOLVE" type="List">
+          <Option type="Map">
+            <Option name="source" type="int" value="2"/>
+            <Option name="static_value" type="bool" value="false"/>
+          </Option>
+        </Option>
+        <Option name="DISTANCE" type="List">
+          <Option type="Map">
+            <Option name="source" type="int" value="2"/>
+            <Option name="static_value" type="double" value="10000"/>
+          </Option>
+        </Option>
+        <Option name="END_CAP_STYLE" type="List">
+          <Option type="Map">
+            <Option name="source" type="int" value="2"/>
+            <Option name="static_value" type="int" value="2"/>
+          </Option>
+        </Option>
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option name="child_id" type="QString" value="qgis:minimumboundinggeometry_1"/>
+            <Option name="output_name" type="QString" value="OUTPUT"/>
+            <Option name="source" type="int" value="1"/>
+          </Option>
+        </Option>
+        <Option name="JOIN_STYLE" type="List">
+          <Option type="Map">
+            <Option name="source" type="int" value="2"/>
+            <Option name="static_value" type="int" value="1"/>
+          </Option>
+        </Option>
+        <Option name="MITER_LIMIT" type="List">
+          <Option type="Map">
+            <Option name="source" type="int" value="2"/>
+            <Option name="static_value" type="double" value="2"/>
+          </Option>
+        </Option>
+        <Option name="SEGMENTS" type="List">
+          <Option type="Map">
+            <Option name="source" type="int" value="2"/>
+            <Option name="static_value" type="int" value="5"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:reprojectlayer_1" type="Map">
+      <Option name="active" type="bool" value="true"/>
+      <Option name="alg_config"/>
+      <Option name="alg_id" type="QString" value="native:reprojectlayer"/>
+      <Option name="color" type="QString" value=""/>
+      <Option name="comment" type="Map">
+        <Option name="color" type="QString" value=""/>
+        <Option name="component_description" type="QString" value=""/>
+        <Option name="component_height" type="double" value="60"/>
+        <Option name="component_pos_x" type="double" value="441"/>
+        <Option name="component_pos_y" type="double" value="124"/>
+        <Option name="component_width" type="double" value="100"/>
+        <Option name="outputs_collapsed" type="bool" value="true"/>
+        <Option name="parameters_collapsed" type="bool" value="true"/>
+      </Option>
+      <Option name="component_description" type="QString" value="Reproject layer (project to equal area projection)"/>
+      <Option name="component_height" type="double" value="72.4"/>
+      <Option name="component_pos_x" type="double" value="188.37687074829944"/>
+      <Option name="component_pos_y" type="double" value="176.70430839002262"/>
+      <Option name="component_width" type="double" value="174.40000000000003"/>
+      <Option name="dependencies"/>
+      <Option name="id" type="QString" value="native:reprojectlayer_1"/>
+      <Option name="outputs" type="Map">
+        <Option name="New Output Layer: BND_CTR_LAEA" type="Map">
+          <Option name="child_id" type="QString" value="native:reprojectlayer_1"/>
+          <Option name="color" type="QString" value=""/>
+          <Option name="comment" type="Map">
+            <Option name="color" type="QString" value=""/>
+            <Option name="component_description" type="QString" value=""/>
+            <Option name="component_height" type="double" value="60"/>
+            <Option name="component_pos_x" type="double" value="0"/>
+            <Option name="component_pos_y" type="double" value="0"/>
+            <Option name="component_width" type="double" value="100"/>
+            <Option name="outputs_collapsed" type="bool" value="true"/>
+            <Option name="parameters_collapsed" type="bool" value="true"/>
+          </Option>
+          <Option name="component_description" type="QString" value="New Output Layer: BND_CTR_LAEA"/>
+          <Option name="component_height" type="double" value="30"/>
+          <Option name="component_pos_x" type="double" value="400.7768707482995"/>
+          <Option name="component_pos_y" type="double" value="232.30430839002264"/>
+          <Option name="component_width" type="double" value="200"/>
+          <Option name="default_value" type="invalid"/>
+          <Option name="mandatory" type="bool" value="false"/>
+          <Option name="name" type="QString" value="New Output Layer: BND_CTR_LAEA"/>
+          <Option name="output_name" type="QString" value="OUTPUT"/>
+          <Option name="outputs_collapsed" type="bool" value="true"/>
+          <Option name="parameters_collapsed" type="bool" value="true"/>
+        </Option>
+      </Option>
+      <Option name="outputs_collapsed" type="bool" value="true"/>
+      <Option name="parameters_collapsed" type="bool" value="true"/>
+      <Option name="params" type="Map">
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option name="parameter_name" type="QString" value="VectorCountryBoundary"/>
+            <Option name="source" type="int" value="0"/>
+          </Option>
+        </Option>
+        <Option name="OPERATION" type="List">
+          <Option type="Map">
+            <Option name="source" type="int" value="2"/>
+            <Option name="static_value" type="QString" value=""/>
+          </Option>
+        </Option>
+        <Option name="TARGET_CRS" type="List">
+          <Option type="Map">
+            <Option name="parameter_name" type="QString" value="TargetCRS"/>
+            <Option name="source" type="int" value="0"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="qgis:minimumboundinggeometry_1" type="Map">
+      <Option name="active" type="bool" value="true"/>
+      <Option name="alg_config"/>
+      <Option name="alg_id" type="QString" value="qgis:minimumboundinggeometry"/>
+      <Option name="color" type="QString" value=""/>
+      <Option name="comment" type="Map">
+        <Option name="color" type="QString" value=""/>
+        <Option name="component_description" type="QString" value=""/>
+        <Option name="component_height" type="double" value="60"/>
+        <Option name="component_pos_x" type="double" value="563"/>
+        <Option name="component_pos_y" type="double" value="281"/>
+        <Option name="component_width" type="double" value="100"/>
+        <Option name="outputs_collapsed" type="bool" value="true"/>
+        <Option name="parameters_collapsed" type="bool" value="true"/>
+      </Option>
+      <Option name="component_description" type="QString" value="Minimum bounding geometry"/>
+      <Option name="component_height" type="double" value="51"/>
+      <Option name="component_pos_x" type="double" value="201.30366051182386"/>
+      <Option name="component_pos_y" type="double" value="295.6506532771839"/>
+      <Option name="component_width" type="double" value="200"/>
+      <Option name="dependencies"/>
+      <Option name="id" type="QString" value="qgis:minimumboundinggeometry_1"/>
+      <Option name="outputs" type="Map">
+        <Option name="New Output Layer: bounds_LAEA" type="Map">
+          <Option name="child_id" type="QString" value="qgis:minimumboundinggeometry_1"/>
+          <Option name="color" type="QString" value=""/>
+          <Option name="comment" type="Map">
+            <Option name="color" type="QString" value=""/>
+            <Option name="component_description" type="QString" value=""/>
+            <Option name="component_height" type="double" value="60"/>
+            <Option name="component_pos_x" type="double" value="0"/>
+            <Option name="component_pos_y" type="double" value="0"/>
+            <Option name="component_width" type="double" value="100"/>
+            <Option name="outputs_collapsed" type="bool" value="true"/>
+            <Option name="parameters_collapsed" type="bool" value="true"/>
+          </Option>
+          <Option name="component_description" type="QString" value="New Output Layer: bounds_LAEA"/>
+          <Option name="component_height" type="double" value="40.39999999999998"/>
+          <Option name="component_pos_x" type="double" value="401.30366051182386"/>
+          <Option name="component_pos_y" type="double" value="366.9506532771839"/>
+          <Option name="component_width" type="double" value="200"/>
+          <Option name="default_value" type="invalid"/>
+          <Option name="mandatory" type="bool" value="false"/>
+          <Option name="name" type="QString" value="New Output Layer: bounds_LAEA"/>
+          <Option name="output_name" type="QString" value="OUTPUT"/>
+          <Option name="outputs_collapsed" type="bool" value="true"/>
+          <Option name="parameters_collapsed" type="bool" value="true"/>
+        </Option>
+      </Option>
+      <Option name="outputs_collapsed" type="bool" value="true"/>
+      <Option name="parameters_collapsed" type="bool" value="true"/>
+      <Option name="params" type="Map">
+        <Option name="FIELD" type="List">
+          <Option type="Map">
+            <Option name="source" type="int" value="2"/>
+            <Option name="static_value" type="QString" value=""/>
+          </Option>
+        </Option>
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option name="child_id" type="QString" value="native:reprojectlayer_1"/>
+            <Option name="output_name" type="QString" value="OUTPUT"/>
+            <Option name="source" type="int" value="1"/>
+          </Option>
+        </Option>
+        <Option name="TYPE" type="List">
+          <Option type="Map">
+            <Option name="source" type="int" value="2"/>
+            <Option name="static_value" type="int" value="0"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+  </Option>
+  <Option name="designerParameterValues"/>
+  <Option name="groupBoxes"/>
+  <Option name="help" type="Map">
+    <Option name="ALG_CREATOR" type="QString" value="Corinna Ravilious, UNEP-WCMC"/>
+    <Option name="ALG_DESC" type="QString" value="The Mountain Green Cover Index (MGCI) is designed to measure the extent and the changes of green vegetation in mountain areas - i.e. forest, shrubs, trees, pastureland, cropland, etc. – to monitor progress towards the mountain target in SDG 15.4.2.&#xa;&#xa;The MGCI toolbox helps users to run the steps required for creating the Mountain Green Cover Index and report to standard reporting tables. &#xa;&#xa;Starting from any DEM or Land use land cover map the tools generate a mountain descriptor layer, a vegetation descriptor layer, area calculation  (both planimetric and real surface area)  and the calculation of the MGCI.&#xa;&#xa; This toolbox has an accompanying tutorial and equivalent tutorials and scripts for R software and a Goggle Earth Engine App in the SEPAL bug-data platform for forest and land monitoring. &#xa;&#xa;&#xa;&#xa;"/>
+    <Option name="ALG_HELP_CREATOR" type="QString" value="Corinna Ravilious, UNEP-WCMC"/>
+    <Option name="ALG_VERSION" type="QString" value="V 01"/>
+    <Option name="HELP_URL" type="QString" value=""/>
+    <Option name="SHORT_DESCRIPTION" type="QString" value="The first step is to define an Area of Interest (AOI) for the analysis. This should go beyond the country bundary as outlined in the **Definning analysis environments** section of the MGCI tutorial."/>
+    <Option name="TargetCRS" type="QString" value="Input: Select an equal area projection e.g. Lambert Azimuthal Equal Area (LAEA)"/>
+    <Option name="VectorCountryBoundary" type="QString" value="Input: Vector country boundary layer"/>
+    <Option name="native:buffer_1:AOI_LAEA" type="QString" value="Output 3: Area of Interest (AOI) raster layer. in chosen equal area projection e.g. Lambert Azimuthal Equal Area (LAEA). This is the the bounding box buffered out by 10km."/>
+    <Option name="native:buffer_1:New Output Layer: buffered bounds forming Area of Interest layer AOI_LAEA" type="QString" value="Output 3: bounding box of country buffered out by 10km in equal area projection. Layer to be used as the area of interest (AOI)  in subsequent analysis steps. "/>
+    <Option name="native:reprojectlayer_1:BND_CTR_LAEA" type="QString" value="Output 1: projected country boundary vector polygon layer in equal area projection"/>
+    <Option name="native:reprojectlayer_1:New Output Layer: BND_CTR_LAEA" type="QString" value="Output 1: country layer of vector polygons projected to equal area projection."/>
+    <Option name="qgis:minimumboundinggeometry_1:New Output Layer: bounds_LAEA" type="QString" value="Output 2: bounding box of country in equal area projection."/>
+    <Option name="qgis:minimumboundinggeometry_1:bounds_LAEA" type="QString" value="Output 2:  bounding box of projected country boundary vector polygon layer"/>
+  </Option>
+  <Option name="modelVariables"/>
+  <Option name="model_group" type="QString" value="MGCI"/>
+  <Option name="model_name" type="QString" value="A1. Generic: Define projection and generate an AOI"/>
+  <Option name="parameterDefinitions" type="Map">
+    <Option name="TargetCRS" type="Map">
+      <Option name="default" type="QString" value="USER:100028"/>
+      <Option name="defaultGui" type="invalid"/>
+      <Option name="description" type="QString" value="Input: Target CRS"/>
+      <Option name="flags" type="int" value="0"/>
+      <Option name="help" type="QString" value=""/>
+      <Option name="metadata"/>
+      <Option name="name" type="QString" value="TargetCRS"/>
+      <Option name="parameter_type" type="QString" value="crs"/>
+    </Option>
+    <Option name="VectorCountryBoundary" type="Map">
+      <Option name="data_types" type="List">
+        <Option type="int" value="2"/>
+      </Option>
+      <Option name="default" type="invalid"/>
+      <Option name="defaultGui" type="invalid"/>
+      <Option name="description" type="QString" value="Input:  Vector Country Boundary"/>
+      <Option name="flags" type="int" value="0"/>
+      <Option name="help" type="QString" value=""/>
+      <Option name="metadata"/>
+      <Option name="name" type="QString" value="VectorCountryBoundary"/>
+      <Option name="parameter_type" type="QString" value="vector"/>
+    </Option>
+    <Option name="native:buffer_1:New Output Layer: buffered bounds forming Area of Interest layer AOI_LAEA" type="Map">
+      <Option name="create_by_default" type="bool" value="true"/>
+      <Option name="data_type" type="int" value="2"/>
+      <Option name="default" type="invalid"/>
+      <Option name="defaultGui" type="invalid"/>
+      <Option name="description" type="QString" value="New Output Layer: buffered bounds forming Area of Interest layer AOI_LAEA"/>
+      <Option name="flags" type="int" value="0"/>
+      <Option name="help" type="QString" value=""/>
+      <Option name="metadata"/>
+      <Option name="name" type="QString" value="native:buffer_1:New Output Layer: buffered bounds forming Area of Interest layer AOI_LAEA"/>
+      <Option name="parameter_type" type="QString" value="sink"/>
+      <Option name="supports_append" type="bool" value="true"/>
+      <Option name="supports_non_file_outputs" type="bool" value="true"/>
+    </Option>
+    <Option name="native:reprojectlayer_1:New Output Layer: BND_CTR_LAEA" type="Map">
+      <Option name="create_by_default" type="bool" value="true"/>
+      <Option name="data_type" type="int" value="-1"/>
+      <Option name="default" type="invalid"/>
+      <Option name="defaultGui" type="invalid"/>
+      <Option name="description" type="QString" value="New Output Layer: BND_CTR_LAEA"/>
+      <Option name="flags" type="int" value="0"/>
+      <Option name="help" type="QString" value=""/>
+      <Option name="metadata"/>
+      <Option name="name" type="QString" value="native:reprojectlayer_1:New Output Layer: BND_CTR_LAEA"/>
+      <Option name="parameter_type" type="QString" value="sink"/>
+      <Option name="supports_append" type="bool" value="true"/>
+      <Option name="supports_non_file_outputs" type="bool" value="true"/>
+    </Option>
+    <Option name="qgis:minimumboundinggeometry_1:New Output Layer: bounds_LAEA" type="Map">
+      <Option name="create_by_default" type="bool" value="true"/>
+      <Option name="data_type" type="int" value="2"/>
+      <Option name="default" type="invalid"/>
+      <Option name="defaultGui" type="invalid"/>
+      <Option name="description" type="QString" value="New Output Layer: bounds_LAEA"/>
+      <Option name="flags" type="int" value="0"/>
+      <Option name="help" type="QString" value=""/>
+      <Option name="metadata"/>
+      <Option name="name" type="QString" value="qgis:minimumboundinggeometry_1:New Output Layer: bounds_LAEA"/>
+      <Option name="parameter_type" type="QString" value="sink"/>
+      <Option name="supports_append" type="bool" value="false"/>
+      <Option name="supports_non_file_outputs" type="bool" value="true"/>
+    </Option>
+  </Option>
+  <Option name="parameterOrder"/>
+  <Option name="parameters" type="Map">
+    <Option name="TargetCRS" type="Map">
+      <Option name="color" type="QString" value=""/>
+      <Option name="comment" type="Map">
+        <Option name="color" type="QString" value=""/>
+        <Option name="component_description" type="QString" value=""/>
+        <Option name="component_height" type="double" value="60"/>
+        <Option name="component_pos_x" type="double" value="541"/>
+        <Option name="component_pos_y" type="double" value="53"/>
+        <Option name="component_width" type="double" value="100"/>
+        <Option name="outputs_collapsed" type="bool" value="true"/>
+        <Option name="parameters_collapsed" type="bool" value="true"/>
+      </Option>
+      <Option name="component_description" type="QString" value="TargetCRS"/>
+      <Option name="component_height" type="double" value="44"/>
+      <Option name="component_pos_x" type="double" value="106"/>
+      <Option name="component_pos_y" type="double" value="64"/>
+      <Option name="component_width" type="double" value="112.00000000000001"/>
+      <Option name="name" type="QString" value="TargetCRS"/>
+      <Option name="outputs_collapsed" type="bool" value="true"/>
+      <Option name="parameters_collapsed" type="bool" value="true"/>
+    </Option>
+    <Option name="VectorCountryBoundary" type="Map">
+      <Option name="color" type="QString" value=""/>
+      <Option name="comment" type="Map">
+        <Option name="color" type="QString" value=""/>
+        <Option name="component_description" type="QString" value=""/>
+        <Option name="component_height" type="double" value="60"/>
+        <Option name="component_pos_x" type="double" value="338"/>
+        <Option name="component_pos_y" type="double" value="23"/>
+        <Option name="component_width" type="double" value="100"/>
+        <Option name="outputs_collapsed" type="bool" value="true"/>
+        <Option name="parameters_collapsed" type="bool" value="true"/>
+      </Option>
+      <Option name="component_description" type="QString" value="VectorCountryBoundary"/>
+      <Option name="component_height" type="double" value="53.26789763524457"/>
+      <Option name="component_pos_x" type="double" value="265.1001187776698"/>
+      <Option name="component_pos_y" type="double" value="74.88999028182702"/>
+      <Option name="component_width" type="double" value="138"/>
+      <Option name="name" type="QString" value="VectorCountryBoundary"/>
+      <Option name="outputs_collapsed" type="bool" value="true"/>
+      <Option name="parameters_collapsed" type="bool" value="true"/>
+    </Option>
+  </Option>
+</Option>
