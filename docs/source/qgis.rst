@@ -1447,15 +1447,26 @@ Now that we have 3 raster datasets in their native resolutions we need to bring 
 
 We will first aggregate the Real Surface Area raster.
 
--  Select the **RealSufaceArea_LAEA.tif**  as the **Input Layer**
+-  Select the **RealSufaceArea_LAEA**  as the **Input Layer**
 -  Set the **aggregation method** to **sum**
 -  **Tick Weight according to area** (as the documentation suggests it gives a more accurate result)
 -  Set the **region extent** to **Calculate from layer>>Vegetation Descriptor_AOI_LAEA**
 -  Set the **cellsize** to the the **same resolution as your Vegetation Descriptor layer** e.g. in this example 300m
--  Set the **Resampled Aggregated** layer to a name that distinguishes the resampling of the layer e.g. RSA_LAEA_AOI_resample_sum_300.tif
+-  Set the **Resampled Aggregated** layer to a name that distinguishes the resampling of the layer e.g. **RSA_LAEA_AOI_resample_sum_300.tif**
 -  Click **Run** to run the tool 
 
- |image170|    
+   |image170|  
+   
+ Next we will  aggregate the mountain descriptor layer.
+ 
+-  Select the **MountainDescriptor_K1_6** layer  as the **Input Layer** e.g in this example MoutainDescriptor_K1_6_withoutK7.tif
+-  This time set the **aggregation method** to **mode** as we want to pick the value that represents the majority of smaller cell values in the coarser cell.
+-  **Tick Weight according to area** (as the documentation suggests it gives a more accurate result)
+-  Set the **region extent** to **Calculate from layer>>Vegetation Descriptor_AOI_LAEA**
+-  Set the **cellsize** to the the **same resolution as your Vegetation Descriptor layer** e.g. in this example 300m
+-  Set the **Resampled Aggregated layer** to a name that distinguishes the resampling of the layer e.g. in this example **MoutainDescriptor_K1_6_withoutK7_agg300.tif**
+
+   |image173|  
  
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **MGCI Toolbox D2. Generic: Combine mountain and vegetation rasters**:                                                                                    |
@@ -2114,10 +2125,9 @@ Export to standard reporting table
 .. |image172| image:: media_QGIS/i1_aoi_tool.png
    :width: 6.26806in
    :height: 4.75764in
-.. |image173| image:: media_QGIS/i1_aoi_workflow.png
+.. |image173| image:: media_QGIS/image173.png
    :width: 6.26806in
    :height: 4.75764in
-   
 .. |imageA1| image:: media_QGIS/Toolbox_images/A1.png
    :width: 6.26806in
    :height: 4.75764in   
