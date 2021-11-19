@@ -1443,6 +1443,20 @@ Aggregation to standard resolution and clipping to country
 Combine mountain and vegetation descriptor layers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Now that we have 3 raster datasets in their native resolutions we need to bring the datasets together and ensure that correct aggregation is undertaken and that the all the layers align to the VegetationDescriptor layer.   In this example we have the Mountain Descriptor layer and the RealSurfaceArea Rasters at 90m resolution but a VegetationDescriptor layer at 300m resolution. There are various tools that can be used but we have opted for the GRASS tool r.resamp.stats as it allowed for various methods when resampling to a coarser grid.
+
+We will first aggregate the Real Surface Area raster.
+
+-  Select the **RealSufaceArea_LAEA.tif**  as the **Input Layer**
+-  Set the **aggregation method** to **sum**
+-  **Tick Weight according to area** (as the documentation suggests it gives a more accurate result)
+-  Set the **region extent** to **Calculate from layer>>Vegetation Descriptor_AOI_LAEA**
+-  Set the **cellsize** to the the **same resolution as your Vegetation Descriptor layer** e.g. in this example 300m
+-  Set the **Resampled Aggregated** layer to a name that distinguishes the resampling of the layer e.g. RSA_LAEA_AOI_resample_sum_300.tif
+-  Click **Run** to run the tool 
+
+ |image170|    
+ 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **MGCI Toolbox D2. Generic: Combine mountain and vegetation rasters**:                                                                                    |
 |    :name: toolbox_D2                                                                                                                                                  |
@@ -2089,6 +2103,9 @@ Export to standard reporting table
    :width: 6.26806in
    :height: 1.02222in
 .. |imagetoolbox| image:: media_QGIS/Toolbox_images/toolbox.PNG
+   :width: 6.26806in
+   :height: 4.75764in
+.. |image170| image:: media_QGIS/image170.png
    :width: 6.26806in
    :height: 4.75764in
 .. |image171| image:: media_QGIS/image171.png
