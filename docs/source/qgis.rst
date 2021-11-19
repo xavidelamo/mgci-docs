@@ -1486,7 +1486,7 @@ Generate Real Surface Area and Planimetric Area Statistics
 |                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
 |                                                                                                                                                                       |
-| |imageE1|                                                                                                                                                             |
+| |imageD3|                                                                                                                                                             |
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
 |                                                                                                                                                                       |
@@ -2214,39 +2214,4 @@ Export to standard reporting table
 .. |imageD3_w| image:: media_QGIS/Toolbox_images/D3_w.png
    :width: 6.26806in
    :height: 4.75764in 
-.. |imageE1| image:: media_QGIS/Toolbox_images/E1.png
-   :width: 6.26806in
-   :height: 4.75764in   
-.. |imageE1_w| image:: media_QGIS/Toolbox_images/E1_w.png
-   :width: 6.26806in
-   :height: 4.75764in 
-.. |imageE2| image:: media_QGIS/Toolbox_images/E2.png
-   :width: 6.26806in
-   :height: 4.75764in   
-.. |imageE2_w| image:: media_QGIS/Toolbox_images/E2_w.png
-   :width: 6.26806in
-   :height: 4.75764in 
-.. |imageE3| image:: media_QGIS/Toolbox_images/E3.png
-   :width: 6.26806in
-   :height: 4.75764in   
-.. |imageE3_w| image:: media_QGIS/Toolbox_images/E3_w.png
-   :width: 6.26806in
-   :height: 4.75764in 
-.. |imageF1| image:: media_QGIS/Toolbox_images/F1.png
-   :width: 6.26806in
-   :height: 4.75764in   
-.. |imageF1_w| image:: media_QGIS/Toolbox_images/F1_w.png
-   :width: 6.26806in
-   :height: 4.75764in 
-.. |imageF2| image:: media_QGIS/Toolbox_images/F2.png
-   :width: 6.26806in
-   :height: 4.75764in   
-.. |imageF2_w| image:: media_QGIS/Toolbox_images/F2_w.png
-   :width: 6.26806in
-   :height: 4.75764in 
-.. |imageF3| image:: media_QGIS/Toolbox_images/F3.png
-   :width: 6.26806in
-   :height: 4.75764in   
-.. |imageF3_w| image:: media_QGIS/Toolbox_images/F3_w.png
-   :width: 6.26806in
-   :height: 4.75764in 
+
