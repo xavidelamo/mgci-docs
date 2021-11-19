@@ -664,6 +664,22 @@ The merged DEM is added to the QGIS project.
 
 |image74|
 
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| .. rubric:: **MGCI Toolbox B1. MountainDescriptor: Merging DEM tiles into a single DEM**:                                                                             |
+|    :name: toolbox_B1                                                                                                                                                  |
+| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
+| Before running the tool users need to check that they know the projection of their LUUC dataset and it is faling in the correct place geographically.                 |
+| as outlined in the section above.                                                                                                                                     |
+|                                                                                                                                                                       |
+| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
+|                                                                                                                                                                       |
+| |imageB1|                                                                                                                                                             |
+|                                                                                                                                                                       |
+| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
+|                                                                                                                                                                       |
+| |imageB1|                                                                                                                                                             |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Clip and project merged DEM
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -712,8 +728,25 @@ should be added to the map canvas\ **.**
 
 |image76|
 
-5.3.4 Generating slope layer from layer DEM
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| .. rubric:: **MGCI Toolbox B2. MountainDescriptor: Clip and project merged DEM to EQUAL AREA PROJECTION**:                                                            |
+|    :name: toolbox_B2                                                                                                                                                  |
+| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
+| Before running the tool users need to check that they know the projection of their LUUC dataset and it is faling in the correct place geographically.                 |
+| as outlined in the section above.                                                                                                                                     |
+|                                                                                                                                                                       |
+| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
+|                                                                                                                                                                       |
+| |imageB2|                                                                                                                                                             |
+|                                                                                                                                                                       |
+| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
+|                                                                                                                                                                       |
+| |imageB2|                                                                                                                                                             |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
+Generating slope layer from layer DEM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In, this section, depending on whether your country falls within a
 single or multiple UTM Zones and the projection selected in section 5.1
@@ -776,26 +809,45 @@ projection before following the next steps.
 |                                                                                                                                                                       |
 |    |image78|                                                                                                                                                          |
 |                                                                                                                                                                       |
-| -  Click the **Validate** button to check that the parameters are valid and then **OK** to save the custom projection                                                 |
-| -  Next, In the **processing toolbox** search for **reproject**                                                                                                       |
-|                                                                                                                                                                       |
-|    |image54|                                                                                                                                                          |
-|                                                                                                                                                                       |
-| -  Double click on the **Warp (reproject)** tool under the **GDAL toolset**                                                                                           |
-| -  Set the Input layer to be the **merged DEM in geographic coordinate system**                                                                                       |
-|    *Note: it is important not to use the one that has already been projected as this can introduce errors into the DEM *                                              |
-| -  Set the Source CRS to be **EPSG: 4326 (Geographic)**                                                                                                               |
-| -  Set the Target CRS to be **your custom equidistant projection** e.g. CRI\_AZ\_EQUI                                                                                 |
-| -  Set the resampling method to Nearest Neighbour                                                                                                                     |
-| -  Set the output file resolution to the resolution of the DEM in meters e.g. 90m in this example                                                                     |
-| -  Set the Reprojected output to e.g. **DEM\_copernicus\_merge\_CRI\_AZ\_EQUI.tif**                                                                                   |
-| -  Click Run to run the tool                                                                                                                                          |
-|                                                                                                                                                                       |
-|    |image79|                                                                                                                                                          |
-|                                                                                                                                                                       |
-| The reprojected layer is added to the QGIS project. Slope can now be generated from this layer                                                                        | 
+| -  Click the **Validate** button to check that the parameters are valid and then **OK** to save the custom projection                                                 |       |                                                                                                                                                                       |       
 | -  Click the **Validate** button to check that the parameters are valid and then **OK** to save the custom projection                                                 |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+ -  Next, In the **processing toolbox** search for **reproject** 
+
+    |image54|                                                                                                                                                                  
+    
+ -  Double click on the **Warp (reproject)** tool under the **GDAL toolset** 
+ -  Set the Input layer to be the **merged DEM in geographic coordinate system**
+    *Note: it is important not to use the one that has already been projected as this can introduce errors into the DEM *
+ -  Set the Source CRS to be **EPSG: 4326 (Geographic)**
+ -  Set the Target CRS to be **your custom equidistant projection** e.g. CRI\_AZ\_EQUI
+ -  Set the resampling method to Nearest Neighbour
+ -  Set the output file resolution to the resolution of the DEM in meters e.g. 90m in this example
+ -  Set the Reprojected output to e.g. **DEM\_copernicus\_merge\_CRI\_AZ\_EQUI.tif**
+ -  Click Run to run the tool
+  
+   |image79|
+ 
+ The reprojected layer is added to the QGIS project. Slope can now be generated from this layer             
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| .. rubric:: **MGCI Toolbox B3. MountainDescriptor: Project merged DEM to Equidistant projection**:                                                                    |
+|    :name: toolbox_B2                                                                                                                                                  |
+| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
+| Before running the tool users need to check that they know the projection of their LUUC dataset and it is faling in the correct place geographically.                 |
+| as outlined in the section above.                                                                                                                                     |
+|                                                                                                                                                                       |
+| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
+|                                                                                                                                                                       |
+| |imageB3|                                                                                                                                                             |
+|                                                                                                                                                                       |
+| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
+|                                                                                                                                                                       |
+| |imageB3|                                                                                                                                                             |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
+
 
 -  In the processing toolbox search for **Slope**
 
@@ -824,6 +876,7 @@ projection before following the next steps.
 -  Click **Run** to run the tool
 
 |image82|
+
 
 
 The slope raster can now be projected to the main analysis equal area
@@ -865,8 +918,8 @@ projection and be clipped to the AOI.
 
 |image96|
 
-The new **clipped** **SLOPE dataset in the equal area projection**
-should be added should be added to the map canvas\ **.**
+The new **clipped** **SLOPE dataset in the equal area projection** is now added should be added to the map canvas\ **.**
+
 
 
 Generating local elevation range from DEM
@@ -1909,11 +1962,15 @@ Export to standard reporting table
    :width: 6.26806in
    :height: 4.75764in
    
+.. |imageA2c| image:: media_QGIS/Toolbox_images/A2c.png
+   :width: 6.26806in
+   :height: 4.75764in 
+   
 .. |imageA2c_w| image:: media_QGIS/Toolbox_images/A2c_w.png
    :width: 6.26806in
    :height: 4.75764in 
    
-   .. |imageA3| image:: media_QGIS/Toolbox_images/A3.png
+.. |imageA3| image:: media_QGIS/Toolbox_images/A3.png
    :width: 6.26806in
    :height: 4.75764in
    
