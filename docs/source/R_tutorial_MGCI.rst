@@ -363,87 +363,87 @@ class.
 
 |image27|
 
-.. |image0| image:: media/image1.png
+.. |image0| image:: media_R/image1.png
    :width: 6.26806in
    :height: 5.65417in
-.. |image1| image:: media/image2.png
+.. |image1| image:: media_R/image2.png
    :width: 6.26806in
    :height: 0.59514in
-.. |image2| image:: media/image3.png
+.. |image2| image:: media_R/image3.png
    :width: 6.26806in
    :height: 0.73681in
-.. |image3| image:: media/image4.png
+.. |image3| image:: media_R/image4.png
    :width: 6.26806in
    :height: 0.59514in
-.. |image4| image:: media/image5.png
+.. |image4| image:: media_R/image5.png
    :width: 6.26806in
    :height: 0.59514in
-.. |image5| image:: media/image6.png
+.. |image5| image:: media_R/image6.png
    :width: 6.26806in
    :height: 0.73681in
-.. |image6| image:: media/image7.png
+.. |image6| image:: media_R/image7.png
    :width: 6.26806in
    :height: 0.73681in
-.. |image7| image:: media/image8.png
+.. |image7| image:: media_R/image8.png
    :width: 6.26806in
    :height: 0.73681in
-.. |image8| image:: media/image9.png
+.. |image8| image:: media_R/image9.png
    :width: 6.26806in
    :height: 0.59514in
-.. |image9| image:: media/image10.png
+.. |image9| image:: media_R/image10.png
    :width: 6.26806in
    :height: 1.01875in
-.. |image10| image:: media/image11.png
+.. |image10| image:: media_R/image11.png
    :width: 6.26806in
    :height: 0.87778in
-.. |image11| image:: media/image12.png
+.. |image11| image:: media_R/image12.png
    :width: 6.26806in
    :height: 1.72361in
-.. |image12| image:: media/image13.png
+.. |image12| image:: media_R/image13.png
    :width: 6.26806in
    :height: 0.59514in
-.. |image13| image:: media/image14.png
+.. |image13| image:: media_R/image14.png
    :width: 6.26806in
    :height: 1.44167in
-.. |image14| image:: media/image15.png
+.. |image14| image:: media_R/image15.png
    :width: 6.26806in
    :height: 1.01875in
-.. |image15| image:: media/image16.png
+.. |image15| image:: media_R/image16.png
    :width: 6.26806in
    :height: 0.59514in
-.. |image16| image:: media/image17.png
+.. |image16| image:: media_R/image17.png
    :width: 6.26806in
    :height: 1.44167in
-.. |image17| image:: media/image18.png
+.. |image17| image:: media_R/image18.png
    :width: 6.26806in
    :height: 2.14653in
-.. |image18| image:: media/image19.png
+.. |image18| image:: media_R/image19.png
    :width: 6.26806in
    :height: 4.12153in
-.. |image19| image:: media/image20.png
+.. |image19| image:: media_R/image20.png
    :width: 6.26806in
    :height: 0.59514in
-.. |image20| image:: media/image21.png
+.. |image20| image:: media_R/image21.png
    :width: 6.26806in
    :height: 6.94167in
-.. |image21| image:: media/image22.png
+.. |image21| image:: media_R/image22.png
    :width: 6.26806in
    :height: 0.87778in
-.. |image22| image:: media/image23.png
+.. |image22| image:: media_R/image23.png
    :width: 6.26806in
    :height: 2.57014in
-.. |image23| image:: media/image24.png
+.. |image23| image:: media_R/image24.png
    :width: 6.26806in
    :height: 0.59514in
-.. |image24| image:: media/image25.png
+.. |image24| image:: media_R/image25.png
    :width: 6.26806in
    :height: 0.87778in
-.. |image25| image:: media/image26.png
+.. |image25| image:: media_R/image26.png
    :width: 6.26806in
    :height: 0.59514in
-.. |image26| image:: media/image27.png
+.. |image26| image:: media_R/image27.png
    :width: 6.26806in
    :height: 1.01875in
-.. |image27| image:: media/image28.png
+.. |image27| image:: media_R/image28.png
    :width: 6.26806in
    :height: 2.42917in
