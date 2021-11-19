@@ -214,20 +214,18 @@ the various layers for the MGCI analysis.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **MGCI Toolbox A. Generic: 1. Define projection and generate an AOI**:                                                                                    |
-|    :name: define_projection                                                                                                                                           |
+|    :name: toolbox_A1                                                                                                                                                  |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
 | Before running the tool users do need to create custom projection in their QGIS project                                                                               |
 | as indicated in Box 1 outlined in the section above.                                                                                                                  |
 |                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
 |                                                                                                                                                                       |
-| |image172|                                                                                                                                                            |
-|                                                                                                                                                                       |
-| The user selects the **country boundary** and sets **three output files** then clicks **Run** to tun the tool                                                         |
+| |imageA1|                                                                                                                                                             |
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
 |                                                                                                                                                                       |
-| |image173|                                                                                                                                                            |
+| |imageA1_w|                                                                                                                                                           |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Preparation of Vegetation descriptor layer
@@ -355,25 +353,23 @@ You should now see the unique LULC classes present within the AOI for
 the country.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| .. rubric:: **MGCI Toolbox A. VegetationDescriptor: 2 (a) Clip and project LULC raster (FOR REGIONAL/GLOBAL DATASETS)**:                                              |
-|    :name: veg_desc_clip_raster_a                                                                                                                                      |
+| .. rubric:: **MGCI Toolbox A2a. VegetationDescriptor: Clip and project LULC raster (FOR REGIONAL/GLOBAL DATASETS)**:                                                  |
+|    :name: toolbox_A2a                                                                                                                                                 |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
 | Before running the tool users need to check that they know the projection of their LUUC dataset and it is faling in the correct place geographically.                 |
 | as outlined in the section above.                                                                                                                                     |
 |                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
 |                                                                                                                                                                       |
-| |image174|                                                                                                                                                            |
-|                                                                                                                                                                       |
-| The user selects the **country boundary** and sets **three output files** then clicks **Run** to tun the tool                                                         |
+| |imageA2a|                                                                                                                                                            |
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
 |                                                                                                                                                                       |
-| |image175|                                                                                                                                                            |
+| |imageA2a_w|                                                                                                                                                          |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-(b) Project LULC raster (FOR NATIONALDATASETS ONLY):
+(b) Project LULC raster (FOR NATIONAL DATASETS ONLY):
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  search for **project** in the processing toolbox.
@@ -412,8 +408,25 @@ added should be added to the map canvas\ **.**
 
 The layer should now show all the National LULC classes for Costa Rica.
 
-Steps when using a vector LULC dataset
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| .. rubric:: **MGCI Toolbox A2b. VegetationDescriptor: Project LULC raster (FOR NATIONAL RASTER DATASETS)**:                                                           |
+|    :name: toolbox_A2b                                                                                                                                                 |
+| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
+| Before running the tool users need to check that they know the projection of their LUUC dataset and it is faling in the correct place geographically.                 |
+| as outlined in the section above.                                                                                                                                     |
+|                                                                                                                                                                       |
+| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
+|                                                                                                                                                                       |
+| |imageA2b|                                                                                                                                                            |
+|                                                                                                                                                                       |
+| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
+|                                                                                                                                                                       |
+| |imageA2b_w|                                                                                                                                                          |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
+Project Vector LULC and convert to raster (FOR NATIONAL DATASETS ONLY):
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When using a vector LULC dataset the data will also need to be projected
 to an equal area projection.
@@ -510,6 +523,22 @@ added should be added to the map canvas\ **.**
 
 The layer should now show all the National LULC classes for Costa Rica.
 
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| .. rubric:: **MGCI Toolbox A2c. VegetationDescriptor: Project vector LULC and convert to raster (FOR NATIONAL RASTER DATASETS)**:                                     |
+|    :name: toolbox_A2c                                                                                                                                                 |
+| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
+| Before running the tool users need to check that they know the projection of their LUUC dataset and it is faling in the correct place geographically.                 |
+| as outlined in the section above.                                                                                                                                     |
+|                                                                                                                                                                       |
+| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
+|                                                                                                                                                                       |
+| |imageA2c|                                                                                                                                                            |
+|                                                                                                                                                                       |
+| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
+|                                                                                                                                                                       |
+| |imageA2c_w|                                                                                                                                                          |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Reclassify to IPCC landcover types
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -562,6 +591,23 @@ can see that the actual layer only has 6 values.
    |image67|
 
    |image68|
+   
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| .. rubric:: **MGCI Toolbox A2c. VegetationDescriptor: Generate Vegetation Descriptor Layer**:                                                                         |
+|    :name: toolbox_A3                                                                                                                                                  |
+| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
+| Before running the tool users need to check that they know the projection of their LUUC dataset and it is faling in the correct place geographically.                 |
+| as outlined in the section above.                                                                                                                                     |
+|                                                                                                                                                                       |
+| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
+|                                                                                                                                                                       |
+| |imageA3|                                                                                                                                                             |
+|                                                                                                                                                                       |
+| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
+|                                                                                                                                                                       |
+| |imageA3|                                                                                                                                                             |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 
 Preparation of Mountain descriptor 
 ----------------------------------
@@ -1840,12 +1886,82 @@ Export to standard reporting table
    :width: 6.26806in
    :height: 4.75764in
    
+.. |imageA1| image:: media_QGIS/Toolbox_images/A1.png
+   :width: 6.26806in
+   :height: 4.75764in   
+.. |imageA1_w| image:: media_QGIS/Toolbox_images/A1_w.png
+   :width: 6.26806in
+   :height: 4.75764in     
    
+.. |imageA2a| image:: media_QGIS/Toolbox_images/A2a.png
+   :width: 6.26806in
+   :height: 4.75764in  
    
+.. |imageA2a_w| image:: media_QGIS/Toolbox_images/A2a_w.png
+   :width: 6.26806in
+   :height: 4.75764in 
    
+.. |imageA2b| image:: media_QGIS/Toolbox_images/A2b.png
+   :width: 6.26806in
+   :height: 4.75764in
    
+.. |imageA2c_w| image:: media_QGIS/Toolbox_images/A2c_w.png
+   :width: 6.26806in
+   :height: 4.75764in 
    
+   .. |imageA3| image:: media_QGIS/Toolbox_images/A3.png
+   :width: 6.26806in
+   :height: 4.75764in
    
+.. |imageA3_w| image:: media_QGIS/Toolbox_images/A3_w.png
+   :width: 6.26806in
+   :height: 4.75764in 
    
+   .. |imageB1| image:: media_QGIS/Toolbox_images/B1.png
+   :width: 6.26806in
+   :height: 4.75764in   
+.. |imageB1_w| image:: media_QGIS/Toolbox_images/B1_w.png
+   :width: 6.26806in
+   :height: 4.75764in 
    
+.. |imageB2| image:: media_QGIS/Toolbox_images/B2.png
+   :width: 6.26806in
+   :height: 4.75764in   
+.. |imageB2_w| image:: media_QGIS/Toolbox_images/B2_w.png
+   :width: 6.26806in
+   :height: 4.75764in 
    
+.. |imageB3| image:: media_QGIS/Toolbox_images/B3.png
+   :width: 6.26806in
+   :height: 4.75764in   
+.. |imageB3_w| image:: media_QGIS/Toolbox_images/B3_w.png
+   :width: 6.26806in
+   :height: 4.75764in 
+   
+.. |imageB4| image:: media_QGIS/Toolbox_images/B4.png
+   :width: 6.26806in
+   :height: 4.75764in   
+.. |imageB4_w| image:: media_QGIS/Toolbox_images/B4_w.png
+   :width: 6.26806in
+   :height: 4.75764in 
+
+.. |imageB5| image:: media_QGIS/Toolbox_images/B5.png
+   :width: 6.26806in
+   :height: 4.75764in   
+.. |imageB5_w| image:: media_QGIS/Toolbox_images/B5_w.png
+   :width: 6.26806in
+   :height: 4.75764in 
+   
+.. |imageB6| image:: media_QGIS/Toolbox_images/B6.png
+   :width: 6.26806in
+   :height: 4.75764in   
+.. |imageB6_w| image:: media_QGIS/Toolbox_images/B6_w.png
+   :width: 6.26806in
+   :height: 4.75764in 
+   
+.. |imageB7| image:: media_QGIS/Toolbox_images/B7.png
+   :width: 6.26806in
+   :height: 4.75764in   
+.. |imageB7_w| image:: media_QGIS/Toolbox_images/B7_w.png
+   :width: 6.26806in
+   :height: 4.75764in 
