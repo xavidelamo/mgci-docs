@@ -1405,7 +1405,7 @@ your R integration is working in Section 2.1.
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
 |                                                                                                                                                                       |
-| |imageC1_w|                                                                                                                                                             |
+| |imageC1_w|                                                                                                                                                           |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -1450,7 +1450,7 @@ Next we will  aggregate the mountain descriptor layer.
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
 |                                                                                                                                                                       |
-| |imageD1_w|                                                                                                                                                             |
+| |imageD1_w|                                                                                                                                                           |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Combine mountain and vegetation descriptor layers
@@ -1476,7 +1476,7 @@ As the MGCI required disaggregation by both the 6  LULC class and the 6 Mountain
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
 |                                                                                                                                                                       |
-| |imageD2_w|                                                                                                                                                             |
+| |imageD2_w|                                                                                                                                                           |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Clip layers to country boundary
@@ -1510,7 +1510,7 @@ Repeat the above step for the resampled RSA raster.
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
 |                                                                                                                                                                       |
-| |imageD3_w|                                                                                                                                                             |
+| |imageD3_w|                                                                                                                                                           |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -1579,7 +1579,7 @@ Create summary statistics by LULC class
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
 |                                                                                                                                                                       |
-| |imageE2_w|                                                                                                                                                             |
+| |imageE2_w|                                                                                                                                                           |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Create summary statistics by green cover and Mountain class
@@ -1596,7 +1596,7 @@ Create summary statistics by green cover and Mountain class
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
 |                                                                                                                                                                       |
-| |imageE3_w|                                                                                                                                                             |
+| |imageE3_w|                                                                                                                                                           |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Create summary statistics by green cover and Mountain class
