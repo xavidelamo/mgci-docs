@@ -1405,7 +1405,7 @@ your R integration is working in Section 2.1.
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
 |                                                                                                                                                                       |
-| |imageC1|                                                                                                                                                             |
+| |imageC1_w|                                                                                                                                                             |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -1450,7 +1450,7 @@ Next we will  aggregate the mountain descriptor layer.
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
 |                                                                                                                                                                       |
-| |imageD1|                                                                                                                                                             |
+| |imageD1_w|                                                                                                                                                             |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Combine mountain and vegetation descriptor layers
@@ -1476,7 +1476,7 @@ As the MGCI required disaggregation by both the 6  LULC class and the 6 Mountain
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
 |                                                                                                                                                                       |
-| |imageD2|                                                                                                                                                             |
+| |imageD2_w|                                                                                                                                                             |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Clip layers to country boundary
@@ -1510,7 +1510,7 @@ Repeat the above step for the resampled RSA raster.
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
 |                                                                                                                                                                       |
-| |imageD3|                                                                                                                                                             |
+| |imageD3_w|                                                                                                                                                             |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -1520,6 +1520,8 @@ Generate Real Surface Area and Planimetric Area Statistics
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The data are now in a consistent format and clipped to the country boundary, so we can now generate the statistics required for the MGCI reporting. As we want to generate disaggregated statistics by LULC class and Mountain Class we will use a zonal statistics tool with the combined Vegetation + mountain  layer as the summary unit and the RSA raster as the summary layer. The Zonal statistics tool will automatically calculate planimetric area in the output.
+
+This output is the main statistics table from the analysis, from which other summary statistics tables will be generated.
 
 -  In the **processing toolbox** search for Zonal Statistics
 
@@ -1554,14 +1556,14 @@ When the statistics .csv files  added to the QGIS project it **does not add it c
 |                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
 |                                                                                                                                                                       |
-| |imageD3|                                                                                                                                                             |
+| |imageE1|                                                                                                                                                             |
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
 |                                                                                                                                                                       |
 | |imageE1_w|                                                                                                                                                           |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
+***The following steps will only be run from the custom MGCI toolbox. We did not feel there was benefit to detailing the many tabular joins required to create the summary tables and standard reporting tables. Users can explore the models in the model designer to explore the steps further.*** 
 
 Create summary statistics by LULC class
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1577,7 +1579,7 @@ Create summary statistics by LULC class
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
 |                                                                                                                                                                       |
-| |imageE2|                                                                                                                                                             |
+| |imageE2_w|                                                                                                                                                             |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Create summary statistics by green cover and Mountain class
@@ -1594,7 +1596,7 @@ Create summary statistics by green cover and Mountain class
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
 |                                                                                                                                                                       |
-| |imageE3|                                                                                                                                                             |
+| |imageE3_w|                                                                                                                                                             |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Create summary statistics by green cover and Mountain class
