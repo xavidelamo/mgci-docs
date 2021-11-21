@@ -65,7 +65,7 @@ To demonstrate the steps for processing a raster LULC dataset we will use the Gl
 
 |image4|
 
-If the dataset is in netCDF (.nc) format, use the following code (ensure that library(ncdf4) has been loaded)
+If the dataset is in netCDF (.nc) format, use the following code (ensure that library(ncdf4) has been loaded). Edit the varname to the name of the required layer.
 
 |image5|
 
@@ -100,6 +100,12 @@ The next step is to reclassify the LULC map prepared in the previous steps int
 Reclassify the LULC types from the ESA CII or National landcover dataset to the 6 IPCC landcover classes (**see section Defining analysis environments and data selection** for more detail)
 
 |image11|
+
+Plot the vegetation descriptor layer with the country boundary.
+
+|image28|
+
+|image29|
 
 Preparation of Mountain descriptor
 ----------------------------------
@@ -145,6 +151,12 @@ For Kapos classes 5 and 6 a 7km local elevation range is required for the ident
 
 |image17|
 
+Plot Focal range
+
+|image30|
+
+|image31|
+
 Generating layers for each Kapos mountain class
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -171,6 +183,12 @@ Generate an interim mountain layer with classes
 The next step is to create a mosaic of all the classes into a single raster where class 1 has a value of 1, class2 a value of 2, etc. 
 
 |image19|
+
+Plot the mountain descriptor layer
+
+|image32|
+
+|image33|
 
 Generation of Real Surface Area raster
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -351,5 +369,23 @@ Outputing and formattting to Standard MGCI reporting tables
    :width: 6.26806in
    :height: 1.01875in
 .. |image27| image:: media_R/image28.png
+   :width: 6.26806in
+   :height: 2.42917in
+.. |image28| image:: media_R/image29.png
+   :width: 6.26806in
+   :height: 2.42917in
+.. |image29| image:: media_R/image30.png
+   :width: 6.26806in
+   :height: 2.42917in
+.. |image30| image:: media_R/image31.png
+   :width: 6.26806in
+   :height: 2.42917in
+.. |image31| image:: media_R/image32.png
+   :width: 6.26806in
+   :height: 2.42917in
+.. |image32| image:: media_R/image33.png
+   :width: 6.26806in
+   :height: 2.42917in
+.. |image33| image:: media_R/image34.png
    :width: 6.26806in
    :height: 2.42917in
