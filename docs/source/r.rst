@@ -101,6 +101,12 @@ Reclassify the LULC types from the ESA CII or National landcover dataset to the 
 
 |image11|
 
+Plot the vegetation descriptor layer with the country boundary.
+
+|image28|
+
+|image29|
+
 Preparation of Mountain descriptor
 ----------------------------------
 
@@ -351,5 +357,11 @@ Outputing and formattting to Standard MGCI reporting tables
    :width: 6.26806in
    :height: 1.01875in
 .. |image27| image:: media_R/image28.png
+   :width: 6.26806in
+   :height: 2.42917in
+.. |image28| image:: media_R/image29.png
+   :width: 6.26806in
+   :height: 2.42917in
+.. |image29| image:: media_R/image30.png
    :width: 6.26806in
    :height: 2.42917in
