@@ -136,11 +136,13 @@ Clip the DEM to area of interest after projecting to equal area projection
 Generating slope layer from DEM layer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-IF your country falls within a single UTM Zone only AND you have used the UTM projection for the previous steps, or if the projection you are using has equidistant properties, slope can be generated in the same projection as the rest of the analysis, otherwise please generate a custom equidistant azimuthal projection by changing the **+lat_0 = 8.5** and the **+lon_0 = -84** parameters in the example qquidistant azimuthal projection to the central latitude and longitude of your area of interest.
+In, this section, depending on whether your chosen projection already has equidistant properties you will need to reproject the original merged DEM to an  equidistant projection (the one in its native coordinate system not the projected one to minimise introduction of errors from projecting a raster multiple times). This will  reduce errors in slope calculation. An overview of slope calculation methods is provided in the defining environments section.
+
+IF your country falls within a single UTM Zone only AND you have used the UTM projection for the previous steps, or if the projection you are using has equidistant properties, slope can be generated in the same projection as the rest of the analysis, 
 
 |image15|
 
-OR (ADD TEXT)
+otherwise please generate a custom equidistant azimuthal projection by changing the **+lat_0 = 8.5** and the **+lon_0 = -84** parameters in the example equidistant azimuthal projection to the central latitude and longitude of your area of interest.
 
 |image16|
 
