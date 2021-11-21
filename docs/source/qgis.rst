@@ -1405,43 +1405,14 @@ your R integration is working in Section 2.1.
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
 |                                                                                                                                                                       |
-| |imageC1|                                                                                                                                                             |
+| |imageC1_w|                                                                                                                                                           |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
-Aligning mountain and vegetation descriptor layers 
---------------------------------------------------
-
-Now that we have 3 raster datasets in their native resolutions we need
-to bring the datasets together and ensure that correct aggregation is
-undertaken and that the all the layers align to the VegetationDescriptor
-layer.
-
-In this example we have the Mountain Descriptor layer and the
-RealSurfaceArea Rasters at 90m resolution but a VegetationDescriptor
-layer at 300m resolution.
-
-We can use the Align tool in QGIS to aggregate and align the 2 higher
-resolution rasters to the 300m Vegetation Descriptor layer
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| .. rubric:: **MGCI Toolbox D1. Generic: Aggregate rasters to resolution of Vegetation Descriptor**:                                                                   |
-|    :name: toolbox_D1                                                                                                                                                  |
-| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
-|                                                                                                                                                                       |
-| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
-|                                                                                                                                                                       |
-| |imageD1|                                                                                                                                                             |
-|                                                                                                                                                                       |
-| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
-|                                                                                                                                                                       |
-| |imageD1|                                                                                                                                                             |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Aggregation to standard resolution and clipping to country
 ----------------------------------------------------------
-Combine mountain and vegetation descriptor layers
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Aggregating mountain and RSA rasters to match resolution of vegetation descriptor layer
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Now that we have 3 raster datasets in their native resolutions we need to bring the datasets together and ensure that correct aggregation is undertaken and that the all the layers align to the VegetationDescriptor layer.   In this example we have the Mountain Descriptor layer and the RealSurfaceArea Rasters at 90m resolution but a VegetationDescriptor layer at 300m resolution. There are various tools that can be used but we have opted for the GRASS tool r.resamp.stats as it allowed for various methods when resampling to a coarser grid.
 
@@ -1457,7 +1428,7 @@ We will first aggregate the Real Surface Area raster.
 
    |image170|  
    
- Next we will  aggregate the mountain descriptor layer.
+Next we will  aggregate the mountain descriptor layer.
  
 -  Select the **MountainDescriptor_K1_6** layer  as the **Input Layer** e.g in this example MoutainDescriptor_K1_6_withoutK7.tif
 -  This time set the **aggregation method** to **mode** as we want to pick the value that represents the majority of smaller cell values in the coarser cell.
@@ -1467,6 +1438,32 @@ We will first aggregate the Real Surface Area raster.
 -  Set the **Resampled Aggregated layer** to a name that distinguishes the resampling of the layer e.g. in this example **MoutainDescriptor_K1_6_withoutK7_agg300.tif**
 
    |image173|  
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| .. rubric:: **MGCI Toolbox D1. Generic: Aggregate rasters to resolution of Vegetation Descriptor**:                                                                   |
+|    :name: toolbox_D1                                                                                                                                                  |
+| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
+|                                                                                                                                                                       |
+| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
+|                                                                                                                                                                       |
+| |imageD1|                                                                                                                                                             |
+|                                                                                                                                                                       |
+| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
+|                                                                                                                                                                       |
+| |imageD1_w|                                                                                                                                                           |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Combine mountain and vegetation descriptor layers
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+As the MGCI required disaggregation by both the 6  LULC class and the 6 Mountain Class and the tools within QGIS will only allow a single input for zones, we will combine the two datasets together to form a combined zones dataset.
+
+-  In the **processing toolbox**, search for and double click on the **raster calculator**
+-  In the expression window we will sum the two dataset together but in order to distinguish the vegetation class from the mountain call all the vegetation values will be multiplied by 10. This means for example a value of 35 in the output means the pixel has class 3 in the vegetation descriptor layer and class 5 in the Mountain descriptor layer.
+-  In the expression box formulate the expression e.g.  ("VEGETATION_DESCRIPTOR_AOI_LAEA@1"*10) + "MoutainDescriptor_K1_6_withoutK7_agg300recl@1"
+-  Set the Reference layer as the Vegetation Descriptor layer
+-  Click **Run** to run the tool
+
+   |image174|
  
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **MGCI Toolbox D2. Generic: Combine mountain and vegetation rasters**:                                                                                    |
@@ -1479,11 +1476,29 @@ We will first aggregate the Real Surface Area raster.
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
 |                                                                                                                                                                       |
-| |imageD2|                                                                                                                                                             |
+| |imageD2_w|                                                                                                                                                           |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Clip layers to country boundary
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+At this stage we can now clip the final aggregated datasets to the country boundary (remember that up to this point we have used a bounding box of the country boundary buffered out by 10km).
+
+-  In the **processing toolbox** search for **Clip Raster by Mask Layer** 
+-  Set the **Input layer** the **aggregated combined vegetation + mountain descriptor layer** e.g. veg10_mountain.tif
+-  Set the **mask layer** to the **polygon country boundary in equal area projection** e.g. BND_CTR_LAEA
+-  Set the **Source CRS** and the **Target CRS** to be the equal area projection
+-  **Tick Match the extent of the clipped raster to the extent of the mask layer**
+-  **Tick Keep resolution of input raster**
+-  Set the **Clipped (mask) output** to e.g. veg10_mountain_CTRY_clip.tif
+-  Click **Run** to run the tool
+
+   |image175|
+   
+Repeat the above step for the resampled RSA raster.
+
+   |image176|
+   
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **MGCI Toolbox D3. Generic:  Clip to country boundary**:                                                                                                  |
 |    :name: toolbox_D3                                                                                                                                                  |
@@ -1495,7 +1510,7 @@ Clip layers to country boundary
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
 |                                                                                                                                                                       |
-| |imageD3|                                                                                                                                                             |
+| |imageD3_w|                                                                                                                                                           |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -1504,20 +1519,51 @@ Computation of Mountain Green Cover Index
 Generate Real Surface Area and Planimetric Area Statistics
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+The data are now in a consistent format and clipped to the country boundary, so we can now generate the statistics required for the MGCI reporting. As we want to generate disaggregated statistics by LULC class and Mountain Class we will use a zonal statistics tool with the combined Vegetation + mountain  layer as the summary unit and the RSA raster as the summary layer. The Zonal statistics tool will automatically calculate planimetric area in the output.
+
+This output is the main statistics table from the analysis, from which other summary statistics tables will be generated.
+
+-  In the **processing toolbox** search for Zonal Statistics
+
+-  Double click on the **Raster Layer Zonal Statistics** tool
+-  Set the **input layer** to the **Aggregated Real Surface Area raster clipped to the country boundary**
+-  Set the **zones layer** to the **combined vegetation and mountain layer clipped to the country boundary**
+-  Save the **Statistics output to a .csv file** e.g. rsastats.csv
+
+   |image177|
+   
+The Planimetric area generated in m2 rather than km2 and will be stored in a field called m2
+
+•	In the **processing Toolbox** search for **Rename Field** 
+•	Set the field to rename as **m2**
+•	Set the **New field name** to **PlanimetricArea_m2**
+•	Save the **Renamed output to a .csv file** e.g. MGCI_stats.csv
+
+   |image178|
+
+**Important Note:**
+When the statistics .csv files  added to the QGIS project it **does not add it correctly using delimited text**. This means that all the fields are viewedas string. Remove the MGCI_stats.csv from the QGIS project and re-add it using Layer>>AddLayer>>Add Delimited Text Layer. If you do not to this the following steps run only from the MGCI toolbox will fail to run. 
+
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **E1. MGCI:  Generate RSA and Planimetric Area Statistics**:                                                                                              |
 |    :name: toolbox_D3                                                                                                                                                  |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
 |                                                                                                                                                                       |
+| **Also note:** The tool in the MGCI toolbox includes the above steps but also does some further refinement to add some additional fields to convert the RSA and       |
+| Planimetric Area into km2 and drop any unrequired fields generated by the zonal statistics function. It also joins on some additional fields from a template file     |
+|   MGCI_classes_template.csv                                                                                                                                           |
+|                                                                                                                                                                       |
+|                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
 |                                                                                                                                                                       |
-| |imageD3|                                                                                                                                                             |
+| |imageE1|                                                                                                                                                             |
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
 |                                                                                                                                                                       |
 | |imageE1_w|                                                                                                                                                           |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+***The following steps will only be run from the custom MGCI toolbox. We did not feel there was benefit to detailing the many tabular joins required to create the summary tables and standard reporting tables. Users can explore the models in the model designer to explore the steps further.*** 
 
 Create summary statistics by LULC class
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1533,7 +1579,7 @@ Create summary statistics by LULC class
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
 |                                                                                                                                                                       |
-| |imageE2|                                                                                                                                                             |
+| |imageE2_w|                                                                                                                                                           |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Create summary statistics by green cover and Mountain class
@@ -1550,7 +1596,7 @@ Create summary statistics by green cover and Mountain class
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
 |                                                                                                                                                                       |
-| |imageE3|                                                                                                                                                             |
+| |imageE3_w|                                                                                                                                                           |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Create summary statistics by green cover and Mountain class
@@ -2128,6 +2174,30 @@ Export to standard reporting table
 .. |image173| image:: media_QGIS/image173.png
    :width: 6.26806in
    :height: 4.75764in
+.. |image173| image:: media_QGIS/image173.png
+   :width: 6.26806in
+   :height: 4.75764in
+.. |image174| image:: media_QGIS/image174.png
+   :width: 6.26806in
+   :height: 4.75764in
+.. |image175| image:: media_QGIS/image175.png
+   :width: 6.26806in
+   :height: 4.75764in
+.. |image176| image:: media_QGIS/image176.png
+   :width: 6.26806in
+   :height: 4.75764in
+.. |image177| image:: media_QGIS/image177.png
+   :width: 6.26806in
+   :height: 4.75764in
+.. |image178| image:: media_QGIS/image178.png
+   :width: 6.26806in
+   :height: 4.75764in
+   
+   
+   
+   
+   
+   
 .. |imageA1| image:: media_QGIS/Toolbox_images/A1.png
    :width: 6.26806in
    :height: 4.75764in   
