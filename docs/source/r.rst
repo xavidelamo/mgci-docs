@@ -65,7 +65,7 @@ To demonstrate the steps for processing a raster LULC dataset we will use the Gl
 
 |image4|
 
-If the dataset is in netCDF (.nc) format, use the following code (ensure that library(ncdf4) has been loaded)
+If the dataset is in netCDF (.nc) format, use the following code (ensure that library(ncdf4) has been loaded). Edit the varname to the name of the required layer.
 
 |image5|
 
