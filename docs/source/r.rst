@@ -15,14 +15,15 @@ This script has been developed to be run on R 4.1.1 and RStudio 2021.09.0+351 "G
 
 R-MGCI :sub:`beta` is in a beta stage and therefore it is still under development. Please contact the R-MGCI :sub:`beta` development team with any comments or suggestions.
 
-[VIGNESH: Please specify the way you want to channel the comments and suggestions for users. See below the text from SEPAL]:  
 
-If you have specific bugs to report or improvements to the tool that you would like to suggest, please use the `GitHub’s issue tracker <https://github.com/dfguerrerom/sepal_mgci/issues>`_ of the SEPAL-MGCI :sub:`beta` module and do follow the `contribution guidelines <https://github.com/dfguerrerom/sepal_mgci/blob/master/CONTRIBUTE.md>`_.
+If you have specific bugs to report or improvements to the tool that you would like to suggest, please use the `GitHub’s issue tracker
+<https://github.com/dfguerrerom/wcmc-mgci/issues>`_ of the SEPAL-MGCI :sub:`beta` module and do follow the `contribution guidelines
+<https://github.com/dfguerrerom/wcmc-mgci/blob/master/CONTRIBUTE.md>`_.
 
 Authors 
 ^^^^^^^
 
-R-MGCI :sub:`beta` has been developed by the UN Environment Programme World Conservation Monitoring Centre (UNEP-WCMC) in collaboration with the Food and Agriculture Organization (FAO) of the United Nations. Contributors to R-MGCI :sub:`beta` and its documentation include Vignesh Kamath Cannanure [VIGNESH: Please complete]
+R-MGCI :sub:`beta` has been developed by the UN Environment Programme World Conservation Monitoring Centre (UNEP-WCMC) in collaboration with the Food and Agriculture Organization (FAO) of the United Nations. Contributors to R-MGCI :sub:`beta` and its documentation include Vignesh Kamath Cannanure, Corinna Ravilious, Boipelo Tshwene-Mauchaza, Cristina Telhado and Valerie Kapos.
 
 License
 ^^^^^^^
