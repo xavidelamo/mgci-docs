@@ -255,9 +255,9 @@ Plot the vegetation descriptor layer with the country boundary.
 |image28|
 
 .. code-block:: r
-    plot(lulc_ipcc)
+   plot(lulc_ipcc)
     
-    plot(aoi_laea, add=T, col=NA);
+   plot(aoi_laea, add=T, col=NA);
 
 |image29|
 
@@ -273,7 +273,7 @@ Input the DEM raster.
 |image12|
 
 .. code-block:: r
-    DEM <- raster("C:/this_is_the_path/to_my_DEM_layer.tif");
+   DEM <- raster("C:/this_is_the_path/to_my_DEM_layer.tif");
 
 Merging DEM tiles into a single DEM
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -283,17 +283,17 @@ If you have multiple DEM raster tiles, follow the steps below to merge them. In 
 |image13|
 
 .. code-block:: r
-    #import all raster files in the folder as a list
+   #import all raster files in the folder as a list
     
-    DEM_rastlist <- list.files(path="C:/this_is_the_path/to_my_DEM_folder", pattern='tif$', full.names=TRUE)
+   DEM_rastlist <- list.files(path="C:/this_is_the_path/to_my_DEM_folder", pattern='tif$', full.names=TRUE)
     
-    DEM_allrasters <- lapply(DEM_rastlist, raster)
+   DEM_allrasters <- lapply(DEM_rastlist, raster)
     
-    #merge all the tiles in the list
+   #merge all the tiles in the list
     
-    DEM_allrasters$filename <- "working_folder/DEM_merged.tif" 
+   DEM_allrasters$filename <- "working_folder/DEM_merged.tif" 
     
-    DEM <- do.call(merge, DEM_allrasters);
+   DEM <- do.call(merge, DEM_allrasters);
 
 
 Clip and project merged DEM
@@ -305,9 +305,9 @@ Clip the DEM to area of interest after projecting to equal area projection
 |image14|
 
 .. code-block:: r
-    DEM_laea <- projectRaster(DEM,crs="+proj=laea +lat_0=8.5 +lon_0=-84 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs", method = "bilinear")
+   DEM_laea <- projectRaster(DEM,crs="+proj=laea +lat_0=8.5 +lon_0=-84 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs", method = "bilinear")
     
-    DEM_aoi_laea <- crop(DEM_laea,aoi_buffer);
+   DEM_aoi_laea <- crop(DEM_laea,aoi_buffer);
 
 Generating slope layer from DEM layer
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -319,30 +319,30 @@ IF your country falls within a single UTM Zone only AND you have used the UTM pr
 |image15|
 
 .. code-block:: r
-    slope_aoi <- terrain(DEM_aoi_laea, opt='slope', unit='degrees');
+   slope_aoi <- terrain(DEM_aoi_laea, opt='slope', unit='degrees');
 
 otherwise please generate a custom equidistant azimuthal projection by changing the **+lat_0 = 8.5** and the **+lon_0 = -84** parameters in the example equidistant azimuthal projection to the central latitude and longitude of your area of interest.
 
 |image16|
 
 .. code-block:: r
-    #Project to Azimuthal equal area projection
+   #Project to Azimuthal equal area projection
     
-    DEM_aeqd <- projectRaster(DEM, crs="+proj=aeqd +lat_0=8.5 +lon_0=-84 +datum=WGS84 +units=m", method = "bilinear")
+   DEM_aeqd <- projectRaster(DEM, crs="+proj=aeqd +lat_0=8.5 +lon_0=-84 +datum=WGS84 +units=m", method = "bilinear")
     
-    #Compute slope
+   #Compute slope
     
-    slope <- terrain(DEM_aeqd, opt='slope', unit='degrees')
+   slope <- terrain(DEM_aeqd, opt='slope', unit='degrees')
     
-    #Project to Lambert equal area projection, crop to the study area and resample
+   #Project to Lambert equal area projection, crop to the study area and resample
     
-    slope_aoi <- slope %>% 
+   slope_aoi <- slope %>% 
     
-    projectRaster(crs="+proj=laea +lat_0=8.5 +lon_0=-84 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs", method = "bilinear") %>%
+   projectRaster(crs="+proj=laea +lat_0=8.5 +lon_0=-84 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs", method = "bilinear") %>%
     
-    crop(aoi_buffer) %>%
+   crop(aoi_buffer) %>%
     
-    resample(DEM_aoi_laea,method="bilinear");
+   resample(DEM_aoi_laea,method="bilinear");
 
 
 Generating local elevation range from DEM
@@ -353,26 +353,26 @@ For Kapos classes 5 and 6 a 7km local elevation range is required for the ident
 |image17|
 
 .. code-block:: r
-    #Create a circular filter of 7 km
+   #Create a circular filter of 7 km
     
-    cf <- focalWeight(DEM_aoi_laea, 7000, "circle")
+   cf <- focalWeight(DEM_aoi_laea, 7000, "circle")
     
-    cf[cf > 0] <- 1
-    
-
-    #Generate focal maximum elevation
-    
-    focalMax <- focal(DEM_aoi_laea, w=cf, fun=max)  
+   cf[cf > 0] <- 1
     
 
-    #Generate focal minimum elevation
+   #Generate focal maximum elevation
     
-    focalMin <- focal(DEM_aoi_laea, w=cf, fun=min)  
+   focalMax <- focal(DEM_aoi_laea, w=cf, fun=max)  
     
 
-    #Generate focal range
+   #Generate focal minimum elevation
     
-    aoi7kmLocalElev <- focalMax - focalMin;   
+   focalMin <- focal(DEM_aoi_laea, w=cf, fun=min)  
+    
+
+   #Generate focal range
+    
+   aoi7kmLocalElev <- focalMax - focalMin;   
 
 
 Plot Focal range
@@ -380,7 +380,7 @@ Plot Focal range
 |image30|
 
 .. code-block:: r
-    plot(aoi7kmLocalElev);
+   plot(aoi7kmLocalElev);
 
 
 |image31|
@@ -405,49 +405,49 @@ class 6: >=300 & <1000 & local elevation range >=300
 |image18|
 
 .. code-block:: r
-    #class 1: DEM_aoi_laea>=4500m, class 2: >=3500 & <4500, class 3: >=2500 & <3500, assign NA to remaining values 
+   #class 1: DEM_aoi_laea>=4500m, class 2: >=3500 & <4500, class 3: >=2500 & <3500, assign NA to remaining values 
     
-    c123 <- reclassify(DEM_aoi_laea, c(4500,Inf,1, 3500,4499.999,2, 2500,3499.999,3, -Inf,2500,NA), include.lowest=TRUE)
-    
-
-    #class 4: >=1500 & <2500 & slope>=2
-    
-    c4 <- DEM_aoi_laea>=1500 & DEM_aoi_laea<2500 & slope_aoi>=2
-    
-    
-    #assign value 4
-    
-    m <- c(1,4, 0,NA)
-    
-    rclmat <- matrix(m, ncol=2, byrow=TRUE)
-    
-    c4 <- reclassify(c4, rclmat, include.lowest=TRUE)
+   c123 <- reclassify(DEM_aoi_laea, c(4500,Inf,1, 3500,4499.999,2, 2500,3499.999,3, -Inf,2500,NA), include.lowest=TRUE)
     
 
-    #class 5: >=1000 & <1500 & slope>=5 OR >=1000 & <1500 & local elevation range >300
+   #class 4: >=1500 & <2500 & slope>=2
     
-    c5 <- (DEM_aoi_laea>=1000 & DEM_aoi_laea<1500 & slope_aoi>=5) | (DEM_aoi_laea>=1000 & DEM_aoi_laea<1500 & aoi7kmLocalElev>300)
+   c4 <- DEM_aoi_laea>=1500 & DEM_aoi_laea<2500 & slope_aoi>=2
+   
     
-    #assign value 5
+   #assign value 4
     
-    m <- c(1,5, 0,NA)
+   m <- c(1,4, 0,NA)
     
-    rclmat <- matrix(m, ncol=2, byrow=TRUE)
+   rclmat <- matrix(m, ncol=2, byrow=TRUE)
     
-    c5 <- reclassify(c5, rclmat, include.lowest=TRUE)
+   c4 <- reclassify(c4, rclmat, include.lowest=TRUE)
+   
+
+   #class 5: >=1000 & <1500 & slope>=5 OR >=1000 & <1500 & local elevation range >300
+    
+   c5 <- (DEM_aoi_laea>=1000 & DEM_aoi_laea<1500 & slope_aoi>=5) | (DEM_aoi_laea>=1000 & DEM_aoi_laea<1500 & aoi7kmLocalElev>300)
+    
+   #assign value 5
+    
+   m <- c(1,5, 0,NA)
+    
+   rclmat <- matrix(m, ncol=2, byrow=TRUE)
+    
+   c5 <- reclassify(c5, rclmat, include.lowest=TRUE)
     
 
-    #class 6: >300 & <1000 & local elevation range >300
+   #class 6: >300 & <1000 & local elevation range >300
     
-    c6 <- DEM_aoi_laea>300 & DEM_aoi_laea<1000 & aoi7kmLocalElev>300
+   c6 <- DEM_aoi_laea>300 & DEM_aoi_laea<1000 & aoi7kmLocalElev>300
     
-    #assign value 6
+   #assign value 6
     
-    m <- c(1,6, 0,NA)
+   m <- c(1,6, 0,NA)
     
-    rclmat <- matrix(m, ncol=2, byrow=TRUE)
+   rclmat <- matrix(m, ncol=2, byrow=TRUE)
     
-    c6 <- reclassify(c6, rclmat, include.lowest=TRUE);
+   c6 <- reclassify(c6, rclmat, include.lowest=TRUE);
 
 
 Generate an interim mountain layer with classes
@@ -458,7 +458,7 @@ The next step is to create a mosaic of all the classes into a single raster wher
 |image19|
 
 .. code-block:: r
-    c <- mosaic(c123, c4, c5, c6, fun=max);
+   c <- mosaic(c123, c4, c5, c6, fun=max);
 
 
 Plot the mountain descriptor layer
@@ -466,7 +466,7 @@ Plot the mountain descriptor layer
 |image32|
 
 .. code-block:: r
-    plot(c);
+   plot(c);
 
 |image33|
 
@@ -478,45 +478,45 @@ The final layer that needs generating is the Real Surface Area raster from the D
 |image20|
 
 .. code-block:: r
-    #insert the value of your DEM raster cell size in the same unit as the elevation data
+   #insert the value of your DEM raster cell size in the same unit as the elevation data
     
-    c.size <- res(DEM_aoi_laea);
+   c.size <- res(DEM_aoi_laea);
 
 **Step 1: prepare your DEM raster for the calculation**
 
 Part a uses function ‘trim’ to exclude all boundaries cells with no value (NA) from DEM raster. Part b removes one row and one column from the top, bottom, left, and right from the original raster (cropping the raster to the boundaries of the area of interest).
 .. code-block:: r
-    #1.a - exclude all boundaries cells with no value from DEM raster
+   #1.a - exclude all boundaries cells with no value from DEM raster
     
-    DEM_aoi_laea <- trim(DEM_aoi_laea, padding=0, values=NA)
+   DEM_aoi_laea <- trim(DEM_aoi_laea, padding=0, values=NA)
     
 
-    #1.b - remove one row and one column from the top, bottom, left, and right
+   #1.b - remove one row and one column from the top, bottom, left, and right
+   
+   a <- nrow(DEM_aoi_laea)-1
     
-    a <- nrow(DEM_aoi_laea)-1
+   b <- ncol(DEM_aoi_laea)-1
     
-    b <- ncol(DEM_aoi_laea)-1
-    
-    DEM_aoi_laea.cropped <- DEM_aoi_laea [2:a, 2:b, drop=FALSE];
+   DEM_aoi_laea.cropped <- DEM_aoi_laea [2:a, 2:b, drop=FALSE];
     
 
 **Step 2: Convert DEM raster to matrix**
 
 This step uses the function ‘as.matrix’ to convert the DEM raster into a matrix with the same number of columns and rows of your DEM raster. There are instructions within the R script to check if that is true.
 .. code-block:: r
-    #step 2 - convert the trimmed DEM raster to matrix
+   #step 2 - convert the trimmed DEM raster to matrix
     
-    m <- as.matrix(DEM_aoi_laea)
+   m <- as.matrix(DEM_aoi_laea)
     
-    #this matrix should have the same number of columns and rows of your DEM raster
+   #this matrix should have the same number of columns and rows of your DEM raster
     
-    #you can check if that is correct by typing on the console 
+   #you can check if that is correct by typing on the console 
     
-    #ncol(DEM_aoi_laea)== ncol(m)
+   #ncol(DEM_aoi_laea)== ncol(m)
     
-    #nrow(DEM_aoi_laea)==nrow(m)
+   #nrow(DEM_aoi_laea)==nrow(m)
     
-    #you should get the answer TRUE for both queries;
+   #you should get the answer TRUE for both queries;
 
 
 **Step 3: Get coordinate information from DEM raster and assigns it to new object called m1**
@@ -525,27 +525,27 @@ This step uses the function ‘rasterToPoints’ to create a numeric object of t
 
 It uses function ‘as.vector’ assigned to each of one of the two coordinates columns to create numeric lists with the coordinates of the cells.
 .. code-block:: r
-    #step 3 - separate coordinate information from cropped raster and assign to a new object called m1
+   #step 3 - separate coordinate information from cropped raster and assign to a new object called m1
     
-    m1 <- rasterToPoints(DEM_aoi_laea.cropped) # this will create an object with three columns: x, y , layer
-    
-
-    # columns x and y have the coordinates of each cell and column layer has the elevation value of each cell
-    
-    col.X <- as.vector(m1[,1]) # just the coordinates values from X column 
-    
-    col.Y <- as.vector(m1[,2]) # just the coordinates values from Y column
+   m1 <- rasterToPoints(DEM_aoi_laea.cropped) # this will create an object with three columns: x, y , layer
     
 
-    #step 4 - calculate the real surface area of each grid cell  
+   # columns x and y have the coordinates of each cell and column layer has the elevation value of each cell
     
-    #uses function surfaceArea of package sp
+   col.X <- as.vector(m1[,1]) # just the coordinates values from X column 
     
-    #needs object 'm' created on step 2 and the cell size 'c.size'
+   col.Y <- as.vector(m1[,2]) # just the coordinates values from Y column
     
-    rsa <- surfaceArea(m, cellx = c.size, celly = c.size, byCell = TRUE) 
+
+   #step 4 - calculate the real surface area of each grid cell  
     
-    rsa.cropped <- rsa [2:a, 2:b, drop=FALSE];
+   #uses function surfaceArea of package sp
+    
+   #needs object 'm' created on step 2 and the cell size 'c.size'
+    
+   rsa <- surfaceArea(m, cellx = c.size, celly = c.size, byCell = TRUE) 
+    
+   rsa.cropped <- rsa [2:a, 2:b, drop=FALSE];
 
 
 **Step 4: Calculate the real surface area of each grid cell within the DEM**
