@@ -58,6 +58,22 @@ Where:
 - **Mountain Green Cover Area**: sum of mountain area (km :sup:`2`) covered by cropland, grassland, forestland, shrubland and wetland, as defined based on the IPCC classification (Penman et al. 2003). This component is calculated from the vegetation descriptor layer. 
 - **Total Mountain Area**: total area (Km :sup:`2`) of mountains. In both the numerator and denominator, mountain area is defined according to Kapos et al. 2000. This component is calculated from the mountain description layer.
 - **Vegetation descriptor layer**: The vegetation descriptor layer categorizes land cover into green and non-green areas. Green vegetation includes both natural vegetation and vegetation resulting from anthropic activity (e.g. crops, afforestation, etc.). Non-green areas include very sparsely vegetated areas, bare land, water, permanent ice/snow and urban areas. The vegetation description layer is derived from a land cover map, where land cover categories are classified into IPCC categories and then in green/non-green areas. 
+
+  .. _ipcc_classes:
+  
+  .. csv-table:: IPCC Classification
+     :header: "CODE", "Description"
+     :widths: auto
+     :align: center
+  
+     "1","Forest"
+     "2","Grassland"
+     "3","Cropland"
+     "4","Wetland"
+     "5","Settlement"
+     "6","Other land"
+
+
 - **Mountain descriptor layer**:  The mountain descriptor layer consists in a map of mountain classes following the UNEP-WCMC classification (Kapos et al. 2000). The UNEP-WCMC classification classifies the world mountain areas according altitude, slope and elevation range into the following categories.
 
   
@@ -184,7 +200,7 @@ After clicking the :guilabel:`Create UNEP-WCMC Mountain Class Map` button, the m
 Vegetation descriptor layer
 ---------------------------
 
-This section of SEPAL-MGCI :sub:`beta` produces the vegetation descriptor layer needed to compute the MGCI for the selected study area. It does so by reclassifying a land cover map into the six IPCC land cover classes (Forest, Cropland, Grassland, Wetland, Settlements and Other Land) and then into green and non-green cover following the reclassification rules specified in the indicator’s metadata. 
+This section of SEPAL-MGCI :sub:`beta` produces the vegetation descriptor layer needed to compute the MGCI for the selected study area. It does so by reclassifying a land cover map into the six :ref:`IPCC land cover classes <ipcc_classes>`  (Forest, Cropland, Grassland, Wetland, Settlements and Other Land) and then into green and non-green cover following the reclassification rules specified in the indicator’s metadata. 
 
 Questionnaire
 ^^^^^^^^^^^^^
