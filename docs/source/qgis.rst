@@ -15,14 +15,14 @@ This geospatial workflow has been developed to be run on QGIS 3.16.11, a free an
 
 The QGIS-MGCI :sub:`beta` workflow is in a beta stage and therefore it is still under development. Please contact the QGIS-MGCI :sub:`beta` development team with any comments or suggestions.
 
-[CORINNA: Please specify the way you want to channel the comments and suggestions for users. See below the text from SEPAL]:  
-
-If you have specific bugs to report or improvements to the tool that you would like to suggest, please use the `GitHub’s issue tracker <https://github.com/dfguerrerom/sepal_mgci/issues>`_ of the SEPAL-MGCI :sub:`beta` module and do follow the `contribution guidelines <https://github.com/dfguerrerom/sepal_mgci/blob/master/CONTRIBUTE.md>`_.
+If you have specific bugs to report or improvements to the tool that you would like to suggest, please use the `GitHub’s issue tracker
+<https://github.com/dfguerrerom/wcmc-mgci/issues>`_ of the SEPAL-MGCI :sub:`beta` module and do follow the `contribution guidelines
+<https://github.com/dfguerrerom/wcmc-mgci/blob/master/CONTRIBUTE.md>`_.
 
 Authors 
 ^^^^^^^
 
-QGIS-MGCI :sub:`beta` has been developed by the UN Environment Programme World Conservation Monitoring Centre (UNEP-WCMC) in collaboration with the Food and Agriculture Organization (FAO) of the United Nations. Contributors to QGIS-MGCI :sub:`beta` and its documentation include Corinna Ravilious [CORINNA: Please complete]
+QGIS-MGCI :sub:`beta` has been developed by the UN Environment Programme World Conservation Monitoring Centre (UNEP-WCMC) in collaboration with the Food and Agriculture Organization (FAO) of the United Nations. Contributors to QGIS-MGCI :sub:`beta` and its documentation include Corinna Ravilious, Vignesh Kamath Cannanure, Boipelo Tshwene-Mauchaza, Cristina Telhado and Valerie Kapos. 
 
 License
 ^^^^^^^
@@ -59,8 +59,8 @@ Where:
      "1","Elevation > 4.500 meters"
      "2","Elevation 3.500–4.500 meters"
      "3","Elevation 2.500–3.500 meters"
-     "4","Elevation 1.500–2.500 meters and slope > 2"
-     "5","Elevation 1.000–1.500 meters and slope > 5 or local elevation range (LER 7 kilometer radius) > 300 meters"
+     "4","Elevation 1.500–2.500 meters and slope >= 2"
+     "5","Elevation 1.000–1.500 meters and slope >= 5 or local elevation range (LER 7 kilometer radius) > 300 meters"
      "6","Elevation 300–1.000 meters and local elevation range (7 kilometer radius) > 300 meters"
 
 The QGIS-MGCI :sub:`beta` workflow allows the user to compute each of these description layers to then calculate MGCI values for any given area. The results of this analysis can be exported to a set of standardized reporting tables where MGCI values are disaggregated by mountain class and IPCC land category, as specified in the metadata of SDG Indicator 15.4.2.
