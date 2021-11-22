@@ -59,8 +59,8 @@ Where:
      "1","Elevation > 4.500 meters"
      "2","Elevation 3.500–4.500 meters"
      "3","Elevation 2.500–3.500 meters"
-     "4","Elevation 1.500–2.500 meters and slope > 2"
-     "5","Elevation 1.000–1.500 meters and slope > 5 or local elevation range (LER 7 kilometer radius) > 300 meters"
+     "4","Elevation 1.500–2.500 meters and slope >= 2"
+     "5","Elevation 1.000–1.500 meters and slope >= 5 or local elevation range (LER 7 kilometer radius) > 300 meters"
      "6","Elevation 300–1.000 meters and local elevation range (7 kilometer radius) > 300 meters"
 
 R-MGCI :sub:`beta` allows the user to compute each of these description layers to then calculate MGCI values for any given area. The results of this analysis can be exported to a set of standardized reporting tables where MGCI values are disaggregated by mountain class and IPCC land category, as specified in the metadata of SDG Indicator 15.4.2.
