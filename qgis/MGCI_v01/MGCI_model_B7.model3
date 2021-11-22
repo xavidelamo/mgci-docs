@@ -1,0 +1,510 @@
+<!DOCTYPE model>
+<Option type="Map">
+  <Option name="children" type="Map">
+    <Option name="grass7:r.reclass_1" type="Map">
+      <Option name="active" type="bool" value="true"/>
+      <Option name="alg_config"/>
+      <Option name="alg_id" type="QString" value="grass7:r.reclass"/>
+      <Option name="color" type="QString" value=""/>
+      <Option name="comment" type="Map">
+        <Option name="color" type="QString" value=""/>
+        <Option name="component_description" type="QString" value=""/>
+        <Option name="component_height" type="double" value="60"/>
+        <Option name="component_pos_x" type="double" value="584"/>
+        <Option name="component_pos_y" type="double" value="438.20000000000005"/>
+        <Option name="component_width" type="double" value="100"/>
+        <Option name="outputs_collapsed" type="bool" value="true"/>
+        <Option name="parameters_collapsed" type="bool" value="true"/>
+      </Option>
+      <Option name="component_description" type="QString" value="r.reclass"/>
+      <Option name="component_height" type="double" value="30"/>
+      <Option name="component_pos_x" type="double" value="360"/>
+      <Option name="component_pos_y" type="double" value="368"/>
+      <Option name="component_width" type="double" value="200"/>
+      <Option name="dependencies"/>
+      <Option name="id" type="QString" value="grass7:r.reclass_1"/>
+      <Option name="outputs" type="Map">
+        <Option name="Output: MoutainDescriptor_K1_6_withoutK7" type="Map">
+          <Option name="child_id" type="QString" value="grass7:r.reclass_1"/>
+          <Option name="color" type="QString" value=""/>
+          <Option name="comment" type="Map">
+            <Option name="color" type="QString" value=""/>
+            <Option name="component_description" type="QString" value=""/>
+            <Option name="component_height" type="double" value="60"/>
+            <Option name="component_pos_x" type="double" value="0"/>
+            <Option name="component_pos_y" type="double" value="0"/>
+            <Option name="component_width" type="double" value="100"/>
+            <Option name="outputs_collapsed" type="bool" value="true"/>
+            <Option name="parameters_collapsed" type="bool" value="true"/>
+          </Option>
+          <Option name="component_description" type="QString" value="Output: MoutainDescriptor_K1_6_withoutK7"/>
+          <Option name="component_height" type="double" value="30"/>
+          <Option name="component_pos_x" type="double" value="560"/>
+          <Option name="component_pos_y" type="double" value="413"/>
+          <Option name="component_width" type="double" value="200"/>
+          <Option name="default_value" type="invalid"/>
+          <Option name="mandatory" type="bool" value="false"/>
+          <Option name="name" type="QString" value="Output: MoutainDescriptor_K1_6_withoutK7"/>
+          <Option name="output_name" type="QString" value="output"/>
+          <Option name="outputs_collapsed" type="bool" value="true"/>
+          <Option name="parameters_collapsed" type="bool" value="true"/>
+        </Option>
+      </Option>
+      <Option name="outputs_collapsed" type="bool" value="true"/>
+      <Option name="parameters_collapsed" type="bool" value="true"/>
+      <Option name="params" type="Map">
+        <Option name="GRASS_RASTER_FORMAT_META" type="List">
+          <Option type="Map">
+            <Option name="source" type="int" value="2"/>
+            <Option name="static_value" type="QString" value=""/>
+          </Option>
+        </Option>
+        <Option name="GRASS_RASTER_FORMAT_OPT" type="List">
+          <Option type="Map">
+            <Option name="source" type="int" value="2"/>
+            <Option name="static_value" type="QString" value=""/>
+          </Option>
+        </Option>
+        <Option name="GRASS_REGION_CELLSIZE_PARAMETER" type="List">
+          <Option type="Map">
+            <Option name="source" type="int" value="2"/>
+            <Option name="static_value" type="double" value="0"/>
+          </Option>
+        </Option>
+        <Option name="GRASS_REGION_PARAMETER" type="List">
+          <Option type="Map">
+            <Option name="child_id" type="QString" value="qgis:rastercalculator_1"/>
+            <Option name="output_name" type="QString" value="OUTPUT"/>
+            <Option name="source" type="int" value="1"/>
+          </Option>
+        </Option>
+        <Option name="input" type="List">
+          <Option type="Map">
+            <Option name="child_id" type="QString" value="qgis:rastercalculator_1"/>
+            <Option name="output_name" type="QString" value="OUTPUT"/>
+            <Option name="source" type="int" value="1"/>
+          </Option>
+        </Option>
+        <Option name="rules" type="List">
+          <Option type="Map">
+            <Option name="parameter_name" type="QString" value="StylefileforMountainDescriptor (2)"/>
+            <Option name="source" type="int" value="0"/>
+          </Option>
+        </Option>
+        <Option name="txtrules" type="List">
+          <Option type="Map">
+            <Option name="source" type="int" value="2"/>
+            <Option name="static_value" type="QString" value=""/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:setlayerstyle_1" type="Map">
+      <Option name="active" type="bool" value="true"/>
+      <Option name="alg_config"/>
+      <Option name="alg_id" type="QString" value="native:setlayerstyle"/>
+      <Option name="color" type="QString" value=""/>
+      <Option name="comment" type="Map">
+        <Option name="color" type="QString" value=""/>
+        <Option name="component_description" type="QString" value=""/>
+        <Option name="component_height" type="double" value="60"/>
+        <Option name="component_pos_x" type="double" value="446.4"/>
+        <Option name="component_pos_y" type="double" value="347.8"/>
+        <Option name="component_width" type="double" value="100"/>
+        <Option name="outputs_collapsed" type="bool" value="true"/>
+        <Option name="parameters_collapsed" type="bool" value="true"/>
+      </Option>
+      <Option name="component_description" type="QString" value="Set layer style"/>
+      <Option name="component_height" type="double" value="30"/>
+      <Option name="component_pos_x" type="double" value="331.60000000000014"/>
+      <Option name="component_pos_y" type="double" value="542.2"/>
+      <Option name="component_width" type="double" value="200"/>
+      <Option name="dependencies"/>
+      <Option name="id" type="QString" value="native:setlayerstyle_1"/>
+      <Option name="outputs"/>
+      <Option name="outputs_collapsed" type="bool" value="true"/>
+      <Option name="parameters_collapsed" type="bool" value="true"/>
+      <Option name="params" type="Map">
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option name="child_id" type="QString" value="grass7:r.reclass_1"/>
+            <Option name="output_name" type="QString" value="output"/>
+            <Option name="source" type="int" value="1"/>
+          </Option>
+        </Option>
+        <Option name="STYLE" type="List">
+          <Option type="Map">
+            <Option name="parameter_name" type="QString" value="StylefileforMountainDescriptor"/>
+            <Option name="source" type="int" value="0"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="qgis:rastercalculator_1" type="Map">
+      <Option name="active" type="bool" value="true"/>
+      <Option name="alg_config"/>
+      <Option name="alg_id" type="QString" value="qgis:rastercalculator"/>
+      <Option name="color" type="QString" value=""/>
+      <Option name="comment" type="Map">
+        <Option name="color" type="QString" value=""/>
+        <Option name="component_description" type="QString" value=""/>
+        <Option name="component_height" type="double" value="60"/>
+        <Option name="component_pos_x" type="double" value="428"/>
+        <Option name="component_pos_y" type="double" value="168.60000000000002"/>
+        <Option name="component_width" type="double" value="100"/>
+        <Option name="outputs_collapsed" type="bool" value="true"/>
+        <Option name="parameters_collapsed" type="bool" value="true"/>
+      </Option>
+      <Option name="component_description" type="QString" value="Raster calculator"/>
+      <Option name="component_height" type="double" value="30"/>
+      <Option name="component_pos_x" type="double" value="209.4"/>
+      <Option name="component_pos_y" type="double" value="177"/>
+      <Option name="component_width" type="double" value="200"/>
+      <Option name="dependencies"/>
+      <Option name="id" type="QString" value="qgis:rastercalculator_1"/>
+      <Option name="outputs"/>
+      <Option name="outputs_collapsed" type="bool" value="true"/>
+      <Option name="parameters_collapsed" type="bool" value="true"/>
+      <Option name="params" type="Map">
+        <Option name="CELLSIZE" type="List">
+          <Option type="Map">
+            <Option name="source" type="int" value="2"/>
+            <Option name="static_value" type="double" value="0"/>
+          </Option>
+        </Option>
+        <Option name="CRS" type="List">
+          <Option type="Map">
+            <Option name="source" type="int" value="2"/>
+            <Option name="static_value" type="invalid"/>
+          </Option>
+        </Option>
+        <Option name="EXPRESSION" type="List">
+          <Option type="Map">
+            <Option name="source" type="int" value="2"/>
+            <Option name="static_value" type="QString" value="&quot;K1@1&quot; + (&quot;K2@1&quot;*2) + (&quot;K3@1&quot;*3)+(&quot;K4@1&quot;*4)+(&quot;K5@1&quot; * 5)+(&quot;K6@1&quot;*6)"/>
+          </Option>
+        </Option>
+        <Option name="EXTENT" type="List">
+          <Option type="Map">
+            <Option name="source" type="int" value="2"/>
+            <Option name="static_value" type="invalid"/>
+          </Option>
+        </Option>
+        <Option name="LAYERS" type="List">
+          <Option type="Map">
+            <Option name="parameter_name" type="QString" value="K1"/>
+            <Option name="source" type="int" value="0"/>
+          </Option>
+          <Option type="Map">
+            <Option name="parameter_name" type="QString" value="K1 (2)"/>
+            <Option name="source" type="int" value="0"/>
+          </Option>
+          <Option type="Map">
+            <Option name="parameter_name" type="QString" value="K1 (3)"/>
+            <Option name="source" type="int" value="0"/>
+          </Option>
+          <Option type="Map">
+            <Option name="parameter_name" type="QString" value="K1 (4)"/>
+            <Option name="source" type="int" value="0"/>
+          </Option>
+          <Option type="Map">
+            <Option name="parameter_name" type="QString" value="K1 (5)"/>
+            <Option name="source" type="int" value="0"/>
+          </Option>
+          <Option type="Map">
+            <Option name="parameter_name" type="QString" value="K1 (6)"/>
+            <Option name="source" type="int" value="0"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+  </Option>
+  <Option name="designerParameterValues"/>
+  <Option name="groupBoxes"/>
+  <Option name="help" type="Map">
+    <Option name="ALG_DESC" type="QString" value="The Mountain Green Cover Index (MGCI) is designed to measure the extent and the changes of green vegetation in mountain areas - i.e. forest, shrubs, trees, pastureland, cropland, etc. – to monitor progress towards the mountain target in SDG 15.4.2.&#xa;&#xa;The MGCI toolbox helps users to run the steps required for creating the Mountain Green Cover Index and report to standard reporting tables. &#xa;&#xa;Starting from any DEM or Land use land cover map the tools generate a mountain descriptor layer, a vegetation descriptor layer, area calculation  (both planimetric and real surface area)  and the calculation of the MGCI.&#xa;&#xa;This toolbox has an accompanying tutorial and equivalent tutorials and scripts for R software and a Goggle Earth Engine App in the SEPAL bug-data platform for forest and land monitoring. &#xa;&#xa;We can now use the following expression in the raster calculator to add the different classes into a single map where class 1 has a value of 1, class2 a value of 2 etc."/>
+    <Option name="K1" type="QString" value="Input K1 raster"/>
+    <Option name="K1 (2)" type="QString" value="Input K2 raster"/>
+    <Option name="K1 (3)" type="QString" value="Input K3 raster"/>
+    <Option name="K1 (4)" type="QString" value="Input K4 raster"/>
+    <Option name="K1 (5)" type="QString" value="Input K5 raster"/>
+    <Option name="K1 (6)" type="QString" value="Input K6 raster"/>
+    <Option name="StylefileforMountainDescriptor" type="QString" value="Input QGIS QML style file to symbolise the raster and in standard colours with legens legend"/>
+    <Option name="StylefileforMountainDescriptor (2)" type="QString" value="Input reclass file for the mountain Descriptor layer. This is a text file.&#xa;&#xa;&#xa;The output raster from the raster calculate will be 32 bit floating point raster. We will use the GRASS r.reclass tool to convert the dataset to Byte and also embed the Kapos class descriptions to the mountain classes.  The textfile is in the format:&#xa;1 = 1 Elevation > 4.500 meters&#xa;2 = 2 Elevation 3.500–4.500 meters&#xa;3 = 3 Elevation 2.500–3.500 meters&#xa;4 = 4 Elevation 1.500–2.500 meters and slope > 2&#xa;5 = 5 Elevation 1.000–1.500 meters and slope > 5 or local elevation range (LER 7 kilometer radius) > 300 meters&#xa;6 = 6 Elevation 300–1.000 meters and local elevation range (7 kilometer radius) > 300 meters"/>
+    <Option name="grass7:r.reclass_1:Output: MoutainDescriptor_K1_6_withoutK7" type="QString" value="Output: Mountain Descriptor layer in equal area projection"/>
+  </Option>
+  <Option name="modelVariables"/>
+  <Option name="model_group" type="QString" value="MGCI"/>
+  <Option name="model_name" type="QString" value="B7. MountainDescriptor: Generate Mountain Descriptor layer (EXCLUDING isolated pixels from class 7)"/>
+  <Option name="parameterDefinitions" type="Map">
+    <Option name="K1" type="Map">
+      <Option name="default" type="invalid"/>
+      <Option name="defaultGui" type="invalid"/>
+      <Option name="description" type="QString" value="K1"/>
+      <Option name="flags" type="int" value="0"/>
+      <Option name="help" type="QString" value="Input K1 raster"/>
+      <Option name="metadata"/>
+      <Option name="name" type="QString" value="K1"/>
+      <Option name="parameter_type" type="QString" value="raster"/>
+    </Option>
+    <Option name="K1 (2)" type="Map">
+      <Option name="default" type="invalid"/>
+      <Option name="defaultGui" type="invalid"/>
+      <Option name="description" type="QString" value="K2"/>
+      <Option name="flags" type="int" value="0"/>
+      <Option name="help" type="QString" value="Input K2 raster"/>
+      <Option name="metadata"/>
+      <Option name="name" type="QString" value="K1 (2)"/>
+      <Option name="parameter_type" type="QString" value="raster"/>
+    </Option>
+    <Option name="K1 (3)" type="Map">
+      <Option name="default" type="invalid"/>
+      <Option name="defaultGui" type="invalid"/>
+      <Option name="description" type="QString" value="K3"/>
+      <Option name="flags" type="int" value="0"/>
+      <Option name="help" type="QString" value="Input K3 raster"/>
+      <Option name="metadata"/>
+      <Option name="name" type="QString" value="K1 (3)"/>
+      <Option name="parameter_type" type="QString" value="raster"/>
+    </Option>
+    <Option name="K1 (4)" type="Map">
+      <Option name="default" type="invalid"/>
+      <Option name="defaultGui" type="invalid"/>
+      <Option name="description" type="QString" value="K4"/>
+      <Option name="flags" type="int" value="0"/>
+      <Option name="help" type="QString" value="Input K4 raster"/>
+      <Option name="metadata"/>
+      <Option name="name" type="QString" value="K1 (4)"/>
+      <Option name="parameter_type" type="QString" value="raster"/>
+    </Option>
+    <Option name="K1 (5)" type="Map">
+      <Option name="default" type="invalid"/>
+      <Option name="defaultGui" type="invalid"/>
+      <Option name="description" type="QString" value="K5"/>
+      <Option name="flags" type="int" value="0"/>
+      <Option name="help" type="QString" value="Input K5 raster"/>
+      <Option name="metadata"/>
+      <Option name="name" type="QString" value="K1 (5)"/>
+      <Option name="parameter_type" type="QString" value="raster"/>
+    </Option>
+    <Option name="K1 (6)" type="Map">
+      <Option name="default" type="invalid"/>
+      <Option name="defaultGui" type="invalid"/>
+      <Option name="description" type="QString" value="K6"/>
+      <Option name="flags" type="int" value="0"/>
+      <Option name="help" type="QString" value="Input K6 raster"/>
+      <Option name="metadata"/>
+      <Option name="name" type="QString" value="K1 (6)"/>
+      <Option name="parameter_type" type="QString" value="raster"/>
+    </Option>
+    <Option name="StylefileforMountainDescriptor" type="Map">
+      <Option name="behavior" type="int" value="0"/>
+      <Option name="default" type="QString" value="C:\MGCI_demo\QGIS_styles\MountainDescriptor_MGCI.qml"/>
+      <Option name="defaultGui" type="invalid"/>
+      <Option name="description" type="QString" value="Style file for Mountain Descriptor"/>
+      <Option name="extension" type="QString" value=""/>
+      <Option name="filefilter" type="QString" value="All Files (*.*)"/>
+      <Option name="flags" type="int" value="0"/>
+      <Option name="help" type="QString" value="Input QGIS QML style file to symbolise the raster and in standard colours with legens legend"/>
+      <Option name="metadata"/>
+      <Option name="name" type="QString" value="StylefileforMountainDescriptor"/>
+      <Option name="parameter_type" type="QString" value="file"/>
+    </Option>
+    <Option name="StylefileforMountainDescriptor (2)" type="Map">
+      <Option name="behavior" type="int" value="0"/>
+      <Option name="default" type="QString" value="C:\MGCI_demo\raw_data\Mountain_Descriptor_Classes.txt"/>
+      <Option name="defaultGui" type="invalid"/>
+      <Option name="description" type="QString" value="reclass file for Mountain Descriptor"/>
+      <Option name="extension" type="QString" value=""/>
+      <Option name="filefilter" type="QString" value="All Files (*.*)"/>
+      <Option name="flags" type="int" value="0"/>
+      <Option name="help" type="QString" value="Input relcass file for the mountain Descriptor layer. This is a text file in the format:&#xa;&#xa;1 = 1 Elevation > 4.500 meters&#xa;2 = 2 Elevation 3.500–4.500 meters&#xa;3 = 3 Elevation 2.500–3.500 meters&#xa;4 = 4 Elevation 1.500–2.500 meters and slope > 2&#xa;5 = 5 Elevation 1.000–1.500 meters and slope > 5 or local elevation range (LER 7 kilometer radius) > 300 meters&#xa;6 = 6 6 Elevation 300–1.000 meters and local elevation range (7 kilometer radius) > 300 meters&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;The output raster from the raster calculate will be 32 bit floating point raster. We will use the GRASS r.reclass tool to convert the dataset to Byte and also embed the Kapos class descriptions to the mountain classes. Whilst QGIS cannot see it the class description when the file loads GRASS will be able to read them when calculating statistics and add the descriptions to output CSVs."/>
+      <Option name="metadata"/>
+      <Option name="name" type="QString" value="StylefileforMountainDescriptor (2)"/>
+      <Option name="parameter_type" type="QString" value="file"/>
+    </Option>
+    <Option name="grass7:r.reclass_1:Output: MoutainDescriptor_K1_6_withoutK7" type="Map">
+      <Option name="create_by_default" type="bool" value="true"/>
+      <Option name="default" type="invalid"/>
+      <Option name="defaultGui" type="invalid"/>
+      <Option name="description" type="QString" value="Output: MoutainDescriptor_K1_6_withoutK7"/>
+      <Option name="flags" type="int" value="0"/>
+      <Option name="help" type="QString" value=""/>
+      <Option name="metadata"/>
+      <Option name="name" type="QString" value="grass7:r.reclass_1:Output: MoutainDescriptor_K1_6_withoutK7"/>
+      <Option name="parameter_type" type="QString" value="rasterDestination"/>
+      <Option name="supports_non_file_outputs" type="bool" value="false"/>
+    </Option>
+  </Option>
+  <Option name="parameterOrder"/>
+  <Option name="parameters" type="Map">
+    <Option name="K1" type="Map">
+      <Option name="color" type="QString" value=""/>
+      <Option name="comment" type="Map">
+        <Option name="color" type="QString" value=""/>
+        <Option name="component_description" type="QString" value=""/>
+        <Option name="component_height" type="double" value="60"/>
+        <Option name="component_pos_x" type="double" value="344"/>
+        <Option name="component_pos_y" type="double" value="-2.5999999999999943"/>
+        <Option name="component_width" type="double" value="100"/>
+        <Option name="outputs_collapsed" type="bool" value="true"/>
+        <Option name="parameters_collapsed" type="bool" value="true"/>
+      </Option>
+      <Option name="component_description" type="QString" value="K1"/>
+      <Option name="component_height" type="double" value="37.2"/>
+      <Option name="component_pos_x" type="double" value="79"/>
+      <Option name="component_pos_y" type="double" value="46.00000000000001"/>
+      <Option name="component_width" type="double" value="70"/>
+      <Option name="name" type="QString" value="K1"/>
+      <Option name="outputs_collapsed" type="bool" value="true"/>
+      <Option name="parameters_collapsed" type="bool" value="true"/>
+    </Option>
+    <Option name="K1 (2)" type="Map">
+      <Option name="color" type="QString" value=""/>
+      <Option name="comment" type="Map">
+        <Option name="color" type="QString" value=""/>
+        <Option name="component_description" type="QString" value=""/>
+        <Option name="component_height" type="double" value="60"/>
+        <Option name="component_pos_x" type="double" value="369.6"/>
+        <Option name="component_pos_y" type="double" value="18"/>
+        <Option name="component_width" type="double" value="100"/>
+        <Option name="outputs_collapsed" type="bool" value="true"/>
+        <Option name="parameters_collapsed" type="bool" value="true"/>
+      </Option>
+      <Option name="component_description" type="QString" value="K1 (2)"/>
+      <Option name="component_height" type="double" value="37.2"/>
+      <Option name="component_pos_x" type="double" value="159.8"/>
+      <Option name="component_pos_y" type="double" value="47.39999999999999"/>
+      <Option name="component_width" type="double" value="70"/>
+      <Option name="name" type="QString" value="K1 (2)"/>
+      <Option name="outputs_collapsed" type="bool" value="true"/>
+      <Option name="parameters_collapsed" type="bool" value="true"/>
+    </Option>
+    <Option name="K1 (3)" type="Map">
+      <Option name="color" type="QString" value=""/>
+      <Option name="comment" type="Map">
+        <Option name="color" type="QString" value=""/>
+        <Option name="component_description" type="QString" value=""/>
+        <Option name="component_height" type="double" value="60"/>
+        <Option name="component_pos_x" type="double" value="456.8"/>
+        <Option name="component_pos_y" type="double" value="21.200000000000003"/>
+        <Option name="component_width" type="double" value="100"/>
+        <Option name="outputs_collapsed" type="bool" value="true"/>
+        <Option name="parameters_collapsed" type="bool" value="true"/>
+      </Option>
+      <Option name="component_description" type="QString" value="K1 (3)"/>
+      <Option name="component_height" type="double" value="37.2"/>
+      <Option name="component_pos_x" type="double" value="238.20000000000002"/>
+      <Option name="component_pos_y" type="double" value="48.2"/>
+      <Option name="component_width" type="double" value="70"/>
+      <Option name="name" type="QString" value="K1 (3)"/>
+      <Option name="outputs_collapsed" type="bool" value="true"/>
+      <Option name="parameters_collapsed" type="bool" value="true"/>
+    </Option>
+    <Option name="K1 (4)" type="Map">
+      <Option name="color" type="QString" value=""/>
+      <Option name="comment" type="Map">
+        <Option name="color" type="QString" value=""/>
+        <Option name="component_description" type="QString" value=""/>
+        <Option name="component_height" type="double" value="60"/>
+        <Option name="component_pos_x" type="double" value="546.4"/>
+        <Option name="component_pos_y" type="double" value="22"/>
+        <Option name="component_width" type="double" value="100"/>
+        <Option name="outputs_collapsed" type="bool" value="true"/>
+        <Option name="parameters_collapsed" type="bool" value="true"/>
+      </Option>
+      <Option name="component_description" type="QString" value="K1 (4)"/>
+      <Option name="component_height" type="double" value="37.2"/>
+      <Option name="component_pos_x" type="double" value="316.59999999999997"/>
+      <Option name="component_pos_y" type="double" value="48.199999999999996"/>
+      <Option name="component_width" type="double" value="70"/>
+      <Option name="name" type="QString" value="K1 (4)"/>
+      <Option name="outputs_collapsed" type="bool" value="true"/>
+      <Option name="parameters_collapsed" type="bool" value="true"/>
+    </Option>
+    <Option name="K1 (5)" type="Map">
+      <Option name="color" type="QString" value=""/>
+      <Option name="comment" type="Map">
+        <Option name="color" type="QString" value=""/>
+        <Option name="component_description" type="QString" value=""/>
+        <Option name="component_height" type="double" value="60"/>
+        <Option name="component_pos_x" type="double" value="618.4000000000001"/>
+        <Option name="component_pos_y" type="double" value="19.6"/>
+        <Option name="component_width" type="double" value="100"/>
+        <Option name="outputs_collapsed" type="bool" value="true"/>
+        <Option name="parameters_collapsed" type="bool" value="true"/>
+      </Option>
+      <Option name="component_description" type="QString" value="K1 (5)"/>
+      <Option name="component_height" type="double" value="37.2"/>
+      <Option name="component_pos_x" type="double" value="397.40000000000003"/>
+      <Option name="component_pos_y" type="double" value="48.2"/>
+      <Option name="component_width" type="double" value="70"/>
+      <Option name="name" type="QString" value="K1 (5)"/>
+      <Option name="outputs_collapsed" type="bool" value="true"/>
+      <Option name="parameters_collapsed" type="bool" value="true"/>
+    </Option>
+    <Option name="K1 (6)" type="Map">
+      <Option name="color" type="QString" value=""/>
+      <Option name="comment" type="Map">
+        <Option name="color" type="QString" value=""/>
+        <Option name="component_description" type="QString" value=""/>
+        <Option name="component_height" type="double" value="60"/>
+        <Option name="component_pos_x" type="double" value="697.6"/>
+        <Option name="component_pos_y" type="double" value="26.800000000000004"/>
+        <Option name="component_width" type="double" value="100"/>
+        <Option name="outputs_collapsed" type="bool" value="true"/>
+        <Option name="parameters_collapsed" type="bool" value="true"/>
+      </Option>
+      <Option name="component_description" type="QString" value="K1 (6)"/>
+      <Option name="component_height" type="double" value="37.2"/>
+      <Option name="component_pos_x" type="double" value="477.40000000000003"/>
+      <Option name="component_pos_y" type="double" value="49.800000000000004"/>
+      <Option name="component_width" type="double" value="70"/>
+      <Option name="name" type="QString" value="K1 (6)"/>
+      <Option name="outputs_collapsed" type="bool" value="true"/>
+      <Option name="parameters_collapsed" type="bool" value="true"/>
+    </Option>
+    <Option name="StylefileforMountainDescriptor" type="Map">
+      <Option name="color" type="QString" value=""/>
+      <Option name="comment" type="Map">
+        <Option name="color" type="QString" value=""/>
+        <Option name="component_description" type="QString" value=""/>
+        <Option name="component_height" type="double" value="60"/>
+        <Option name="component_pos_x" type="double" value="805.6"/>
+        <Option name="component_pos_y" type="double" value="103.80000000000001"/>
+        <Option name="component_width" type="double" value="100"/>
+        <Option name="outputs_collapsed" type="bool" value="true"/>
+        <Option name="parameters_collapsed" type="bool" value="true"/>
+      </Option>
+      <Option name="component_description" type="QString" value="StylefileforMountainDescriptor"/>
+      <Option name="component_height" type="double" value="61"/>
+      <Option name="component_pos_x" type="double" value="114.80000000000001"/>
+      <Option name="component_pos_y" type="double" value="422.3"/>
+      <Option name="component_width" type="double" value="168"/>
+      <Option name="name" type="QString" value="StylefileforMountainDescriptor"/>
+      <Option name="outputs_collapsed" type="bool" value="true"/>
+      <Option name="parameters_collapsed" type="bool" value="true"/>
+    </Option>
+    <Option name="StylefileforMountainDescriptor (2)" type="Map">
+      <Option name="color" type="QString" value=""/>
+      <Option name="comment" type="Map">
+        <Option name="color" type="QString" value=""/>
+        <Option name="component_description" type="QString" value=""/>
+        <Option name="component_height" type="double" value="60"/>
+        <Option name="component_pos_x" type="double" value="852"/>
+        <Option name="component_pos_y" type="double" value="118"/>
+        <Option name="component_width" type="double" value="100"/>
+        <Option name="outputs_collapsed" type="bool" value="true"/>
+        <Option name="parameters_collapsed" type="bool" value="true"/>
+      </Option>
+      <Option name="component_description" type="QString" value="StylefileforMountainDescriptor (2)"/>
+      <Option name="component_height" type="double" value="71"/>
+      <Option name="component_pos_x" type="double" value="109.20000000000005"/>
+      <Option name="component_pos_y" type="double" value="310.1"/>
+      <Option name="component_width" type="double" value="172"/>
+      <Option name="name" type="QString" value="StylefileforMountainDescriptor (2)"/>
+      <Option name="outputs_collapsed" type="bool" value="true"/>
+      <Option name="parameters_collapsed" type="bool" value="true"/>
+    </Option>
+  </Option>
+</Option>

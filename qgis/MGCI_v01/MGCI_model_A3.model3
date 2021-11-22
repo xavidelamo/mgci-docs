@@ -1,0 +1,270 @@
+<!DOCTYPE model>
+<Option type="Map">
+  <Option name="children" type="Map">
+    <Option name="grass7:r.reclass_1" type="Map">
+      <Option name="active" type="bool" value="true"/>
+      <Option name="alg_config"/>
+      <Option name="alg_id" type="QString" value="grass7:r.reclass"/>
+      <Option name="color" type="QString" value=""/>
+      <Option name="comment" type="Map">
+        <Option name="color" type="QString" value=""/>
+        <Option name="component_description" type="QString" value=""/>
+        <Option name="component_height" type="double" value="60"/>
+        <Option name="component_pos_x" type="double" value="522.4000000000001"/>
+        <Option name="component_pos_y" type="double" value="253.40000000000003"/>
+        <Option name="component_width" type="double" value="100"/>
+        <Option name="outputs_collapsed" type="bool" value="true"/>
+        <Option name="parameters_collapsed" type="bool" value="true"/>
+      </Option>
+      <Option name="component_description" type="QString" value="r.reclass"/>
+      <Option name="component_height" type="double" value="30"/>
+      <Option name="component_pos_x" type="double" value="298.4943310657597"/>
+      <Option name="component_pos_y" type="double" value="307.05306122448985"/>
+      <Option name="component_width" type="double" value="200"/>
+      <Option name="dependencies"/>
+      <Option name="id" type="QString" value="grass7:r.reclass_1"/>
+      <Option name="outputs" type="Map">
+        <Option name="Output: Vegetation Descriptor (e.g. VEGETATION_DESCRIPTOR_AOI_LAEA.tif)" type="Map">
+          <Option name="child_id" type="QString" value="grass7:r.reclass_1"/>
+          <Option name="color" type="QString" value=""/>
+          <Option name="comment" type="Map">
+            <Option name="color" type="QString" value=""/>
+            <Option name="component_description" type="QString" value=""/>
+            <Option name="component_height" type="double" value="60"/>
+            <Option name="component_pos_x" type="double" value="0"/>
+            <Option name="component_pos_y" type="double" value="0"/>
+            <Option name="component_width" type="double" value="100"/>
+            <Option name="outputs_collapsed" type="bool" value="true"/>
+            <Option name="parameters_collapsed" type="bool" value="true"/>
+          </Option>
+          <Option name="component_description" type="QString" value="Output: Vegetation Descriptor (e.g. VEGETATION_DESCRIPTOR_AOI_LAEA.tif)"/>
+          <Option name="component_height" type="double" value="57.200000000000045"/>
+          <Option name="component_pos_x" type="double" value="226.8943310657596"/>
+          <Option name="component_pos_y" type="double" value="419.2530612244899"/>
+          <Option name="component_width" type="double" value="296.7999999999999"/>
+          <Option name="default_value" type="invalid"/>
+          <Option name="mandatory" type="bool" value="false"/>
+          <Option name="name" type="QString" value="Output: Vegetation Descriptor (e.g. VEGETATION_DESCRIPTOR_AOI_LAEA.tif)"/>
+          <Option name="output_name" type="QString" value="output"/>
+          <Option name="outputs_collapsed" type="bool" value="true"/>
+          <Option name="parameters_collapsed" type="bool" value="true"/>
+        </Option>
+      </Option>
+      <Option name="outputs_collapsed" type="bool" value="true"/>
+      <Option name="parameters_collapsed" type="bool" value="true"/>
+      <Option name="params" type="Map">
+        <Option name="GRASS_RASTER_FORMAT_META" type="List">
+          <Option type="Map">
+            <Option name="source" type="int" value="2"/>
+            <Option name="static_value" type="QString" value=""/>
+          </Option>
+        </Option>
+        <Option name="GRASS_RASTER_FORMAT_OPT" type="List">
+          <Option type="Map">
+            <Option name="source" type="int" value="2"/>
+            <Option name="static_value" type="QString" value=""/>
+          </Option>
+        </Option>
+        <Option name="GRASS_REGION_CELLSIZE_PARAMETER" type="List">
+          <Option type="Map">
+            <Option name="source" type="int" value="2"/>
+            <Option name="static_value" type="double" value="0"/>
+          </Option>
+        </Option>
+        <Option name="GRASS_REGION_PARAMETER" type="List">
+          <Option type="Map">
+            <Option name="parameter_name" type="QString" value="LULCraster"/>
+            <Option name="source" type="int" value="0"/>
+          </Option>
+        </Option>
+        <Option name="input" type="List">
+          <Option type="Map">
+            <Option name="parameter_name" type="QString" value="LULCraster"/>
+            <Option name="source" type="int" value="0"/>
+          </Option>
+        </Option>
+        <Option name="rules" type="List">
+          <Option type="Map">
+            <Option name="parameter_name" type="QString" value="LULCcrosswalktextfile"/>
+            <Option name="source" type="int" value="0"/>
+          </Option>
+        </Option>
+        <Option name="txtrules" type="List">
+          <Option type="Map">
+            <Option name="source" type="int" value="2"/>
+            <Option name="static_value" type="QString" value=""/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:setlayerstyle_1" type="Map">
+      <Option name="active" type="bool" value="true"/>
+      <Option name="alg_config"/>
+      <Option name="alg_id" type="QString" value="native:setlayerstyle"/>
+      <Option name="color" type="QString" value=""/>
+      <Option name="comment" type="Map">
+        <Option name="color" type="QString" value=""/>
+        <Option name="component_description" type="QString" value=""/>
+        <Option name="component_height" type="double" value="60"/>
+        <Option name="component_pos_x" type="double" value="543.2"/>
+        <Option name="component_pos_y" type="double" value="482.20000000000005"/>
+        <Option name="component_width" type="double" value="100"/>
+        <Option name="outputs_collapsed" type="bool" value="true"/>
+        <Option name="parameters_collapsed" type="bool" value="true"/>
+      </Option>
+      <Option name="component_description" type="QString" value="Set layer style"/>
+      <Option name="component_height" type="double" value="30"/>
+      <Option name="component_pos_x" type="double" value="512.8000000000002"/>
+      <Option name="component_pos_y" type="double" value="389.6"/>
+      <Option name="component_width" type="double" value="200"/>
+      <Option name="dependencies"/>
+      <Option name="id" type="QString" value="native:setlayerstyle_1"/>
+      <Option name="outputs"/>
+      <Option name="outputs_collapsed" type="bool" value="true"/>
+      <Option name="parameters_collapsed" type="bool" value="true"/>
+      <Option name="params" type="Map">
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option name="child_id" type="QString" value="grass7:r.reclass_1"/>
+            <Option name="output_name" type="QString" value="output"/>
+            <Option name="source" type="int" value="1"/>
+          </Option>
+        </Option>
+        <Option name="STYLE" type="List">
+          <Option type="Map">
+            <Option name="parameter_name" type="QString" value="Layersytle"/>
+            <Option name="source" type="int" value="0"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+  </Option>
+  <Option name="designerParameterValues"/>
+  <Option name="groupBoxes"/>
+  <Option name="help" type="Map">
+    <Option name="ALG_DESC" type="QString" value="The Mountain Green Cover Index (MGCI) is designed to measure the extent and the changes of green vegetation in mountain areas - i.e. forest, shrubs, trees, pastureland, cropland, etc. – to monitor progress towards the mountain target in SDG 15.4.2.&#xa;&#xa;The MGCI toolbox helps users to run the steps required for creating the Mountain Green Cover Index and report to standard reporting tables. &#xa;&#xa;Starting from any DEM or Land use land cover map the tools generate a mountain descriptor layer, a vegetation descriptor layer, area calculation  (both planimetric and real surface area)  and the calculation of the MGCI.&#xa;&#xa; This toolbox has an accompanying tutorial and equivalent tutorials and scripts for R software and a Goggle Earth Engine App in the SEPAL bug-data platform for forest and land monitoring. &#xa;&#xa;This step reclassifies the LULC dataset from step 2 into the IPCC LULC classes based on a crosswwalk txt file matching the original LULC classes to the 6 IPCC LULC classes."/>
+    <Option name="LULCcrosswalktextfile" type="QString" value="input crosswalk textfile. An example crosswalk file is provided"/>
+    <Option name="LULCraster" type="QString" value="Input LULC raster in equal area projection from tool 2"/>
+    <Option name="Layersytle" type="QString" value="upload a predetermined set of colours and legend for the IPCC LULC classes"/>
+    <Option name="grass7:r.reclass_1:Output: Vegetation Descriptor (e.g. VEGETATION_DESCRIPTOR_AOI_LAEA.tif)" type="QString" value="Output Vegetation Descriptor layer in equal area projection to be used in the MGCI calculation"/>
+  </Option>
+  <Option name="modelVariables"/>
+  <Option name="model_group" type="QString" value="MGCI"/>
+  <Option name="model_name" type="QString" value="A3. VegetationDescriptor: Generate Vegetation Descriptor Layer"/>
+  <Option name="parameterDefinitions" type="Map">
+    <Option name="LULCcrosswalktextfile" type="Map">
+      <Option name="behavior" type="int" value="0"/>
+      <Option name="default" type="QString" value="C:\MGCI_demo\raw_data\ESA_LULC_to_MGCI.txt"/>
+      <Option name="defaultGui" type="invalid"/>
+      <Option name="description" type="QString" value="Input: LULC crosswalk text file"/>
+      <Option name="extension" type="QString" value=""/>
+      <Option name="filefilter" type="QString" value="Text Files (*.txt)"/>
+      <Option name="flags" type="int" value="0"/>
+      <Option name="help" type="QString" value=""/>
+      <Option name="metadata"/>
+      <Option name="name" type="QString" value="LULCcrosswalktextfile"/>
+      <Option name="parameter_type" type="QString" value="file"/>
+    </Option>
+    <Option name="LULCraster" type="Map">
+      <Option name="default" type="invalid"/>
+      <Option name="defaultGui" type="invalid"/>
+      <Option name="description" type="QString" value="Input: Raster LULC AOI in LAEA"/>
+      <Option name="flags" type="int" value="0"/>
+      <Option name="help" type="QString" value=""/>
+      <Option name="metadata"/>
+      <Option name="name" type="QString" value="LULCraster"/>
+      <Option name="parameter_type" type="QString" value="raster"/>
+    </Option>
+    <Option name="Layersytle" type="Map">
+      <Option name="behavior" type="int" value="0"/>
+      <Option name="default" type="QString" value="C:\MGCI_demo\QGIS_styles\VegetationDescriptor.qml"/>
+      <Option name="defaultGui" type="invalid"/>
+      <Option name="description" type="QString" value="Input: Layer sytle"/>
+      <Option name="extension" type="QString" value=""/>
+      <Option name="filefilter" type="QString" value="All Files (*.*)"/>
+      <Option name="flags" type="int" value="0"/>
+      <Option name="help" type="QString" value=""/>
+      <Option name="metadata"/>
+      <Option name="name" type="QString" value="Layersytle"/>
+      <Option name="parameter_type" type="QString" value="file"/>
+    </Option>
+    <Option name="grass7:r.reclass_1:Output: Vegetation Descriptor (e.g. VEGETATION_DESCRIPTOR_AOI_LAEA.tif)" type="Map">
+      <Option name="create_by_default" type="bool" value="true"/>
+      <Option name="default" type="invalid"/>
+      <Option name="defaultGui" type="invalid"/>
+      <Option name="description" type="QString" value="Output: Vegetation Descriptor (e.g. VEGETATION_DESCRIPTOR_AOI_LAEA.tif)"/>
+      <Option name="flags" type="int" value="0"/>
+      <Option name="help" type="QString" value=""/>
+      <Option name="metadata"/>
+      <Option name="name" type="QString" value="grass7:r.reclass_1:Output: Vegetation Descriptor (e.g. VEGETATION_DESCRIPTOR_AOI_LAEA.tif)"/>
+      <Option name="parameter_type" type="QString" value="rasterDestination"/>
+      <Option name="supports_non_file_outputs" type="bool" value="false"/>
+    </Option>
+  </Option>
+  <Option name="parameterOrder"/>
+  <Option name="parameters" type="Map">
+    <Option name="LULCcrosswalktextfile" type="Map">
+      <Option name="color" type="QString" value=""/>
+      <Option name="comment" type="Map">
+        <Option name="color" type="QString" value=""/>
+        <Option name="component_description" type="QString" value=""/>
+        <Option name="component_height" type="double" value="60"/>
+        <Option name="component_pos_x" type="double" value="801"/>
+        <Option name="component_pos_y" type="double" value="503"/>
+        <Option name="component_width" type="double" value="100"/>
+        <Option name="outputs_collapsed" type="bool" value="true"/>
+        <Option name="parameters_collapsed" type="bool" value="true"/>
+      </Option>
+      <Option name="component_description" type="QString" value="LULCcrosswalktextfile"/>
+      <Option name="component_height" type="double" value="40.39999999999999"/>
+      <Option name="component_pos_x" type="double" value="338.4460641399418"/>
+      <Option name="component_pos_y" type="double" value="127.50117697872793"/>
+      <Option name="component_width" type="double" value="224.00000000000003"/>
+      <Option name="name" type="QString" value="LULCcrosswalktextfile"/>
+      <Option name="outputs_collapsed" type="bool" value="true"/>
+      <Option name="parameters_collapsed" type="bool" value="true"/>
+    </Option>
+    <Option name="LULCraster" type="Map">
+      <Option name="color" type="QString" value=""/>
+      <Option name="comment" type="Map">
+        <Option name="color" type="QString" value=""/>
+        <Option name="component_description" type="QString" value=""/>
+        <Option name="component_height" type="double" value="60"/>
+        <Option name="component_pos_x" type="double" value="357"/>
+        <Option name="component_pos_y" type="double" value="34"/>
+        <Option name="component_width" type="double" value="100"/>
+        <Option name="outputs_collapsed" type="bool" value="true"/>
+        <Option name="parameters_collapsed" type="bool" value="true"/>
+      </Option>
+      <Option name="component_description" type="QString" value="LULCraster"/>
+      <Option name="component_height" type="double" value="30"/>
+      <Option name="component_pos_x" type="double" value="176.2460641399417"/>
+      <Option name="component_pos_y" type="double" value="57.90117697872799"/>
+      <Option name="component_width" type="double" value="250.39999999999995"/>
+      <Option name="name" type="QString" value="LULCraster"/>
+      <Option name="outputs_collapsed" type="bool" value="true"/>
+      <Option name="parameters_collapsed" type="bool" value="true"/>
+    </Option>
+    <Option name="Layersytle" type="Map">
+      <Option name="color" type="QString" value=""/>
+      <Option name="comment" type="Map">
+        <Option name="color" type="QString" value=""/>
+        <Option name="component_description" type="QString" value=""/>
+        <Option name="component_height" type="double" value="60"/>
+        <Option name="component_pos_x" type="double" value="764.8000000000001"/>
+        <Option name="component_pos_y" type="double" value="153.4"/>
+        <Option name="component_width" type="double" value="100"/>
+        <Option name="outputs_collapsed" type="bool" value="true"/>
+        <Option name="parameters_collapsed" type="bool" value="true"/>
+      </Option>
+      <Option name="component_description" type="QString" value="Layersytle"/>
+      <Option name="component_height" type="double" value="30"/>
+      <Option name="component_pos_x" type="double" value="467.20000000000005"/>
+      <Option name="component_pos_y" type="double" value="213.59999999999997"/>
+      <Option name="component_width" type="double" value="200"/>
+      <Option name="name" type="QString" value="Layersytle"/>
+      <Option name="outputs_collapsed" type="bool" value="true"/>
+      <Option name="parameters_collapsed" type="bool" value="true"/>
+    </Option>
+  </Option>
+</Option>
