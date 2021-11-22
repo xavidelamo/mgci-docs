@@ -135,7 +135,7 @@ Add a country or area of interest boundary layer. Input a polygon shapefile repr
 
 |image1|
 
-.. code-block:: r
+..code-block:: r
    aoi <- st_read("C:/this_is_the_path/to_my_boundary_layer.shp");
 
 
@@ -149,7 +149,7 @@ Replace the projection in the code below to that of your area of interest:
 
 |image2|
 
-.. code-block:: r
+..code-block:: r
    aoi_laea <- st_transform(aoi, crs=("+proj=laea +lat_0=8.5 +lon_0=-84 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs"));
 
 
@@ -157,7 +157,7 @@ Now that the country boundary is in the chosen equal area projection, we can 
 
 |image3|
 
-.. code-block:: r
+..code-block:: r
    aoi_buffer <- st_buffer(aoi_laea, 10000);
 
 Preparation of Vegetation descriptor layer
@@ -172,7 +172,7 @@ To demonstrate the steps for processing a raster LULC dataset we will use the Gl
 
 |image4|
 
-.. code-block:: r
+..code-block:: r
    lulc <- raster("C:/this_is_the_path/to_my_LULC_file.tif");
 
 
@@ -180,7 +180,7 @@ If the dataset is in netCDF (.nc) format, use the following code (ensure that li
 
 |image5|
 
-.. code-block:: r
+..code-block:: r
    lulc <- raster("C:/this_is_the_path/to_my_LULC_file.nc", varname="lccs_class");
 
 
@@ -188,7 +188,7 @@ First check that the LULC layer is correctly overlaying the country boundar
 
 |image6|
 
-.. code-block:: r
+..code-block:: r
    plot(lulc)
     
    plot(aoi_laea, add=T, col=NA);
@@ -197,7 +197,7 @@ Project to equal area projection depending on your study area.
 
 |image7|
 
-.. code-block:: r
+..code-block:: r
    lulc <- projectRaster(lulc, crs="+proj=laea +lat_0=8.5 +lon_0=-84 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs", method = "ngb");
 
 
