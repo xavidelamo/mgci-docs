@@ -58,6 +58,22 @@ Where:
 - **Mountain Green Cover Area**: sum of mountain area (km :sup:`2`) covered by cropland, grassland, forestland, shrubland and wetland, as defined based on the IPCC classification (Penman et al. 2003). This component is calculated from the vegetation descriptor layer. 
 - **Total Mountain Area**: total area (Km :sup:`2`) of mountains. In both the numerator and denominator, mountain area is defined according to Kapos et al. 2000. This component is calculated from the mountain description layer.
 - **Vegetation descriptor layer**: The vegetation descriptor layer categorizes land cover into green and non-green areas. Green vegetation includes both natural vegetation and vegetation resulting from anthropic activity (e.g. crops, afforestation, etc.). Non-green areas include very sparsely vegetated areas, bare land, water, permanent ice/snow and urban areas. The vegetation description layer is derived from a land cover map, where land cover categories are classified into IPCC categories and then in green/non-green areas. 
+
+  .. _ipcc_classes:
+  
+  .. csv-table:: IPCC Classification
+     :header: "Code", "Description"
+     :widths: auto
+     :align: center
+  
+     "1","Forest"
+     "2","Grassland"
+     "3","Cropland"
+     "4","Wetland"
+     "5","Settlement"
+     "6","Other land"
+
+
 - **Mountain descriptor layer**:  The mountain descriptor layer consists in a map of mountain classes following the UNEP-WCMC classification (Kapos et al. 2000). The UNEP-WCMC classification classifies the world mountain areas according altitude, slope and elevation range into the following categories.
 
   
@@ -134,8 +150,18 @@ The calculation of the MGCI will be restricted to a specific area of interest. I
    - Administrative level 2
    
 - Custom layers
-   - Vector file: 
+   - Vector file: use this option to upload a custom vector file. Select the "Vector file" method in the dropdown list, a file manager will be displayed below and will allow you to search and select a vector file stored in your SEPAL environment (see `how to exchange files with SEPAL <https://docs.sepal.io/en/latest/setup/filezilla.html#exchange-files-with-sepal>`_). The below dropdown called "Column" is useful to filter the features of the vector file, the default option is "Use all features", to filter the collection, select a column and a "Value" in the corresponding dropdown, then click over the :guilabel:`Select aoi` button. 
+     
+     .. image:: https://raw.githubusercontent.com/dfguerrerom/sepal_mgci/master/doc/img/1_vector_file.PNG
+        :align: center
+        :width: 600
+        :alt: AOI selection
+     
+     .. note:: the AOI tool will read the following formats: [".shp", ".geojson", ".gpkg", ".kml"] and it will transform its original coordinates into EPSG:4326
+     
    - GEE Asset name: see how to `upload an asset in GEE <https://docs.sepal.io/en/latest/setup/gee.html#upload-files-to-gee>`_
+   
+
    
 As all the processing is done in GEE, all custom layers have to be previously stored as an `earth engine asset <https://developers.google.com/earth-engine/guides/asset_manager>`_ in your GEE account (it could be private) or in a third-party account as a public asset (see `how to upload an asset in GEE <https://docs.sepal.io/en/latest/setup/gee.html#upload-files-to-gee>`_). The dropdown menu will query all the assets in your GEE folder that matches the Image type. You can select it from the dropdown or write/paste it directly.
 
@@ -184,7 +210,7 @@ After clicking the :guilabel:`Create UNEP-WCMC Mountain Class Map` button, the m
 Vegetation descriptor layer
 ---------------------------
 
-This section of SEPAL-MGCI :sub:`beta` produces the vegetation descriptor layer needed to compute the MGCI for the selected study area. It does so by reclassifying a land cover map into the six IPCC land cover classes (Forest, Cropland, Grassland, Wetland, Settlements and Other Land) and then into green and non-green cover following the reclassification rules specified in the indicator’s metadata. 
+This section of SEPAL-MGCI :sub:`beta` produces the vegetation descriptor layer needed to compute the MGCI for the selected study area. It does so by reclassifying a land cover map into the six :ref:`IPCC land cover classes <ipcc_classes>`  (Forest, Cropland, Grassland, Wetland, Settlements and Other Land) and then into green and non-green cover following the reclassification rules specified in the indicator’s metadata. 
 
 Questionnaire
 ^^^^^^^^^^^^^
@@ -249,6 +275,8 @@ To allow SEPAL-MGCI :sub:`beta` to create an IPCC land cover class map using the
          "511", "4"
    
      To upload a classification table, please see the `how to exchange files in SEPAL <https://docs.sepal.io/en/latest/setup/filezilla.html#exchange-files-with-sepal>`_.
+     
+     **Note**: The target values must match with the :ref:`IPCC classification table <ipcc_classes>` 
 
 
 - Directly specify the reclassification rules by clicking on :guilabel:`get table` and manually indicate the IPCC land cover equivalent (in the destination class column) of each of the land cover classes of your custom dataset (in the original class column) in the interactive table.  To provide the reclassification matrix using this method click on “No” below the question “Do you have a reclassification matrix table in a csv format’’?
