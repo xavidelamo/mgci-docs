@@ -83,7 +83,7 @@ To run this workflow you will need have QGIS 3.16.11 and R Software 4.4.1. insta
 Introduction
 ------------
 
-This tutorial explains in detail how to implement the QGIS-MGCI :sub:`beta` workflow step-by-step using Costa Rica as an example. It uses the 90m resolution Digital ELevation Model (DEM) from Copernicus `(COP-DEM_GLO-90) <https://spacedata.copernicus.eu/web/cscda/dataset-details?articleId=394198>`_ to create the mountain descriptor layer and land cover datasets from the  `European Space Agency (ESA) Climate Change Initiative (CCI) land cover datasets <https://maps.elie.ucl.ac.be/CCI/viewer/>`_to create the vegetation descriptor layer. If using QGIS-MGCI for official purposes, it is recommended that users use nationally appropriate data sources if available. 
+This tutorial explains in detail how to implement the QGIS-MGCI :sub:`beta` workflow step-by-step using Costa Rica as an example. It uses the 90m resolution Digital ELevation Model (DEM) from Copernicus `(COP-DEM_GLO-90) <https://spacedata.copernicus.eu/web/cscda/dataset-details?articleId=394198>`_ to create the mountain descriptor layer and land cover datasets from the  `European Space Agency (ESA) Climate Change Initiative (CCI) land cover datasets <https://maps.elie.ucl.ac.be/CCI/viewer/>`_ to create the vegetation descriptor layer. If using QGIS-MGCI for official purposes, it is recommended that users use nationally appropriate data sources if available. 
 
 The tutorial outlines in detail the steps all the tools used for
 individual steps in the processing toolbox as well as providing a custom
@@ -301,7 +301,7 @@ raster or vector landuse landcover (LULC) dataset. Follow either section
 dataset is a vector.
 
 Steps when using a raster dataset 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To demonstrate the steps for processing a raster LULC dataset we will
 use the Global ESA CCI LULC dataset. This dataset is provided in netcdf
@@ -490,7 +490,7 @@ The layer should now show all the National LULC classes for Costa Rica.
 
 
 Project Vector LULC and convert to raster (FOR NATIONAL DATASETS ONLY):
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 When using a vector LULC dataset the data will also need to be projected
 to an equal area projection.
@@ -604,7 +604,7 @@ The layer should now show all the National LULC classes for Costa Rica.
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Reclassify to IPCC landcover types
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The next step is to reclassify the LULC map prepared in 5.2.1, 5.2.2 or
 5.2.3 into the 6 MGCI vegetation descriptor LULC types.
@@ -682,7 +682,7 @@ In this tutorial the Copernicus 90m source DEM has been chosen as an
 example.
 
 Merging DEM tiles into a single DEM 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The DEM tiles covering the full extent of Costa Rica have been download
 from Copernicus using their AWS client. (Instructions for download of
@@ -743,7 +743,7 @@ The merged DEM is added to the QGIS project.
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Clip and project merged DEM
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The DEM tiles are likely to cover a much wider area than the country
 being analysed therefore it is important to crop the extent to minimise
@@ -806,7 +806,7 @@ should be added to the map canvas\ **.**
 
 
 Generating slope layer from layer DEM
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In, this section, depending on whether your country falls within a
 single or multiple UTM Zones and the projection selected in section 5.1
@@ -991,7 +991,7 @@ The new **clipped** **SLOPE dataset in the equal area projection** is now added 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Generating local elevation range from DEM
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 For UNEP-WCMC mountain classes 5 and 6 a 7km local elevation range is required for
 the identification of areas that occur in regions with significant
@@ -1133,7 +1133,7 @@ AND"LocalElevationRange7km\_AOI\_LAEA@1" >= 300
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Generate an interim mountain layer with classes 1-6
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 We can now use the following expression in the raster calculator to add
 the different classes into a single map where class 1 has a value of 1,
@@ -1177,7 +1177,7 @@ At the bottom of the layer properties dialogue window click the
 
 
 Filling isolated pixels within mountain areas and merging into classes 1-6 (****NOTE: This step is still in development****)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The last part of the mountain descriptor layer generation is to identify
 isolated ‘non-mountain’ grid cells ( < 25km\ :sup:`2` in size)occurring
@@ -1476,7 +1476,7 @@ your R integration is working in Section 2.1.
 Aggregation to standard resolution and clipping to country
 ----------------------------------------------------------
 Aggregating mountain and RSA rasters to match resolution of vegetation descriptor layer
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Now that we have 3 raster datasets in their native resolutions we need to bring the datasets together and ensure that correct aggregation is undertaken and that the all the layers align to the VegetationDescriptor layer.   In this example we have the Mountain Descriptor layer and the RealSurfaceArea Rasters at 90m resolution but a VegetationDescriptor layer at 300m resolution. There are various tools that can be used but we have opted for the GRASS tool r.resamp.stats as it allowed for various methods when resampling to a coarser grid.
 
@@ -1518,7 +1518,7 @@ Next we will  aggregate the mountain descriptor layer.
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Combine mountain and vegetation descriptor layers
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 As the MGCI required disaggregation by both the 6  LULC class and the 6 Mountain Class and the tools within QGIS will only allow a single input for zones, we will combine the two datasets together to form a combined zones dataset.
 
 -  In the **processing toolbox**, search for and double click on the **raster calculator**
@@ -1544,7 +1544,7 @@ As the MGCI required disaggregation by both the 6  LULC class and the 6 Mountain
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Clip layers to country boundary
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 At this stage we can now clip the final aggregated datasets to the country boundary (remember that up to this point we have used a bounding box of the country boundary buffered out by 10km).
 
@@ -1581,7 +1581,7 @@ Repeat the above step for the resampled RSA raster.
 Computation of Mountain Green Cover Index
 -----------------------------------------
 Generate Real Surface Area and Planimetric Area Statistics
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The data are now in a consistent format and clipped to the country boundary, so we can now generate the statistics required for the MGCI reporting. As we want to generate disaggregated statistics by LULC class and Mountain Class we will use a zonal statistics tool with the combined Vegetation + mountain  layer as the summary unit and the RSA raster as the summary layer. The Zonal statistics tool will automatically calculate planimetric area in the output.
 
@@ -1598,10 +1598,10 @@ This output is the main statistics table from the analysis, from which other sum
    
 The Planimetric area generated in m2 rather than km2 and will be stored in a field called m2
 
-•	In the **processing Toolbox** search for **Rename Field** 
-•	Set the field to rename as **m2**
-•	Set the **New field name** to **PlanimetricArea_m2**
-•	Save the **Renamed output to a .csv file** e.g. MGCI_stats.csv
+• In the **processing Toolbox** search for **Rename Field** 
+• Set the field to rename as **m2**
+• Set the **New field name** to **PlanimetricArea_m2**
+• Save the **Renamed output to a .csv file** e.g. MGCI_stats.csv
 
    |image178|
 
@@ -1630,7 +1630,7 @@ When the statistics .csv files  added to the QGIS project it **does not add it c
 ***The following steps will only be run from the custom MGCI toolbox. We did not feel there was benefit to detailing the many tabular joins required to create the summary tables and standard reporting tables. Users can explore the models in the model designer to explore the steps further.*** 
 
 Create summary statistics by LULC class
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **E2. MGCI: Summarise Mountain Area by LULC Class**:                                                                                                      |
@@ -1647,7 +1647,7 @@ Create summary statistics by LULC class
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Create summary statistics by green cover and Mountain class
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **E3. MGCI:  Calculate GC and MGCI by Kapos class**:                                                                                                      |
@@ -1664,7 +1664,7 @@ Create summary statistics by green cover and Mountain class
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Create summary statistics by green cover and Mountain class
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Export to standard reporting table
 ----------------------------------
