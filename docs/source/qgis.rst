@@ -301,8 +301,8 @@ appears in the correct place in the QGIS project.
    area projection. For National datasets already clipped to the country
    boundary follow **step (b) only.**
 
-(a) Clip and project LULC raster (FOR REGIONAL/GLOBAL DATASETS ONLY):
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Clip and project LULC raster (FOR REGIONAL/GLOBAL DATASETS ONLY)
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 -  In the processing toolbox search for **Clip**
 
@@ -369,8 +369,8 @@ the country.
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-(b) Project LULC raster (FOR NATIONAL DATASETS ONLY):
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Project LULC raster (FOR NATIONAL DATASETS ONLY):
+:::::::::::::::::::::::::::::::::::::::::::::::::
 
 -  search for **project** in the processing toolbox.
 
