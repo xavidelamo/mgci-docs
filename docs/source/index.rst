@@ -15,3 +15,4 @@ Contents
    qgis
    r
    sepal
+   test
