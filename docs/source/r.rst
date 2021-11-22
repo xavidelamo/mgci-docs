@@ -1,35 +1,101 @@
-MGCI R workflow
+R-MGCI :sub:`beta`
 ==================
+
+A R-Software-based tool to support the computation of SDG Indicator 15.4.2 – Mountain Green Cover Index.
+
+General Information
+-------------------
+
+About R-MGCI :sub:`beta`
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+This tool was developed by the UN Environment Programme World Conservation Monitoring Centre (UNEP-WCMC) in collaboration with the Food and Agriculture Organization (FAO) of the United Nations to support member countries to compute and report against SDG Indicator 15.4.2.
+
+This script has been developed to be run on R 4.1.1 and RStudio 2021.09.0+351 "Ghost Orchid" release. If you are using older versions, it may be good to update them. `R <https://www.r-project.org/>`_ is available as Free Software under the terms of the Free Software Foundation’s GNU General Public License in source code form. It compiles and runs on a wide variety of UNIX platforms and similar systems (including FreeBSD and Linux), Windows and MacOS.
+
+R-MGCI :sub:`beta` is in a beta stage and therefore it is still under development. Please contact the R-MGCI :sub:`beta` development team with any comments or suggestions.
+
+[VIGNESH: Please specify the way you want to channel the comments and suggestions for users. See below the text from SEPAL]:  
+
+If you have specific bugs to report or improvements to the tool that you would like to suggest, please use the `GitHub’s issue tracker <https://github.com/dfguerrerom/sepal_mgci/issues>`_ of the SEPAL-MGCI :sub:`beta` module and do follow the `contribution guidelines <https://github.com/dfguerrerom/sepal_mgci/blob/master/CONTRIBUTE.md>`_.
+
+Authors 
+^^^^^^^
+
+R-MGCI :sub:`beta` has been developed by the UN Environment Programme World Conservation Monitoring Centre (UNEP-WCMC) in collaboration with the Food and Agriculture Organization (FAO) of the United Nations. Contributors to R-MGCI :sub:`beta` and its documentation include Vignesh Kamath Cannanure [VIGNESH: Please complete]
+
+License
+^^^^^^^
+R-MGCI :sub:`beta` and its documentation is made available under the terms of the `Creative Commons Attribution 4.0 International License (CC BY 4.0) <https://creativecommons.org/licenses/by/4.0/>`_.
+
+Background
+^^^^^^^^^^
+
+SDG Indicator 15.4.2 – Mountain Green Cover Index (MGCI) is one of the two indicators under SDG Target 15.4, which aims to:
+
+"*ensure the conservation of mountain ecosystems, including their biodiversity, to enhance their capacity to provide benefits which are essential for sustainable development*". 
+
+The Food and Agriculture Organization (FAO) of the United Nations is the custodian agency of this indicator. The Mountain Green Cover Index (MGCI) is designed to measure the extent and the changes of green vegetation in mountain areas to monitor progress towards SDG Target 15.4.
+
+The MGCI is defined as the ratio of the mountain green cover area to the total mountain area:
+
+.. math::
+    
+    MGCI = (Mountain Green Cover Area)/(Total Mountain Area)
+
+Where: 
+
+- **Mountain Green Cover Area**: sum of mountain area (km :sup:`2`) covered by cropland, grassland, forestland, shrubland and wetland, as defined based on the IPCC classification (Penman et al. 2003). This component is calculated from the vegetation descriptor layer. 
+- **Total Mountain Area**: total area (Km2) of mountains. In both the numerator and denominator, mountain area is defined according to Kapos et al. 2000. This component is calculated from the mountain description layer.
+- **Vegetation descriptor layer**: The vegetation descriptor layer categorizes land cover into green and non-green areas. Green vegetation includes both natural vegetation and vegetation resulting from anthropic activity (e.g. crops, afforestation, etc.). Non-green areas include very sparsely vegetated areas, bare land, water, permanent ice/snow and urban areas. The vegetation description layer is derived from a land cover map, where land cover categories are classified into IPCC categories and then in green/non-green areas. 
+- **Mountain descriptor layer**:  The mountain descriptor layer consists in a map of mountain classes following the UNEP-WCMC classification (Kapos et al. 2000). The UNEP-WCMC classification classifies the world mountain areas according altitude, slope and elevation range into the following categories.
+
+  .. _mountain_classes:
+  .. csv-table:: Mountain classes
+     :header: "UNEP-WCMC Mountain Class", "Description"
+     :widths: auto
+     :align: center
+  
+     "1","Elevation > 4.500 meters"
+     "2","Elevation 3.500–4.500 meters"
+     "3","Elevation 2.500–3.500 meters"
+     "4","Elevation 1.500–2.500 meters and slope > 2"
+     "5","Elevation 1.000–1.500 meters and slope > 5 or local elevation range (LER 7 kilometer radius) > 300 meters"
+     "6","Elevation 300–1.000 meters and local elevation range (7 kilometer radius) > 300 meters"
+
+R-MGCI :sub:`beta` allows the user to compute each of these description layers to then calculate MGCI values for any given area. The results of this analysis can be exported to a set of standardized reporting tables where MGCI values are disaggregated by mountain class and IPCC land category, as specified in the metadata of SDG Indicator 15.4.2.
+
+References
+^^^^^^^^^^
+
+- Kapos, V., Rhind, J., Edwards, M., Prince, M., & Ravilious, C. (2000). Developing a map of the world’s mountain forests. In M. F. Price , & N. Butt (Eds.),?Forests in Sustainable Mountain Development: A State-of-Knowledge Report for 2000?(pp. 4-9). Wallingford: CAB International.? 
+- Penman, J., Gytarsky, M., Hiraishi, T., Krug, T., Kruger, D., Pipatti, R., Buendia, L., Miwa, K., Ngara, T., Tanabe, K. (2003). Good Practice Guidance for Land Use, Land-use Change and Forestry. Good Practice Guidance for Land Use, Land-use Change and Forestry. 
+
+Before using R-MGCI :sub:`beta`
+-------------------------------
+
+To run the this script you will need to have R 4.1.1 and RStudio 2021.09.0+351 "Ghost Orchid" installed. 
+
 
 .. contents:: **Table of Contents**
 
 
-Definition 
-----------
-Put link to overview document
-    
-Initial set-up
---------------
-put link to initial set up document
-
 Introduction
 ------------
 
-This section of the tutorial explains in detail how to carry out this analysis in R, using Costa Rica as a case study using a 90m resolution DEM from Copernicus and Global ESA CCI LULC datasets. This section assumes that the user has already downloaded the DEM and a LULC dataset (see section 2 and the Annexes for further information). 
+This tutorial explains in detail how to run the R-MGCI :sub:`beta` step-by-step using Costa Rica as an example. It uses the 90m resolution Digital ELevation Model (DEM) from Copernicus `(COP-DEM_GLO-90) <https://spacedata.copernicus.eu/web/cscda/dataset-details?articleId=394198>`_ to create the mountain descriptor layer and land cover datasets from the  `European Space Agency (ESA) Climate Change Initiative (CCI) land cover datasets <https://maps.elie.ucl.ac.be/CCI/viewer/>`_ to create the vegetation descriptor layer. If using QGIS-MGCI for official purposes, it is recommended that users use nationally appropriate data sources if available. 
 
 The MGCI module has five main steps, and the index will be calculated based on the user inputs:
 
 -  Area of interest selection
-
 -  Vegetation descriptor
-
 -  Mountain descriptor
-
 -  Real surface area
-
 -  MGCI results
 
 Before starting with the steps to calculate MGCI, install and load the required packages, and set your working folder.
+
+[VIGNESH: Please explain which packages are required]
 
 |image0|
 
@@ -59,7 +125,7 @@ Preparation of Vegetation descriptor layer
 The development of vegetation descriptor layer starts with either a raster or vector landuse landcover (LULC) dataset.
 
 Steps when using a raster dataset
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To demonstrate the steps for processing a raster LULC dataset we will use the Global ESA CCI LULC dataset. Input the LULC layer. If the dataset is in GeoTiff format use the following code:
 
@@ -82,7 +148,7 @@ If LULC raster is a global/regional dataset, it needs to be clipped to the area 
 |image8|
 
 Steps when using a vector LULC dataset
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 First, input the LULC dataset in vector format. When using a vector LULC dataset the data will also need to be projected to an equal area projection.  If it is not already in equal area projection, project it to equal area projection depending on your study area.
 
@@ -93,7 +159,7 @@ The next step is to rasterize the LULC data. When converting it is important t
 |image10|
 
 Reclassify to IPCC landcover types
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The next step is to reclassify the LULC map prepared in the previous steps into the 6 MGCI vegetation descriptor LULC types. 
 
@@ -119,14 +185,14 @@ Input the DEM raster.
 |image12|
 
 Merging DEM tiles into a single DEM
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you have multiple DEM raster tiles, follow the steps below to merge them. In this example, the DEM tiles covering the full extent of Costa Rica have been download from Copernicus using their AWS client. (Instructions for download of Copernicus data can be found in the **Annexs**). 
 
 |image13|
 
 Clip and project merged DEM
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The DEM tiles are likely to cover a much wider area than the country being analysed therefore it is important to crop the extent to minimise processing time. As indicated in section 2.3.2, the country boundary is not used to clip the dataset directly as the various calculations during the generation of the mountain descriptor layer require neighbouring pixels to be analyses therefore the buffered area of interest generated in section 4.1 should be used. 
 
 Clip the DEM to area of interest after projecting to equal area projection
@@ -134,7 +200,7 @@ Clip the DEM to area of interest after projecting to equal area projection
 |image14|
 
 Generating slope layer from DEM layer
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In, this section, depending on whether your chosen projection already has equidistant properties you will need to reproject the original merged DEM to an  equidistant projection (the one in its native coordinate system not the projected one to minimise introduction of errors from projecting a raster multiple times). This will  reduce errors in slope calculation. An overview of slope calculation methods is provided in the defining environments section.
 
@@ -147,7 +213,7 @@ otherwise please generate a custom equidistant azimuthal projection by changing 
 |image16|
 
 Generating local elevation range from DEM
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 For Kapos classes 5 and 6 a 7km local elevation range is required for the identification of areas that occur in regions with significant relief, even though elevations may not be especially high, and conversely high-elevation areas with little local relief. This local elevation range is generated by defining a 7km radius of interest around each grid cell and calculating the difference between the maximum and minimum values within a neighborhood. 
 
@@ -160,7 +226,7 @@ Plot Focal range
 |image31|
 
 Generating layers for each Kapos mountain class
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 We now have all the inputs required for generating the mountain classes for the mountain descriptor layer. We will reclassify the DEM raster processed in the previous steps to generate a raster layer for each mountain class. 
 
@@ -180,7 +246,7 @@ class 6: >=300 & <1000 & local elevation range >=300
 |image18|
 
 Generate an interim mountain layer with classes
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The next step is to create a mosaic of all the classes into a single raster where class 1 has a value of 1, class2 a value of 2, etc. 
 
@@ -193,7 +259,7 @@ Plot the mountain descriptor layer
 |image33|
 
 Generation of Real Surface Area raster
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The final layer that needs generating is the Real Surface Area raster from the DEM. The following code generates the real surface area raster from the DEM. The steps are explained below.
 
@@ -242,7 +308,7 @@ Mountain Green Cover Index Calculation
 --------------------------------------
 
 Aggregating mountain and RSA layers to resolution of vegetation descriptor
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Now that we have 3 raster datasets in their native resolutions we need to bring the datasets together and ensure that correct aggregation is undertaken and that all the layers align to the Vegetation Descriptor layer. In this example we have the Mountain Descriptor layer and the RealSurfaceArea Rasters at 90m resolution but a Vegetation Descriptor layer at 300m resolution. 
 
@@ -255,21 +321,21 @@ Next, compare the resolutions of the vegetation and mountain descriptor layers a
 |image22|
 
 Combining vegetation and mountain classes into single layer
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 As the MGCI required disaggregation by both the 6 LULC class and the 6 Mountain Class, we will combine the two datasets together to form a combined zones dataset to calculate zonal statistics. We will sum the two dataset together but in order to distinguish the vegetation class from the mountain class, all the vegetation values will be multiplied by 10. This means for example a value of 35 in the output means the pixel has class 3 in the vegetation descriptor layer and class 5 in the Mountain descriptor layer.
 
 |image23|
 
 Clip layers to country boundary
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 At this stage we can now clip the final aggregated datasets to the country boundary (remember that up to this point we have used a bounding box of the country boundary buffered out by 10km).
 
 |image24|
 
 Generate Zonal statistics
-~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The data are now in a consistent format and clipped to the country boundary, so we can now generate the statistics required for the MGCI reporting. As we want to generate disaggregated statistics by LULC class and Mountain Class we will use a zonal statistics tool with the combined Vegetation + mountain layer as the summary unit and the RSA raster as the summary layer.
 
@@ -285,7 +351,7 @@ We can now generate a summary table containing real surface area and planimetric
 
 
 Outputing and formattting to Standard MGCI reporting tables
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
     To be added shortly
 
