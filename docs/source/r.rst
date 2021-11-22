@@ -114,8 +114,8 @@ This is outlined in the code below.
     library(tidyverse)
     library(ncdf4)
 
-#Set working directory to data folder
-setwd("C:/this_is_the_path/to_my_working_directory") #replace the dummy path with the path to your working folder
+    #Set working directory to data folder
+    setwd("C:/this_is_the_path/to_my_working_directory") #replace the dummy path with the path to your working folder
 
 Define projection and generate an AOI
 -------------------------------------
