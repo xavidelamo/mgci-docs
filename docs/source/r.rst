@@ -1,21 +1,89 @@
-MGCI R workflow
-==================
+R-MGCI :sub:`beta`
+======================
+
+A R-Software-based tool to support the computation of SDG Indicator 15.4.2 – Mountain Green Cover Index.
+
+General Information
+-------------------
+
+About R-MGCI :sub:`beta`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This tool was developed by the UN Environment Programme World Conservation Monitoring Centre (UNEP-WCMC) in collaboration with the Food and Agriculture Organization (FAO) of the United Nations to support member countries to compute and report against SDG Indicator 15.4.2.
+
+This script has been developed to be run on R 4.1.1 and RStudio 2021.09.0+351 "Ghost Orchid" release. If you are using older versions, it may be good to update them. `R <https://www.r-project.org/>`_ is available as Free Software under the terms of the Free Software Foundation’s GNU General Public License in source code form. It compiles and runs on a wide variety of UNIX platforms and similar systems (including FreeBSD and Linux), Windows and MacOS.
+
+R-MGCI :sub:`beta` is in a beta stage and therefore it is still under development. Please contact the R-MGCI :sub:`beta` development team with any comments or suggestions.
+
+[VIGNESH: Please specify the way you want to channel the comments and suggestions for users. See below the text from SEPAL]:  
+
+If you have specific bugs to report or improvements to the tool that you would like to suggest, please use the `GitHub’s issue tracker <https://github.com/dfguerrerom/sepal_mgci/issues>`_ of the SEPAL-MGCI :sub:`beta` module and do follow the `contribution guidelines <https://github.com/dfguerrerom/sepal_mgci/blob/master/CONTRIBUTE.md>`_.
+
+Authors 
+^^^^^^^
+
+R-MGCI :sub:`beta` has been developed by the UN Environment Programme World Conservation Monitoring Centre (UNEP-WCMC) in collaboration with the Food and Agriculture Organization (FAO) of the United Nations. Contributors to R-MGCI :sub:`beta` and its documentation include Vignesh Kamath Cannanure [VIGNESH: Please complete]
+
+License
+^^^^^^^
+R-MGCI :sub:`beta` and its documentation is made available under the terms of the `Creative Commons Attribution 4.0 International License (CC BY 4.0) <https://creativecommons.org/licenses/by/4.0/>`_ .
+
+Background
+^^^^^^^^^^
+
+SDG Indicator 15.4.2 – Mountain Green Cover Index (MGCI) is one of the two indicators under SDG Target 15.4, which aims to:
+
+"*ensure the conservation of mountain ecosystems, including their biodiversity, to enhance their capacity to provide benefits which are essential for sustainable development*". 
+
+The Food and Agriculture Organization (FAO) of the United Nations is the custodian agency of this indicator. The Mountain Green Cover Index (MGCI) is designed to measure the extent and the changes of green vegetation in mountain areas to monitor progress towards SDG Target 15.4.
+
+The MGCI is defined as the ratio of the mountain green cover area to the total mountain area:
+
+.. math::
+    
+    MGCI = (Mountain Green Cover Area)/(Total Mountain Area)
+
+Where: 
+
+- **Mountain Green Cover Area**: sum of mountain area (km :sup:`2`) covered by cropland, grassland, forestland, shrubland and wetland, as defined based on the IPCC classification (Penman et al. 2003). This component is calculated from the vegetation descriptor layer. 
+- **Total Mountain Area**: total area (Km2) of mountains. In both the numerator and denominator, mountain area is defined according to Kapos et al. 2000. This component is calculated from the mountain description layer.
+- **Vegetation descriptor layer**: The vegetation descriptor layer categorizes land cover into green and non-green areas. Green vegetation includes both natural vegetation and vegetation resulting from anthropic activity (e.g. crops, afforestation, etc.). Non-green areas include very sparsely vegetated areas, bare land, water, permanent ice/snow and urban areas. The vegetation description layer is derived from a land cover map, where land cover categories are classified into IPCC categories and then in green/non-green areas. 
+- **Mountain descriptor layer**:  The mountain descriptor layer consists in a map of mountain classes following the UNEP-WCMC classification (Kapos et al. 2000). The UNEP-WCMC classification classifies the world mountain areas according altitude, slope and elevation range into the following categories.
+
+  .. _mountain_classes:
+  .. csv-table:: Mountain classes
+     :header: "UNEP-WCMC Mountain Class", "Description"
+     :widths: auto
+     :align: center
+  
+     "1","Elevation > 4.500 meters"
+     "2","Elevation 3.500–4.500 meters"
+     "3","Elevation 2.500–3.500 meters"
+     "4","Elevation 1.500–2.500 meters and slope > 2"
+     "5","Elevation 1.000–1.500 meters and slope > 5 or local elevation range (LER 7 kilometer radius) > 300 meters"
+     "6","Elevation 300–1.000 meters and local elevation range (7 kilometer radius) > 300 meters"
+
+R-MGCI :sub:`beta` allows the user to compute each of these description layers to then calculate MGCI values for any given area. The results of this analysis can be exported to a set of standardized reporting tables where MGCI values are disaggregated by mountain class and IPCC land category, as specified in the metadata of SDG Indicator 15.4.2.
+
+References
+^^^^^^^^^^
+
+- Kapos, V., Rhind, J., Edwards, M., Prince, M., & Ravilious, C. (2000). Developing a map of the world’s mountain forests. In M. F. Price , & N. Butt (Eds.),?Forests in Sustainable Mountain Development: A State-of-Knowledge Report for 2000?(pp. 4-9). Wallingford: CAB International.? 
+- Penman, J., Gytarsky, M., Hiraishi, T., Krug, T., Kruger, D., Pipatti, R., Buendia, L., Miwa, K., Ngara, T., Tanabe, K. (2003). Good Practice Guidance for Land Use, Land-use Change and Forestry. Good Practice Guidance for Land Use, Land-use Change and Forestry. 
+
+Before using R-MGCI :sub:`beta`
+-----------------------------------
+
+To run the this script you will need to have R 4.1.1 and RStudio 2021.09.0+351 "Ghost Orchid" installed. 
+
 
 .. contents:: **Table of Contents**
 
 
-Definition 
-----------
-Put link to overview document
-    
-Initial set-up
---------------
-put link to initial set up document
-
 Introduction
 ------------
 
-This section of the tutorial explains in detail how to carry out this analysis in R, using Costa Rica as a case study using a 90m resolution DEM from Copernicus and Global ESA CCI LULC datasets. This section assumes that the user has already downloaded the DEM and a LULC dataset (see section 2 and the Annexes for further information). 
+This tutorial explains in detail how to run the R-MGCI :sub:`beta` step-by-step using Costa Rica as an example. It uses the 90m resolution Digital ELevation Model (DEM) from Copernicus `(COP-DEM_GLO-90) <https://spacedata.copernicus.eu/web/cscda/dataset-details?articleId=394198>`_ to create the mountain descriptor layer and land cover datasets from the  `European Space Agency (ESA) Climate Change Initiative (CCI) land cover datasets <https://maps.elie.ucl.ac.be/CCI/viewer/>`_to create the vegetation descriptor layer. If using QGIS-MGCI for official purposes, it is recommended that users use nationally appropriate data sources if available. 
 
 The MGCI module has five main steps, and the index will be calculated based on the user inputs:
 
@@ -30,6 +98,8 @@ The MGCI module has five main steps, and the index will be calculated based on t
 -  MGCI results
 
 Before starting with the steps to calculate MGCI, install and load the required packages, and set your working folder.
+
+[VIGNESH: Please explain which packages are required]
 
 |image0|
 
