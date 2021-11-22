@@ -1,25 +1,89 @@
-MGCI QGIS workflow
-==================
+QGIS-MGCI :sub:`beta`
+======================
+
+A QGIS-based workflow to support the computation of SDG Indicator 15.4.2 – Mountain Green Cover Index.
+
+General Information
+-------------------
+
+About QGIS-MGCI :sub:`beta`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This geospatial workflow was developed by the UN Environment Programme World Conservation Monitoring Centre (UNEP-WCMC) in collaboration with the Food and Agriculture Organization (FAO) of the United Nations to support member countries to compute and report against SDG Indicator 15.4.2.
+
+This geospatial workflow has been developed to be run on QGIS 3.16.11, a free and open-source geographic information system licensed under the GNU General Public License. QGIS is an official project of the Open Source Geospatial Foundation (OSGeo). It runs on Linux, Unix, Mac OSX, Windows and Android and supports numerous vector, raster, and database formats and functionalities. To run this workflow, you will also need to have R Software 4.4.1.
+
+The QGIS-MGCI :sub:`beta` workflow is in a beta stage and therefore it is still under development. Please contact the QGIS-MGCI :sub:`beta` development team with any comments or suggestions.
+
+[CORINNA: Please specify the way you want to channel the comments and suggestions for users. See below the text from SEPAL]:  
+
+If you have specific bugs to report or improvements to the tool that you would like to suggest, please use the `GitHub’s issue tracker <https://github.com/dfguerrerom/sepal_mgci/issues>`_ of the SEPAL-MGCI :sub:`beta` module and do follow the `contribution guidelines <https://github.com/dfguerrerom/sepal_mgci/blob/master/CONTRIBUTE.md>`_.
+
+Authors 
+^^^^^^^
+
+QGIS-MGCI :sub:`beta` has been developed by the UN Environment Programme World Conservation Monitoring Centre (UNEP-WCMC) in collaboration with the Food and Agriculture Organization (FAO) of the United Nations. Contributors to QGIS-MGCI :sub:`beta` and its documentation include Corinna Ravilious [CORINNA: Please complete]
+
+License
+^^^^^^^
+The QGIS-MGCI :sub:`beta` workflow and its documentation is made available under the terms of the `Creative Commons Attribution 4.0 International License (CC BY 4.0) <https://creativecommons.org/licenses/by/4.0/>`_ .
+
+Background
+^^^^^^^^^^
+
+SDG Indicator 15.4.2 – Mountain Green Cover Index (MGCI) is one of the two indicators under SDG Target 15.4, which aims to:
+
+"*ensure the conservation of mountain ecosystems, including their biodiversity, to enhance their capacity to provide benefits which are essential for sustainable development*".
+
+The Food and Agriculture Organization (FAO) of the United Nations is the custodian agency of this indicator. The Mountain Green Cover Index (MGCI) is designed to measure the extent and the changes of green vegetation in mountain areas to monitor progress towards SDG Target 15.4.
+
+The MGCI is defined as the ratio of the mountain green cover area to the total mountain area:
+
+.. math::
+    
+    MGCI = (Mountain Green Cover Area)/(Total Mountain Area)
+
+Where: 
+
+- **Mountain Green Cover Area**: sum of mountain area (km :sup:`2`) covered by cropland, grassland, forestland, shrubland and wetland, as defined based on the IPCC classification (Penman et al. 2003). This component is calculated from the vegetation descriptor layer. 
+- **Total Mountain Area**: total area (Km2) of mountains. In both the numerator and denominator, mountain area is defined according to Kapos et al. 2000. This component is calculated from the mountain description layer.
+- **Vegetation descriptor layer**: The vegetation descriptor layer categorizes land cover into green and non-green areas. Green vegetation includes both natural vegetation and vegetation resulting from anthropic activity (e.g. crops, afforestation, etc.). Non-green areas include very sparsely vegetated areas, bare land, water, permanent ice/snow and urban areas. The vegetation description layer is derived from a land cover map, where land cover categories are classified into IPCC categories and then in green/non-green areas. 
+- **Mountain descriptor layer**:  The mountain descriptor layer consists in a map of mountain classes following the UNEP-WCMC classification (Kapos et al. 2000). The UNEP-WCMC classification classifies the world mountain areas according altitude, slope and elevation range into the following categories.
+
+  .. _mountain_classes:
+  .. csv-table:: Mountain classes
+     :header: "UNEP-WCMC Mountain Class", "Description"
+     :widths: auto
+     :align: center
+  
+     "1","Elevation > 4.500 meters"
+     "2","Elevation 3.500–4.500 meters"
+     "3","Elevation 2.500–3.500 meters"
+     "4","Elevation 1.500–2.500 meters and slope > 2"
+     "5","Elevation 1.000–1.500 meters and slope > 5 or local elevation range (LER 7 kilometer radius) > 300 meters"
+     "6","Elevation 300–1.000 meters and local elevation range (7 kilometer radius) > 300 meters"
+
+The QGIS-MGCI :sub:`beta` workflow allows the user to compute each of these description layers to then calculate MGCI values for any given area. The results of this analysis can be exported to a set of standardized reporting tables where MGCI values are disaggregated by mountain class and IPCC land category, as specified in the metadata of SDG Indicator 15.4.2.
+
+References
+^^^^^^^^^^
+
+- Kapos, V., Rhind, J., Edwards, M., Prince, M., & Ravilious, C. (2000). Developing a map of the world’s mountain forests. In M. F. Price , & N. Butt (Eds.),?Forests in Sustainable Mountain Development: A State-of-Knowledge Report for 2000?(pp. 4-9). Wallingford: CAB International.? 
+- Penman, J., Gytarsky, M., Hiraishi, T., Krug, T., Kruger, D., Pipatti, R., Buendia, L., Miwa, K., Ngara, T., Tanabe, K. (2003). Good Practice Guidance for Land Use, Land-use Change and Forestry. Good Practice Guidance for Land Use, Land-use Change and Forestry. 
+
+Before using QGIS-MGCI :sub:`beta`
+-----------------------------------
+
+To run this workflow you will need have QGIS 3.16.11 and R Software 4.4.1. installed in your computer. 
+
 
 .. contents:: **Table of Contents**
 
 
-Definition 
-----------
-Put link to overview document
-    
-Initial set-up
---------------
-put link to initial set up document
-
 Introduction
 ------------
 
-This section of the documentation explains in detail how to carry out this
-analysis step-by-step in QGIS, using the Costa Rica as a case study using a 90m
-resolution DEM from Copernicus. This section assumes that the user has
-already downloaded the DEM and a LULC dataset (see section 2 and the
-Annexes for further information).
+This tutorial explains in detail how to implement the QGIS-MGCI :sub:`beta` workflow step-by-step using Costa Rica as an example. It uses the 90m resolution Digital ELevation Model (DEM) from Copernicus `(COP-DEM_GLO-90) <https://spacedata.copernicus.eu/web/cscda/dataset-details?articleId=394198>`_ to create the mountain descriptor layer and land cover datasets from the  `European Space Agency (ESA) Climate Change Initiative (CCI) land cover datasets <https://maps.elie.ucl.ac.be/CCI/viewer/>`_to create the vegetation descriptor layer. If using QGIS-MGCI for official purposes, it is recommended that users use nationally appropriate data sources if available. 
 
 The tutorial outlines in detail the steps all the tools used for
 individual steps in the processing toolbox as well as providing a custom
@@ -929,7 +993,7 @@ The new **clipped** **SLOPE dataset in the equal area projection** is now added 
 Generating local elevation range from DEM
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For Kapos classes 5 and 6 a 7km local elevation range is required for
+For UNEP-WCMC mountain classes 5 and 6 a 7km local elevation range is required for
 the identification of areas that occur in regions with significant
 relief, even though elevations may not be especially high, and
 conversely high-elevation areas with little local relief. This local
@@ -942,7 +1006,7 @@ the neighborhhod will be influenced by the cellsize of the DEM.
 
 |image93|
 
-The Kapos 2000 documentation stated that the local elevation range was
+Kapos et al. (2000) stated that the local elevation range was
 evaluated for a 5 cell (or 7 km) radius around the target cell.
 
 This it looks at a 5 x 5 neighborhood around each cell.
@@ -1000,34 +1064,34 @@ added to the map canvas\ **.**
 | |imageB4|                                                                                                                                                             |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-**Generating layers for each Kapos mountain class**
+**Generating layers for each mountain class**
 
 We now have all the inputs required for generating the mountain classes
 for the mountain descriptor layer. We will use the raster calculator to
 input the followings expression to generate a raster layer for each
 mountain class.
 
-**Kapos Class 1**
+**Mountain Class 1**
 
 "DEM\_copernicus\_merge\_AOI\_LAEA@1" >= 4500
 
 |image101|
 
-**Kapos Class 2**
+**Mountain Class 2**
 
 "DEM\_copernicus\_merge\_AOI\_LAEA@1" >= 3500 AND
 "DEM\_copernicus\_merge\_AOI\_LAEA@1" < 4500
 
 |image102|
 
-**Kapos Class 3**
+**Mountain Class 3**
 
 "DEM\_copernicus\_merge\_AOI\_LAEA@1" >= 2500 AND
 "DEM\_copernicus\_merge\_AOI\_LAEA@1" < 3500
 
 |image103|
 
-**Kapos Class 4**
+**Mountain Class 4**
 
 "DEM\_copernicus\_merge\_AOI\_LAEA@1" >= 1500 AND
 "DEM\_copernicus\_merge\_AOI\_LAEA@1" < 2500 AND
@@ -1035,7 +1099,7 @@ mountain class.
 
 |image104|
 
-**Kapos Class 5**
+**Mountain Class 5**
 
 ("DEM\_copernicus\_merge\_AOI\_LAEA@1" >= 1000 AND
 "DEM\_copernicus\_merge\_AOI\_LAEA@1" < 1500 AND
@@ -1046,7 +1110,7 @@ mountain class.
 
 |image105|
 
-**Kapos Class 6**
+**Mountain Class 6**
 
 "DEM\_copernicus\_merge\_AOI\_LAEA@1">= 300 AND
 "DEM\_copernicus\_merge\_AOI\_LAEA@1" < 1000
