@@ -194,8 +194,9 @@ If you need to define a custom projection, follow the instructions in Box 1
 |    ID["EPSG",9001]]]]                                                                                                                                                 |
 |                                                                                                                                                                       |
 | -  Click the **Validate** button to check that the parameters are valid and then **OK** to save the custom projection                                                 |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
- |image35| 
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+ 
+
+|image35| 
 
 Next change the projection set for the QGIS project to your chosen equal area
 projection. In this example it is the custom projection that was defined
