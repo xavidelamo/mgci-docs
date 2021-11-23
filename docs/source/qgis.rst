@@ -3,6 +3,8 @@ QGIS-MGCI :sub:`beta`
 
 A QGIS-based workflow to support the computation of SDG Indicator 15.4.2 – Mountain Green Cover Index.
 
+.. contents:: **Table of Contents**
+
 General Information
 -------------------
 
@@ -75,9 +77,6 @@ Before using QGIS-MGCI :sub:`beta`
 -----------------------------------
 
 To run this workflow you will need have QGIS 3.16.11 and R Software 4.4.1. installed in your computer. 
-
-
-.. contents:: **Table of Contents**
 
 
 Introduction
