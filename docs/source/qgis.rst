@@ -2348,7 +2348,7 @@ Export to standard reporting table
 .. |imageF2_w| image:: media_QGIS/Toolbox_images/F2w.png
    :width: 6.26806in
    :height: 4.75764in 
-.. |imagesettings| image:: media_QGIS/Toolbox_images/settings.png
+.. |imagesettings| image:: media_QGIS/settings.png
    :width: 6.26806in
    :height: 4.75764in 
 
