@@ -880,6 +880,7 @@ projection before following the next steps.
 | -  Click the **Validate** button to check that the parameters are valid and then **OK** to save the custom projection                                                 |
 |                                                                                                                                                                       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 |image78|   
 
  -  Next, In the **processing toolbox** search for **reproject** 
@@ -895,8 +896,8 @@ projection before following the next steps.
  -  Set the output file resolution to the resolution of the DEM in meters e.g. 90m in this example
  -  Set the Reprojected output to e.g. **DEM\_copernicus\_merge\_CRI\_AZ\_EQUI.tif**
  -  Click Run to run the tool
-  
-   |image79|
+    
+    |image79|
  
  The reprojected layer is added to the QGIS project. 
  
@@ -917,7 +918,7 @@ projection before following the next steps.
 Slope can now be generated from this layer
 
 -  In the processing toolbox search for **Slope**
-
+   
    |image80|   
    
 -  Double click on the **slope** tool under **Raster analysis** in the
@@ -941,15 +942,15 @@ Slope can now be generated from this layer
    **DEM\_copernicus\_merge\_SLOPE\_CRI\_AZ\_EQUI.tif**
 
 -  Click **Run** to run the tool
-
-|image82|
+   
+   |image82|
 
 The slope raster can now be projected to the main analysis equal area
 projection and be clipped to the AOI.
 
 -  In the processing toolbox search for **Clip**.
 
-  |image49|
+   |image49|
   
 -  Double click on the **Clip raster by mask layer** under the GDAL
    toolset
@@ -980,8 +981,8 @@ projection and be clipped to the AOI.
    **DEM\_copernicus\_merge\_AOI\_LAEA\_SLOPE.tif**
 
 -  Click **Run** to run the tool
-
-|image96|
+   
+   |image96|
 
 The new **clipped** **SLOPE dataset in the equal area projection** is now added should be added to the map canvas\ **.**
 
@@ -1040,10 +1041,10 @@ This is because the neighborhood size in pixels in this tool represents diameter
    FOCMAX\_copernicus\_merge\_AOI\_LAEA
 
 -  Click **Run** to run the tool
-
- |image99|
- 
- |image100| 
+   
+   |image99|
+   
+   |image100| 
  
 TThe local elevation range in the equal area projection should have been
 added to the map canvas\ **.**
@@ -1155,9 +1156,9 @@ map canvas\ **.**
 At the bottom of the layer properties dialogue window click the
 **style** button and then load the predefined style file
 
-   |image109|
+  |image109|
 
-   |image110|
+  |image110|
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **MGCI Toolbox B7. MountainDescriptor: Generate Mountain Descriptor layer (EXCLUDING isolated pixels from class 7)**:                                     |
@@ -1207,9 +1208,9 @@ data.
 (("non\_mountain\_areas\_LAEA@1">0)\*1 +
 ("non\_mountain\_areas\_LAEA@1"<=0)\*0)
 
-   |image113|
+  |image113|
 
-   |image114|
+  |image114|
 
 We can now use this layer to clump the the pixels into groups of
 connected pixels
@@ -1404,12 +1405,12 @@ There is one last step before the Mountain Descriptor layer is complete.
 -  Right click on the last K1\_to\_K6\_AOI\_LAEA layer that was
    generated in the previous step.
 
-    See that the Raster is 32 bit floating point raster. We will use the
-    GRASS r.reclass tool to convert the dataset to Byte and also embed
-    the Kapos class descriptions to the mountain classes. Whilst QGIS
-    cannot see it the class description when the file loads GRASS will
-    be able to read them when calculating statistics and add the
-    descriptions to output CSVs.
+   See that the Raster is 32 bit floating point raster. We will use the
+   GRASS r.reclass tool to convert the dataset to Byte and also embed
+   the Kapos class descriptions to the mountain classes. Whilst QGIS
+   cannot see it the class description when the file loads GRASS will
+   be able to read them when calculating statistics and add the
+   descriptions to output CSVs.
 
 We have create a reclass file containing the mountain classes and
 descriptions
@@ -1421,7 +1422,7 @@ descriptions
 -  Set the reclassified output name to be
    **MountainDescriptor\_LAEA.tif**
 
- image133|
+|image133|
 
 Copy and paste the style from the previous layer to shade and label the
 classes in the MountainDescriptor\_LAEA.tif within the QGIS session.
@@ -1557,7 +1558,7 @@ At this stage we can now clip the final aggregated datasets to the country bound
    
 Repeat the above step for the resampled RSA raster.
 
-   |image176|
+  |image176|
    
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **MGCI Toolbox D3. Generic:  Clip to country boundary**:                                                                                                  |
@@ -1589,7 +1590,7 @@ This output is the main statistics table from the analysis, from which other sum
 -  Set the **zones layer** to the **combined vegetation and mountain layer clipped to the country boundary**
 -  Save the **Statistics output to a .csv file** e.g. rsastats.csv
 
-   |image177|
+  |image177|
    
 The Planimetric area generated in m2 rather than km2 and will be stored in a field called m2
 
@@ -1610,7 +1611,8 @@ When the statistics .csv files  added to the QGIS project it **does not add it c
 |                                                                                                                                                                       |
 | **Also note:** The tool in the MGCI toolbox includes the above steps but also does some further refinement to add some additional fields to convert the RSA and       |
 | Planimetric Area into km2 and drop any unrequired fields generated by the zonal statistics function. It also joins on some additional fields from a template file     |
-|   MGCI_classes_template.csv                                                                                                                                           |
+|                                                                                                                                                                       |
+| MGCI_classes_template.csv                                                                                                                                             |
 |                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
 |                                                                                                                                                                       |
