@@ -99,13 +99,13 @@ equivalent processing steps in the MGCI toolbox.
 Initial set-up
 ------------------------------------------
 
-Users will need to download the MGCI_Beta_Toolbox from the repository and place it in their Models folder. 
-The QGIS R-script for real surface Area will need to be placed in R scripts folder.
+Users will need to download the MGCI_Beta_Toolbox and set of templates and style files from the repository and place it in their relevant QGIS folder. 
+The QGIS R-script for real surface Area will need to be placed in R scripts folder and the ***MGCI_v01beta*** placed in the Models folder .
 You can find the location in **Settings>>Options**
 
 |imagesettings|
 
-Users will also need to download the following template files
+Users will also need to download the all the other templates as these will be required when running certain steps within the workflow
 
 
 
