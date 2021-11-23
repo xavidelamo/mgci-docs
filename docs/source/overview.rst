@@ -178,22 +178,22 @@ distinguish this case from the general desired trend of increasing
 mountain green cover.
 
 
-.. |image2| image:: docs/source/media_QGIS/image2.png
+.. |image2| image:: media_QGIS/image2.png
    :width: 2.35625in
    :height: 2.03333in
 
-.. |image3| image:: docs/source/media_QGIS/image3.png
+.. |image3| image:: media_QGIS/image3.png
    :width: 2.35625in
    :height: 2.03333in
 
-.. |image4| image:: docs/source/media_QGIS/image4.png
+.. |image4| image:: media_QGIS/image4.png
    :width: 2.35625in
    :height: 2.03333in
 
-.. |image5| image:: docs/source/media_QGIS/image5.png
+.. |image5| image:: media_QGIS/image5.png
    :width: 2.35625in
    :height: 2.03333in
 
-.. |image6| image:: docs/source/media_QGIS/image6.png
+.. |image6| image:: media_QGIS/image6.png
    :width: 2.35625in
    :height: 2.03333in
