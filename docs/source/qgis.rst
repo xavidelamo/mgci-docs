@@ -549,6 +549,7 @@ scale of the vector dataset. (see Box 2).
 |    (source: https://enonline.supermap.com/iExpress9D/Appendix/scale.htm)                                                                                              |
 |                                                                                                                                                                       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 |image83|                                                                                                                                                                  
 Table X :  Resolutions recommended for Nominal scales vs pixel resolution (Source: reproduced from https://marinedataliteracy.org/basics/scales/scales.htm)        
 
