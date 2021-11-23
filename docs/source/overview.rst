@@ -40,7 +40,9 @@
    or choose from data already uploaded to the tool. The MGCI will be
    computed and outputs formatted to standard reporting tables.
 
-Figure X: Simplified Workflow
+|imageworkflow|
+
+Figure 1: Simplified Workflow
 
 1.1 Overview of Mountain Descriptor layer
 -----------------------------------------
@@ -690,3 +692,7 @@ mountain green cover.
 .. |image169| image:: media_QGIS/image166.png
    :width: 6.26806in
    :height: 1.02222in
+.. |imageworkflow| image:: media_QGIS/MGCI_workflow_Beta_simplified_workflow.png
+   :width: 6.26806in
+   :height: 1.02222in
+   
