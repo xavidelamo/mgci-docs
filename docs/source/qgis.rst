@@ -667,7 +667,7 @@ can see that the actual layer only has 6 values.
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
 |                                                                                                                                                                       |
-| |imageA3|                                                                                                                                                             |
+| |imageA3_w|                                                                                                                                                             |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
