@@ -1,5 +1,5 @@
-Mountain Green Cover Index Documentation
-========================================
+Mountain Green Cover Index Calculation workflow
+===============================================
 
 Documentation to the Mountain Green Cover Index tools developed by FAO and WCMC:
 
