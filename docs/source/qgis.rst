@@ -530,16 +530,9 @@ scale of the vector dataset. (see Box 2).
 |    this scale to be converted to a resolution, i.e. an appropriate pixel size for the scale of the data. Table X provides some general guidance / suggestions for     |
 |    such conversion.                                                                                                                                                   |
 |                                                                                                                                                                       |
-|    |image83|                                                                                                                                                          |
-|                                                                                                                                                                       |
-|    Table X :  Resolutions recommended for Nominal scales vs pixel resolution (Source: reproduced from https://marinedataliteracy.org/basics/scales/scales.htm)        |
-|                                                                                                                                                                       |
-|                                                                                                                                                                       |
 |    To calculate map scale there are two parameters:  ground resolution and screen resolution.                                                                         |
 |                                                                                                                                                                       |
 |    .. math:: scale = 1: (resolution * PPI / 0.0254)  or    resolution = scale * 0.0254/PPI                                                                            |
-|                                                                                                                                                                       |
-|                                                                                                                                                                       |
 |    **Where**   :                                                                                                                                                      |
 |    **resolution** =  ground resolution (the size in (m) that a pixel represents.                                                                                      |
 |    **PPI** =  the screen resolution (pixels number that every inch contains on the screen (default 96dpi).                                                            |
@@ -549,6 +542,8 @@ scale of the vector dataset. (see Box 2).
 |    (source: https://enonline.supermap.com/iExpress9D/Appendix/scale.htm)                                                                                              |
 |                                                                                                                                                                       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|image83|                                                                                                                                                                  
+Table X :  Resolutions recommended for Nominal scales vs pixel resolution (Source: reproduced from https://marinedataliteracy.org/basics/scales/scales.htm)        
 
 Once the resolution to convert the vector dataset to has been
 determined the vector dataset can be converted to Raster.
