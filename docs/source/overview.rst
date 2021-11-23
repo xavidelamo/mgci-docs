@@ -29,11 +29,8 @@ summaries.
 from 3 different software:**
 
 - Step-by-Step instructions in **QGIS (with R integration)**
-
 - Step-by-Step instruction in **R** (plus and R-Script)
-
-- **SEPAL app**: Users can register and log into the
-   SEPAL data portal where a user-friendly interface will guide
+- SEPAL app: Users can register and log into the SEPAL data portal where a user-friendly interface will guide
    technicians through a series of menu-driven steps to prepare the
    mountain and vegetation descriptor layers before running the MGCI
    calculations. Users will be given the choice to upload their own data
