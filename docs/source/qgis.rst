@@ -156,7 +156,8 @@ If you need to define a custom projection, follow the instructions in Box 1
 |                                                                                                                                                                       |
 | -  Give the custom projection a **name** e.g. in this example **CRI\_LAEQ**                                                                                           |
 |                                                                                                                                                                       |
-| -  Copy the following projection information into the **parameters** box, changing the lat and lon highlighted in yellow to the centre lat and lon of your country.   |
+| -  Copy the following projection information into the **parameters** box, changing the lat and lon                                                                    |
+|    highlighted in yellow to the centre lat and lon of your country.                                                                                                   |
 |                                                                                                                                                                       |
 |    PROJCRS["Custom\_Azimuthal\_Azimuthal\_Equal\_Area",                                                                                                               |
 |    BASEGEOGCRS["WGS 84",                                                                                                                                              |
@@ -1773,8 +1774,8 @@ Export to standard reporting table
    :width: 1.74534in
    :height: 1.62292in
 .. |image35| image:: media_QGIS/image37.png
-   :width: 5.29167in
-   :height: 6.63899in
+   :width: 2.5in
+   :height: 3.6in
 .. |image36| image:: media_QGIS/image38.png
    :width: 6.28139in
    :height: 0.35833in

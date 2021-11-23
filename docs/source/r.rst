@@ -194,7 +194,7 @@ If LULC raster is a global/regional dataset, it needs to be clipped to the area 
 
 .. code-block:: s
 
-   lulc_aoi <- crop(lulc,aoi_buffer);
+   lulc_aoi <- crop(lulc,aoi_buffer)
 
 
 Steps when using a vector LULC dataset
@@ -205,8 +205,8 @@ First, input the LULC dataset in vector format. When using a vector LULC dataset
 
 .. code-block:: s
 
-   lulc_vect <- st_read("C:/this_is_the_path/to_my_LULC_layer.shp");
-   lulc_vect <- st_transform(lulc, CRS=CRS("+proj=laea +lat_0=8.5 +lon_0=-84 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs"));
+   lulc_vect <- st_read("C:/this_is_the_path/to_my_LULC_layer.shp")
+   lulc_vect <- st_transform(lulc, CRS=CRS("+proj=laea +lat_0=8.5 +lon_0=-84 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs"))
 
 The next step is to rasterize the LULC data. When converting it is important to choose an output resolution that is appropriate for the scale of the vector dataset (**see section Defining analysis environments and data selection** for more detail). Once the resolution to convert the vector dataset to has been determined the vector dataset can be converted to Raster. First, create a template raster with the required resolution (needs to be determined), extent and projection (same as input layer) and then convert the vector to raster format with resolution, extent and projection same as that of the template raster.
 
@@ -232,14 +232,14 @@ Reclassify the LULC types from the ESA CII or National landcover dataset to the 
    190,5,
    150,6, 151,6, 152,6, 153,6, 200,6, 201,6, 202,6, 210,6, 220,6)
    rclmat <- matrix(m, ncol=2, byrow=TRUE)
-   lulc_ipcc <- reclassify(lulc_aoi, rclmat, include.lowest=TRUE);
+   lulc_ipcc <- reclassify(lulc_aoi, rclmat, include.lowest=TRUE)
 
 Plot the vegetation descriptor layer with the country boundary.
 
 .. code-block:: s
 
    plot(lulc_ipcc)
-   plot(aoi_laea, add=T, col=NA);
+   plot(aoi_laea, add=T, col=NA)
 
 
 |image30|
@@ -269,7 +269,7 @@ If you have multiple DEM raster tiles, follow the steps below to merge them. In 
    DEM_allrasters <- lapply(DEM_rastlist, raster)
    #merge all the tiles in the list
    DEM_allrasters$filename <- "working_folder/DEM_merged.tif" 
-   DEM <- do.call(merge, DEM_allrasters);
+   DEM <- do.call(merge, DEM_allrasters)
 
 Clip and project merged DEM
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -280,7 +280,7 @@ Clip the DEM to area of interest after projecting to equal area projection
 .. code-block:: s
 
    DEM_laea <- projectRaster(DEM,crs="+proj=laea +lat_0=8.5 +lon_0=-84 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs", method = "bilinear")
-   DEM_aoi_laea <- crop(DEM_laea,aoi_buffer);
+   DEM_aoi_laea <- crop(DEM_laea,aoi_buffer)
 
 Generating slope layer from DEM layer
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -307,7 +307,7 @@ otherwise please generate a custom equidistant azimuthal projection by changing 
    slope_aoi <- slope %>% 
    projectRaster(crs="+proj=laea +lat_0=8.5 +lon_0=-84 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs", method = "bilinear") %>%
    crop(aoi_buffer) %>%
-   resample(DEM_aoi_laea,method="bilinear");
+   resample(DEM_aoi_laea,method="bilinear")
 
 Generating local elevation range from DEM
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -328,7 +328,7 @@ For Kapos classes 5 and 6 a 7km local elevation range is required for the ident
    focalMin <- focal(DEM_aoi_laea, w=cf, fun=min)  
    
    #Generate focal range
-   aoi7kmLocalElev <- focalMax - focalMin;   
+   aoi7kmLocalElev <- focalMax - focalMin
 
 
 Plot Focal range
@@ -337,7 +337,7 @@ Plot Focal range
 
 .. code-block:: s
 
-   plot(aoi7kmLocalElev);
+   plot(aoi7kmLocalElev)
 
 
 Generating layers for each Kapos mountain class
@@ -353,8 +353,8 @@ We now have all the inputs required for generating the mountain classes for the
    "1","DEM\_aoi\_laea > 4.500"
    "2",">= 3.500–4.500"
    "3",">= 2.500–3.500"
-   "4",">= 1.500–2.500 and slope > 2"
-   "5",">=1.000 & <1.500 & slope>=5 OR >=1.000 & <1.500 & local elevation range >300"
+   "4",">= 1.500–2.500 and slope >=2"
+   "5",">=1.000 & <1.500 & slope >=5 OR >=1.000 & <1.500 & local elevation range >300"
    "6",">=300 & <1.000 & local elevation range >300"
 
 
@@ -383,7 +383,7 @@ We now have all the inputs required for generating the mountain classes for the
    #assign value 6
    m <- c(1,6, 0,NA)
    rclmat <- matrix(m, ncol=2, byrow=TRUE)
-   c6 <- reclassify(c6, rclmat, include.lowest=TRUE);
+   c6 <- reclassify(c6, rclmat, include.lowest=TRUE)
 
 
 Generate an interim mountain layer with classes
@@ -394,7 +394,7 @@ The next step is to create a mosaic of all the classes into a single raster wher
 
 .. code-block:: s
 
-   c <- mosaic(c123, c4, c5, c6, fun=max);
+   c <- mosaic(c123, c4, c5, c6, fun=max)
 
 
 Plot the mountain descriptor layer
@@ -407,7 +407,7 @@ Plot the mountain descriptor layer
 
 
 Generation of Real Surface Area raster
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------------------
 
 The final layer that needs generating is the Real Surface Area raster from the DEM. The following code generates the real surface area raster from the DEM. The steps are explained below.
 
@@ -489,7 +489,7 @@ It uses the function ‘data.frame’ to create a new table ‘m3’ with three 
 
 This step renames the columns of the new table ‘m3’ to ‘x’, ‘y’, and ‘real\_surface\_area’
 It uses the function ‘rasterFromXYZ’ to convert the table ‘m3’ to a raster.
-It adopts the projection of the original DEM raster ‘r’ on the newly created raster ‘r2’ (that has the real surface area of each pixel).
+It adopts the projection of the original DEM raster ‘DEM_aoi_laea’ on the newly created raster ‘rsa_raster’ (that has the real surface area of each pixel).
 
 .. code-block:: s
 
@@ -588,12 +588,13 @@ We can now generate a summary table containing real surface area and planimetric
 Outputing and formattting to Standard MGCI reporting tables
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-First edit the following variables with inputs relevant to your data.
-**GeoAreaCode:** Please enter the country code
-**GeoAreaName:** Please enter the name of the country or region
-**TimePeriod:** Please enter the year in question for which the analysis is done in the following format: yXXXX
-**Source:** Please insert the name of the institution you belong to
-**Nature:** This should be 'G' if the data used to compute the index is global or C if you have used your own data (you have uploaded your own land cover map)
+First edit the following variables with inputs relevant to your data:
+
+- **GeoAreaCode:** Please enter the country code
+- **GeoAreaName:** Please enter the name of the country or region
+- **TimePeriod:** Please enter the year in question for which the analysis is done in the following format: yXXXX
+- **Source:** Please insert the name of the institution you belong to
+- **Nature:** This should be 'G' if the data used to compute the index is global or C if you have used your own data (you have uploaded your own land cover map)
 
 .. code-block:: s
 
