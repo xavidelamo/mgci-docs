@@ -177,23 +177,23 @@ disaggregated data by land cover type and elevation class, to
 distinguish this case from the general desired trend of increasing
 mountain green cover.
 
+Acknowledgements
+----------------
+
+We would like to express our special thanks to Jeff Jenness from Jenness Enterprises, GIS Analysis and Application Design, for his help in the development of the real surface area.
+
 
 .. |image2| image:: media_QGIS/image2.png
    :width: 2.35625in
-   :height: 2.03333in
 
 .. |image3| image:: media_QGIS/image3.png
    :width: 2.35625in
-   :height: 2.03333in
 
 .. |image4| image:: media_QGIS/image4.png
    :width: 2.35625in
-   :height: 2.03333in
 
 .. |image5| image:: media_QGIS/image5.png
    :width: 2.35625in
-   :height: 2.03333in
 
 .. |image6| image:: media_QGIS/image6.png
    :width: 2.35625in
-   :height: 2.03333in
