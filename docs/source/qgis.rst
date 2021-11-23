@@ -122,7 +122,8 @@ bundary as outlined in the **Definning analysis environments** section of the tu
 
    |image32|
 
-   |image33|\ |image34|
+   |image33|
+   |image34|
 
 -  Click **Add** and **Close** to close the Data Source Manager: Vector
    dialogue window
@@ -194,6 +195,7 @@ If you need to define a custom projection, follow the instructions in Box 1
 |    ID["EPSG",9001]]]]                                                                                                                                                 |
 |                                                                                                                                                                       |
 | -  Click the **Validate** button to check that the parameters are valid and then **OK** to save the custom projection                                                 |
+|                                                                                                                                                                       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+ 
 
 |image35| 
@@ -300,6 +302,7 @@ the various layers for the MGCI analysis.
 |                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
+|                                                                                                                                                                       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 |imageA1|   
@@ -411,7 +414,7 @@ Clip and project LULC raster (FOR REGIONAL/GLOBAL DATASETS ONLY)
    |image50|
    |image51|
 
--  \ **Click Run** to run the tool
+-  **Click Run** to run the tool
 
 The new clipped LULC dataset in the equal area projection should be
 added should be added to the map canvas\ **.**
@@ -439,6 +442,7 @@ the country.
 |                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
+|                                                                                                                                                                       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 |imageA2a| 
@@ -478,8 +482,9 @@ added should be added to the map canvas\ **.**
 -  Change the render type to **Palleted/Unique Values**
 
 -  Click **Classify** and then **OK**
-
+  
    |image56|
+  
    |image57|
 
 The layer should now show all the National LULC classes for Costa Rica.
@@ -492,8 +497,10 @@ The layer should now show all the National LULC classes for Costa Rica.
 | as outlined in the section above.                                                                                                                                     |
 |                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
-| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
+| The workflow steps can be viewed QGIS Model Designer.                                                                                                                  |
+|                                                                                                                                                                       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 |imageA2b|
 |imageA2b_w|
 
@@ -601,6 +608,7 @@ The layer should now show all the National LULC classes for Costa Rica.
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
+|                                                                                                                                                                       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 |imageA2c|  
@@ -667,6 +675,7 @@ can see that the actual layer only has 6 values.
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
+|                                                                                                                                                                       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 |imageA3|
@@ -737,6 +746,7 @@ The merged DEM is added to the QGIS project.
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
+|                                                                                                                                                                       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 |imageB1|
@@ -798,6 +808,7 @@ should be added to the map canvas\ **.**
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
+|                                                                                                                                                                       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 |imageB2|  
@@ -866,6 +877,7 @@ projection before following the next steps.
 |    ID["EPSG",9001]]]]                                                                                                                                                 |
 |                                                                                                                                                                       |
 | -  Click the **Validate** button to check that the parameters are valid and then **OK** to save the custom projection                                                 |
+|                                                                                                                                                                       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |image78|   
 
@@ -895,6 +907,7 @@ projection before following the next steps.
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
+|                                                                                                                                                                       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 |imageB3|
@@ -979,6 +992,7 @@ The new **clipped** **SLOPE dataset in the equal area projection** is now added 
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
+|                                                                                                                                                                       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 |imageB4|
@@ -1041,6 +1055,7 @@ added to the map canvas\ **.**
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
+|                                                                                                                                                                       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 |imageB5|
@@ -1108,6 +1123,7 @@ AND"LocalElevationRange7km\_AOI\_LAEA@1" > 300
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
+|                                                                                                                                                                       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 |imageB6|
@@ -1149,13 +1165,12 @@ At the bottom of the layer properties dialogue window click the
 |                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
 |                                                                                                                                                                       |
-| |imageB7|                                                                                                                                                             |
-|                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
 |                                                                                                                                                                       |
-| |imageB7_w                                                                                                                                                            |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+|imageB7| 
+|imageB7_w|
 
 Filling isolated pixels within mountain areas and merging into classes 1-6 (****NOTE: This step is still in development****)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1447,6 +1462,7 @@ your R integration is working in Section 2.1.
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
+|                                                                                                                                                                       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 |imageC1|  
@@ -1490,6 +1506,7 @@ Next we will  aggregate the mountain descriptor layer.
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
+|                                                                                                                                                                       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 |imageD1|
@@ -1515,6 +1532,7 @@ As the MGCI required disaggregation by both the 6  LULC class and the 6 Mountain
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
+|                                                                                                                                                                       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 |imageD2|  
@@ -1548,6 +1566,7 @@ Repeat the above step for the resampled RSA raster.
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
+|                                                                                                                                                                       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 |imageD3|  
@@ -1595,6 +1614,7 @@ When the statistics .csv files  added to the QGIS project it **does not add it c
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
+|                                                                                                                                                                       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 |imageE1|
@@ -1617,6 +1637,7 @@ Export to standard reporting table
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
+|                                                                                                                                                                       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 |imageF1| 
@@ -1630,6 +1651,7 @@ Export to standard reporting table
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
+|                                                                                                                                                                       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 |imageF2|
