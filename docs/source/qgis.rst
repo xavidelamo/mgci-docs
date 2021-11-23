@@ -497,7 +497,7 @@ The layer should now show all the National LULC classes for Costa Rica.
 | as outlined in the section above.                                                                                                                                     |
 |                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
-| The workflow steps can be viewed QGIS Model Designer.                                                                                                                  |
+| The workflow steps can be viewed QGIS Model Designer.                                                                                                                 |
 |                                                                                                                                                                       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
