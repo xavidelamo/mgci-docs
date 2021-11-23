@@ -3,6 +3,9 @@ R-MGCI :sub:`beta`
 
 A R-Software-based tool to support the computation of SDG Indicator 15.4.2 – Mountain Green Cover Index.
 
+.. contents:: **Table of Contents**
+
+
 General Information
 -------------------
 
@@ -78,10 +81,6 @@ Before using R-MGCI :sub:`beta`
 -------------------------------
 
 To run the this script you will need to have R 4.1.1 and RStudio 2021.09.0+351 "Ghost Orchid" installed. 
-
-
-.. contents:: **Table of Contents**
-
 
 Introduction
 ------------
