@@ -15,14 +15,14 @@ This geospatial workflow has been developed to be run on QGIS 3.16.11, a free an
 
 The QGIS-MGCI :sub:`beta` workflow is in a beta stage and therefore it is still under development. Please contact the QGIS-MGCI :sub:`beta` development team with any comments or suggestions.
 
-[CORINNA: Please specify the way you want to channel the comments and suggestions for users. See below the text from SEPAL]:  
-
-If you have specific bugs to report or improvements to the tool that you would like to suggest, please use the `GitHub’s issue tracker <https://github.com/dfguerrerom/sepal_mgci/issues>`_ of the SEPAL-MGCI :sub:`beta` module and do follow the `contribution guidelines <https://github.com/dfguerrerom/sepal_mgci/blob/master/CONTRIBUTE.md>`_.
+If you have specific bugs to report or improvements to the tool that you would like to suggest, please use the `GitHub’s issue tracker
+<https://github.com/dfguerrerom/wcmc-mgci/issues>`_ of the SEPAL-MGCI :sub:`beta` module and do follow the `contribution guidelines
+<https://github.com/dfguerrerom/wcmc-mgci/blob/master/CONTRIBUTE.md>`_.
 
 Authors 
 ^^^^^^^
 
-QGIS-MGCI :sub:`beta` has been developed by the UN Environment Programme World Conservation Monitoring Centre (UNEP-WCMC) in collaboration with the Food and Agriculture Organization (FAO) of the United Nations. Contributors to QGIS-MGCI :sub:`beta` and its documentation include Corinna Ravilious [CORINNA: Please complete]
+QGIS-MGCI :sub:`beta` has been developed by the UN Environment Programme World Conservation Monitoring Centre (UNEP-WCMC) in collaboration with the Food and Agriculture Organization (FAO) of the United Nations. Contributors to QGIS-MGCI :sub:`beta` and its documentation include Corinna Ravilious, Vignesh Kamath Cannanure, Boipelo Tshwene-Mauchaza, Cristina Telhado and Valerie Kapos. 
 
 License
 ^^^^^^^
@@ -59,8 +59,8 @@ Where:
      "1","Elevation > 4.500 meters"
      "2","Elevation 3.500–4.500 meters"
      "3","Elevation 2.500–3.500 meters"
-     "4","Elevation 1.500–2.500 meters and slope > 2"
-     "5","Elevation 1.000–1.500 meters and slope > 5 or local elevation range (LER 7 kilometer radius) > 300 meters"
+     "4","Elevation 1.500–2.500 meters and slope >= 2"
+     "5","Elevation 1.000–1.500 meters and slope >= 5 or local elevation range (LER 7 kilometer radius) > 300 meters"
      "6","Elevation 300–1.000 meters and local elevation range (7 kilometer radius) > 300 meters"
 
 The QGIS-MGCI :sub:`beta` workflow allows the user to compute each of these description layers to then calculate MGCI values for any given area. The results of this analysis can be exported to a set of standardized reporting tables where MGCI values are disaggregated by mountain class and IPCC land category, as specified in the metadata of SDG Indicator 15.4.2.
@@ -95,6 +95,20 @@ allow for easier repeat processing.
 For each step or group of steps, the tutorial
 follow the structure of a detailed description of the exact steps that are running within the toolbox tool followed by the
 equivalent processing steps in the MGCI toolbox.
+
+Initial set-up
+------------------------------------------
+
+Users will need to download the MGCI_Beta_Toolbox and set of templates and style files from the repository and place it in their relevant QGIS folder. 
+The QGIS R-script for real surface Area will need to be placed in R scripts folder and the ***MGCI_v01beta*** placed in the Models folder .
+You can find the location in **Settings>>Options**
+
+|imagesettings|
+
+Users will also need to download the all the other templates as these will be required when running certain steps within the workflow
+
+
+
 
 Define projection and generate an AOI
 -------------------------------------
@@ -667,7 +681,7 @@ can see that the actual layer only has 6 values.
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
 |                                                                                                                                                                       |
-| |imageA3|                                                                                                                                                             |
+| |imageA3_w|                                                                                                                                                           |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -730,7 +744,7 @@ The merged DEM is added to the QGIS project.
 | .. rubric:: **MGCI Toolbox B1. MountainDescriptor: Merging DEM tiles into a single DEM**:                                                                             |
 |    :name: toolbox_B1                                                                                                                                                  |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
-| Before running the tool users need to check that they know the projection of their DEM dataset and it is faling in the correct place geographically.                 |
+| Before running the tool users need to check that they know the projection of their DEM dataset and it is faling in the correct place geographically.                  |
 | as outlined in the section above.                                                                                                                                     |
 |                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
@@ -739,7 +753,7 @@ The merged DEM is added to the QGIS project.
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
 |                                                                                                                                                                       |
-| |imageB1|                                                                                                                                                             |
+| |imageB1_w|                                                                                                                                                           |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Clip and project merged DEM
@@ -801,7 +815,7 @@ should be added to the map canvas\ **.**
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
 |                                                                                                                                                                       |
-| |imageB2|                                                                                                                                                             |
+| |imageB2_w|                                                                                                                                                           |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -893,7 +907,7 @@ projection before following the next steps.
  
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **MGCI Toolbox B3. MountainDescriptor: Project merged DEM to Equidistant projection**:                                                                    |
-|    :name: toolbox_B2                                                                                                                                                  |
+|    :name: toolbox_B3                                                                                                                                                  |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
 |                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
@@ -902,7 +916,7 @@ projection before following the next steps.
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
 |                                                                                                                                                                       |
-| |imageB3|                                                                                                                                                             |
+| |imageB3_w|                                                                                                                                                           |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Slope can now be generated from this layer
@@ -978,16 +992,16 @@ The new **clipped** **SLOPE dataset in the equal area projection** is now added 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **MGCI Toolbox B4. MountainDescriptor: Generating slope from DEM in Equidistant projection and re-projecting to equal area**:                             |
-|    :name: toolbox_B2                                                                                                                                                  |
+|    :name: toolbox_B4                                                                                                                                                  |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
 |                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
 |                                                                                                                                                                       |
-| |imageB3|                                                                                                                                                             |
+| |imageB4|                                                                                                                                                             |
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
 |                                                                                                                                                                       |
-| |imageB3|                                                                                                                                                             |
+| |imageB4_w|                                                                                                                                                           |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Generating local elevation range from DEM
@@ -1006,19 +1020,8 @@ the neighborhhod will be influenced by the cellsize of the DEM.
 
 |image93|
 
-Kapos et al. (2000) stated that the local elevation range was
-evaluated for a 5 cell (or 7 km) radius around the target cell.
-
-This it looks at a 5 x 5 neighborhood around each cell.
-
-As the 2000 analysis was undertaken at 1km resolution we can use this to
-estimate the ratio between the 7km radius distance and the number of
-cells for the neighborhood :
-
-Neighborhood size = 7000 / DEM cellsize \* (5000/7000)
-
-The tool requires the neighborhood to be rounded to the nearest odd
-whole number.
+To calculate the neighborhood size for your analysis in pixels divide 7000m by your cellsize and multiply by two. Round to the nearest odd integer.
+This is because the neighborhood size in pixels in this tool represents diameter rather than radius. 
 
 -  In the processing toolbox search for **r.neighbor**.
 
@@ -1029,8 +1032,8 @@ whole number.
 
 -  Set the **neighborhood operation** to **Range**
 
--  Set the **neighborhood size to** 55 (determined by:
-   7000/90\*(5000/7000))
+-  Set the **neighborhood size to** 153 (e.g. in this example determined by:
+   7000/90*2))
 
 -  Set the **GRASS GIS 7 region extent** to the **same as the Input
    Layer specified above**
@@ -1057,11 +1060,11 @@ added to the map canvas\ **.**
 |                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
 |                                                                                                                                                                       |
-| |imageB4|                                                                                                                                                             |
+| |imageB5|                                                                                                                                                             |
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
 |                                                                                                                                                                       |
-| |imageB4|                                                                                                                                                             |
+| |imageB5_w|                                                                                                                                                           |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 **Generating layers for each mountain class**
@@ -1095,7 +1098,7 @@ mountain class.
 
 "DEM\_copernicus\_merge\_AOI\_LAEA@1" >= 1500 AND
 "DEM\_copernicus\_merge\_AOI\_LAEA@1" < 2500 AND
-"DEM\_copernicus\_merge\_AOI\_LAEA\_SLOPE@1" > 2
+"DEM\_copernicus\_merge\_AOI\_LAEA\_SLOPE@1" >= 2
 
 |image104|
 
@@ -1106,7 +1109,7 @@ mountain class.
 "DEM\_copernicus\_merge\_AOI\_LAEA\_SLOPE@1" >= 5) OR
 ("DEM\_copernicus\_merge\_AOI\_LAEA@1" >= 1000 AND
 "DEM\_copernicus\_merge\_AOI\_LAEA@1" < 1500 AND
-"LocalElevationRange7km\_AOI\_LAEA@1" >= 300)
+"LocalElevationRange7km\_AOI\_LAEA@1" > 300)
 
 |image105|
 
@@ -1114,7 +1117,7 @@ mountain class.
 
 "DEM\_copernicus\_merge\_AOI\_LAEA@1">= 300 AND
 "DEM\_copernicus\_merge\_AOI\_LAEA@1" < 1000
-AND"LocalElevationRange7km\_AOI\_LAEA@1" >= 300
+AND"LocalElevationRange7km\_AOI\_LAEA@1" > 300
 
 |image106|
 
@@ -1125,11 +1128,11 @@ AND"LocalElevationRange7km\_AOI\_LAEA@1" >= 300
 |                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
 |                                                                                                                                                                       |
-| |imageB4|                                                                                                                                                             |
+| |imageB6|                                                                                                                                                             |
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
 |                                                                                                                                                                       |
-| |imageB4|                                                                                                                                                             |
+| |imageB6_w|                                                                                                                                                           |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Generate an interim mountain layer with classes 1-6
@@ -1172,7 +1175,7 @@ At the bottom of the layer properties dialogue window click the
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
 |                                                                                                                                                                       |
-| |imageB7|                                                                                                                                                             |
+| |imageB7_w                                                                                                                                                            |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -1606,7 +1609,7 @@ The Planimetric area generated in m2 rather than km2 and will be stored in a fie
    |image178|
 
 **Important Note:**
-When the statistics .csv files  added to the QGIS project it **does not add it correctly using delimited text**. This means that all the fields are viewedas string. Remove the MGCI_stats.csv from the QGIS project and re-add it using Layer>>AddLayer>>Add Delimited Text Layer. If you do not to this the following steps run only from the MGCI toolbox will fail to run. 
+When the statistics .csv files  added to the QGIS project it **does not add it correctly using delimited text** if you are saving to an output file rather than a temporary file. This means that all the fields are viewedas string. Remove the MGCI_stats.csv from the QGIS project and re-add it using Layer>>AddLayer>>Add Delimited Text Layer or save as a temporary layer which you can rightclick on an export later. This applies to each of the next steps.  If you do not to this the following steps run only from the MGCI toolbox will fail to run. 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **E1. MGCI:  Generate RSA and Planimetric Area Statistics**:                                                                                              |
@@ -1629,39 +1632,7 @@ When the statistics .csv files  added to the QGIS project it **does not add it c
 
 ***The following steps will only be run from the custom MGCI toolbox. We did not feel there was benefit to detailing the many tabular joins required to create the summary tables and standard reporting tables. Users can explore the models in the model designer to explore the steps further.*** 
 
-Create summary statistics by LULC class
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| .. rubric:: **E2. MGCI: Summarise Mountain Area by LULC Class**:                                                                                                      |
-|    :name: toolbox_E2                                                                                                                                                  |
-| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
-|                                                                                                                                                                       |
-| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
-|                                                                                                                                                                       |
-| |imageE2|                                                                                                                                                             |
-|                                                                                                                                                                       |
-| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
-|                                                                                                                                                                       |
-| |imageE2_w|                                                                                                                                                           |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Create summary statistics by green cover and Mountain class
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| .. rubric:: **E3. MGCI:  Calculate GC and MGCI by Kapos class**:                                                                                                      |
-|    :name: toolbox_E1                                                                                                                                                  |
-| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
-|                                                                                                                                                                       |
-| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
-|                                                                                                                                                                       |
-| |imageE3|                                                                                                                                                             |
-|                                                                                                                                                                       |
-| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
-|                                                                                                                                                                       |
-| |imageE3_w|                                                                                                                                                           |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+This last step does the the Mountain Green Cover Index Calculation and outputs the 3 standard reporting tables
 
 Create summary statistics by green cover and Mountain class
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1669,7 +1640,7 @@ Create summary statistics by green cover and Mountain class
 Export to standard reporting table
 ----------------------------------
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| .. rubric:: **F1: Formatting ReportingTable: ER_MTN_TOTL_276**:                                                                                                       |
+| .. rubric:: **F1: Formatting Reporting Tables: Planimetric Area**:                                                                                                    |
 |    :name: toolbox_F1                                                                                                                                                  |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
 |                                                                                                                                                                       |
@@ -1683,7 +1654,7 @@ Export to standard reporting table
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| .. rubric:: **F2: Formatting ReportingTable: ER_MNT_GRNCOV**:                                                                                                         |
+| .. rubric:: **Formatting Reporting Tables: Real Surface Area**:                                                                                                       |
 |    :name: toolbox_F1                                                                                                                                                  |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
 |                                                                                                                                                                       |
@@ -1695,22 +1666,6 @@ Export to standard reporting table
 |                                                                                                                                                                       |
 | |imageF2_w|                                                                                                                                                           |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| .. rubric:: **F3: Formatting Reporting Table: ER_MTN_GRNCVI_276**:                                                                                                    |
-|    :name: toolbox_F3                                                                                                                                                  |
-| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
-|                                                                                                                                                                       |
-| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
-|                                                                                                                                                                       |
-| |imageF3|                                                                                                                                                             |
-|                                                                                                                                                                       |
-| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
-|                                                                                                                                                                       |
-| |imageF3_w|                                                                                                                                                           |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
 
 
 .. |image0| image:: media_QGIS/image2.png
@@ -2381,33 +2336,19 @@ Export to standard reporting table
 .. |imageE1_w| image:: media_QGIS/Toolbox_images/E1_w.PNG
    :width: 6.26806in
    :height: 4.75764in 
-.. |imageE2| image:: media_QGIS/Toolbox_images/E2.PNG
-   :width: 6.26806in
-   :height: 4.75764in   
-.. |imageE2_w| image:: media_QGIS/Toolbox_images/E2_w.PNG
-   :width: 6.26806in
-   :height: 4.75764in 
-.. |imageE3| image:: media_QGIS/Toolbox_images/E3.PNG
-   :width: 6.26806in
-   :height: 4.75764in   
-.. |imageE3_w| image:: media_QGIS/Toolbox_images/E3_w.PNG
-   :width: 6.26806in
-   :height: 4.75764in 
 .. |imageF1| image:: media_QGIS/Toolbox_images/F1.PNG
    :width: 6.26806in
    :height: 4.75764in   
-.. |imageF1_w| image:: media_QGIS/Toolbox_images/F1_w.PNG
+.. |imageF1_w| image:: media_QGIS/Toolbox_images/F1w.png
    :width: 6.26806in
    :height: 4.75764in 
 .. |imageF2| image:: media_QGIS/Toolbox_images/F2.PNG
    :width: 6.26806in
    :height: 4.75764in   
-.. |imageF2_w| image:: media_QGIS/Toolbox_images/F2_w.PNG
+.. |imageF2_w| image:: media_QGIS/Toolbox_images/F2w.png
    :width: 6.26806in
    :height: 4.75764in 
-.. |imageF3| image:: media_QGIS/Toolbox_images/F3.PNG
-   :width: 6.26806in
-   :height: 4.75764in   
-.. |imageF3_w| image:: media_QGIS/Toolbox_images/F3_w.PNG
+.. |imagesettings| image:: media_QGIS/settings.png
    :width: 6.26806in
    :height: 4.75764in 
+
