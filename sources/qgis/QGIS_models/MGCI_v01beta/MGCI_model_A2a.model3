@@ -1,0 +1,308 @@
+<!DOCTYPE model>
+<Option type="Map">
+  <Option type="Map" name="children">
+    <Option type="Map" name="gdal:cliprasterbymasklayer_1">
+      <Option type="bool" value="true" name="active"/>
+      <Option name="alg_config"/>
+      <Option type="QString" value="gdal:cliprasterbymasklayer" name="alg_id"/>
+      <Option type="QString" value="" name="color"/>
+      <Option type="Map" name="comment">
+        <Option type="QString" value="" name="color"/>
+        <Option type="QString" value="" name="component_description"/>
+        <Option type="double" value="60" name="component_height"/>
+        <Option type="double" value="496" name="component_pos_x"/>
+        <Option type="double" value="155" name="component_pos_y"/>
+        <Option type="double" value="100" name="component_width"/>
+        <Option type="bool" value="true" name="outputs_collapsed"/>
+        <Option type="bool" value="true" name="parameters_collapsed"/>
+      </Option>
+      <Option type="QString" value="Clip raster by mask layer" name="component_description"/>
+      <Option type="double" value="30" name="component_height"/>
+      <Option type="double" value="258.00050390526576" name="component_pos_x"/>
+      <Option type="double" value="310.0683172135067" name="component_pos_y"/>
+      <Option type="double" value="200" name="component_width"/>
+      <Option name="dependencies"/>
+      <Option type="QString" value="gdal:cliprasterbymasklayer_1" name="id"/>
+      <Option type="Map" name="outputs">
+        <Option type="Map" name="Output: clipped Raster (e.g. LULC_clip_AOI_LAEA)">
+          <Option type="QString" value="gdal:cliprasterbymasklayer_1" name="child_id"/>
+          <Option type="QString" value="" name="color"/>
+          <Option type="Map" name="comment">
+            <Option type="QString" value="" name="color"/>
+            <Option type="QString" value="" name="component_description"/>
+            <Option type="double" value="60" name="component_height"/>
+            <Option type="double" value="0" name="component_pos_x"/>
+            <Option type="double" value="0" name="component_pos_y"/>
+            <Option type="double" value="100" name="component_width"/>
+            <Option type="bool" value="true" name="outputs_collapsed"/>
+            <Option type="bool" value="true" name="parameters_collapsed"/>
+          </Option>
+          <Option type="QString" value="Output: clipped Raster (e.g. LULC_clip_AOI_LAEA)" name="component_description"/>
+          <Option type="double" value="54.80000000000001" name="component_height"/>
+          <Option type="double" value="271.6005039052658" name="component_pos_x"/>
+          <Option type="double" value="402.6683172135067" name="component_pos_y"/>
+          <Option type="double" value="200" name="component_width"/>
+          <Option type="invalid" name="default_value"/>
+          <Option type="bool" value="false" name="mandatory"/>
+          <Option type="QString" value="Output: clipped Raster (e.g. LULC_clip_AOI_LAEA)" name="name"/>
+          <Option type="QString" value="OUTPUT" name="output_name"/>
+          <Option type="bool" value="true" name="outputs_collapsed"/>
+          <Option type="bool" value="true" name="parameters_collapsed"/>
+        </Option>
+      </Option>
+      <Option type="bool" value="true" name="outputs_collapsed"/>
+      <Option type="bool" value="true" name="parameters_collapsed"/>
+      <Option type="Map" name="params">
+        <Option type="List" name="ALPHA_BAND">
+          <Option type="Map">
+            <Option type="int" value="2" name="source"/>
+            <Option type="bool" value="false" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="CROP_TO_CUTLINE">
+          <Option type="Map">
+            <Option type="int" value="2" name="source"/>
+            <Option type="bool" value="true" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="DATA_TYPE">
+          <Option type="Map">
+            <Option type="int" value="2" name="source"/>
+            <Option type="int" value="0" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="EXTRA">
+          <Option type="Map">
+            <Option type="int" value="2" name="source"/>
+            <Option type="QString" value="" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="INPUT">
+          <Option type="Map">
+            <Option type="QString" value="LULCraster" name="parameter_name"/>
+            <Option type="int" value="0" name="source"/>
+          </Option>
+        </Option>
+        <Option type="List" name="KEEP_RESOLUTION">
+          <Option type="Map">
+            <Option type="int" value="2" name="source"/>
+            <Option type="bool" value="false" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="MASK">
+          <Option type="Map">
+            <Option type="QString" value="VectorAOIbufferedboundingbox" name="parameter_name"/>
+            <Option type="int" value="0" name="source"/>
+          </Option>
+        </Option>
+        <Option type="List" name="MULTITHREADING">
+          <Option type="Map">
+            <Option type="int" value="2" name="source"/>
+            <Option type="bool" value="false" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="NODATA">
+          <Option type="Map">
+            <Option type="int" value="2" name="source"/>
+            <Option type="invalid" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="OPTIONS">
+          <Option type="Map">
+            <Option type="int" value="2" name="source"/>
+            <Option type="QString" value="" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="SET_RESOLUTION">
+          <Option type="Map">
+            <Option type="int" value="2" name="source"/>
+            <Option type="bool" value="false" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="SOURCE_CRS">
+          <Option type="Map">
+            <Option type="QString" value="SourceCRS" name="parameter_name"/>
+            <Option type="int" value="0" name="source"/>
+          </Option>
+        </Option>
+        <Option type="List" name="TARGET_CRS">
+          <Option type="Map">
+            <Option type="QString" value="TargetCRS" name="parameter_name"/>
+            <Option type="int" value="0" name="source"/>
+          </Option>
+        </Option>
+        <Option type="List" name="X_RESOLUTION">
+          <Option type="Map">
+            <Option type="int" value="2" name="source"/>
+            <Option type="invalid" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="Y_RESOLUTION">
+          <Option type="Map">
+            <Option type="int" value="2" name="source"/>
+            <Option type="invalid" name="static_value"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+  </Option>
+  <Option name="designerParameterValues"/>
+  <Option name="groupBoxes"/>
+  <Option type="Map" name="help">
+    <Option type="QString" value="The Mountain Green Cover Index (MGCI) is designed to measure the extent and the changes of green vegetation in mountain areas - i.e. forest, shrubs, trees, pastureland, cropland, etc. – to monitor progress towards the mountain target in SDG 15.4.2.&#xa;&#xa;The MGCI toolbox helps users to run the steps required for creating the Mountain Green Cover Index and report to standard reporting tables. &#xa;&#xa;Starting from any DEM or Land use land cover map the tools generate a mountain descriptor layer, a vegetation descriptor layer, area calculation  (both planimetric and real surface area)  and the calculation of the MGCI.&#xa;&#xa; This toolbox has an accompanying tutorial and equivalent tutorials and scripts for R software and a Goggle Earth Engine App in the SEPAL bug-data platform for forest and land monitoring. &#xa;&#xa;The development of vegetation descriptor layer starts with either a raster or vector landuse landcover (LULC) dataset. Follow either tool A2a, A2b or A2c,  depending on whether you are using a Global/regional raster dataset or a National raster or vector dataset, to project and/or clip the LULC to the AOI." name="ALG_DESC"/>
+    <Option type="QString" value="Input regional or global raster LULC dataset" name="LULCraster"/>
+    <Option type="QString" value="" name="SHORT_DESCRIPTION"/>
+    <Option type="QString" value="set the input source of the LULC raster" name="SourceCRS"/>
+    <Option type="QString" value="set the output source to be the chosen Equal Area Projection" name="TargetCRS"/>
+    <Option type="QString" value="Input the vector AOI in equal area projection generated in tool A1 (to be used to clip the LULC to the area of interest)." name="VectorAOIbufferedboundingbox"/>
+    <Option type="QString" value="Output: A clipped LULC dataset in the equal area projection" name="gdal:cliprasterbymasklayer_1:Output: clipped Raster (e.g. LULC_clip_AOI_LAEA)"/>
+    <Option type="QString" value="Set the output resolution in metres (should be the equivalent resoltuion of the source LULC)" name="outputresolution1"/>
+  </Option>
+  <Option name="modelVariables"/>
+  <Option type="QString" value="MGCI" name="model_group"/>
+  <Option type="QString" value="A2a. VegetationDescriptor: Clip and project LULC raster (FOR REGIONAL/GLOBAL DATASETS)" name="model_name"/>
+  <Option type="Map" name="parameterDefinitions">
+    <Option type="Map" name="LULCraster">
+      <Option type="invalid" name="default"/>
+      <Option type="invalid" name="defaultGui"/>
+      <Option type="QString" value="Input: Raster LULC" name="description"/>
+      <Option type="int" value="0" name="flags"/>
+      <Option type="QString" value="Input regional or global raster LULC dataset" name="help"/>
+      <Option name="metadata"/>
+      <Option type="QString" value="LULCraster" name="name"/>
+      <Option type="QString" value="raster" name="parameter_type"/>
+    </Option>
+    <Option type="Map" name="SourceCRS">
+      <Option type="QString" value="EPSG:4326" name="default"/>
+      <Option type="invalid" name="defaultGui"/>
+      <Option type="QString" value="Input: Source CRS" name="description"/>
+      <Option type="int" value="0" name="flags"/>
+      <Option type="QString" value="set the input source of the LULC raster" name="help"/>
+      <Option name="metadata"/>
+      <Option type="QString" value="SourceCRS" name="name"/>
+      <Option type="QString" value="crs" name="parameter_type"/>
+    </Option>
+    <Option type="Map" name="TargetCRS">
+      <Option type="QString" value="USER:100044" name="default"/>
+      <Option type="invalid" name="defaultGui"/>
+      <Option type="QString" value="Input: Target CRS" name="description"/>
+      <Option type="int" value="0" name="flags"/>
+      <Option type="QString" value="set the output source to be the chosen Equal Area Projection" name="help"/>
+      <Option name="metadata"/>
+      <Option type="QString" value="TargetCRS" name="name"/>
+      <Option type="QString" value="crs" name="parameter_type"/>
+    </Option>
+    <Option type="Map" name="VectorAOIbufferedboundingbox">
+      <Option type="List" name="data_types">
+        <Option type="int" value="2"/>
+      </Option>
+      <Option type="invalid" name="default"/>
+      <Option type="invalid" name="defaultGui"/>
+      <Option type="QString" value="Input: Vector AOI (buffered bounding box)" name="description"/>
+      <Option type="int" value="0" name="flags"/>
+      <Option type="QString" value="Input the vector AOI in equal area projection generated in tool A1 (to be used to clip the LULC to the area of interest)." name="help"/>
+      <Option name="metadata"/>
+      <Option type="QString" value="VectorAOIbufferedboundingbox" name="name"/>
+      <Option type="QString" value="vector" name="parameter_type"/>
+    </Option>
+    <Option type="Map" name="gdal:cliprasterbymasklayer_1:Output: clipped Raster (e.g. LULC_clip_AOI_LAEA)">
+      <Option type="bool" value="true" name="create_by_default"/>
+      <Option type="invalid" name="default"/>
+      <Option type="invalid" name="defaultGui"/>
+      <Option type="QString" value="Output: clipped Raster (e.g. LULC_clip_AOI_LAEA)" name="description"/>
+      <Option type="int" value="0" name="flags"/>
+      <Option type="QString" value="" name="help"/>
+      <Option name="metadata"/>
+      <Option type="QString" value="gdal:cliprasterbymasklayer_1:Output: clipped Raster (e.g. LULC_clip_AOI_LAEA)" name="name"/>
+      <Option type="QString" value="rasterDestination" name="parameter_type"/>
+      <Option type="bool" value="false" name="supports_non_file_outputs"/>
+    </Option>
+  </Option>
+  <Option name="parameterOrder"/>
+  <Option type="Map" name="parameters">
+    <Option type="Map" name="LULCraster">
+      <Option type="QString" value="" name="color"/>
+      <Option type="Map" name="comment">
+        <Option type="QString" value="" name="color"/>
+        <Option type="QString" value="" name="component_description"/>
+        <Option type="double" value="60" name="component_height"/>
+        <Option type="double" value="357" name="component_pos_x"/>
+        <Option type="double" value="34" name="component_pos_y"/>
+        <Option type="double" value="100" name="component_width"/>
+        <Option type="bool" value="true" name="outputs_collapsed"/>
+        <Option type="bool" value="true" name="parameters_collapsed"/>
+      </Option>
+      <Option type="QString" value="LULCraster" name="component_description"/>
+      <Option type="double" value="56.32647919334022" name="component_height"/>
+      <Option type="double" value="99.31288300656621" name="component_pos_x"/>
+      <Option type="double" value="124.67242969750257" name="component_pos_y"/>
+      <Option type="double" value="128.2603441981479" name="component_width"/>
+      <Option type="QString" value="LULCraster" name="name"/>
+      <Option type="bool" value="true" name="outputs_collapsed"/>
+      <Option type="bool" value="true" name="parameters_collapsed"/>
+    </Option>
+    <Option type="Map" name="SourceCRS">
+      <Option type="QString" value="" name="color"/>
+      <Option type="Map" name="comment">
+        <Option type="QString" value="" name="color"/>
+        <Option type="QString" value="" name="component_description"/>
+        <Option type="double" value="60" name="component_height"/>
+        <Option type="double" value="729" name="component_pos_x"/>
+        <Option type="double" value="221" name="component_pos_y"/>
+        <Option type="double" value="100" name="component_width"/>
+        <Option type="bool" value="true" name="outputs_collapsed"/>
+        <Option type="bool" value="true" name="parameters_collapsed"/>
+      </Option>
+      <Option type="QString" value="SourceCRS" name="component_description"/>
+      <Option type="double" value="30" name="component_height"/>
+      <Option type="double" value="425.7185061779814" name="component_pos_x"/>
+      <Option type="double" value="128.13579527048915" name="component_pos_y"/>
+      <Option type="double" value="200" name="component_width"/>
+      <Option type="QString" value="SourceCRS" name="name"/>
+      <Option type="bool" value="true" name="outputs_collapsed"/>
+      <Option type="bool" value="true" name="parameters_collapsed"/>
+    </Option>
+    <Option type="Map" name="TargetCRS">
+      <Option type="QString" value="" name="color"/>
+      <Option type="Map" name="comment">
+        <Option type="QString" value="" name="color"/>
+        <Option type="QString" value="" name="component_description"/>
+        <Option type="double" value="60" name="component_height"/>
+        <Option type="double" value="730" name="component_pos_x"/>
+        <Option type="double" value="318" name="component_pos_y"/>
+        <Option type="double" value="100" name="component_width"/>
+        <Option type="bool" value="true" name="outputs_collapsed"/>
+        <Option type="bool" value="true" name="parameters_collapsed"/>
+      </Option>
+      <Option type="QString" value="TargetCRS" name="component_description"/>
+      <Option type="double" value="30" name="component_height"/>
+      <Option type="double" value="430.6543014484708" name="component_pos_x"/>
+      <Option type="double" value="184.7245489276587" name="component_pos_y"/>
+      <Option type="double" value="200" name="component_width"/>
+      <Option type="QString" value="TargetCRS" name="name"/>
+      <Option type="bool" value="true" name="outputs_collapsed"/>
+      <Option type="bool" value="true" name="parameters_collapsed"/>
+    </Option>
+    <Option type="Map" name="VectorAOIbufferedboundingbox">
+      <Option type="QString" value="" name="color"/>
+      <Option type="Map" name="comment">
+        <Option type="QString" value="" name="color"/>
+        <Option type="QString" value="" name="component_description"/>
+        <Option type="double" value="60" name="component_height"/>
+        <Option type="double" value="587" name="component_pos_x"/>
+        <Option type="double" value="41" name="component_pos_y"/>
+        <Option type="double" value="100" name="component_width"/>
+        <Option type="bool" value="true" name="outputs_collapsed"/>
+        <Option type="bool" value="true" name="parameters_collapsed"/>
+      </Option>
+      <Option type="QString" value="VectorAOIbufferedboundingbox" name="component_description"/>
+      <Option type="double" value="60.93361305217477" name="component_height"/>
+      <Option type="double" value="256.85606408852277" name="component_pos_x"/>
+      <Option type="double" value="60.32908098991676" name="component_pos_y"/>
+      <Option type="double" value="140.107259835151" name="component_width"/>
+      <Option type="QString" value="VectorAOIbufferedboundingbox" name="name"/>
+      <Option type="bool" value="true" name="outputs_collapsed"/>
+      <Option type="bool" value="true" name="parameters_collapsed"/>
+    </Option>
+  </Option>
+</Option>
