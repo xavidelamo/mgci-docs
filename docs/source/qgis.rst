@@ -96,6 +96,20 @@ For each step or group of steps, the tutorial
 follow the structure of a detailed description of the exact steps that are running within the toolbox tool followed by the
 equivalent processing steps in the MGCI toolbox.
 
+Initial set-up
+------------------------------------------
+
+Users will need to download the MGCI_Beta_Toolbox from the repository and place it in their Models folder. 
+The QGIS R-script for real surface Area will need to be placed in R scripts folder.
+You can find the location in **Settings>>Options**
+
+|imagesettings|
+
+Users will also need to download the following template files
+
+
+
+
 Define projection and generate an AOI
 -------------------------------------
 The first step is to define an Area of Interest (AOI) for the analysis. This should go beyond the country
@@ -1006,19 +1020,8 @@ the neighborhhod will be influenced by the cellsize of the DEM.
 
 |image93|
 
-Kapos et al. (2000) stated that the local elevation range was
-evaluated for a 5 cell (or 7 km) radius around the target cell.
-
-This it looks at a 5 x 5 neighborhood around each cell.
-
-As the 2000 analysis was undertaken at 1km resolution we can use this to
-estimate the ratio between the 7km radius distance and the number of
-cells for the neighborhood :
-
-Neighborhood size = 7000 / DEM cellsize \* (5000/7000)
-
-The tool requires the neighborhood to be rounded to the nearest odd
-whole number.
+To calculate the neighborhood size for your analysis in pixels divide 7000m by your cellsize and multiply by two. Round to the nearest odd integer.
+This is because the neighborhood size in pixels in this tool represents diameter rather than radius. 
 
 -  In the processing toolbox search for **r.neighbor**.
 
@@ -1029,8 +1032,8 @@ whole number.
 
 -  Set the **neighborhood operation** to **Range**
 
--  Set the **neighborhood size to** 55 (determined by:
-   7000/90\*(5000/7000))
+-  Set the **neighborhood size to** 153 (e.g. in this example determined by:
+   7000/90*2))
 
 -  Set the **GRASS GIS 7 region extent** to the **same as the Input
    Layer specified above**
@@ -2345,5 +2348,7 @@ Export to standard reporting table
 .. |imageF2_w| image:: media_QGIS/Toolbox_images/F2w.png
    :width: 6.26806in
    :height: 4.75764in 
-  
+.. |imagesettings| image:: media_QGIS/Toolbox_images/settings.png
+   :width: 6.26806in
+   :height: 4.75764in 
 
