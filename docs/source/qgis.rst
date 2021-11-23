@@ -2246,7 +2246,7 @@ Export to standard reporting table
    :width: 6.26806in
    :height: 4.75764in 
    
-   .. |imageB1| image:: media_QGIS/Toolbox_images/B1.png
+.. |imageB1| image:: media_QGIS/Toolbox_images/B1.png
    :width: 6.26806in
    :height: 4.75764in   
 .. |imageB1_w| image:: media_QGIS/Toolbox_images/B1_w.png
