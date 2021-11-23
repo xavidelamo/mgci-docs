@@ -589,7 +589,8 @@ We can now generate a summary table containing real surface area and planimetric
 Outputing and formattting to Standard MGCI reporting tables
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-First edit the following variables with inputs relevant to your data.
+First edit the following variables with inputs relevant to your data:
+
 - **GeoAreaCode:** Please enter the country code
 - **GeoAreaName:** Please enter the name of the country or region
 - **TimePeriod:** Please enter the year in question for which the analysis is done in the following format: yXXXX
