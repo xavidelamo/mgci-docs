@@ -354,8 +354,8 @@ We now have all the inputs required for generating the mountain classes for the
    "1","DEM\_aoi\_laea > 4.500"
    "2",">= 3.500–4.500"
    "3",">= 2.500–3.500"
-   "4",">= 1.500–2.500 and slope > 2"
-   "5",">=1.000 & <1.500 & slope>=5 OR >=1.000 & <1.500 & local elevation range >300"
+   "4",">= 1.500–2.500 and slope >=2"
+   "5",">=1.000 & <1.500 & slope >=5 OR >=1.000 & <1.500 & local elevation range >300"
    "6",">=300 & <1.000 & local elevation range >300"
 
 
