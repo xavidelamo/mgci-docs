@@ -3,6 +3,8 @@ SEPAL-MGCI :sub:`beta`
 
 A tool to support the computation of SDG Indicator 15.4.2 – Mountain Green Cover Index
 
+.. contents:: **Table of Contents**
+
 General Information
 -------------------
 
