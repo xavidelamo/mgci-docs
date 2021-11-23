@@ -406,7 +406,6 @@ Plot the mountain descriptor layer
 
    plot(c);
 
-|image33|
 
 Generation of Real Surface Area raster
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -960,15 +959,6 @@ View the generated data table.
 .. |image34| image:: media_R/image34.png
    :width: 6.26806in
    :height: 5.65417in
-.. |image36| image:: media_R/image36.png
-   :width: 6.26806in
-   :height: 5.65417in
-.. |image37| image:: media_R/image37.png
-   :width: 6.26806in
-   :height: 5.65417in
-.. |image38| image:: media_R/image38.png
-   :width: 6.26806in
-   :height: 5.65417in
 .. |image30| image:: media_R/image30.png
    :width: 6.26806in
    :height: 5.65417in
@@ -978,3 +968,9 @@ View the generated data table.
 .. |image34| image:: media_R/image34.png
    :width: 6.26806in
    :height: 5.65417in
+.. |image36| image:: media_R/image36.png
+   :width: 6.26806in
+.. |image37| image:: media_R/image37.png
+   :width: 6.26806in
+.. |image38| image:: media_R/image38.png
+   :width: 6.26806in
