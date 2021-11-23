@@ -37,7 +37,9 @@ from 3 different software:**
    or choose from data already uploaded to the tool. The MGCI will be
    computed and outputs formatted to standard reporting tables.
 
-Figure X: Simplified Workflow
+|imageworkflow|
+
+Figure 1: Simplified Workflow
 
 Overview of Mountain Descriptor layer
 -------------------------------------
@@ -184,16 +186,14 @@ We would like to express our special thanks to Jeff Jenness from Jenness Enterpr
 
 
 .. |image2| image:: media_QGIS/image2.png
-   :width: 2.35625in
-
+   :width: 700
 .. |image3| image:: media_QGIS/image3.png
-   :width: 2.35625in
-
+   :width: 700
 .. |image4| image:: media_QGIS/image4.png
-   :width: 2.35625in
-
+   :width: 700
 .. |image5| image:: media_QGIS/image5.png
-   :width: 2.35625in
-
+   :width: 700
 .. |image6| image:: media_QGIS/image6.png
-   :width: 2.35625in
+   :width: 700
+.. |imageworkflow| image:: media_QGIS/MGCI_workflow_Beta_simplified_workflow.png
+   :width: 900
