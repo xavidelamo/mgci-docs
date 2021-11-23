@@ -549,7 +549,8 @@ scale of the vector dataset. (see Box 2).
 |                                                                                                                                                                       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-|image83|                                                                                                                                                                  
+|image83|
+
 Table X :  Resolutions recommended for Nominal scales vs pixel resolution (Source: reproduced from https://marinedataliteracy.org/basics/scales/scales.htm)        
 
 Once the resolution to convert the vector dataset to has been
@@ -1912,8 +1913,8 @@ Export to standard reporting table
    :width: 6.26806in
    :height: 1.17917in
 .. |image84| image:: media_QGIS/image83.png
-   :width: 2.64583in
-   :height: 1.10417in
+   :width: 700
+
 .. |image85| image:: media_QGIS/image84.png
    :width: 6.23190in
    :height: 5.26667in
