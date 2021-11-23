@@ -590,11 +590,11 @@ Outputing and formattting to Standard MGCI reporting tables
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 First edit the following variables with inputs relevant to your data.
-**GeoAreaCode:** Please enter the country code
-**GeoAreaName:** Please enter the name of the country or region
-**TimePeriod:** Please enter the year in question for which the analysis is done in the following format: yXXXX
-**Source:** Please insert the name of the institution you belong to
-**Nature:** This should be 'G' if the data used to compute the index is global or C if you have used your own data (you have uploaded your own land cover map)
+- **GeoAreaCode:** Please enter the country code
+- **GeoAreaName:** Please enter the name of the country or region
+- **TimePeriod:** Please enter the year in question for which the analysis is done in the following format: yXXXX
+- **Source:** Please insert the name of the institution you belong to
+- **Nature:** This should be 'G' if the data used to compute the index is global or C if you have used your own data (you have uploaded your own land cover map)
 
 .. code-block:: s
 
