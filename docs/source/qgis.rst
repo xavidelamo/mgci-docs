@@ -98,17 +98,22 @@ equivalent processing steps in the MGCI toolbox.
 Initial set-up
 ------------------------------------------
 
-Users will need to download the MGCI_Beta_Toolbox and set of templates and style files from the repository <https://github.com/dfguerrerom/wcmc-mgci>
-Once downloaded users need to place the models and scripts in relevant QGIS folders.
+Users will need to download the MGCI_Beta_Toolbox and set of templates and style files from `the MGCI repository <https://github.com/dfguerrerom/wcmc-mgci>`_.
+
+|imagerepository1|
+
+Once downloaded users need to navidate to the ****sources>>qgis>>QGIS_models folder*** and copy the the models and scripts in relevant QGIS folders. Guidance is provided below.
+
+|imagerepository2|
+
 The QGIS R-script ***rsa_v1.rsx*** for real surface Area will need to be placed in R scripts folder and the ***MGCI_v01beta*** folder placed in the Models folder.
-You can find the location in QGIS under **Settings>>Options**. 
-The other style and template files can be stored in your own project working location.
+You can find the location in QGIS under **Settings>>Options**. The other style and template files can be stored in your own project working location.
 
 |imagesettings|
 
-Users will also need to download the all the other templates as these will be required when running certain steps within the workflow
+We suggest users create a folder for working in the following strucure
 
-
+|imagesrepository3|
 
 
 Define projection and generate an AOI
@@ -2364,9 +2369,16 @@ Export to standard reporting table
    :width: 6.26806in
    :height: 4.75764in   
 .. |imageF2_w| image:: media_QGIS/Toolbox_images/F2w.png
-   :width: 6.26806in
-   :height: 4.75764in 
+   :width: 900
 .. |imagesettings| image:: media_QGIS/settings.png
-   :width: 6.26806in
-   :height: 4.75764in 
+   :width: 1400
 
+.. |imagerepository1| image:: media_QGIS/repository.png
+   :width: 500
+
+.. |imagerepository2| image:: media_QGIS/repository2.png
+   :width: 500
+
+.. |imagerepository3| image:: media_QGIS/repository3.png
+   :width: 500
+   
