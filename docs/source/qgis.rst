@@ -209,6 +209,7 @@ If you need to define a custom projection, follow the instructions in Box 1
 |    :name: box-1-continued                                                                                                                                             |
 |                                                                                                                                                                       |
 | -  see example below                                                                                                                                                  |
+|                                                                                                                                                                       |
 |    |image35|                                                                                                                                                          |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+ 
 
@@ -921,27 +922,27 @@ projection before following the next steps.
 |    :name: box-3-continued                                                                                                                                             |
 |                                                                                                                                                                       |
 | -  see example below                                                                                                                                                  |
+|                                                                                                                                                                       |
 |    |image78|                                                                                                                                                          |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+ 
 
+-  Next, In the **processing toolbox** search for **reproject** 
 
- -  Next, In the **processing toolbox** search for **reproject** 
-
-    |image54|                                                                                                                                                                  
+   image54|                                                                                                                                                                  
     
- -  Double click on the **Warp (reproject)** tool under the **GDAL toolset** 
- -  Set the Input layer to be the **merged DEM in geographic coordinate system**
+- Double click on the **Warp (reproject)** tool under the **GDAL toolset** 
+- Set the Input layer to be the **merged DEM in geographic coordinate system**
     *Note: it is important not to use the one that has already been projected as this can introduce errors into the DEM *
- -  Set the Source CRS to be **EPSG: 4326 (Geographic)**
- -  Set the Target CRS to be **your custom equidistant projection** e.g. CRI\_AZ\_EQUI
- -  Set the resampling method to Nearest Neighbour
- -  Set the output file resolution to the resolution of the DEM in meters e.g. 90m in this example
- -  Set the Reprojected output to e.g. **DEM\_copernicus\_merge\_CRI\_AZ\_EQUI.tif**
- -  Click Run to run the tool
+- Set the Source CRS to be **EPSG: 4326 (Geographic)**
+- Set the Target CRS to be **your custom equidistant projection** e.g. CRI\_AZ\_EQUI
+- Set the resampling method to Nearest Neighbour
+- Set the output file resolution to the resolution of the DEM in meters e.g. 90m in this example
+- Set the Reprojected output to e.g. **DEM\_copernicus\_merge\_CRI\_AZ\_EQUI.tif**
+- Click Run to run the tool
     
-    |image79|
+  |image79|
  
- The reprojected layer is added to the QGIS project. 
+The reprojected layer is added to the QGIS project. 
  
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **MGCI Toolbox B3. MountainDescriptor: Project merged DEM to Equidistant projection**:                                                                    |
@@ -1923,7 +1924,7 @@ Export to standard reporting table
 .. |image77| image:: media_QGIS/image76.png
    :width: 900
 .. |image78| image:: media_QGIS/image77.png
-   :width: 400
+   :width: 900
  
 .. |image79| image:: media_QGIS/image78.png
    :width: 900
@@ -2190,7 +2191,7 @@ Export to standard reporting table
     :width: 1100
 
 .. |imageB5_w| image:: media_QGIS/Toolbox_images/B5_w.png
-   :width: 900
+   :width: 600
    
 .. |imageB6| image:: media_QGIS/Toolbox_images/B6.png
    :width: 1100
