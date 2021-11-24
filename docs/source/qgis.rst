@@ -101,7 +101,7 @@ Initial set-up
 Users will need to download the MGCI_Beta_Toolbox and set of templates and style files from the repository <https://github.com/dfguerrerom/wcmc-mgci>
 Once downloaded users need to place the models and scripts in relevant QGIS folders.
 The QGIS R-script ***rsa_v1.rsx*** for real surface Area will need to be placed in R scripts folder and the ***MGCI_v01beta*** folder placed in the Models folder.
-You can find the location in QGIS under **Settings>>Options**
+You can find the location in QGIS under **Settings>>Options**. 
 The other style and template files can be stored in your own project working location.
 
 |imagesettings|
