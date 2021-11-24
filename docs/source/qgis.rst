@@ -119,7 +119,7 @@ We suggest users create a folder for working in the following strucure
 Define projection and generate an AOI
 -------------------------------------
 The first step is to define an Area of Interest (AOI) for the analysis. This should go beyond the country
-bundary as outlined in the **Definning analysis environments** section of the tutorial.
+bundary as outlined in the **Defining analysis environments** section of the tutorial.
 
 **The instructions below show and explain the manaul steps without the MGCI toolbox:**
 
