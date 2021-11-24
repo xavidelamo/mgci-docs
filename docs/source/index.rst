@@ -10,7 +10,6 @@ Contents
    :maxdepth: 2
    
    overview
-   defineenvs
    qgis
    r
    sepal
