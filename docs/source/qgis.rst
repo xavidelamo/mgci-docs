@@ -2380,5 +2380,5 @@ Export to standard reporting table
    :width: 500
 
 .. |imagerepository3| image:: media_QGIS/repository3.png
-   :width: 500
+   :width: 1400
    
