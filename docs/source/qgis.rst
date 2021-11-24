@@ -113,7 +113,7 @@ You can find the location in QGIS under **Settings>>Options**. The other style a
 
 We suggest users create a folder for working in the following strucure
 
-|imagesrepository3|
+|imagerepository3|
 
 
 Define projection and generate an AOI
@@ -2374,7 +2374,7 @@ Export to standard reporting table
    :width: 1400
 
 .. |imagerepository1| image:: media_QGIS/repository.png
-   :width: 500
+   :width: 1400
 
 .. |imagerepository2| image:: media_QGIS/repository2.png
    :width: 500
