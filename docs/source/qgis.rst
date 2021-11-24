@@ -832,12 +832,12 @@ section 5.1 should be used.
 The new clipped DEM dataset in the equal area projection should be added
 should be added to the map canvas\ **.**
     
-   |image76|
+|image76|
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **MGCI Toolbox B2. MountainDescriptor: Clip and project merged DEM to EQUAL AREA PROJECTION**:                                                            |
 |    :name: toolbox_B2                                                                                                                                                  |
-| These steps can be run using a single tool in the MGCI toolbox.                                                                                                      .|
+| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
 |                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
 |                                                                                                                                                                       |
@@ -1202,9 +1202,9 @@ map canvas\ **.**
 At the bottom of the layer properties dialogue window click the
 **style** button and then load the predefined style file
 
-  |image109|
+|image109|
 
-  |image110|
+|image110|
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **MGCI Toolbox B7. MountainDescriptor: Generate Mountain Descriptor layer (EXCLUDING isolated pixels from class 7)**:                                     |
@@ -1251,13 +1251,13 @@ data.
    This formular will set the 0’s to no data and leave the 1’s remaining
    as 1.
 
-("non\_mountain\_areas\_LAEA@1">0)\*( "non\_mountain\_areas\_LAEA@1") /
-(("non\_mountain\_areas\_LAEA@1">0)\*1 +
-("non\_mountain\_areas\_LAEA@1"<=0)\*0)
+   ("non\_mountain\_areas\_LAEA@1">0)\*( "non\_mountain\_areas\_LAEA@1") /
+   (("non\_mountain\_areas\_LAEA@1">0)\*1 +
+   ("non\_mountain\_areas\_LAEA@1"<=0)\*0)
 
-  |image113|
+   |image113|
 
-  |image114|
+   |image114|
 
 We can now use this layer to clump the the pixels into groups of
 connected pixels
@@ -1568,7 +1568,9 @@ Combine mountain and vegetation descriptor layers
 As the MGCI required disaggregation by both the 6  LULC class and the 6 Mountain Class and the tools within QGIS will only allow a single input for zones, we will combine the two datasets together to form a combined zones dataset.
 
 -  In the **processing toolbox**, search for and double click on the **raster calculator**
--  In the expression window we will sum the two dataset together but in order to distinguish the vegetation class from the mountain call all the vegetation values will be multiplied by 10. This means for example a value of 35 in the output means the pixel has class 3 in the vegetation descriptor layer and class 5 in the Mountain descriptor layer.
+-  In the expression window we will sum the two dataset together but in order to distinguish the vegetation class from the mountain call all the vegetation values will be 
+   multiplied by 10. This means for example a value of 35 in the output means the pixel has class 3 in the vegetation descriptor layer and class 5 in the Mountain descriptor
+   layer.
 -  In the expression box formulate the expression e.g.  ("VEGETATION_DESCRIPTOR_AOI_LAEA@1"*10) + "MoutainDescriptor_K1_6_withoutK7_agg300recl@1"
 -  Set the Reference layer as the Vegetation Descriptor layer
 -  Click **Run** to run the tool
@@ -1606,9 +1608,9 @@ At this stage we can now clip the final aggregated datasets to the country bound
 
    |image175|
    
-Repeat the above step for the resampled RSA raster.
+-  Repeat the above step for the resampled RSA raster.
 
-  |image176|
+   |image176|
    
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **MGCI Toolbox D3. Generic:  Clip to country boundary**:                                                                                                  |
@@ -1641,14 +1643,14 @@ This output is the main statistics table from the analysis, from which other sum
 -  Set the **zones layer** to the **combined vegetation and mountain layer clipped to the country boundary**
 -  Save the **Statistics output to a .csv file** e.g. rsastats.csv
 
-  |image177|
+   |image177|
    
 The Planimetric area generated in m2 rather than km2 and will be stored in a field called m2
 
-• In the **processing Toolbox** search for **Rename Field** 
-• Set the field to rename as **m2**
-• Set the **New field name** to **PlanimetricArea_m2**
-• Save the **Renamed output to a .csv file** e.g. MGCI_stats.csv
+-  In the **processing Toolbox** search for **Rename Field** 
+-  Set the field to rename as **m2**
+-  Set the **New field name** to **PlanimetricArea_m2**
+-  Save the **Renamed output to a .csv file** e.g. MGCI_stats.csv
 
    |image178|
 
