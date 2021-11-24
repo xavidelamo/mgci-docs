@@ -98,15 +98,22 @@ equivalent processing steps in the MGCI toolbox.
 Initial set-up
 ------------------------------------------
 
-Users will need to download the MGCI_Beta_Toolbox and set of templates and style files from the repository and place it in their relevant QGIS folder. 
-The QGIS R-script for real surface Area will need to be placed in R scripts folder and the ***MGCI_v01beta*** placed in the Models folder .
-You can find the location in **Settings>>Options**
+Users will need to download the MGCI_Beta_Toolbox and set of templates and style files from `the MGCI repository <https://github.com/dfguerrerom/wcmc-mgci>`_.
+
+|imagerepository1|
+
+Once downloaded users need to navidate to the ****sources>>qgis>>QGIS_models folder*** and copy the the models and scripts in relevant QGIS folders. Guidance is provided below.
+
+|imagerepository2|
+
+The QGIS R-script ***rsa_v1.rsx*** for real surface Area will need to be placed in R scripts folder and the ***MGCI_v01beta*** folder placed in the Models folder.
+You can find the location in QGIS under **Settings>>Options**. The other style and template files can be stored in your own project working location.
 
 |imagesettings|
 
-Users will also need to download the all the other templates as these will be required when running certain steps within the workflow
+We suggest users create a folder for working in the following strucure
 
-
+|imagerepository3|
 
 
 Define projection and generate an AOI
@@ -304,7 +311,8 @@ the various layers for the MGCI analysis.
 |                                                                                                                                                                       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-|imageA1|   
+|imageA1|
+
 |imageA1_w|   
 
 Preparation of Vegetation descriptor layer
@@ -411,6 +419,7 @@ Clip and project LULC raster (FOR REGIONAL/GLOBAL DATASETS ONLY)
    (see screengrab below)
 
    |image50|
+   
    |image51|
 
 -  **Click Run** to run the tool
@@ -439,12 +448,15 @@ the country.
 | Before running the tool users need to check that they know the projection of their LUUC dataset and it is faling in the correct place geographically.                 |
 | as outlined in the section above.                                                                                                                                     |
 |                                                                                                                                                                       |
-| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
+|                                                                                                                                                                       |
+| In the **custom MGCI toolbox** these step are run by the tool below.                                                                                                  |
+|                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
 |                                                                                                                                                                       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 |imageA2a| 
+
 |imageA2a_w|   
 
 Project LULC raster (FOR NATIONAL DATASETS ONLY):
@@ -496,11 +508,13 @@ The layer should now show all the National LULC classes for Costa Rica.
 | as outlined in the section above.                                                                                                                                     |
 |                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
+|                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer.                                                                                                                 |
 |                                                                                                                                                                       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 |imageA2b|
+
 |imageA2b_w|
 
 Project Vector LULC and convert to raster (FOR NATIONAL DATASETS ONLY):
@@ -549,7 +563,8 @@ scale of the vector dataset. (see Box 2).
 |                                                                                                                                                                       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-|image83|                                                                                                                                                                  
+|image83|
+
 Table X :  Resolutions recommended for Nominal scales vs pixel resolution (Source: reproduced from https://marinedataliteracy.org/basics/scales/scales.htm)        
 
 Once the resolution to convert the vector dataset to has been
@@ -594,6 +609,7 @@ added should be added to the map canvas\ **.**
 -  Click **Classify** and then **OK**
 
    |image62|
+   
    |image63|
 
 The layer should now show all the National LULC classes for Costa Rica.
@@ -612,6 +628,7 @@ The layer should now show all the National LULC classes for Costa Rica.
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 |imageA2c|  
+
 |imageA2c_w|   
 
 Reclassify to IPCC landcover types
@@ -679,6 +696,7 @@ can see that the actual layer only has 6 values.
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 |imageA3|
+
 |imageA3_w| 
 
 Preparation of Mountain descriptor 
@@ -750,6 +768,7 @@ The merged DEM is added to the QGIS project.
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 |imageB1|
+
 |imageB1_w|
 
 Clip and project merged DEM
@@ -811,7 +830,8 @@ should be added to the map canvas\ **.**
 |                                                                                                                                                                       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-|imageB2|  
+|imageB2| 
+
 |imageB2_w| 
 
 Generating slope layer from layer DEM
@@ -912,6 +932,7 @@ projection before following the next steps.
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 |imageB3|
+
 |imageB3_w| 
 
 Slope can now be generated from this layer
@@ -997,6 +1018,7 @@ The new **clipped** **SLOPE dataset in the equal area projection** is now added 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 |imageB4|
+
 |imageB4_w| 
 
 Generating local elevation range from DEM
@@ -1060,6 +1082,7 @@ added to the map canvas\ **.**
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 |imageB5|
+
 |imageB5_w|  
 
 **Generating layers for each mountain class**
@@ -1128,6 +1151,7 @@ AND"LocalElevationRange7km\_AOI\_LAEA@1" > 300
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 |imageB6|
+
 |imageB6_w| 
 
 Generate an interim mountain layer with classes 1-6
@@ -1171,6 +1195,7 @@ At the bottom of the layer properties dialogue window click the
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 |imageB7| 
+
 |imageB7_w|
 
 Filling isolated pixels within mountain areas and merging into classes 1-6 (****NOTE: This step is still in development****)
@@ -1467,6 +1492,7 @@ your R integration is working in Section 2.1.
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 |imageC1|  
+
 |imageC1_w|
 
 Aggregation to standard resolution and clipping to country
@@ -1511,6 +1537,7 @@ Next we will  aggregate the mountain descriptor layer.
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 |imageD1|
+
 |imageD1_w|
 
 Combine mountain and vegetation descriptor layers
@@ -1537,6 +1564,7 @@ As the MGCI required disaggregation by both the 6  LULC class and the 6 Mountain
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 |imageD2|  
+
 |imageD2_w|  
 
 Clip layers to country boundary
@@ -1571,6 +1599,7 @@ Repeat the above step for the resampled RSA raster.
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 |imageD3|  
+
 |imageD3_w|
 
 Computation of Mountain Green Cover Index
@@ -1620,6 +1649,7 @@ When the statistics .csv files  added to the QGIS project it **does not add it c
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 |imageE1|
+
 |imageE1_w| 
 
 ***The following steps will only be run from the custom MGCI toolbox. We did not feel there was benefit to detailing the many tabular joins required to create the summary tables and standard reporting tables. Users can explore the models in the model designer to explore the steps further.*** 
@@ -1643,6 +1673,7 @@ Export to standard reporting table
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 |imageF1| 
+
 |imageF1_w| 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1657,6 +1688,7 @@ Export to standard reporting table
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 |imageF2|
+
 |imageF2_w| 
 
 .. |image0| image:: media_QGIS/image2.png
@@ -1894,8 +1926,8 @@ Export to standard reporting table
    :width: 5.39167in
    :height: 2.82486in
 .. |image78| image:: media_QGIS/image77.png
-   :width: 2.50000in
-   :height: 1.23056in
+   :width: 900
+ 
 .. |image79| image:: media_QGIS/image78.png
    :width: 5.73038in
    :height: 5.49167in
@@ -1912,8 +1944,8 @@ Export to standard reporting table
    :width: 6.26806in
    :height: 1.17917in
 .. |image84| image:: media_QGIS/image83.png
-   :width: 2.64583in
-   :height: 1.10417in
+   :width: 700
+
 .. |image85| image:: media_QGIS/image84.png
    :width: 6.23190in
    :height: 5.26667in
@@ -2337,9 +2369,16 @@ Export to standard reporting table
    :width: 6.26806in
    :height: 4.75764in   
 .. |imageF2_w| image:: media_QGIS/Toolbox_images/F2w.png
-   :width: 6.26806in
-   :height: 4.75764in 
+   :width: 900
 .. |imagesettings| image:: media_QGIS/settings.png
-   :width: 6.26806in
-   :height: 4.75764in 
+   :width: 1400
 
+.. |imagerepository1| image:: media_QGIS/repository.png
+   :width: 1400
+
+.. |imagerepository2| image:: media_QGIS/repository2.png
+   :width: 500
+
+.. |imagerepository3| image:: media_QGIS/repository3.png
+   :width: 1400
+   

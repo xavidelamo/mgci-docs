@@ -81,6 +81,10 @@ Before using R-MGCI :sub:`beta`
 -------------------------------
 
 To run the this script you will need to have R 4.1.1 and RStudio 2021.09.0+351 "Ghost Orchid" installed. 
+Users will need to download the R script `the MGCI repository <https://github.com/dfguerrerom/wcmc-mgci>`_.
+
+|imagerepository|
+
 
 Introduction
 ------------
@@ -974,3 +978,7 @@ View the generated data table.
    :width: 6.26806in
 .. |image38| image:: media_R/image38.png
    :width: 6.26806in
+.. |imagerepository| image:: media_R/repository.png
+   :width: 1400
+   
+   
