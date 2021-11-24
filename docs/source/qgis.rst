@@ -1981,7 +1981,7 @@ Export to standard reporting table
    :width: 900
 .. |image104| image:: media_QGIS/image101.png
    :width: 900
- .. |image105| image:: media_QGIS/image102.png
+.. |image105| image:: media_QGIS/image102.png
    :width: 900
 .. |image106| image:: media_QGIS/image103.png
    :width: 900
@@ -2211,7 +2211,7 @@ Export to standard reporting table
    :width: 1100
   
 .. |imageC1_w| image:: media_QGIS/Toolbox_images/C1_w.png
-   :width: 1100
+   :width: 600
 
    
 .. |imageD1| image:: media_QGIS/Toolbox_images/D1.png
@@ -2224,7 +2224,7 @@ Export to standard reporting table
    :width: 1100
 
 .. |imageD2_w| image:: media_QGIS/Toolbox_images/D2_w.png
-   :width: 1100
+   :width: 600
 
 .. |imageD3| image:: media_QGIS/Toolbox_images/D3.png
    :width: 1100
