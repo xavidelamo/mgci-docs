@@ -331,8 +331,11 @@ raster or vector landuse landcover (LULC) dataset. Follow either section
 5.2.1 if your LULC dataset is a raster data or 5.2.2 if your LULC
 dataset is a vector.
 
+Steps when using a raster dataset 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-
+Clip and project LULC raster (FOR REGIONAL/GLOBAL DATASETS ONLY)
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 To demonstrate the steps for processing a raster LULC dataset we will
 use the Global ESA CCI LULC dataset. This dataset is provided in netcdf
 (.nc) format. Similarly to Geotiffs, these can be added directly to
@@ -395,9 +398,6 @@ appears in the correct place in the QGIS project.
    area projection. For National datasets already clipped to the country
    boundary follow **step (b) only.**
 
-Clip and project LULC raster (FOR REGIONAL/GLOBAL DATASETS ONLY)
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
 -  In the processing toolbox search for **Clip**
 
 -  Double click on the **Clip raster by mask layer** under the GDAL
@@ -451,9 +451,12 @@ the country.
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **MGCI Toolbox A2a. VegetationDescriptor: Clip and project LULC raster (FOR REGIONAL/GLOBAL DATASETS)**:                                                  |
 |    :name: toolbox_A2a                                                                                                                                                 |
+|                                                                                                                                                                       |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
-| Before running the tool users need to check that they know the projection of their LUUC dataset and it is faling in the correct place geographically.                 |
-| as outlined in the section above.                                                                                                                                     |
+|                                                                                                                                                                       |
+| Before running the tool users need to check that they know the projection of their LUUC dataset                                                                       |
+|                                                                                                                                                                       |
+| and it is faling in the correct place geographically, as outlined in the section above.                                                                               |
 |                                                                                                                                                                       |
 |                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below.                                                                                                  |
@@ -466,8 +469,8 @@ the country.
 
 |imageA2a_w|   
 
-Project LULC raster (FOR NATIONAL DATASETS ONLY):
-:::::::::::::::::::::::::::::::::::::::::::::::::
+Project LULC raster (FOR NATIONAL RASTER DATASETS ONLY):
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 -  search for **project** in the processing toolbox.
 
@@ -510,11 +513,14 @@ The layer should now show all the National LULC classes for Costa Rica.
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **MGCI Toolbox A2b. VegetationDescriptor: Project LULC raster (FOR NATIONAL RASTER DATASETS)**:                                                           |
 |    :name: toolbox_A2b                                                                                                                                                 |
-| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
-| Before running the tool users need to check that they know the projection of their LUUC dataset and it is faling in the correct place geographically.                 |
-| as outlined in the section above.                                                                                                                                     |
 |                                                                                                                                                                       |
-
+| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
+|                                                                                                                                                                       |
+| Before running the tool users need to check that they know the projection of their LUUC dataset                                                                       |
+|                                                                                                                                                                       |
+| and it is faling in the correct place geographically as outlined in the section above.                                                                                |
+|                                                                                                                                                                       |
+|                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below.                                                                                                  |
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer.                                                                                                                 |
@@ -525,8 +531,11 @@ The layer should now show all the National LULC classes for Costa Rica.
 
 |imageA2b_w|
 
-Project Vector LULC and convert to raster (FOR NATIONAL DATASETS ONLY):
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Steps when using a vector dataset 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Project Vector LULC and convert to raster (FOR NATIONAL VECTOR DATASETS ONLY):
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 When using a vector LULC dataset the data will also need to be projected
 to an equal area projection.
@@ -555,33 +564,25 @@ scale of the vector dataset. (see Box 2).
 | -  The scale of a vector dataset is usually expressed in a similar way to paper maps, i.e. in a ratio to show the amount of reduction from the real world             |
 |    e.g.  1:50,000. A country’s vector LULC map will have been created a particular scale. determined by the Minimum Mapping Unit. i.e. the size of the smallest       |
 |    feature. A nominal scale is will have been assigned to the dataset to reflect the scale at which the data were collected and mapped. Conversion to raster requires |
-|    this scale to be converted to a resolution, i.e. an appropriate pixel size for the scale of the data. Table X provides some general guidance / suggestions for     |
-|    such conversion.                                                                                                                                                   |
+|    this scale to be converted to a resolution, i.e. an appropriate pixel size for the scale of the data.                                                              |
 |                                                                                                                                                                       |
 |    To calculate map scale there are two parameters:  ground resolution and screen resolution.                                                                         |
 |                                                                                                                                                                       |
 |    .. math:: scale = 1: (resolution * PPI / 0.0254)  or    resolution = scale * 0.0254/PPI                                                                            |
+|                                                                                                                                                                       |
 |    **Where**   :                                                                                                                                                      |
 |    **resolution** =  ground resolution (the size in (m) that a pixel represents.                                                                                      |
 |    **PPI** =  the screen resolution (pixels number that every inch contains on the screen (default 96dpi).                                                            |
 |    **0.0254** = (m/inch),  the unit conversion between meter and inches.                                                                                              |
 |    **scale** = nominal scale of vector dataset                                                                                                                        |
 |                                                                                                                                                                       |
+|    some examples are provided in the table below:                                                                                                                     |
+|                                                                                                                                                                       |
+|    |imagescale_table|                                                                                                                                                 |
+|                                                                                                                                                                       |
 |    (source: https://enonline.supermap.com/iExpress9D/Appendix/scale.htm)                                                                                              |
 |                                                                                                                                                                       |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| .. rubric:: **BOX 2: continued**:                                                                                                                                     |
-|    :name: box-2-continued                                                                                                                                             |
-|                                                                                                                                                                       |
-| ...                                                                                                                                                                   |
-|    |image83|                                                                                                                                                          |
-|                                                                                                                                                                       |
-| Table X :  Resolutions recommended for Nominal scales vs pixel resolution (Source: reproduced from https://marinedataliteracy.org/basics/scales/scales.htm)           |
-|                                                                                                                                                                       |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+  
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+ 
 
 
 Once the resolution to convert the vector dataset to has been
@@ -2262,3 +2263,5 @@ Export to standard reporting table
 
 .. |imagerepository3| image:: media_QGIS/repository3.png
    :width: 900
+.. |imagescale_table| image:: media_QGIS/scale_table.png
+   :width: 500
