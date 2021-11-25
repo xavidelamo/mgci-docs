@@ -331,8 +331,7 @@ raster or vector landuse landcover (LULC) dataset. Follow either section
 5.2.1 if your LULC dataset is a raster data or 5.2.2 if your LULC
 dataset is a vector.
 
-Steps when using a raster dataset 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 
 To demonstrate the steps for processing a raster LULC dataset we will
 use the Global ESA CCI LULC dataset. This dataset is provided in netcdf
