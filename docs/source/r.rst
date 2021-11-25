@@ -137,7 +137,7 @@ The next step is to define a projection for the country boundary. In this exampl
 
 Costa Rica covers more than one UTM Zone so in this example we will define a custom Lambert Azimuthal Equal Area projection with the central meridian set to **-84** and the latitude of origin to **8.5**.
 
-Costa Rica does have a National Projection (see https://epsg.io/5367) which may be an alternative to the Lambert Azimuthal Equal Area.
+Costa Rica does have a National Projection (`see EPSG:5367 <https://epsg.io/5367>`_) which may be an alternative to the Lambert Azimuthal Equal Area.
 
 Replace the projection in the code below to that of your area of interest:
 
@@ -455,11 +455,10 @@ It uses function ‘as.vector’ assigned to each of one of the two coordinates 
    #Columns x and y have the coordinates of each cell and column layer has the elevation value of each cell
    col.X <- as.vector(m1[,1]) #just the coordinates values from X column 
    col.Y <- as.vector(m1[,2]) #just the coordinates values from Y column
-
   
 **Calculate the real surface area of each grid cell within the DEM**
 
-This step uses the ‘surfaceArea’ function from package ‘sp’. Information about this function can be found on page 105 of the package ‘sp’ documentation (https://cran.r-project.org/web/packages/sp/sp.pdf) and on GitHub (`*https://github.com/cran/sp/blob/master/src/surfaceArea.c* <https://github.com/cran/sp/blob/master/src/surfaceArea.c>`__).
+This step uses the ‘surfaceArea’ function from package ‘sp’. Information about this function can be found on page 105 of the package ‘sp’ `documentation <https://cran.r-project.org/web/packages/sp/sp.pdf>`_ and  `on GitHub <https://github.com/cran/sp/blob/master/src/surfaceArea.c>`__.
 This function will calculate the real surface area of each grid cell of the DEM, based on the matrix ‘m’ created on step 1 and the cell size inserted on ‘SECTION A.4’. The resulting object ‘rsa’ is a matrix with the same number of columns and rows as the matrix ‘m’ and, hence, of the DEM, but with the estimated values of the real surface area for all cells within the DEM.
 
 .. code-block:: s
