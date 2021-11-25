@@ -824,7 +824,7 @@ section 5.1 should be used.
 -  Set the output **Clipped (mask)** e.g. to
    DEM_copernicus_merge_AOI_LAEA.tif
    
-   |image96|
+   |image57|
   
 -  Click **Run** to run the tool
    
