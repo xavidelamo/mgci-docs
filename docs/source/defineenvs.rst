@@ -97,7 +97,7 @@ users buffer the bounding box of the country boundary out by 10km.
 Understanding scale vs resolution
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The scale of a vector dataset is usually expressed in a similar way to paper maps, i.e. in a ratio to show the amount of reduction from the real world e.g.  1:50,000. A country’s vector LULC map will have been created a particular scale. determined by the Minimum Mapping Unit. i.e. the size of the smallest feature. A nominal scale is will have been assigned to the dataset to reflect the scale at which the data were collected and mapped. Conversion to raster requires this scale to be converted to a resolution, i.e. an appropriate pixel size for the scale of the data.                                                              |
+The scale of a vector dataset is usually expressed in a similar way to paper maps, i.e. in a ratio to show the amount of reduction from the real world e.g.  1:50,000. A country’s vector LULC map will have been created at a particular scale. determined by the Minimum Mapping Unit. i.e. the size of the smallest feature. A nominal scale is will have been assigned to the dataset to reflect the scale at which the data were collected and mapped. Conversion to raster requires this scale to be converted to a resolution, i.e. an appropriate pixel size for the scale of the data.                                                              |
 
 To calculate map scale there are two parameters:  ground resolution and screen resolution.  
 
@@ -106,11 +106,14 @@ To calculate map scale there are two parameters:  ground resolution and screen r
 **Where**:   
 
 **resolution** =  ground resolution (the size in (m) that a pixel represents. 
+
 **PPI** =  the screen resolution (pixels number that every inch contains on the screen (default 96dpi). 
-**0.0254** = (m/inch),  the unit conversion between meter and inches.                                                                                              
+
+**0.0254** = (m/inch),  the unit conversion between meter and inches. 
+
 **scale** = nominal scale of vector dataset                                                                                                                        
 
-ome examples are provided in the table below:        
+Some examples are provided in the table below:        
 
 |imagescale_table| 
 
