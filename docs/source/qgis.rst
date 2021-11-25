@@ -106,6 +106,7 @@ Once downloaded users need to navidate to the ****sources>>qgis>>QGIS_models fol
 
 |imagerepository2|
 
+
 The QGIS R-script ***rsa_v1.rsx*** for real surface Area will need to be placed in R scripts folder and the ***MGCI_v01beta*** folder placed in the Models folder.
 You can find the location in QGIS under **Settings>>Options**. The other style and template files can be stored in your own project working location.
 
@@ -119,7 +120,7 @@ We suggest users create a folder for working in the following strucure
 Define projection and generate an AOI
 -------------------------------------
 The first step is to define an Area of Interest (AOI) for the analysis. This should go beyond the country
-bundary as outlined in the **Definning analysis environments** section of the tutorial.
+bundary as outlined in the **Defining analysis environments** section of the tutorial.
 
 **The instructions below show and explain the manaul steps without the MGCI toolbox:**
 
@@ -204,7 +205,14 @@ If you need to define a custom projection, follow the instructions in Box 1
 |                                                                                                                                                                       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+ 
 
-|image35| 
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| .. rubric:: **BOX 1: continued**:                                                                                                                                     |
+|    :name: box-1-continued                                                                                                                                             |
+|                                                                                                                                                                       |
+| -  see example below                                                                                                                                                  |
+|                                                                                                                                                                       |
+|    |image35|                                                                                                                                                          |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+ 
 
 Next change the projection set for the QGIS project to your chosen equal area
 projection. In this example it is the custom projection that was defined
@@ -237,9 +245,7 @@ equal area projection
 -  In the processing toolbox search for the **Reproject** tool
 
    |image39|
-
-   |image40|
-
+   
 -  Set the Input layer to be the **country boundary**
 
 -  Set the Target CRS to be the **Project CRS** (i.e. to the equal area
@@ -248,6 +254,8 @@ equal area projection
 -  Set the output name to be the same as the input with a suffix to
    indicate the projection e.g. in this example
    **BND\_CTY\_CRI\_ LAEA**
+   
+   |image40|
 
 Now that the country boundary is in the chosen equal area projection, we
 can generate a rectangular bounding box which we will use as an area of
@@ -289,11 +297,11 @@ This has generated the bounding box. The next step adds the 10km buffer.
 
    |image42|
 
-If you change the symbology to semi-transparent symbol and draw it over
-the original bounding box you should be able to see the additional
-buffered area.
+-  If you change the symbology to semi-transparent symbol and draw it over
+   the original bounding box you should be able to see the additional
+   buffered area.
 
-|image43|
+   |image43|
 
 The output is a bounding box 10km larger than the bounding box for the
 country. This will be used as the Area of Interest (AOI) when preparing
@@ -306,7 +314,7 @@ the various layers for the MGCI analysis.
 | Before running the tool users do need to create custom projection in their QGIS project                                                                               |
 | as indicated in Box 1 outlined in the section above.                                                                                                                  |
 |                                                                                                                                                                       |
-| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
+| In the **custom MGCI toolbox** these step are run by the tool below.                                                                                                  |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
 |                                                                                                                                                                       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -507,7 +515,8 @@ The layer should now show all the National LULC classes for Costa Rica.
 | Before running the tool users need to check that they know the projection of their LUUC dataset and it is faling in the correct place geographically.                 |
 | as outlined in the section above.                                                                                                                                     |
 |                                                                                                                                                                       |
-| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
+
+| In the **custom MGCI toolbox** these step are run by the tool below.                                                                                                  |
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer.                                                                                                                 |
 |                                                                                                                                                                       |
@@ -563,9 +572,18 @@ scale of the vector dataset. (see Box 2).
 |                                                                                                                                                                       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-|image83|
 
-Table X :  Resolutions recommended for Nominal scales vs pixel resolution (Source: reproduced from https://marinedataliteracy.org/basics/scales/scales.htm)        
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| .. rubric:: **BOX 2: continued**:                                                                                                                                     |
+|    :name: box-2-continued                                                                                                                                             |
+|                                                                                                                                                                       |
+| ...                                                                                                                                                                   |
+|    |image83|                                                                                                                                                          |
+|                                                                                                                                                                       |
+| Table X :  Resolutions recommended for Nominal scales vs pixel resolution (Source: reproduced from https://marinedataliteracy.org/basics/scales/scales.htm)           |
+|                                                                                                                                                                       |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+  
+
 
 Once the resolution to convert the vector dataset to has been
 determined the vector dataset can be converted to Raster.
@@ -621,7 +639,7 @@ The layer should now show all the National LULC classes for Costa Rica.
 | Before running the tool users need to check that they know the projection of their LUUC dataset and it is faling in the correct place geographically.                 |
 | as outlined in the section above.                                                                                                                                     |
 |                                                                                                                                                                       |
-| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
+| In the **custom MGCI toolbox** these step are run by the tool below.                                                                                                  |
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
 |                                                                                                                                                                       |
@@ -688,8 +706,10 @@ can see that the actual layer only has 6 values.
 | .. rubric:: **MGCI Toolbox A2c. VegetationDescriptor: Generate Vegetation Descriptor Layer**:                                                                         |
 |    :name: toolbox_A3                                                                                                                                                  |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
+| Before running the tool users need to check that they know the projection of their LUUC dataset and it is faling in the correct place geographically.                 |
+| as outlined in the section above.                                                                                                                                     |
 |                                                                                                                                                                       |
-| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
+| In the **custom MGCI toolbox** these step are run by the tool below.                                                                                                  |
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
 |                                                                                                                                                                       |
@@ -761,7 +781,7 @@ The merged DEM is added to the QGIS project.
 | Before running the tool users need to check that they know the projection of their DEM dataset and it is faling in the correct place geographically.                  |
 | as outlined in the section above.                                                                                                                                     |
 |                                                                                                                                                                       |
-| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
+| In the **custom MGCI toolbox** these step are run by the tool below.                                                                                                  |
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
 |                                                                                                                                                                       |
@@ -808,15 +828,15 @@ section 5.1 should be used.
 -  Set the output **Clipped (mask)** e.g. to
    DEM_copernicus_merge_AOI_LAEA.tif
    
-  |image96|
+   |image75|
   
 -  Click **Run** to run the tool
-
    
-
+    
+    
 The new clipped DEM dataset in the equal area projection should be added
 should be added to the map canvas\ **.**
-
+    
 |image76|
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -900,25 +920,33 @@ projection before following the next steps.
 |                                                                                                                                                                       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-|image78|   
 
- -  Next, In the **processing toolbox** search for **reproject** 
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| .. rubric:: **BOX 3: continued**:                                                                                                                                     |
+|    :name: box-3-continued                                                                                                                                             |
+|                                                                                                                                                                       |
+| -  see example below                                                                                                                                                  |
+|                                                                                                                                                                       |
+|    |image78|                                                                                                                                                          |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+ 
 
-    |image54|                                                                                                                                                                  
+-  Next, In the **processing toolbox** search for **reproject** 
+
+   image54|                                                                                                                                                                  
     
- -  Double click on the **Warp (reproject)** tool under the **GDAL toolset** 
- -  Set the Input layer to be the **merged DEM in geographic coordinate system**
+- Double click on the **Warp (reproject)** tool under the **GDAL toolset** 
+- Set the Input layer to be the **merged DEM in geographic coordinate system**
     *Note: it is important not to use the one that has already been projected as this can introduce errors into the DEM *
- -  Set the Source CRS to be **EPSG: 4326 (Geographic)**
- -  Set the Target CRS to be **your custom equidistant projection** e.g. CRI\_AZ\_EQUI
- -  Set the resampling method to Nearest Neighbour
- -  Set the output file resolution to the resolution of the DEM in meters e.g. 90m in this example
- -  Set the Reprojected output to e.g. **DEM\_copernicus\_merge\_CRI\_AZ\_EQUI.tif**
- -  Click Run to run the tool
+- Set the Source CRS to be **EPSG: 4326 (Geographic)**
+- Set the Target CRS to be **your custom equidistant projection** e.g. CRI\_AZ\_EQUI
+- Set the resampling method to Nearest Neighbour
+- Set the output file resolution to the resolution of the DEM in meters e.g. 90m in this example
+- Set the Reprojected output to e.g. **DEM\_copernicus\_merge\_CRI\_AZ\_EQUI.tif**
+- Click Run to run the tool
     
-    |image79|
+  |image79|
  
- The reprojected layer is added to the QGIS project. 
+The reprojected layer is added to the QGIS project. 
  
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **MGCI Toolbox B3. MountainDescriptor: Project merged DEM to Equidistant projection**:                                                                    |
@@ -1179,9 +1207,9 @@ map canvas\ **.**
 At the bottom of the layer properties dialogue window click the
 **style** button and then load the predefined style file
 
-  |image109|
+|image109|
 
-  |image110|
+|image110|
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **MGCI Toolbox B7. MountainDescriptor: Generate Mountain Descriptor layer (EXCLUDING isolated pixels from class 7)**:                                     |
@@ -1228,13 +1256,13 @@ data.
    This formular will set the 0’s to no data and leave the 1’s remaining
    as 1.
 
-("non\_mountain\_areas\_LAEA@1">0)\*( "non\_mountain\_areas\_LAEA@1") /
-(("non\_mountain\_areas\_LAEA@1">0)\*1 +
-("non\_mountain\_areas\_LAEA@1"<=0)\*0)
+   ("non\_mountain\_areas\_LAEA@1">0)\*( "non\_mountain\_areas\_LAEA@1") /
+   (("non\_mountain\_areas\_LAEA@1">0)\*1 +
+   ("non\_mountain\_areas\_LAEA@1"<=0)\*0)
 
-  |image113|
+   |image113|
 
-  |image114|
+   |image114|
 
 We can now use this layer to clump the the pixels into groups of
 connected pixels
@@ -1545,7 +1573,9 @@ Combine mountain and vegetation descriptor layers
 As the MGCI required disaggregation by both the 6  LULC class and the 6 Mountain Class and the tools within QGIS will only allow a single input for zones, we will combine the two datasets together to form a combined zones dataset.
 
 -  In the **processing toolbox**, search for and double click on the **raster calculator**
--  In the expression window we will sum the two dataset together but in order to distinguish the vegetation class from the mountain call all the vegetation values will be multiplied by 10. This means for example a value of 35 in the output means the pixel has class 3 in the vegetation descriptor layer and class 5 in the Mountain descriptor layer.
+-  In the expression window we will sum the two dataset together but in order to distinguish the vegetation class from the mountain call all the vegetation values will be 
+   multiplied by 10. This means for example a value of 35 in the output means the pixel has class 3 in the vegetation descriptor layer and class 5 in the Mountain descriptor
+   layer.
 -  In the expression box formulate the expression e.g.  ("VEGETATION_DESCRIPTOR_AOI_LAEA@1"*10) + "MoutainDescriptor_K1_6_withoutK7_agg300recl@1"
 -  Set the Reference layer as the Vegetation Descriptor layer
 -  Click **Run** to run the tool
@@ -1583,9 +1613,9 @@ At this stage we can now clip the final aggregated datasets to the country bound
 
    |image175|
    
-Repeat the above step for the resampled RSA raster.
+-  Repeat the above step for the resampled RSA raster.
 
-  |image176|
+   |image176|
    
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **MGCI Toolbox D3. Generic:  Clip to country boundary**:                                                                                                  |
@@ -1618,14 +1648,14 @@ This output is the main statistics table from the analysis, from which other sum
 -  Set the **zones layer** to the **combined vegetation and mountain layer clipped to the country boundary**
 -  Save the **Statistics output to a .csv file** e.g. rsastats.csv
 
-  |image177|
+   |image177|
    
 The Planimetric area generated in m2 rather than km2 and will be stored in a field called m2
 
-• In the **processing Toolbox** search for **Rename Field** 
-• Set the field to rename as **m2**
-• Set the **New field name** to **PlanimetricArea_m2**
-• Save the **Renamed output to a .csv file** e.g. MGCI_stats.csv
+-  In the **processing Toolbox** search for **Rename Field** 
+-  Set the field to rename as **m2**
+-  Set the **New field name** to **PlanimetricArea_m2**
+-  Save the **Renamed output to a .csv file** e.g. MGCI_stats.csv
 
    |image178|
 
@@ -1788,597 +1818,448 @@ Export to standard reporting table
    :width: 6.26806in
    :height: 2.66389in
 .. |image32| image:: media_QGIS/image34.png
-   :width: 5.65728in
-   :height: 1.02917in
+   :width: 900
 .. |image33| image:: media_QGIS/image35.png
-   :width: 4.00355in
-   :height: 1.62431in
+   :width: 625
 .. |image34| image:: media_QGIS/image36.png
-   :width: 1.74534in
-   :height: 1.62292in
+   :width: 275
 .. |image35| image:: media_QGIS/image37.png
-   :width: 2.5in
-   :height: 3.6in
+   :width: 900
 .. |image36| image:: media_QGIS/image38.png
-   :width: 6.28139in
-   :height: 0.35833in
+   :width: 900
 .. |image37| image:: media_QGIS/image39.png
-   :width: 6.28125in
-   :height: 5.64371in
+   :width: 900
 .. |image38| image:: media_QGIS/image40.png
-   :width: 5.73024in
-   :height: 0.27500in
+   :width: 900
 .. |image39| image:: media_QGIS/image41.png
-   :width: 6.26806in
-   :height: 5.45486in
+   :width: 900
+   
 .. |image40| image:: media_QGIS/image42.png
-   :width: 2.46597in
-   :height: 2.24167in
+   :width: 600
+
 .. |image41| image:: media_QGIS/image43.png
-   :width: 6.26806in
-   :height: 2.72569in
+   :width: 900
 .. |image42| image:: media_QGIS/image44.png
-   :width: 6.26806in
-   :height: 6.17639in
+   :width: 900
 .. |image43| image:: media_QGIS/image45.png
-   :width: 6.26806in
-   :height: 5.56458in
+   :width: 900
 .. |image44| image:: media_QGIS/image46.png
-   :width: 6.26806in
-   :height: 1.33194in
+   :width: 900
 .. |image45| image:: media_QGIS/image47.png
-   :width: 6.26806in
-   :height: 2.48403in
+   :width: 900
 .. |image46| image:: media_QGIS/image48.png
-   :width: 6.10502in
-   :height: 3.58383in
+   :width: 600
+
 .. |image47| image:: media_QGIS/image49.png
-   :width: 4.54167in
-   :height: 2.21453in
+   :width: 300
+
 .. |image48| image:: media_QGIS/image50.png
-   :width: 5.50833in
-   :height: 3.71962in
+   :width: 900
+   
 .. |image49| image:: media_QGIS/image51.png
-   :width: 3.48021in
-   :height: 2.14167in
+   :width: 300
+
 .. |image50| image:: media_QGIS/image52.png
-   :width: 5.49984in
-   :height: 6.74167in
+   :width: 900
 .. |image51| image:: media_QGIS/image53.png
-   :width: 5.50764in
-   :height: 2.87097in
+   :width: 900
 .. |image52| image:: media_QGIS/image54.png
-   :width: 5.79167in
-   :height: 3.75759in
+   :width: 900
 .. |image53| image:: media_QGIS/image55.png
-   :width: 5.79572in
-   :height: 3.78333in
+   :width: 900
+   
 .. |image54| image:: media_QGIS/image56.png
-   :width: 4.08390in
-   :height: 1.31268in
+   :width: 400
+
 .. |image55| image:: media_QGIS/image57.png
-   :width: 6.26806in
-   :height: 9.07222in
+   :width: 900
 .. |image56| image:: media_QGIS/image58.png
-   :width: 3.43128in
-   :height: 4.10833in
+   :width: 900
 .. |image57| image:: media_QGIS/image54.png
-   :width: 6.26806in
-   :height: 4.06667in
+   :width: 900
+   
 .. |image58| image:: media_QGIS/image59.png
-   :width: 2.63578in
-   :height: 1.68774in
+   :width: 300
+   
 .. |image59| image:: media_QGIS/image60.png
-   :width: 5.28584in
-   :height: 6.92500in
+   :width: 900
 .. |image60| image:: media_QGIS/image61.png
-   :width: 4.97917in
-   :height: 0.51042in
+   :width: 900
 .. |image61| image:: media_QGIS/image62.png
-   :width: 4.84861in
-   :height: 7.35000in
+   :width: 900
 .. |image62| image:: media_QGIS/image58.png
-   :width: 3.35417in
-   :height: 4.01667in
+   :width: 900
 .. |image63| image:: media_QGIS/image54.png
-   :width: 6.26806in
-   :height: 4.06667in
+   :width: 900
 .. |image64| image:: media_QGIS/image63.png
-   :width: 6.21606in
-   :height: 2.15833in
+   :width: 900
+   
 .. |image65| image:: media_QGIS/image64.png
-   :width: 2.73125in
-   :height: 2.93333in
+   :width: 300
+   
 .. |image66| image:: media_QGIS/image65.png
-   :width: 6.26806in
-   :height: 5.58958in
+   :width: 900
+   
 .. |image67| image:: media_QGIS/image66.png
-   :width: 5.72500in
-   :height: 4.53763in
+   :width: 900
 .. |image68| image:: media_QGIS/image67.png
-   :width: 5.72500in
-   :height: 4.09871in
+   :width: 900
+   
 .. |image69| image:: media_QGIS/image68.png
-   :width: 6.26806in
-   :height: 6.30417in
+   :width: 900
+
 .. |image70| image:: media_QGIS/image69.png
-   :width: 2.16667in
-   :height: 2.37500in
+   :width: 300
+
 .. |image71| image:: media_QGIS/image70.png
-   :width: 3.29167in
-   :height: 0.96306in
+   :width: 600
+
 .. |image72| image:: media_QGIS/image71.png
-   :width: 5.73333in
-   :height: 4.20440in
+   :width: 600
+   
 .. |image73| image:: media_QGIS/image72.png
-   :width: 5.70000in
-   :height: 5.32741in
+   :width: 900
 .. |image74| image:: media_QGIS/image73.png
-   :width: 6.26806in
-   :height: 4.20000in
+   :width: 900
 .. |image75| image:: media_QGIS/image74.png
-   :width: 5.83333in
-   :height: 9.69306in
+   :width: 900
 .. |image76| image:: media_QGIS/image75.png
-   :width: 6.26806in
-   :height: 4.29028in
+   :width: 900
 .. |image77| image:: media_QGIS/image76.png
-   :width: 5.39167in
-   :height: 2.82486in
+   :width: 900
 .. |image78| image:: media_QGIS/image77.png
    :width: 900
  
 .. |image79| image:: media_QGIS/image78.png
-   :width: 5.73038in
-   :height: 5.49167in
+   :width: 900
+   
 .. |image80| image:: media_QGIS/image79.png
-   :width: 2.85556in
-   :height: 3.19167in
+   :width: 300
+   
 .. |image81| image:: media_QGIS/image80.png
-   :width: 2.65833in
-   :height: 1.71265in
+   :width: 900
 .. |image82| image:: media_QGIS/image81.png
-   :width: 5.73652in
-   :height: 4.69167in
+   :width: 900
 .. |image83| image:: media_QGIS/image82.png
-   :width: 6.26806in
-   :height: 1.17917in
+   :width: 900
 .. |image84| image:: media_QGIS/image83.png
-   :width: 700
-
+   :width: 200
 .. |image85| image:: media_QGIS/image84.png
-   :width: 6.23190in
-   :height: 5.26667in
+   :width: 900
 .. |image86| image:: media_QGIS/image85.png
-   :width: 2.35625in
-   :height: 2.03333in
+   :width: 900
 .. |image87| image:: media_QGIS/image86.png
-   :width: 6.26806in
-   :height: 5.91944in
+   :width: 900
 .. |image88| image:: media_QGIS/image80.png
-   :width: 2.65833in
-   :height: 1.71250in
+   :width: 900
 .. |image89| image:: media_QGIS/image87.png
-   :width: 5.77619in
-   :height: 4.87578in
+   :width: 900
 .. |image90| image:: media_QGIS/image88.png
-   :width: 6.26806in
-   :height: 4.38403in
+   :width: 900
 .. |image91| image:: media_QGIS/image89.png
-   :width: 3.06973in
-   :height: 3.67361in
+   :width: 900
 .. |image92| image:: media_QGIS/image90.png
-   :width: 6.26806in
-   :height: 5.98125in
+   :width: 900
 .. |image93| image:: media_QGIS/image91.png
-   :width: 1.62500in
-   :height: 1.30208in
+   :width: 200
 .. |image94| image:: media_QGIS/image92.png
-   :width: 5.70718in
-   :height: 7.59524in
+   :width: 900
 .. |image95| image:: media_QGIS/image93.png
-   :width: 6.26806in
-   :height: 8.21042in
+   :width: 900
 .. |image96| image:: media_QGIS/image94.png
-   :width: 2.14147in
-   :height: 0.82576in
+   :width: 300
 .. |image97| image:: media_QGIS/image95.png
-   :width: 1.31645in
-   :height: 1.62121in
+   :width: 900
 .. |image98| image:: media_QGIS/image96.png
-   :width: 1.31509in
-   :height: 1.62121in
+   :width: 900
 .. |image99| image:: media_QGIS/image97.png
-   :width: 5.78451in
-   :height: 5.33333in
+   :width: 900
 .. |image100| image:: media_QGIS/image98.png
-   :width: 6.26806in
-   :height: 4.53472in
+   :width: 900
 .. |image101| image:: media_QGIS/image99.png
-   :width: 6.26806in
-   :height: 5.02847in
+   :width: 900
 .. |image102| image:: media_QGIS/image100.png
-   :width: 6.26806in
-   :height: 5.02986in
+   :width: 900
 .. |image103| image:: media_QGIS/image101.png
-   :width: 6.26806in
-   :height: 5.02708in
+   :width: 900
 .. |image104| image:: media_QGIS/image101.png
-   :width: 6.26806in
-   :height: 5.02708in
+   :width: 900
 .. |image105| image:: media_QGIS/image102.png
-   :width: 6.26806in
-   :height: 5.02847in
+   :width: 900
 .. |image106| image:: media_QGIS/image103.png
-   :width: 6.26806in
-   :height: 5.24306in
+   :width: 900
 .. |image107| image:: media_QGIS/image104.png
-   :width: 6.26806in
-   :height: 4.55556in
+   :width: 900
 .. |image108| image:: media_QGIS/image105.png
-   :width: 5.97917in
-   :height: 4.75366in
+   :width: 900
 .. |image109| image:: media_QGIS/image106.png
-   :width: 5.85417in
-   :height: 2.86158in
+   :width: 900
 .. |image110| image:: media_QGIS/image107.png
-   :width: 6.26806in
-   :height: 4.50139in
+   :width: 900
 .. |image111| image:: media_QGIS/image108.png
-   :width: 6.26806in
-   :height: 5.53472in
+   :width: 900
 .. |image112| image:: media_QGIS/image109.png
-   :width: 6.26806in
-   :height: 4.48333in
+   :width: 900
 .. |image113| image:: media_QGIS/image110.png
-   :width: 6.26806in
-   :height: 4.56111in
+   :width: 900
 .. |image114| image:: media_QGIS/image111.png
-   :width: 6.26806in
-   :height: 4.44792in
+   :width: 900
 .. |image115| image:: media_QGIS/image112.png
-   :width: 3.09722in
-   :height: 1.37500in
+   :width: 300
 .. |image116| image:: media_QGIS/image113.png
-   :width: 6.26806in
-   :height: 4.59236in
+   :width: 900
 .. |image117| image:: media_QGIS/image114.png
-   :width: 6.26806in
-   :height: 4.45694in
+   :width: 900
 .. |image118| image:: media_QGIS/image115.png
-   :width: 6.26806in
-   :height: 4.60278in
+   :width: 900
 .. |image119| image:: media_QGIS/image116.png
-   :width: 6.26806in
-   :height: 3.34861in
+   :width: 900
 .. |image120| image:: media_QGIS/image117.png
-   :width: 6.26806in
-   :height: 6.40000in
+   :width: 900
 .. |image121| image:: media_QGIS/image118.png
-   :width: 6.26806in
-   :height: 3.95486in
+   :width: 900
 .. |image122| image:: media_QGIS/image119.png
-   :width: 6.26806in
-   :height: 3.39167in
+   :width: 900
 .. |image123| image:: media_QGIS/image120.png
-   :width: 6.26806in
-   :height: 5.17708in
+   :width: 900
 .. |image124| image:: media_QGIS/image121.png
-   :width: 6.26806in
-   :height: 4.38403in
+   :width: 900
 .. |image125| image:: media_QGIS/image122.png
-   :width: 6.26806in
-   :height: 5.07500in
+   :width: 900
 .. |image126| image:: media_QGIS/image123.png
-   :width: 6.26806in
-   :height: 5.04306in
+   :width: 900
 .. |image127| image:: media_QGIS/image124.png
-   :width: 6.26806in
-   :height: 5.04375in
+   :width: 900
 .. |image128| image:: media_QGIS/image125.png
-   :width: 6.26806in
-   :height: 5.05625in
+   :width: 900
 .. |image129| image:: media_QGIS/image126.png
-   :width: 6.26806in
-   :height: 5.05208in
+   :width: 900
 .. |image130| image:: media_QGIS/image127.png
-   :width: 5.71528in
-   :height: 0.77630in
+   :width: 900
 .. |image131| image:: media_QGIS/image128.png
-   :width: 5.22222in
-   :height: 3.12836in
+   :width: 900
 .. |image132| image:: media_QGIS/image129.png
-   :width: 6.26806in
-   :height: 1.42500in
+   :width: 900
 .. |image133| image:: media_QGIS/image130.png
-   :width: 6.26806in
-   :height: 5.07083in
+   :width: 900
 .. |image134| image:: media_QGIS/image131.png
-   :width: 6.26806in
-   :height: 3.82639in
+   :width: 900
 .. |image135| image:: media_QGIS/image132.png
-   :width: 1.74653in
-   :height: 1.97917in
+   :width: 300
 .. |image136| image:: media_QGIS/image133.png
-   :width: 4.58472in
-   :height: 2.31944in
+   :width: 900
 .. |image137| image:: media_QGIS/image134.png
-   :width: 6.26806in
-   :height: 3.19861in
+   :width: 900
 .. |image138| image:: media_QGIS/image135.png
-   :width: 6.26806in
-   :height: 6.41458in
+   :width: 900
 .. |image139| image:: media_QGIS/image136.png
-   :width: 6.26806in
-   :height: 4.29028in
+   :width: 900
 .. |image140| image:: media_QGIS/image137.png
-   :width: 6.10208in
-   :height: 3.16513in
+   :width: 900
 .. |image141| image:: media_QGIS/image138.png
-   :width: 6.10208in
-   :height: 3.16056in
+   :width: 900
 .. |image142| image:: media_QGIS/image139.png
-   :width: 6.13889in
-   :height: 0.51146in
+   :width: 900
 .. |image143| image:: media_QGIS/image140.png
-   :width: 6.14021in
-   :height: 4.06549in
+   :width: 900
 .. |image144| image:: media_QGIS/image141.png
-   :width: 6.13092in
-   :height: 1.95833in
+   :width: 900
 .. |image145| image:: media_QGIS/image142.png
-   :width: 6.13869in
-   :height: 1.52778in
+   :width: 900
 .. |image146| image:: media_QGIS/image143.png
-   :width: 1.38205in
-   :height: 0.21154in
+   :width: 900
 .. |image147| image:: media_QGIS/image144.png
-   :width: 3.60467in
-   :height: 2.18781in
+   :width: 900
 .. |image148| image:: media_QGIS/image145.png
-   :width: 5.75000in
-   :height: 4.76172in
+   :width: 900
 .. |image149| image:: media_QGIS/image146.png
-   :width: 5.71528in
-   :height: 4.75941in
+   :width: 900
 .. |image150| image:: media_QGIS/image147.png
-   :width: 5.70139in
-   :height: 4.76269in
+   :width: 900
 .. |image151| image:: media_QGIS/image148.png
-   :width: 6.02167in
-   :height: 4.97986in
+   :width: 900
 .. |image152| image:: media_QGIS/image149.png
-   :width: 5.70833in
-   :height: 4.72891in
+   :width: 900
 .. |image153| image:: media_QGIS/image150.png
-   :width: 5.93833in
-   :height: 4.95903in
+   :width: 900
 .. |image154| image:: media_QGIS/image151.png
-   :width: 5.99042in
-   :height: 5.01112in
+   :width: 900
 .. |image155| image:: media_QGIS/image152.png
-   :width: 6.00084in
-   :height: 4.91735in
+   :width: 900
 .. |image156| image:: media_QGIS/image153.png
-   :width: 6.26806in
-   :height: 2.67639in
+   :width: 900
 .. |image157| image:: media_QGIS/image154.png
-   :width: 6.26806in
-   :height: 4.40000in
+   :width: 900
 .. |image158| image:: media_QGIS/image155.png
-   :width: 5.43001in
-   :height: 2.79001in
+   :width: 900
 .. |image159| image:: media_QGIS/image156.png
-   :width: 5.07668in
-   :height: 3.08334in
+   :width: 900
 .. |image160| image:: media_QGIS/image157.png
-   :width: 2.07279in
-   :height: 0.21970in
+   :width: 900
 .. |image161| image:: media_QGIS/image158.png
-   :width: 6.26806in
-   :height: 4.84861in
+   :width: 900
 .. |image162| image:: media_QGIS/image159.png
-   :width: 6.26806in
-   :height: 4.88403in
+   :width: 900
 .. |image163| image:: media_QGIS/image160.png
-   :width: 6.26806in
-   :height: 4.86875in
+   :width: 900
 .. |image164| image:: media_QGIS/image161.png
-   :width: 6.26806in
-   :height: 4.86875in
+   :width: 900
 .. |image165| image:: media_QGIS/image162.png
-   :width: 6.26806in
-   :height: 4.89653in
+   :width: 900
 .. |image166| image:: media_QGIS/image163.png
-   :width: 6.26806in
-   :height: 6.27569in
+   :width: 900
 .. |image167| image:: media_QGIS/image164.png
-   :width: 5.33408in
-   :height: 5.05279in
+   :width: 900
 .. |image168| image:: media_QGIS/image165.png
-   :width: 6.26806in
-   :height: 4.42014in
+   :width: 900
 .. |image169| image:: media_QGIS/image166.png
-   :width: 6.26806in
-   :height: 1.02222in
+   :width: 900
 .. |imagetoolbox| image:: media_QGIS/Toolbox_images/toolbox.PNG
-   :width: 6.26806in
-   :height: 4.75764in
+   :width: 900
 .. |image170| image:: media_QGIS/image170.png
-   :width: 6.26806in
-   :height: 4.75764in
+   :width: 900
 .. |image171| image:: media_QGIS/image171.png
-   :width: 6.26806in
-   :height: 4.75764in
+   :width: 900
 .. |image172| image:: media_QGIS/i1_aoi_tool.png
-   :width: 6.26806in
-   :height: 4.75764in
+   :width: 900
 .. |image173| image:: media_QGIS/image173.png
-   :width: 6.26806in
-   :height: 4.75764in
+   :width: 900
 .. |image173| image:: media_QGIS/image173.png
-   :width: 6.26806in
-   :height: 4.75764in
+   :width: 900
 .. |image174| image:: media_QGIS/image174.png
-   :width: 6.26806in
-   :height: 4.75764in
+   :width: 900
 .. |image175| image:: media_QGIS/image175.png
-   :width: 6.26806in
-   :height: 4.75764in
+   :width: 900
 .. |image176| image:: media_QGIS/image176.png
-   :width: 6.26806in
-   :height: 4.75764in
+   :width: 900
 .. |image177| image:: media_QGIS/image177.png
-   :width: 6.26806in
-   :height: 4.75764in
+   :width: 900
 .. |image178| image:: media_QGIS/image178.png
-   :width: 6.26806in
-   :height: 4.75764in
-   
-   
-   
-   
-   
-   
+   :width: 900
+
 .. |imageA1| image:: media_QGIS/Toolbox_images/A1.png
-   :width: 6.26806in
-   :height: 4.75764in   
+   :width: 1100
 .. |imageA1_w| image:: media_QGIS/Toolbox_images/A1_w.png
-   :width: 6.26806in
-   :height: 4.75764in     
+   :width: 600
    
 .. |imageA2a| image:: media_QGIS/Toolbox_images/A2a.png
-   :width: 6.26806in
-   :height: 4.75764in  
-   
+   :width: 1100
+    
 .. |imageA2a_w| image:: media_QGIS/Toolbox_images/A2a_w.png
-   :width: 6.26806in
-   :height: 4.75764in 
+   :width: 600
    
 .. |imageA2b| image:: media_QGIS/Toolbox_images/A2b.png
-   :width: 6.26806in
-   :height: 4.75764in
+   :width: 1100
 
 .. |imageA2b_w| image:: media_QGIS/Toolbox_images/A2b_w.png
-   :width: 6.26806in
-   :height: 4.75764in
+   :width: 600
    
 .. |imageA2c| image:: media_QGIS/Toolbox_images/A2c.png
-   :width: 6.26806in
-   :height: 4.75764in 
+   :width: 1100
    
 .. |imageA2c_w| image:: media_QGIS/Toolbox_images/A2c_w.png
-   :width: 6.26806in
-   :height: 4.75764in 
+   :width: 800
    
 .. |imageA3| image:: media_QGIS/Toolbox_images/A3.png
-   :width: 6.26806in
-   :height: 4.75764in
+   :width: 1100
    
 .. |imageA3_w| image:: media_QGIS/Toolbox_images/A3_w.png
-   :width: 6.26806in
-   :height: 4.75764in 
+   :width: 800
    
 .. |imageB1| image:: media_QGIS/Toolbox_images/B1.png
-   :width: 6.26806in
-   :height: 4.75764in   
+   :width: 1100
+
 .. |imageB1_w| image:: media_QGIS/Toolbox_images/B1_w.png
-   :width: 6.26806in
-   :height: 4.75764in 
-   
+   :width: 600
+
 .. |imageB2| image:: media_QGIS/Toolbox_images/B2.png
-   :width: 6.26806in
-   :height: 4.75764in   
+   :width: 1100
+ 
 .. |imageB2_w| image:: media_QGIS/Toolbox_images/B2_w.png
-   :width: 6.26806in
-   :height: 4.75764in 
+   :width: 600
    
 .. |imageB3| image:: media_QGIS/Toolbox_images/B3.png
-   :width: 6.26806in
-   :height: 4.75764in   
+   :width: 1100
+  
 .. |imageB3_w| image:: media_QGIS/Toolbox_images/B3_w.png
-   :width: 6.26806in
-   :height: 4.75764in 
-   
+    :width: 600
+     
 .. |imageB4| image:: media_QGIS/Toolbox_images/B4.png
-   :width: 6.26806in
-   :height: 4.75764in   
+   :width: 1100
+ 
 .. |imageB4_w| image:: media_QGIS/Toolbox_images/B4_w.png
-   :width: 6.26806in
-   :height: 4.75764in 
+   :width: 600
 
 .. |imageB5| image:: media_QGIS/Toolbox_images/B5.png
-   :width: 6.26806in
-   :height: 4.75764in   
+    :width: 1100
+
 .. |imageB5_w| image:: media_QGIS/Toolbox_images/B5_w.png
-   :width: 6.26806in
-   :height: 4.75764in 
+   :width: 600
    
 .. |imageB6| image:: media_QGIS/Toolbox_images/B6.png
-   :width: 6.26806in
-   :height: 4.75764in   
+   :width: 1100
+   
 .. |imageB6_w| image:: media_QGIS/Toolbox_images/B6_w.png
-   :width: 6.26806in
-   :height: 4.75764in 
+   :width: 1100
+
    
 .. |imageB7| image:: media_QGIS/Toolbox_images/B7.png
-   :width: 6.26806in
-   :height: 4.75764in   
+   :width: 1100
+ 
 .. |imageB7_w| image:: media_QGIS/Toolbox_images/B7_w.png
-   :width: 6.26806in
-   :height: 4.75764in 
+   :width: 1100
+
    
 .. |imageC1| image:: media_QGIS/Toolbox_images/C1.png
-   :width: 6.26806in
-   :height: 4.75764in   
+   :width: 1100
+  
 .. |imageC1_w| image:: media_QGIS/Toolbox_images/C1_w.png
-   :width: 6.26806in
-   :height: 4.75764in 
+   :width: 600
+
    
 .. |imageD1| image:: media_QGIS/Toolbox_images/D1.png
-   :width: 6.26806in
-   :height: 4.75764in   
+   :width: 1100
+
 .. |imageD1_w| image:: media_QGIS/Toolbox_images/D1_w.png
-   :width: 6.26806in
-   :height: 4.75764in 
+   :width: 1100
+
 .. |imageD2| image:: media_QGIS/Toolbox_images/D2.png
-   :width: 6.26806in
-   :height: 4.75764in   
+   :width: 1100
+
 .. |imageD2_w| image:: media_QGIS/Toolbox_images/D2_w.png
-   :width: 6.26806in
-   :height: 4.75764in 
+   :width: 600
+
 .. |imageD3| image:: media_QGIS/Toolbox_images/D3.png
-   :width: 6.26806in
-   :height: 4.75764in   
+   :width: 1100
+ 
 .. |imageD3_w| image:: media_QGIS/Toolbox_images/D3_w.png
-   :width: 6.26806in
-   :height: 4.75764in 
+   :width: 1100
+
 .. |imageE1| image:: media_QGIS/Toolbox_images/E1.PNG
-   :width: 6.26806in
-   :height: 4.75764in   
+   :width: 1100
+ 
 .. |imageE1_w| image:: media_QGIS/Toolbox_images/E1_w.PNG
-   :width: 6.26806in
-   :height: 4.75764in 
+   :width: 1100
+
 .. |imageF1| image:: media_QGIS/Toolbox_images/F1.PNG
-   :width: 6.26806in
-   :height: 4.75764in   
+   :width: 1100
+
 .. |imageF1_w| image:: media_QGIS/Toolbox_images/F1w.png
-   :width: 6.26806in
-   :height: 4.75764in 
+   :width: 1100
+
 .. |imageF2| image:: media_QGIS/Toolbox_images/F2.PNG
-   :width: 6.26806in
-   :height: 4.75764in   
+   :width: 1100
+
 .. |imageF2_w| image:: media_QGIS/Toolbox_images/F2w.png
-   :width: 900
+   :width: 1100
 .. |imagesettings| image:: media_QGIS/settings.png
-   :width: 1400
+   :width: 900
 
 .. |imagerepository1| image:: media_QGIS/repository.png
-   :width: 1400
+   :width: 900
 
 .. |imagerepository2| image:: media_QGIS/repository2.png
-   :width: 500
+   :width: 600
 
 .. |imagerepository3| image:: media_QGIS/repository3.png
-   :width: 1400
-   
+   :width: 900
