@@ -800,7 +800,7 @@ section 5.1 should be used.
 
 -  In the processing toolbox search for **Clip**
 
-   |image57|
+   |image54|
 
 -  Double click on the **Clip raster by mask layer** under the GDAL
    toolset
