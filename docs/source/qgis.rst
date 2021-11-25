@@ -106,6 +106,7 @@ Once downloaded users need to navidate to the ****sources>>qgis>>QGIS_models fol
 
 |imagerepository2|
 
+
 The QGIS R-script ***rsa_v1.rsx*** for real surface Area will need to be placed in R scripts folder and the ***MGCI_v01beta*** folder placed in the Models folder.
 You can find the location in QGIS under **Settings>>Options**. The other style and template files can be stored in your own project working location.
 
@@ -119,7 +120,7 @@ We suggest users create a folder for working in the following strucure
 Define projection and generate an AOI
 -------------------------------------
 The first step is to define an Area of Interest (AOI) for the analysis. This should go beyond the country
-bundary as outlined in the **Definning analysis environments** section of the tutorial.
+bundary as outlined in the **Defining analysis environments** section of the tutorial.
 
 **The instructions below show and explain the manaul steps without the MGCI toolbox:**
 
@@ -330,8 +331,7 @@ raster or vector landuse landcover (LULC) dataset. Follow either section
 5.2.1 if your LULC dataset is a raster data or 5.2.2 if your LULC
 dataset is a vector.
 
-Steps when using a raster dataset 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 
 To demonstrate the steps for processing a raster LULC dataset we will
 use the Global ESA CCI LULC dataset. This dataset is provided in netcdf
@@ -514,6 +514,7 @@ The layer should now show all the National LULC classes for Costa Rica.
 | Before running the tool users need to check that they know the projection of their LUUC dataset and it is faling in the correct place geographically.                 |
 | as outlined in the section above.                                                                                                                                     |
 |                                                                                                                                                                       |
+
 | In the **custom MGCI toolbox** these step are run by the tool below.                                                                                                  |
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer.                                                                                                                 |
@@ -570,6 +571,7 @@ scale of the vector dataset. (see Box 2).
 |                                                                                                                                                                       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **BOX 2: continued**:                                                                                                                                     |
 |    :name: box-2-continued                                                                                                                                             |
@@ -580,6 +582,7 @@ scale of the vector dataset. (see Box 2).
 | Table X :  Resolutions recommended for Nominal scales vs pixel resolution (Source: reproduced from https://marinedataliteracy.org/basics/scales/scales.htm)           |
 |                                                                                                                                                                       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+  
+
 
 Once the resolution to convert the vector dataset to has been
 determined the vector dataset can be converted to Raster.
@@ -824,7 +827,7 @@ section 5.1 should be used.
 -  Set the output **Clipped (mask)** e.g. to
    DEM_copernicus_merge_AOI_LAEA.tif
    
-   |image96|
+   |image75|
   
 -  Click **Run** to run the tool
    
@@ -1940,7 +1943,6 @@ Export to standard reporting table
    :width: 900
 .. |image84| image:: media_QGIS/image83.png
    :width: 200
-
 .. |image85| image:: media_QGIS/image84.png
    :width: 900
 .. |image86| image:: media_QGIS/image85.png
@@ -2260,4 +2262,3 @@ Export to standard reporting table
 
 .. |imagerepository3| image:: media_QGIS/repository3.png
    :width: 900
-   
