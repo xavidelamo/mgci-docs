@@ -737,7 +737,8 @@ can see that the actual layer only has 6 values.
 Preparation of Mountain descriptor 
 ----------------------------------
 
-Users should have read section 2.3.4 Choice of DEM and selected a DEM
+Users should have read the ***Choice of DEM and data access*** section of
+***defining analysis environements*** and selected a DEM
 for use in the analysis before starting this section as the generation
 of the mountain descriptor layer requires a DEM as the input source.
 
@@ -749,7 +750,7 @@ Merging DEM tiles into a single DEM
 
 The DEM tiles covering the full extent of Costa Rica have been download
 from Copernicus using their AWS client. (Instructions for download of
-Copernicus data can be found in the Annexs).
+Copernicus data can be found in the Annexes).
 
 -  From the QGIS main toolbar click on **Layer>>Add Layer>>Add Raster
    Layer** to add the DEM tiles to your QGIS session.
