@@ -1574,6 +1574,10 @@ Aggregating mountain and RSA rasters to match resolution of vegetation descripto
 
 Now that we have 3 raster datasets in their native resolutions we need to bring the datasets together and ensure that correct aggregation is undertaken and that the all the layers align to the VegetationDescriptor layer.   In this example we have the Mountain Descriptor layer and the RealSurfaceArea Rasters at 90m resolution but a VegetationDescriptor layer at 300m resolution. There are various tools that can be used but we have opted for the GRASS tool r.resamp.stats as it allowed for various methods when resampling to a coarser grid.
 
+In the processing toolbox search for ***r.resamp.stats***
+
+|imageresamp|  
+
 We will first aggregate the Real Surface Area raster.
 
 -  Select the **RealSufaceArea_LAEA**  as the **Input Layer**
@@ -1585,8 +1589,12 @@ We will first aggregate the Real Surface Area raster.
 -  Click **Run** to run the tool 
 
    |image170|  
-   
+
 Next we will  aggregate the mountain descriptor layer.
+
+In the processing toolbox search for ***r.resamp.stats***
+
+|imageresamp|  
  
 -  Select the **MountainDescriptor_K1_6** layer  as the **Input Layer** e.g in this example MoutainDescriptor_K1_6_withoutK7.tif
 -  This time set the **aggregation method** to **mode** as we want to pick the value that represents the majority of smaller cell values in the coarser cell.
@@ -2329,3 +2337,5 @@ Export to standard reporting table
    :width: 900
 .. |imagersa2| image:: media_QGIS/rsa2.png
    :width: 900
+.. |imageresamp| image:: media_QGIS/resamp.png
+   :width: 400
