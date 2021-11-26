@@ -268,8 +268,8 @@ descriptor layer generation.
 -  In the processing toolbox search for the **minimum bounding geometry
    tool**
 
-   |image41|
-
+   |imagemin_bou|
+   
 -  Select your **projected** **country boundary** for the Input layer
 
 -  Choose Envelope (bounding Box) for the Geometry type
@@ -277,12 +277,16 @@ descriptor layer generation.
 -  Set a new output with the prefix **bounds\_** for the name e.g.
    **bounds\_CRI\_LAEA**
 
+   |image41|
+   
 -  Click **Run** to run the tool.
 
 This has generated the bounding box. The next step adds the 10km buffer.
 
 -  In the processing toolbox search for the **buffer tool**
 
+   |imagebuffer|
+   
 -  Set the buffer **Distance** to **10**
 
 -  Set the buffer **Units** to **Kilometres**
@@ -292,10 +296,12 @@ This has generated the bounding box. The next step adds the 10km buffer.
 
 -  Save the Buffered output to the same name as the input with the
    suffix **\_BUF10**
+   
+   |image42|
 
 -  Click **Run** to run the tool.
 
-   |image42|
+
 
 -  If you change the symbology to semi-transparent symbol and draw it over
    the original bounding box you should be able to see the additional
@@ -555,6 +561,8 @@ to an equal area projection.
 -  Set the **reprojected** output layer e.g. **LULC_vector_LAEA.shp**
    
    |image59|
+   
+-  Click **Run** to run the tool.
 
 The next step is to rasterize the LULC data. When converting it is
 important to choose an output resolution that is appropriate for the
@@ -593,7 +601,7 @@ determined the vector dataset can be converted to Raster.
 
 -  In the processing toolbox search for **Rasterize.**
 
-   |image54|
+   |imagerasterize|
 
 -  Double click on the GDAL **Rasterize (vector to raster)** tool
 
@@ -616,6 +624,8 @@ determined the vector dataset can be converted to Raster.
 
 -  Set the **rasterized** output layer e.g.
    **LULC\_LAEA\_fromvector.tif**
+   
+   |image61| 
 
 -  Click **Run** to run the tool
 
@@ -683,9 +693,9 @@ LULC types on the left and the IPCC reclass values on the right.
 
 -  Set the **Reclassified** output e.g. VegetationDescriptor\_LAEA.tif
 
--  Click **Run** to run the tool
-
    |image66|
+
+-  Click **Run** to run the tool
 
 The new **VegetationDescriptor** layer is added to the map.
 
@@ -707,7 +717,7 @@ can see that the actual layer only has 6 values.
    |image68|
    
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| .. rubric:: **MGCI Toolbox A2c. VegetationDescriptor: Generate Vegetation Descriptor Layer**:                                                                         |
+| .. rubric:: **MGCI Toolbox A3. VegetationDescriptor: Generate Vegetation Descriptor Layer**:                                                                         |
 |    :name: toolbox_A3                                                                                                                                                  |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
 |                                                                                                                                                                       |
@@ -727,7 +737,8 @@ can see that the actual layer only has 6 values.
 Preparation of Mountain descriptor 
 ----------------------------------
 
-Users should have read section 2.3.4 Choice of DEM and selected a DEM
+Users should have read the ***Choice of DEM and data access*** section of
+***defining analysis environements*** and selected a DEM
 for use in the analysis before starting this section as the generation
 of the mountain descriptor layer requires a DEM as the input source.
 
@@ -739,7 +750,7 @@ Merging DEM tiles into a single DEM
 
 The DEM tiles covering the full extent of Costa Rica have been download
 from Copernicus using their AWS client. (Instructions for download of
-Copernicus data can be found in the Annexs).
+Copernicus data can be found in the Annexes).
 
 -  From the QGIS main toolbar click on **Layer>>Add Layer>>Add Raster
    Layer** to add the DEM tiles to your QGIS session.
@@ -2286,3 +2297,9 @@ Export to standard reporting table
    :width: 900
 .. |imagescale_table| image:: media_QGIS/scale_table.png
    :width: 500
+.. |imagemin_bou| image:: media_QGIS/min_bou.png
+   :width: 400
+.. |imagebuffer| image:: media_QGIS/buffer.png
+   :width: 400
+.. |imagerasterize| image:: media_QGIS/rasterize.png
+   :width: 400
