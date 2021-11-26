@@ -301,8 +301,6 @@ This has generated the bounding box. The next step adds the 10km buffer.
 
 -  Click **Run** to run the tool.
 
-
-
 -  If you change the symbology to semi-transparent symbol and draw it over
    the original bounding box you should be able to see the additional
    buffered area.
@@ -720,6 +718,8 @@ can see that the actual layer only has 6 values.
 | .. rubric:: **MGCI Toolbox A3. VegetationDescriptor: Generate Vegetation Descriptor Layer**:                                                                         |
 |    :name: toolbox_A3                                                                                                                                                  |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
+| Before running the tool users need to check that they know the projection of their LUUC dataset and it is faling in the correct place geographically.                 |
+| as outlined in the section above.                                                                                                                                     |
 |                                                                                                                                                                       |
 | Before running the tool users need to check that they know the projection of their LUUC dataset and it is faling in the correct place geographically                  |
 | as outlined in the section above.                                                                                                                                     |
@@ -963,7 +963,6 @@ projection before following the next steps.
 - Set the output file resolution to the resolution of the DEM in meters e.g. 90m in this example
 - Set the Reprojected output to e.g. **DEM\_copernicus\_merge\_CRI\_AZ\_EQUI.tif**
 
-    
   |image79|
   
 - Click **Run** to run the tool

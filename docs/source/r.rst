@@ -137,14 +137,15 @@ The next step is to define a projection for the country boundary. In this exampl
 
 Costa Rica covers more than one UTM Zone so in this example we will define a custom Lambert Azimuthal Equal Area projection with the central meridian set to **-84** and the latitude of origin to **8.5**.
 
-Costa Rica does have a National Projection (see https://epsg.io/5367) which may be an alternative to the Lambert Azimuthal Equal Area.
+Costa Rica does have a National Projection (`see EPSG:5367 <https://epsg.io/5367>`_) which may be an alternative to the Lambert Azimuthal Equal Area.
 
 Replace the projection in the code below to that of your area of interest:
 
 
 .. code-block:: s
 
-   aoi_laea <- st_transform(aoi, crs=("+proj=laea +lat_0=8.5 +lon_0=-84 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs"))
+   crs_laea <-"+proj=laea +lat_0=8.5 +lon_0=-84 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs"
+   aoi_laea <- st_transform(aoi, crs=crs_laea)
 
 
 Now that the country boundary is in the chosen equal area projection, we can generate a buffer area of 10km around the country boundary/area of interest. A distance of 10km around the bounding box is added to ensure the AOI is large enough to accommodate the 7km focal range function used in the mountain descriptor layer generation.   
@@ -178,20 +179,24 @@ If the dataset is in netCDF (.nc) format, use the following code (ensure that li
    lulc <- raster("C:/this_is_the_path/to_my_LULC_file.nc", varname="lccs_class")
 
 
-First check that the LULC layer is correctly overlaying the country boundary data. If it does not, your country boundary and/or your LULC layer may be lacking projection information or have the wrong projection information. 
+First check that the LULC layer is correctly overlaying the country boundary data. If it does not, your LULC layer may be lacking projection information or have the wrong projection information. Check the layer’s projection information. 
 
 
 .. code-block:: s
 
+   #Check if LULC layer is correctly overlaying the country boundary 
    plot(lulc)
    plot(aoi_laea, add=T, col=NA)
+   
+   #Check projection of LULC layer
+   lulc
 
 Project to equal area projection depending on your study area.
 
 
 .. code-block:: s
 
-   lulc <- projectRaster(lulc, crs="+proj=laea +lat_0=8.5 +lon_0=-84 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs", method = "ngb");
+   lulc <- projectRaster(lulc, crs=crs_laea, method = "ngb");
 
 If LULC raster is a global/regional dataset, it needs to be clipped to the area of interest (skip this step for national datasets)
 
@@ -210,7 +215,7 @@ First, input the LULC dataset in vector format. When using a vector LULC dataset
 .. code-block:: s
 
    lulc_vect <- st_read("C:/this_is_the_path/to_my_LULC_layer.shp")
-   lulc_vect <- st_transform(lulc, CRS=CRS("+proj=laea +lat_0=8.5 +lon_0=-84 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs"))
+   lulc_vect <- st_transform(lulc, crs=crs_laea))
 
 The next step is to rasterize the LULC data. When converting it is important to choose an output resolution that is appropriate for the scale of the vector dataset (**see section Defining analysis environments and data selection** for more detail). Once the resolution to convert the vector dataset to has been determined the vector dataset can be converted to Raster. First, create a template raster with the required resolution (needs to be determined), extent and projection (same as input layer) and then convert the vector to raster format with resolution, extent and projection same as that of the template raster.
 
@@ -283,7 +288,7 @@ Clip the DEM to area of interest after projecting to equal area projection
 
 .. code-block:: s
 
-   DEM_laea <- projectRaster(DEM,crs="+proj=laea +lat_0=8.5 +lon_0=-84 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs", method = "bilinear")
+   DEM_laea <- projectRaster(DEM,crs=crs_laea, method = "bilinear")
    DEM_aoi_laea <- crop(DEM_laea,aoi_buffer)
 
 Generating slope layer from DEM layer
@@ -303,13 +308,15 @@ otherwise please generate a custom equidistant azimuthal projection by changing 
 
 .. code-block:: s
 
-   #Project to Azimuthal equal area projection
+   #Project to Azimuthal equidistant projection
    DEM_aeqd <- projectRaster(DEM, crs="+proj=aeqd +lat_0=8.5 +lon_0=-84 +datum=WGS84 +units=m", method = "bilinear")
+   
    #Compute slope
    slope <- terrain(DEM_aeqd, opt='slope', unit='degrees')
+   
    #Project to Lambert equal area projection, crop to the study area and resample
    slope_aoi <- slope %>% 
-   projectRaster(crs="+proj=laea +lat_0=8.5 +lon_0=-84 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs", method = "bilinear") %>%
+   projectRaster(crs=crs_laea, method = "bilinear") %>%
    crop(aoi_buffer) %>%
    resample(DEM_aoi_laea,method="bilinear")
 
@@ -421,75 +428,58 @@ The final layer that needs generating is the Real Surface Area raster from the D
    #insert the value of your DEM raster cell size in the same unit as the elevation data
    c.size <- res(DEM_aoi_laea);
 
-**Step 1: prepare your DEM raster for the calculation**
-
-Part a uses function ‘trim’ to exclude all boundaries cells with no value (NA) from DEM raster. Part b removes one row and one column from the top, bottom, left, and right from the original raster (cropping the raster to the boundaries of the area of interest).
-
-.. code-block:: s
-
-   #1.a - exclude all boundaries cells with no value from DEM raster
-   DEM_aoi_laea <- trim(DEM_aoi_laea, padding=0, values=NA)
-   #1.b - remove one row and one column from the top, bottom, left, and right
-   a <- nrow(DEM_aoi_laea)-1
-   b <- ncol(DEM_aoi_laea)-1
-   DEM_aoi_laea.cropped <- DEM_aoi_laea [2:a, 2:b, drop=FALSE];
-
-**Step 2: Convert DEM raster to matrix**
+**Convert DEM raster to matrix**
 
 This step uses the function ‘as.matrix’ to convert the DEM raster into a matrix with the same number of columns and rows of your DEM raster. There are instructions within the R script to check if that is true.
 
 .. code-block:: s
 
-   #step 2 - convert the trimmed DEM raster to matrix
+   Convert the trimmed DEM raster to matrix
    m <- as.matrix(DEM_aoi_laea)
-   #this matrix should have the same number of columns and rows of your DEM raster
-   #you can check if that is correct by typing on the console 
+   
+   ##This matrix should have the same number of columns and rows of your DEM raster
+   ##you can check if that is correct by typing on the console (you should get the answer TRUE for both queries)
    #ncol(DEM_aoi_laea)== ncol(m)
    #nrow(DEM_aoi_laea)==nrow(m)
-   #you should get the answer TRUE for both queries;
 
-**Step 3: Get coordinate information from DEM raster and assigns it to new object called m1**
+**Get coordinate information from DEM raster and assign it to new object called m1**
 
-This step uses the function ‘rasterToPoints’ to create a numeric object of type double from the cropped raster. The resulting object has 3 columns: x, y and layer. Columns ‘x’ and ‘y’ have the coordinates of each cell. Column ‘layer’ has the elevation value of each cell.
+This step uses the function ‘rasterToPoints’ to create a numeric object of type double from the raster. The resulting object has 3 columns: x, y and layer. Columns ‘x’ and ‘y’ have the coordinates of each cell. Column ‘layer’ has the elevation value of each cell.
 
 It uses function ‘as.vector’ assigned to each of one of the two coordinates columns to create numeric lists with the coordinates of the cells.
 
 .. code-block:: s
 
-   #step 3 - separate coordinate information from cropped raster and assign to a new object called m1
-   m1 <- rasterToPoints(DEM_aoi_laea.cropped) # this will create an object with three columns: x, y , layer
-   # columns x and y have the coordinates of each cell and column layer has the elevation value of each cell
-   col.X <- as.vector(m1[,1]) # just the coordinates values from X column 
-   col.Y <- as.vector(m1[,2]) # just the coordinates values from Y column
-   
-**Step 4: Calculate the real surface area of each grid cell within the DEM**
+   #Separate coordinate information from the raster and assign to a new object called m1
+   m1 <- rasterToPoints(DEM_aoi_laea) #this will create an object with three columns: x, y , layer
+   #Columns x and y have the coordinates of each cell and column layer has the elevation value of each cell
+   col.X <- as.vector(m1[,1]) #just the coordinates values from X column 
+   col.Y <- as.vector(m1[,2]) #just the coordinates values from Y column
+  
+**Calculate the real surface area of each grid cell within the DEM**
 
-This step uses the ‘surfaceArea’ function from package ‘sp’. Information about this function can be found on page 105 of the package ‘sp’ documentation (https://cran.r-project.org/web/packages/sp/sp.pdf) and on GitHub (`*https://github.com/cran/sp/blob/master/src/surfaceArea.c* <https://github.com/cran/sp/blob/master/src/surfaceArea.c>`__).
+This step uses the ‘surfaceArea’ function from package ‘sp’. Information about this function can be found on page 105 of the package ‘sp’ `documentation <https://cran.r-project.org/web/packages/sp/sp.pdf>`_ and  `on GitHub <https://github.com/cran/sp/blob/master/src/surfaceArea.c>`__.
 This function will calculate the real surface area of each grid cell of the DEM, based on the matrix ‘m’ created on step 1 and the cell size inserted on ‘SECTION A.4’. The resulting object ‘rsa’ is a matrix with the same number of columns and rows as the matrix ‘m’ and, hence, of the DEM, but with the estimated values of the real surface area for all cells within the DEM.
-
-It crops the resulting matrix ‘rsa’ to create a matrix with just the columns and rows of the area of interest.
 
 .. code-block:: s
 
-   #step 4 - calculate the real surface area of each grid cell  
+   #Calculate the real surface area of each grid cell  
    #uses function surfaceArea of package sp
-   #needs object 'm' created on step 2 and the cell size 'c.size'
    rsa <- surfaceArea(m, cellx = c.size, celly = c.size, byCell = TRUE) 
-   rsa.cropped <- rsa [2:a, 2:b, drop=FALSE]
 
-**Step 5: Combine matrix with real surface area values and object with coordinate information**
+**Combine matrix with real surface area values and object with coordinate information**
 
 This step uses the function ‘as.vector’ assigned to the transposed matrix ‘rsa’.
 It uses the function ‘data.frame’ to create a new table ‘m3’ with three columns: two for coordinates ‘col.X’ and ‘col.Y’, and one with the real surface area values ‘m2’.
 
 .. code-block:: s
 
-  #step 5 - combine matrix with real surface area and object with XY columns
-  m2 <- as.vector(t(rsa.cropped))
+  #Combine matrix with real surface area and object with XY columns
+  m2 <- as.vector(t(rsa))
   m2_na <- na.omit(m2)
   m3 <- data.frame(col.X, col.Y, m2_na)
 
-**Step 6: Convert matrix back to a raster with the original projection**
+**Convert matrix back to a raster with the original projection**
 
 This step renames the columns of the new table ‘m3’ to ‘x’, ‘y’, and ‘real\_surface\_area’
 It uses the function ‘rasterFromXYZ’ to convert the table ‘m3’ to a raster.
@@ -497,10 +487,10 @@ It adopts the projection of the original DEM raster ‘DEM_aoi_laea’ on the ne
 
 .. code-block:: s
 
-   #step 6 - convert matrix back to raster
-   names(m3) <- c("x", "y", "real_surface_area") #rename columns to match raster needs
-   rsa_raster <- rasterFromXYZ(m3) #convert data.frame to raster
-   crs(rsa_raster) <- crs(DEM_aoi_laea) # adopt projection from original raster
+   ##Convert matrix back to raster
+   names(m3) <- c("x", "y", "real_surface_area") ##rename columns to match raster needs
+   rsa_raster <- rasterFromXYZ(m3) ##convert data.frame to raster
+   crs(rsa_raster) <- crs(DEM_aoi_laea) ##adopt projection from original raster
 
 Mountain Green Cover Index Calculation
 --------------------------------------
@@ -518,9 +508,9 @@ Similarly, if the resolution of DEM is coarser than that of the Vegetation layer
 
 .. code-block:: s
 
-   if(res(DEM_aoi_laea)!=res(lulc_ipcc))
+   if(xres(DEM_aoi_laea)!=xres(lulc_ipcc))
    {
-   if(res(DEM_aoi_laea)<res(lulc_ipcc))      #DEM is finer than Vegetation layer
+   if(xres(DEM_aoi_laea)<xres(lulc_ipcc))      #DEM is finer than Vegetation layer
    {
      rsa_resampled <- rsa_raster %>%  #aggregate rsa using sum function
       aggregate(fact=(as.integer(xres(lulc_ipcc)/xres(DEM_aoi_laea))),fun=sum)
