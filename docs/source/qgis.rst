@@ -823,7 +823,7 @@ section 5.1 should be used.
 
 -  In the processing toolbox search for **Clip**
 
-   |image54|
+   |image49|
 
 -  Double click on the **Clip raster by mask layer** under the GDAL
    toolset
@@ -952,7 +952,7 @@ projection before following the next steps.
 
 -  Next, In the **processing toolbox** search for **reproject** 
 
-   image54|                                                                                                                                                                  
+   |image54|                                                                                                                                                                  
     
 - Double click on the **Warp (reproject)** tool under the **GDAL toolset** 
 - Set the Input layer to be the **merged DEM in geographic coordinate system**
@@ -962,9 +962,11 @@ projection before following the next steps.
 - Set the resampling method to Nearest Neighbour
 - Set the output file resolution to the resolution of the DEM in meters e.g. 90m in this example
 - Set the Reprojected output to e.g. **DEM\_copernicus\_merge\_CRI\_AZ\_EQUI.tif**
-- Click Run to run the tool
+
     
   |image79|
+  
+- Click **Run** to run the tool
  
 The reprojected layer is added to the QGIS project. 
  
@@ -1009,10 +1011,12 @@ Slope can now be generated from this layer
 
 -  Set the **Slope** output to e.g.
    **DEM\_copernicus\_merge\_SLOPE\_CRI\_AZ\_EQUI.tif**
+   
+   |image82|
 
 -  Click **Run** to run the tool
    
-   |image82|
+
 
 The slope raster can now be projected to the main analysis equal area
 projection and be clipped to the AOI.
@@ -1048,10 +1052,12 @@ projection and be clipped to the AOI.
 
 -  Set the output **Clipped (mask)** e.g. to
    **DEM\_copernicus\_merge\_AOI\_LAEA\_SLOPE.tif**
+   
+   |imageslopemask|
 
 -  Click **Run** to run the tool
    
-   |image96|
+   
 
 The new **clipped** **SLOPE dataset in the equal area projection** is now added should be added to the map canvas\ **.**
 
@@ -1092,6 +1098,8 @@ This is because the neighborhood size in pixels in this tool represents diameter
 
 -  In the processing toolbox search for **r.neighbor**.
 
+   |imageneighbors|
+
 -  Double click on the **r.neighbor** tool under the GRASS toolset
 
 -  Select the **Input Raster Layer to** the Projected DEM clipped to the
@@ -1099,7 +1107,7 @@ This is because the neighborhood size in pixels in this tool represents diameter
 
 -  Set the **neighborhood operation** to **Range**
 
--  Set the **neighborhood size to** 153 (e.g. in this example determined by:
+-  Set the **neighborhood size to** 155 (e.g. in this example determined by:
    7000/90*2))
 
 -  Set the **GRASS GIS 7 region extent** to the **same as the Input
@@ -1513,7 +1521,17 @@ Generation of Real Surface Area raster
 
 The final layer that needs generating is the Real Surface
 Area raster from the DEM. The tools should have all been tested to check
-your R integration is working in Section 2.1.
+your R integration is working in the initial setup.
+
+Refer to the workflow diagram in the overview section for an explaination of the process to calculate the 
+real surface area from a DEM. In addition the images below help to explain what is happening for a single DEM pixel (focal cell)
+using calculations based on it's surrounding elevation value.
+
+|imagersa1|
+
+|imagersa2|
+
+
 
 -  In the processing toolbox expand the R-tools
 
@@ -1556,6 +1574,10 @@ Aggregating mountain and RSA rasters to match resolution of vegetation descripto
 
 Now that we have 3 raster datasets in their native resolutions we need to bring the datasets together and ensure that correct aggregation is undertaken and that the all the layers align to the VegetationDescriptor layer.   In this example we have the Mountain Descriptor layer and the RealSurfaceArea Rasters at 90m resolution but a VegetationDescriptor layer at 300m resolution. There are various tools that can be used but we have opted for the GRASS tool r.resamp.stats as it allowed for various methods when resampling to a coarser grid.
 
+In the processing toolbox search for ***r.resamp.stats***
+
+|imageresamp|  
+
 We will first aggregate the Real Surface Area raster.
 
 -  Select the **RealSufaceArea_LAEA**  as the **Input Layer**
@@ -1567,8 +1589,12 @@ We will first aggregate the Real Surface Area raster.
 -  Click **Run** to run the tool 
 
    |image170|  
-   
+
 Next we will  aggregate the mountain descriptor layer.
+
+In the processing toolbox search for ***r.resamp.stats***
+
+|imageresamp|  
  
 -  Select the **MountainDescriptor_K1_6** layer  as the **Input Layer** e.g in this example MoutainDescriptor_K1_6_withoutK7.tif
 -  This time set the **aggregation method** to **mode** as we want to pick the value that represents the majority of smaller cell values in the coarser cell.
@@ -2302,4 +2328,14 @@ Export to standard reporting table
 .. |imagebuffer| image:: media_QGIS/buffer.png
    :width: 400
 .. |imagerasterize| image:: media_QGIS/rasterize.png
+   :width: 400
+.. |imageslopemask| image:: media_QGIS/slopemask.png
+   :width: 900
+.. |imageneighbors| image:: media_QGIS/neighbors.png
+   :width: 400
+.. |imagersa1| image:: media_QGIS/rsa1.png
+   :width: 900
+.. |imagersa2| image:: media_QGIS/rsa2.png
+   :width: 900
+.. |imageresamp| image:: media_QGIS/resamp.png
    :width: 400
