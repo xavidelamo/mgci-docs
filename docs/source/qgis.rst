@@ -624,6 +624,8 @@ determined the vector dataset can be converted to Raster.
 
 -  Set the **rasterized** output layer e.g.
    **LULC\_LAEA\_fromvector.tif**
+   
+   |image61| 
 
 -  Click **Run** to run the tool
 
