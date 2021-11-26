@@ -268,8 +268,8 @@ descriptor layer generation.
 -  In the processing toolbox search for the **minimum bounding geometry
    tool**
 
-   |image41|
-
+   |imagemin_bou|
+   
 -  Select your **projected** **country boundary** for the Input layer
 
 -  Choose Envelope (bounding Box) for the Geometry type
@@ -277,12 +277,16 @@ descriptor layer generation.
 -  Set a new output with the prefix **bounds\_** for the name e.g.
    **bounds\_CRI\_LAEA**
 
+   |image41|
+   
 -  Click **Run** to run the tool.
 
 This has generated the bounding box. The next step adds the 10km buffer.
 
 -  In the processing toolbox search for the **buffer tool**
 
+   |imagebuffer|
+   
 -  Set the buffer **Distance** to **10**
 
 -  Set the buffer **Units** to **Kilometres**
@@ -292,10 +296,10 @@ This has generated the bounding box. The next step adds the 10km buffer.
 
 -  Save the Buffered output to the same name as the input with the
    suffix **\_BUF10**
+   
+   |image42|
 
 -  Click **Run** to run the tool.
-
-   |image42|
 
 -  If you change the symbology to semi-transparent symbol and draw it over
    the original bounding box you should be able to see the additional
@@ -308,13 +312,16 @@ country. This will be used as the Area of Interest (AOI) when preparing
 the various layers for the MGCI analysis.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| .. rubric:: **MGCI Toolbox A. Generic: 1. Define projection and generate an AOI**:                                                                                    |
+| .. rubric:: **MGCI Toolbox A1. Generic: Define projection and generate an AOI**:                                                                                      |
 |    :name: toolbox_A1                                                                                                                                                  |
+|                                                                                                                                                                       |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
+|                                                                                                                                                                       |
 | Before running the tool users do need to create custom projection in their QGIS project                                                                               |
 | as indicated in Box 1 outlined in the section above.                                                                                                                  |
 |                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below.                                                                                                  |
+|                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
 |                                                                                                                                                                       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -334,6 +341,8 @@ dataset is a vector.
 Steps when using a raster dataset 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Clip and project LULC raster (FOR REGIONAL/GLOBAL DATASETS ONLY)
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 To demonstrate the steps for processing a raster LULC dataset we will
 use the Global ESA CCI LULC dataset. This dataset is provided in netcdf
 (.nc) format. Similarly to Geotiffs, these can be added directly to
@@ -396,9 +405,6 @@ appears in the correct place in the QGIS project.
    area projection. For National datasets already clipped to the country
    boundary follow **step (b) only.**
 
-Clip and project LULC raster (FOR REGIONAL/GLOBAL DATASETS ONLY)
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
 -  In the processing toolbox search for **Clip**
 
 -  Double click on the **Clip raster by mask layer** under the GDAL
@@ -452,9 +458,12 @@ the country.
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **MGCI Toolbox A2a. VegetationDescriptor: Clip and project LULC raster (FOR REGIONAL/GLOBAL DATASETS)**:                                                  |
 |    :name: toolbox_A2a                                                                                                                                                 |
+|                                                                                                                                                                       |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
-| Before running the tool users need to check that they know the projection of their LUUC dataset and it is faling in the correct place geographically.                 |
-| as outlined in the section above.                                                                                                                                     |
+|                                                                                                                                                                       |
+| Before running the tool users need to check that they know the projection of their LUUC dataset                                                                       |
+|                                                                                                                                                                       |
+| and it is faling in the correct place geographically, as outlined in the section above.                                                                               |
 |                                                                                                                                                                       |
 |                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below.                                                                                                  |
@@ -467,8 +476,8 @@ the country.
 
 |imageA2a_w|   
 
-Project LULC raster (FOR NATIONAL DATASETS ONLY):
-:::::::::::::::::::::::::::::::::::::::::::::::::
+Project LULC raster (FOR NATIONAL RASTER DATASETS ONLY):
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 -  search for **project** in the processing toolbox.
 
@@ -511,11 +520,14 @@ The layer should now show all the National LULC classes for Costa Rica.
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **MGCI Toolbox A2b. VegetationDescriptor: Project LULC raster (FOR NATIONAL RASTER DATASETS)**:                                                           |
 |    :name: toolbox_A2b                                                                                                                                                 |
-| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
-| Before running the tool users need to check that they know the projection of their LUUC dataset and it is faling in the correct place geographically.                 |
-| as outlined in the section above.                                                                                                                                     |
 |                                                                                                                                                                       |
-
+| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
+|                                                                                                                                                                       |
+| Before running the tool users need to check that they know the projection of their LUUC dataset                                                                       |
+|                                                                                                                                                                       |
+| and it is faling in the correct place geographically as outlined in the section above.                                                                                |
+|                                                                                                                                                                       |
+|                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below.                                                                                                  |
 |                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer.                                                                                                                 |
@@ -526,8 +538,11 @@ The layer should now show all the National LULC classes for Costa Rica.
 
 |imageA2b_w|
 
-Project Vector LULC and convert to raster (FOR NATIONAL DATASETS ONLY):
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Steps when using a vector dataset 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Project Vector LULC and convert to raster (FOR NATIONAL VECTOR DATASETS ONLY):
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 When using a vector LULC dataset the data will also need to be projected
 to an equal area projection.
@@ -544,6 +559,8 @@ to an equal area projection.
 -  Set the **reprojected** output layer e.g. **LULC_vector_LAEA.shp**
    
    |image59|
+   
+-  Click **Run** to run the tool.
 
 The next step is to rasterize the LULC data. When converting it is
 important to choose an output resolution that is appropriate for the
@@ -556,33 +573,25 @@ scale of the vector dataset. (see Box 2).
 | -  The scale of a vector dataset is usually expressed in a similar way to paper maps, i.e. in a ratio to show the amount of reduction from the real world             |
 |    e.g.  1:50,000. A country’s vector LULC map will have been created a particular scale. determined by the Minimum Mapping Unit. i.e. the size of the smallest       |
 |    feature. A nominal scale is will have been assigned to the dataset to reflect the scale at which the data were collected and mapped. Conversion to raster requires |
-|    this scale to be converted to a resolution, i.e. an appropriate pixel size for the scale of the data. Table X provides some general guidance / suggestions for     |
-|    such conversion.                                                                                                                                                   |
+|    this scale to be converted to a resolution, i.e. an appropriate pixel size for the scale of the data.                                                              |
 |                                                                                                                                                                       |
 |    To calculate map scale there are two parameters:  ground resolution and screen resolution.                                                                         |
 |                                                                                                                                                                       |
 |    .. math:: scale = 1: (resolution * PPI / 0.0254)  or    resolution = scale * 0.0254/PPI                                                                            |
+|                                                                                                                                                                       |
 |    **Where**   :                                                                                                                                                      |
 |    **resolution** =  ground resolution (the size in (m) that a pixel represents.                                                                                      |
 |    **PPI** =  the screen resolution (pixels number that every inch contains on the screen (default 96dpi).                                                            |
 |    **0.0254** = (m/inch),  the unit conversion between meter and inches.                                                                                              |
 |    **scale** = nominal scale of vector dataset                                                                                                                        |
 |                                                                                                                                                                       |
+|    some examples are provided in the table below:                                                                                                                     |
+|                                                                                                                                                                       |
+|    |imagescale_table|                                                                                                                                                 |
+|                                                                                                                                                                       |
 |    (source: https://enonline.supermap.com/iExpress9D/Appendix/scale.htm)                                                                                              |
 |                                                                                                                                                                       |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| .. rubric:: **BOX 2: continued**:                                                                                                                                     |
-|    :name: box-2-continued                                                                                                                                             |
-|                                                                                                                                                                       |
-| ...                                                                                                                                                                   |
-|    |image83|                                                                                                                                                          |
-|                                                                                                                                                                       |
-| Table X :  Resolutions recommended for Nominal scales vs pixel resolution (Source: reproduced from https://marinedataliteracy.org/basics/scales/scales.htm)           |
-|                                                                                                                                                                       |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+  
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+ 
 
 
 Once the resolution to convert the vector dataset to has been
@@ -590,7 +599,7 @@ determined the vector dataset can be converted to Raster.
 
 -  In the processing toolbox search for **Rasterize.**
 
-   |image54|
+   |imagerasterize|
 
 -  Double click on the GDAL **Rasterize (vector to raster)** tool
 
@@ -613,6 +622,8 @@ determined the vector dataset can be converted to Raster.
 
 -  Set the **rasterized** output layer e.g.
    **LULC\_LAEA\_fromvector.tif**
+   
+   |image61| 
 
 -  Click **Run** to run the tool
 
@@ -636,7 +647,8 @@ The layer should now show all the National LULC classes for Costa Rica.
 | .. rubric:: **MGCI Toolbox A2c. VegetationDescriptor: Project vector LULC and convert to raster (FOR NATIONAL RASTER DATASETS)**:                                     |
 |    :name: toolbox_A2c                                                                                                                                                 |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
-| Before running the tool users need to check that they know the projection of their LUUC dataset and it is faling in the correct place geographically.                 |
+|                                                                                                                                                                       |
+| Before running the tool users need to check that they know the projection of their LUUC dataset and it is faling in the correct place geographically                  |
 | as outlined in the section above.                                                                                                                                     |
 |                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below.                                                                                                  |
@@ -679,9 +691,9 @@ LULC types on the left and the IPCC reclass values on the right.
 
 -  Set the **Reclassified** output e.g. VegetationDescriptor\_LAEA.tif
 
--  Click **Run** to run the tool
-
    |image66|
+
+-  Click **Run** to run the tool
 
 The new **VegetationDescriptor** layer is added to the map.
 
@@ -703,10 +715,13 @@ can see that the actual layer only has 6 values.
    |image68|
    
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| .. rubric:: **MGCI Toolbox A2c. VegetationDescriptor: Generate Vegetation Descriptor Layer**:                                                                         |
+| .. rubric:: **MGCI Toolbox A3. VegetationDescriptor: Generate Vegetation Descriptor Layer**:                                                                         |
 |    :name: toolbox_A3                                                                                                                                                  |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
 | Before running the tool users need to check that they know the projection of their LUUC dataset and it is faling in the correct place geographically.                 |
+| as outlined in the section above.                                                                                                                                     |
+|                                                                                                                                                                       |
+| Before running the tool users need to check that they know the projection of their LUUC dataset and it is faling in the correct place geographically                  |
 | as outlined in the section above.                                                                                                                                     |
 |                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below.                                                                                                  |
@@ -722,7 +737,8 @@ can see that the actual layer only has 6 values.
 Preparation of Mountain descriptor 
 ----------------------------------
 
-Users should have read section 2.3.4 Choice of DEM and selected a DEM
+Users should have read the ***Choice of DEM and data access*** section of
+***defining analysis environements*** and selected a DEM
 for use in the analysis before starting this section as the generation
 of the mountain descriptor layer requires a DEM as the input source.
 
@@ -734,7 +750,7 @@ Merging DEM tiles into a single DEM
 
 The DEM tiles covering the full extent of Costa Rica have been download
 from Copernicus using their AWS client. (Instructions for download of
-Copernicus data can be found in the Annexs).
+Copernicus data can be found in the Annexes).
 
 -  From the QGIS main toolbar click on **Layer>>Add Layer>>Add Raster
    Layer** to add the DEM tiles to your QGIS session.
@@ -777,8 +793,11 @@ The merged DEM is added to the QGIS project.
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **MGCI Toolbox B1. MountainDescriptor: Merging DEM tiles into a single DEM**:                                                                             |
 |    :name: toolbox_B1                                                                                                                                                  |
+|                                                                                                                                                                       |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
-| Before running the tool users need to check that they know the projection of their DEM dataset and it is faling in the correct place geographically.                  |
+|                                                                                                                                                                       |
+| Before running the tool users need to check that they know the projection of their DEM dataset and it is faling in the correct place geographically                   |
+|                                                                                                                                                                       |
 | as outlined in the section above.                                                                                                                                     |
 |                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below.                                                                                                  |
@@ -804,7 +823,7 @@ section 5.1 should be used.
 
 -  In the processing toolbox search for **Clip**
 
-   |image54|
+   |image49|
 
 -  Double click on the **Clip raster by mask layer** under the GDAL
    toolset
@@ -842,6 +861,7 @@ should be added to the map canvas\ **.**
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **MGCI Toolbox B2. MountainDescriptor: Clip and project merged DEM to EQUAL AREA PROJECTION**:                                                            |
 |    :name: toolbox_B2                                                                                                                                                  |
+|                                                                                                                                                                       |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
 |                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
@@ -932,7 +952,7 @@ projection before following the next steps.
 
 -  Next, In the **processing toolbox** search for **reproject** 
 
-   image54|                                                                                                                                                                  
+   |image54|                                                                                                                                                                  
     
 - Double click on the **Warp (reproject)** tool under the **GDAL toolset** 
 - Set the Input layer to be the **merged DEM in geographic coordinate system**
@@ -942,15 +962,17 @@ projection before following the next steps.
 - Set the resampling method to Nearest Neighbour
 - Set the output file resolution to the resolution of the DEM in meters e.g. 90m in this example
 - Set the Reprojected output to e.g. **DEM\_copernicus\_merge\_CRI\_AZ\_EQUI.tif**
-- Click Run to run the tool
-    
+
   |image79|
+  
+- Click **Run** to run the tool
  
 The reprojected layer is added to the QGIS project. 
  
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **MGCI Toolbox B3. MountainDescriptor: Project merged DEM to Equidistant projection**:                                                                    |
 |    :name: toolbox_B3                                                                                                                                                  |
+|                                                                                                                                                                       |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
 |                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
@@ -988,10 +1010,12 @@ Slope can now be generated from this layer
 
 -  Set the **Slope** output to e.g.
    **DEM\_copernicus\_merge\_SLOPE\_CRI\_AZ\_EQUI.tif**
+   
+   |image82|
 
 -  Click **Run** to run the tool
    
-   |image82|
+
 
 The slope raster can now be projected to the main analysis equal area
 projection and be clipped to the AOI.
@@ -1027,16 +1051,19 @@ projection and be clipped to the AOI.
 
 -  Set the output **Clipped (mask)** e.g. to
    **DEM\_copernicus\_merge\_AOI\_LAEA\_SLOPE.tif**
+   
+   |imageslopemask|
 
 -  Click **Run** to run the tool
    
-   |image96|
+   
 
 The new **clipped** **SLOPE dataset in the equal area projection** is now added should be added to the map canvas\ **.**
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **MGCI Toolbox B4. MountainDescriptor: Generating slope from DEM in Equidistant projection and re-projecting to equal area**:                             |
 |    :name: toolbox_B4                                                                                                                                                  |
+|                                                                                                                                                                       |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
 |                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
@@ -1070,6 +1097,8 @@ This is because the neighborhood size in pixels in this tool represents diameter
 
 -  In the processing toolbox search for **r.neighbor**.
 
+   |imageneighbors|
+
 -  Double click on the **r.neighbor** tool under the GRASS toolset
 
 -  Select the **Input Raster Layer to** the Projected DEM clipped to the
@@ -1077,7 +1106,7 @@ This is because the neighborhood size in pixels in this tool represents diameter
 
 -  Set the **neighborhood operation** to **Range**
 
--  Set the **neighborhood size to** 153 (e.g. in this example determined by:
+-  Set the **neighborhood size to** 155 (e.g. in this example determined by:
    7000/90*2))
 
 -  Set the **GRASS GIS 7 region extent** to the **same as the Input
@@ -1101,6 +1130,7 @@ added to the map canvas\ **.**
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **MGCI Toolbox B5. MountainDescriptor: Generate local elevation range from DEM**:                                                                         |
 |    :name: toolbox_B5                                                                                                                                                  |
+|                                                                                                                                                                       |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
 |                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
@@ -1170,6 +1200,7 @@ AND"LocalElevationRange7km\_AOI\_LAEA@1" > 300
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **MGCI Toolbox B6. MountainDescriptor: Generating layers for each Kapos mountain class**:                                                                 |
 |    :name: toolbox_B6                                                                                                                                                  |
+|                                                                                                                                                                       |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
 |                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
@@ -1214,6 +1245,7 @@ At the bottom of the layer properties dialogue window click the
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **MGCI Toolbox B7. MountainDescriptor: Generate Mountain Descriptor layer (EXCLUDING isolated pixels from class 7)**:                                     |
 |    :name: toolbox_B7                                                                                                                                                  |
+|                                                                                                                                                                       |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
 |                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
@@ -1488,7 +1520,17 @@ Generation of Real Surface Area raster
 
 The final layer that needs generating is the Real Surface
 Area raster from the DEM. The tools should have all been tested to check
-your R integration is working in Section 2.1.
+your R integration is working in the initial setup.
+
+Refer to the workflow diagram in the overview section for an explaination of the process to calculate the 
+real surface area from a DEM. In addition the images below help to explain what is happening for a single DEM pixel (focal cell)
+using calculations based on it's surrounding elevation value.
+
+|imagersa1|
+
+|imagersa2|
+
+
 
 -  In the processing toolbox expand the R-tools
 
@@ -1511,6 +1553,7 @@ your R integration is working in Section 2.1.
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **MGCI Toolbox C1. Generate Real Surface Area raster from DEM**:                                                                                          |
 |    :name: toolbox_C1                                                                                                                                                  |
+|                                                                                                                                                                       |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
 |                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
@@ -1530,6 +1573,10 @@ Aggregating mountain and RSA rasters to match resolution of vegetation descripto
 
 Now that we have 3 raster datasets in their native resolutions we need to bring the datasets together and ensure that correct aggregation is undertaken and that the all the layers align to the VegetationDescriptor layer.   In this example we have the Mountain Descriptor layer and the RealSurfaceArea Rasters at 90m resolution but a VegetationDescriptor layer at 300m resolution. There are various tools that can be used but we have opted for the GRASS tool r.resamp.stats as it allowed for various methods when resampling to a coarser grid.
 
+In the processing toolbox search for ***r.resamp.stats***
+
+|imageresamp|  
+
 We will first aggregate the Real Surface Area raster.
 
 -  Select the **RealSufaceArea_LAEA**  as the **Input Layer**
@@ -1541,8 +1588,12 @@ We will first aggregate the Real Surface Area raster.
 -  Click **Run** to run the tool 
 
    |image170|  
-   
+
 Next we will  aggregate the mountain descriptor layer.
+
+In the processing toolbox search for ***r.resamp.stats***
+
+|imageresamp|  
  
 -  Select the **MountainDescriptor_K1_6** layer  as the **Input Layer** e.g in this example MoutainDescriptor_K1_6_withoutK7.tif
 -  This time set the **aggregation method** to **mode** as we want to pick the value that represents the majority of smaller cell values in the coarser cell.
@@ -1556,6 +1607,7 @@ Next we will  aggregate the mountain descriptor layer.
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **MGCI Toolbox D1. Generic: Aggregate rasters to resolution of Vegetation Descriptor**:                                                                   |
 |    :name: toolbox_D1                                                                                                                                                  |
+|                                                                                                                                                                       |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
 |                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
@@ -1585,6 +1637,7 @@ As the MGCI required disaggregation by both the 6  LULC class and the 6 Mountain
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **MGCI Toolbox D2. Generic: Combine mountain and vegetation rasters**:                                                                                    |
 |    :name: toolbox_D2                                                                                                                                                  |
+|                                                                                                                                                                       |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
 |                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
@@ -1620,6 +1673,7 @@ At this stage we can now clip the final aggregated datasets to the country bound
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **MGCI Toolbox D3. Generic:  Clip to country boundary**:                                                                                                  |
 |    :name: toolbox_D3                                                                                                                                                  |
+|                                                                                                                                                                       |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
 |                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
@@ -1665,6 +1719,7 @@ When the statistics .csv files  added to the QGIS project it **does not add it c
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **E1. MGCI:  Generate RSA and Planimetric Area Statistics**:                                                                                              |
 |    :name: toolbox_D3                                                                                                                                                  |
+|                                                                                                                                                                       |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
 |                                                                                                                                                                       |
 | **Also note:** The tool in the MGCI toolbox includes the above steps but also does some further refinement to add some additional fields to convert the RSA and       |
@@ -1694,6 +1749,7 @@ Export to standard reporting table
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **F1: Formatting Reporting Tables: Planimetric Area**:                                                                                                    |
 |    :name: toolbox_F1                                                                                                                                                  |
+|                                                                                                                                                                       |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
 |                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
@@ -1709,6 +1765,7 @@ Export to standard reporting table
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **Formatting Reporting Tables: Real Surface Area**:                                                                                                       |
 |    :name: toolbox_F1                                                                                                                                                  |
+|                                                                                                                                                                       |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
 |                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
@@ -2263,3 +2320,21 @@ Export to standard reporting table
 
 .. |imagerepository3| image:: media_QGIS/repository3.png
    :width: 900
+.. |imagescale_table| image:: media_QGIS/scale_table.png
+   :width: 500
+.. |imagemin_bou| image:: media_QGIS/min_bou.png
+   :width: 400
+.. |imagebuffer| image:: media_QGIS/buffer.png
+   :width: 400
+.. |imagerasterize| image:: media_QGIS/rasterize.png
+   :width: 400
+.. |imageslopemask| image:: media_QGIS/slopemask.png
+   :width: 900
+.. |imageneighbors| image:: media_QGIS/neighbors.png
+   :width: 400
+.. |imagersa1| image:: media_QGIS/rsa1.png
+   :width: 900
+.. |imagersa2| image:: media_QGIS/rsa2.png
+   :width: 900
+.. |imageresamp| image:: media_QGIS/resamp.png
+   :width: 400
