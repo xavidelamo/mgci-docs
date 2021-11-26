@@ -308,13 +308,16 @@ country. This will be used as the Area of Interest (AOI) when preparing
 the various layers for the MGCI analysis.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| .. rubric:: **MGCI Toolbox A. Generic: 1. Define projection and generate an AOI**:                                                                                    |
+| .. rubric:: **MGCI Toolbox A1. Generic: Define projection and generate an AOI**:                                                                                      |
 |    :name: toolbox_A1                                                                                                                                                  |
+|                                                                                                                                                                       |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
+|                                                                                                                                                                       |
 | Before running the tool users do need to create custom projection in their QGIS project                                                                               |
 | as indicated in Box 1 outlined in the section above.                                                                                                                  |
 |                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below.                                                                                                  |
+|                                                                                                                                                                       |
 | The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
 |                                                                                                                                                                       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -636,7 +639,8 @@ The layer should now show all the National LULC classes for Costa Rica.
 | .. rubric:: **MGCI Toolbox A2c. VegetationDescriptor: Project vector LULC and convert to raster (FOR NATIONAL RASTER DATASETS)**:                                     |
 |    :name: toolbox_A2c                                                                                                                                                 |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
-| Before running the tool users need to check that they know the projection of their LUUC dataset and it is faling in the correct place geographically.                 |
+|                                                                                                                                                                       |
+| Before running the tool users need to check that they know the projection of their LUUC dataset and it is faling in the correct place geographically                  |
 | as outlined in the section above.                                                                                                                                     |
 |                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below.                                                                                                  |
@@ -706,7 +710,8 @@ can see that the actual layer only has 6 values.
 | .. rubric:: **MGCI Toolbox A2c. VegetationDescriptor: Generate Vegetation Descriptor Layer**:                                                                         |
 |    :name: toolbox_A3                                                                                                                                                  |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
-| Before running the tool users need to check that they know the projection of their LUUC dataset and it is faling in the correct place geographically.                 |
+|                                                                                                                                                                       |
+| Before running the tool users need to check that they know the projection of their LUUC dataset and it is faling in the correct place geographically                  |
 | as outlined in the section above.                                                                                                                                     |
 |                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below.                                                                                                  |
@@ -777,8 +782,11 @@ The merged DEM is added to the QGIS project.
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **MGCI Toolbox B1. MountainDescriptor: Merging DEM tiles into a single DEM**:                                                                             |
 |    :name: toolbox_B1                                                                                                                                                  |
+|                                                                                                                                                                       |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
-| Before running the tool users need to check that they know the projection of their DEM dataset and it is faling in the correct place geographically.                  |
+|                                                                                                                                                                       |
+| Before running the tool users need to check that they know the projection of their DEM dataset and it is faling in the correct place geographically                   |
+|                                                                                                                                                                       |
 | as outlined in the section above.                                                                                                                                     |
 |                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below.                                                                                                  |
@@ -842,6 +850,7 @@ should be added to the map canvas\ **.**
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **MGCI Toolbox B2. MountainDescriptor: Clip and project merged DEM to EQUAL AREA PROJECTION**:                                                            |
 |    :name: toolbox_B2                                                                                                                                                  |
+|                                                                                                                                                                       |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
 |                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
@@ -951,6 +960,7 @@ The reprojected layer is added to the QGIS project.
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **MGCI Toolbox B3. MountainDescriptor: Project merged DEM to Equidistant projection**:                                                                    |
 |    :name: toolbox_B3                                                                                                                                                  |
+|                                                                                                                                                                       |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
 |                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
@@ -1037,6 +1047,7 @@ The new **clipped** **SLOPE dataset in the equal area projection** is now added 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **MGCI Toolbox B4. MountainDescriptor: Generating slope from DEM in Equidistant projection and re-projecting to equal area**:                             |
 |    :name: toolbox_B4                                                                                                                                                  |
+|                                                                                                                                                                       |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
 |                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
@@ -1101,6 +1112,7 @@ added to the map canvas\ **.**
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **MGCI Toolbox B5. MountainDescriptor: Generate local elevation range from DEM**:                                                                         |
 |    :name: toolbox_B5                                                                                                                                                  |
+|                                                                                                                                                                       |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
 |                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
@@ -1170,6 +1182,7 @@ AND"LocalElevationRange7km\_AOI\_LAEA@1" > 300
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **MGCI Toolbox B6. MountainDescriptor: Generating layers for each Kapos mountain class**:                                                                 |
 |    :name: toolbox_B6                                                                                                                                                  |
+|                                                                                                                                                                       |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
 |                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
@@ -1214,6 +1227,7 @@ At the bottom of the layer properties dialogue window click the
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **MGCI Toolbox B7. MountainDescriptor: Generate Mountain Descriptor layer (EXCLUDING isolated pixels from class 7)**:                                     |
 |    :name: toolbox_B7                                                                                                                                                  |
+|                                                                                                                                                                       |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
 |                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
@@ -1511,6 +1525,7 @@ your R integration is working in Section 2.1.
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **MGCI Toolbox C1. Generate Real Surface Area raster from DEM**:                                                                                          |
 |    :name: toolbox_C1                                                                                                                                                  |
+|                                                                                                                                                                       |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
 |                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
@@ -1556,6 +1571,7 @@ Next we will  aggregate the mountain descriptor layer.
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **MGCI Toolbox D1. Generic: Aggregate rasters to resolution of Vegetation Descriptor**:                                                                   |
 |    :name: toolbox_D1                                                                                                                                                  |
+|                                                                                                                                                                       |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
 |                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
@@ -1585,6 +1601,7 @@ As the MGCI required disaggregation by both the 6  LULC class and the 6 Mountain
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **MGCI Toolbox D2. Generic: Combine mountain and vegetation rasters**:                                                                                    |
 |    :name: toolbox_D2                                                                                                                                                  |
+|                                                                                                                                                                       |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
 |                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
@@ -1620,6 +1637,7 @@ At this stage we can now clip the final aggregated datasets to the country bound
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **MGCI Toolbox D3. Generic:  Clip to country boundary**:                                                                                                  |
 |    :name: toolbox_D3                                                                                                                                                  |
+|                                                                                                                                                                       |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
 |                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
@@ -1665,6 +1683,7 @@ When the statistics .csv files  added to the QGIS project it **does not add it c
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **E1. MGCI:  Generate RSA and Planimetric Area Statistics**:                                                                                              |
 |    :name: toolbox_D3                                                                                                                                                  |
+|                                                                                                                                                                       |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
 |                                                                                                                                                                       |
 | **Also note:** The tool in the MGCI toolbox includes the above steps but also does some further refinement to add some additional fields to convert the RSA and       |
@@ -1694,6 +1713,7 @@ Export to standard reporting table
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **F1: Formatting Reporting Tables: Planimetric Area**:                                                                                                    |
 |    :name: toolbox_F1                                                                                                                                                  |
+|                                                                                                                                                                       |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
 |                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
@@ -1709,6 +1729,7 @@ Export to standard reporting table
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | .. rubric:: **Formatting Reporting Tables: Real Surface Area**:                                                                                                       |
 |    :name: toolbox_F1                                                                                                                                                  |
+|                                                                                                                                                                       |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
 |                                                                                                                                                                       |
 | In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
