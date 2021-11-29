@@ -1235,7 +1235,7 @@ This is because the neighborhood size in pixels in this tool represents diameter
    specified above**
 
 -  Set the output **Neighbors layer** e.g. to
-   FOCMAX\_copernicus\_merge\_AOI\_LAEA
+   LER\_copernicus\_merge\_AOI\_LAEA
 
 -  Click **Run** to run the tool
    
