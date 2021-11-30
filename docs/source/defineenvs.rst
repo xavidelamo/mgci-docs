@@ -53,9 +53,10 @@ Overview of slope calculation methods
 **Selected slope method for QGIS and R:**
 
 For slope generation in the Mountain Descriptor layer (in QGIS and R) we
-explored various options but in the end opted we opted to project the DEM to an
+explored various options including the methods outlined on We explored
+various methods but in the end opted we opted to project the DEM to an
 equidistant projection to enable a consistent approach to be taken by
-all countries and this was the method used in the 2002 Kapos mountain layer
+all countries and the method used in the 2002 Kapos mountain layer
 generation. Whilst with this method error increases away from a defined
 central latitude and longitude, we found that other errors were
 occurring when using the conformal Mercator approach described on
