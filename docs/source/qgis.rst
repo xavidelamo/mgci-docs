@@ -996,12 +996,11 @@ should be added to the map canvas\ **.**
 Generating slope layer from layer DEM
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In, this section, depending on whether your country falls within a
-single or multiple UTM Zones and the projection selected in section 5.1
-Define projection and generate an AOI, the projection used for the slope
+In this section the projection used for the slope
 calculation will differ as it is important to use an equidistant
 projection to reduce errors in slope calculation. An overview of slope
-calculation methods is provided in section 2.3.2.
+calculation methods is provided in the Dendining analysis environments section 
+of the tutorial.
 
 IF your country falls within **a single UTM Zone only** ***AND*** **you
 have used the UTM projection for the previous steps**, or **if the
