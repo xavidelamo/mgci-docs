@@ -197,27 +197,27 @@
     <Option value="DEM_MERGE_bfd6395b_9f24_40e9_a87e_fc8aac3d86d9" type="QString" name="LULCraster"/>
     <Option type="QgsCoordinateReferenceSystem" name="SourceCRS">
       <spatialrefsys>
-        <wkt>PROJCRS["unknown",BASEGEOGCRS["unknown",DATUM["World Geodetic System 1984",ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]],ID["EPSG",6326]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8901]]],CONVERSION["unknown",METHOD["Lambert Azimuthal Equal Area",ID["EPSG",9820]],PARAMETER["Latitude of natural origin",8.5,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",-84,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["False easting",0,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",0,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1,ID["EPSG",9001]]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1,ID["EPSG",9001]]]]</wkt>
+        <wkt>PROJCRS["Custom_Azimuthal_Azimuthal_Equal_Area",BASEGEOGCRS["WGS 84",DATUM["World Geodetic System 1984",ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1],ID["EPSG",6326]]],PRIMEM["Greenwich",0,ANGLEUNIT["Degree",0.0174532925199433]]],CONVERSION["unnamed",METHOD["Lambert Azimuthal Equal Area",ID["EPSG",9820]],PARAMETER["Latitude of natural origin",8.5,ANGLEUNIT["Degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",-84,ANGLEUNIT["Degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["False easting",0,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",0,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1,ID["EPSG",9001]]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1,ID["EPSG",9001]]]]</wkt>
         <proj4>+proj=laea +lat_0=8.5 +lon_0=-84 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs +type=crs</proj4>
-        <srsid>0</srsid>
+        <srsid>100028</srsid>
         <srid>0</srid>
-        <authid></authid>
-        <description>unknown</description>
-        <projectionacronym></projectionacronym>
-        <ellipsoidacronym>PARAMETER:6378137:6356752.31424517929553986</ellipsoidacronym>
+        <authid>USER:100028</authid>
+        <description>CRI_LAEA</description>
+        <projectionacronym>longlat</projectionacronym>
+        <ellipsoidacronym>EPSG:6326</ellipsoidacronym>
         <geographicflag>false</geographicflag>
       </spatialrefsys>
     </Option>
     <Option type="QgsCoordinateReferenceSystem" name="TargetCRS">
       <spatialrefsys>
-        <wkt>PROJCRS["unknown",BASEGEOGCRS["unknown",DATUM["World Geodetic System 1984",ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]],ID["EPSG",6326]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8901]]],CONVERSION["unknown",METHOD["Lambert Azimuthal Equal Area",ID["EPSG",9820]],PARAMETER["Latitude of natural origin",8.5,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",-84,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["False easting",0,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",0,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1,ID["EPSG",9001]]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1,ID["EPSG",9001]]]]</wkt>
+        <wkt>PROJCRS["Custom_Azimuthal_Azimuthal_Equal_Area",BASEGEOGCRS["WGS 84",DATUM["World Geodetic System 1984",ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1],ID["EPSG",6326]]],PRIMEM["Greenwich",0,ANGLEUNIT["Degree",0.0174532925199433]]],CONVERSION["unnamed",METHOD["Lambert Azimuthal Equal Area",ID["EPSG",9820]],PARAMETER["Latitude of natural origin",8.5,ANGLEUNIT["Degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",-84,ANGLEUNIT["Degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["False easting",0,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",0,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1,ID["EPSG",9001]]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1,ID["EPSG",9001]]]]</wkt>
         <proj4>+proj=laea +lat_0=8.5 +lon_0=-84 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs +type=crs</proj4>
-        <srsid>0</srsid>
+        <srsid>100028</srsid>
         <srid>0</srid>
-        <authid></authid>
-        <description>unknown</description>
-        <projectionacronym></projectionacronym>
-        <ellipsoidacronym>PARAMETER:6378137:6356752.31424517929553986</ellipsoidacronym>
+        <authid>USER:100028</authid>
+        <description>CRI_LAEA</description>
+        <projectionacronym>longlat</projectionacronym>
+        <ellipsoidacronym>EPSG:6326</ellipsoidacronym>
         <geographicflag>false</geographicflag>
       </spatialrefsys>
     </Option>
@@ -271,11 +271,11 @@
       <Option value="crs" type="QString" name="parameter_type"/>
     </Option>
     <Option type="Map" name="TargetCRS">
-      <Option value="USER:100044" type="QString" name="default"/>
+      <Option value="USER:100028" type="QString" name="default"/>
       <Option type="invalid" name="defaultGui"/>
       <Option value="Input: Target CRS" type="QString" name="description"/>
       <Option value="0" type="int" name="flags"/>
-      <Option value="set the output source to be the chosen Equal Area Projection" type="QString" name="help"/>
+      <Option value="" type="QString" name="help"/>
       <Option name="metadata"/>
       <Option value="TargetCRS" type="QString" name="name"/>
       <Option value="crs" type="QString" name="parameter_type"/>
