@@ -18,7 +18,7 @@ This geospatial workflow has been developed to be run on QGIS 3.16.11, a free an
 The QGIS-MGCI :sub:`beta` workflow is in a beta stage and therefore it is still under development. Please contact the QGIS-MGCI :sub:`beta` development team with any comments or suggestions.
 
 If you have specific bugs to report or improvements to the tool that you would like to suggest, please use the `GitHub’s issue tracker
-<https://github.com/dfguerrerom/wcmc-mgci/issues>`_ of the SEPAL-MGCI :sub:`beta` module and do follow the `contribution guidelines
+<https://github.com/dfguerrerom/wcmc-mgci/issues>`_ of the QGIS-MGCI :sub:`beta` module and do follow the `contribution guidelines
 <https://github.com/dfguerrerom/wcmc-mgci/blob/master/CONTRIBUTE.md>`_.
 
 Authors 
