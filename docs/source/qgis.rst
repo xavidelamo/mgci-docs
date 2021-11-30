@@ -78,6 +78,125 @@ Before using QGIS-MGCI :sub:`beta`
 
 To run this workflow you will need have QGIS 3.16.11 and R Software 4.4.1. installed in your computer. 
 
+We suggest users use the Long-Term Release version of QGIS to
+undertake their analysis as this is most stable versions and users are
+less likely to incur technical difficulties and bugs.
+
+There are various installers depending on your operating system but for
+most users we recommend the QGIS Standalone Installer. Full instructions
+are on their website
+https://qgis.org/en/site/forusers/download.html
+
+Whilst the MGCI analysis runs entirely within the QGIS interface, users
+wishing to use QGIS for the MGCI analysis are also required to install R
+software. R scripts can be run from within the QGIS
+interface and an R script will be only be used for calculating real
+surface area during the MGCI calculation. Real surface area can be
+calculated using one of the ready to use SAGA tools in the processing
+toolbox, however after initial testing we found the results differed
+from the GEE and R methods and therefore due to the need for consistency
+between calculation methods for this SDG indicator, the best and easiest
+method was to integrate the ‘surfaceArea’ function from package ‘sp in R
+software.
+
+Once QGIS and R are both correctly installed users will need to install
+the following plugins:
+
+1. **Processing R Provider:** This plugin essentially allows R scripts
+   to be used directly within the QGIS processing toolbox with the
+   simple addition of some QGIS header information placed at the top of
+   the script to making the R script behave exactly like other
+   processing tools in the QGIS processing toolbox. The header
+   information allows graphical fields to be set in the processing
+   dialogue window when running the tool e.g. the input raster, a
+   specific field or the location and name of an output raster. Some
+   header information is used to tell QGIS to either pass information to
+   R and from QGIS about the tool to enable the R processing to happen
+   within the QGIS interface.
+
+-  From the QGIS Menu Toolbar click on **Plugins>>Manage and Install
+   Plugins**
+
+   |image9|
+
+-  From the Plugin dialogue window search for **processing R**
+
+   |image10|
+
+-  Click **Install Plugin** and then **Close**
+
+Once installed R will appear as a processing tool in the processing
+toolbox and an R Scripts button in the Processing Toolbox Menu.
+
+|image12|
+   
+Users may find that the R scripts button is missing at this stage.
+
+-  Click the arrow next to the **R** Tools to expand the R toolset.
+
+The toolset should look similar to the below with a few example scripts.
+
+|image13|
+
+and the processing Toolbox Menu should look like this with the missing R scripts button |image14|
+
+|image15|
+
+-  From the QGIS main menu click on **settings>>
+   options>>processing>>providers**
+
+-  expand **R** to see the R setting
+
+   |image16|
+
+If you operating system is 64 bit, tick **Use 64bit version**
+
+-  Check the **R folder** is pointing to the correct location (where it
+   is installed on your computer)
+
+-  Click okay
+
+-  Save the QGIS project and re-open to activate the changes.
+
+You should now see that the R script button has appeared on the
+processing toolbox menu
+
+|image17|
+
+Next add additional resources to the R processing toolbox
+
+-  To add other R resources click on **plugins>>resource
+   sharing>>resource sharing**
+
+   |image18|
+
+-  Click on **All Collections** on the left hand panel and click **QGIS
+   R script collection (QGIS Official Repository)** then click
+   **Install**
+
+   |image19|
+
+A wider collection of scripts should now be present in the R-scripts
+collection. These are not required for MGCI but useful for R-Integration
+with QGIS.
+
+
+**Resource sharing plugin:** This plugin is a useful R related
+plugin (which is not essential for the MGCI but useful for users
+wishing to integrate R with QGIS).
+
+Once the resource sharing plugin is installed some scripts should
+also be visible. They are grouped into several categories as in the
+screengrab below.
+
+|image30|
+
+For further information see the following sections of the QGIS user
+manual at
+
+-  https://docs.qgis.org/3.16/en/docs/user_manual/processing/3rdParty.html#r-scripts
+
+-  https://docs.qgis.org/3.16/en/docs/user\_manual/processing/3rdParty.html#index-5
 
 Introduction
 ------------
@@ -1116,7 +1235,7 @@ This is because the neighborhood size in pixels in this tool represents diameter
    specified above**
 
 -  Set the output **Neighbors layer** e.g. to
-   FOCMAX\_copernicus\_merge\_AOI\_LAEA
+   LER\_copernicus\_merge\_AOI\_LAEA
 
 -  Click **Run** to run the tool
    
