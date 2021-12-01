@@ -67,7 +67,9 @@ lulc <- projectRaster(lulc, crs=crs_laea, method = "ngb")
 
 ##If LULC raster is a global/regional dataset, it needs to be clipped to the area of interest (skip this step for national datasets) 
 ##Clip the DEM to the buffered area of interest 
-lulc_aoi <- crop(lulc,aoi_buffer)
+lulc_aoi <- lulc %>%
+  crop(aoi_buffer) %>%
+  mask(aoi_buffer)
 
 ##Plot the raster
 plot(lulc_aoi)
@@ -103,12 +105,6 @@ lulc_ipcc <- reclassify(lulc_aoi, rclmat, include.lowest=TRUE)
 plot(lulc_ipcc)
 plot(aoi_laea, add=T, col=NA)
 
-##Reclassify to binary green/non green
-#m <- c(1,1, 2,1, 3,1, 4,1, 5,0, 6,0)
-#rclmat <- matrix(m, ncol=2, byrow=TRUE)
-#binary_green <- reclassify(lulc_ipcc, rclmat, include.lowest=TRUE)
-#plot(binary_green)
-
 ################################################
 ############# MOUNTAIN DESCRIPTOR ##############
 ################################################
@@ -129,7 +125,9 @@ DEM <- do.call(merge, DEM_allrasters)
 
 ##Clip the DEM to area of interest after projecting to equal area projection
 DEM_laea <- projectRaster(DEM,crs=crs_laea,method = "bilinear")
-DEM_aoi_laea <- crop(DEM_laea,aoi_buffer)
+DEM_aoi_laea <- DEM_laea %>%
+  crop(aoi_buffer) %>%
+  mask(aoi_buffer)
 
 ##Generate slope
 
@@ -144,6 +142,7 @@ slope <- terrain(DEM_aeqd, opt='slope', unit='degrees')
 slope_aoi <- slope %>% 
   projectRaster(crs=crs_laea,method="bilinear") %>%
   crop(aoi_buffer) %>%
+  mask(aoi_buffer) %>%
   resample(DEM_aoi_laea,method="bilinear")
 
 ##############
@@ -276,8 +275,13 @@ if(xres(DEM_aoi_laea)!=xres(lulc_ipcc))
 combined_veg_mt <- lulc_ipcc_resampled*10 + c_resampled
 
 ##Clip layers to country boundary
-combined_veg_mt_aoi <- crop(combined_veg_mt, aoi_laea)
-rsa_aoi <- crop(rsa_resampled, aoi_laea)
+combined_veg_mt_aoi <- combined_veg_mt %>% 
+  crop(aoi_laea) %>%
+  mask(aoi_laea)
+
+rsa_aoi <- rsa_resampled %>%
+  crop(aoi_laea) %>%
+  mask(aoi_laea)
 
 ##Zonal statistics: Real surface area
 rsa_area <- zonal(rsa_aoi, combined_veg_mt_aoi, fun='sum', na.rm=T)
