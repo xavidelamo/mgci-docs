@@ -203,7 +203,9 @@ If LULC raster is a global/regional dataset, it needs to be clipped to the area 
 
 .. code-block:: s
 
-   lulc_aoi <- crop(lulc,aoi_buffer)
+   lulc_aoi <- lulc %>%
+   crop(aoi_buffer) %>%
+   mask(aoi_buffer)
 
 
 Steps when using a vector LULC dataset
@@ -289,7 +291,9 @@ Clip the DEM to area of interest after projecting to equal area projection
 .. code-block:: s
 
    DEM_laea <- projectRaster(DEM,crs=crs_laea, method = "bilinear")
-   DEM_aoi_laea <- crop(DEM_laea,aoi_buffer)
+   DEM_aoi_laea <- DEM_laea %>%
+   crop(aoi_buffer) %>%
+   mask(aoi_buffer)
 
 Generating slope layer from DEM layer
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -314,10 +318,11 @@ otherwise please generate a custom equidistant azimuthal projection by changing 
    #Compute slope
    slope <- terrain(DEM_aeqd, opt='slope', unit='degrees')
    
-   #Project to Lambert equal area projection, crop to the study area and resample
+   #Project to Lambert equal area projection, mask to the study area and resample
    slope_aoi <- slope %>% 
    projectRaster(crs=crs_laea, method = "bilinear") %>%
    crop(aoi_buffer) %>%
+   mask(aoi_buffer) %>%
    resample(DEM_aoi_laea,method="bilinear")
 
 Generating local elevation range from DEM
@@ -554,8 +559,13 @@ At this stage we can now clip the final aggregated datasets to the country bound
 
 .. code-block:: s
 
-   combined_veg_mt_aoi <- crop(combined_veg_mt, aoi_laea)
-   rsa_aoi <- crop(rsa_resampled, aoi_laea)
+   combined_veg_mt_aoi <- combined_veg_mt %>% 
+   crop(aoi_laea) %>%
+   mask(aoi_laea)
+
+   rsa_aoi <- rsa_resampled %>%
+   crop(aoi_laea) %>%
+   mask(aoi_laea)
 
 Generate Zonal statistics
 ^^^^^^^^^^^^^^^^^^^^^^^^^
