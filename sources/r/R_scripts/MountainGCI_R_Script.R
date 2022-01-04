@@ -1,7 +1,7 @@
 #Mountain GCI project - R script
 #Authors: Vignesh Kamath, Corinna Ravilious, Boipelo Tshwene-Mauchaza, Cristina Telhado and Valerie Kapos, UNEP-WCMC
 #FOR QUESTIONS CONTACT CORINNA RAVILIOUS corinna.ravilious@UNEP-WCMC.org
-#18-11-2021
+#24-12-2021
 
 ################################################
 ############ REQUIRED PACKAGES #################
@@ -13,6 +13,9 @@ install.packages("sp")
 install.packages("sf")
 install.packages("tidyverse")
 install.packages("ncdf4")
+install.packages("rgdal")
+install.packages("rgeos")
+install.packages("dismo")
 
 ##Load necessary libraries
 library(raster)
@@ -20,9 +23,12 @@ library(sp)
 library(sf)
 library(tidyverse)
 library(ncdf4)
+library(rgdal)
+library(rgeos)
+library(dismo)
 
 ##Set working directory to data folder
-setwd("C:/this_is_the_path/to_my_working_directory") #replace the dummy path with the path to your working folder
+setwd ("C:/this_is_the_path/to_my_working_directory") #replace the dummy path with the path to your working folder
 
 ################################################
 ######### AREA OF INTEREST SELECTION ###########
@@ -31,7 +37,7 @@ setwd("C:/this_is_the_path/to_my_working_directory") #replace the dummy path wit
 ##Select area of interest and define projection#
 
 ##Input data
-aoi <- st_read("C:/this_is_the_path/to_my_boundary_layer.shp") #replace with path to polygon shapefile representing the boundary of your area of interest
+aoi <- st_read("C:/this_is_the_path/to_my_boundary_layer.shp")  #replace with path to polygon shapefile representing the boundary of your area of interest
 
 ##Project to equal area projection - replace the projection for your study area 
 ##For this example, we have defined a custom Lambert Azimuthal Equal Area projection with the central meridian set to -84 and the latitude of origin to 8.5
@@ -40,6 +46,40 @@ aoi_laea <- st_transform(aoi, crs=crs_laea)
 
 ##Create a buffer of 10 km around the area of interest
 aoi_buffer <- st_buffer(aoi_laea, 10000)
+
+##Create grids for the boundary layer
+##Input boundary shapefile
+aoi_ogr <- readOGR("C:/this_is_the_path/to_my_boundary_layer.shp")
+
+##Create an empty raster with extent equal to the country boundary
+grid <- raster(extent(aoi_ogr))
+
+#Select the resolution of grids in degrees
+res(grid) <- 1
+
+##Ensure that the grid has the same coordinate reference system (CRS) as the boundary layer
+proj4string(grid)<-proj4string(aoi_ogr)
+
+## Transform the raster into a polygon
+gridpolygon <- rasterToPolygons(grid)
+
+##Intersect the grid with boundary layer
+aoi.grid <- intersect(aoi_ogr, gridpolygon)
+
+##Plot the grids
+plot(aoi.grid)
+
+##Add new attribute data for each tile of the grid
+aoi.grid$grid <- 1:nrow(aoi.grid)
+
+##Save file
+writeOGR(aoi.grid, dsn=getwd(), layer="grid", driver="ESRI Shapefile", overwrite_layer=T)
+
+##Input the boundary layer with grids
+aoi_grid <- st_read("grid.shp")
+
+##Project to equal area projection 
+aoi_grid_laea <- st_transform(aoi_grid, crs=crs_laea)
 
 ################################################
 ############ VEGETATION DESCRIPTOR #############
@@ -65,6 +105,9 @@ lulc
 ##Project to equal area projection depending on your study area 
 lulc <- projectRaster(lulc, crs=crs_laea, method = "ngb")
 
+#writeRaster(DEM_laea, paste0("working_folder/lulc.tif"), overwrite=T)
+#lulc <- raster("working_folder/lulc.tif")
+
 ##If LULC raster is a global/regional dataset, it needs to be clipped to the area of interest (skip this step for national datasets) 
 ##Clip the DEM to the buffered area of interest 
 lulc_aoi <- lulc %>%
@@ -84,9 +127,9 @@ plot(lulc_aoi)
 
 ##Convert vector to raster
 ##Create a template raster with the required resolution (needs to be determined), extent and projection (same as input layer)
-#raster_template <- rast(ext(lulc_vect), resolution = 0.05, crs = st_crs(lulc_vect)$wkt)
+#raster_template <- raster(extent(lulc_vect), resolution = 0.05, crs = st_crs(lulc_vect)$wkt)
 ##Convert vector to raster
-#lulc <- rasterize(vect(lulc_vect), raster_template)
+#lulc <- rasterize(lulc_vect, raster_template)
 
 ##Reclassify to IPCC landcover types
 m <- c(50,1, 60,1, 61,1, 62,1, 70,1, 71,1, 72,1, 80,1, 81,1, 82,1, 90,1, 100,1, ##forest
@@ -101,6 +144,11 @@ lulc_ipcc <- reclassify(lulc_aoi, rclmat, include.lowest=TRUE)
 
 #writeRaster(lulc_ipcc, paste0("working_folder/VegetationDescriptor_LAEA.tif"), overwrite=T)
 
+#Clip layer to country boundary
+lulc_ipcc <- lulc_ipcc %>% 
+  crop(aoi_laea) %>%
+  mask(aoi_laea)
+
 ##Plot the vegetation descriptor layer with the country boundary
 plot(lulc_ipcc)
 plot(aoi_laea, add=T, col=NA)
@@ -114,13 +162,13 @@ plot(aoi_laea, add=T, col=NA)
 ##Input the DEM raster
 DEM <- raster("C:/this_is_the_path/to_my_DEM_layer.tif") 
 
-##If you have multiple raster tiles
+##If you have multiple raster tiles (please ensure that the origin coordinates of the raster tiles are aligned properly)
 ##import all raster files in the folder as a list
-DEM_rastlist <- list.files(path="C:/this_is_the_path/to_my_DEM_folder", pattern='tif$', full.names=TRUE)
-DEM_allrasters <- lapply(DEM_rastlist, raster)
+#DEM_rastlist <- list.files(path="C:/this_is_the_path/to_my_DEM_folder", pattern='tif$', full.names=TRUE)
+#DEM_allrasters <- lapply(DEM_rastlist, raster)
 ##merge all the tiles in the list
-DEM_allrasters$filename <- "working_folder/DEM_merged.tif" 
-DEM <- do.call(merge, DEM_allrasters)
+#DEM_allrasters$filename <- "working_folder/DEM_merged.tif" 
+#DEM <- do.call(merge, DEM_allrasters)
 #plot(DEM) ##to check if they have been merged correctly
 
 ##Clip the DEM to area of interest after projecting to equal area projection
@@ -129,8 +177,64 @@ DEM_aoi_laea <- DEM_laea %>%
   crop(aoi_buffer) %>%
   mask(aoi_buffer)
 
-##Generate slope
+plot(DEM_aoi_laea)
 
+##############
+##Generate local elevation range
+
+for(i in 1:nrow(aoi_grid_laea))
+{
+  aoi_laea_grid <- aoi_grid_laea %>%
+    filter(grid==i)
+  
+  ##Create a buffer of 10 km around the area of interest
+  aoi_buffer_grid <- st_buffer(aoi_laea_grid, 10000)
+  
+  DEM_aoi_laea_grid <- DEM_laea %>%
+    crop(aoi_buffer_grid) %>%
+    mask(aoi_buffer_grid)
+  
+  ##Create a circular filter of 7 km
+  cf <- focalWeight(DEM_aoi_laea_grid, 7000, "circle")
+  cf[cf > 0] <- 1
+  
+  ##Generate focal maximum elevation
+  focalMax <- focal(DEM_aoi_laea_grid, w=cf, fun=max)   
+  #writeRaster(focalMax, paste0("working_folder/focalMax.tif"), overwrite=T)
+  
+  ##Generate focal minimum elevation
+  focalMin <- focal(DEM_aoi_laea_grid, w=cf, fun=min)   
+  #writeRaster(focalMin, paste0("working_folder/focalMin.tif"), overwrite=T)
+  
+  ##Generate focal range
+  aoi7kmLocalElev_grid <- focalMax - focalMin  
+  
+  ##Clip to tile boundary
+  aoi7kmLocalElev_grid <- aoi7kmLocalElev_grid %>%
+    crop(aoi_laea_grid) %>%
+    mask(aoi_laea_grid)
+  
+  ##Save file
+  writeRaster(aoi7kmLocalElev_grid, paste0("working_folder/focal/aoi7kmLocalElev_",i,".tif"), overwrite=T)
+}
+
+##Merge all the tiles together
+##import all raster files in the folder as a list
+focal_rastlist <- list.files(path="working_folder/focal", pattern='tif$', full.names=TRUE)
+focal_allrasters <- lapply(focal_rastlist, raster)
+##merge all the tiles in the list
+focal_allrasters$filename <- "working_folder/aoi7kmLocalElev.tif" 
+aoi7kmLocalElev <- do.call(merge, focal_allrasters)
+plot(aoi7kmLocalElev) ##to check if they have been merged correctly
+
+##############
+
+##Clip DEM to country boundary
+DEM_aoi_laea <- DEM_laea %>%
+  crop(aoi_laea) %>%
+  mask(aoi_laea)
+
+##Generate slope
 ##If your country falls within a single UTM zone & you have used UTM projection in previous steps
 #slope_aoi <- terrain(DEM_aoi_laea, opt='slope', unit='degrees')
 
@@ -138,34 +242,17 @@ DEM_aoi_laea <- DEM_laea %>%
 DEM_aeqd <- projectRaster(DEM, crs="+proj=aeqd +lat_0=8.5 +lon_0=-84 +datum=WGS84 +units=m", method = "bilinear")
 ##Compute slope
 slope <- terrain(DEM_aeqd, opt='slope', unit='degrees')
-##Project to Lambert equal area projection, crop to the study area and resample
+##Project to Lambert equal area projection, mask to the study area and resample
 slope_aoi <- slope %>% 
-  projectRaster(crs=crs_laea,method="bilinear") %>%
-  crop(aoi_buffer) %>%
-  mask(aoi_buffer) %>%
+  projectRaster(crs=crs_laea, method="bilinear") %>%
+  crop(aoi_laea) %>%
+  mask(aoi_laea) %>%
   resample(DEM_aoi_laea,method="bilinear")
 
-##############
-##Generate local elevation range
+writeRaster(slope_aoi, paste0("working_folder/slope.tif"), overwrite=T)
+#slope_aoi <- raster("working_folder/slope.tif")
 
-##Create a circular filter of 7 km
-cf <- focalWeight(DEM_aoi_laea, 7000, "circle")
-cf[cf > 0] <- 1
-
-##Generate focal maximum elevation
-focalMax <- focal(DEM_aoi_laea, w=cf, fun=max)   
-
-##Generate focal minimum elevation
-focalMin <- focal(DEM_aoi_laea, w=cf, fun=min)  
-
-##Generate focal range
-aoi7kmLocalElev <- focalMax - focalMin    
-
-plot(aoi7kmLocalElev)
-
-##############
-
-##Generting layers for each Kapos mountain class 
+##Generating layers for each Kapos mountain class 
 ##class 1: DEM_aoi_laea>=4500m, class 2: >=3500 & <4500, class 3: >=2500 & <3500, assign NA to remaining values 
 c123 <- reclassify(DEM_aoi_laea, c(4500,Inf,1, 3500,4499.999,2, 2500,3499.999,3, -Inf,2500,NA), include.lowest=TRUE)
 
@@ -191,9 +278,8 @@ rclmat <- matrix(m, ncol=2, byrow=TRUE)
 c6 <- reclassify(c6, rclmat, include.lowest=TRUE)
 
 ##Interim mountain layer: mosaic of raster classes 1-6
-c <- mosaic(c123, c4, c5, c6, fun=max)
-#writeRaster(c, paste0("working_folder/mountain_layer.tif"),overwrite=T)
-#plot(c)
+mt <- mosaic(c123, c4, c5, c6, fun=max)
+#plot(mt)
 
 ################################################
 ############# REAL SURFACE AREA ################
@@ -237,6 +323,13 @@ names(m3) <- c("x", "y", "real_surface_area") ##rename columns to match raster n
 rsa_raster <- rasterFromXYZ(m3) ##convert data.frame to raster
 crs(rsa_raster) <- crs(DEM_aoi_laea) ##adopt projection from original raster
 
+##Clip layer to country boundary
+rsa_raster <- rsa_raster %>%
+  crop(aoi_laea) %>%
+  mask(aoi_laea)
+
+#writeRaster(rsa_raster, paste0("working_folder/rsa.tif"), overwrite=T)
+
 ################################################
 ############## MGCI CALCULATION ################
 ################################################
@@ -251,19 +344,19 @@ if(xres(DEM_aoi_laea)!=xres(lulc_ipcc))
     rsa_resampled <- rsa_raster %>%  ##aggregate rsa using sum function
       aggregate(fact=(as.integer(xres(lulc_ipcc)/xres(DEM_aoi_laea))),fun=sum)
     
-    c_resampled <- c %>%  ##aggregate mountain layer using modal function
+    mt_resampled <- mt %>%  ##aggregate mountain layer using modal function
       aggregate(fact=(as.integer(xres(lulc_ipcc)/xres(DEM_aoi_laea))),fun=modal) %>%
       resample(rsa_resampled,method="ngb")
     
     lulc_ipcc_resampled <- lulc_ipcc  %>%  ##resample
-      resample(c_resampled,method="ngb")
+      resample(mt_resampled,method="ngb")
   }
   else                             ##DEM is coarser than Vegetation layer
   {
     lulc_ipcc_resampled <- lulc_ipcc  %>%  ##aggregate vegetation layer using modal function
       aggregate(fact=(as.integer(xres(DEM_aoi_laea)/xres(lulc_ipcc))),fun=modal)
     
-    c_resampled <- c %>% ##resample mountain layer
+    mt_resampled <- mt %>% ##resample mountain layer
       resample(lulc_ipcc_resampled,method="ngb")
     
     rsa_resampled <- rsa_raster %>%  ##resample rsa
@@ -272,19 +365,10 @@ if(xres(DEM_aoi_laea)!=xres(lulc_ipcc))
 }
 
 ##Combine vegetation and mountain classes into single layer 
-combined_veg_mt <- lulc_ipcc_resampled*10 + c_resampled
-
-##Clip layers to country boundary
-combined_veg_mt_aoi <- combined_veg_mt %>% 
-  crop(aoi_laea) %>%
-  mask(aoi_laea)
-
-rsa_aoi <- rsa_resampled %>%
-  crop(aoi_laea) %>%
-  mask(aoi_laea)
+combined_veg_mt_aoi <- lulc_ipcc_resampled*10 + mt_resampled
 
 ##Zonal statistics: Real surface area
-rsa_area <- zonal(rsa_aoi, combined_veg_mt_aoi, fun='sum', na.rm=T)
+rsa_area <- zonal(rsa_resampled, combined_veg_mt_aoi, fun='sum', na.rm=T)
 
 ##Zonal statistics: Planimetric area
 grid <- raster(combined_veg_mt_aoi) ##create a template raster
@@ -294,7 +378,7 @@ plan_area <-zonal(grid, combined_veg_mt_aoi, fun='sum', na.rm=T)
 ##Generate summary tables
 
 ##Edit the following variables with inputs relevant to your data
-GeoAreaCode <- "188" ##Please enter the country code
+GeoAreaCode <- "188" ##Please enter the country code (you can find it here: https://github.com/dfguerrerom/wcmc-mgci/blob/main/sources/qgis/QGIS_models/country_lut.csv)
 GeoAreaName <- "Costa Rica" ##Please enter the name of the country or region
 TimePeriod <- "y2018" ##Please enter the year in question for which the analysis is done in the following format: yXXXX
 Source <- "UNEP-WCMC" ##Please insert the name of the institution you belong to
