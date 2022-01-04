@@ -226,7 +226,7 @@ Once downloaded users need to navidate to the ****sources>>qgis>>QGIS_models fol
 |imagerepository2|
 
 
-The QGIS R-script ***rsa_v1.rsx*** for real surface Area will need to be placed in R scripts folder and the ***MGCI_v01beta*** folder placed in the Models folder.
+The QGIS R-script ***MGCI_QGIS_rsa_v2.rsx*** for real surface Area will need to be placed in R scripts folder and the ***MGCI_v02beta*** folder placed in the Models folder.
 You can find the location in QGIS under **Settings>>Options**. The other style and template files can be stored in your own project working location.
 
 |imagesettings|
@@ -235,6 +235,30 @@ We suggest users create a folder for working in the following strucure
 
 |imagerepository3|
 
+Check that the ***MGCI_v02beta*** toolbox is visible in the ***processing toolbox***. It is from here that you will run the tools if you choose to use the MGCI toolbox rather than the manual steps.
+
+|toolbox_access|
+
+Check that your R installation is correctly installed by running the real surface area script with the small test sample data included in the 
+MGCI repository download.
+
+-  Add ***aoiDEM_testing_sample1.tif*** to you QGIS project
+   
+   |image25|
+
+-  Double click on *** Tool C1. Generate Real Surface Area raster from DEM *** and save to a temportary output
+   
+   |image27|
+
+-  Change the symbology of the output dataset to orange. 
+   
+   |image28|
+
+You should see that the real surface area output is one cell less than the input dataset as the RSA requires the surrounding pixels for it's calculations.
+
+|image29|
+
+***If the script runs and produces the outputs above your R integration with QGIS has been set up correctly. If the script fails or does not produce the output please revisit the sections in this guidance to check that you have installed R correctly and pointed your QGIS to the relvant folder.***
 
 Define projection and generate an AOI
 -------------------------------------
@@ -377,30 +401,12 @@ equal area projection
    |image40|
 
 Now that the country boundary is in the chosen equal area projection, we
-can generate a rectangular bounding box which we will use as an area of
+can generate a 10km buffer which we will use as an area of
 interest (AOI). As indicated previously, the AOI needs to be larger than
 the country boundary to avoid errors during the processing. A distance
-of 10km around the bounding box is added to ensure the AOI is large
+of 10km around the country boundary is added to ensure the AOI is large
 enough to accommodate the 7km focal range function used in the mountain
 descriptor layer generation.
-
--  In the processing toolbox search for the **minimum bounding geometry
-   tool**
-
-   |imagemin_bou|
-   
--  Select your **projected** **country boundary** for the Input layer
-
--  Choose Envelope (bounding Box) for the Geometry type
-
--  Set a new output with the prefix **bounds\_** for the name e.g.
-   **bounds\_CRI\_LAEA**
-
-   |image41|
-   
--  Click **Run** to run the tool.
-
-This has generated the bounding box. The next step adds the 10km buffer.
 
 -  In the processing toolbox search for the **buffer tool**
 
@@ -410,8 +416,8 @@ This has generated the bounding box. The next step adds the 10km buffer.
 
 -  Set the buffer **Units** to **Kilometres**
 
--  Set the **endcap style** to **square** and the **join style** to
-   **Miter**
+-  Set the **endcap style** to **round** and the **join style** to
+   **round**
 
 -  Save the Buffered output to the same name as the input with the
    suffix **\_BUF10**
@@ -421,13 +427,12 @@ This has generated the bounding box. The next step adds the 10km buffer.
 -  Click **Run** to run the tool.
 
 -  If you change the symbology to semi-transparent symbol and draw it over
-   the original bounding box you should be able to see the additional
+   the original country boundary you should be able to see the additional
    buffered area.
 
    |image43|
 
-The output is a bounding box 10km larger than the bounding box for the
-country. This will be used as the Area of Interest (AOI) when preparing
+The output will be used as the Area of Interest (AOI) when preparing
 the various layers for the MGCI analysis.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -881,14 +886,14 @@ Copernicus data can be found in the Annexes).
    The next step is to merge the DEM tiles into a single raster.
    
 -  Search for **Merge** in the processing toolbox window
-  
+   
    |image70|
-
+   
 -  Double click the **GDAL Merge tool**.
-
+   
 -  For the Input layers **select the DEM tiles** covering your area of
    interest
-
+   
    |image71|
 
 -  Tick the DEM tiles to merge and Click **OK** to make the selection
@@ -898,9 +903,9 @@ Copernicus data can be found in the Annexes).
 
 -  Set the **Merged** output name e.g. C:/MGCI\_tutorial/
    DEM\_copernicus\_merge.tif
-
+   
    |image72|
-
+   
    |image73|
 
 -  Click **Run** to run the tool
@@ -934,44 +939,56 @@ Clip and project merged DEM
 
 The DEM tiles are likely to cover a much wider area than the country
 being analysed therefore it is important to crop the extent to minimise
-processing time. As indicated in section 2.3.2, the country boundary is
+processing time. As indicated previously,  the country boundary is
 not used to clip the dataset directly as the various calculations during
 the generation of the mountain descriptor layer require neighbouring
-pixels to be analyses therefore the buffered bounding box generated in
-section 5.1 should be used.
+pixels to be analyses therefore the buffered AOI which you have already generated 
+should be used.
 
--  In the processing toolbox search for **Clip**
+-  search for **project** in the processing toolbox.
 
-   |image49|
+   |image54|
 
--  Double click on the **Clip raster by mask layer** under the GDAL
-   toolset
+-  Double click on the GDAL tool **Warp (reproject)**
 
 -  Select the **merged DEM dataset** for the **Input Layer**
 
--  Select the **buffered bounding box layer** for the **Mask Layer**
-
 -  Select the **Project CRS** for the **Target CRS**
 
--  Tick **Match the extent of the clipped raster to the extent of the
-   mask layer**
+-  Set the resampling method to **bilinear**
 
--  Tick **set the output file resolution**
+-  Set NoData value for output bands to **-9999**
 
--  Type the **X and Y resolution in metres** (in this case the
-   resolution of the DEM dataset is 90)
+-  Set the output **Reprojected** layer name e.g. to
+   **DEM_MERGE_LAEA.tif**
 
--  Tick **Use Input Layer Data Type**
-
--  Set the output **Clipped (mask)** e.g. to
-   DEM_copernicus_merge_AOI_LAEA.tif
-   
-   |image75|
-  
 -  Click **Run** to run the tool
    
-    
-    
+   |image75|
+
+The new DEM dataset in the equal area projection should be added
+should be added to the map canvas\ **.**
+
+   |image74a|
+   
+-  search for **mask** in the processing toolbox.  
+
+-  Double click on the **r.mask.vect** under the GRASS
+   toolset
+
+-  Select the **AOI buffered country boundary** for the **Name of vector dataset to use as mask**
+
+-  Select the **Merged DEM in equal area projection r** for the **Name of raster map to which apply the mask**
+
+-  Set the  the **GRASS GIS 7 Region Extent**  to the **AOI buffered country boundary**
+
+-  Set the output **Masked** e.g. to
+   DEM_merge_LAEA_AOI.tif
+   
+-  Click **Run** to run the tool
+
+   |image74b|
+   
 The new clipped DEM dataset in the equal area projection should be added
 should be added to the map canvas\ **.**
     
@@ -993,14 +1010,14 @@ should be added to the map canvas\ **.**
 
 |imageB2_w| 
 
-Generating slope layer from layer DEM
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Project merged DEM to Equidistant projection (and generate AOI with tiled approach) 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In this section the projection used for the slope
+In this section the projection used for the slope and 7km Local Elevation Range
 calculation will differ as it is important to use an equidistant
-projection to reduce errors in slope calculation. An overview of slope
+projection to reduce errors, particularly in slope calculation. An overview of slope
 calculation methods is provided in the Dendining analysis environments section 
-of the tutorial.
+of the tutorial. 
 
 IF your country falls within **a single UTM Zone only** ***AND*** **you
 have used the UTM projection for the previous steps**, or **if the
@@ -1068,27 +1085,142 @@ projection before following the next steps.
 |    |image78|                                                                                                                                                          |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+ 
 
--  Next, In the **processing toolbox** search for **reproject** 
+This slope and local elevation range generation can take a long time to run so we will 
+generate and AOI split into a chosen number of tiles so uses can choose to run these steps iteratively.
+
+First we need to project the merged DEM to equidistant projection.
+
+-  In the **processing toolbox** search for **reproject** 
 
    |image54|                                                                                                                                                                  
     
 - Double click on the **Warp (reproject)** tool under the **GDAL toolset** 
 - Set the Input layer to be the **merged DEM in geographic coordinate system**
-    *Note: it is important not to use the one that has already been projected as this can introduce errors into the DEM *
+    *Note: it is important not to use the one that has already been projected as this can introduce errors into the DEM*
 - Set the Source CRS to be **EPSG: 4326 (Geographic)**
 - Set the Target CRS to be **your custom equidistant projection** e.g. CRI\_AZ\_EQUI
-- Set the resampling method to Nearest Neighbour
+- Set the resampling method to **bilinear**
 - Set the output file resolution to the resolution of the DEM in meters e.g. 90m in this example
-- Set the Reprojected output to e.g. **DEM\_copernicus\_merge\_CRI\_AZ\_EQUI.tif**
+- Set the Reprojected output to e.g. **DEM_merge_EQUI.tif**
 
   |image79|
   
 - Click **Run** to run the tool
  
 The reprojected layer is added to the QGIS project. 
- 
+
+|reprojequi2|
+
+Next we will extract the extent from the merged DEM in equidistant projection. This generates a polygon layer 
+which aligns with the outer cells of the DEM. It also provides a height and width field in the attribute table of the layer
+which we can use to split the dataset into a selected number of tiles for iterative processing
+
+-  In the **processing toolbox** search for **Extract layer** 
+
+   |extract_layer_extent|
+   
+-  Set the **Input Layer ** to **the merged DEM in equidistant projection**
+   
+   |extract_layer_extent2|
+   
+- Open the attribute table of the extent layer
+
+  |extent_attr|
+
+- add and calculate an attribute for tile_width by dividing the width field by your number of chosen tiles e.g. in this example we have chosen 6 tiles.
+  
+  |extent_attr_width|
+  
+- add and calculate an attribute for tile_width by dividing the height field by your number of chosen tiles e.g. in this example we have chosen 6 tiles.
+  
+  |extent_attr_height|
+
+-  In the **processing toolbox** search for **Create grid** 
+
+   |creategrid|  
+
+-  Set the **Grid Type** to **Rectangle (polygon)**
+-  Set the **Grid extent** to **the merged DEM in equidistant projection**
+-  Set the **Grid extent** to **the merged DEM in equidistant projection**
+-  Copy the tile_width number from the step above to the **Horizontal spacing** and the tile height to the **Vertical spacing**
+-  Copy the cellsize to the **Horizontal overlay** and **Vertical overlay**. 
+
+This will mean that the tiles will overlap by one cell and ensure there are no gaps when the tiles are merged back together
+(as the internal tile lines will not match a grid cell line)
+
+-  Set the **Grid CRS** to **your chosen equidistant projection**
+
+   |creategrid2|  
+   
+-  Click **Run** to run the tool.
+
+The vector grid is added to the QGIS project. 
+
+|creategrid3|  
+
+Next, use the reproject tool to project the country boundary layer to the
+equidistant projection
+
+-  In the processing toolbox search for the **Reproject** tool
+
+   |image54|
+   
+-  Set the Input layer to be the **country boundary**
+
+-  Set the Target CRS to be the **your chosen equidistant CRS** 
+
+-  Set the output name to be the same as the input with a suffix to
+   indicate the projection e.g. in this example
+   **BND_CTY_CRI_EQUI**
+   
+   |reprojequi|
+
+Now that the country boundary is in the chosen equidistant projection, we
+can generate the 10km buffer which we will use as an area of
+interest (AOI). As indicated previously, the AOI needs to be larger than
+the country boundary to avoid errors during the processing. A distance
+of 10km around the country boundary is added to ensure the AOI is large
+enough to accommodate the 7km focal range function used in the mountain
+descriptor layer generation.
+
+-  In the processing toolbox search for the **buffer tool**
+
+   |imagebuffer|
+
+-  Set the **Input layer** to **your country boundary in equidistant projection e.g. BND_CTR_EQUI**
+
+-  Set the buffer **Distance** to **10000**
+
+-  Set the buffer **Units** to **meters**
+
+-  Set the **endcap style** to **round** and the **join style** to
+   **round**
+
+-  Save the Buffered output to a new name **e.g. BND_BUF_AOI_EQUI**
+
+   |buffequi|
+
+-  Click **Run** to run the tool.
+
+The last step is to intersect the equidistant vector grid with the buffered AOI in equidistant projection.
+
+-  In the **processing toolbox** search for **intersection** 
+
+   |intersection|
+
+-  Set the **Input layer** to **the buffered country boundary in equidistant projection**
+-  Set the **Overlay layer** to **the vector grid in equidistant projection**
+-  Set the output **Intersection** toe.g. **BND_BUF_AOI_EQUI_tiles.shp**
+
+   |intersection2|
+   
+The output tiled Area of Interest (AOI) can be used when preparing
+the slope and local elevation range datasets.
+
+|intersection3|
+
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| .. rubric:: **MGCI Toolbox B3. MountainDescriptor: Project merged DEM to Equidistant projection**:                                                                    |
+| .. rubric:: **MGCI Toolbox B3. MountainDescriptor:  Project merged DEM to Equidistant projection (and generate AOI with tiled approach) **:                           |
 |    :name: toolbox_B3                                                                                                                                                  |
 |                                                                                                                                                                       |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
@@ -1103,7 +1235,11 @@ The reprojected layer is added to the QGIS project.
 
 |imageB3_w| 
 
-Slope can now be generated from this layer
+Generating slope layer from layer DEM
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Slope can now be generated from the merged DEM in equidistant projection. Users should be warned that the slope process can
+take some time to process. 
 
 -  In the processing toolbox search for **Slope**
    
@@ -1133,54 +1269,99 @@ Slope can now be generated from this layer
 
 -  Click **Run** to run the tool
    
+If it takes too long uses may wish to use the tiled AOI to clip the merged DEM into smaller chunks using r.mask.cect and 
+run the slope tool multiple times for each tile and then merge the slope at the end. 
 
+**NOTE: the MGCI toolbox tools B4a will be far more efficient (as users can choose to iterate automatically through the tiles and produce slope at the same time).**
 
-The slope raster can now be projected to the main analysis equal area
-projection and be clipped to the AOI.
+If you wish to iterate manually. Split the Merged DEM in equidistant projection into tiles as follows:
 
--  In the processing toolbox search for **Clip**.
+-  search for **r.mask** in the processing toolbox.  
+   
+   |rmask|
 
-   |image49|
-  
--  Double click on the **Clip raster by mask layer** under the GDAL
+-  Double click on the **r.mask.vect** under the GRASS
    toolset
 
--  Select the **slope raster** for the **Input Layer**
+-  Select the **AOI tiles layer** for the **Name of vector dataset to use as mask**
 
-   e.g. **DEM\_copernicus\_merge\_SLOPE\_CRI\_AZ\_EQUI.tif**
+-  Select the **Merged DEM in equidistant projection** for the **Name of raster map to which apply the mask**
 
--  Select the **AOI** **buffered bounding box layer** for the **Mask
-   Layer**
+-  Set the  the **GRASS GIS 7 Region Extent**  to the **AOI tiles layer**
 
--  Select the **Source CRS** of the input slope dataset e.g.
-   **CRI\_AZ\_EQUI**
-
--  Select the **Project CRS** for the **Target CRS**
-
--  Tick **Match the extent of the clipped raster to the extent of the
-   mask layer**
-
--  Tick **set the output file resolution**
-
--  Type the **X and Y resolution in metres** (in this case the
-   resolution of the DEM dataset is 90)
-
--  Tick **Use Input Layer Data Type**
-
--  Set the output **Clipped (mask)** e.g. to
-   **DEM\_copernicus\_merge\_AOI\_LAEA\_SLOPE.tif**
+-  Set the output **Masked** e.g. to
+   DEM_merge_EQUI_AOI_tiles.tif
    
-   |imageslopemask|
-
 -  Click **Run** to run the tool
-   
-   
 
-The new **clipped** **SLOPE dataset in the equal area projection** is now added should be added to the map canvas\ **.**
+   |manualiterate|
+
+Then repeat the slope process above for each of the tiles.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| .. rubric:: **MGCI Toolbox B4. MountainDescriptor: Generating slope from DEM in Equidistant projection and re-projecting to equal area**:                             |
-|    :name: toolbox_B4                                                                                                                                                  |
+| .. rubric:: **MGCI Toolbox B4a. MountainDescriptor: iterate and  generate slope in equidistant projection**:                                                          |
+|    :name: toolbox_B4a                                                                                                                                                 |
+|                                                                                                                                                                       |
+| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
+|                                                                                                                                                                       |
+| This tool can run generating the slope in one layer or users can click the green iterate button too process the slope in smaller chunks                               |
+| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
+|                                                                                                                                                                       |
+| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
+|                                                                                                                                                                       |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+|imageB4a|
+
+|imageB4a_w| 
+
+Next, if you haave processed the slope layer chunks use the merge tool to combine the slope tiles into a single layer
+
+-  Search for **Merge** in the processing toolbox window
+   
+   |image70|
+   
+-  Double click the **GDAL Merge tool**.
+   
+-  For the Input layers select all of the SLOPE tiles. Tick the SLOPE tiles to merge and Click **OK** to make the selection
+   and return to the main **Merge Dialog window**
+
+-  Set the **output data type** to Float32 (same as the input slope tiles)
+-  Set the **Merged** output name e.g. C:/MGCI\_tutorial/
+   SLOPE_merge_EQUI.tif
+   
+   |mergeslope1| |mergeslope2|
+
+-  Click **Run** to run the tool
+
+You will notice when compared to the output image it no longer looks clipped to the buffer. This is because the no data value in the slope images is set to nan and it was not possible to set the No data value in the merge tool to a non numeric value. You therefore must clip the merged slope layer back to the buffered AOI:
+
+-  search for **r.mask** in the processing toolbox.  
+
+   |rmask|
+
+-  Double click on the **r.mask.vect** under the GRASS
+   toolset
+
+-  Select the **AOI tiles layer** for the **Name of vector dataset to use as mask**
+
+-  Select the **merged SLOPE layer in equidistant projection** for the **Name of raster map to which apply the mask**
+
+-  Set the  the **GRASS GIS 7 Region Extent**  to the **AOI tiles layer**
+
+-  Set the output **Masked** e.g. to  **Slope_merge_EQUI_AOI.tif**
+   
+-  Click **Run** to run the tool
+
+The merged slope is added to the QGIS project. 
+
+|mergedslope| 
+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| .. rubric:: **MGCI Toolbox B4b. MountainDescriptor: merge slope tiles (run if iteration used in B4a)**:                                                               |
+|    :name: toolbox_B4b                                                                                                                                                 |
 |                                                                                                                                                                       |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
 |                                                                                                                                                                       |
@@ -1190,14 +1371,55 @@ The new **clipped** **SLOPE dataset in the equal area projection** is now added 
 |                                                                                                                                                                       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-|imageB4|
+|imageB4b|
 
-|imageB4_w| 
+|imageB4b_w| 
 
-Generating local elevation range from DEM
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The slope raster can now be projected to the main analysis equal area projection
 
-For UNEP-WCMC mountain classes 5 and 6 a 7km local elevation range is required for
+-  In the **processing toolbox** search for **reproject** 
+
+   |image54|                                                                                                                                                                  
+    
+- Double click on the **Warp (reproject)** tool under the **GDAL toolset** 
+- Set the Input layer to be the **slope layer in equidistant projection**
+- Set the Source CRS to be **your equidistant projection**
+- Set the Target CRS to be **your equal area projection** e.g. CRI\_AZ\_EQUI
+- Set the resampling method to **bilinear**
+- Set the output file resolution to the resolution of the slope in meters e.g. 90m in this example
+- Set the Reprojected output to e.g. **Slope_AOI_LAEA.tif**
+  
+  
+  
+- Click **Run** to run the tool
+ 
+The new **SLOPE dataset in the equal area projection** is now added should be added to the map canvas\ **.**
+
+|slopeinequalarea|
+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| .. rubric:: **MGCI Toolbox B5. MountainDescriptor: Project SLOPE raster to Equal Area projection**:                                                                   |
+|    :name: toolbox_B5                                                                                                                                                  |
+|                                                                                                                                                                       |
+| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
+|                                                                                                                                                                       |
+| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
+|                                                                                                                                                                       |
+| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
+|                                                                                                                                                                       |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+|imageB5|
+
+|imageB5_w| 
+
+
+Generating 7km local elevation range from DEM
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+For UNEP-WCMC mountain classes 5 and 6 a 7km local elevation range (LER7km) is required for
 the identification of areas that occur in regions with significant
 relief, even though elevations may not be especially high, and
 conversely high-elevation areas with little local relief. This local
@@ -1213,14 +1435,39 @@ the neighborhhod will be influenced by the cellsize of the DEM.
 To calculate the neighborhood size for your analysis in pixels divide 7000m by your cellsize and multiply by two. Round to the nearest odd integer.
 This is because the neighborhood size in pixels in this tool represents diameter rather than radius. 
 
+This step is very slow and it is recommended that the same tiled approach is used to generate the LER7km layer.
+
+If you wish to iterate manually. Split the Merged DEM in equidistant projection into tiles. If you have used tiles for generating slope you can skip the following r.mask step:
+
+-  search for **r.mask** in the processing toolbox.  
+   
+   |rmask|
+
+-  Double click on the **r.mask.vect** under the GRASS
+   toolset
+
+-  Select the **AOI tiles layer** for the **Name of vector dataset to use as mask**
+
+-  Select the **Merged DEM in equidistant projection** for the **Name of raster map to which apply the mask**
+
+-  Set the  the **GRASS GIS 7 Region Extent**  to the **AOI tiles layer**
+
+-  Set the output **Masked** e.g. to
+   DEM_merge_EQUI_AOI_tiles.tif
+   
+-  Click **Run** to run the tool
+
+   |manualiterate|
+
+Then for each of the tiles run the following steps:
+
 -  In the processing toolbox search for **r.neighbor**.
 
    |imageneighbors|
 
 -  Double click on the **r.neighbor** tool under the GRASS toolset
 
--  Select the **Input Raster Layer to** the Projected DEM clipped to the
-   AOI
+-  Select the **Input Raster Layer to** the merged equidistant DEM (or equidistant dem tile is you are running in smaller clumps)
 
 -  Set the **neighborhood operation** to **Range**
 
@@ -1234,20 +1481,80 @@ This is because the neighborhood size in pixels in this tool represents diameter
    specified above**
 
 -  Set the output **Neighbors layer** e.g. to
-   LER\_copernicus\_merge\_AOI\_LAEA
+   LER7km_EQUI
 
--  Click **Run** to run the tool
-   
    |image99|
    
-   |image100| 
+  
+-  Click **Run** to run the tool
+   
  
-TThe local elevation range in the equal area projection should have been
-added to the map canvas\ **.**
+The LER7km layer (or set of LER7km tiles) in the equidistant projection should have been
+added to the map canvas.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| .. rubric:: **MGCI Toolbox B5. MountainDescriptor: Generate local elevation range from DEM**:                                                                         |
-|    :name: toolbox_B5                                                                                                                                                  |
+| .. rubric:: **MGCI Toolbox B6a. MountainDescriptor: generate 7km LER in equidistant projection**:                                                                     |
+|    :name: toolbox_B6a                                                                                                                                                 |
+|                                                                                                                                                                       |
+| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
+| This tool can run generating the Ler7KM in one layer or users can click the green iterate button too process the ler7KM in smaller chunks                             |
+|                                                                                                                                                                       |
+| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
+|                                                                                                                                                                       |
+| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
+|                                                                                                                                                                       |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+|imageB6a|
+
+|imageB6a_w|  
+
+Next, if you have processed the LER7km layer in chunks use the merge tool to combine the slope tiles into a single layer
+
+-  Search for **Merge** in the processing toolbox window
+   
+   |image70|
+   
+-  Double click the **GDAL Merge tool**.
+   
+-  For the Input layers select all of the SLOPE tiles. Tick the SLOPE tiles to merge and Click **OK** to make the selection
+   and return to the main **Merge Dialog window**
+
+-  Set the **output data type** to Float32 (same as the input slope tiles)
+-  Set the **Merged** output name e.g. C:/MGCI\_tutorial/
+   LER7km_merge_EQUI.tif
+   
+   |mergeLER7km_1|
+
+-  Click **Run** to run the tool
+
+You will notice when compared to the output image it no longer looks clipped to the buffer. This is because the no data value in the LER7km images is set to nan and it was not possible to set the No data value in the merge tool to a non numeric value. You therefore must clip the merged LER7km layer back to the buffered AOI:
+
+-  search for **r.mask** in the processing toolbox.  
+
+   |rmask|
+
+-  Double click on the **r.mask.vect** under the GRASS
+   toolset
+
+-  Select the **AOI tiles layer** for the **Name of vector dataset to use as mask**
+
+-  Select the **merged LER7km layer in equidistant projection** for the **Name of raster map to which apply the mask**
+
+-  Set the  the **GRASS GIS 7 Region Extent**  to the **AOI tiles layer**
+
+-  Set the output **Masked** e.g. to  **LER7km_merge_EQUI_AOI.tif**
+   
+-  Click **Run** to run the tool
+
+The merged LER7km is added to the QGIS project. 
+
+|mergedLER7km| 
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| .. rubric:: **MGCI Toolbox B6b. MountainDescriptor: merge LER7km tiles (run if iteration used in B6a)**:                                                              |
+|    :name: toolbox_B6b                                                                                                                                                 |
 |                                                                                                                                                                       |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
 |                                                                                                                                                                       |
@@ -1257,12 +1564,51 @@ added to the map canvas\ **.**
 |                                                                                                                                                                       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-|imageB5|
+|imageB6b|
 
-|imageB5_w|  
+|imageB6b_w|  
 
-**Generating layers for each mountain class**
+The LER7km raster can now be projected to the main analysis equal area projection
 
+-  In the **processing toolbox** search for **reproject** 
+
+   |image54|                                                                                                                                                                  
+    
+- Double click on the **Warp (reproject)** tool under the **GDAL toolset** 
+- Set the Input layer to be the **LER7km layer in equidistant projection**
+- Set the Source CRS to be **your equidistant projection**
+- Set the Target CRS to be **your equal area projection** 
+- Set the resampling method to **bilinear**
+- Set the output file resolution to the resolution of the LER7km in meters e.g. 90m in this example
+- Set the Reprojected output to e.g. **LER7km_AOI_LAEA.tif**
+  
+  
+  
+- Click **Run** to run the tool
+ 
+The new **LER7km dataset in the equal area projection** is now added should be added to the map canvas\ **.**
+
+|LER7kminequalarea|
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| .. rubric:: **MGCI Toolbox B7. MountainDescriptor: Project LER7km raster to Equal Area projection**:                                                                  |
+|    :name: toolbox_B7                                                                                                                                                  |
+|                                                                                                                                                                       |
+| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
+|                                                                                                                                                                       |
+| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
+|                                                                                                                                                                       |
+| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
+|                                                                                                                                                                       |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+|imageB7|
+
+|imageB7_w| 
+
+
+Generating layers for each mountain class
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 We now have all the inputs required for generating the mountain classes
 for the mountain descriptor layer. We will use the raster calculator to
 input the followings expression to generate a raster layer for each
@@ -1316,8 +1662,8 @@ AND"LocalElevationRange7km\_AOI\_LAEA@1" > 300
 |image106|
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| .. rubric:: **MGCI Toolbox B6. MountainDescriptor: Generating layers for each Kapos mountain class**:                                                                 |
-|    :name: toolbox_B6                                                                                                                                                  |
+| .. rubric:: **MGCI Toolbox B8. MountainDescriptor: Generating layers for each Kapos mountain class**:                                                                 |
+|    :name: toolbox_B8                                                                                                                                                  |
 |                                                                                                                                                                       |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
 |                                                                                                                                                                       |
@@ -1327,9 +1673,9 @@ AND"LocalElevationRange7km\_AOI\_LAEA@1" > 300
 |                                                                                                                                                                       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-|imageB6|
+|imageB8|
 
-|imageB6_w| 
+|imageB8_w| 
 
 Generate an interim mountain layer with classes 1-6
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1361,8 +1707,8 @@ At the bottom of the layer properties dialogue window click the
 |image110|
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| .. rubric:: **MGCI Toolbox B7. MountainDescriptor: Generate Mountain Descriptor layer (EXCLUDING isolated pixels from class 7)**:                                     |
-|    :name: toolbox_B7                                                                                                                                                  |
+| .. rubric:: **MGCI Toolbox B9. MountainDescriptor: Generate Mountain Descriptor layer (EXCLUDING isolated pixels from class 7)**:                                     |
+|    :name: toolbox_B9                                                                                                                                                  |
 |                                                                                                                                                                       |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
 |                                                                                                                                                                       |
@@ -1372,9 +1718,9 @@ At the bottom of the layer properties dialogue window click the
 |                                                                                                                                                                       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-|imageB7| 
+|imageB9| 
 
-|imageB7_w|
+|imageB9_w|
 
 Filling isolated pixels within mountain areas and merging into classes 1-6 (****NOTE: This step is still in development****)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1689,7 +2035,7 @@ Aggregation to standard resolution and clipping to country
 Aggregating mountain and RSA rasters to match resolution of vegetation descriptor layer
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Now that we have 3 raster datasets in their native resolutions we need to bring the datasets together and ensure that correct aggregation is undertaken and that the all the layers align to the VegetationDescriptor layer.   In this example we have the Mountain Descriptor layer and the RealSurfaceArea Rasters at 90m resolution but a VegetationDescriptor layer at 300m resolution. There are various tools that can be used but we have opted for the GRASS tool r.resamp.stats as it allowed for various methods when resampling to a coarser grid.
+Now that we have 3 raster datasets in their native resolutions we need to bring the datasets together and ensure that correct aggregation is undertaken and that the all the layers align to the coarsest resolution layer.   In this example we have the Mountain Descriptor layer and the RealSurfaceArea Rasters at 90m resolution but a VegetationDescriptor layer at 300m resolution. There are various tools that can be used but we have opted for the GRASS tool r.resamp.stats as it allowed for various methods when resampling to a coarser grid.
 
 In the processing toolbox search for ***r.resamp.stats***
 
@@ -1722,9 +2068,11 @@ In the processing toolbox search for ***r.resamp.stats***
 
    |image173|  
 
+If the Vegetation Descriptor is coarser resolution use:
+
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| .. rubric:: **MGCI Toolbox D1. Generic: Aggregate rasters to resolution of Vegetation Descriptor**:                                                                   |
-|    :name: toolbox_D1                                                                                                                                                  |
+| .. rubric:: **MGCI Toolbox D1a. Generic: Aggregate to resolution of Vegetation Descriptor**:                                                                          |
+|    :name: toolbox_D1a                                                                                                                                                 |
 |                                                                                                                                                                       |
 | These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
 |                                                                                                                                                                       |
@@ -1734,9 +2082,25 @@ In the processing toolbox search for ***r.resamp.stats***
 |                                                                                                                                                                       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-|imageD1|
+|imageD1a|
+|imageD1a_w|
 
-|imageD1_w|
+If the Mountain Descriptor is coarser resolution use:
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| .. rubric:: **MGCI Toolbox D1b. Generic: Aggregate to resolution of Mountain Descriptor**:                                                                            |
+|    :name: toolbox_D1b                                                                                                                                                 |
+|                                                                                                                                                                       |
+| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
+|                                                                                                                                                                       |
+| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
+|                                                                                                                                                                       |
+| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
+|                                                                                                                                                                       |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+|imageD1b|
+|imageD1b_w|
 
 Combine mountain and vegetation descriptor layers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -2098,6 +2462,10 @@ Export to standard reporting table
    :width: 900
 .. |image75| image:: media_QGIS/image74.png
    :width: 900
+.. |image74a| image:: media_QGIS/image74a.png
+   :width: 900
+.. |image74b| image:: media_QGIS/image74b.png
+   :width: 900
 .. |image76| image:: media_QGIS/image75.png
    :width: 900
 .. |image77| image:: media_QGIS/image76.png
@@ -2357,26 +2725,41 @@ Export to standard reporting table
    :width: 1100
   
 .. |imageB3_w| image:: media_QGIS/Toolbox_images/B3_w.png
-    :width: 600
+    :width: 1100
      
 .. |imageB4| image:: media_QGIS/Toolbox_images/B4.png
    :width: 1100
  
 .. |imageB4_w| image:: media_QGIS/Toolbox_images/B4_w.png
    :width: 600
+.. |imageB4a| image:: media_QGIS/Toolbox_images/B4a.png
+   :width: 1100
+ 
+.. |imageB4a_w| image:: media_QGIS/Toolbox_images/B4a_w.png
+   :width: 800
 
+.. |imageB4b| image:: media_QGIS/Toolbox_images/B4b.png
+   :width: 1100
+ 
+.. |imageB4b_w| image:: media_QGIS/Toolbox_images/B4b_w.png
+   :width: 800
 .. |imageB5| image:: media_QGIS/Toolbox_images/B5.png
     :width: 1100
 
 .. |imageB5_w| image:: media_QGIS/Toolbox_images/B5_w.png
    :width: 600
    
-.. |imageB6| image:: media_QGIS/Toolbox_images/B6.png
+.. |imageB6a| image:: media_QGIS/Toolbox_images/B6a.png
    :width: 1100
    
-.. |imageB6_w| image:: media_QGIS/Toolbox_images/B6_w.png
+.. |imageB6a_w| image:: media_QGIS/Toolbox_images/B6a_w.png
    :width: 1100
-
+ 
+.. |imageB6b| image:: media_QGIS/Toolbox_images/B6b.png
+   :width: 1100
+   
+.. |imageB6b_w| image:: media_QGIS/Toolbox_images/B6b_w.png
+   :width: 1100
    
 .. |imageB7| image:: media_QGIS/Toolbox_images/B7.png
    :width: 1100
@@ -2384,6 +2767,19 @@ Export to standard reporting table
 .. |imageB7_w| image:: media_QGIS/Toolbox_images/B7_w.png
    :width: 1100
 
+
+.. |imageB8| image:: media_QGIS/Toolbox_images/B8.png
+   :width: 1100
+ 
+.. |imageB8_w| image:: media_QGIS/Toolbox_images/B8_w.png
+   :width: 1100
+
+.. |imageB9| image:: media_QGIS/Toolbox_images/B9.png
+   :width: 1100
+ 
+.. |imageB9_w| image:: media_QGIS/Toolbox_images/B9_w.png
+   :width: 1100
+   
    
 .. |imageC1| image:: media_QGIS/Toolbox_images/C1.png
    :width: 1100
@@ -2396,6 +2792,18 @@ Export to standard reporting table
    :width: 1100
 
 .. |imageD1_w| image:: media_QGIS/Toolbox_images/D1_w.png
+   :width: 1100
+
+.. |imageD1a| image:: media_QGIS/Toolbox_images/D1a.png
+   :width: 1100
+
+.. |imageD1a_w| image:: media_QGIS/Toolbox_images/D1a_w.png
+   :width: 1100
+
+.. |imageD1b| image:: media_QGIS/Toolbox_images/D1b.png
+   :width: 1100
+
+.. |imageD1b_w| image:: media_QGIS/Toolbox_images/D1b_w.png
    :width: 1100
 
 .. |imageD2| image:: media_QGIS/Toolbox_images/D2.png
@@ -2427,6 +2835,10 @@ Export to standard reporting table
 
 .. |imageF2_w| image:: media_QGIS/Toolbox_images/F2w.png
    :width: 1100
+   
+.. |toolbox_access| image:: media_QGIS/Toolbox_images/toolbox_access.png
+   :width: 600   
+   
 .. |imagesettings| image:: media_QGIS/settings.png
    :width: 900
 
@@ -2448,6 +2860,10 @@ Export to standard reporting table
    :width: 400
 .. |imageslopemask| image:: media_QGIS/slopemask.png
    :width: 900
+   .. |imageslopemask| image:: media_QGIS/slopemask.png
+   :width: 900
+.. |extract_layer_extent| image:: media_QGIS/extract_layer_extent.png
+   :width: 300
 .. |imageneighbors| image:: media_QGIS/neighbors.png
    :width: 400
 .. |imagersa1| image:: media_QGIS/rsa1.png
@@ -2456,3 +2872,53 @@ Export to standard reporting table
    :width: 900
 .. |imageresamp| image:: media_QGIS/resamp.png
    :width: 400
+   
+.. |extent_attr| image:: media_QGIS/extent_attr.png
+   :width: 900
+.. |extract_layer_extent2| image:: media_QGIS/extract_layer_extent2.png
+   :width: 900
+.. |extent_attr_width| image:: media_QGIS/extent_attr_width.png
+   :width: 900
+.. |extent_attr_height| image:: media_QGIS/extent_attr_height.png
+   :width: 900
+.. |creategrid| image:: media_QGIS/creategrid.png
+   :width: 300
+.. |reprojequi| image:: media_QGIS/reprojequi.png
+   :width: 900
+.. |buffequi| image:: media_QGIS/buffequi.png
+   :width: 900
+.. |intersection| image:: media_QGIS/intersection.png
+   :width: 300
+.. |intersection2| image:: media_QGIS/intersection2.png
+   :width: 900
+.. |intersection3| image:: media_QGIS/intersection3.png
+   :width: 900
+.. |manualiterate| image:: media_QGIS/manualiterate.png
+   :width: 900
+.. |reprojequi2| image:: media_QGIS/reprojequi2.png
+   :width: 900
+.. |creategrid3| image:: media_QGIS/creategrid3.png
+   :width: 900
+.. |creategrid2| image:: media_QGIS/creategrid2.png
+   :width: 900
+.. |rmask| image:: media_QGIS/rmask.png
+   :width: 300
+.. |mergeslope1| image:: media_QGIS/mergeslope1.png
+   :width: 900
+.. |mergeslope2| image:: media_QGIS/mergeslope2.png
+   :width: 900
+.. |mergedslope| image:: media_QGIS/mergedslope.png
+   :width: 900
+.. |slopeinequalarea| image:: media_QGIS/slopeinequalarea.png
+   :width: 900
+.. |mergedLER7km| image:: media_QGIS/mergedLER7km.png
+   :width: 900
+.. |mergeLER7km_1| image:: media_QGIS/mergeLER7km_1.png
+   :width: 900
+.. |LER7kminequalarea| image:: media_QGIS/LER7kminequalarea.png
+   :width: 900
+   
+   
+
+
+

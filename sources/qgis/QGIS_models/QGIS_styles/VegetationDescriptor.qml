@@ -37,7 +37,7 @@
         <paletteEntry alpha="255" value="3" color="#2a788e" label="3 Cropland (Green)"/>
         <paletteEntry alpha="255" value="4" color="#22a884" label="4 Wetland (Green)"/>
         <paletteEntry alpha="255" value="5" color="#7ad151" label="5 Settlement (Non Green)"/>
-        <paletteEntry alpha="255" value="6" color="#fde725" label="6 Other Land (Non Green)"/>
+        <paletteEntry alpha="255" value="6" color="#fde725" label="6 Other (Non Green)"/>
       </colorPalette>
       <colorramp name="[source]" type="randomcolors"/>
     </rasterrenderer>
