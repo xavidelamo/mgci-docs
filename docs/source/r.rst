@@ -954,7 +954,7 @@ View the generated data table.
 
 .. code-block:: s
 
-   view(ER_MTN_GRNCOV)
+   view(ER_MTN_GRNCVI)
 
 |image38|
 
