@@ -141,6 +141,17 @@ tables using the following fields:
 Potential / known limitations of current methodology
 ----------------------------------------------------
 
+The indicator can be calculated using freely available Earth Observation
+data and simple GIS operations that can be processed in free and open
+source software (FOSS) GIS. Potential limitations of the above described
+methodology are related mainly to the quality of the land cover data.
+The ESA CCI land cover maps are currently available at 300 meter
+resolution which limits their applicability in the monitoring of small
+and highly heterogeneous landscapes. Therefore, if countries have
+national land cover maps of higher spatial resolution and comparable or
+better quality, FAO advises using them, following the same methodology
+presented here, for the generation of MGCI values.
+
 (still to update this section)
 
 Acknowledgements
@@ -149,15 +160,15 @@ Acknowledgements
 We would like to express our special thanks to Jeff Jenness from Jenness Enterprises, GIS Analysis and Application Design, for his help in the development of the real surface area.
 
 
-.. |image2| image:: media_QGIS/image2.png
+.. |image2| image:: media_QGIS/image2_orig.png
    :width: 700
-.. |image3| image:: media_QGIS/image3.png
+.. |image3| image:: media_QGIS/image3_orig.png
    :width: 700
-.. |image4| image:: media_QGIS/image4.png
+.. |image4| image:: media_QGIS/image4_orig.png
    :width: 700
-.. |image5| image:: media_QGIS/image5.png
+.. |image5| image:: media_QGIS/image5_orig.png
    :width: 700
-.. |image6| image:: media_QGIS/image6.png
+.. |image6| image:: media_QGIS/image6_orig.png
    :width: 700
-.. |imageworkflow| image:: media_QGIS_new/MGCI_workflow_revision_DRAFT.png
+.. |imageworkflow| image:: media_QGIS/MGCI_workflow_revision_DRAFT.png
    :width: 900
