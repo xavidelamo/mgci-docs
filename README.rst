@@ -220,15 +220,15 @@ Acknowledgements
 We would like to express our special thanks to Jeff Jenness from Jenness Enterprises, GIS Analysis and Application Design, 
 for his help in the development of the real surface area.
 
-.. |image2| image:: media_QGIS/image2_orig.png
+.. |image2| image:: docs/source/media_QGIS/image2_orig.png
    :width: 700
-.. |image3| image:: media_QGIS/image3_orig.png
+.. |image3| image:: docs/source/media_QGIS/image3_orig.png
    :width: 700
-.. |image4| image:: media_QGIS/image4_orig.png
+.. |image4| image:: docs/source/media_QGIS/image4_orig.png
    :width: 700
-.. |image5| image:: media_QGIS/image5_orig.png
+.. |image5| image:: docs/source/media_QGIS/image5_orig.png
    :width: 700
-.. |image6| image:: media_QGIS/image6_orig.png
+.. |image6| image:: docs/source/media_QGIS/image6_orig.png
    :width: 700
-.. |imageworkflow| image:: media_QGIS/MGCI_workflow_revision_DRAFT.png
+.. |imageworkflow| image:: docs/source/media_QGIS/MGCI_workflow_revision_DRAFT.png
    :width: 900
