@@ -212,13 +212,15 @@ national land cover maps of higher spatial resolution and comparable or
 better quality, FAO advises using them, following the same methodology
 presented here, for the generation of MGCI values.
 
-(still to update this section)
+(still to complete this section)
 
 Acknowledgements
 ----------------
 
 We would like to express our special thanks to Jeff Jenness from Jenness Enterprises, GIS Analysis and Application Design, 
 for his help in the development of the real surface area.
+
+(still to complete this section)
 
 .. |image2| image:: docs/source/media_QGIS/image2_orig.png
    :width: 700
