@@ -70,7 +70,7 @@ Overview of computation of Sub-Indicator b)  Proportion of degraded mountain lan
 
 Where:
 
-- **Degraded mountain arean** = Total degraded mountain area (in km2) in the reporting period n. This is,
+- **Degraded mountain area n** = Total degraded mountain area (in km2) in the reporting period n. This is,
      the sum of the areas where land cover change is considered to constitute degradation from the baseline
      period. Degraded mountain land will be assessed based on the land cover transition matrix in Annex 1.
 - **Total mountain area** = Total area of mountains (in km2). In both the numerator and denominator, mountain area is defined according to UNEP-WCMC (2002).
