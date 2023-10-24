@@ -172,7 +172,7 @@ resolutions is the Copernicus DEM which is a Digital Surface Model (DSM)
 which represents the surface of the Earth including buildings,
 infrastructure and vegetation.
 
-
+(still to complete this section - may want to add paragraph about OpenTopography downloader)
 
 .. |image33| image:: media_QGIS/image33_orig.png
    :width: 1200
