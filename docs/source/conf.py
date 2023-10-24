@@ -4,8 +4,8 @@ from datetime import datetime
 
 # -- Project information
 
-project = "SDG 15.4.2: Mountain Green Cover Index"
-copyright = f"2021 - FAO SEPAL - UNEP-WCMC"
+project = "SDG 15.4.2: (a) Mountain Green Cover Index and (b) proportion of degraded mountain land"
+copyright = f"2023 - FAO SEPAL - UNEP-WCMC"
 author = 'FAO SEPAL - UNEP-WCMC'
 
 release = '0.1'

@@ -1,7 +1,7 @@
-Welcome to the Mountain Green Cover Index's documentation!
-==========================================================
+Welcome to the technical documentation of SDG Indicator 15.4.2
+===============================================================
 
-Documentation to the Mountain Green Cover Index tools developed by FAO and UNEP-WCMC:
+Documentation to aid the calculation of SDG Indicator 15.4.2: (a) Mountain Green Cover Index and (b) proportion of degraded mountain land using tools developed by FAO and UNEP-WCMC:
 
 Contents
 --------
@@ -12,6 +12,4 @@ Contents
    overview
    defineenvs
    qgis
-   r
-   sepal
    annex

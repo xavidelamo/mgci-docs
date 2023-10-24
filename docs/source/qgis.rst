@@ -1,97 +1,162 @@
-QGIS-MGCI :sub:`beta`
-======================
+QGIS-MGCI-DML 15.4.2 :sub:`beta`
+=================================
 
-A QGIS-based workflow to support the computation of SDG Indicator 15.4.2 – Mountain Green Cover Index.
+A QGIS-based workflow to support the computation of SDG Indicator 15.4.2, which includes:
+sub-indicator a (Mountain Green Cover Index) 
+and 
+sub-indicator b (Proportion of degraded mountain land)
 
 .. contents:: **Table of Contents**
 
 General Information
--------------------
+--------------------
 
-About QGIS-MGCI :sub:`beta`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+About QGIS-MGCI-DML :sub:`beta`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This geospatial workflow was developed by the UN Environment Programme World Conservation Monitoring Centre (UNEP-WCMC) in collaboration with the Food and Agriculture Organization (FAO) of the United Nations to support member countries to compute and report against SDG Indicator 15.4.2.
+This documentation and geospatial workflow has been developed by the UN Environment Programme World Conservation Monitoring Centre (UNEP-WCMC) in collaboration with the Food and Agriculture Organization (FAO) of the United Nations to support member countries to compute and report against SDG Indicator 15.4.2. 
 
-This geospatial workflow has been developed to be run on QGIS 3.16.11, a free and open-source geographic information system licensed under the GNU General Public License. QGIS is an official project of the Open Source Geospatial Foundation (OSGeo). It runs on Linux, Unix, Mac OSX, Windows and Android and supports numerous vector, raster, and database formats and functionalities. To run this workflow, you will also need to have R Software 4.4.1.
+The geospatial workflow was developed using QGIS 3.22.16, a free and open-source geographic information system licensed under the GNU General Public License. QGIS is an official project of the Open Source Geospatial Foundation (OSGeo). It runs on Linux, Unix, Mac OSX, Windows and Android and supports numerous vector, raster, and database formats and functionalities. We suggest users use the Long-Term Release version [1]_ of QGIS to undertake their analysis as this is most stable versions and users are less likely to incur technical difficulties and bugs. There are various installers depending on your operating system but for most users we recommend the QGIS Standalone Installer. Full instructions are on their website: `https://qgis.org/en/site/forusers/download.html# <https://qgis.org/en/site/forusers/download.html>`__\. To run this workflow, you will also need to have R Software 4.4.1.
 
-The QGIS-MGCI :sub:`beta` workflow is in a beta stage and therefore it is still under development. Please contact the QGIS-MGCI :sub:`beta` development team with any comments or suggestions.
+The QGIS-MGCI-DML 15.4.2 :sub:`beta` workflow is in a beta stage and therefore it is still under development. Please contact the QGIS-MGCI-DML 15.4.2 :sub:`beta` development team with any comments or suggestions.
 
 If you have specific bugs to report or improvements to the tool that you would like to suggest, please use the `GitHub’s issue tracker
-<https://github.com/dfguerrerom/wcmc-mgci/issues>`_ of the QGIS-MGCI :sub:`beta` module and do follow the `contribution guidelines
+<https://github.com/dfguerrerom/wcmc-mgci/issues>`_ of the QGIS-MGCI-DML 15.4.2 :sub:`beta` module and do follow the `contribution guidelines
 <https://github.com/dfguerrerom/wcmc-mgci/blob/master/CONTRIBUTE.md>`_.
 
 Authors 
 ^^^^^^^
 
-QGIS-MGCI :sub:`beta` has been developed by the UN Environment Programme World Conservation Monitoring Centre (UNEP-WCMC) in collaboration with the Food and Agriculture Organization (FAO) of the United Nations. Contributors to QGIS-MGCI :sub:`beta` and its documentation include Corinna Ravilious, Vignesh Kamath Cannanure, Boipelo Tshwene-Mauchaza, Cristina Telhado and Valerie Kapos. 
+QGIS-MGCI-DML 15.4.2 :sub:`beta` has been developed by the UN Environment Programme World Conservation Monitoring Centre (UNEP-WCMC) in collaboration with the Food and Agriculture Organization (FAO) of the United Nations. Contributors to QGIS-MGCI-DML 15.4.2 :sub:`beta` and its documentation include Corinna Ravilious, Vignesh Kamath Cannanure, Boipelo Tshwene-Mauchaza, Cristina Telhado and Valerie Kapos. 
+
+Acknowledgements
+^^^^^^^^^^^^^^^^
+to be added
 
 License
 ^^^^^^^
-The QGIS-MGCI :sub:`beta` workflow and its documentation is made available under the terms of the `Creative Commons Attribution 4.0 International License (CC BY 4.0) <https://creativecommons.org/licenses/by/4.0/>`_ .
+The QGIS-MGCI-DML 15.4.2 :sub:`beta` workflow and its documentation is made available under the terms of the `Creative Commons Attribution 4.0 International License (CC BY 4.0) <https://creativecommons.org/licenses/by/4.0/>`_ .
 
 Background
-^^^^^^^^^^
+----------
 
-SDG Indicator 15.4.2 – Mountain Green Cover Index (MGCI) is one of the two indicators under SDG Target 15.4, which aims to:
+SDG Indicator 15.4.2 – Mountain Green Cover Index (MGCI) is one of the two indicators under SDG Target 15.4, which aims to "*ensure the conservation of mountain ecosystems, including their biodiversity, to enhance their capacity to provide benefits which are essential for sustainable development*". The Food and Agriculture Organization (FAO) of the United Nations is the custodian agency of this indicator. 
 
-"*ensure the conservation of mountain ecosystems, including their biodiversity, to enhance their capacity to provide benefits which are essential for sustainable development*".
+The indicator is composed of two sub-indicators to monitor progress towards the conservation of mountain ecosystems: 
 
-The Food and Agriculture Organization (FAO) of the United Nations is the custodian agency of this indicator. The Mountain Green Cover Index (MGCI) is designed to measure the extent and the changes of green vegetation in mountain areas to monitor progress towards SDG Target 15.4.
+**Sub-indicator 15.4.2a**, Mountain Green Cover Index (MGCI), is designed to measure the extent and changes of green cover - i.e. forest, shrubs, trees, pasture land, cropland, etc. – in mountain areas. MGCI is defined as the percentage of green cover over the total surface of the mountain area of a given country and for given reporting year. The aim of the index is to monitor the evolution of the green cover and thus assess the status of conservation of mountain ecosystems. 
 
-The MGCI is defined as the ratio of the mountain green cover area to the total mountain area:
+**Sub-indicator 15.4.2b**, Proportion of degraded mountain land, is designed to monitor the extent of degraded mountain land as a result of land cover change of a given country and for given reporting year. Similarly to sub-indicator ‘’trends in land cover” under SDG Indicator 15.3.1 (Sims et al. 2021), mountain ecosystem degradation and recovery is assessed based on the definition of land cover type transitions that constitute degradation, as either improving, stable or degraded. The definition of degradation adopted for the computation of this indicator is the one established Intergovernmental Science-Policy Platform on Biodiversity and Ecosystem Services (IPBES)footnote reference [#]_.
 
-.. math::
-    
-    MGCI = (Mountain Green Cover Area)/(Total Mountain Area)
 
-Where: 
+.. [#]IPBES defines land degradation as “the many human-caused processes that drive the decline or loss in biodiversity, ecosystem functions or ecosystem services in any terrestrial and associated aquatic ecosystems” (IPBES, 2018)
 
-- **Mountain Green Cover Area**: sum of mountain area (km :sup:`2`) covered by cropland, grassland, forestland, shrubland and wetland, as defined based on the IPCC classification (Penman et al. 2003). This component is calculated from the vegetation descriptor layer. 
-- **Total Mountain Area**: total area (Km2) of mountains. In both the numerator and denominator, mountain area is defined according to Kapos et al. 2000. This component is calculated from the mountain description layer.
-- **Vegetation descriptor layer**: The vegetation descriptor layer categorizes land cover into green and non-green areas. Green vegetation includes both natural vegetation and vegetation resulting from anthropic activity (e.g. crops, afforestation, etc.). Non-green areas include very sparsely vegetated areas, bare land, water, permanent ice/snow and urban areas. The vegetation description layer is derived from a land cover map, where land cover categories are classified into IPCC categories and then in green/non-green areas. 
-- **Mountain descriptor layer**:  The mountain descriptor layer consists in a map of mountain classes following the UNEP-WCMC classification (Kapos et al. 2000). The UNEP-WCMC classification classifies the world mountain areas according altitude, slope and elevation range into the following categories.
 
-  .. _mountain_classes:
-  .. csv-table:: Mountain classes
-     :header: "UNEP-WCMC Mountain Class", "Description"
-     :widths: auto
-     :align: center
-  
-     "1","Elevation > 4.500 meters"
-     "2","Elevation 3.500–4.500 meters"
-     "3","Elevation 2.500–3.500 meters"
-     "4","Elevation 1.500–2.500 meters and slope >= 2"
-     "5","Elevation 1.000–1.500 meters and slope >= 5 or local elevation range (LER 7 kilometer radius) > 300 meters"
-     "6","Elevation 300–1.000 meters and local elevation range (7 kilometer radius) > 300 meters"
+Overview of Mountain Area Map
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The QGIS-MGCI :sub:`beta` workflow allows the user to compute each of these description layers to then calculate MGCI values for any given area. The results of this analysis can be exported to a set of standardized reporting tables where MGCI values are disaggregated by mountain class and IPCC land category, as specified in the metadata of SDG Indicator 15.4.2.
+Several methodologies have been developed in the last decades to consistently classify and map global mountain systems, using a variety of parameters such as elevation, topography, climate and ecology.
 
-References
-^^^^^^^^^^
+For the purposes of standardization and international comparability of nationally derived-estimates, this indicator adheres to the UNEP-WCMC mountain definition (UNEP-WCMC, 2002). The UNEP-WCMC method defines total global mountain area as the sum of seven classes (commonly known as ‘Kapos mountain classes’), based on elevation, slope and local elevation ranges parameters. The mapping of mountain areas using this methodology requires a Digital Elevation Model (DEM).
 
-- Kapos, V., Rhind, J., Edwards, M., Prince, M., & Ravilious, C. (2000). Developing a map of the world’s mountain forests. In M. F. Price , & N. Butt (Eds.),?Forests in Sustainable Mountain Development: A State-of-Knowledge Report for 2000?(pp. 4-9). Wallingford: CAB International.? 
-- Penman, J., Gytarsky, M., Hiraishi, T., Krug, T., Kruger, D., Pipatti, R., Buendia, L., Miwa, K., Ngara, T., Tanabe, K. (2003). Good Practice Guidance for Land Use, Land-use Change and Forestry. Good Practice Guidance for Land Use, Land-use Change and Forestry. 
+For disaggregation purposes, this mountain area is subdivided into bioclimatic belts as defined by Körner et al. (2011). Körner et al. subdivides mountains vertically into seven bioclimatic belts based on average temperatures, therefore accounting the latitudinal change in elevation of thermally similar areas in the world’s mountains. For the purposes of this indicator, these seven bioclimatic belts are aggregated into four (Nival, Alpine, Montane and Remaining mountain areas), as illustrated in Table 1.
 
-Before using QGIS-MGCI :sub:`beta`
------------------------------------
+**Table 1.** Mountain bioclimatic belts as defined by Körner et al. (2011) and reclassification for data disaggregation of SDG Indicator 15.4.2. Growing season is defined as the number of days between daily mean temperature exceeds 0.9 °C then falls below 0.9 °C
 
-To run this workflow you will need have QGIS 3.16.11 and R Software 4.4.1. installed in your computer. 
++-----------------------------------------+-----------------------------------+-------------------------+------------------------------------------------------+
+| Bioclimatic belts                       | Growing season mean temperature   | Growing season length   | Bioclimatic belts adopted for SDG Indicator 15.4.2   |
++=========================================+===================================+=========================+======================================================+
+| Nival                                   | < 3.5 °C                          | < 10 days               | Nival                                                |
++-----------------------------------------+-----------------------------------+-------------------------+------------------------------------------------------+
+| Upper alpine                            | < 3.5 °C                          | > 10 days & < 54 days   | Alpine                                               |
++-----------------------------------------+-----------------------------------+-------------------------+------------------------------------------------------+
+| Lower alpine                            | < 6.4°C                           | < 54 days               |                                                      |
++-----------------------------------------+-----------------------------------+-------------------------+------------------------------------------------------+
+| THE TREELINE                                                                                                                                                 |
++-----------------------------------------+-----------------------------------+-------------------------+------------------------------------------------------+
+| Upper montane                           | > 6.4°C & ≤ 10 °C                 | ---                     | Montane                                              |
++-----------------------------------------+-----------------------------------+-------------------------+------------------------------------------------------+
+| Lower montane                           | > 10 °C & ≤ 15 °C                 | ---                     |                                                      |
++-----------------------------------------+-----------------------------------+-------------------------+------------------------------------------------------+
+| Remaining mountain area with frost      | > 15 °C                           | ---                     | Remaining mountain area                              |
++-----------------------------------------+-----------------------------------+-------------------------+------------------------------------------------------+
+| Remaining mountain area without frost   | > 15 °C                           |                         |                                                      |
++-----------------------------------------+-----------------------------------+-------------------------+------------------------------------------------------+
 
-We suggest users use the Long-Term Release version of QGIS to
-undertake their analysis as this is most stable versions and users are
-less likely to incur technical difficulties and bugs.
+A global mountain area map sub-divided by bioclimatic belts has been developed by FAO and made available to national authorities to facilitate the computation of this indicator. This map is the result of combining a global mountain area map developed from the Global Multi-Resolution Terrain Elevation Data (GMTED2010), following the UNEP-WCMC methodology (Ravilious et al. 2021) and a mountain bioclimatic belt map created by the Global Mountain Biodiversity Assessment
 
-There are various installers depending on your operating system but for
-most users we recommend the QGIS Standalone Installer. Full instructions
-are on their website
-https://qgis.org/en/site/forusers/download.html
+Overview of the land cover data
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Whilst the MGCI analysis runs entirely within the QGIS interface, users
-wishing to use QGIS for the MGCI analysis are also required to install R
-software. R scripts can be run from within the QGIS
-interface and an R script will be only be used for calculating real
-surface area during the MGCI calculation. Real surface area can be
+Land cover refers to the observed physical cover of the Earth’s surface. It includes vegetation and manmade features as well as bare rock, bare soil and inland water surfaces (FAO-GTOS, 2009). The primary units for characterizing land cover are categories (e.g. Forest or Open Water). These categories must be defined following a standardized land cover
+classification in order to identify land cover changes consistently over time.
+
+Several global standards of land cover classifications have been developed by international initiatives for this purpose. For the purposes of standardization and harmonization when reporting on SDG Indicator 15.4.2, this indicator has adapted the land cover classification established by the United Nations Statistical Commission’s System of Environmental and Economic Accounting (UN-SEEA)(UN Statistical Division, 2014) by selecting the most relevant SEEA classes for mountain ecosystems and aggregating all croplands classes in the following classification (Table 2).
+
+**Table 2.** Adapted UN-SEEA land cover classification for the computation and aggregate reporting on SDG Indicator 15.4.2.
+
++-----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Land cover class**                                                  | **Description**                                                                                                                                                                                                                                                                                                                                                                                                  |
++=======================================================================+==================================================================================================================================================================================================================================================================================================================================================================================================================+
+| 1. Artificial surfaces                                                | The class is composed of any type of areas with a predominant artificial surface. Any urban or related feature is included in this class, for example, urban parks (parks, parkland and laws). The class also includes industrial areas, and waste dump deposit and extraction sites.                                                                                                                            |
++-----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 2. Croplands                                                          | The class is composed of cultivated vegetation, including herbaceous plants, trees and/or shurbs. It includes:                                                                                                                                                                                                                                                                                                   |
+|                                                                       |                                                                                                                                                                                                                                                                                                                                                                                                                  |
+|                                                                       | -  Herbaceous crops used for hay. All the non-perennial crops that do not last for more than two growing seasons and crops like sugar cane, where the upper part of the plant is regularly harvested while the root system can remain for more than one year in the field, are included in this class.                                                                                                           |
+|                                                                       |                                                                                                                                                                                                                                                                                                                                                                                                                  |
+|                                                                       | -  All types of orchards and plantations (fruit trees, coffee and tea plantation, oil palms, rubber plantation, Christmas trees, etc.).                                                                                                                                                                                                                                                                          |
+|                                                                       |                                                                                                                                                                                                                                                                                                                                                                                                                  |
+|                                                                       | -  Multiple or layered crops, including areas with two layers of different crops and/or areas with the presence of one important layer of natural vegetation (mainly trees) that covers one layer of cultivated crop.                                                                                                                                                                                            |
++-----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 3. Grasslands                                                         | This class includes any geographical area dominated by natural herbaceous plants (grasslands, prairies, steppes and savannahs) with a cover of 10 per cent or more, irrespective of different human and/or animal activities, such as grazing or selective fire management. Woody plants (trees and/or shrubs) can be present, assuming their cover is less that 10 per cent.                                    |
++-----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 4. Tree-covered areas                                                 | This class includes any geographical area dominated by natural tree plants with a cover of 10 per cent or more. Other types of plants (shrubs and/or herbs) can be present, even with a density higher than that of trees. Areas planted with trees for afforestation purposes and forest plantations are included in this class. This class includes areas seasonally or permanently flooded with freshwater.   |
++-----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 5. Shrub-covered areas                                                | This class includes any geographical area dominated by natural shrubs having a cover of 10 per cent or more. Trees can be present in scattered form if their cover is less than 10 per cent. Herbaceous plants can also be present at any density. The class includes shrub-covered areas permanently or regularly flooded by inland fresh water.                                                                |
++-----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 6. Shubs and/or herbaceous vegetation, aquatic or regularly flooded   | This class includes any geographical area dominated by natural herbaceous vegetation (cover of 10 per cent or more) that is permanently or regularly flooded by fresh or brackish water (swamps, marsh areas, etc.). Flooding must persist for at least two months per year to be considered regular. Woody vegetation (trees and/or shrubs) can be present if their cover is less than 10 per cent.             |
++-----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 7.Sparsely natural vegetated areas                                    | This class includes any geographical areas were the cover of natural vegetation is between 2 per cent and 10 per cent. This includes permanently or regularly flooded areas.                                                                                                                                                                                                                                     |
++-----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 8. Terrestrial barren land                                            | This class includes any geographical area dominated by natural abiotic surfaces (bare soil, sand, rocks, etc.) where the natural vegetation is absent or almost absent (covers less than 2 per cent). The class includes areas regularly flooded by inland water (lake shores, river banks, salt flats, etc.).                                                                                                   |
++-----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 9. Permanent snow and glaciers                                        | This class includes any geographical area covered by snow or glaciers persistently for 10 months or more.                                                                                                                                                                                                                                                                                                        |
++-----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 10. Inland water bodies                                               | This class includes any geographical area covered for most of the year by inland water bodies. In some cases, the water can be frozen for part of the year (less than 10 months). Because the geographical extent of water bodies can change, boundaries must be set consistently with those set by class 8, according to the dominant situation during the year and/or across multiple years.                   |
++-----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Land cover maps developed by relevant national authorities will generally provide the most relevant data source to compute this indicator. However, in certain cases, such data may not be available. In those cases, various regional or global products provide a viable alternative.
+
+The global default source of land cover data for this indicator is the European Space Agency Climate Change Initiative (ESA-CCI) Land Cover product (ESA, 2017). The ESA-CCI product consists of a series of annual Land Cover maps at 300 m resolution, providing 22 land cover classes based on 300m MERIS, 1km SPOT – VEGETATION, 1km PROBA –V and 1km AVHRR. The ESA CCI adheres to the Cover Classification System of the United Nations Food and Agriculture Organization (UN FAO) (Santoro et al. 2015). Annual updates are currently available from 1992 to 2020. Additional years will be made available by the European Space Agency
+
+Overview of computation of Sub-Indicator a) Mountain Green Cover Index
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+to be added
+
+Overview of computation of Sub-Indicator b)  Proportion of degraded mountain land
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+to be added
+
+Potential / known limitations of current methodology
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+to be added
+
+
+
+Initial setup
+-------------
+Before using QGIS-MGCI-DML 15.4.2 :sub:`beta` to run this workflow you will need have QGIS 3.20 or a higher version installed in your computer.
+
+We suggest users use the Long-Term Release version  of QGIS to undertake their analysis as this is most stable versions and users are less likely to incur technical difficulties and bugs.  There are various installers depending on your operating system but for most users we recommend the QGIS Standalone Installer. Full instructions are on their website: https://qgis.org/en/site/forusers/download.html#
+
+Whilst the MGCI-DML analysis runs entirely within the QGIS interface, users
+wishing to use QGIS for the MGCI-DML analysis are also required to install R
+software. R scripts can be run from within the QGIS interface and no prior 
+knowledge of R is required.
+
+
+and an R script will be only be used for calculating real
+surface area during the MGCI-DML calculations. Real surface area can be
 calculated using one of the ready to use SAGA tools in the processing
 toolbox, however after initial testing we found the results differed
 from the GEE and R methods and therefore due to the need for consistency
@@ -117,18 +182,18 @@ the following plugins:
 -  From the QGIS Menu Toolbar click on **Plugins>>Manage and Install
    Plugins**
 
-   |image9|
+   |image9orig|
 
 -  From the Plugin dialogue window search for **processing R**
 
-   |image10|
+   |image10orig|
 
 -  Click **Install Plugin** and then **Close**
 
 Once installed R will appear as a processing tool in the processing
 toolbox and an R Scripts button in the Processing Toolbox Menu.
 
-|image12|
+|image12orig|
    
 Users may find that the R scripts button is missing at this stage.
 
@@ -136,18 +201,18 @@ Users may find that the R scripts button is missing at this stage.
 
 The toolset should look similar to the below with a few example scripts.
 
-|image13|
+|image13orig|
 
 and the processing Toolbox Menu should look like this with the missing R scripts button |image14|
 
-|image15|
+|image15orig|
 
 -  From the QGIS main menu click on **settings>>
    options>>processing>>providers**
 
 -  expand **R** to see the R setting
 
-   |image16|
+   |image16orig|
 
 If you operating system is 64 bit, tick **Use 64bit version**
 
@@ -161,20 +226,20 @@ If you operating system is 64 bit, tick **Use 64bit version**
 You should now see that the R script button has appeared on the
 processing toolbox menu
 
-|image17|
+|image17orig|
 
 Next add additional resources to the R processing toolbox
 
 -  To add other R resources click on **plugins>>resource
    sharing>>resource sharing**
 
-   |image18|
+   |image18orig|
 
 -  Click on **All Collections** on the left hand panel and click **QGIS
    R script collection (QGIS Official Repository)** then click
    **Install**
 
-   |image19|
+   |image19orig|
 
 A wider collection of scripts should now be present in the R-scripts
 collection. These are not required for MGCI but useful for R-Integration
@@ -189,7 +254,7 @@ Once the resource sharing plugin is installed some scripts should
 also be visible. They are grouped into several categories as in the
 screengrab below.
 
-|image30|
+|image30orig|
 
 For further information see the following sections of the QGIS user
 manual at
@@ -198,302 +263,301 @@ manual at
 
 -  https://docs.qgis.org/3.16/en/docs/user\_manual/processing/3rdParty.html#index-5
 
-Introduction
-------------
 
-This tutorial explains in detail how to implement the QGIS-MGCI :sub:`beta` workflow step-by-step using Costa Rica as an example. It uses the 90m resolution Digital ELevation Model (DEM) from Copernicus `(COP-DEM_GLO-90) <https://spacedata.copernicus.eu/web/cscda/dataset-details?articleId=394198>`_ to create the mountain descriptor layer and land cover datasets from the  `European Space Agency (ESA) Climate Change Initiative (CCI) land cover datasets <https://maps.elie.ucl.ac.be/CCI/viewer/>`_ to create the vegetation descriptor layer. If using QGIS-MGCI for official purposes, it is recommended that users use nationally appropriate data sources if available. 
+Defining analyses environments and land cover data selection
+------------------------------------------------------------
+Defining projections to be used for the analysis
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+With all map projections there will always be some distortions of area,
+shape, distance and direction and therefore careful selection of
+projection is important. There are no projections which fully preserve
+both area and distance so selection should ensure that any distortions
+are minimized. In selecting the projection, we therefore need to
+consider the spatial properties we need to preserve. i.e. area and
+distance.
 
-The tutorial outlines in detail the steps all the tools used for
-individual steps in the processing toolbox as well as providing a custom
-toolbox to group and run the steps to help speed up the analysis and
-allow for easier repeat processing.
+For the purposes of this analysis, in which area needs to be preserved,
+an equal area projection is required. Universal Transverse Mercator
+(UTM) is a good option for countries covering only one UTM zone as both
+distance and area are minimized within the zone but as distortion
+increases outside the UTM zone an alternative projection is required for
+countries covering more than one zone. Lambert Azimuthal Equal Area
+projection (with a central meridian and central latitude set to the
+centre of the country) is good solution for these countries as area
+calculations result in figures similar to those if data within each UTM
+zone were projected and calculated separately for their respective zone.
+Documentation for the Lambert Azimuthal Equal Area projection indicates
+that shapes, directions, angles, and distances are generally distorted,
+but area distortion is minimised. If countries wish to choose an
+alternative National projection, they should ensure that it has equal
+area properties.
 
-|imagetoolbox|
+Choice of Land Cover dataset 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-For each step or group of steps, the tutorial
-follow the structure of a detailed description of the exact steps that are running within the toolbox tool followed by the
-equivalent processing steps in the MGCI toolbox.
+In sub-indicator 15.4.2a, land cover is used to categorize land into
+green and non-green cover areas. As showed in Table 3, green cover
+includes areas covered by both natural vegetation and vegetation
+resulting from anthropic activity. Non-green areas include non-vegetated
+areas such as bare land, water, permanent ice/snow, urban areas and
+sparsely vegetated areas.
 
-Initial set-up
-------------------------------------------
+In addition, land cover is used to disaggregate the indicator into the
+10 land cover classes included in Table 2, thus increasing the
+indicator’s policy relevance.
 
-Users will need to download the MGCI_Beta_Toolbox and set of templates and style files from `the MGCI repository <https://github.com/dfguerrerom/wcmc-mgci>`_.
+**Table 3.** Classification of SEEA land cover classes into green and
+non-green cover.\ * *
 
-|imagerepository1|
++---------------------------------------------------------------------------+------------------------+
+| **SEEA land cover classes **                                              | **Green/Non-green **   |
++===========================================================================+========================+
+| Croplands                                                                 | Green                  |
++---------------------------------------------------------------------------+------------------------+
+| Grasslands                                                                | Green                  |
++---------------------------------------------------------------------------+------------------------+
+| Tree-covered areas                                                        | Green                  |
++---------------------------------------------------------------------------+------------------------+
+| Shrub-covered areas                                                       | Green                  |
++---------------------------------------------------------------------------+------------------------+
+| Shrubs and/or herbaceous vegetation, aquatic or regularly flooded\ * *    | Green                  |
++---------------------------------------------------------------------------+------------------------+
+| Artificial surfaces                                                       | Non-green              |
++---------------------------------------------------------------------------+------------------------+
+| Sparsely natural vegetated areas\ * *                                     | Non-green              |
++---------------------------------------------------------------------------+------------------------+
+| Terrestrial barren land                                                   | Non-green              |
++---------------------------------------------------------------------------+------------------------+
+| Permanent snow and glaciers                                               | Non-green              |
++---------------------------------------------------------------------------+------------------------+
+| Inland water bodies                                                       | Non-green              |
++---------------------------------------------------------------------------+------------------------+
 
-Once downloaded users need to navidate to the ****sources>>qgis>>QGIS_models folder*** and copy the the models and scripts in relevant QGIS folders. Guidance is provided below.
+Land cover maps developed by relevant national authorities will
+generally provide the most relevant data source to compute this
+indicator. To meet the technical quality requirements for calculating
+this indicator, these land cover maps should:
 
-|imagerepository2|
+-  Use a land cover legend defined using the Land Cover Meta Language
+   [ISO 19144-2:2012] standard, have adequate classes to populate the
+   transition matrix and be part of a hierarchical classification system
+   to promote easy harmonisation to the SEEA classification
 
+-  Be available during the 2000-2015 period and as close to the baseline
+   year (2015) as possible.
 
-The QGIS R-script ***MGCI_QGIS_rsa_v2.rsx*** for real surface Area will need to be placed in R scripts folder and the ***MGCI_v02beta*** folder placed in the Models folder.
-You can find the location in QGIS under **Settings>>Options**. The other style and template files can be stored in your own project working location.
+-  Be produced for the whole mountain area of the country and be
+   recorded at high spatial accuracy.
 
-|imagesettings|
+-  Have information on the classification accuracy for each land unit at
+   each epoch of the data.
 
-We suggest users create a folder for working in the following strucure
+Where existing national or regional land cover products do not meet the
+requirements described above, the global default dataset for this
+indicator should be used. However, given unique national context and
+degradation processes, it may be advantageous for a country to develop
+their own land cover classification, using remote sensing imagery.
 
-|imagerepository3|
+ Step-by-step instructions to calculate Sub-indicator 15.4.2a in QGIS 
+======================================================================
 
-Check that the ***MGCI_v02beta*** toolbox is visible in the ***processing toolbox***. It is from here that you will run the tools if you choose to use the MGCI toolbox rather than the manual steps.
+This section of the tutorial explains in detail how to calculate value
+estimates for sub-indicator 15.4.2a in QGIS, using Colombia as a case
+study. This section assumes that the user has already downloaded the
+global mountain map made available by FAO to compute this indicator and
+a land cover dataset meeting the requirements described in section 3.2.
 
-|toolbox_access|
+Define projection
+^^^^^^^^^^^^^^^^^
 
-Check that your R installation is correctly installed by running the real surface area script with the small test sample data included in the 
-MGCI repository download.
-
--  Add ***aoiDEM_testing_sample1.tif*** to you QGIS project
-   
-   |image25|
-
--  Double click on *** Tool C1. Generate Real Surface Area raster from DEM *** and save to a temportary output
-   
-   |image27|
-
--  Change the symbology of the output dataset to orange. 
-   
-   |image28|
-
-You should see that the real surface area output is one cell less than the input dataset as the RSA requires the surrounding pixels for it's calculations.
-
-|image29|
-
-***If the script runs and produces the outputs above your R integration with QGIS has been set up correctly. If the script fails or does not produce the output please revisit the sections in this guidance to check that you have installed R correctly and pointed your QGIS to the relvant folder.***
-
-Define projection and generate an AOI
--------------------------------------
-The first step is to define an Area of Interest (AOI) for the analysis. This should go beyond the country
-bundary as outlined in the **Defining analysis environments** section of the tutorial.
-
-**The instructions below show and explain the manaul steps without the MGCI toolbox:**
+The first step is to define an Area of Interest (AOI) for the analysis.
+This should go beyond the country boundary as outlined in
+the \ **Defining analysis environments** section of the tutorial.
 
 -  Add a country boundary layer to QGIS **Layer>>Add Layer>>Add Vector
    Layer**
 
-   |image32|
+|image1|
 
-   |image33|
-   |image34|
+|image2|
 
--  Click **Add** and **Close** to close the Data Source Manager: Vector
-   dialogue window
+|image3|
 
--  Right-click on the country boundary layer and click **Zoom to Layer**
+-  Click \ **Add** and **Close** to close the Data Source Manager:
+   Vector dialogue window
 
-*Note that for Costa Rica the country includes Cocos Island to the
-southwest of the Costa Rican mainland in the Pacific Ocean.*
+-  Right-click on the country boundary layer and click \ **Zoom to
+   Layer**
 
-In this example the boundary layer is in Geographic coordinate system
+In this example, the boundary layer is in Geographic coordinate system
 (EPSG 4326). At this stage we want to set-up the projection for the main
-parts of the MGCI analysis. We therefore want to set the project window
-to an equal area projection and physically project the country boundary
-to the same projection.
+parts of the analysis. We therefore want to set the project window to an
+equal area projection and physically project the country boundary to the
+same projection.
 
-Costa Rica covers more than one UTM Zone so in this example we will
-define a custom Lambert Azimuthal Equal Area projection with the central
-meridian set to -84 and the latitude of origin to 8.5.
+Colombia does have a `National Projection <https://epsg.io/9377>`__ that
+preserve both area and distance (see
+`here <https://origen.igac.gov.co/documentos.html>`__) and therefore
+could be used as a custom projection. In case a national projection that
+minimize area distorsion does not exist for a given country, it is
+recommended to define a custom Equal Area projection centered on the
+country area following the instructions described
+`here <https://mgci-docs.readthedocs.io/en/latest/qgis.html>`__ under
+‘’Define projection and generate AOI’’).
 
-Costa Rica does have a National Projection (see https://epsg.io/5367)
-which may be an alternative to the Lambert Azimuthal Equal Area.
+Once you have defined the projection to use in the analysis, change the
+projection set for the QGIS project to your chosen projection. In this
+example it is the national projection for Colombia.
 
-If you need to define a custom projection, follow the instructions in Box 1
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| .. rubric:: **BOX 1: Defining a custom projection**:                                                                                                                  |
-|    :name: box-1-defining-a-custom-projection                                                                                                                          |
-|                                                                                                                                                                       |
-| -  From the main menu click **settings>>custom projections**                                                                                                          |
-|                                                                                                                                                                       |
-| -  Click the **+** button to a new custom projection                                                                                                                  |
-|                                                                                                                                                                       |
-| -  Give the custom projection a **name** e.g. in this example **CRI\_LAEQ**                                                                                           |
-|                                                                                                                                                                       |
-| -  Copy the following projection information into the **parameters** box, changing the lat and lon                                                                    |
-|    highlighted in yellow to the centre lat and lon of your country.                                                                                                   |
-|                                                                                                                                                                       |
-|    PROJCRS["Custom\_Azimuthal\_Azimuthal\_Equal\_Area",                                                                                                               |
-|    BASEGEOGCRS["WGS 84",                                                                                                                                              |
-|    DATUM["World Geodetic System 1984",                                                                                                                                |
-|    ELLIPSOID["WGS 84",6378137,298.257223563,                                                                                                                          |
-|    LENGTHUNIT["metre",1],                                                                                                                                             |
-|    ID["EPSG",6326]]],                                                                                                                                                 |
-|    PRIMEM["Greenwich",0,                                                                                                                                              |
-|    ANGLEUNIT["Degree",0.0174532925199433]]],                                                                                                                          |
-|    CONVERSION["unnamed",                                                                                                                                              |
-|    METHOD["Lambert Azimuthal Equal Area",                                                                                                                             |
-|    ID["EPSG",9820]],                                                                                                                                                  |
-|    **PARAMETER["Latitude of natural origin",8.5**,                                                                                                                    |
-|    ANGLEUNIT["Degree",0.0174532925199433],                                                                                                                            |
-|    ID["EPSG",8801]],                                                                                                                                                  |
-|    **PARAMETER["Longitude of natural origin",-84**,                                                                                                                   |
-|    ANGLEUNIT["Degree",0.0174532925199433],                                                                                                                            |
-|    ID["EPSG",8802]],                                                                                                                                                  |
-|    PARAMETER["False easting",0,                                                                                                                                       |
-|    LENGTHUNIT["metre",1],                                                                                                                                             |
-|    ID["EPSG",8806]],                                                                                                                                                  |
-|    PARAMETER["False northing",0,                                                                                                                                      |
-|    LENGTHUNIT["metre",1],                                                                                                                                             |
-|    ID["EPSG",8807]]],                                                                                                                                                 |
-|    CS[Cartesian,2],                                                                                                                                                   |
-|    AXIS["(E)",east,                                                                                                                                                   |
-|    ORDER[1],                                                                                                                                                          |
-|    LENGTHUNIT["metre",1,                                                                                                                                              |
-|    ID["EPSG",9001]]],                                                                                                                                                 |
-|    AXIS["(N)",north,                                                                                                                                                  |
-|    ORDER[2],                                                                                                                                                          |
-|    LENGTHUNIT["metre",1,                                                                                                                                              |
-|    ID["EPSG",9001]]]]                                                                                                                                                 |
-|                                                                                                                                                                       |
-| -  Click the **Validate** button to check that the parameters are valid and then **OK** to save the custom projection                                                 |
-|                                                                                                                                                                       |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+ 
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| .. rubric:: **BOX 1: continued**:                                                                                                                                     |
-|    :name: box-1-continued                                                                                                                                             |
-|                                                                                                                                                                       |
-| -  see example below                                                                                                                                                  |
-|                                                                                                                                                                       |
-|    |image35|                                                                                                                                                          |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+ 
-
-Next change the projection set for the QGIS project to your chosen equal area
-projection. In this example it is the custom projection that was defined
-in Box 1.
-
--  Click on the project projection **EPSG: 4326** in the bottom right
+-  Click on the project projection \ **EPSG: 4326** in the bottom right
    hand corner of your QGIS project
 
-   |image36|
+|image4|
 
 -  In the Project Properties dialogue window search for the chosen
-   projection in the **Filter** tab
+   projection in the \ **Filter** tab, in this case the projection EPSG
+   9377
 
-   |image37|
+|image5|
 
--  Once located click on the equal area projection to set your QGIS
-   project to be displayed in the chosen projection. E.g. in this
-   example **CRI\_LEA**
+-  Once located click on the chosen projection to set your QGIS project
+   to be displayed in the chosen projection.
 
--  Click **Apply** and **OK**
+-  Click \ **Apply** and **OK **
 
-   |image38|
+See that the project now displays the custom projection in the bottom
+right hand corner.
 
-   See that the project now displays the custom projection in the bottom
-   right hand corner.
+|image6|
 
 Next use the reproject tool to project the country boundary layer to the
-equal area projection
+9377 projection
 
--  In the processing toolbox search for the **Reproject** tool
+-  In the processing toolbox search for the \ **Reproject** tool
 
-   |image39|
-   
--  Set the Input layer to be the **country boundary**
+|image7|
 
--  Set the Target CRS to be the **Project CRS** (i.e. to the equal area
+-  Set the Input layer to be the \ **country boundary**
+
+-  Set the Target CRS to be the \ **Project CRS** (i.e. the EPSG 9377
    projection)
 
 -  Set the output name to be the same as the input with a suffix to
-   indicate the projection e.g. in this example
-   **BND\_CTY\_CRI\_ LAEA**
-   
-   |image40|
+   indicate the projection e.g. in this example \ **Colombia\_9377. **
 
-Now that the country boundary is in the chosen equal area projection, we
-can generate a 10km buffer which we will use as an area of
-interest (AOI). As indicated previously, the AOI needs to be larger than
-the country boundary to avoid errors during the processing. A distance
-of 10km around the country boundary is added to ensure the AOI is large
-enough to accommodate the 7km focal range function used in the mountain
-descriptor layer generation.
+|image8|
 
--  In the processing toolbox search for the **buffer tool**
+Now that the country boundary is in the chosen projection, we can
+generate the mountains and land cover maps for Colombia.
 
-   |imagebuffer|
-   
--  Set the buffer **Distance** to **10**
+Generate the mountain map for the chosen country 
+------------------------------------------------
 
--  Set the buffer **Units** to **Kilometres**
+The development of mountain map consists in clipping and reprojecting
+the SDG 15.4.2. Global Mountain Descriptor Map developed by FAO to area
+of interest, in this case, the national border of Colombia.
 
--  Set the **endcap style** to **round** and the **join style** to
-   **round**
+`Clip and project global <https://mgci-docs.readthedocs.io/en/latest/qgis.html#id23>`__ mountain map
+----------------------------------------------------------------------------------------------------
 
--  Save the Buffered output to the same name as the input with the
-   suffix **\_BUF10**
-   
-   |image42|
+From the QGIS main toolbar click on \ **Layer>>Add Layer>>Add Raster
+Layer** to add the global mountain map file to your QGIS session.
 
--  Click **Run** to run the tool.
+|image9|
 
--  If you change the symbology to semi-transparent symbol and draw it over
-   the original country boundary you should be able to see the additional
-   buffered area.
+|image10|
 
-   |image43|
+-  Click \ **Add**
 
-The output will be used as the Area of Interest (AOI) when preparing
-the various layers for the MGCI analysis.
+|image11|
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| .. rubric:: **MGCI Toolbox A1. Generic: Define projection and generate an AOI**:                                                                                      |
-|    :name: toolbox_A1                                                                                                                                                  |
-|                                                                                                                                                                       |
-| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
-|                                                                                                                                                                       |
-| Before running the tool users do need to create custom projection in their QGIS project                                                                               |
-| as indicated in Box 1 outlined in the section above.                                                                                                                  |
-|                                                                                                                                                                       |
-| In the **custom MGCI toolbox** these step are run by the tool below.                                                                                                  |
-|                                                                                                                                                                       |
-| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
-|                                                                                                                                                                       |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+-  In the processing toolbox search for \ **Clip**
 
-|imageA1|
+-  Double click on the \ **Clip raster by mask layer** under the GDAL
+   toolset
 
-|imageA1_w|   
+|image12|
 
-Preparation of Vegetation descriptor layer
-------------------------------------------
+-  Select the \ **global mountain descriptor map** for the \ **Input
+   Layer**
 
-The development of vegetation descriptor layer starts with either a
-raster or vector landuse landcover (LULC) dataset. Follow either section
-5.2.1 if your LULC dataset is a raster data or 5.2.2 if your LULC
-dataset is a vector.
+-  Select the \ **national border of the country** for the \ **Mask
+   Layer**
 
-Steps when using a raster dataset 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-  Select the \ **Project CRS** for the \ **Target CRS**
 
-Clip and project LULC raster (FOR REGIONAL/GLOBAL DATASETS ONLY)
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+-  Tick \ **Match the extent of the clipped raster to the extent of the
+   mask layer**
+
+-  Tick \ **set the output file resolution**
+
+-  Type the \ **X and Y resolution in metres** (in this case 832)
+
+-  Tick \ **Use Input Layer Data Type**
+
+-  Set the output \ **Clipped (mask)** e.g. to Mountains\_Colombia.tif
+
+|image13|
+
+|image14|
+
+-  **Click Run** to run the tool
+
+The new clipped mountain descriptor dataset in the national projection
+should be added to the map canvas\ **.**
+
+|image15|
+
+-  Right click on the clipped mountain dataset (i.e. in this example the
+   Mountains\_Colombia layer) and click \ **properties>>Symbology**
+
+-  Click on **Style >> Load Style, and select the**
+   SDG1542\_Mntn\_BioclimaticBelts.qml included in the Global Descriptor
+   Dataset Folder
+
+|image16|
+
+The layer should now show all the mountain area for Colombia classified
+by Biolimatic belts (where 1 is ‘’Nival”, 2 is “Alpine”, 3 is ‘’Montane”
+and 4 is “Remaining Mountain Area”.
+
+|image17|
+
+ Generate the vegetation descriptor layer
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 To demonstrate the steps for processing a raster LULC dataset we will
-use the Global ESA CCI LULC dataset. This dataset is provided in netcdf
-(.nc) format. Similarly to Geotiffs, these can be added directly to
-QGIS.
+use the Global ESA CCI LULC dataset. If you are using a national
+dataset, you can skip the following step.
 
--  From the QGIS main toolbar click on **Layer>>Add Layer>>Add Raster
-   Layer** to add the LULC file to your QGIS session.
+`Clip and project LULC raster <https://mgci-docs.readthedocs.io/en/latest/qgis.html#id23>`__
+--------------------------------------------------------------------------------------------
 
-   |image44|
+The ESA CCI LULC dataset is provided in netcdf (.nc) format. Similarly
+to Geotiffs, these can be added directly to QGIS.
 
-   |image45|
+-  From the QGIS main toolbar click on Layer>>Add Layer>>Add Raster
+   Layer to add the LULC file to your QGIS session.
 
--  Click **Add**
+|image9|
+
+|image18|
+
+-  Click \ **Add**
 
 For most formats this will add the LULC dataset to the QGIS session. The
 Global ESA CCI LULC netcdf file however contains 7 different layers
-(similar to bands in an image) and users need to select the
-**lccs\_class** layer.
+(similar to bands in an image) and users need to select
+the lccs\_class layer.
 
--  Click **lccs\_class** to select the LULC layer
+-  Click \ **lccs\_class** to select the LULC layer
 
--  Click **OK** and the LULC layer will be added to your QGIS project
+-  Click \ **OK** and the LULC layer will be added to your QGIS project
 
--  Click **Close** to close the Data Source Manager: Raster dialogue
+-  Click \ **Close** to close the Data Source Manager: Raster dialogue
    window
 
-   |image46|
+|image19|
 
 Next check that the LULC layer has correct projection information and
 appears in the correct place in the QGIS project.
@@ -503,2422 +567,1488 @@ appears in the correct place in the QGIS project.
    layer may be lacking projection information or have the wrong
    projection information.
 
-   |image47|
+|image20|
 
-   QGIS will display a **?** next to the layer if projection information
-   is missing.
+-  QGIS will display a ‘’\ **?’’** next to the layer if projection
+   information is missing.
 
--  If projection information is missing define the projection using the
-   **Define Shapefile projection** tool in the processing toolbox (this
-   will permanently attach projection information to the layer)
+-  If projection information is missing define the projection using
+   the \ **Define Shapefile projection** tool in the processing toolbox
+   (this will permanently attach projection information to the layer)
    alternatively you can just define it within the current QGIS project
    by right clicking on the layer.
 
-   In this example we know the LULC is in Geographic coordinate system
-   so we can assign coordinate system EPSG 4326 to the layer
+In this example we know the LULC is in Geographic coordinate system so
+we can assign coordinate system EPSG 4326 to the layer
 
-   |image48|
+|image21|
 
-   This layer should now draw correctly on the country boundary.
+-  This layer should now draw correctly on the country boundary.
 
-   If the LULC dataset is a regional or global extent it will need
-   projecting and clipping to the AOI.
+If the LULC dataset is a regional or global extent it will need
+projecting and clipping to the AOI.
 
-   In this example we are using a global dataset so we will need to
-   follow **step (a) only** to clip the raster and save it in the equal
-   area projection. For National datasets already clipped to the country
-   boundary follow **step (b) only.**
+In this example we are using a global dataset so we will need to clip
+the raster and save it in the equal area projection.
 
--  In the processing toolbox search for **Clip**
+-  In the processing toolbox search for \ **Clip**
 
--  Double click on the **Clip raster by mask layer** under the GDAL
+-  Double click on the \ **Clip raster by mask layer** under the GDAL
    toolset
 
-   |image49|
+|image12|
 
--  Select the **LULC dataset** for the **Input Layer**
+-  Select the **LULC dataset** for the input layer
 
--  Select the **buffered bounding box layer** for the **Mask Layer**
+-  Select the \ **national border of the country** for the \ **Mask
+   Layer**
 
--  Select the **Project CRS** for the **Target CRS**
+-  Select the \ **Project CRS** for the \ **Target CRS**
 
--  Tick **Match the extent of the clipped raster to the extent of the
+-  Tick \ **Match the extent of the clipped raster to the extent of the
    mask layer**
 
--  Tick **set the output file resolution**
+-  Tick \ **set the output file resolution**
 
--  Type the **X and Y resolution in metres** (in this case the
+-  Type the \ **X and Y resolution in metres** (in this case the
    resolution of the LULC dataset is 300)
 
--  Tick **Use Input Layer Data Type**
+-  Tick \ **Use Input Layer Data Type**
 
--  Set the output **Clipped (mask)** e.g. to LULC\_clip\_LAEA\_BUF10.tif
-
+-  Set the output \ **Clipped (mask)** e.g. to LULC\_2020\_Colombia.tif
    (see screengrab below)
 
-   |image50|
-   
-   |image51|
+|image22|
 
--  **Click Run** to run the tool
+|image23|
+
+-  **Click Run** to run the tool
 
 The new clipped LULC dataset in the equal area projection should be
-added should be added to the map canvas\ **.**
+added should be added to the map canvas\ **.** LULC\_2020\_Colombia
+layer) and click \ **properties>>Symbology**
 
--  Right click on the clipped LULC dataset (i.e. in this example the
-   LULC\_clip\_LAEA\_BUF10 layer) and click **properties>>Symbology**
+|image24|
 
-   |image52|
+-  Change the render type to \ **Palleted/Unique Values**
 
--  Change the render type to **Palleted/Unique Values**
-
--  Click **Classify** and then **OK**
-
-   |image53|
+-  Click \ **Classify** and then \ **OK**
 
 You should now see the unique LULC classes present within the AOI for
 the country.
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| .. rubric:: **MGCI Toolbox A2a. VegetationDescriptor: Clip and project LULC raster (FOR REGIONAL/GLOBAL DATASETS)**:                                                  |
-|    :name: toolbox_A2a                                                                                                                                                 |
-|                                                                                                                                                                       |
-| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
-|                                                                                                                                                                       |
-| Before running the tool users need to check that they know the projection of their LUUC dataset                                                                       |
-|                                                                                                                                                                       |
-| and it is faling in the correct place geographically, as outlined in the section above.                                                                               |
-|                                                                                                                                                                       |
-|                                                                                                                                                                       |
-| In the **custom MGCI toolbox** these step are run by the tool below.                                                                                                  |
-|                                                                                                                                                                       |
-| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
-|                                                                                                                                                                       |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|image25|
 
-|imageA2a| 
+Reclassify to UN-SEEA land cover classes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|imageA2a_w|   
-
-Project LULC raster (FOR NATIONAL RASTER DATASETS ONLY):
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
--  search for **project** in the processing toolbox.
-
-   |image54|
-
--  Double click on the GDAL tool **Warp (reproject)**
-
--  Select the **National** **LULC dataset** for the **Input Layer**
-
--  Select the **Project CRS** for the **Target CRS**
-
--  Set the resampling method to **Nearest Neighbour**
-
--  Set the output resolution (same as the input or the equivalent to the
-   input in metres)
-
--  Set the output **Reprojected** layer name e.g. to
-   **National\_LULC\_\_LAEA.tif**
-
--  Click **Run** to run the tool
-
-   |image55|
-
-The new projected LULC dataset in the equal area projection should be
-added should be added to the map canvas\ **.**
-
--  Right click on the projected LULC dataset and click
-   **properties>>Symbology**
-
--  Change the render type to **Palleted/Unique Values**
-
--  Click **Classify** and then **OK**
-  
-   |image56|
-  
-   |image57|
-
-The layer should now show all the National LULC classes for Costa Rica.
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| .. rubric:: **MGCI Toolbox A2b. VegetationDescriptor: Project LULC raster (FOR NATIONAL RASTER DATASETS)**:                                                           |
-|    :name: toolbox_A2b                                                                                                                                                 |
-|                                                                                                                                                                       |
-| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
-|                                                                                                                                                                       |
-| Before running the tool users need to check that they know the projection of their LUUC dataset                                                                       |
-|                                                                                                                                                                       |
-| and it is faling in the correct place geographically as outlined in the section above.                                                                                |
-|                                                                                                                                                                       |
-|                                                                                                                                                                       |
-| In the **custom MGCI toolbox** these step are run by the tool below.                                                                                                  |
-|                                                                                                                                                                       |
-| The workflow steps can be viewed QGIS Model Designer.                                                                                                                 |
-|                                                                                                                                                                       |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-|imageA2b|
-
-|imageA2b_w|
-
-Steps when using a vector dataset 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Project Vector LULC and convert to raster (FOR NATIONAL VECTOR DATASETS ONLY):
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-When using a vector LULC dataset the data will also need to be projected
-to an equal area projection.
-
--  If the dataset is not already in an equal area projection, search for **reproject** in the processing toolbox
-   
-   |image58| 
-
--  Select the **National** **LULC vector dataset** for the **Input
-   Layer**
-
--  Select the **Project CRS** for the **Target CRS**
-
--  Set the **reprojected** output layer e.g. **LULC_vector_LAEA.shp**
-   
-   |image59|
-   
--  Click **Run** to run the tool.
-
-The next step is to rasterize the LULC data. When converting it is
-important to choose an output resolution that is appropriate for the
-scale of the vector dataset. (see Box 2).
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| .. rubric:: **BOX 2 Conversion between nominal scale and resolution**:                                                                                                |
-|    :name: box-2-conversion-between-nominal-scale-and-resolution                                                                                                       |
-|                                                                                                                                                                       |
-| -  The scale of a vector dataset is usually expressed in a similar way to paper maps, i.e. in a ratio to show the amount of reduction from the real world             |
-|    e.g.  1:50,000. A country’s vector LULC map will have been created a particular scale. determined by the Minimum Mapping Unit. i.e. the size of the smallest       |
-|    feature. A nominal scale is will have been assigned to the dataset to reflect the scale at which the data were collected and mapped. Conversion to raster requires |
-|    this scale to be converted to a resolution, i.e. an appropriate pixel size for the scale of the data.                                                              |
-|                                                                                                                                                                       |
-|    To calculate map scale there are two parameters:  ground resolution and screen resolution.                                                                         |
-|                                                                                                                                                                       |
-|    .. math:: scale = 1: (resolution * PPI / 0.0254)  or    resolution = scale * 0.0254/PPI                                                                            |
-|                                                                                                                                                                       |
-|    **Where**   :                                                                                                                                                      |
-|    **resolution** =  ground resolution (the size in (m) that a pixel represents.                                                                                      |
-|    **PPI** =  the screen resolution (pixels number that every inch contains on the screen (default 96dpi).                                                            |
-|    **0.0254** = (m/inch),  the unit conversion between meter and inches.                                                                                              |
-|    **scale** = nominal scale of vector dataset                                                                                                                        |
-|                                                                                                                                                                       |
-|    some examples are provided in the table below:                                                                                                                     |
-|                                                                                                                                                                       |
-|    |imagescale_table|                                                                                                                                                 |
-|                                                                                                                                                                       |
-|    (source: https://enonline.supermap.com/iExpress9D/Appendix/scale.htm)                                                                                              |
-|                                                                                                                                                                       |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+ 
-
-
-Once the resolution to convert the vector dataset to has been
-determined the vector dataset can be converted to Raster.
-
--  In the processing toolbox search for **Rasterize.**
-
-   |imagerasterize|
-
--  Double click on the GDAL **Rasterize (vector to raster)** tool
-
--  Select the **National** **LULC vector dataset in equal area
-   projection** for the **Input Layer**
-
--  Select the **field containing LULC classes** for the **field to use
-   for a burn-in value**
-
--  Set the **output raster size units** as **Georeferenced units**
-
--  Set both the **Width/ Horizontal resolution and Width/ vertical
-   resolution** to the resolution determined by previous step using the
-   formula to convert from the nominal
-
-   vector scale (see BOX 2)
-
--  Set the **output extent** to **Calculate by Layer** and selecting the
-   same dataset used for the Input Layer
-
--  Set the **rasterized** output layer e.g.
-   **LULC\_LAEA\_fromvector.tif**
-   
-   |image61| 
-
--  Click **Run** to run the tool
-
-The new rasterised LULC dataset in the equal area projection should be
-added should be added to the map canvas\ **.**
-
--  Right click on the projected LULC dataset and click
-   **properties>>Symbology**
-
--  Change the render type to **Palleted/Unique Values**
-
--  Click **Classify** and then **OK**
-
-   |image62|
-   
-   |image63|
-
-The layer should now show all the National LULC classes for Costa Rica.
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| .. rubric:: **MGCI Toolbox A2c. VegetationDescriptor: Project vector LULC and convert to raster (FOR NATIONAL RASTER DATASETS)**:                                     |
-|    :name: toolbox_A2c                                                                                                                                                 |
-| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
-|                                                                                                                                                                       |
-| Before running the tool users need to check that they know the projection of their LUUC dataset and it is faling in the correct place geographically                  |
-| as outlined in the section above.                                                                                                                                     |
-|                                                                                                                                                                       |
-| In the **custom MGCI toolbox** these step are run by the tool below.                                                                                                  |
-|                                                                                                                                                                       |
-| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
-|                                                                                                                                                                       |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-|imageA2c|  
-
-|imageA2c_w|   
-
-Reclassify to IPCC landcover types
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The next step is to reclassify the LULC map prepared in 5.2.1, 5.2.2 or
-5.2.3 into the 6 MGCI vegetation descriptor LULC types.
+The next step is to reclassify the LULC map into the 10 UN-SEEA classes
+defined for SDG Indicator 15.4.2
 
 QGIS provides several tools for reclassification. The easiest one to use
-in this instance is the **r.reclass** tool in the GRASS toolset as it
+in this instance is the \ **r.reclass** tool in the GRASS toolset as it
 allows the upload of a simple crosswalk textfile containing the input
-LULC types on the left and the IPCC reclass values on the right.
+LULC types on the left and the UN-SEEA reclass values on the right.
 
 -  Create a text file to crosswalk landuse/landcover (LULC) types from
-   the ESA CII or National landcover dataset to the 6 IPCC landcover
+   the ESA CCI or National landcover dataset to the 10 UN-SEEA landcover
    classes
 
-   |image64|
+|image26|
 
--  Search for **reclass** in the processing toolbox
-   
-   |image65|
+-  Search for \ **reclass** in the processing toolbox
 
--  Double click on **r.reclass**
+|image27|
 
--  Select the LULC output(from step 5.2.1, 5.2.2 or 5.2.3) as the
-   **input raster layer**
+-  Double click on \ **r.reclass**
 
--  Set the **GRASS GIS region extent** to be the same as the input layer
+-  Select the LULC output as the \ **input raster layer**
 
--  Set the **Reclassified** output e.g. VegetationDescriptor\_LAEA.tif
+-  Set the \ **GRASS GIS region extent** to be the same as the input
+   layer
 
-   |image66|
+-  Set the \ **Reclassified** output e.g.
+   VegetationDescriptor\_Colombia.tif
 
--  Click **Run** to run the tool
+|image28|
 
-The new **VegetationDescriptor** layer is added to the map.
+-  Click \ **Run** to run the tool. The
+   new \ **VegetationDescriptor** layer is added to the map.
 
 Although the reclassification only had 6 output classes the symbology
 initially show values 0-255. This is a QGIS visualisation only and you
-can see that the actual layer only has 6 values.
+can see that the actual layer only has 10 values.
 
--  Right click on the layer **properties>>>Symbology**
+-  Right click on the layer \ **properties>>>Symbology**
 
--  Change the Render type to **Palleted/Unique values** and click
-   **Classify** to see only the classes present in the raster (i.e. the
-   1-6 Vegetation descriptor classes).
+-  Change the Render type to \ **Palleted/Unique values** and
+   click \ **Classify** to see only the classes present in the raster
+   (i.e. the 1-10 Vegetation descriptor classes) and rename the classes
+   following the UN-SEEA terminology. Give each class a distinctive and
+   identifiable colour.
 
--  Load the VegetationDescriptor.qml file for quickly assigning the
-   colours and labels.
-
-   |image67|
-
-   |image68|
-   
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| .. rubric:: **MGCI Toolbox A3. VegetationDescriptor: Generate Vegetation Descriptor Layer**:                                                                         |
-|    :name: toolbox_A3                                                                                                                                                  |
-| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
-| Before running the tool users need to check that they know the projection of their LUUC dataset and it is faling in the correct place geographically.                 |
-| as outlined in the section above.                                                                                                                                     |
-|                                                                                                                                                                       |
-| Before running the tool users need to check that they know the projection of their LUUC dataset and it is faling in the correct place geographically                  |
-| as outlined in the section above.                                                                                                                                     |
-|                                                                                                                                                                       |
-| In the **custom MGCI toolbox** these step are run by the tool below.                                                                                                  |
-|                                                                                                                                                                       |
-| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
-|                                                                                                                                                                       |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-|imageA3|
-
-|imageA3_w| 
-
-Preparation of Mountain descriptor 
-----------------------------------
-
-Users should have read the ***Choice of DEM and data access*** section of
-***defining analysis environements*** and selected a DEM
-for use in the analysis before starting this section as the generation
-of the mountain descriptor layer requires a DEM as the input source.
-
-In this tutorial the Copernicus 90m source DEM has been chosen as an
-example.
-
-Merging DEM tiles into a single DEM 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The DEM tiles covering the full extent of Costa Rica have been download
-from Copernicus using their AWS client. (Instructions for download of
-Copernicus data can be found in the Annexes).
-
--  From the QGIS main toolbar click on **Layer>>Add Layer>>Add Raster
-   Layer** to add the DEM tiles to your QGIS session.
-
-   |image69|
-
--  Click **Open** and then **Add.** The DEM tiles will be added to the QGIS project
-
-   The next step is to merge the DEM tiles into a single raster.
-   
--  Search for **Merge** in the processing toolbox window
-   
-   |image70|
-   
--  Double click the **GDAL Merge tool**.
-   
--  For the Input layers **select the DEM tiles** covering your area of
-   interest
-   
-   |image71|
-
--  Tick the DEM tiles to merge and Click **OK** to make the selection
-   and return to main **Merge Dialog window**
-
--  Set the **output data type** to Float32 (same as the input DEM tiles)
-
--  Set the **Merged** output name e.g. C:/MGCI\_tutorial/
-   DEM\_copernicus\_merge.tif
-   
-   |image72|
-   
-   |image73|
-
--  Click **Run** to run the tool
-
-The merged DEM is added to the QGIS project.
-
-|image74|
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| .. rubric:: **MGCI Toolbox B1. MountainDescriptor: Merging DEM tiles into a single DEM**:                                                                             |
-|    :name: toolbox_B1                                                                                                                                                  |
-|                                                                                                                                                                       |
-| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
-|                                                                                                                                                                       |
-| Before running the tool users need to check that they know the projection of their DEM dataset and it is faling in the correct place geographically                   |
-|                                                                                                                                                                       |
-| as outlined in the section above.                                                                                                                                     |
-|                                                                                                                                                                       |
-| In the **custom MGCI toolbox** these step are run by the tool below.                                                                                                  |
-|                                                                                                                                                                       |
-| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
-|                                                                                                                                                                       |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-|imageB1|
-
-|imageB1_w|
-
-Clip and project merged DEM
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The DEM tiles are likely to cover a much wider area than the country
-being analysed therefore it is important to crop the extent to minimise
-processing time. As indicated previously,  the country boundary is
-not used to clip the dataset directly as the various calculations during
-the generation of the mountain descriptor layer require neighbouring
-pixels to be analyses therefore the buffered AOI which you have already generated 
-should be used.
-
--  search for **project** in the processing toolbox.
-
-   |image54|
-
--  Double click on the GDAL tool **Warp (reproject)**
-
--  Select the **merged DEM dataset** for the **Input Layer**
-
--  Select the **Project CRS** for the **Target CRS**
-
--  Set the resampling method to **bilinear**
-
--  Set NoData value for output bands to **-9999**
-
--  Set the output **Reprojected** layer name e.g. to
-   **DEM_MERGE_LAEA.tif**
-
--  Click **Run** to run the tool
-   
-   |image75|
-
-The new DEM dataset in the equal area projection should be added
-should be added to the map canvas\ **.**
-
-   |image74a|
-   
--  search for **mask** in the processing toolbox.  
-
--  Double click on the **r.mask.vect** under the GRASS
-   toolset
-
--  Select the **AOI buffered country boundary** for the **Name of vector dataset to use as mask**
-
--  Select the **Merged DEM in equal area projection r** for the **Name of raster map to which apply the mask**
-
--  Set the  the **GRASS GIS 7 Region Extent**  to the **AOI buffered country boundary**
-
--  Set the output **Masked** e.g. to
-   DEM_merge_LAEA_AOI.tif
-   
--  Click **Run** to run the tool
-
-   |image74b|
-   
-The new clipped DEM dataset in the equal area projection should be added
-should be added to the map canvas\ **.**
-    
-|image76|
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| .. rubric:: **MGCI Toolbox B2. MountainDescriptor: Clip and project merged DEM to EQUAL AREA PROJECTION**:                                                            |
-|    :name: toolbox_B2                                                                                                                                                  |
-|                                                                                                                                                                       |
-| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
-|                                                                                                                                                                       |
-| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
-|                                                                                                                                                                       |
-| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
-|                                                                                                                                                                       |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-|imageB2| 
-
-|imageB2_w| 
-
-Project merged DEM to Equidistant projection (and generate AOI with tiled approach) 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-In this section the projection used for the slope and 7km Local Elevation Range
-calculation will differ as it is important to use an equidistant
-projection to reduce errors, particularly in slope calculation. An overview of slope
-calculation methods is provided in the Dendining analysis environments section 
-of the tutorial. 
-
-IF your country falls within **a single UTM Zone only** ***AND*** **you
-have used the UTM projection for the previous steps**, or **if the
-projection you are using has equidistant properties**, slope can be
-generated in the same projection as the rest of the analysis, otherwise
-please follow instruction in **BOX 3** for creating a custom equidistant
-projection before following the next steps.
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| .. rubric:: **BOX 3: Defining a custom Azimuthal Equidistant projection**:                                                                                            |
-|    :name: box-3-defining-a-custom-azimuthal-equidistant-projection                                                                                                    |
-|                                                                                                                                                                       |
-| -  From the main menu click **settings>>custom projections**                                                                                                          |
-|                                                                                                                                                                       |
-| -  Click the **+** button to a new custom projection                                                                                                                  |
-|                                                                                                                                                                       |
-| -  Give the custom projection a **name** e.g. in this example **CRI\_AZ\_EQUI**                                                                                       |
-|                                                                                                                                                                       |
-| -  Copy the following projection information into the **parameters** box, changing the lat and lon highlighted in yellow to the centre lat and lon of your country.   |
-|                                                                                                                                                                       |
-|    PROJCRS["Custom\_Azimuthal\_Equidistant",                                                                                                                          |
-|    BASEGEOGCRS["WGS 84",                                                                                                                                              |
-|    DATUM["World Geodetic System 1984",                                                                                                                                |
-|    ELLIPSOID["WGS 84",6378137,298.257223563,                                                                                                                          |
-|    LENGTHUNIT["metre",1],                                                                                                                                             |
-|    ID["EPSG",7030]]],                                                                                                                                                 |
-|    PRIMEM["Greenwich",0,                                                                                                                                              |
-|    ANGLEUNIT["Degree",0.0174532925199433]]],                                                                                                                          |
-|    CONVERSION["unnamed",                                                                                                                                              |
-|    METHOD["Modified Azimuthal Equidistant",                                                                                                                           |
-|    ID["EPSG",9832]],                                                                                                                                                  |
-|    **PARAMETER["Latitude of natural origin",8.5**,                                                                                                                    |
-|    ANGLEUNIT["Degree",0.0174532925199433],                                                                                                                            |
-|    ID["EPSG",8801]],                                                                                                                                                  |
-|    **PARAMETER["Longitude of natural origin",-84**,                                                                                                                   |
-|    ANGLEUNIT["Degree",0.0174532925199433],                                                                                                                            |
-|    ID["EPSG",8802]],                                                                                                                                                  |
-|    PARAMETER["False easting",0,                                                                                                                                       |
-|    LENGTHUNIT["metre",1],                                                                                                                                             |
-|    ID["EPSG",8806]],                                                                                                                                                  |
-|    PARAMETER["False northing",0,                                                                                                                                      |
-|    LENGTHUNIT["metre",1],                                                                                                                                             |
-|    ID["EPSG",8807]]],                                                                                                                                                 |
-|    CS[Cartesian,2],                                                                                                                                                   |
-|    AXIS["(E)",east,                                                                                                                                                   |
-|    ORDER[1],                                                                                                                                                          |
-|    LENGTHUNIT["metre",1,                                                                                                                                              |
-|    ID["EPSG",9001]]],                                                                                                                                                 |
-|    AXIS["(N)",north,                                                                                                                                                  |
-|    ORDER[2],                                                                                                                                                          |
-|    LENGTHUNIT["metre",1,                                                                                                                                              |
-|    ID["EPSG",9001]]]]                                                                                                                                                 |
-|                                                                                                                                                                       |
-| -  Click the **Validate** button to check that the parameters are valid and then **OK** to save the custom projection                                                 |
-|                                                                                                                                                                       |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| .. rubric:: **BOX 3: continued**:                                                                                                                                     |
-|    :name: box-3-continued                                                                                                                                             |
-|                                                                                                                                                                       |
-| -  see example below                                                                                                                                                  |
-|                                                                                                                                                                       |
-|    |image78|                                                                                                                                                          |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+ 
-
-This slope and local elevation range generation can take a long time to run so we will 
-generate and AOI split into a chosen number of tiles so uses can choose to run these steps iteratively.
-
-First we need to project the merged DEM to equidistant projection.
-
--  In the **processing toolbox** search for **reproject** 
-
-   |image54|                                                                                                                                                                  
-    
-- Double click on the **Warp (reproject)** tool under the **GDAL toolset** 
-- Set the Input layer to be the **merged DEM in geographic coordinate system**
-    *Note: it is important not to use the one that has already been projected as this can introduce errors into the DEM*
-- Set the Source CRS to be **EPSG: 4326 (Geographic)**
-- Set the Target CRS to be **your custom equidistant projection** e.g. CRI\_AZ\_EQUI
-- Set the resampling method to **bilinear**
-- Set the output file resolution to the resolution of the DEM in meters e.g. 90m in this example
-- Set the Reprojected output to e.g. **DEM_merge_EQUI.tif**
-
-  |image79|
-  
-- Click **Run** to run the tool
- 
-The reprojected layer is added to the QGIS project. 
-
-|reprojequi2|
-
-Next we will extract the extent from the merged DEM in equidistant projection. This generates a polygon layer 
-which aligns with the outer cells of the DEM. It also provides a height and width field in the attribute table of the layer
-which we can use to split the dataset into a selected number of tiles for iterative processing
-
--  In the **processing toolbox** search for **Extract layer** 
-
-   |extract_layer_extent|
-   
--  Set the **Input Layer ** to **the merged DEM in equidistant projection**
-   
-   |extract_layer_extent2|
-   
-- Open the attribute table of the extent layer
-
-  |extent_attr|
-
-- add and calculate an attribute for tile_width by dividing the width field by your number of chosen tiles e.g. in this example we have chosen 6 tiles.
-  
-  |extent_attr_width|
-  
-- add and calculate an attribute for tile_width by dividing the height field by your number of chosen tiles e.g. in this example we have chosen 6 tiles.
-  
-  |extent_attr_height|
-
--  In the **processing toolbox** search for **Create grid** 
-
-   |creategrid|  
-
--  Set the **Grid Type** to **Rectangle (polygon)**
--  Set the **Grid extent** to **the merged DEM in equidistant projection**
--  Set the **Grid extent** to **the merged DEM in equidistant projection**
--  Copy the tile_width number from the step above to the **Horizontal spacing** and the tile height to the **Vertical spacing**
--  Copy the cellsize to the **Horizontal overlay** and **Vertical overlay**. 
-
-This will mean that the tiles will overlap by one cell and ensure there are no gaps when the tiles are merged back together
-(as the internal tile lines will not match a grid cell line)
-
--  Set the **Grid CRS** to **your chosen equidistant projection**
-
-   |creategrid2|  
-   
--  Click **Run** to run the tool.
-
-The vector grid is added to the QGIS project. 
-
-|creategrid3|  
-
-Next, use the reproject tool to project the country boundary layer to the
-equidistant projection
-
--  In the processing toolbox search for the **Reproject** tool
-
-   |image54|
-   
--  Set the Input layer to be the **country boundary**
-
--  Set the Target CRS to be the **your chosen equidistant CRS** 
-
--  Set the output name to be the same as the input with a suffix to
-   indicate the projection e.g. in this example
-   **BND_CTY_CRI_EQUI**
-   
-   |reprojequi|
-
-Now that the country boundary is in the chosen equidistant projection, we
-can generate the 10km buffer which we will use as an area of
-interest (AOI). As indicated previously, the AOI needs to be larger than
-the country boundary to avoid errors during the processing. A distance
-of 10km around the country boundary is added to ensure the AOI is large
-enough to accommodate the 7km focal range function used in the mountain
-descriptor layer generation.
-
--  In the processing toolbox search for the **buffer tool**
-
-   |imagebuffer|
-
--  Set the **Input layer** to **your country boundary in equidistant projection e.g. BND_CTR_EQUI**
-
--  Set the buffer **Distance** to **10000**
-
--  Set the buffer **Units** to **meters**
-
--  Set the **endcap style** to **round** and the **join style** to
-   **round**
-
--  Save the Buffered output to a new name **e.g. BND_BUF_AOI_EQUI**
-
-   |buffequi|
-
--  Click **Run** to run the tool.
-
-The last step is to intersect the equidistant vector grid with the buffered AOI in equidistant projection.
-
--  In the **processing toolbox** search for **intersection** 
-
-   |intersection|
-
--  Set the **Input layer** to **the buffered country boundary in equidistant projection**
--  Set the **Overlay layer** to **the vector grid in equidistant projection**
--  Set the output **Intersection** toe.g. **BND_BUF_AOI_EQUI_tiles.shp**
-
-   |intersection2|
-   
-The output tiled Area of Interest (AOI) can be used when preparing
-the slope and local elevation range datasets.
-
-|intersection3|
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| .. rubric:: **MGCI Toolbox B3. MountainDescriptor:  Project merged DEM to Equidistant projection (and generate AOI with tiled approach) **:                           |
-|    :name: toolbox_B3                                                                                                                                                  |
-|                                                                                                                                                                       |
-| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
-|                                                                                                                                                                       |
-| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
-|                                                                                                                                                                       |
-| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
-|                                                                                                                                                                       |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-|imageB3|
-
-|imageB3_w| 
-
-Generating slope layer from layer DEM
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Slope can now be generated from the merged DEM in equidistant projection. Users should be warned that the slope process can
-take some time to process. 
-
--  In the processing toolbox search for **Slope**
-   
-   |image80|   
-   
--  Double click on the **slope** tool under **Raster analysis** in the
-   **GDAL** toolset.
-
--  *We will use this tool instead of the* *basic QGIS slope tool* *as it
-   has an option to compute edges which means it looks at edge pixels
-   and no data values*.
-
--  Set the **Input layer** to be the reprojected DEM i.e. the
-   equidistant version unless, as specified above, your country falls
-   within a single UTM Zone only *AND* you have used the UTM projection
-   for the previous steps, or if the projection you are using has
-   equidistant properties e.g. in this example
-   **DEM\_copernicus\_merge\_CRI\_AZ\_EQUI.tif** , the projected
-   equidistant DEM generated from BOX 3.
-
--  Tick **compute edges**
-
--  Set the **Slope** output to e.g.
-   **DEM\_copernicus\_merge\_SLOPE\_CRI\_AZ\_EQUI.tif**
-   
-   |image82|
-
--  Click **Run** to run the tool
-   
-If it takes too long uses may wish to use the tiled AOI to clip the merged DEM into smaller chunks using r.mask.cect and 
-run the slope tool multiple times for each tile and then merge the slope at the end. 
-
-**NOTE: the MGCI toolbox tools B4a will be far more efficient (as users can choose to iterate automatically through the tiles and produce slope at the same time).**
-
-If you wish to iterate manually. Split the Merged DEM in equidistant projection into tiles as follows:
-
--  search for **r.mask** in the processing toolbox.  
-   
-   |rmask|
-
--  Double click on the **r.mask.vect** under the GRASS
-   toolset
-
--  Select the **AOI tiles layer** for the **Name of vector dataset to use as mask**
-
--  Select the **Merged DEM in equidistant projection** for the **Name of raster map to which apply the mask**
-
--  Set the  the **GRASS GIS 7 Region Extent**  to the **AOI tiles layer**
-
--  Set the output **Masked** e.g. to
-   DEM_merge_EQUI_AOI_tiles.tif
-   
--  Click **Run** to run the tool
-
-   |manualiterate|
-
-Then repeat the slope process above for each of the tiles.
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| .. rubric:: **MGCI Toolbox B4a. MountainDescriptor: iterate and  generate slope in equidistant projection**:                                                          |
-|    :name: toolbox_B4a                                                                                                                                                 |
-|                                                                                                                                                                       |
-| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
-|                                                                                                                                                                       |
-| This tool can run generating the slope in one layer or users can click the green iterate button too process the slope in smaller chunks                               |
-| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
-|                                                                                                                                                                       |
-| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
-|                                                                                                                                                                       |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-|imageB4a|
-
-|imageB4a_w| 
-
-Next, if you haave processed the slope layer chunks use the merge tool to combine the slope tiles into a single layer
-
--  Search for **Merge** in the processing toolbox window
-   
-   |image70|
-   
--  Double click the **GDAL Merge tool**.
-   
--  For the Input layers select all of the SLOPE tiles. Tick the SLOPE tiles to merge and Click **OK** to make the selection
-   and return to the main **Merge Dialog window**
-
--  Set the **output data type** to Float32 (same as the input slope tiles)
--  Set the **Merged** output name e.g. C:/MGCI\_tutorial/
-   SLOPE_merge_EQUI.tif
-   
-   |mergeslope1| |mergeslope2|
-
--  Click **Run** to run the tool
-
-You will notice when compared to the output image it no longer looks clipped to the buffer. This is because the no data value in the slope images is set to nan and it was not possible to set the No data value in the merge tool to a non numeric value. You therefore must clip the merged slope layer back to the buffered AOI:
-
--  search for **r.mask** in the processing toolbox.  
-
-   |rmask|
-
--  Double click on the **r.mask.vect** under the GRASS
-   toolset
-
--  Select the **AOI tiles layer** for the **Name of vector dataset to use as mask**
-
--  Select the **merged SLOPE layer in equidistant projection** for the **Name of raster map to which apply the mask**
-
--  Set the  the **GRASS GIS 7 Region Extent**  to the **AOI tiles layer**
-
--  Set the output **Masked** e.g. to  **Slope_merge_EQUI_AOI.tif**
-   
--  Click **Run** to run the tool
-
-The merged slope is added to the QGIS project. 
-
-|mergedslope| 
-
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| .. rubric:: **MGCI Toolbox B4b. MountainDescriptor: merge slope tiles (run if iteration used in B4a)**:                                                               |
-|    :name: toolbox_B4b                                                                                                                                                 |
-|                                                                                                                                                                       |
-| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
-|                                                                                                                                                                       |
-| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
-|                                                                                                                                                                       |
-| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
-|                                                                                                                                                                       |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-|imageB4b|
-
-|imageB4b_w| 
-
-The slope raster can now be projected to the main analysis equal area projection
-
--  In the **processing toolbox** search for **reproject** 
-
-   |image54|                                                                                                                                                                  
-    
-- Double click on the **Warp (reproject)** tool under the **GDAL toolset** 
-- Set the Input layer to be the **slope layer in equidistant projection**
-- Set the Source CRS to be **your equidistant projection**
-- Set the Target CRS to be **your equal area projection** e.g. CRI\_AZ\_EQUI
-- Set the resampling method to **bilinear**
-- Set the output file resolution to the resolution of the slope in meters e.g. 90m in this example
-- Set the Reprojected output to e.g. **Slope_AOI_LAEA.tif**
-  
-  
-  
-- Click **Run** to run the tool
- 
-The new **SLOPE dataset in the equal area projection** is now added should be added to the map canvas\ **.**
-
-|slopeinequalarea|
-
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| .. rubric:: **MGCI Toolbox B5. MountainDescriptor: Project SLOPE raster to Equal Area projection**:                                                                   |
-|    :name: toolbox_B5                                                                                                                                                  |
-|                                                                                                                                                                       |
-| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
-|                                                                                                                                                                       |
-| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
-|                                                                                                                                                                       |
-| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
-|                                                                                                                                                                       |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-|imageB5|
-
-|imageB5_w| 
-
-
-Generating 7km local elevation range from DEM
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-For UNEP-WCMC mountain classes 5 and 6 a 7km local elevation range (LER7km) is required for
-the identification of areas that occur in regions with significant
-relief, even though elevations may not be especially high, and
-conversely high-elevation areas with little local relief. This local
-elevation range is generated by defining a 7km radius of interest around
-each grid cell and calculating the difference between the maximum and
-minimum values within a neighborhood. In QGIS the focal functions gives the option for calculating the range but only
-allow for the specification of the neighborhood size in pixels (i.e.
-number of cells) so therefore, when running the next steps the size of
-the neighborhhod will be influenced by the cellsize of the DEM.
-
-|image93|
-
-To calculate the neighborhood size for your analysis in pixels divide 7000m by your cellsize and multiply by two. Round to the nearest odd integer.
-This is because the neighborhood size in pixels in this tool represents diameter rather than radius. 
-
-This step is very slow and it is recommended that the same tiled approach is used to generate the LER7km layer.
-
-If you wish to iterate manually. Split the Merged DEM in equidistant projection into tiles. If you have used tiles for generating slope you can skip the following r.mask step:
-
--  search for **r.mask** in the processing toolbox.  
-   
-   |rmask|
-
--  Double click on the **r.mask.vect** under the GRASS
-   toolset
-
--  Select the **AOI tiles layer** for the **Name of vector dataset to use as mask**
-
--  Select the **Merged DEM in equidistant projection** for the **Name of raster map to which apply the mask**
-
--  Set the  the **GRASS GIS 7 Region Extent**  to the **AOI tiles layer**
-
--  Set the output **Masked** e.g. to
-   DEM_merge_EQUI_AOI_tiles.tif
-   
--  Click **Run** to run the tool
-
-   |manualiterate|
-
-Then for each of the tiles run the following steps:
-
--  In the processing toolbox search for **r.neighbor**.
-
-   |imageneighbors|
-
--  Double click on the **r.neighbor** tool under the GRASS toolset
-
--  Select the **Input Raster Layer to** the merged equidistant DEM (or equidistant dem tile is you are running in smaller clumps)
-
--  Set the **neighborhood operation** to **Range**
-
--  Set the **neighborhood size to** 155 (e.g. in this example determined by:
-   7000/90*2))
-
--  Set the **GRASS GIS 7 region extent** to the **same as the Input
-   Layer specified above**
-
--  Set the **GRASS GIS 7 cellsize** to the **same as the Input Layer
-   specified above**
-
--  Set the output **Neighbors layer** e.g. to
-   LER7km_EQUI
-
-   |image99|
-   
-  
--  Click **Run** to run the tool
-   
- 
-The LER7km layer (or set of LER7km tiles) in the equidistant projection should have been
-added to the map canvas.
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| .. rubric:: **MGCI Toolbox B6a. MountainDescriptor: generate 7km LER in equidistant projection**:                                                                     |
-|    :name: toolbox_B6a                                                                                                                                                 |
-|                                                                                                                                                                       |
-| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
-| This tool can run generating the Ler7KM in one layer or users can click the green iterate button too process the ler7KM in smaller chunks                             |
-|                                                                                                                                                                       |
-| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
-|                                                                                                                                                                       |
-| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
-|                                                                                                                                                                       |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-|imageB6a|
-
-|imageB6a_w|  
-
-Next, if you have processed the LER7km layer in chunks use the merge tool to combine the slope tiles into a single layer
-
--  Search for **Merge** in the processing toolbox window
-   
-   |image70|
-   
--  Double click the **GDAL Merge tool**.
-   
--  For the Input layers select all of the SLOPE tiles. Tick the SLOPE tiles to merge and Click **OK** to make the selection
-   and return to the main **Merge Dialog window**
-
--  Set the **output data type** to Float32 (same as the input slope tiles)
--  Set the **Merged** output name e.g. C:/MGCI\_tutorial/
-   LER7km_merge_EQUI.tif
-   
-   |mergeLER7km_1|
-
--  Click **Run** to run the tool
-
-You will notice when compared to the output image it no longer looks clipped to the buffer. This is because the no data value in the LER7km images is set to nan and it was not possible to set the No data value in the merge tool to a non numeric value. You therefore must clip the merged LER7km layer back to the buffered AOI:
-
--  search for **r.mask** in the processing toolbox.  
-
-   |rmask|
-
--  Double click on the **r.mask.vect** under the GRASS
-   toolset
-
--  Select the **AOI tiles layer** for the **Name of vector dataset to use as mask**
-
--  Select the **merged LER7km layer in equidistant projection** for the **Name of raster map to which apply the mask**
-
--  Set the  the **GRASS GIS 7 Region Extent**  to the **AOI tiles layer**
-
--  Set the output **Masked** e.g. to  **LER7km_merge_EQUI_AOI.tif**
-   
--  Click **Run** to run the tool
-
-The merged LER7km is added to the QGIS project. 
-
-|mergedLER7km| 
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| .. rubric:: **MGCI Toolbox B6b. MountainDescriptor: merge LER7km tiles (run if iteration used in B6a)**:                                                              |
-|    :name: toolbox_B6b                                                                                                                                                 |
-|                                                                                                                                                                       |
-| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
-|                                                                                                                                                                       |
-| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
-|                                                                                                                                                                       |
-| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
-|                                                                                                                                                                       |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-|imageB6b|
-
-|imageB6b_w|  
-
-The LER7km raster can now be projected to the main analysis equal area projection
-
--  In the **processing toolbox** search for **reproject** 
-
-   |image54|                                                                                                                                                                  
-    
-- Double click on the **Warp (reproject)** tool under the **GDAL toolset** 
-- Set the Input layer to be the **LER7km layer in equidistant projection**
-- Set the Source CRS to be **your equidistant projection**
-- Set the Target CRS to be **your equal area projection** 
-- Set the resampling method to **bilinear**
-- Set the output file resolution to the resolution of the LER7km in meters e.g. 90m in this example
-- Set the Reprojected output to e.g. **LER7km_AOI_LAEA.tif**
-  
-  
-  
-- Click **Run** to run the tool
- 
-The new **LER7km dataset in the equal area projection** is now added should be added to the map canvas\ **.**
-
-|LER7kminequalarea|
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| .. rubric:: **MGCI Toolbox B7. MountainDescriptor: Project LER7km raster to Equal Area projection**:                                                                  |
-|    :name: toolbox_B7                                                                                                                                                  |
-|                                                                                                                                                                       |
-| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
-|                                                                                                                                                                       |
-| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
-|                                                                                                                                                                       |
-| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
-|                                                                                                                                                                       |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-|imageB7|
-
-|imageB7_w| 
-
-
-Generating layers for each mountain class
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-We now have all the inputs required for generating the mountain classes
-for the mountain descriptor layer. We will use the raster calculator to
-input the followings expression to generate a raster layer for each
-mountain class.
-
-**Mountain Class 1**
-
-"DEM\_copernicus\_merge\_AOI\_LAEA@1" >= 4500
-
-|image101|
-
-**Mountain Class 2**
-
-"DEM\_copernicus\_merge\_AOI\_LAEA@1" >= 3500 AND
-"DEM\_copernicus\_merge\_AOI\_LAEA@1" < 4500
-
-|image102|
-
-**Mountain Class 3**
-
-"DEM\_copernicus\_merge\_AOI\_LAEA@1" >= 2500 AND
-"DEM\_copernicus\_merge\_AOI\_LAEA@1" < 3500
-
-|image103|
-
-**Mountain Class 4**
-
-"DEM\_copernicus\_merge\_AOI\_LAEA@1" >= 1500 AND
-"DEM\_copernicus\_merge\_AOI\_LAEA@1" < 2500 AND
-"DEM\_copernicus\_merge\_AOI\_LAEA\_SLOPE@1" >= 2
-
-|image104|
-
-**Mountain Class 5**
-
-("DEM\_copernicus\_merge\_AOI\_LAEA@1" >= 1000 AND
-"DEM\_copernicus\_merge\_AOI\_LAEA@1" < 1500 AND
-"DEM\_copernicus\_merge\_AOI\_LAEA\_SLOPE@1" >= 5) OR
-("DEM\_copernicus\_merge\_AOI\_LAEA@1" >= 1000 AND
-"DEM\_copernicus\_merge\_AOI\_LAEA@1" < 1500 AND
-"LocalElevationRange7km\_AOI\_LAEA@1" > 300)
-
-|image105|
-
-**Mountain Class 6**
-
-"DEM\_copernicus\_merge\_AOI\_LAEA@1">= 300 AND
-"DEM\_copernicus\_merge\_AOI\_LAEA@1" < 1000
-AND"LocalElevationRange7km\_AOI\_LAEA@1" > 300
-
-|image106|
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| .. rubric:: **MGCI Toolbox B8. MountainDescriptor: Generating layers for each Kapos mountain class**:                                                                 |
-|    :name: toolbox_B8                                                                                                                                                  |
-|                                                                                                                                                                       |
-| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
-|                                                                                                                                                                       |
-| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
-|                                                                                                                                                                       |
-| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
-|                                                                                                                                                                       |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-|imageB8|
-
-|imageB8_w| 
-
-Generate an interim mountain layer with classes 1-6
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-We can now use the following expression in the raster calculator to add
-the different classes into a single map where class 1 has a value of 1,
-class2 a value of 2 etc.
-
-"K1\_AOI\_LAEA\_@1" + ("K2\_AOI\_LAEA\_@1"\*2) +
-("K3\_AOI\_LAEA\_@1"\*3)+("K4\_AOI\_LAEA\_@1"\*4)
-+("K5\_AOI\_LAEA\_@1"\* 5)+("K6\_AOI\_LAEA\_@1"\*6)
-
-|image107|
-
-The first interim dataset K1\_to\_K6\_AOI\_LAEA\_interim.tif of the
-mountain descriptor layer should have been added should be added to the
-map canvas\ **.**
-
--  To improve the symbology, right click on the new layer and click
-   **properties** and then **symbology**
-
-   |image108|
-
-At the bottom of the layer properties dialogue window click the
-**style** button and then load the predefined style file
-
-|image109|
-
-|image110|
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| .. rubric:: **MGCI Toolbox B9. MountainDescriptor: Generate Mountain Descriptor layer (EXCLUDING isolated pixels from class 7)**:                                     |
-|    :name: toolbox_B9                                                                                                                                                  |
-|                                                                                                                                                                       |
-| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
-|                                                                                                                                                                       |
-| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
-|                                                                                                                                                                       |
-| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
-|                                                                                                                                                                       |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-|imageB9| 
-
-|imageB9_w|
-
-Filling isolated pixels within mountain areas and merging into classes 1-6 (****NOTE: This step is still in development****)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The last part of the mountain descriptor layer generation is to identify
-isolated ‘non-mountain’ grid cells ( < 25km\ :sup:`2` in size)occurring
-in mountain areas i.e, isolated inner basins and plateaus that are
-surrounded by mountains but do not themselves meet criteria 1-6.
-
-Once identified these can be reclassified according to the predominant
-class among their neighbours.
-
--  The first step is to generate a raster of all non-mountain areas
-   using the following expression in the **Raster Calculator**
-
-   **"K1\_to\_K6\_AOI\_LAEA\_interim@1" = 0**
-
--  Set the output layer to e.g. **non\_mountain\_areas\_LAEA.tif**
-
-   |image111|
-
-   |image112|
-
-You can see that the resultant non-mountains output dataset has value 1
-for nonmountains and 0 for mountains. We need to set the 0 values to no
-data.
-
--  Use the **Raster calculator** again with the following expession.
-   This formular will set the 0’s to no data and leave the 1’s remaining
-   as 1.
-
-   ("non\_mountain\_areas\_LAEA@1">0)\*( "non\_mountain\_areas\_LAEA@1") /
-   (("non\_mountain\_areas\_LAEA@1">0)\*1 +
-   ("non\_mountain\_areas\_LAEA@1"<=0)\*0)
-
-   |image113|
-
-   |image114|
-
-We can now use this layer to clump the the pixels into groups of
-connected pixels
-
--  In the **Processing Toolbox** search for **r.clump**
-
-   |image115|
-
--  Double click on the **r.clumps tool** under the GRASS toolset
-
--  Select the **Input layer** as the non-mountain dataset with 1’s and
-   no data.
-
--  Set the **Title for output raster map** to **connected\_clumps**
-
--  Set the **GRASS GIS 7 region extent** to the **same as the Input
-   Layer specified above**
-
--  Set the **GRASS GIS 7 cellsize** to the **same as the Input Layer
-   specified above**
-
--  Set the output **Clumps layer** e.g. to
-   non\_mountain\_clumps\_NA\_LAEA.tif
-
--  Click **Run** to run the tool
-
-   |image116|
-
-You can see that the resultant clumped non-mountains output dataset
-which has a different value for each clump.
-
-|image117|
-
-We can now use this clumped layer to select and reclass clumps < 25sqkm
-(2500 ha)
-
--  In the **Processing Toolbox** search for **r.reclass.area**
-
--  Double click on the **r.reclass.area tool** under the **GRASS
-   toolset**
-
--  Select the **Input layer** as the **non\_mountain\_clumps**
-
--  Set the **value option that sets the area size limit** to **2500**
-
--  Set the **Lesser or greater than specified value** to **lesser**
-
--  Tick **Input map is clumped**
-
--  Set the **GRASS GIS 7 region extent** to the **same as the Input
-   Layer specified above**
-
--  Set the **GRASS GIS 7 cellsize** to the **same as the Input Layer
-   specified above**
-
--  Set the output **Reclassified** layer e.g. to
-   non\_mountain\_clumps\_lt\_25km2\_\_LAEA.tif
-
--  Click **Run** to run the tool
-
-   |image118|
-
-If we zoom in to look at the output we can see the pixels that are
-smaller than 25km2 in purple.
-
-|image119|
-
-We can now use the r.neighbor tool in the GRASS toolst to reclassified
-according to the predominant class among their neighbours.
-
--  In the processing toolbox search for **r.neighbor**.
-
--  Double click on the **r.neighbor** tool under the GRASS toolset
-
--  Set the **Input Raster** dataset to the 1-6 interim Kapos map
-
-   e.g. K1\_to\_K6\_AOI\_LAEA\_interim.tif
-
--  Set the **Raster Layer to select cells which should be processed** to
-   **reclassified clumps for the Input Layer e.g.**
-   non\_mountain\_clumps\_lt\_25km2\_\_LAEA.tif
-
--  Set the **neighborhood operation** to **Mode**
-
--  Set the **neighborhood size to 3** (we set it small for this first
-   run so to make a best attempt to correctly recode according to
-   closest neighbours)
-
--  Set the **GRASS GIS 7 region extent** to the **same as the Input
-   Layer specified above**
-
--  Set the **GRASS GIS 7 cellsize** to the **same as the Input Layer
-   specified above**
-
--  Set the output **Neighbors layer** e.g. to
-
-   K1\_to\_K6\_AOI\_LAEA\_interim2.tif
-
--  Click **Run** to run the tool
-
-   |image120|
-
-Copy the Kapos mountain class symbology to the new
-K1\_to\_K6\_AOI\_LAEA\_interim2.tif
-
--  Right click on the the 1-6 interim Kapos map e.g.
-   K1\_to\_K6\_AOI\_LAEA\_interim.tif
-
--  Click on styles>>copy style
-
--  Then right click on the new 1-6 interim Kapos plus filled neighbors
-   layer e.g. K1\_to\_K6\_AOI\_LAEA\_interim2.tif and paste style
-
-   |image121|
-
-See that the smallest of the identified isolated pixels < 25km2 have
-been classified correctly into Kapos classes 1-6 but the larger ones are
-still not classified.
-
-|image122|
-
-To rerun again on the new K1\_to\_K6\_AOI\_LAEA\_interim2.tif we first
-have to extract the remaining pixels that are still to be reclassified
-into a separate raster.
-
-Use the **Raster Calculator** and the following expression to create the
-new clumps subset.
-
-"K1\_to\_K6\_AOI\_LAEA\_interim2@1" = 0 AND
-"non\_mountain\_clumps\_lt\_25km2\_\_LAEA@1" > 0
-
-|image123|
-
-Use the Raster Calculator again but this time to convert the 0 cells in
-the new clumps subset to no data using the following expression:
-
-("non\_mountain\_clumps\_lt\_25km2\_\_LAEA\_subset2@1">0)\*(
-"non\_mountain\_clumps\_lt\_25km2\_\_LAEA\_subset2@1") /
-(("non\_mountain\_clumps\_lt\_25km2\_\_LAEA\_subset2@1">0)\*1 +
-("non\_mountain\_clumps\_lt\_25km2\_\_LAEA\_subset2@1"<=0)\*0)
-
-|image124|
-
-We can then use the r.neighbor again to the remaining identified clumps
-that didn’t get picked up first time round. (this time we suggest making
-the neighborhood bigger area e.g. in this example we have used the same
-number of pixels that was used for the local elevation range function
-e.g. for a 90m resolution dataset 55 )
-
-|image125|
-
-Check to see if all pixels have been classified and if not so a further
-run on a 3rd clumps subset will be required.
-
--  Use the **Raster Calculator** and the following expression to create
-   the new clumps subset.
-
-   "K1\_to\_K6\_AOI\_LAEA\_interim55@1" = 0 AND
-   "non\_mountain\_clumps\_lt\_25km2\_\_LAEA\_subset2@1" > 0
-
-|image126|
-
-Convert the no data values to 0 using the ecxpression:
-
-("non\_mountain\_clumps\_lt\_25km2\_\_LAEA\_subset3@1">0)\*(
-"non\_mountain\_clumps\_lt\_25km2\_\_LAEA\_subset3@1") /
-(("non\_mountain\_clumps\_lt\_25km2\_\_LAEA\_subset3@1">0)\*1 +
-("non\_mountain\_clumps\_lt\_25km2\_\_LAEA\_subset3@1"<=0)\*0)
-
-|image127|
-
-Run the r.neighborhood again to catch the last pixels
-
-|image128|
-
-Select any remaining non-classified pixels using the expression:
-
-"K1\_to\_K6\_AOI\_LAEA\_interim55\_55@1" = 0 AND
-"non\_mountain\_clumps\_lt\_25km2\_\_LAEA\_subset3@1" > 0'
-
-|image129|
-
-If the resultant layer has all zeros then all pixels have been
-classified
-
-|image130|
-
-|image131|
-
-There is one last step before the Mountain Descriptor layer is complete.
-
--  Right click on the last K1\_to\_K6\_AOI\_LAEA layer that was
-   generated in the previous step.
-
-   See that the Raster is 32 bit floating point raster. We will use the
-   GRASS r.reclass tool to convert the dataset to Byte and also embed
-   the Kapos class descriptions to the mountain classes. Whilst QGIS
-   cannot see it the class description when the file loads GRASS will
-   be able to read them when calculating statistics and add the
-   descriptions to output CSVs.
-
-We have create a reclass file containing the mountain classes and
-descriptions
-
-|image132|
-
--  Run the **r.reclass** GRASS tool:
-
--  Set the reclassified output name to be
-   **MountainDescriptor\_LAEA.tif**
-
-|image133|
-
-Copy and paste the style from the previous layer to shade and label the
-classes in the MountainDescriptor\_LAEA.tif within the QGIS session.
-
-|image134|
-
-The Mountain Descriptor layer is now complete
-
-Generation of Real Surface Area raster
---------------------------------------
-
-The final layer that needs generating is the Real Surface
-Area raster from the DEM. The tools should have all been tested to check
-your R integration is working in the initial setup.
-
-Refer to the workflow diagram in the overview section for an explaination of the process to calculate the 
-real surface area from a DEM. In addition the images below help to explain what is happening for a single DEM pixel (focal cell)
-using calculations based on it's surrounding elevation value.
-
-|imagersa1|
-
-|imagersa2|
-
-
-
--  In the processing toolbox expand the R-tools
-
-   |image135|
-
--  Expand Raster Processing and double-click on Create RSA raster V1
-
--  Select the projected DEM as the Input Layer
-
--  Set the cellsize to the resolution of your DEM in metres
-
--  Set an output name RealSufaceArea\_LAEA.tif
-
-   |image136|
-
--  Click Run to run the tool
-
-   |image137|
-   
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| .. rubric:: **MGCI Toolbox C1. Generate Real Surface Area raster from DEM**:                                                                                          |
-|    :name: toolbox_C1                                                                                                                                                  |
-|                                                                                                                                                                       |
-| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
-|                                                                                                                                                                       |
-| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
-|                                                                                                                                                                       |
-| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
-|                                                                                                                                                                       |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-|imageC1|  
-
-|imageC1_w|
-
-Aggregation to standard resolution and clipping to country
-----------------------------------------------------------
-Aggregating mountain and RSA rasters to match resolution of vegetation descriptor layer
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Now that we have 3 raster datasets in their native resolutions we need to bring the datasets together and ensure that correct aggregation is undertaken and that the all the layers align to the coarsest resolution layer.   In this example we have the Mountain Descriptor layer and the RealSurfaceArea Rasters at 90m resolution but a VegetationDescriptor layer at 300m resolution. There are various tools that can be used but we have opted for the GRASS tool r.resamp.stats as it allowed for various methods when resampling to a coarser grid.
-
-In the processing toolbox search for ***r.resamp.stats***
-
-|imageresamp|  
-
-We will first aggregate the Real Surface Area raster.
-
--  Select the **RealSufaceArea_LAEA**  as the **Input Layer**
--  Set the **aggregation method** to **sum**
--  **Tick Weight according to area** (as the documentation suggests it gives a more accurate result)
--  Set the **region extent** to **Calculate from layer>>Vegetation Descriptor_AOI_LAEA**
--  Set the **cellsize** to the the **same resolution as your Vegetation Descriptor layer** e.g. in this example 300m
--  Set the **Resampled Aggregated** layer to a name that distinguishes the resampling of the layer e.g. **RSA_LAEA_AOI_resample_sum_300.tif**
--  Click **Run** to run the tool 
-
-   |image170|  
-
-Next we will  aggregate the mountain descriptor layer.
-
-In the processing toolbox search for ***r.resamp.stats***
-
-|imageresamp|  
- 
--  Select the **MountainDescriptor_K1_6** layer  as the **Input Layer** e.g in this example MoutainDescriptor_K1_6_withoutK7.tif
--  This time set the **aggregation method** to **mode** as we want to pick the value that represents the majority of smaller cell values in the coarser cell.
--  **Tick Weight according to area** (as the documentation suggests it gives a more accurate result)
--  Set the **region extent** to **Calculate from layer>>Vegetation Descriptor_AOI_LAEA**
--  Set the **cellsize** to the the **same resolution as your Vegetation Descriptor layer** e.g. in this example 300m
--  Set the **Resampled Aggregated layer** to a name that distinguishes the resampling of the layer e.g. in this example **MoutainDescriptor_K1_6_withoutK7_agg300.tif**
-
-   |image173|  
-
-If the Vegetation Descriptor is coarser resolution use:
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| .. rubric:: **MGCI Toolbox D1a. Generic: Aggregate to resolution of Vegetation Descriptor**:                                                                          |
-|    :name: toolbox_D1a                                                                                                                                                 |
-|                                                                                                                                                                       |
-| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
-|                                                                                                                                                                       |
-| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
-|                                                                                                                                                                       |
-| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
-|                                                                                                                                                                       |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-|imageD1a|
-|imageD1a_w|
-
-If the Mountain Descriptor is coarser resolution use:
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| .. rubric:: **MGCI Toolbox D1b. Generic: Aggregate to resolution of Mountain Descriptor**:                                                                            |
-|    :name: toolbox_D1b                                                                                                                                                 |
-|                                                                                                                                                                       |
-| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
-|                                                                                                                                                                       |
-| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
-|                                                                                                                                                                       |
-| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
-|                                                                                                                                                                       |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-|imageD1b|
-|imageD1b_w|
+|image29|
 
 Combine mountain and vegetation descriptor layers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-As the MGCI required disaggregation by both the 6  LULC class and the 6 Mountain Class and the tools within QGIS will only allow a single input for zones, we will combine the two datasets together to form a combined zones dataset.
 
--  In the **processing toolbox**, search for and double click on the **raster calculator**
--  In the expression window we will sum the two dataset together but in order to distinguish the vegetation class from the mountain call all the vegetation values will be 
-   multiplied by 10. This means for example a value of 35 in the output means the pixel has class 3 in the vegetation descriptor layer and class 5 in the Mountain descriptor
+Now that we have 2 raster datasets in their native resolutions we need
+to bring the datasets together and ensure that correct aggregation is
+undertaken and that the all the layers align to a common resolution.
+
+Aggregate the layers to a common spatial resolution
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In this example we have the Mountain Descriptor layer at a 832 meters
+resolution and a vegetation descriptor layer at a 300 m resolution.
+There are various tools that can be used but we have opted for the GRASS
+tool **r.resample** as it allowed to resample the mountain descriptor to
+the vegetation layer, which has a finer grid.
+
+In the processing toolbox search for \ **\*r.resample\***
+
+|image30|
+
+-  Select the mountain descriptor (in this example
+   **Mountains\_Colombia.tif)** as the \ **Input Layer**
+
+-  Set the cellsize to the the same resolution as your Vegetation
+   Descriptor layer e.g. in this example 300m
+
+-  Set the \ **Resampled Aggregated** layer to a name that distinguishes
+   the resampling of the layer e.g. \ **Mountains\_Colombia\_300.tif**
+
+-  Click \ **Run** to run the tool
+
+|image31|
+
+Combine mountain and vegetation descriptor layers
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+As SGD Indicator 15.4.2a requires disaggregation by both the 10 land
+cover classes and the 4 bioclimatic belts and the tools within QGIS will
+only allow a single input for zones, we will combine the two datasets.
+
+-  In the \ **processing toolbox**, search for and double click on
+   the \ **raster calculator**
+
+-  In the expression window we will sum the two dataset together but in
+   order to distinguish the vegetation class from the mountain all the
+   vegetation values will be multiplied by 10. This means for example a
+   value of 35 in the output means the pixel has class 3 in the
+   vegetation descriptor layer and class 5 in the Mountain descriptor
    layer.
--  In the expression box formulate the expression e.g.  ("VEGETATION_DESCRIPTOR_AOI_LAEA@1"*10) + "MoutainDescriptor_K1_6_withoutK7_agg300recl@1"
+
+-  In the expression box formulate the expression:
+
+(“VEGETATION\_DESCRIPTOR@1”`\* <https://mgci-docs.readthedocs.io/en/latest/qgis.html#id5>`__\ 10)
++ “MoutainDescriptor@1”
+
+|image32|
+
 -  Set the Reference layer as the Vegetation Descriptor layer
--  Click **Run** to run the tool
 
-   |image174|
- 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| .. rubric:: **MGCI Toolbox D2. Generic: Combine mountain and vegetation rasters**:                                                                                    |
-|    :name: toolbox_D2                                                                                                                                                  |
-|                                                                                                                                                                       |
-| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
-|                                                                                                                                                                       |
-| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
-|                                                                                                                                                                       |
-| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
-|                                                                                                                                                                       |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+-  Click \ **Run** to run the tool
 
-|imageD2|  
+|image33|
 
-|imageD2_w|  
+Computation of Sub-indicator a Mountain Green Cover Index
+---------------------------------------------------------
 
-Clip layers to country boundary
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Generate area statistics for each land cover class
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-At this stage we can now clip the final aggregated datasets to the country boundary (remember that up to this point we have used a bounding box of the country boundary buffered out by 10km).
+The data are now in a consistent format, so we can now generate the
+statistics required for the MGCI reporting. As we want to generate
+disaggregated statistics by LULC class and bioclimatic belt we will use
+a zonal statistics tool with the combined Vegetation + mountain layer as
+the summary unit. The Zonal statistics tool will automatically calculate
+planimetric area in the output.
 
--  In the **processing toolbox** search for **Clip Raster by Mask Layer** 
--  Set the **Input layer** the **aggregated combined vegetation + mountain descriptor layer** e.g. veg10_mountain.tif
--  Set the **mask layer** to the **polygon country boundary in equal area projection** e.g. BND_CTR_LAEA
--  Set the **Source CRS** and the **Target CRS** to be the equal area projection
--  **Tick Match the extent of the clipped raster to the extent of the mask layer**
--  **Tick Keep resolution of input raster**
--  Set the **Clipped (mask) output** to e.g. veg10_mountain_CTRY_clip.tif
--  Click **Run** to run the tool
+This output is the main statistics table from the analysis, from which
+other summary statistics tables will be generated.
 
-   |image175|
-   
--  Repeat the above step for the resampled RSA raster.
+-  In the \ **processing toolbox** search for Zonal Statistics
 
-   |image176|
-   
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| .. rubric:: **MGCI Toolbox D3. Generic:  Clip to country boundary**:                                                                                                  |
-|    :name: toolbox_D3                                                                                                                                                  |
-|                                                                                                                                                                       |
-| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
-|                                                                                                                                                                       |
-| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
-|                                                                                                                                                                       |
-| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
-|                                                                                                                                                                       |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+-  Double click on the Raster layer unique values report.
 
-|imageD3|  
+-  Set the input layer to the combined vegetation and mountain class
+   layer created in the previous step.
 
-|imageD3_w|
+-  Under the Unique values table click on ... and choose Save to File….
+   Enter a name for the file, in this case LULC\_Areas\_COL\_2020.gpkg.
 
-Computation of Mountain Green Cover Index
------------------------------------------
-Generate Real Surface Area and Planimetric Area Statistics
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-  Click \ **Run**.
 
-The data are now in a consistent format and clipped to the country boundary, so we can now generate the statistics required for the MGCI reporting. As we want to generate disaggregated statistics by LULC class and Mountain Class we will use a zonal statistics tool with the combined Vegetation + mountain  layer as the summary unit and the RSA raster as the summary layer. The Zonal statistics tool will automatically calculate planimetric area in the output.
+|image34|
 
-This output is the main statistics table from the analysis, from which other summary statistics tables will be generated.
+Now the LULC\_Areas\_COL\_2020  layer will be added to the Layers panel.
+Right-click on the layer and click \ **Open Attribute Table**. The
+column m2 contains the area for each class in square meters.
 
--  In the **processing toolbox** search for Zonal Statistics
+|image35|
 
--  Double click on the **Raster Layer Zonal Statistics** tool
--  Set the **input layer** to the **Aggregated Real Surface Area raster clipped to the country boundary**
--  Set the **zones layer** to the **combined vegetation and mountain layer clipped to the country boundary**
--  Save the **Statistics output to a .csv file** e.g. rsastats.csv
+Let’s convert the area to square kilometers. In the Processing Toolbox,
+search and select \ **Vector table >> Field Calculator.**
 
-   |image177|
-   
-The Planimetric area generated in m2 rather than km2 and will be stored in a field called m2
+-  In the Field Calculator dialog, select the LULC\_Areas\_COL\_2020
+   layer
 
--  In the **processing Toolbox** search for **Rename Field** 
--  Set the field to rename as **m2**
--  Set the **New field name** to **PlanimetricArea_m2**
--  Save the **Renamed output to a .csv file** e.g. MGCI_stats.csv
+-  Enter the Field name as Area\_sqkm. 
 
-   |image178|
+-  In the Result field type choose **Float  **
 
-**Important Note:**
-When the statistics .csv files  added to the QGIS project it **does not add it correctly using delimited text** if you are saving to an output file rather than a temporary file. This means that all the fields are viewedas string. Remove the MGCI_stats.csv from the QGIS project and re-add it using Layer>>AddLayer>>Add Delimited Text Layer or save as a temporary layer which you can rightclick on an export later. This applies to each of the next steps.  If you do not to this the following steps run only from the MGCI toolbox will fail to run. 
+-  In the Expression window, enter the below expression. This will
+   convert the sqmt to sqkm and round the result to 2 decimal places.
+   Under the Calculated click on **…** and choose Save To File… . Enter
+   the name as LULC\_Areas\_COL\_2020\_sqkm.csv
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| .. rubric:: **E1. MGCI:  Generate RSA and Planimetric Area Statistics**:                                                                                              |
-|    :name: toolbox_D3                                                                                                                                                  |
-|                                                                                                                                                                       |
-| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
-|                                                                                                                                                                       |
-| **Also note:** The tool in the MGCI toolbox includes the above steps but also does some further refinement to add some additional fields to convert the RSA and       |
-| Planimetric Area into km2 and drop any unrequired fields generated by the zonal statistics function. It also joins on some additional fields from a template file     |
-|                                                                                                                                                                       |
-| MGCI_classes_template.csv                                                                                                                                             |
-|                                                                                                                                                                       |
-| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
-|                                                                                                                                                                       |
-| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
-|                                                                                                                                                                       |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   round("m2"/1e6, 2)
 
-|imageE1|
+-  Click \ **Run.**
 
-|imageE1_w| 
+|image36|
 
-***The following steps will only be run from the custom MGCI toolbox. We did not feel there was benefit to detailing the many tabular joins required to create the summary tables and standard reporting tables. Users can explore the models in the model designer to explore the steps further.*** 
+Now the **LULC\_Areas\_COL\_2020\_sqkm** will be loaded in canvas. Open
+the Attribute table and examine the newly added area\_sqkm column. You
+will notice that the Value column contains numbers for each class. To
+make the results easier to interpret. Let’s also add the land cover name
+for each class number
 
-This last step does the the Mountain Green Cover Index Calculation and outputs the 3 standard reporting tables
+In the Attribute Table, select “\ **Open** **Field Calculator”** in the
+top bar.
 
-Create summary statistics by green cover and Mountain class
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-  Enter the Field name as Land\_cover.
 
-Export to standard reporting table
-----------------------------------
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| .. rubric:: **F1: Formatting Reporting Tables: Planimetric Area**:                                                                                                    |
-|    :name: toolbox_F1                                                                                                                                                  |
-|                                                                                                                                                                       |
-| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
-|                                                                                                                                                                       |
-| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
-|                                                                                                                                                                       |
-| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
-|                                                                                                                                                                       |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+-  In the Result field type, choose String. In Output field length enter
+   100.
 
-|imageF1| 
+-  In the Expression window enter the below expression. This expression
+   uses the \ **CASE** statement to assign a value based on multiple
+   conditions. In this case it extract the first string of the value
+   field, which indicate the type of land cover, to assign the name of
+   the land cover in the new field name called “Land cover”
 
-|imageF1_w| 
+CASE
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| .. rubric:: **Formatting Reporting Tables: Real Surface Area**:                                                                                                       |
-|    :name: toolbox_F1                                                                                                                                                  |
-|                                                                                                                                                                       |
-| These steps can be run using a single tool in the MGCI toolbox.                                                                                                       |
-|                                                                                                                                                                       |
-| In the **custom MGCI toolbox** these step are run by the tool below                                                                                                   |
-|                                                                                                                                                                       |
-| The workflow steps can be viewed QGIS Model Designer                                                                                                                  |
-|                                                                                                                                                                       |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+WHEN (substr("value",1,2))=10 THEN 'Inland water bodies'
 
-|imageF2|
+WHEN (substr("value",1,1))=1 THEN 'Artificial Surfaces'
 
-|imageF2_w| 
+WHEN (substr("value",1,1))=2 THEN 'Cropland'
 
-.. |image0| image:: media_QGIS/image2.png
-   :width: 6.26806in
-   :height: 3.16875in
-.. |image1| image:: media_QGIS/image3.png
-   :width: 6.26806in
-   :height: 5.06528in
-.. |image2| image:: media_QGIS/image4.png
-   :width: 6.26806in
-   :height: 0.81458in
-.. |image3| image:: media_QGIS/image5.png
-   :width: 6.26806in
-   :height: 1.65347in
-.. |image4| image:: media_QGIS/image6.png
-   :width: 6.26806in
-   :height: 3.97847in
-.. |image5| image:: media_QGIS/image7.png
-   :width: 5.97917in
-   :height: 4.25867in
-.. |image6| image:: media_QGIS/image8.png
-   :width: 6.03472in
-   :height: 4.75909in
-.. |image7| image:: media_QGIS/image9.png
-   :width: 6.26806in
-   :height: 4.46458in
-.. |image8| image:: media_QGIS/image10.png
-   :width: 6.26806in
-   :height: 3.33742in
-.. |image9| image:: media_QGIS/image11.png
+WHEN (substr("value",1,1))=3 THEN 'Grassland'
+
+WHEN (substr("value",1,1))=4 THEN 'Tree-covered areas'
+
+WHEN (substr("value",1,1))=5 THEN 'Shrub-covered areas'
+
+WHEN (substr("value",1,1))=6 THEN 'Shrubs and/or herbaceous vegetation,
+aquatic or regularly flooded'
+
+WHEN (substr("value",1,1))=7 THEN 'Sparsely natural vegetated areas'
+
+WHEN (substr("value",1,1))=8 THEN 'Terrestrial barren land'
+
+WHEN (substr("value",1,1))=9 THEN 'Permanent snow and glaciers'
+
+END
+
+-  Click \ **Run.**
+
+|image37|\ |image38|
+
+Do the same again to add the Bioclimatic belt for each end string for
+each value number, using the below expression:
+
+|image39|
+
+CASE
+
+WHEN (substr("value",2,1))=1 THEN 'Nival'
+
+WHEN (substr("value",2,1))=2 THEN 'Alpine'
+
+WHEN (substr("value",2,1))=3 THEN 'Montane'
+
+WHEN (substr("value",2,1))=4 THEN 'Remaining Mountain Area'
+
+WHEN (substr("value",3,1))=1 THEN 'Nival'
+
+WHEN (substr("value",3,1))=2 THEN 'Alpine'
+
+WHEN (substr("value",3,1))=3 THEN 'Montane'
+
+WHEN (substr("value",3,1))=4 THEN 'Remaining Mountain Area'
+
+END
+
+Save the edits.
+
+Now, we will export this result as an excel file. Before export we will
+also organize the table and remove unwanted fields. In the Processing
+Toolbox, search and select \ **Vector table ‣ Refactor fields**.
+
+In the Refactor Fields dialog, select the layer edited in the prior step
+as an Input layer (in this case LULC\_Areas\_COL\_2020\_SQKM), select
+all columns except *area\_sqkm*, *Land\_cover*, *Bioclimatic\_belt* and
+then click Delete selected field.
+
+Once you are done with the edits, click on the ... button next
+to Refactored and choose Save To File…. Select XLSX Files (\*.xlsx) as
+the format. Enter the file name as 15.4.2a\_2020.xlsx and click Save. In
+the Refactor Fields dialog, click Run to apply your changes.
+
+|image40|
+
+The result will be a spreadheet with *area\_sqkm* , land\_cover and
+Bioclimatic\_belt columns.
+
+|image41|
+
+In Excel, calculate: (1) the total area of each bioclimatic belt (by
+summing the area of all land cover types per bioclimatic belt); (2) the
+total area of each land cover type across all bioclimatic belts (by
+summing the area of each specific land cover type across all bioclimatic
+belts) and finally; (3) the total mountain area of the country (by
+summing the area of all land cover types across all bioclimatic belts).
+
+Save this excel tab as 15.4.2a\_dis\_landcover. This data contains the
+estimates of 15.4.2 sub-indicator a, disaggregated by land cover type.
+Let’s now calculate the Mountain Green Cover Index estimates.
+
+Copy and paste the values of this tab into another tab. In this one,
+calculate Green Cover area for each bioclimatic belt, by summing the
+areas of the following land cover types: (1) Tree-covered areas, (2)
+Grasslands, (3) Croplands, (4) Shrub-covered areas and (5) Shubs and/or
+herbaceous vegetation, aquatic or regularly flooded.
+
+|image42|
+
+Finally, calculate the MGCI by diving the area of green cover the total
+area of each bioclimatic belt and the total mountain area and
+multiplying it by 100.
+
+|image43|
+
+Sub-indicator a is now complete.
+
+Repeat for each of the reporting years.
+
+Step-by-step instructions to calculate Sub-indicator 15.4.2b in QGIS
+=====================================================================
+
+This section of the tutorial explains in detail how to calculate value
+estimates for sub-indicator 15.4.2b in QGIS, continuing to use Colombia
+as a case study. Sub-Indicator 15.4.2b is designed to monitor the extent
+of degraded mountain land as a result of land cover change of a given
+country and for given reporting year.
+
+This sub-indicator looks at the proportion of degraded mountain area,
+calculated using a binary score (degraded/non-degraded) showing the
+extent of degraded land over total mountain area. This is calculated
+using the following formula:
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| |image44|                                                                                                                                                                                                                              |
++========================================================================================================================================================================================================================================+
+| Where:                                                                                                                                                                                                                                 |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Degraded mountain area *n*** = Total degraded mountain area (in Km\ :sup:`2`) in the reporting period *n*. This is, the sum of the areas where land cover change is considered to constitute degradation from the baseline period.   |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Total mountain area** = Total area of mountains (in Km\ :sup:`2`).                                                                                                                                                                   |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+As a reminder, in accordance with the `SDG indicator’s
+metadata <https://url6.mailanyone.net/scanner?m=1p7BBU-0003wA-60&d=4%7Cmail%2F90%2F1671436800%2F1p7BBU-0003wA-60%7Cin6b%7C57e1b682%7C25141507%7C10026187%7C63A01BCCC78D4890136281E76B4E7422&o=%2Fphtn%3A%2Futsntsto.u.as%2Fsrgegsm%2Fdfatala%2FidtdMesttaa%2Fe-5a-20401-fdp.&s=jYabXHtwhAEMHSvssRQeRRbeyDQ>`__
+countries are required to compute estimates for Sub-Indicator 15.4.2b
+for a baseline for approximately 2000-2015, and subsequently every three
+years (2018, 2021, 2024, 2027 and 2030). Therefore, for the example in
+this tutorial we will use the ESA-CCI landcover products for 2000, 2015
+(for the baseline) and 2018 (for the reporting year). ESA-CCI landcover
+data are not yet available beyond 2021 so we have therefore not yet been
+able to calculate subsequent years in this example.
+
+This section of the tutorial assumes that the user has already
+calculated sub-indicator 15.4.2a and has therefore already downloaded
+and translated the landcover cover datasets to UN-SEEA classes for the
+baseline and reporting years (see sections 3.1-3.3 of the tutorial) as
+presented in the figure below).
+
+**LULC reclassified into UN-SEEA classes for 2000, 2015 and 2018**
+
+|image45|
+
+1. 
+
+   1. .. rubric:: Generate LULC degradation layers for reporting periods
+         :name: generate-lulc-degradation-layers-for-reporting-periods
+
+SGD Indicator 15.4.2b requires us to identify change between LC classes
+in each reporting period, therefore the first requirement for
+sub-indicator 15.4.2b is to develop a transition matrix that specifies
+the land cover changes occurring in a given land unit (pixel) as being
+either degradation, improvement or neutral transitions. The definition
+of degradation adopted for the computation of this indicator is the one
+established by the Intergovernmental Science-Policy Platform on
+Biodiversity and Ecosystem Services (IPBES) [2]_.
+
+Countries may choose to either calculate degradation using the default
+land cover legend for this indicator and default transition matrix
+provided or from a native or simplified legend of a national land
+use/land cover (LULC) dataset if they have the advantage of better
+representing degradation transitions compared to the broader default
+transitions.
+
+Section 4.1.1 describes the default method using the default legend and
+transition matrix, while section 4.1.2 outlines the
+additional/alternative steps required to generate a transitions matrix
+using a nationally adapted land cover legend. In both cases the output
+results in the same 3 classes (stable, degradation and improving) and
+both needed to be disaggregated and reported by both landcover
+transition and bioclimatic belt.
+
+The easiest method in QGIS is to generate a single value that represents
+both year1 landcover and year2 landcover. For example, when calculating
+the baseline using the default land cover legend reclassified datasets
+for 2000 and 2015, each dataset has LULC values from 1-10 we need to
+change the values for one of the years to be able to distinguish between
+classes in year1 and year2. When using the nationally adapted LULC
+legend, the values may be greater than 1-10. We will therefore multiply
+values in year 1 by 1000 (in order to avoid any overlap between the
+values in year 2).
+
+Combine the landcover dataset for the baseline and reporting year
+-----------------------------------------------------------------
+
+First, we will generate a single raster containing a value to represent
+both year1 landcover and year2 landcover. We will demonstrate using the
+default method using the UN-SEEA reclassified landcover raster’s in
+equal area projection that were previously reclassified for the
+computation of sub-indicator a. As indicated above, users can choose to
+use the rasters projected to equal area projection containing the full
+or a simplified national LULC legend if there is a preference/advantage
+of calculating landcover transitions compared to using the default
+legend and transition matrix. The processing is the same regardless
+which method is chosen.
+
+In this example we will use the UN-SEEA reclassified landcover datasets
+for 2000 and 2015 for the baseline and UN-SEEA classified landcover 2015
+to 2018 raster’s for the 2018 reporting year. As each dataset has the
+same LULC values (values 1-10 for UN-SEEA classification) we need to
+change the values in one of the years to be able to distinguish between
+classes in year1 and year2. We will multiply year1 land cover classes by
+1000 before summing the datasets together. So for example values for
+year 1 when using the default legend will range from 1000 – 10000 and
+values for year 2 will remain 1 -10 and the resultant output will have
+values ranging from a minimum of 1001 to a maximum of 10010 (depending
+on which LULC transitions are present).
+
+We will calculate the baseline period first i.e. using 2000 landcover
+(year 1) and 2015 landcover (year2)
+
+-  In the \ **processing toolbox**, search for and double click on
+   the \ **raster calculator**
+
+-  In the **expression box** formulate the expression (in this example
+   using the UN-SEEA datasets):
+
+(“UNSEEA\_LULC2000\_BND\_AOI\_EqArea@1”`\* <https://mgci-docs.readthedocs.io/en/latest/qgis.html#id5>`__\ 1000)
++ “UNSEEA\_LULC2015\_BND\_AOI\_EqArea@1”
+
+|image46|
+
+-  |image47|\ Set the Reference layer as one of the landcover datasets
+   to set the extent, cellsize and CRS e.g.
+   **UNSEEA\_LULC2015\_BND\_AOI\_EqArea layer**
+
+-  Set the Output dataset to a new name e.g.
+   **UNSEEA\_LULC2000\_2015\_BND\_AOI\_EqArea.tif** for the baseline
+
+-  Click \ **Run** to run the tool
+
+When using the default UN-SEEA land cover legend, this means that a
+value of 2001 means a land cover class 2 in year 1 and a land cover
+class 1 in year 2. A value of 10010 would mean a land cover class 10 in
+year 1 and a land cover class 10 in year 2. In other words, year 1 is
+represented by the first digit for values 1 to 9, and by the first 2
+digits for land cover class 10. Year 2, on the other hand, is
+represented by the right hand digit (for values 1-9) and the right hand
+2 digits for value 10.
+
+Repeat the above step for the next reporting period i.e. using 2015
+landcover (year 1) and 2018 landcover (year2)
+
+1. .. rubric:: Generate the transitions Matrix
+      :name: generate-the-transitions-matrix
+
+2. .. rubric:: Use the default transitions matrix (using the default
+      LULC legend)
+      :name: use-the-default-transitions-matrix-using-the-default-lulc-legend
+
+Download the default transitions matrix csv file from the `GitHub
+repository <https://github.com/sepal-contrib/sepal_mgci/blob/master/component/parameter/transition_matrix.csv>`__
+showing the unique combination of transitions using the default UN-SEEA
+classes as presented in the figure below. The default transitions matrix
+lists the transitions from the LULC classes to the 3 change classes
+Stable (0), Degradation (-1) and Improving (1).
+
+|image48|
+
+-  Download the transitions matrix csv file and add it to your QGIS
+   project using **Layer>>Add Layer>>Add Delimited Text Layer**
+
+|image49|
+
+Despite the clarity of this format transitions matrix, the
+reclassification tools in QGIS require a very specific format for the
+reclassification table. We therefore need to add an additional field and
+calculate it to be the required QGIS syntax. This field will then be
+saved into a new CSV file which can be used by the QGIS geoprocessing
+tool.
+
+-  In the Geoprocessing toolbox search for **Field Calculator**
+
+In the field calculator add a new **string** field called
+**QGIS\_syntax** with length **30**.
+
+In the **expression builder** paste in the following text. Note that we
+are taking the Landcover code for year 1 and multiplying it by 1000 (as
+described above) and summing it with the landcover code for year 2
+before combining it with the rest of the QGIS syntax
+
+("from\_code" \*1000 + "to\_code") \|\| ' = ' \|\| "impact\_code" \|\| '
+' \|\| "impact"
+
+|image50|
+
+The resultant table should look like this:
+
+|image51|
+
+-  Next search for the **List unique values** tool in the geoprocessing
+   toolbox, this will be used to export the new column, **QGIS\_syntax**
+   to a new csv file
+
+-  Select the **transitions\_matrix\_QGIS** as the input layer
+
+-  |image52|\ Select the **QGIS\_syntax** field in the target field
+
+|image53|
+
+-  Save the unique values to a new csv file e.g.
+   **transition\_matrix\_for\_qgis.csv**
+
+-  Click **Run**
+
+-  Outside QGIS, open a windows explorer window navigate to the csv file
+   and open in notepad
+
+-  Remove the header row and save the file as
+   **transition\_matrix\_for\_qgis.txt**
+
+-  **Return to QGIS**
+
+   1. .. rubric:: Generate a transitions matrix using a national LULC
+         legend
+         :name: generate-a-transitions-matrix-using-a-national-lulc-legend
+
+If are using a national land cover transition matrix you can prepare a
+transitions table in the same format as the default transitions table in
+Excel or you can generate a csv file from the unique combinations for
+the LULC types using the combined LULC dataset for the two years. We
+illustrate this below (although we are using the default UN-SEEA classes
+for illustration purposes only)
+
+-  In the processing toolbox search for **Raster Layer** **Unique Values
+   Report**
+
+-  Select the combined LULC dataset for year 1 and year 2 as the input
+   layer e.g. **SEEA\_LULC2000\_2015\_BND\_AOI\_EqArea.tif**
+
+-  Set the Unique values report to a new output table **e.g.
+   UNSEAA\_2000\_20015\_trans.csv**
+
+|image54|
+
+The resultant table looks like this:
+
+|image55|
+
+Delete the count and m2 columns by clicking on the **toggle editing
+button** on the top menu bar of the attribute table and then click the
+Delete Field button. Select the **“\ *count”*** and **“\ *m2***\ *”*
+fields and click **OK** to delete
+
+|image56| |image57|
+
+-  Click on the **toggle editing button** on the top menu bar again to
+   save the changes
+
+We can then add the to and from codes and descriptions.
+
+In the Attribute Table, click the “\ **Open** **Field Calculator”**
+button in the top bar.
+
+|image58|
+
+-  Enter the Field name as **from\_code**.
+
+-  In the Result field type, choose **Whole Number (Integer).** In
+   Output field length enter 3.
+
+-  In the Expression window enter the expression: "value" / 1000
+
+   |image59|
+
+-  Click \ **OK**
+
+The result looks like this:
+
+|image60|
+
+In the Attribute Table, select “\ **Open** **Field Calculator”** in the
+top bar again.
+
+-  Enter the Field name as **from\_desc**.
+
+-  In the Result field type, choose **Text**\ ( **String)**. In Output
+   field length enter **100**.
+
+-  In the Expression window enter the below expression, replacing the
+   names of the default UN-SEEEA LULC classes by the names of the
+   national LULC legend. This expression uses the \ **CASE** statement
+   to assign a value based on multiple conditions.
+
+    CASE
+
+    WHEN "from\_code" =10 THEN 'Inland water bodies'
+
+    WHEN "from\_code" =1 THEN 'Artificial Surfaces'
+
+    WHEN "from\_code" =2 THEN 'Cropland'
+
+    WHEN "from\_code" =3 THEN 'Grassland'
+
+    WHEN "from\_code" =4 THEN 'Tree-covered areas'
+
+    WHEN "from\_code" =5 THEN 'Shrub-covered areas'
+
+    WHEN "from\_code" =6 THEN 'Shrubs and/or herbaceous vegetation,
+    aquatic or regularly flooded'
+
+    WHEN "from\_code" =7 THEN 'Sparsely natural vegetated areas'
+
+    WHEN "from\_code" =8 THEN 'Terrestrial barren land'
+
+    WHEN "from\_code" =9 THEN 'Permanent snow and glaciers'
+
+    END
+
+    |image61|
+
+-  Click \ **OK **
+
+    The result looks like this:
+
+    |image62|
+
+-  In the Geoprocessing toolbox search for **Field Calculator**
+
+-  Enter the Field name as **to\_code**.
+
+-  In the Result field type, choose **Whole Number (Integer).** In
+   Output field length enter 3.
+
+-  In the Expression window enter the expression: "value" -
+   ("from\_code" \*1000)
+
+|image63|
+
+-  Click **OK**
+
+The result looks like this:
+
+|image64|
+
+In the Attribute Table, select “\ **Open** **Field Calculator”** in the
+top bar again.
+
+-  Enter the Field name as to\_desc.
+
+-  In the Result field type, choose **Text**\ (**String)**. In Output
+   field length enter **100**
+
+-  In the Expression window enter the below expression. Again, replacing
+   the names of the default UN-SEEEA LULC classes by the names of the
+   national LULC legend. This expression uses the \ **CASE** statement
+   to assign a value based on multiple conditions.
+
+    CASE
+
+    WHEN "to\_code" =10 THEN 'Inland water bodies'
+
+    WHEN "to\_code" =1 THEN 'Artificial Surfaces'
+
+    WHEN "to\_code" =2 THEN 'Cropland'
+
+    WHEN "to\_code" =3 THEN 'Grassland'
+
+    WHEN "to\_code" =4 THEN 'Tree-covered areas'
+
+    WHEN "to\_code" =5 THEN 'Shrub-covered areas'
+
+    WHEN "to\_code" =6 THEN 'Shrubs and/or herbaceous vegetation,
+    aquatic or regularly flooded'
+
+    WHEN "to\_code" =7 THEN 'Sparsely natural vegetated areas'
+
+    WHEN "to\_code" =8 THEN 'Terrestrial barren land'
+
+    WHEN "from\_code" =9 THEN 'Permanent snow and glaciers'
+
+    END
+
+|image65|
+
+|image66|
+
+-  Click \ **OK.**
+
+-  The result looks like this
+
+-  Next click the **New Field** button to add the following 2 fields
+
+    |image67| |image68|
+
+Users can then either manually enter the impact (stable, degradation or
+improving) and impact\_codes (0,-1,1) or use the select button to select
+groups of transitions and calculate to particular impact types
+
+e.g. select those landcover types that have not changed between year 1
+and year 2 and calculate as impact code = 0 and impact = “stable”
+
+-  Click on the **Select features** **using and expression** button
+
+|image69|
+
+-  In the expression box enter the expression **“from\_code” =
+   “to\_code”**
+
+-  Click **Select features**
+
+|image70|
+
+The selected features are highlighted in blue:
+
+|image71|
+
+-  Click on the **Open field calculator** button
+
+-  Tick **Update existing field**
+
+-  Choose the **impact** field
+
+-  In the expression box type **‘stable’**
+
+-  Click **OK**
+
+|image72|
+
+-  |image73|\ Click on the **Open field calculator** button again
+
+-  Tick **Update existing field**
+
+-  Choose the field **impact\_code**
+
+-  In the expression box type **0**
+
+-  Click **OK**
+
+|image74|\ The selected features highlighted in blue are now populated:
+
+**Once all the impact values are populated,** we need to add an
+additional field as the reclassification tools in QGIS that will use the
+transitions matrix require a very specific format for the
+reclassification table. This field will then be saved into a new CSV
+file which can be used by the QGIS geoprocessing tool.
+
+-  Click on the **Open field calculator** button
+
+    In the field calculator add a new **string** field called
+    **QGIS\_syntax** with length **30**.
+
+    In the **expression window** paste in the following text. Note that
+    we are taking the Landcover code for year 1 and multiplying it by
+    1000 (as described above) and summing it with the landcover code for
+    year 2 before combining it with the rest of the QGIS syntax:
+
+    **("from\_code" \*1000 + "to\_code") \|\| ' = ' \|\| "impact\_code"
+    \|\| ' ' \|\| "impact"**
+
+    |image75|
+
+-  Click **OK**
+
+The resultant table should look like this:
+
+|image76|
+
+-  Next search for the **List unique values** tool in the geoprocessing
+   toolbox, this will be used to export the new column, **QGIS\_syntax**
+   to a new csv file
+
+-  Select the **UNSEA\_2000\_2015\_trans** as the input layer
+
+-  Select the **QGIS\_synta**\ x field in the target field
+
+|image77| |image52|
+
+-  Save the unique values to a new csv file e.g.
+   **transition\_matrix\_nat\_for\_qgis.csv**
+
+-  Click **Run**
+
+***Important*** ***Note:** Be careful if using this same table for other
+time periods as it is based on transitions between two specified time
+periods. E.g. in this case 2000 and 2015. There may be other possible
+transitions that are not present in this time period but may be possible
+for other years. Therefore, before using this transitions matrix for
+other time periods either check for missing entries and manually add
+them to this table or generate a new transitions table for the new time
+period.*
+
+Reclassify LULC transitions using the transitions matrix
+--------------------------------------------------------
+
+The next step is to reclassify the outputs from step 5.2 (i.e. the
+combined landcover datasets for year1 and year 2), first for the
+baseline period **UNSEEA\_LULC2000\_2015\_EqArea.tif** and **then for
+the 2018 reporting period UNSEEA\_LULC2015\_2018\_EqArea.tif.** We will
+use the transitions matrix generated in the previous steps (5.3.1 or
+5.3.2). In this example we use the default transitions matrix (from
+5.3.1) but the steps are the same if a national transitions matrix is
+being used.
+
+-  In the processing toolbox search **for r.reclass**
+
+-  Set the input raster layer to **UNSEEA\_LULC2000\_2015\_EqArea.tif**
+
+-  Set the file containing the reclass rules by navigating to the
+   transitions matrix e.g. **transition\_matrix\_for\_qgis.csv**
+
+-  Set the GRASS GIS 7 Region extent to
+   **UNSEEA\_LULC2000\_2015\_EqArea.tif**
+
+-  Set the cellsize to be the same as UNSEEA\_LULC2000\_2015\_EqArea.tif
+   e.g. in this case **307.896977**
+
+-  Save the reclassified file to a new name e.g.
+   **UNSEEA\_LULC2000\_2015\_EqArea\_reclassed\_impact.tif**
+
+   |image78|
+
+-  Click **Run**
+
+   **(you can the two ignore the 2 warning messages that appear in red–
+   these do not affect the correct generation of the outputs**
+
+   **“**\ WARNING: Concurrent mapset locking is not supported on
+   Windows”
+
+   **“**\ ERROR 6:
+   C:\\workspace\\MGCI\\outputs\\UNSEEA\_LULC2000\_2015\_EqArea\_reclassed\_impact.tif,
+   band 1: SetColorTable() only supported for Byte or UInt16 bands in
+   TIFF format.”)
+
+-  Double-click on the output and change the symbology to
+   **paletted/unique** values and click the **Classify** button to show
+   the classes present in the output layer.
+
+   |image79|
+
+   (you can also change the label to indicate 0 = stable -1 =
+   degradation and 1 = improving)
+
+   |image80|
+
+-  Repeat the above step for the next reporting period i.e. using 2015
+   landcover (year 1) and 2018 landcover (year2) i.e. using the layer
+   **UNSEEA\_LULC2015\_2018\_EqArea.tif**
+
+   1. .. rubric:: Combine landcover transitions, impact and bioclimatic
+         belts
+         :name: combine-landcover-transitions-impact-and-bioclimatic-belts
+
+We now have all the layers we need for generating statistics. To make it
+easier we will again sum the layers together using different factors to
+change the values in some of the datasets.
+
+We have the following datasets which we need to combine to generate the
+proportion of degraded mountain area disaggregated by LULC transitions,
+impact status and bioclimatic belt:
+
+-  LULC transitions (which in our case using have values 1001-10010
+   where LULC for year 1 has already been multiplied by 1000 and summed
+   with year 2 values)
+
+   **We will leave these LULC transitions dataset values as they are. **
+
+-  Bioclimatic belts (which have values 1-4 representing the 4
+   bioclimatic belts)
+
+   **We will multiply the bioclimatic belts by 100,000**
+
+-  LULC transition impact status (values -1, 0 and 1)
+
+   **We will change the impact status by adding 2 to each of the values
+   and multiplying by 1,000,000 thus changing values -1 to 1,000,000
+   (degradation) 0 to 2,000,000 (stable) and 1 to 3,000,000
+   (improving)**
+
+-  In the processing toolbox search for the **raster calculator **
+
+-  In the expression box use the following expression (where the first
+   dataset is the LULC transitions e.g. in this example for the baseline
+   period, the second dataset is the Bioclimatic Belts dataset that was
+   resampled to the resolution of the LULC dataset in the processing for
+   sub-indicator a and the third dataset is the impact status):
+
+   "UNSEEA\_LULC2000\_2015\_EqArea@1" +
+   ("MNTBelts\_BND\_AOI\_ResampledNN\_EqArea@1" \*100000) +
+   (("UNSEEA\_LULC2000\_2015\_EqArea\_reclassed\_impact@1" +2)\*1000000)
+
+   |image81|
+
+-  Set the reference dataset as the UNSEEA\_LULC2000\_2015\_EqArea@1
+   which is a quick way to determine the output extent, cellsize and
+   projection of the output dataset.
+
+-  Set the output dataset as e.g.
+   **UNSEEA\_LULC2000\_2015\_MTN\_combined\_.tif**
+
+-  |image82|\ Click **Run.** The output is added to the table of
+   contents and the annotated legend below illustrates the meanings of
+   the values
+
+   |image83|
+
+-  Repeat the above step for the next reporting period i.e. using 2015
+   landcover (year 1) and 2018 landcover (year2)
+
+   1. .. rubric:: Computation of Proportion of degraded mountain area
+         :name: computation-of-proportion-of-degraded-mountain-area
+
+      1. .. rubric:: Generate area statistics for each land cover
+            transition
+            :name: generate-area-statistics-for-each-land-cover-transition
+
+The data are now combined and in format we can use to generate the
+statistics required for the sub-indicator 15.4.2b reporting. The
+**Raster layer unique values** **report** tool will automatically
+calculate planimetric area in the output and contain all the
+disaggregation’s we require.
+
+This output is the main statistics table from the analysis, from which
+other summary statistics tables will be generated.
+
+-  In the \ **processing toolbox** search for **Raster layer unique
+   values report**
+
+-  Double click on the **Raster layer unique values report**.
+
+-  Set the input layer to the combined layer created in the previous
+   step
+
+   e.g. **UNSEEA\_LULC2000\_2015\_MTN\_combined\_.tif**.
+
+-  Under the Unique values table click on ... and choose Save to File….
+   Enter a name for the file, in this case
+   **subIndicator\_b\_Areas\_COL\_basline2000\_2015.gpkg**.
+
+   |image84|
+
+-  Click \ **Run**.
+
+Now the **subIndicator\_b\_Areas\_COL\_basline2000\_2015** layer will be
+added to the Layers panel. Right-click on the layer and click \ **Open
+Attribute Table**. The column m2 contains the area for each class in
+square meters.
+
+|image85|
+
+Let’s convert the area to square kilometers. In the Processing Toolbox,
+search and select \ **Vector table >> Field Calculator.**
+
+-  In the Field Calculator dialog, select
+   the \ **subIndicator\_b\_Areas\_COL\_basline2000\_2015** layer
+
+-  Enter the Field name as **Area\_sqkm**. 
+
+-  In the Result field type choose **Float  **
+
+-  In the Expression window, enter the below expression. This will
+   convert the sqmt to sqkm and round the result to 2 decimal places.
+   Under the Calculated click on **…** and choose Save To File… . Enter
+   the name as **subIndicator\_b\_Areas\_COL\_basline2000\_2015\_sqkm**
+
+   round("m2"/1e6, 2)
+
+|image86|
+
+-  Click \ **Run.**
+
+Now the **subIndicator\_b\_Areas\_COL\_basline2000\_2015\_sqkm** will be
+loaded in canvas. Open the Attribute table and examine the newly
+added area\_sqkm column.
+
+As indicated before the Value column contains numbers for each unique
+class combination. To make the results easier to interpret. Let’s also
+re-add all the descriptive attributes
+
+In the Attribute Table, click the “\ **Open** **Field Calculator”**
+button in the top bar.
+
+-  Enter the Field name as **BioclimaticBelt**.
+
+-  In the Result field type, choose **Text (string).** In Output field
+   length enter **100**.
+
+-  In the Expression window enter the below expression. This expression
+   uses the \ **CASE** statement to assign a value based on multiple
+   conditions. In this case it extracts the second string of the value
+   field, which indicate the type of land cover, to assign the name of
+   the land cover in the new field name called “\ **BioclimaticBelt”**
+
+   CASE
+
+   WHEN (substr("value",2,1))=1 THEN 'Nival'
+
+WHEN (substr("value",2,1))=2 THEN 'Alpine'
+
+WHEN (substr("value",2,1))=3 THEN 'Montane'
+
+WHEN (substr("value",2,1))=4 THEN 'Remaining Mountain Area'
+
+END
+
+|image87|
+
+-  Click on the Save button on the attribute menu to save the edits.
+
+In the Attribute Table, click the “\ **Open** **Field Calculator”**
+button in the top bar again.
+
+-  Enter the Field name as **LULC\_transition**.
+
+-  In the Result field type, choose **Whole Number (Integer).**.
+
+-  In the Expression window enter the expression: substr("value",3,5)
+
+   |image88|
+
+-  Click **OK**
+
+-  Click on the **Save** button on the attribute menu to save the edits.
+
+-  Click on the **toggle editing** button to turn off the attribute
+   editing
+
+We can now use the LULC\_transitions field to join on the rest of the
+attributes from the transitions matrix file.
+
+-  Open the transitions\_matrix\_for\_QGIS.csv file . It should be the
+   one containing the following fields. We are going to use the
+   **Value** field in this file to join to the **LULC\_transition**
+   field in our statistic file
+   (subIndicator\_b\_Areas\_COL\_basline2000\_2015\_sqkm)
+
+|image89|
+
+-  Right click and select properties on the statistics file
+
+   i.e. **subIndicator\_b\_Areas\_COL\_basline2000\_2015\_sqkm**
+
+-  Click on the **joins tab** and click on the **green + button**
+
+-  For the join layer pick the **transitions matrix** that you opened
+   above
+
+-  For the join field pick **Value**
+
+-  For the target field pick **LULC\_transition**
+
+|image90|
+
+-  Click **OK** then **OK** again
+
+-  You should see that a join has been added in the top panel
+
+   |image91|
+
+-  Click **OK** to close the join window
+
+-  Open the attribute table of the statistics file again and you should
+   now see that it includes the joined fields. (i.e. the
+   subIndicator\_b\_Areas\_COL\_basline2000\_2015\_sqkm file\ **)**
+
+   |image92|
+
+-  These are only temporarily joined so we need to save as a new file.
+   We will use the refactor field tool as this allows us to remove the
+   joinfield preface (in this example
+   **transition\_matrix\_for\_qgis\_**)that was added to the joined on
+   fields and also set the correct output types for the other fields (as
+   below)
+
+|image93|
+
+-  Save the refactored file to a new name within the geopackage
+
+   e.g. subInd\_b\_Areas\_COL\_basline2000\_2015\_sqkm\_joined
+
+   1. .. rubric:: Calculate area statistics and format statistics to
+         reporting format
+         :name: calculate-area-statistics-and-format-statistics-to-reporting-format
+
+-  From the main menu click on **Plugins>>Manage and install plugins**
+
+-  Search for **stats** and click on **Group Stats** then click on
+   **Install Plugin**
+
+|image94|
+
+-  From the main menu bar click on **Vector>> Groupstats >> Group
+   stats**
+
+|image95|
+
+-  Drag the **Area\_sqkm** field into the **Value** box
+
+-  Drag **sum** into the Value box
+
+-  Drag **BioclimaticBelt,** and **to\_desc** into the **Rows** box
+
+-  Drag **impact** into the **Columns** box
+
+-  Click **Calculate**
+
+|image96|
+
+A summary table will appear in the **Group Stats** window
+
+-  From the Group stats menu click **Data>>copy all to clipboard**
+
+-  Next open **Microsoft Excel** with a new blank worksheet
+
+-  **Paste** the copied clipboard contents into the excel worksheet
+
+   |image97|
+
+-  Highlight the headings **Degradation, Improving and Stable** and
+   shift them down one cell
+
+-  Highlight the entire first row and delete (with the heading None and
+   impact)
+
+-  Add 3 new columns at the end called **Total, ProportionDegraded,
+   ProportionNetDegraded, %Degraded and %NetDegraded.**
+
+   |image98|
+
+-  Calculate Total to be the sum of colums C to E
+
+-  Calculate ProportionDegraded to be column C dived by column F
+
+-  Calculate ProportionNetDegraded to be column C minus column D and
+   diving it by column F
+
+-  Calculate %Degraded and %Net Degraded to be column G and H multiplied
+   by 100, respectively.
+
+    |image99|
+
+-  **Next insert pivot table and summarise by Bioclimatic Belt to sum
+   the Degradation values, Improving values and Total Mountain Area**
+
+   |image100|
+
+-  Again add and calculate columns for **ProportionDegraded,
+   ProportionNetDegraded, %Degraded and %NetDegraded**
+
+-  Save to **.xlsx format e.g. COL\_2000\_2015\_SDG15\_4\_2b.xls**
+
+-  Repeat the above step for the next reporting period i.e. using 2015
+   landcover (year 1) and 2018 landcover (year2) and any other reporting
+   periods.
+
+**END**
+
+Generate multiband raster to help with spatial interrogation of results and QA
+------------------------------------------------------------------------------
+
+Use the gdal merge tool to combine all the input rasters into a single
+multi-band raster
+
+|image101|
+
+https://gis.stackexchange.com/questions/62005/how-to-rename-the-band-names-of-a-layer-stack
+
+https://issues.qgis.org/issues/17128
+
+Looking at this plugin:
+
+|image102|
+
+.. [1]
+   At the time of writing the Long Term Release of QGIS is Version 3.22
+   'Białowieża'
+
+.. [2]
+   IPBES defines land degradation as “the many human-caused processes
+   that drive the **decline or loss in biodiversity**, **ecosystem
+   functions** or **ecosystem services** in any terrestrial and
+   associated aquatic ecosystems” (IPBES, 2018)
+
+.. |image1| image:: media_QGIS_new/image1.png
+   :width: 1200
+.. |image2| image:: media_QGIS_new/image2.png
+   :width: 1200
+.. |image3| image:: media_QGIS_new/image3.png
+   :width: 1200
+.. |image4| image:: media_QGIS_new/image4.png
+   :width: 1200
+.. |image5| image:: media_QGIS_new/image5.png
+   :width: 1200
+.. |image6| image:: media_QGIS_new/image6.png
+   :width: 1200
+.. |image7| image:: media_QGIS_new/image7.png
+   :width: 1200
+.. |image8| image:: media_QGIS_new/image8.png
+   :width: 1200
+.. |image9| image:: media_QGIS_new/image9.png
+   :width: 1200
+.. |image10| image:: media_QGIS_new/image10.png
+   :width: 1200
+.. |image11| image:: media_QGIS_new/image11.png
+   :width: 1200
+.. |image12| image:: media_QGIS_new/image12.png
+   :width: 400
+.. |image13| image:: media_QGIS_new/image13.png
+   :width: 1200
+.. |image14| image:: media_QGIS_new/image14.png
+   :width: 1200
+.. |image15| image:: media_QGIS_new/image15.png
+   :width: 1200
+.. |image16| image:: media_QGIS_new/image16.png
+   :width: 1200
+.. |image17| image:: media_QGIS_new/image17.png
+   :width: 1200
+.. |image9| image:: media_QGIS_new/image9.png
+   :width: 1200
+.. |image18| image:: media_QGIS_new/image18.png
+   :width: 1200
+.. |image19| image:: media_QGIS_new/image19.png
+   :width: 600
+.. |image20| image:: media_QGIS_new/image20.png
+   :width: 600
+.. |image21| image:: media_QGIS_new/image21.png
+   :width: 1200
+.. |image12| image:: media_QGIS_new/image12.png
+   :width: 400
+.. |image22| image:: media_QGIS_new/image22.png
+   :width: 1200
+.. |image23| image:: media_QGIS_new/image23.png
+   :width: 1200
+.. |image24| image:: media_QGIS_new/image24.png
+   :width: 1000
+.. |image25| image:: media_QGIS_new/image25.png
+   :width: 1200
+.. |image26| image:: media_QGIS_new/image26.png
+   :width: 1200
+.. |image27| image:: media_QGIS_new/image27.png
+   :width: 400
+.. |image28| image:: media_QGIS_new/image28.png
+   :width: 1200
+.. |image29| image:: media_QGIS_new/image29.png
+   :width: 1200
+.. |image30| image:: media_QGIS_new/image30.png
+   :width: 600
+.. |image31| image:: media_QGIS_new/image31.png
+   :width: 1200
+.. |image32| image:: media_QGIS_new/image32.png
+   :width: 1200
+.. |image33| image:: media_QGIS_new/image33.png
+    :width: 1200
+.. |image34| image:: media_QGIS_new/image34.png
+   :width: 1200
+.. |image35| image:: media_QGIS_new/image35.png
+   :width: 1200
+.. |image36| image:: media_QGIS_new/image36.png
+   :width: 1200
+.. |image37| image:: media_QGIS_new/image37.png
+   :width: 1200
+.. |image38| image:: media_QGIS_new/image38.png
+   :width: 1200
+.. |image39| image:: media_QGIS_new/image39.png
+   :width: 1200
+.. |image40| image:: media_QGIS_new/image40.png
+   :width: 1200
+.. |image41| image:: media_QGIS_new/image41.png
+   :width: 1200
+.. |image42| image:: media_QGIS_new/image42.png
+   :width: 1200
+.. |image43| image:: media_QGIS_new/image43.png
+   :width: 1200
+.. |image44| image:: media_QGIS_new/image44.png
+   :width: 1200
+.. |image45| image:: media_QGIS_new/image45.png
+   :width: 1200
+.. |image46| image:: media_QGIS_new/image46.png
+   :width: 1200
+.. |image47| image:: media_QGIS_new/image47.png
+    :width: 600
+.. |image48| image:: media_QGIS_new/image48.png
+   :width: 1200
+.. |image49| image:: media_QGIS_new/image49.png
+   :width: 1200
+.. |image50| image:: media_QGIS_new/image50.png
+   :width: 1200
+.. |image51| image:: media_QGIS_new/image51.png
+   :width: 1200
+.. |image52| image:: media_QGIS_new/image52.png
+   :width: 400
+.. |image53| image:: media_QGIS_new/image53.png
+   :width: 1000
+.. |image54| image:: media_QGIS_new/image54.png
+   :width: 1000
+.. |image55| image:: media_QGIS_new/image55.png
+   :width: 1200
+.. |image56| image:: media_QGIS_new/image56.png
+    :width: 1200
+.. |image57| image:: media_QGIS_new/image57.png
+   :width: 400
+.. |image58| image:: media_QGIS_new/image58.png
+   :width: 1200
+.. |image59| image:: media_QGIS_new/image59.png
+   :width: 1200
+.. |image60| image:: media_QGIS_new/image60.png
+   :width: 1000
+.. |image61| image:: media_QGIS_new/image61.png
+   :width: 1200
+.. |image62| image:: media_QGIS_new/image62.png
+   :width: 1200
+.. |image63| image:: media_QGIS_new/image63.png
+   :width: 1200
+.. |image64| image:: media_QGIS_new/image64.png
+   :width: 1200
+.. |image65| image:: media_QGIS_new/image65.png
+   :width: 1200
+.. |image66| image:: media_QGIS_new/image66.png
+   :width: 1200
+.. |image67| image:: media_QGIS_new/image67.png
+   :width: 600
+.. |image68| image:: media_QGIS_new/image68.png
+   :width: 600
+.. |image69| image:: media_QGIS_new/image69.png
+   :width: 1200
+.. |image70| image:: media_QGIS_new/image70.png
+   :width: 1200
+.. |image71| image:: media_QGIS_new/image71.png
+   :width: 1200
+.. |image72| image:: media_QGIS_new/image72.png
+   :width: 1200
+.. |image73| image:: media_QGIS_new/image73.png
+   :width: 1200
+.. |image74| image:: media_QGIS_new/image74.png
+   :width: 1200
+.. |image75| image:: media_QGIS_new/image75.png
+   :width: 1200
+.. |image76| image:: media_QGIS_new/image76.png
+   :width: 1200
+.. |image77| image:: media_QGIS_new/image77.png
+   :width: 1200
+.. |image52| image:: media_QGIS_new/image52.png
+   :width: 600
+.. |image78| image:: media_QGIS_new/image78.png
+   :width: 1200
+.. |image79| image:: media_QGIS_new/image79.png
+   :width:1200
+.. |image80| image:: media_QGIS_new/image80.png
+   :width: 1200
+.. |image81| image:: media_QGIS_new/image81.png
+   :width: 1200
+.. |image82| image:: media_QGIS_new/image82.png
+   :width: 800
+.. |image83| image:: media_QGIS_new/image83.png
+   :width: 1000
+.. |image84| image:: media_QGIS_new/image84.png
+   :width: 1200
+.. |image85| image:: media_QGIS_new/image85.png
+   :width: 800
+.. |image86| image:: media_QGIS_new/image86.png
+   :width: 1200
+.. |image87| image:: media_QGIS_new/image87.png
+    :width: 1200
+.. |image88| image:: media_QGIS_new/image88.png
+   :width: 1200
+.. |image89| image:: media_QGIS_new/image89.png
+   :width: 1200
+.. |image90| image:: media_QGIS_new/image90.png
+   :width: 1200
+.. |image91| image:: media_QGIS_new/image91.png
+   :width: 1200
+.. |image92| image:: media_QGIS_new/image92.png
+   :width: 1200
+.. |image93| image:: media_QGIS_new/image93.png
+   :width: 1200
+.. |image94| image:: media_QGIS_new/image94.png
+   :width: 1200
+.. |image95| image:: media_QGIS_new/image95.png
+   :width: 1200
+.. |image96| image:: media_QGIS_new/image96.png
+   :width: 1200
+.. |image97| image:: media_QGIS_new/image97.png
+   :width: 1200
+.. |image98| image:: media_QGIS_new/image98.png
+    :width: 1200
+.. |image99| image:: media_QGIS_new/image99.png
+    :width: 1200
+.. |image100| image:: media_QGIS_new/image100.png
+   :width: 1200
+.. |image101| image:: media_QGIS_new/image101.png
+   :width: 1200
+.. |image102| image:: media_QGIS_new/image102.png
+   :width: 1200
+
+
+.. |image9orig| image:: media_QGIS/image11.png
    :width: 5.52160in
    :height: 0.94805in
-.. |image10| image:: media_QGIS/image12.png
+.. |image10orig| image:: media_QGIS/image12.png
    :width: 6.26806in
    :height: 3.70278in
-.. |image11| image:: media_QGIS/image13.png
-   :width: 4.42770in
-   :height: 4.71941in
-.. |image12| image:: media_QGIS/image14.png
+.. |image12orig| image:: media_QGIS/image14.png
    :width: 4.42653in
    :height: 4.71816in
-.. |image13| image:: media_QGIS/image15.png
+.. |image13orig| image:: media_QGIS/image15.png
    :width: 3.44840in
    :height: 1.83359in
-.. |image14| image:: media_QGIS/image16.png
-   :width: 0.43750in
-   :height: 0.35417in
-.. |image15| image:: media_QGIS/image17.png
+.. |image15orig| image:: media_QGIS/image17.png
    :width: 3.21875in
    :height: 1.13542in
-.. |image16| image:: media_QGIS/image18.png
+.. |image16orig| image:: media_QGIS/image18.png
    :width: 6.26806in
    :height: 2.56667in
-.. |image17| image:: media_QGIS/image19.png
+.. |image17orig| image:: media_QGIS/image19.png
    :width: 2.32263in
    :height: 0.97904in
-.. |image18| image:: media_QGIS/image20.png
+.. |image18orig| image:: media_QGIS/image20.png
    :width: 6.26806in
    :height: 3.45417in
-.. |image19| image:: media_QGIS/image21.png
+.. |image19orig| image:: media_QGIS/image21.png
    :width: 5.21948in
    :height: 1.75024in
-.. |image20| image:: media_QGIS/image22.png
-   :width: 1.95347in
-   :height: 2.17361in
-.. |image21| image:: media_QGIS/image23.png
-   :width: 5.10417in
-   :height: 1.21875in
-.. |image22| image:: media_QGIS/image24.png
-   :width: 5.75000in
-   :height: 3.93750in
-.. |image23| image:: media_QGIS/image25.png
-   :width: 0.29861in
-   :height: 0.29276in
-.. |image24| image:: media_QGIS/image26.png
-   :width: 6.26806in
-   :height: 3.40417in
-.. |image25| image:: media_QGIS/image27.png
-   :width: 6.26806in
-   :height: 3.59931in
-.. |image26| image:: media_QGIS/image28.png
-   :width: 3.18056in
-   :height: 2.63633in
-.. |image27| image:: media_QGIS/image29.png
-   :width: 6.26806in
-   :height: 2.40000in
-.. |image28| image:: media_QGIS/image30.png
-   :width: 5.48788in
-   :height: 5.13889in
-.. |image29| image:: media_QGIS/image31.png
-   :width: 5.43750in
-   :height: 3.10009in
-.. |image30| image:: media_QGIS/image32.png
+.. |image30orig| image:: media_QGIS/image32.png
    :width: 3.37547in
    :height: 4.79234in
-.. |image31| image:: media_QGIS/image33.png
-   :width: 6.26806in
-   :height: 2.66389in
-.. |image32| image:: media_QGIS/image34.png
-   :width: 900
-.. |image33| image:: media_QGIS/image35.png
-   :width: 625
-.. |image34| image:: media_QGIS/image36.png
-   :width: 275
-.. |image35| image:: media_QGIS/image37.png
-   :width: 900
-.. |image36| image:: media_QGIS/image38.png
-   :width: 900
-.. |image37| image:: media_QGIS/image39.png
-   :width: 900
-.. |image38| image:: media_QGIS/image40.png
-   :width: 900
-.. |image39| image:: media_QGIS/image41.png
-   :width: 900
-   
-.. |image40| image:: media_QGIS/image42.png
-   :width: 600
-
-.. |image41| image:: media_QGIS/image43.png
-   :width: 900
-.. |image42| image:: media_QGIS/image44.png
-   :width: 900
-.. |image43| image:: media_QGIS/image45.png
-   :width: 900
-.. |image44| image:: media_QGIS/image46.png
-   :width: 900
-.. |image45| image:: media_QGIS/image47.png
-   :width: 900
-.. |image46| image:: media_QGIS/image48.png
-   :width: 600
-
-.. |image47| image:: media_QGIS/image49.png
-   :width: 300
-
-.. |image48| image:: media_QGIS/image50.png
-   :width: 900
-   
-.. |image49| image:: media_QGIS/image51.png
-   :width: 300
-
-.. |image50| image:: media_QGIS/image52.png
-   :width: 900
-.. |image51| image:: media_QGIS/image53.png
-   :width: 900
-.. |image52| image:: media_QGIS/image54.png
-   :width: 900
-.. |image53| image:: media_QGIS/image55.png
-   :width: 900
-   
-.. |image54| image:: media_QGIS/image56.png
-   :width: 400
-
-.. |image55| image:: media_QGIS/image57.png
-   :width: 900
-.. |image56| image:: media_QGIS/image58.png
-   :width: 900
-.. |image57| image:: media_QGIS/image54.png
-   :width: 900
-   
-.. |image58| image:: media_QGIS/image59.png
-   :width: 300
-   
-.. |image59| image:: media_QGIS/image60.png
-   :width: 900
-.. |image60| image:: media_QGIS/image61.png
-   :width: 900
-.. |image61| image:: media_QGIS/image62.png
-   :width: 900
-.. |image62| image:: media_QGIS/image58.png
-   :width: 900
-.. |image63| image:: media_QGIS/image54.png
-   :width: 900
-.. |image64| image:: media_QGIS/image63.png
-   :width: 900
-   
-.. |image65| image:: media_QGIS/image64.png
-   :width: 300
-   
-.. |image66| image:: media_QGIS/image65.png
-   :width: 900
-   
-.. |image67| image:: media_QGIS/image66.png
-   :width: 900
-.. |image68| image:: media_QGIS/image67.png
-   :width: 900
-   
-.. |image69| image:: media_QGIS/image68.png
-   :width: 900
-
-.. |image70| image:: media_QGIS/image69.png
-   :width: 300
-
-.. |image71| image:: media_QGIS/image70.png
-   :width: 600
-
-.. |image72| image:: media_QGIS/image71.png
-   :width: 600
-   
-.. |image73| image:: media_QGIS/image72.png
-   :width: 900
-.. |image74| image:: media_QGIS/image73.png
-   :width: 900
-.. |image75| image:: media_QGIS/image74.png
-   :width: 900
-.. |image74a| image:: media_QGIS/image74a.png
-   :width: 900
-.. |image74b| image:: media_QGIS/image74b.png
-   :width: 900
-.. |image76| image:: media_QGIS/image75.png
-   :width: 900
-.. |image77| image:: media_QGIS/image76.png
-   :width: 900
-.. |image78| image:: media_QGIS/image77.png
-   :width: 900
- 
-.. |image79| image:: media_QGIS/image78.png
-   :width: 900
-   
-.. |image80| image:: media_QGIS/image79.png
-   :width: 300
-   
-.. |image81| image:: media_QGIS/image80.png
-   :width: 900
-.. |image82| image:: media_QGIS/image81.png
-   :width: 900
-.. |image83| image:: media_QGIS/image82.png
-   :width: 900
-.. |image84| image:: media_QGIS/image83.png
-   :width: 200
-.. |image85| image:: media_QGIS/image84.png
-   :width: 900
-.. |image86| image:: media_QGIS/image85.png
-   :width: 900
-.. |image87| image:: media_QGIS/image86.png
-   :width: 900
-.. |image88| image:: media_QGIS/image80.png
-   :width: 900
-.. |image89| image:: media_QGIS/image87.png
-   :width: 900
-.. |image90| image:: media_QGIS/image88.png
-   :width: 900
-.. |image91| image:: media_QGIS/image89.png
-   :width: 900
-.. |image92| image:: media_QGIS/image90.png
-   :width: 900
-.. |image93| image:: media_QGIS/image91.png
-   :width: 200
-.. |image94| image:: media_QGIS/image92.png
-   :width: 900
-.. |image95| image:: media_QGIS/image93.png
-   :width: 900
-.. |image96| image:: media_QGIS/image94.png
-   :width: 300
-.. |image97| image:: media_QGIS/image95.png
-   :width: 900
-.. |image98| image:: media_QGIS/image96.png
-   :width: 900
-.. |image99| image:: media_QGIS/image97.png
-   :width: 900
-.. |image100| image:: media_QGIS/image98.png
-   :width: 900
-.. |image101| image:: media_QGIS/image99.png
-   :width: 900
-.. |image102| image:: media_QGIS/image100.png
-   :width: 900
-.. |image103| image:: media_QGIS/image101.png
-   :width: 900
-.. |image104| image:: media_QGIS/image101.png
-   :width: 900
-.. |image105| image:: media_QGIS/image102.png
-   :width: 900
-.. |image106| image:: media_QGIS/image103.png
-   :width: 900
-.. |image107| image:: media_QGIS/image104.png
-   :width: 900
-.. |image108| image:: media_QGIS/image105.png
-   :width: 900
-.. |image109| image:: media_QGIS/image106.png
-   :width: 900
-.. |image110| image:: media_QGIS/image107.png
-   :width: 900
-.. |image111| image:: media_QGIS/image108.png
-   :width: 900
-.. |image112| image:: media_QGIS/image109.png
-   :width: 900
-.. |image113| image:: media_QGIS/image110.png
-   :width: 900
-.. |image114| image:: media_QGIS/image111.png
-   :width: 900
-.. |image115| image:: media_QGIS/image112.png
-   :width: 300
-.. |image116| image:: media_QGIS/image113.png
-   :width: 900
-.. |image117| image:: media_QGIS/image114.png
-   :width: 900
-.. |image118| image:: media_QGIS/image115.png
-   :width: 900
-.. |image119| image:: media_QGIS/image116.png
-   :width: 900
-.. |image120| image:: media_QGIS/image117.png
-   :width: 900
-.. |image121| image:: media_QGIS/image118.png
-   :width: 900
-.. |image122| image:: media_QGIS/image119.png
-   :width: 900
-.. |image123| image:: media_QGIS/image120.png
-   :width: 900
-.. |image124| image:: media_QGIS/image121.png
-   :width: 900
-.. |image125| image:: media_QGIS/image122.png
-   :width: 900
-.. |image126| image:: media_QGIS/image123.png
-   :width: 900
-.. |image127| image:: media_QGIS/image124.png
-   :width: 900
-.. |image128| image:: media_QGIS/image125.png
-   :width: 900
-.. |image129| image:: media_QGIS/image126.png
-   :width: 900
-.. |image130| image:: media_QGIS/image127.png
-   :width: 900
-.. |image131| image:: media_QGIS/image128.png
-   :width: 900
-.. |image132| image:: media_QGIS/image129.png
-   :width: 900
-.. |image133| image:: media_QGIS/image130.png
-   :width: 900
-.. |image134| image:: media_QGIS/image131.png
-   :width: 900
-.. |image135| image:: media_QGIS/image132.png
-   :width: 300
-.. |image136| image:: media_QGIS/image133.png
-   :width: 900
-.. |image137| image:: media_QGIS/image134.png
-   :width: 900
-.. |image138| image:: media_QGIS/image135.png
-   :width: 900
-.. |image139| image:: media_QGIS/image136.png
-   :width: 900
-.. |image140| image:: media_QGIS/image137.png
-   :width: 900
-.. |image141| image:: media_QGIS/image138.png
-   :width: 900
-.. |image142| image:: media_QGIS/image139.png
-   :width: 900
-.. |image143| image:: media_QGIS/image140.png
-   :width: 900
-.. |image144| image:: media_QGIS/image141.png
-   :width: 900
-.. |image145| image:: media_QGIS/image142.png
-   :width: 900
-.. |image146| image:: media_QGIS/image143.png
-   :width: 900
-.. |image147| image:: media_QGIS/image144.png
-   :width: 900
-.. |image148| image:: media_QGIS/image145.png
-   :width: 900
-.. |image149| image:: media_QGIS/image146.png
-   :width: 900
-.. |image150| image:: media_QGIS/image147.png
-   :width: 900
-.. |image151| image:: media_QGIS/image148.png
-   :width: 900
-.. |image152| image:: media_QGIS/image149.png
-   :width: 900
-.. |image153| image:: media_QGIS/image150.png
-   :width: 900
-.. |image154| image:: media_QGIS/image151.png
-   :width: 900
-.. |image155| image:: media_QGIS/image152.png
-   :width: 900
-.. |image156| image:: media_QGIS/image153.png
-   :width: 900
-.. |image157| image:: media_QGIS/image154.png
-   :width: 900
-.. |image158| image:: media_QGIS/image155.png
-   :width: 900
-.. |image159| image:: media_QGIS/image156.png
-   :width: 900
-.. |image160| image:: media_QGIS/image157.png
-   :width: 900
-.. |image161| image:: media_QGIS/image158.png
-   :width: 900
-.. |image162| image:: media_QGIS/image159.png
-   :width: 900
-.. |image163| image:: media_QGIS/image160.png
-   :width: 900
-.. |image164| image:: media_QGIS/image161.png
-   :width: 900
-.. |image165| image:: media_QGIS/image162.png
-   :width: 900
-.. |image166| image:: media_QGIS/image163.png
-   :width: 900
-.. |image167| image:: media_QGIS/image164.png
-   :width: 900
-.. |image168| image:: media_QGIS/image165.png
-   :width: 900
-.. |image169| image:: media_QGIS/image166.png
-   :width: 900
-.. |imagetoolbox| image:: media_QGIS/Toolbox_images/toolbox.PNG
-   :width: 900
-.. |image170| image:: media_QGIS/image170.png
-   :width: 900
-.. |image171| image:: media_QGIS/image171.png
-   :width: 900
-.. |image172| image:: media_QGIS/i1_aoi_tool.png
-   :width: 900
-.. |image173| image:: media_QGIS/image173.png
-   :width: 900
-.. |image173| image:: media_QGIS/image173.png
-   :width: 900
-.. |image174| image:: media_QGIS/image174.png
-   :width: 900
-.. |image175| image:: media_QGIS/image175.png
-   :width: 900
-.. |image176| image:: media_QGIS/image176.png
-   :width: 900
-.. |image177| image:: media_QGIS/image177.png
-   :width: 900
-.. |image178| image:: media_QGIS/image178.png
-   :width: 900
-
-.. |imageA1| image:: media_QGIS/Toolbox_images/A1.png
-   :width: 1100
-.. |imageA1_w| image:: media_QGIS/Toolbox_images/A1_w.png
-   :width: 600
-   
-.. |imageA2a| image:: media_QGIS/Toolbox_images/A2a.png
-   :width: 1100
-    
-.. |imageA2a_w| image:: media_QGIS/Toolbox_images/A2a_w.png
-   :width: 600
-   
-.. |imageA2b| image:: media_QGIS/Toolbox_images/A2b.png
-   :width: 1100
-
-.. |imageA2b_w| image:: media_QGIS/Toolbox_images/A2b_w.png
-   :width: 600
-   
-.. |imageA2c| image:: media_QGIS/Toolbox_images/A2c.png
-   :width: 1100
-   
-.. |imageA2c_w| image:: media_QGIS/Toolbox_images/A2c_w.png
-   :width: 800
-   
-.. |imageA3| image:: media_QGIS/Toolbox_images/A3.png
-   :width: 1100
-   
-.. |imageA3_w| image:: media_QGIS/Toolbox_images/A3_w.png
-   :width: 800
-   
-.. |imageB1| image:: media_QGIS/Toolbox_images/B1.png
-   :width: 1100
-
-.. |imageB1_w| image:: media_QGIS/Toolbox_images/B1_w.png
-   :width: 600
-
-.. |imageB2| image:: media_QGIS/Toolbox_images/B2.png
-   :width: 1100
- 
-.. |imageB2_w| image:: media_QGIS/Toolbox_images/B2_w.png
-   :width: 600
-   
-.. |imageB3| image:: media_QGIS/Toolbox_images/B3.png
-   :width: 1100
-  
-.. |imageB3_w| image:: media_QGIS/Toolbox_images/B3_w.png
-    :width: 1100
-     
-.. |imageB4| image:: media_QGIS/Toolbox_images/B4.png
-   :width: 1100
- 
-.. |imageB4_w| image:: media_QGIS/Toolbox_images/B4_w.png
-   :width: 600
-.. |imageB4a| image:: media_QGIS/Toolbox_images/B4a.png
-   :width: 1100
- 
-.. |imageB4a_w| image:: media_QGIS/Toolbox_images/B4a_w.png
-   :width: 800
-
-.. |imageB4b| image:: media_QGIS/Toolbox_images/B4b.png
-   :width: 1100
- 
-.. |imageB4b_w| image:: media_QGIS/Toolbox_images/B4b_w.png
-   :width: 800
-.. |imageB5| image:: media_QGIS/Toolbox_images/B5.png
-    :width: 1100
-
-.. |imageB5_w| image:: media_QGIS/Toolbox_images/B5_w.png
-   :width: 600
-   
-.. |imageB6a| image:: media_QGIS/Toolbox_images/B6a.png
-   :width: 1100
-   
-.. |imageB6a_w| image:: media_QGIS/Toolbox_images/B6a_w.png
-   :width: 1100
- 
-.. |imageB6b| image:: media_QGIS/Toolbox_images/B6b.png
-   :width: 1100
-   
-.. |imageB6b_w| image:: media_QGIS/Toolbox_images/B6b_w.png
-   :width: 1100
-   
-.. |imageB7| image:: media_QGIS/Toolbox_images/B7.png
-   :width: 1100
- 
-.. |imageB7_w| image:: media_QGIS/Toolbox_images/B7_w.png
-   :width: 1100
-
-
-.. |imageB8| image:: media_QGIS/Toolbox_images/B8.png
-   :width: 1100
- 
-.. |imageB8_w| image:: media_QGIS/Toolbox_images/B8_w.png
-   :width: 1100
-
-.. |imageB9| image:: media_QGIS/Toolbox_images/B9.png
-   :width: 1100
- 
-.. |imageB9_w| image:: media_QGIS/Toolbox_images/B9_w.png
-   :width: 1100
-   
-   
-.. |imageC1| image:: media_QGIS/Toolbox_images/C1.png
-   :width: 1100
-  
-.. |imageC1_w| image:: media_QGIS/Toolbox_images/C1_w.png
-   :width: 600
-
-   
-.. |imageD1| image:: media_QGIS/Toolbox_images/D1.png
-   :width: 1100
-
-.. |imageD1_w| image:: media_QGIS/Toolbox_images/D1_w.png
-   :width: 1100
-
-.. |imageD1a| image:: media_QGIS/Toolbox_images/D1a.png
-   :width: 1100
-
-.. |imageD1a_w| image:: media_QGIS/Toolbox_images/D1a_w.png
-   :width: 1100
-
-.. |imageD1b| image:: media_QGIS/Toolbox_images/D1b.png
-   :width: 1100
-
-.. |imageD1b_w| image:: media_QGIS/Toolbox_images/D1b_w.png
-   :width: 1100
-
-.. |imageD2| image:: media_QGIS/Toolbox_images/D2.png
-   :width: 1100
-
-.. |imageD2_w| image:: media_QGIS/Toolbox_images/D2_w.png
-   :width: 600
-
-.. |imageD3| image:: media_QGIS/Toolbox_images/D3.png
-   :width: 1100
- 
-.. |imageD3_w| image:: media_QGIS/Toolbox_images/D3_w.png
-   :width: 1100
-
-.. |imageE1| image:: media_QGIS/Toolbox_images/E1.PNG
-   :width: 1100
- 
-.. |imageE1_w| image:: media_QGIS/Toolbox_images/E1_w.PNG
-   :width: 1100
-
-.. |imageF1| image:: media_QGIS/Toolbox_images/F1.PNG
-   :width: 1100
-
-.. |imageF1_w| image:: media_QGIS/Toolbox_images/F1w.png
-   :width: 1100
-
-.. |imageF2| image:: media_QGIS/Toolbox_images/F2.PNG
-   :width: 1100
-
-.. |imageF2_w| image:: media_QGIS/Toolbox_images/F2w.png
-   :width: 1100
-   
-.. |toolbox_access| image:: media_QGIS/Toolbox_images/toolbox_access.png
-   :width: 600   
-   
-.. |imagesettings| image:: media_QGIS/settings.png
-   :width: 900
-
-.. |imagerepository1| image:: media_QGIS/repository.png
-   :width: 900
-
-.. |imagerepository2| image:: media_QGIS/repository2.png
-   :width: 600
-
-.. |imagerepository3| image:: media_QGIS/repository3.png
-   :width: 900
-.. |imagescale_table| image:: media_QGIS/scale_table.png
-   :width: 500
-.. |imagemin_bou| image:: media_QGIS/min_bou.png
-   :width: 400
-.. |imagebuffer| image:: media_QGIS/buffer.png
-   :width: 400
-.. |imagerasterize| image:: media_QGIS/rasterize.png
-   :width: 400
-.. |imageslopemask| image:: media_QGIS/slopemask.png
-   :width: 900
-   .. |imageslopemask| image:: media_QGIS/slopemask.png
-   :width: 900
-.. |extract_layer_extent| image:: media_QGIS/extract_layer_extent.png
-   :width: 300
-.. |imageneighbors| image:: media_QGIS/neighbors.png
-   :width: 400
-.. |imagersa1| image:: media_QGIS/rsa1.png
-   :width: 900
-.. |imagersa2| image:: media_QGIS/rsa2.png
-   :width: 900
-.. |imageresamp| image:: media_QGIS/resamp.png
-   :width: 400
-   
-.. |extent_attr| image:: media_QGIS/extent_attr.png
-   :width: 900
-.. |extract_layer_extent2| image:: media_QGIS/extract_layer_extent2.png
-   :width: 900
-.. |extent_attr_width| image:: media_QGIS/extent_attr_width.png
-   :width: 900
-.. |extent_attr_height| image:: media_QGIS/extent_attr_height.png
-   :width: 900
-.. |creategrid| image:: media_QGIS/creategrid.png
-   :width: 300
-.. |reprojequi| image:: media_QGIS/reprojequi.png
-   :width: 900
-.. |buffequi| image:: media_QGIS/buffequi.png
-   :width: 900
-.. |intersection| image:: media_QGIS/intersection.png
-   :width: 300
-.. |intersection2| image:: media_QGIS/intersection2.png
-   :width: 900
-.. |intersection3| image:: media_QGIS/intersection3.png
-   :width: 900
-.. |manualiterate| image:: media_QGIS/manualiterate.png
-   :width: 900
-.. |reprojequi2| image:: media_QGIS/reprojequi2.png
-   :width: 900
-.. |creategrid3| image:: media_QGIS/creategrid3.png
-   :width: 900
-.. |creategrid2| image:: media_QGIS/creategrid2.png
-   :width: 900
-.. |rmask| image:: media_QGIS/rmask.png
-   :width: 300
-.. |mergeslope1| image:: media_QGIS/mergeslope1.png
-   :width: 900
-.. |mergeslope2| image:: media_QGIS/mergeslope2.png
-   :width: 900
-.. |mergedslope| image:: media_QGIS/mergedslope.png
-   :width: 900
-.. |slopeinequalarea| image:: media_QGIS/slopeinequalarea.png
-   :width: 900
-.. |mergedLER7km| image:: media_QGIS/mergedLER7km.png
-   :width: 900
-.. |mergeLER7km_1| image:: media_QGIS/mergeLER7km_1.png
-   :width: 900
-.. |LER7kminequalarea| image:: media_QGIS/LER7kminequalarea.png
-   :width: 900
-   
-   
-
-
-
