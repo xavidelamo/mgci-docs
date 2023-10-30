@@ -343,8 +343,8 @@ indicator should be used. However, given unique national context and
 degradation processes, it may be advantageous for a country to develop
 their own land cover classification, using remote sensing imagery.
 
- Step-by-step instructions to calculate Sub-indicator 15.4.2a in QGIS 
-======================================================================
+Step-by-step instructions to calculate Sub-indicator 15.4.2a in QGIS 
+=====================================================================
 
 This section of the tutorial explains in detail how to calculate value
 estimates for sub-indicator 15.4.2a in QGIS, using Colombia as a case
@@ -352,8 +352,8 @@ study. This section assumes that the user has already downloaded the
 global mountain map made available by FAO to compute this indicator and
 a land cover dataset meeting the requirements described in section 3.2.
 
-A0 Prepare country boundary and buffer to 10km
------------------------------------------------
+Tool step A0 Prepare country boundary and buffer to 10km
+---------------------------------------------------------
 
 The following steps are covered by this tool:
 
@@ -450,8 +450,8 @@ WILL LINK EACH TOOL TO THE STEP BY STEP INSTRUCTIONS BELOW
 
 
 
-A1  Prepare and reclassify LULC dataset into UN-SEEA classes
-------------------------------------------------------------
+Tool step A1 Prepare and reclassify LULC dataset into UN-SEEA classes
+---------------------------------------------------------------------
 
 The following steps are covered by this tool:
 
@@ -622,8 +622,8 @@ can see that the actual layer only has 10 values.
 
 |image29|
 
-A2 Prepare mountains and combine with LULC
--------------------------------------------
+Tool step A2 Prepare mountains and combine with LULC
+----------------------------------------------------
 
 The following steps are covered by this tool:
 
@@ -700,12 +700,6 @@ and 4 is “Remaining Mountain Area”.
 
 |image17|
 
-A2 Prepare mountains and combine with LULC
--------------------------------------------
-
-The following steps are covered by this tool:
-
-
 Combine mountain and vegetation descriptor layers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -770,16 +764,16 @@ only allow a single input for zones, we will combine the two datasets.
 |image33|
 
 
-A3 download DEM using OpenDEMDownloader - maybe make as optional part of A0
----------------------------------------------------------------------------
+Tool Step A3 download DEM using OpenDEMDownloader - maybe make as optional part of A0
+-------------------------------------------------------------------------------------
 
 The following steps are covered by this tool:
 
 
 Additional bit of tutorial. Manual steps to be added
 
-A4 Generate real surface area raster
-------------------------------------
+Tool Step A4 Generate real surface area raster
+----------------------------------------------
 
 The following steps are covered by this tool:
 
@@ -789,8 +783,8 @@ Additional bit of tutorial. Steps to copy from previous MGCI doc effort
 Computation of Sub-indicator a Mountain Green Cover Index
 ---------------------------------------------------------
 
-A5 Generate planimetric and real surface area statistics
---------------------------------------------------------
+Tool Step A5 Generate planimetric and real surface area statistics
+------------------------------------------------------------------
 
 The following steps are covered by this tool:
 
@@ -928,8 +922,8 @@ END
 Save the edits.
 
 
-A6 Formatting to reporting tables
----------------------------------
+Tool Step A6 Formatting to reporting tables
+-------------------------------------------
 
 The following steps are covered by this tool (although when undertaken manually the steps are slightly different as a QGIS plugin can be used to help with the formatting):
 
