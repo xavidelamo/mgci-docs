@@ -352,6 +352,11 @@ study. This section assumes that the user has already downloaded the
 global mountain map made available by FAO to compute this indicator and
 a land cover dataset meeting the requirements described in section 3.2.
 
+A0 Prepare country boundary and buffer to 10km
+-----------------------------------------------
+
+The following steps are covered by this tool:
+
 Define projection
 ^^^^^^^^^^^^^^^^^
 
@@ -435,80 +440,23 @@ Next use the reproject tool to project the country boundary layer to the
 Now that the country boundary is in the chosen projection, we can
 generate the mountains and land cover maps for Colombia.
 
-Generate the mountain map for the chosen country 
-------------------------------------------------
 
-The development of mountain map consists in clipping and reprojecting
-the SDG 15.4.2. Global Mountain Descriptor Map developed by FAO to area
-of interest, in this case, the national border of Colombia.
 
-`Clip and project global <https://mgci-docs.readthedocs.io/en/latest/qgis.html#id23>`__ mountain map
-----------------------------------------------------------------------------------------------------
+SECTION TO BE ADDED HERE  FROM OTHER DOC WHICH IS RUNNING THE TOOLS FROM THE NEW TOOLBOX
+WILL LINK EACH TOOL TO THE STEP BY STEP INSTRUCTIONS BELOW
 
-From the QGIS main toolbar click on \ **Layer>>Add Layer>>Add Raster
-Layer** to add the global mountain map file to your QGIS session.
 
-|image9|
 
-|image10|
 
--  Click \ **Add**
 
-|image11|
 
--  In the processing toolbox search for \ **Clip**
+A1  Prepare and reclassify LULC dataset into UN-SEEA classes
+------------------------------------------------------------
 
--  Double click on the \ **Clip raster by mask layer** under the GDAL
-   toolset
+The following steps are covered by this tool:
 
-|image12|
 
--  Select the \ **global mountain descriptor map** for the \ **Input
-   Layer**
-
--  Select the \ **national border of the country** for the \ **Mask
-   Layer**
-
--  Select the \ **Project CRS** for the \ **Target CRS**
-
--  Tick \ **Match the extent of the clipped raster to the extent of the
-   mask layer**
-
--  Tick \ **set the output file resolution**
-
--  Type the \ **X and Y resolution in metres** (in this case 832)
-
--  Tick \ **Use Input Layer Data Type**
-
--  Set the output \ **Clipped (mask)** e.g. to Mountains\_Colombia.tif
-
-|image13|
-
-|image14|
-
--  **Click Run** to run the tool
-
-The new clipped mountain descriptor dataset in the national projection
-should be added to the map canvas\ **.**
-
-|image15|
-
--  Right click on the clipped mountain dataset (i.e. in this example the
-   Mountains\_Colombia layer) and click \ **properties>>Symbology**
-
--  Click on **Style >> Load Style, and select the**
-   SDG1542\_Mntn\_BioclimaticBelts.qml included in the Global Descriptor
-   Dataset Folder
-
-|image16|
-
-The layer should now show all the mountain area for Colombia classified
-by Biolimatic belts (where 1 is ‘’Nival”, 2 is “Alpine”, 3 is ‘’Montane”
-and 4 is “Remaining Mountain Area”.
-
-|image17|
-
- Generate the vegetation descriptor layer
+Generate the vegetation descriptor layer
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To demonstrate the steps for processing a raster LULC dataset we will
@@ -674,6 +622,90 @@ can see that the actual layer only has 10 values.
 
 |image29|
 
+A2 Prepare mountains and combine with LULC
+-------------------------------------------
+
+The following steps are covered by this tool:
+
+Generate the mountain map for the chosen country 
+------------------------------------------------
+
+The development of mountain map consists in clipping and reprojecting
+the SDG 15.4.2. Global Mountain Descriptor Map developed by FAO to area
+of interest, in this case, the national border of Colombia.
+
+`Clip and project global <https://mgci-docs.readthedocs.io/en/latest/qgis.html#id23>`__ mountain map
+----------------------------------------------------------------------------------------------------
+
+From the QGIS main toolbar click on \ **Layer>>Add Layer>>Add Raster
+Layer** to add the global mountain map file to your QGIS session.
+
+|image9|
+
+|image10|
+
+-  Click \ **Add**
+
+|image11|
+
+-  In the processing toolbox search for \ **Clip**
+
+-  Double click on the \ **Clip raster by mask layer** under the GDAL
+   toolset
+
+|image12|
+
+-  Select the \ **global mountain descriptor map** for the \ **Input
+   Layer**
+
+-  Select the \ **national border of the country** for the \ **Mask
+   Layer**
+
+-  Select the \ **Project CRS** for the \ **Target CRS**
+
+-  Tick \ **Match the extent of the clipped raster to the extent of the
+   mask layer**
+
+-  Tick \ **set the output file resolution**
+
+-  Type the \ **X and Y resolution in metres** (in this case 832)
+
+-  Tick \ **Use Input Layer Data Type**
+
+-  Set the output \ **Clipped (mask)** e.g. to Mountains\_Colombia.tif
+
+|image13|
+
+|image14|
+
+-  **Click Run** to run the tool
+
+The new clipped mountain descriptor dataset in the national projection
+should be added to the map canvas\ **.**
+
+|image15|
+
+-  Right click on the clipped mountain dataset (i.e. in this example the
+   Mountains\_Colombia layer) and click \ **properties>>Symbology**
+
+-  Click on **Style >> Load Style, and select the**
+   SDG1542\_Mntn\_BioclimaticBelts.qml included in the Global Descriptor
+   Dataset Folder
+
+|image16|
+
+The layer should now show all the mountain area for Colombia classified
+by Biolimatic belts (where 1 is ‘’Nival”, 2 is “Alpine”, 3 is ‘’Montane”
+and 4 is “Remaining Mountain Area”.
+
+|image17|
+
+A2 Prepare mountains and combine with LULC
+-------------------------------------------
+
+The following steps are covered by this tool:
+
+
 Combine mountain and vegetation descriptor layers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -737,8 +769,33 @@ only allow a single input for zones, we will combine the two datasets.
 
 |image33|
 
+
+A3 download DEM using OpenDEMDownloader - maybe make as optional part of A0
+---------------------------------------------------------------------------
+
+The following steps are covered by this tool:
+
+
+Additional bit of tutorial. Manual steps to be added
+
+A4 Generate real surface area raster
+------------------------------------
+
+The following steps are covered by this tool:
+
+Additional bit of tutorial. Steps to copy from previous MGCI doc effort
+
+
 Computation of Sub-indicator a Mountain Green Cover Index
 ---------------------------------------------------------
+
+A5 Generate planimetric and real surface area statistics
+--------------------------------------------------------
+
+The following steps are covered by this tool:
+
+
+NOTE STILL NEED TO ADD ADDITIONAL STEP WHEN RSA IS CALCULATED (copy from previous MGCI doc effort
 
 Generate area statistics for each land cover class
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -870,6 +927,14 @@ END
 
 Save the edits.
 
+
+A6 Formatting to reporting tables
+---------------------------------
+
+The following steps are covered by this tool (although when undertaken manually the steps are slightly different as a QGIS plugin can be used to help with the formatting):
+
+REPLACE SECTION BELOW WITH TEXT IN PREVIOUS DOC FOR GROUPSTATS
+
 Now, we will export this result as an excel file. Before export we will
 also organize the table and remove unwanted fields. In the Processing
 Toolbox, search and select \ **Vector table ‣ Refactor fields**.
@@ -919,6 +984,8 @@ multiplying it by 100.
 Sub-indicator a is now complete.
 
 Repeat for each of the reporting years.
+
+
 
 Step-by-step instructions to calculate Sub-indicator 15.4.2b in QGIS
 =====================================================================
