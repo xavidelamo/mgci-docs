@@ -343,8 +343,8 @@ indicator should be used. However, given unique national context and
 degradation processes, it may be advantageous for a country to develop
 their own land cover classification, using remote sensing imagery.
 
-Step-by-step instructions to calculate Sub-indicator 15.4.2a in QGIS 
-=====================================================================
+Step-by-step instructions to calculate Sub-indicator 15.4.2a Mountain Green Cover Index in QGIS 
+===============================================================================================
 
 This section of the tutorial explains in detail how to calculate value
 estimates for sub-indicator 15.4.2a in QGIS, using Colombia as a case
