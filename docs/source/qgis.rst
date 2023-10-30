@@ -628,14 +628,14 @@ Tool step A2 Prepare mountains and combine with LULC
 The following steps are covered by this tool:
 
 Generate the mountain map for the chosen country 
-------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The development of mountain map consists in clipping and reprojecting
 the SDG 15.4.2. Global Mountain Descriptor Map developed by FAO to area
 of interest, in this case, the national border of Colombia.
 
 `Clip and project global <https://mgci-docs.readthedocs.io/en/latest/qgis.html#id23>`__ mountain map
-----------------------------------------------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 From the QGIS main toolbar click on \ **Layer>>Add Layer>>Add Raster
 Layer** to add the global mountain map file to your QGIS session.
@@ -977,7 +977,7 @@ multiplying it by 100.
 
 Sub-indicator a is now complete.
 
-Repeat for each of the reporting years.
+**Repeat for each of the reporting years.**
 
 
 
