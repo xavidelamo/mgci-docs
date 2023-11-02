@@ -161,6 +161,40 @@ manual at
 Instructions to calculate Sub-indicator 15.4.2a in QGIS using custom models
 ---------------------------------------------------------------------------
 
+This section of the tutorial explains in detail how to use the custom QGIS toolbox to calculate value estimates for sub-indicator 15.4.2a in QGIS, using Colombia as a case study. 
+
+Step A0 Prepare country boundary and buffer to 10 km
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+
+The first step is to define an Area of Interest (AOI) for the analysis. This should go beyond the country boundary as outlined in the **Defining analyses environments and land cover data selection** of the tutorial. In this example, the input boundary layer is in Geographic coordinate system (EPSG 4326). At this stage we want to set-up the projection for the main parts of the analysis. We therefore want to set the project window to an equal area projection and physically project the country boundary to the same projection. 
+
+Colombia does have a National Projection that preserve both area and distance (see here) and therefore could be used as a custom projection. In case a national projection that minimize area distortion does not exist for a given country, it is recommended to define a custom Equal Area projection centered on the country area following the instructions in described here under **Defining analyses environments and land cover data selection**).  
+
+In the Processing Toolbox, under Models, click on model **A0 Prepare country boundary and buffer to 10 km **
+
+|SubA_A0_tool_interface|
+
+**Input parameters**
+
+ - Select country: Select country to process from the dropdown list. 
+
+- Input: CSV_containing_UN_country_codes: Set the path to the csv file containing UN country codes (downloaded from the GitHub repository). 
+
+- Input: Vector Country Boundary: Set the path to the country boundary shapefile. 
+
+- Input: Target CRS (i.e. Select a relevant equal area projection for your area of interest): Select a CRS for your outputs. This should be an equal area projection relevant to the country being processed. 
+
+- Select folder for outputs: Select an output folder to store your outputs. The output folder should already exist. Make sure the folder name does not have any spaces. 
+
+**Click Run**
+
+This will generate the country boundary in equal area projection and one with a 10 km buffer around the country boundary.  
+
+|SubA_A0_tool_results|
+
+**Tool A0 model diagram**
+
+|SubA_A0_tool_model|
 
 Instructions to calculate Sub-indicator 15.4.2b in QGIS using custom models
 ---------------------------------------------------------------------------
