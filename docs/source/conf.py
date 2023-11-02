@@ -35,7 +35,6 @@ html_theme_path = ['_themes']
 
 # -- Options for HTML output
 extensions = [
-    ...
     'sphinx_rtd_theme'
 ]
 
