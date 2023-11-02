@@ -61,7 +61,7 @@ Figure 1: Simplified Workflow (still need to edit and upload latest)
 
 
 Overview of Mountain Area Map
------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Several methodologies have been developed in the last decades to consistently classify and map global mountain systems, using a variety of parameters such as elevation, topography, climate and ecology.
 
@@ -94,7 +94,7 @@ For disaggregation purposes, this mountain area is subdivided into bioclimatic b
 A global mountain area map sub-divided by bioclimatic belts has been developed by FAO and made available to national authorities to facilitate the computation of this indicator. This map is the result of combining a global mountain area map developed from the Global Multi-Resolution Terrain Elevation Data (GMTED2010), following the UNEP-WCMC methodology (Ravilious et al. 2021) and a mountain bioclimatic belt map created by the Global Mountain Biodiversity Assessment
 
 Overview of the land cover data
--------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Land cover refers to the observed physical cover of the Earth’s surface. It includes vegetation and manmade features as well as bare rock, bare soil and inland water surfaces (FAO-GTOS, 2009). The primary units for characterizing land cover are categories (e.g. Forest or Open Water). These categories must be defined following a standardized land cover
 classification in order to identify land cover changes consistently over time.
@@ -139,7 +139,7 @@ The global default source of land cover data for this indicator is the European 
 
 
 Planimetric area calculation vs Real surface area calculation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Area calculations for reporting purposes should be undertaken using
 standard planimetric area butfor improved accuracy we offer an additional
@@ -154,7 +154,7 @@ developed by Jenness (2004).
 
 
 Potential / known limitations of current methodology
-----------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Care should be taken with the interpretation given that:
 
@@ -172,12 +172,12 @@ Care should be taken with the interpretation given that:
 Please refer to the indicator metadata for more detail on the limitations
 
 Acknowledgements
-----------------
+^^^^^^^^^^^^^^^^
 
 We would like to express our special thanks to Jeff Jenness from Jenness Enterprises, GIS Analysis and Application Design, for his help in the development of the real surface area.
 
 References
-----------
+^^^^^^^^^^
 
 - Kapos, V., Rhind, J., Edwards, M., Prince, M., & Ravilious, C. (2000). Developing a map of the world’s mountain forests. In M. F. Price , & N. Butt (Eds.),Forests in Sustainable Mountain Development: A State-of-Knowledge Report for 2000?(pp. 4-9). Wallingford: CAB International.  
 
