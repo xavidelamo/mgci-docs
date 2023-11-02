@@ -343,12 +343,16 @@ indicator should be used. However, given unique national context and
 degradation processes, it may be advantageous for a country to develop
 their own land cover classification, using remote sensing imagery.
 
+
+**Running analysis steps using custom QGIS toolbox**
+====================================================
+
 Instructions to calculate Sub-indicator 15.4.2a in QGIS using custom models
-===========================================================================
+---------------------------------------------------------------------------
 
 
 Instructions to calculate Sub-indicator 15.4.2b in QGIS using custom models
-===========================================================================
+---------------------------------------------------------------------------
 
 
 
