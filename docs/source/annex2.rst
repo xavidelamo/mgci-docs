@@ -2,7 +2,7 @@ Annex 2
 =======
 
 Step-by-step instructions to calculate Sub-indicator 15.4.2a Mountain Green Cover Index in QGIS 
-===============================================================================================
+-----------------------------------------------------------------------------------------------
 
 This section of the tutorial explains in detail how to calculate value
 estimates for sub-indicator 15.4.2a in QGIS, using Colombia as a case
@@ -640,7 +640,7 @@ Sub-indicator a is now complete.
 
 
 Step-by-step instructions to calculate Sub-indicator 15.4.2b in QGIS
-=====================================================================
+--------------------------------------------------------------------
 
 This section of the tutorial explains in detail how to calculate value
 estimates for sub-indicator 15.4.2b in QGIS, continuing to use Colombia
