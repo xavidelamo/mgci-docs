@@ -27,7 +27,7 @@ alternative National projection, they should ensure that it has equal
 area properties.
 
 Defining an area of interest
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 An area of interest (AOI) needs to be defined at the outset of this
 analysis. Due to the nature of the calculations of the the real surface area layer
@@ -36,7 +36,7 @@ look at focal cells around an individual pixel in the DEM dataset. We suggest
 users buffer the bounding box of the country boundary out by 10km.
 
 Understanding scale vs resolution
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The scale of a vector dataset is usually expressed in a similar way to paper maps, i.e. in a ratio to show the amount of reduction from the real world e.g.  1:50,000. A country’s vector LULC map will have been created at a particular scale. determined by the Minimum Mapping Unit. i.e. the size of the smallest feature. A nominal scale is will have been assigned to the dataset to reflect the scale at which the data were collected and mapped. Conversion to raster requires this scale to be converted to a resolution, i.e. an appropriate pixel size for the scale of the data.                                                              |
 
@@ -62,7 +62,7 @@ Some examples are provided in the table below:
 
 
 Choice of Land cover dataset and data access
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 In sub-indicator 15.4.2a, land cover is used to categorize land into
 green and non-green cover areas. As showed in Table 3, green cover
 includes areas covered by both natural vegetation and vegetation
@@ -139,7 +139,7 @@ directed to download the data.
 |image33|
 
 Choice of DEM for generating real surface area calculations and data access
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Development of a real surface area layer requires a Digital
 Elevation Model (DEM). The selection of which DEM to use for this 

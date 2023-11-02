@@ -1,17 +1,8 @@
 2. Initial set-up 
-===============
+=================
 
-2.1 Software Installation 
---------------------------
-2.1.1 R software and packages installation
-
-2.1.2 QGIS software and plugins
-
-
-
-
-2.1.1 R software and packages installation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+R software and packages installation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Download and install R from https://www.r-project.org/ and then
    download and install RStudio Desktop from
@@ -57,8 +48,8 @@ bellow on the R Console:
 
  |image8|
 
-2.1.2 QGIS software and plugins
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+QGIS software and plugins
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 We suggest users use the Long-Term Release version1 [1]_ of QGIS to
 undertake their analysis as this is most stable versions and users are
