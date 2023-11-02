@@ -15,28 +15,50 @@ Please see the full metadata
 `here <https://unstats.un.org/sdgs/metadata/files/Metadata-15-04-02.pdf>`_
 for further information about the indicator.
 
-The purpose of this document is explain the workflow and provide
-countries with detailed technical guidance on how to develop a
-nationally relevant mountain layer using the Kapos mountain method,
-use a nationally relevant landcover map and compute the MGCI to
-standard reporting tables required for the submission to FAO for
-this indicator. and as well as providing some best practice in
-combining layers at different resolutions. The standardisation of
-the guidance will also help enable consistency of reporting between
-countries and enable FAO to make the necessary regional and global
-summaries.
+Overview of computation of Sub-Indicator a) Mountain Green Cover Index
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**The workflow and guidance are provided to enable users to choose
-from 2 different software:**
+**Sub-indicator 15.4.2a**, Mountain Green Cover Index (MGCI), is designed to measure the extent and changes of green cover - i.e. forest, shrubs, trees, pasture land, cropland, etc. – in mountain areas. MGCI is defined as the percentage of green cover over the total surface of the mountain area of a given country and for given reporting year. The aim of the index is to monitor the evolution of the green cover and thus assess the status of conservation of mountain ecosystems. 
 
-- Step-by-Step instructions in **QGIS (with R integration)**
-- SEPAL app: Users can register and log into the SEPAL data portal where a user-friendly interface will guide
-   technicians through a series of menu-driven steps to prepare the
-   layers and run the calculations
+.. math::
+    
+    MGCI = (Mountain Green Cover Area)/(Total Mountain Area)
+
+Where: 
+
+- **Mountain Green Cover Area n** = Sum of areas (in km2) covered by (1) tree-covered areas, (2) croplands,(3) grasslands, (4) shrub-covered areas and (5) shrubs and/or herbaceous vegetation, aquatic or regularly flooded classes in the reporting period n 
+- **Total mountain area** = Total area of mountains (in km2). In both the numerator and denominator, mountain area is defined according to UNEP-WCMC (2002).
+
+
+Overview of computation of Sub-Indicator b)  Proportion of degraded mountain land
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Sub-indicator 15.4.2b**, Proportion of degraded mountain land, is designed to monitor the extent of degraded mountain land as a result of land cover change of a given country and for given reporting year. Similarly to sub-indicator ‘’trends in land cover” under SDG Indicator 15.3.1 (Sims et al. 2021), mountain ecosystem degradation and recovery is assessed based on the definition of land cover type transitions that constitute degradation, as either improving, stable or degraded. The definition of degradation adopted for the computation of this indicator is the one established Intergovernmental Science-Policy Platform on Biodiversity and Ecosystem Services (IPBES)footnote reference [#]_.
+
+.. math::
+
+    𝑃𝑟𝑜𝑝𝑜𝑟𝑡𝑖𝑜𝑛 𝑜𝑓 𝑑𝑒𝑔𝑟𝑎𝑑𝑒𝑑 𝑚𝑜𝑢𝑛𝑡𝑎𝑖𝑛 𝑎𝑟𝑒𝑎 = (𝐷𝑒𝑔𝑟𝑎𝑑𝑒𝑑 𝑚𝑜𝑢𝑛𝑡𝑎𝑖𝑛 𝑎𝑟𝑒𝑎 𝑛) / (𝑇𝑜𝑡𝑎𝑙 𝑚𝑜𝑢𝑛𝑡𝑎𝑖𝑛 𝑎𝑟𝑒𝑎) * 100
+
+Where:
+
+- **Degraded mountain area n** = Total degraded mountain area (in km2) in the reporting period n. This is, the sum of the areas where land cover change is considered to constitute degradation from the baseline period. Degraded mountain land will be assessed based on the land cover transition matrix in Annex 1.
+- **Total mountain area** = Total area of mountains (in km2). In both the numerator and denominator, mountain area is defined according to UNEP-WCMC (2002).
+
+If the country/region has no mountain area, it will be assigned value NA
+
+.. [#]IPBES defines land degradation as “the many human-caused processes that drive the decline or loss in biodiversity, ecosystem functions or ecosystem services in any terrestrial and associated aquatic ecosystems” (IPBES, 2018)
+
+
+**Disaggregation:**
+
+Both of these sub-indicators are disaggregated by mountain bioclimatic belts as defined by Körner et al. (2011). In addition, sub-indicator 15.4.2a is
+disaggregated by the 10 SEEA classes based on UN Statistical Division (2014).  Those values are reported both as proportions (percent) and area (in square kilometres).
+
 
 |imageworkflow|
 
 Figure 1: Simplified Workflow (still need to edit and upload latest)
+
 
 Overview of Mountain Area Map
 -----------------------------
@@ -115,8 +137,6 @@ Land cover maps developed by relevant national authorities will generally provid
 
 The global default source of land cover data for this indicator is the European Space Agency Climate Change Initiative (ESA-CCI) Land Cover product (ESA, 2017). The ESA-CCI product consists of a series of annual Land Cover maps at 300 m resolution, providing 22 land cover classes based on 300m MERIS, 1km SPOT – VEGETATION, 1km PROBA –V and 1km AVHRR. The ESA CCI adheres to the Cover Classification System of the United Nations Food and Agriculture Organization (UN FAO) (Santoro et al. 2015). Annual updates are currently available from 1992 to 2020. Additional years will be made available by the European Space Agency
 
-Overview of computation of Sub-indicators a and b
------------------------------------------------------
 
 Planimetric area calculation vs Real surface area calculation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -131,35 +151,54 @@ developed by Jenness (2004).
 
 |image2|
 
-Disaggregation and standardised reporting tables 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The results of the both sub indicators a and b are output to standard reporting tables in
-tables using the following fields:
 
-(still to update this section)
 
 Potential / known limitations of current methodology
 ----------------------------------------------------
 
-The indicator can be calculated using freely available Earth Observation
-data and simple GIS operations that can be processed in free and open
-source software (FOSS) GIS. Potential limitations of the above described
-methodology are related mainly to the quality of the land cover data.
-The ESA CCI land cover maps are currently available at 300 meter
-resolution which limits their applicability in the monitoring of small
-and highly heterogeneous landscapes. Therefore, if countries have
-national land cover maps of higher spatial resolution and comparable or
-better quality, FAO advises using them, following the same methodology
-presented here, for the generation of MGCI values.
+Care should be taken with the interpretation given that:
 
-(still to update this section)
+- This  indicator cannot fully capture the complexity of mountain ecosystems across the world. Countries are encouraged to use other relevant national or sub-national indicators, data and information to strengthen their interpretation.
+
+- Lack of green cover does not necessarily mean that a particular mountain area is degraded (i.e. areas of permanent snow and ice, scree slopes and natural sparsely vegetated areas above the tree line
+- Sub-indicator a it does not capture significant drivers of change such as conversion of natural areas to cropland or pastureland 
+- increase in green cover may due to impacts of climate change in mountain areas (i.e. increase in green cover due to snow and glacier retreat due to global warming). 
+- Transient aspects such as vegetation phenology, snow or flooding cannot be captured by land cover transitions as measured in sub-indicator 15.4.2b. 
+- Decisions about which land cover transitions are linked to degradation processes that sometimes require information on the use of land, not only land cover. 
+- Both sub-indicators are not able to capture ecosystem degradation drivers that do not necessarily result in changes in land cover. The use of more detailed national land use maps may be able to overcome some of these gaps for sub-indicator 15.4.2b. 
+- Area estimations based on remote-sensing-derived land cover maps such as the ESA-CCI product via pixel counting may lead to biased area estimates due to map errors(Olofsson et al. 2014). Countries are encouraged to further refine those estimates by comparing them against reference datasets and applying bias corrections.
+- the decison to use a standard global mountain layer rather than allowing countries to generate their own mountain layer, while reducing portential errors between countries may degrade the results where the land cover data used is at a higher (more detailed) resolution. 
+
+Please refer to the indicator metadata for more detail on the limitations
 
 Acknowledgements
 ----------------
 
 We would like to express our special thanks to Jeff Jenness from Jenness Enterprises, GIS Analysis and Application Design, for his help in the development of the real surface area.
 
+References
+----------
 
+- Kapos, V., Rhind, J., Edwards, M., Prince, M., & Ravilious, C. (2000). Developing a map of the world’s mountain forests. In M. F. Price , & N. Butt (Eds.),Forests in Sustainable Mountain Development: A State-of-Knowledge Report for 2000?(pp. 4-9). Wallingford: CAB International.  
+
+- UNEP-WCMC (2002). Mountain Watch: Environmental change and sustainable development in mountains. Cambridge, UK
+
+- IPBES (2018): Summary for policymakers of the assessment report on land degradation and restoration of
+the Intergovernmental Science-Policy Platform on Biodiversity and Ecosystem Services. R. Scholes, L.
+Montanarella, A. Brainich, N. Barger, B. ten Brink, M. Cantele, B. Erasmus, J. Fisher, T. Gardner, T. G. Holland,
+F. Kohler, J. S. Kotiaho, G. Von Maltitz, G. Nangendo, R. Pandit, J. Parrotta, M. D. Potts, S. Prince, M.
+Sankaran and L. Willemen (eds.). IPBES secretariat, Bonn, Germany. 44 pages
+
+- Sims, N.C., Newnham, G.J., England, J.R., Guerschman, J., Cox, S.J.D., Roxburgh, S.H., Viscarra Rossel, R.A.,
+Fritz, S. and Wheeler, I. (2021). Good Practice Guidance. SDG Indicator 15.3.1, Proportion of Land That Is
+Degraded Over Total Land Area. Version 2.0. United Nations Convention to Combat Desertification, Bonn,
+Germany
+
+-Körner, C., Paulsen, J., & Spehn, E. (2011). A definition of mountains and their bioclimatic belts for global
+comparisons of biodiversity data. Alpine Botany, 121, 73-78.
+
+- UN Statistical Division (2014). System of Environmental Economic Accounting 2012 — Central Framework.
+New York, USA.
 .. |image2| image:: media_QGIS/image2_orig.png
    :width: 700
 .. |image3| image:: media_QGIS/image3_orig.png
