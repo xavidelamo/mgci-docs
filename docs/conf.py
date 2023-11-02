@@ -42,7 +42,7 @@ import sphinx_rtd_theme
 
 # -- Options for HTML output
 extensions = [
-+    'sphinx_rtd_theme',
+    'sphinx_rtd_theme',
 ]
 
 
