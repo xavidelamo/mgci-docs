@@ -1,10 +1,7 @@
-
-Defining analysis environments and data selection 
-------------------------------------------------------
-
+Defining analyses environments and land cover data selection
+------------------------------------------------------------
 Defining projections to be used for the analysis
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 With all map projections there will always be some distortions of area,
 shape, distance and direction and therefore careful selection of
 projection is important. There are no projections which fully preserve
