@@ -2,9 +2,12 @@
 
 Annexes
 ======================
+Annex 1
+-------
+
 
 Installing R (additional screengrabs to support users)
-------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Download and install R from https://www.r-project.org/ and then install:
 
@@ -82,7 +85,7 @@ In this example we will navigate to one of the UK CRAN mirror sites.
 -  Click Finish when the installation is complete
 
 Installing RStudio (additional screengrabs to support users)
-------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Download and RStudio Desktop from
 https://www.rstudio.com/products/rstudio/ and then install:
@@ -136,7 +139,7 @@ https://www.rstudio.com/products/rstudio/ and then install:
 3. 
 
 Accessing DEM data
-------------------
+^^^^^^^^^^^^^^^^^^
 
 **Open topography**
 
