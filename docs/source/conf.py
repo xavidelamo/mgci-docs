@@ -30,14 +30,15 @@ intersphinx_mapping = {
 intersphinx_disabled_domains = ['std']
 
 templates_path = ['_templates']
-
+html_theme_path = ['_themes']
 
 
 # -- Options for HTML output
 extensions = [
     ...
-    'sphinx_rtd_theme',
+    'sphinx_rtd_theme'
 ]
+
 
 html_theme = 'sphinx_rtd_theme'
 #html_theme = 'sphinx_rtd_theme'
