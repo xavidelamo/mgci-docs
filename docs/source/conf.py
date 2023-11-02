@@ -11,6 +11,8 @@ author = 'FAO SEPAL - UNEP-WCMC'
 release = '0.1'
 version = '0.1.0'
 
+today_fmt = '%B %d, %Y' 
+
 # -- General configuration
 
 extensions = [
@@ -31,7 +33,34 @@ templates_path = ['_templates']
 
 # -- Options for HTML output
 
-html_theme = 'sphinx_rtd_theme'
+#html_theme = 'sphinx_rtd_theme'
 
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
+
+
+# -- General configuration
+
+latex_elements = {
+     'classoptions': ',oneside',
+    
+# The paper size ('letterpaper' or 'a4paper').
+    'papersize': 'a4paper', 
+
+# The font size ('10pt', '11pt' or '12pt').
+    'pointsize': '12t',
+
+    
+# Additional stuff for the LaTeX preamble.
+    'preamble': r'''
+        \usepackage{charter}
+        \usepackage[sfdefault]{roboto}
+        \usepackage{inconsolata}
+        \usepackage[english]{babel}
+        \usepackage{tocloft}
+        \addto\captionsenglish{\renewcommand\contentsname{Table of Contents}}
+        \renewcommand{\cfttoctitlefont}{\hfill\Large\bfseries}
+        \renewcommand{\cftaftertoctitle}{\hfill\normalsize}
+
+    ''',
+}
