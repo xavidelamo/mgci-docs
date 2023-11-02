@@ -32,6 +32,20 @@ intersphinx_disabled_domains = ['std']
 templates_path = ['_templates']
 html_theme_path = ['_themes']
 
+# Add this to the top of the conf.py file
+import os
+import sys
+sys.path.insert(0, os.path.abspath('C:\\Program Files\\ArcGIS\\Pro\\bin\\Python\\envs\\arcgispro-py3'))
+import sphinx_rtd_theme
+
+extensions = [
+   "sphinx_rtd_theme",
+]
+
+
+
+
+
 
 # -- Options for HTML output
 #extensions = [
