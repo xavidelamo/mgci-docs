@@ -158,6 +158,12 @@ manual at
 **Running analysis steps using custom QGIS toolbox**
 ====================================================
 
+This section of the tutorial explains in detail how to calculate value estimates for sub-indicator 15.4.2a in QGIS, using Colombia as a case study. This section assumes that the user has already downloaded the global mountain map made available by FAO to compute this indicator and a land cover dataset meeting the requirements described in the :ref:`**Defining analyses environments and land cover data selection**<Defining analyses environments and land cover data selection>`  section.
+
+We provide a custom toolbox to group and run the steps to help speed up the analysis and allow for easier repeat processing and to standardize the naming of outputs and how they appear within the QGIS interface.
+
+|custom_toolbox|
+
 Instructions to calculate Sub-indicator 15.4.2a in QGIS using custom models
 ---------------------------------------------------------------------------
 
@@ -170,7 +176,7 @@ The first step is to define an Area of Interest (AOI) for the analysis. This sho
 
 Colombia does have a National Projection that preserve both area and distance (see here) and therefore could be used as a custom projection. In case a national projection that minimize area distortion does not exist for a given country, it is recommended to define a custom Equal Area projection centered on the country area following the instructions in described here under **Defining analyses environments and land cover data selection**).  
 
-In the Processing Toolbox, under Models, click on model **A0 Prepare country boundary and buffer to 10 km **
+In the Processing Toolbox, under Models, click on model **A0 Prepare country boundary and buffer to 10 km**
 
 |SubA_A0_tool_interface|
 
@@ -198,7 +204,60 @@ This will generate the country boundary in equal area projection and one with a 
 
 Instructions to calculate Sub-indicator 15.4.2b in QGIS using custom models
 ---------------------------------------------------------------------------
+.. |crosswalk_textfile| image:: media_toolbox/crosswalk_textfile.png
+   :width: 1200
 
+
+.. |custom_toolbox| image:: media_toolbox/custom_toolbox.png
+   :width: 1200
+.. |SubA_A0_tool_interface| image:: media_toolbox/SubA_A0_tool_interface.png
+   :width: 1200
+.. |SubA_A0_tool_results| image:: media_toolbox/SubA_A0_tool_results.png
+   :width: 1200
+.. |SubA_A0_tool_model| image:: media_toolbox/SubA_A0_tool_model.png
+   :width: 1200
+
+.. |SubA_A1_tool_interface| image:: media_toolbox/SubA_A1_tool_interface.png
+   :width: 1200
+.. |SubA_A1_tool_results| image:: media_toolbox/SubA_A1_tool_results.png
+   :width: 1200
+.. |SubA_A1_tool_model| image:: media_toolbox/SubA_A1_tool_model.png
+   :width: 1200
+
+.. |SubA_A2_tool_interface| image:: media_toolbox/SubA_A2_tool_interface.png
+   :width: 1200
+.. |SubA_A2_tool_results| image:: media_toolbox/SubA_A2_tool_results.png
+   :width: 1200
+.. |SubA_A2_tool_model| image:: media_toolbox/SubA_A2_tool_model.png
+   :width: 1200
+
+.. |SubA_A3_tool_interface| image:: media_toolbox/SubA_A3_tool_interface.png
+   :width: 1200
+.. |SubA_A3_tool_results| image:: media_toolbox/SubA_A3_tool_results.png
+   :width: 1200
+.. |SubA_A3_tool_model| image:: media_toolbox/SubA_A3_tool_model.png
+   :width: 1200
+
+.. |SubA_A4_tool_interface| image:: media_toolbox/SubA_A4_tool_interface.png
+   :width: 1200
+.. |SubA_A4_tool_results| image:: media_toolbox/SubA_A4_tool_results.png
+   :width: 1200
+.. |SubA_A4_tool_model| image:: media_toolbox/SubA_A4_tool_model.png
+   :width: 1200
+
+.. |SubA_A5_tool_interface| image:: media_toolbox/SubA_A5_tool_interface.png
+   :width: 1200
+.. |SubA_A5_tool_results| image:: media_toolbox/SubA_A5_tool_results.png
+   :width: 1200
+.. |SubA_A5_tool_model| image:: media_toolbox/SubA_A5_tool_model.png
+   :width: 1200
+
+.. |SubA_A6_tool_interface| image:: media_toolbox/SubA_A6_tool_interface.png
+   :width: 1200
+.. |SubA_A6_tool_results| image:: media_toolbox/SubA_A6_tool_results.png
+   :width: 1200
+.. |SubA_A6_tool_model| image:: media_toolbox/SubA_A6_tool_model.png
+   :width: 1200
 
 
 .. |image1| image:: media_QGIS/image1.png
