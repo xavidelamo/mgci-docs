@@ -23,7 +23,7 @@ Where:
 Overview of computation of Sub-Indicator b) Proportion of degraded mountain land
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Sub-indicator 15.4.2b**, Proportion of degraded mountain land, is designed to monitor the extent of degraded mountain land as a result of land cover change of a given country and for given reporting year. Similarly to sub-indicator ‘’trends in land cover” under SDG Indicator 15.3.1 (Sims et al. 2021), mountain ecosystem degradation and recovery is assessed based on the definition of land cover type transitions that constitute degradation, as either improving, stable or degraded. The definition of degradation adopted for the computation of this indicator is the one established Intergovernmental Science-Policy Platform on Biodiversity and Ecosystem Services (IPBES)footnote reference [#]_.
+**Sub-indicator 15.4.2b**, Proportion of degraded mountain land, is designed to monitor the extent of degraded mountain land as a result of land cover change of a given country and for given reporting year. Similarly to sub-indicator ‘’trends in land cover” under SDG Indicator 15.3.1 (Sims et al. 2021), mountain ecosystem degradation and recovery is assessed based on the definition of land cover type transitions that constitute degradation, as either improving, stable or degraded. The definition of degradation adopted for the computation of this indicator is the one established Intergovernmental Science-Policy Platform on Biodiversity and Ecosystem Services (IPBES)footnote reference [1]_.
 
 .. math::
 
@@ -37,7 +37,7 @@ Where:
 
 If the country/region has no mountain area, it will be assigned value NA
 
-.. [#]IPBES defines land degradation as “the many human-caused processes that drive the decline or loss in biodiversity, ecosystem functions or ecosystem services in any terrestrial and associated aquatic ecosystems” (IPBES, 2018)
+.. [1]IPBES defines land degradation as “the many human-caused processes that drive the decline or loss in biodiversity, ecosystem functions or ecosystem services in any terrestrial and associated aquatic ecosystems” (IPBES, 2018)
 
 
 **Disaggregation:**
@@ -62,25 +62,29 @@ For disaggregation purposes, this mountain area is subdivided into bioclimatic b
 
 **Table 1.** Mountain bioclimatic belts as defined by Körner et al. (2011) and reclassification for data disaggregation of SDG Indicator 15.4.2. Growing season is defined as the number of days between daily mean temperature exceeds 0.9 °C then falls below 0.9 °C
 
-+-----------------------------------------+-----------------------------------+-------------------------+------------------------------------------------------+
-| Bioclimatic belts                       | Growing season mean temperature   | Growing season length   | Bioclimatic belts adopted for SDG Indicator 15.4.2   |
-+=========================================+===================================+=========================+======================================================+
-| Nival                                   | < 3.5 °C                          | < 10 days               | Nival                                                |
-+-----------------------------------------+-----------------------------------+-------------------------+------------------------------------------------------+
-| Upper alpine                            | < 3.5 °C                          | > 10 days & < 54 days   | Alpine                                               |
-+-----------------------------------------+-----------------------------------+-------------------------+------------------------------------------------------+
-| Lower alpine                            | < 6.4°C                           | < 54 days               |                                                      |
-+-----------------------------------------+-----------------------------------+-------------------------+------------------------------------------------------+
-| THE TREELINE                                                                                                                                                 |
-+-----------------------------------------+-----------------------------------+-------------------------+------------------------------------------------------+
-| Upper montane                           | > 6.4°C & ≤ 10 °C                 | ---                     | Montane                                              |
-+-----------------------------------------+-----------------------------------+-------------------------+------------------------------------------------------+
-| Lower montane                           | > 10 °C & ≤ 15 °C                 | ---                     |                                                      |
-+-----------------------------------------+-----------------------------------+-------------------------+------------------------------------------------------+
-| Remaining mountain area with frost      | > 15 °C                           | ---                     | Remaining mountain area                              |
-+-----------------------------------------+-----------------------------------+-------------------------+------------------------------------------------------+
-| Remaining mountain area without frost   | > 15 °C                           |                         |                                                      |
-+-----------------------------------------+-----------------------------------+-------------------------+------------------------------------------------------+
++-----------------------------------------+-----------------------------------+-------------------------+-------------------------+
+| Bioclimatic belts                       | Growing season mean temperature   | Growing season length   | Bioclimatic belts[2]_   |
++=========================================+===================================+=========================+=========================+
+| Nival                                   | < 3.5 °C                          | < 10 days               | Nival                   |
++-----------------------------------------+-----------------------------------+-------------------------+-------------------------+
+| Upper alpine                            | < 3.5 °C                          | > 10 days & < 54 days   | Alpine                  |
++-----------------------------------------+-----------------------------------+-------------------------+-------------------------+
+| Lower alpine                            | < 6.4°C                           | < 54 days               |                         |
++-----------------------------------------+-----------------------------------+-------------------------+-------------------------+
+| THE TREELINE                                                                                                                    |
++-----------------------------------------+-----------------------------------+-------------------------+-------------------------+
+| Upper montane                           | > 6.4°C & ≤ 10 °C                 | ---                     | Montane                 |
++-----------------------------------------+-----------------------------------+-------------------------+-------------------------+
+| Lower montane                           | > 10 °C & ≤ 15 °C                 | ---                     |                         |
++-----------------------------------------+-----------------------------------+-------------------------+-------------------------+
+| Remaining mountain area with frost      | > 15 °C                           | ---                     | Remaining mountain area |
++-----------------------------------------+-----------------------------------+-------------------------+-------------------------+
+| Remaining mountain area without frost   | > 15 °C                           |                         |                         |
++-----------------------------------------+-----------------------------------+-------------------------+-------------------------+
+
+
+.. [2]adopted for SDG Indicator 15.4.2
+
 
 A global mountain area map sub-divided by bioclimatic belts has been developed by FAO and made available to national authorities to facilitate the computation of this indicator. This map is the result of combining a global mountain area map developed from the Global Multi-Resolution Terrain Elevation Data (GMTED2010), following the UNEP-WCMC methodology (Ravilious et al. 2021) and a mountain bioclimatic belt map created by the Global Mountain Biodiversity Assessment
 
