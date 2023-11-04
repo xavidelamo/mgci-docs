@@ -1,4 +1,4 @@
-QGIS-MGCI-DML 15.4.2 :sub:`beta`
+QGIS-SDG 15.4.2 :sub:`beta`
 =================================
 
 A QGIS-based workflow to support the computation of SDG Indicator 15.4.2, which includes:
@@ -11,43 +11,43 @@ sub-indicator b (Proportion of degraded mountain land)
 General Information
 --------------------
 
-About QGIS-MGCI-DML :sub:`beta`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+About QGIS-SDG 15.4.2 :sub:`beta`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This documentation and geospatial workflow has been developed by the UN Environment Programme World Conservation Monitoring Centre (UNEP-WCMC) in collaboration with the Food and Agriculture Organization (FAO) of the United Nations to support member countries to compute and report against SDG Indicator 15.4.2. 
+This documentation and geospatial workflow has been developed by the UN Environment Programme World Conservation Monitoring Centre (UNEP-WCMC) in collaboration with the Food and Agriculture Organization (FAO) of the United Nations to support relevant national authorities to compute and report against SDG Indicator 15.4.2.  
 
-The geospatial workflow was developed using QGIS 3.22.16, a free and open-source geographic information system licensed under the GNU General Public License. QGIS is an official project of the Open Source Geospatial Foundation (OSGeo). It runs on Linux, Unix, Mac OSX, Windows and Android and supports numerous vector, raster, and database formats and functionalities. We suggest users use the Long-Term Release version [1]_ of QGIS to undertake their analysis as this is most stable versions and users are less likely to incur technical difficulties and bugs. There are various installers depending on your operating system but for most users we recommend the QGIS Standalone Installer. Full instructions are on their website: `https://qgis.org/en/site/forusers/download.html# <https://qgis.org/en/site/forusers/download.html>`__\. To run this workflow, you will also need to have R Software 4.4.1.
+The geospatial workflow was developed using QGIS 3.22.16, a free and open-source geographic information system licensed under the GNU General Public License. QGIS is an official project of the Open Source Geospatial Foundation (OSGeo). It runs on Linux, Unix, Mac OSX, Windows and Android and supports numerous vector, raster, and database formats and functionalities. We suggest users use the Long-Term Release version [1]_ of QGIS to undertake their analysis as this is the most stable version and users are less likely to incur technical difficulties and bugs. There are various installers depending on your operating system but for most users we recommend the QGIS Standalone Installer. Full instructions are on their website: `https://qgis.org/en/site/forusers/download.html# <https://qgis.org/en/site/forusers/download.html>`__\. To run this workflow, you will also need to have R Software 4.4.1.
 
-The QGIS-MGCI-DML 15.4.2 :sub:`beta` workflow is in a beta stage and therefore it is still under development. Please contact the QGIS-MGCI-DML 15.4.2 :sub:`beta` development team with any comments or suggestions.
+The QGIS-SDG 15.4.2 :sub:`beta` workflow is in a beta stage and therefore it is still under development. Please contact the QGIS-SDG 15.4.2 :sub:`beta` development team with any comments or suggestions.
 
 If you have specific bugs to report or improvements to the tool that you would like to suggest, please use the `GitHub’s issue tracker
-<https://github.com/dfguerrerom/wcmc-mgci/issues>`_ of the QGIS-MGCI-DML 15.4.2 :sub:`beta` module and do follow the `contribution guidelines
+<https://github.com/dfguerrerom/wcmc-mgci/issues>`_ of the QGIS-SDG 15.4.2 :sub:`beta` module and do follow the `contribution guidelines
 <https://github.com/dfguerrerom/wcmc-mgci/blob/master/CONTRIBUTE.md>`_.
 
 Authors 
 ^^^^^^^
 
-QGIS-MGCI-DML 15.4.2 :sub:`beta` has been developed by the UN Environment Programme World Conservation Monitoring Centre (UNEP-WCMC) in collaboration with the Food and Agriculture Organization (FAO) of the United Nations. Contributors to QGIS-MGCI-DML 15.4.2 :sub:`beta` and its documentation include Corinna Ravilious, Vignesh Kamath Cannanure, Boipelo Tshwene-Mauchaza, Cristina Telhado and Valerie Kapos. 
+QGIS-SDG 15.4.2 :sub:`beta` has been developed by the UN Environment Programme World Conservation Monitoring Centre (UNEP-WCMC) in collaboration with the Food and Agriculture Organization (FAO) of the United Nations. Contributors to QGIS-SDG 15.4.2 :sub:`beta` and its documentation include Corinna Ravilious, Vignesh Kamath Cannanure, Boipelo Tshwene-Mauchaza, Cristina Telhado and Valerie Kapos. 
 
 License
 ^^^^^^^
-The QGIS-MGCI-DML 15.4.2 :sub:`beta` workflow and its documentation is made available under the terms of the `Creative Commons Attribution 4.0 International License (CC BY 4.0) <https://creativecommons.org/licenses/by/4.0/>`_ .
+The QGIS-SDG 15.4.2 :sub:`beta` workflow and its documentation is made available under the terms of the `Creative Commons Attribution 4.0 International License (CC BY 4.0) <https://creativecommons.org/licenses/by/4.0/>`_ .
 
 
 Initial setup
 -------------
-Before using QGIS-MGCI-DML 15.4.2 :sub:`beta` to run this workflow you will need have QGIS 3.20 or a higher version installed in your computer.
+Before using QGIS-SDG 15.4.2 :sub:`beta` to run this workflow you will need have QGIS 3.20 or a higher version installed in your computer.
 
 We suggest users use the Long-Term Release version  of QGIS to undertake their analysis as this is most stable versions and users are less likely to incur technical difficulties and bugs.  There are various installers depending on your operating system but for most users we recommend the QGIS Standalone Installer. Full instructions are on their website: https://qgis.org/en/site/forusers/download.html#
 
-Whilst the MGCI-DML analysis runs entirely within the QGIS interface, users
-wishing to use QGIS for the MGCI-DML analysis are also required to install R
+Whilst the QGIS-SDG 15.4.2 :sub:`beta` analysis runs entirely within the QGIS interface, users
+wishing to use QGIS for the QGIS-SDG 15.4.2 :sub:`beta` analysis are also required to install R
 software. R scripts can be run from within the QGIS interface and no prior 
 knowledge of R is required.
 
 
 and an R script will be only be used for calculating real
-surface area during the MGCI-DML calculations. Real surface area can be
+surface area during the QGIS-SDG 15.4.2 :sub:`beta` calculations. Real surface area can be
 calculated using one of the ready to use SAGA tools in the processing
 toolbox, however after initial testing we found the results differed
 from the GEE and R methods and therefore due to the need for consistency

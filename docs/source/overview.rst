@@ -1,19 +1,9 @@
 Background
 ==========
-SDG Indicator 15.4.2 – Mountain Green Cover Index (MGCI) is one of the two indicators under SDG Target 15.4, which aims to "*ensure the conservation of mountain ecosystems, including their biodiversity, to enhance their capacity to provide benefits which are essential for sustainable development*". The Food and Agriculture Organization (FAO) of the United Nations is the custodian agency of this indicator. 
+SDG Indicator 15.4.2 is one of the two indicators under SDG Target 15.4, which aims to "*ensure the conservation of mountain ecosystems, including their biodiversity, to enhance their capacity to provide benefits which are essential for sustainable development*". The Food and Agriculture Organization (FAO) of the United Nations is the custodian agency of this indicator.  
 
-The indicator is composed of two sub-indicators to monitor progress towards the conservation of mountain ecosystems: 
+The indicator is composed of two sub-indicators to monitor progress towards the conservation of mountain ecosystems. 
 
-**Sub-indicator 15.4.2a**, Mountain Green Cover Index (MGCI), is designed to measure the extent and changes of green cover - i.e. forest, shrubs, trees, pasture land, cropland, etc. – in mountain areas. MGCI is defined as the percentage of green cover over the total surface of the mountain area of a given country and for given reporting year. The aim of the index is to monitor the evolution of the green cover and thus assess the status of conservation of mountain ecosystems. 
-
-**Sub-indicator 15.4.2b**, Proportion of degraded mountain land, is designed to monitor the extent of degraded mountain land as a result of land cover change of a given country and for given reporting year. Similarly to sub-indicator ‘’trends in land cover” under SDG Indicator 15.3.1 (Sims et al. 2021), mountain ecosystem degradation and recovery is assessed based on the definition of land cover type transitions that constitute degradation, as either improving, stable or degraded. The definition of degradation adopted for the computation of this indicator is the one established Intergovernmental Science-Policy Platform on Biodiversity and Ecosystem Services (IPBES)footnote reference [#]_.
-
-
-.. [#]IPBES defines land degradation as “the many human-caused processes that drive the decline or loss in biodiversity, ecosystem functions or ecosystem services in any terrestrial and associated aquatic ecosystems” (IPBES, 2018)
-
-Please see the full metadata
-`here <https://unstats.un.org/sdgs/metadata/files/Metadata-15-04-02.pdf>`_
-for further information about the indicator.
 
 Overview of computation of Sub-Indicator a) Mountain Green Cover Index
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -30,7 +20,7 @@ Where:
 - **Total mountain area** = Total area of mountains (in km2). In both the numerator and denominator, mountain area is defined according to UNEP-WCMC (2002).
 
 
-Overview of computation of Sub-Indicator b)  Proportion of degraded mountain land
+Overview of computation of Sub-Indicator b) Proportion of degraded mountain land
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Sub-indicator 15.4.2b**, Proportion of degraded mountain land, is designed to monitor the extent of degraded mountain land as a result of land cover change of a given country and for given reporting year. Similarly to sub-indicator ‘’trends in land cover” under SDG Indicator 15.3.1 (Sims et al. 2021), mountain ecosystem degradation and recovery is assessed based on the definition of land cover type transitions that constitute degradation, as either improving, stable or degraded. The definition of degradation adopted for the computation of this indicator is the one established Intergovernmental Science-Policy Platform on Biodiversity and Ecosystem Services (IPBES)footnote reference [#]_.
@@ -52,7 +42,7 @@ If the country/region has no mountain area, it will be assigned value NA
 **Disaggregation:**
 
 Both of these sub-indicators are disaggregated by mountain bioclimatic belts as defined by Körner et al. (2011). In addition, sub-indicator 15.4.2a is
-disaggregated by the 10 SEEA classes based on UN Statistical Division (2014).  Those values are reported both as proportions (percent) and area (in square kilometres).
+disaggregated by the 10 SEEA classes based on UN Statistical Division (2014).  Those values are reported both as proportions (percent) and area (in square kilometres)
 
 
 |imageworkflow|
@@ -141,13 +131,9 @@ The global default source of land cover data for this indicator is the European 
 Planimetric area calculation vs Real surface area calculation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Area calculations for reporting purposes should be undertaken using
-standard planimetric area butfor improved accuracy we offer an additional
-real surface area. The real surface area takes into account the third 
-dimension of mountain surfaces (Jenness 2004), giving a better and more accurate
-estimate of the true mountain area in a country (Bian et al., 2020). To calculate 
-the real surface area we use elevation data and the following the triangulation method
-developed by Jenness (2004).
+Area calculation is an important component of the methodology to calculate SDG Indicator 15.4.2. Many of the algorithms used by default in some of the most widely used geospatial software tools and cloud-based platforms calculate area values based on 2-dimensional representations of the features on the Earth’s surface, commonly known as planimetric maps. In mountain regions, this method is known to significantly underestimate area values due to the complex topography of mountain landscapes. To address this, methods have been developed to take into account the third dimension of mountain surfaces through the use of digital elevation models and, in this way, obtain closer estimates of the real surface area of mountain regions.
+
+To improve the accuracy of the calculation of SDG Indicator 15.4.2, this analytical workflow allows users to calculate indicator values based on both, planimetric area and real surface area. The method used to calculate real surface area values is based on Jenness (2004).
 
 |image2|
 
@@ -156,20 +142,19 @@ developed by Jenness (2004).
 Potential / known limitations of current methodology
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Care should be taken with the interpretation given that:
+Recognizing that this indicator cannot fully capture the complexity of mountain ecosystems across the world, national authorities are encouraged to use other relevant national or sub-national indicators, data, and information to strengthen their interpretation, as well as taking into account the following limitations:
 
-- This  indicator cannot fully capture the complexity of mountain ecosystems across the world. Countries are encouraged to use other relevant national or sub-national indicators, data and information to strengthen their interpretation.
+- Sub-indicator 15.4.2a should be interpreted with care given that: 1) lack of green cover does not necessarily mean that a particular mountain area is degraded (i.e. areas of permanent snow and ice, scree slopes and natural sparsely vegetated areas above the tree line, 2) it does not capture significant drivers of change such as conversion of natural areas to cropland or pastureland, and 3) increase in green cover may due to impacts of climate change in mountain areas (i.e. increase in green cover due to snow and glacier retreat due to global warming). 
 
-- Lack of green cover does not necessarily mean that a particular mountain area is degraded (i.e. areas of permanent snow and ice, scree slopes and natural sparsely vegetated areas above the tree line
-- Sub-indicator a it does not capture significant drivers of change such as conversion of natural areas to cropland or pastureland 
-- increase in green cover may due to impacts of climate change in mountain areas (i.e. increase in green cover due to snow and glacier retreat due to global warming). 
-- Transient aspects such as vegetation phenology, snow or flooding cannot be captured by land cover transitions as measured in sub-indicator 15.4.2b. 
-- Decisions about which land cover transitions are linked to degradation processes that sometimes require information on the use of land, not only land cover. 
-- Both sub-indicators are not able to capture ecosystem degradation drivers that do not necessarily result in changes in land cover. The use of more detailed national land use maps may be able to overcome some of these gaps for sub-indicator 15.4.2b. 
-- Area estimations based on remote-sensing-derived land cover maps such as the ESA-CCI product via pixel counting may lead to biased area estimates due to map errors(Olofsson et al. 2014). Countries are encouraged to further refine those estimates by comparing them against reference datasets and applying bias corrections.
-- the decison to use a standard global mountain layer rather than allowing countries to generate their own mountain layer, while reducing portential errors between countries may degrade the results where the land cover data used is at a higher (more detailed) resolution. 
+- Because land cover refers to the naturally stable aspects of land and the structure of its key elements, transient aspects such as changes in vegetation phenology, snow or flooding dynamics cannot be captured by land cover transitions as measured in sub-indicator 15.4.2b. In the context of SDG Target 15.4, this is particularly relevant for snow cover dynamics (snow cover duration within a year).
 
-Please refer to the indicator metadata for more detail on the limitations
+- Both sub-indicators are not able to capture ecosystem degradation drivers that do not necessarily result in changes in land cover. 
+
+- Area estimations based on remote-sensing-derived land cover maps via pixel counting may lead to biased area estimates due to map errors. National authorities are encouraged to further refine those estimates by comparing them against reference datasets and applying bias corrections.
+
+
+Further information on the methdolofy is available at ` <https://unstats.un.org/sdgs/metadata/files/Metadata-15-04-02.pdf>`_.
+
 
 Acknowledgements
 ^^^^^^^^^^^^^^^^
@@ -179,9 +164,7 @@ We would like to express our special thanks to Jeff Jenness from Jenness Enterpr
 References
 ^^^^^^^^^^
 
-- Kapos, V., Rhind, J., Edwards, M., Prince, M., & Ravilious, C. (2000). Developing a map of the world’s mountain forests. In M. F. Price , & N. Butt (Eds.),Forests in Sustainable Mountain Development: A State-of-Knowledge Report for 2000?(pp. 4-9). Wallingford: CAB International.  
-
-- UNEP-WCMC (2002). Mountain Watch: Environmental change and sustainable development in mountains. Cambridge, UK
+- Jenness, J.S. (2004). Calculating landscape surface area from digital elevation models. Wildlife Society Bulletin, 32: 829-839
 
 - IPBES (2018): Summary for policymakers of the assessment report on land degradation and restoration of
 the Intergovernmental Science-Policy Platform on Biodiversity and Ecosystem Services. R. Scholes, L.
@@ -196,6 +179,13 @@ Germany
 
 -Körner, C., Paulsen, J., & Spehn, E. (2011). A definition of mountains and their bioclimatic belts for global
 comparisons of biodiversity data. Alpine Botany, 121, 73-78.
+
+- UNEP-WCMC (2002). Mountain Watch: Environmental change and sustainable development in mountains. Cambridge, UK
+
+- UN Statistical Division (2014). System of Environmental Economic Accounting 2012 — Central Framework. New York, USA.
+
+
+
 
 - UN Statistical Division (2014). System of Environmental Economic Accounting 2012 — Central Framework.
 New York, USA.
