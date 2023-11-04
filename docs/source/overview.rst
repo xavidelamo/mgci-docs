@@ -27,8 +27,8 @@ Overview of computation of Sub-Indicator b) Proportion of degraded mountain land
 
 .. math::
 
-	Proportion of degraded mountain area =
-	(Degraded mountain area n) / (Total mountain area) * 100
+	Proportion Of Degraded Mountain Land. = \\
+	(Degraded Mountain Area n) / (Total Mountain Area) * 100
 
 Where:
 
