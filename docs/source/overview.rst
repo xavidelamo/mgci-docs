@@ -63,7 +63,7 @@ For disaggregation purposes, this mountain area is subdivided into bioclimatic b
 **Table 1.** Mountain bioclimatic belts as defined by Körner et al. (2011) and reclassification for data disaggregation of SDG Indicator 15.4.2. Growing season is defined as the number of days between daily mean temperature exceeds 0.9 °C then falls below 0.9 °C
 
 +----------------------+------------------+-------------------------+-------------------------+
-|                      |                  |                         | Bioclimatic belts \\    |
+|                      |                  |                         | Bioclimatic belts       |
 | Bioclimatic belts    | Growing season   | Growing season length   | adopted for SDG         |
 |                      | mean temperature |                         | Indicator 15.4.2        |
 +======================+==================+=========================+=========================+
@@ -74,7 +74,7 @@ For disaggregation purposes, this mountain area is subdivided into bioclimatic b
 | Lower alpine         | < 6.4°C          | < 54 days               |                         |
 +----------------------+------------------+-------------------------+-------------------------+
 | THE TREELINE                                                                                |
-+----------------------+------------------+-------------------------+-------------------------+
++======================+==================+=========================+=========================+
 | Upper montane        | > 6.4°C & ≤ 10 °C| ---                     | Montane                 |
 +-----------------------------------------+-------------------------+-------------------------+
 | Lower montane        | > 10 °C & ≤ 15 °C| ---                     |                         |
@@ -85,9 +85,6 @@ For disaggregation purposes, this mountain area is subdivided into bioclimatic b
 | Remaining mountain   |                  |                         |                         |
 | area without frost   | > 15 °C          |                         |                         |
 +----------------------+------------------+-------------------------+-------------------------+
-
-
-.. [2]adopted for SDG Indicator 15.4.2
 
 
 A global mountain area map sub-divided by bioclimatic belts has been developed by FAO and made available to national authorities to facilitate the computation of this indicator. This map is the result of combining a global mountain area map developed from the Global Multi-Resolution Terrain Elevation Data (GMTED2010), following the UNEP-WCMC methodology (Ravilious et al. 2021) and a mountain bioclimatic belt map created by the Global Mountain Biodiversity Assessment
