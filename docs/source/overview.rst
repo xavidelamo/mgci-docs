@@ -64,7 +64,7 @@ For disaggregation purposes, this mountain area is subdivided into bioclimatic b
 
 +----------------------+------------------+-------------------------+-------------------------+
 |                      |                  |                         | Bioclimatic belts       |
-+ Bioclimatic belts    + Growing season   + Growing season length   + adopted for SDG         +
++ Bioclimatic belts    | Growing season   | Growing season length   | adopted for SDG         |
 |                      | mean temperature |                         | Indicator 15.4.2        |
 +======================+==================+=========================+=========================+
 | Nival                | < 3.5 °C         | < 10 days               | Nival                   |
@@ -120,7 +120,7 @@ Several global standards of land cover classifications have been developed by in
 |                                       |                                                              |                                                                                                                                                                                                                                                                                                                                                       
 |                                       | - All types of orchards and plantations (fruit trees,        |
 |                                       |   coffee and tea plantation, oil palms, rubber plantation,   |
-|                                       |   Christmas trees, etc.).                                    |                                                                                                                                                                                                                                         |
+|                                       |   Christmas trees, etc.).                                    |                                                                                                                                                                                                                                         
 |                                       |                                                              |                                                                                                                                                                                                                                                                                                                                                        
 |                                       | - Multiple or layered crops, including areas with two        |
 |                                       |   layers of different crops and/or areas with the presence   |
