@@ -173,8 +173,7 @@ resolutions is the Copernicus DEM which is a Digital Surface Model (DSM)
 which represents the surface of the Earth including buildings,
 infrastructure and vegetation.
 
-Open Topography DEM downloader
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Open Topography DEM downloader**
 
 Alternatively, there is also a QGIS plugin that provides access to and a way 
 of downloading some open DEMs.  To download the **Open Topography DEM downloader** 
