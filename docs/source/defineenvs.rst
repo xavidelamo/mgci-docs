@@ -44,7 +44,7 @@ To calculate map scale there are two parameters:  ground resolution and screen r
 
 .. math:: scale = 1: (resolution * PPI / 0.0254) \\ 
 
-   or   
+or   
 
 .. math:: resolution = scale * 0.0254/PPI 
 
