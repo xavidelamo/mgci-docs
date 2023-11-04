@@ -242,11 +242,9 @@ comparisons of biodiversity data. Alpine Botany, 121, 73-78.
 
 - UN Statistical Division (2014). System of Environmental Economic Accounting 2012 — Central Framework. New York, USA.
 
-
-
-
 - UN Statistical Division (2014). System of Environmental Economic Accounting 2012 — Central Framework.
 New York, USA.
+
 .. |image2| image:: media_QGIS/image2_orig.png
    :width: 700
 .. |image3| image:: media_QGIS/image3_orig.png
