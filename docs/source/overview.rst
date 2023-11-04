@@ -64,7 +64,7 @@ For disaggregation purposes, this mountain area is subdivided into bioclimatic b
 
 +----------------------+------------------+-------------------------+-------------------------+
 |                      |                  |                         | Bioclimatic belts       |
-| Bioclimatic belts    | Growing season   | Growing season length   | adopted for SDG         |
++ Bioclimatic belts    + Growing season   + Growing season length   + adopted for SDG         +
 |                      | mean temperature |                         | Indicator 15.4.2        |
 +======================+==================+=========================+=========================+
 | Nival                | < 3.5 °C         | < 10 days               | Nival                   |
@@ -76,7 +76,7 @@ For disaggregation purposes, this mountain area is subdivided into bioclimatic b
 | THE TREELINE                                                                                |
 +----------------------+------------------+-------------------------+-------------------------+
 | Upper montane        | > 6.4°C & ≤ 10 °C| ---                     | Montane                 |
-+-----------------------------------------+-------------------------+-------------------------+
++----------------------+------------------+-------------------------+-------------------------+
 | Lower montane        | > 10 °C & ≤ 15 °C| ---                     |                         |
 +----------------------+------------------+-------------------------+-------------------------+
 | Remaining mountain   | > 15 °C          | ---                     | Remaining mountain area | 
@@ -116,7 +116,7 @@ Several global standards of land cover classifications have been developed by in
 |                                       |   and crops like sugar cane, where the upper part of the     | 
 |                                       |   plant is regularly harvested while the root system can     |
 |                                       |   remain for more than one year in the field, are included   | 
-|                                       |   in this class.                                             |                                                                 |
+|                                       |   in this class.                                             |                                                                 
 |                                       |                                                              |                                                                                                                                                                                                                                                                                                                                                       
 |                                       | - All types of orchards and plantations (fruit trees,        |
 |                                       |   coffee and tea plantation, oil palms, rubber plantation,   |
