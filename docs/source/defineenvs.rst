@@ -42,7 +42,7 @@ The scale of a vector dataset is usually expressed in a similar way to paper map
 
 To calculate map scale there are two parameters:  ground resolution and screen resolution.  
 
-.. math:: scale = 1: (resolution * PPI / 0.0254)  or    resolution = scale * 0.0254/PPI 
+.. math:: scale = 1: (resolution * PPI / 0.0254) \\ or  \\  resolution = scale * 0.0254/PPI 
 
 **Where**:   
 
