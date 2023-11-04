@@ -63,7 +63,7 @@ For disaggregation purposes, this mountain area is subdivided into bioclimatic b
 **Table 1.** Mountain bioclimatic belts as defined by Körner et al. (2011) and reclassification for data disaggregation of SDG Indicator 15.4.2. Growing season is defined as the number of days between daily mean temperature exceeds 0.9 °C then falls below 0.9 °C
 
 +----------------------+------------------+-------------------------+-------------------------+
-|                      |                  |                         | Bioclimatic belts[2]    |
+|                      |                  |                         | Bioclimatic belts \\    |
 | Bioclimatic belts    | Growing season   | Growing season length   | adopted for SDG         |
 |                      | mean temperature |                         | Indicator 15.4.2        |
 +======================+==================+=========================+=========================+
