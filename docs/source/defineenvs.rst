@@ -173,8 +173,52 @@ resolutions is the Copernicus DEM which is a Digital Surface Model (DSM)
 which represents the surface of the Earth including buildings,
 infrastructure and vegetation.
 
-(still to complete this section - may want to add paragraph about OpenTopography downloader)
+Open Topography DEM downloader
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Alternatively, there is also a QGIS plugin that provides access to and a way 
+of downloading some open DEMs.  To download the **Open Topography DEM downloader** 
+go to the main menu and click on **Plugins>>Manage and Install Plugins**
+
+- Search for 'opentop'
+- Click on **OpenTopography DEM Downloader**
+
+|opentopograpy|
+
+- Click install plugin
+- Once installed click **Close**
+
+To access the installed plugin go to the 'Proccessing toolbox' 
+
+- Search for 'open'
+- You should see the **OpenTopography DEM Downloader** tool
+
+|opentopograpy2|
+
+
+- Double-click on **OpenTopography DEM Downloader** tool
+
+|opentopograpy3|
+
+- Select DEM to download - choose a DEM of resolution similar to your Land cover dataset.
+e.g. if your landcover is 300m resolution you should use a DEM that has a cellsize of 300m or lower,
+
+- next define the extent to download. Use the buffeed country boundary layer crated in Step A0. 
+ This will ensure correct calculation of the real surface area layer which needs a DEM that goes 
+ beyond the boundary of the country as it used surrounding (focal) cells during it's calculation. 
+ 
+- save the output using the following naming convention ISO3_DEM_AOI_EqArea_buffer10km.tif  e.g. COL_DEM_AOI_EqArea_buffer10km.tif
+ 
+
+.. |opentopograpy| image:: media_QGIS/opentopograpy.png
+   :width: 1200
+   
+.. |opentopograpy2| image:: media_QGIS/opentopograpy.png
+   :width: 400
+   
+   
+  
+   
 .. |image33| image:: media_QGIS/image33_orig.png
    :width: 1200
 
