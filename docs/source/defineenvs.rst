@@ -213,7 +213,7 @@ e.g. if your landcover is 300m resolution you should use a DEM that has a cellsi
 .. |opentopograpy| image:: media_QGIS/opentopograpy.png
    :width: 1200
    
-.. |opentopograpy2| image:: media_QGIS/opentopograpy.png
+.. |opentopograpy2| image:: media_QGIS/opentopograpy2.png
    :width: 600
    
 .. |opentopograpy3| image:: media_QGIS/opentopograpy3.png
