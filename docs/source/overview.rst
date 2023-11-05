@@ -64,8 +64,8 @@ For disaggregation purposes, this mountain area is subdivided into bioclimatic b
 
 +----------------------+--------------------+------------------+-------------------------+
 |                      |                    |                  |**Bioclimatic belts**    |
-|**Bioclimatic belts** |**Growning season** |**Growing season**|**adopted for SDG**      |
-|                      |**mean temperature**|    **length**    | **Indicator 15.4.2**    |
+|**Bioclimatic belts** |**Growning season** |**Growing season**| **adopted for SDG**     |
+|                      |  **mean temp.**    |    **length**    | **Indicator 15.4.2**    |
 +======================+====================+==================+=========================+
 | Nival                | < 3.5 °C           | < 10 days        | Nival                   |
 +----------------------+--------------------+------------------+-------------------------+
@@ -74,7 +74,7 @@ For disaggregation purposes, this mountain area is subdivided into bioclimatic b
 +----------------------+--------------------+------------------+                         |
 | Lower alpine         | < 6.4°C            | < 54 days        |                         |
 +----------------------+--------------------+------------------+-------------------------+
-|THE TREELINE          |THE TREELINE        |THE TREELINE      |THE TREELINE             |
+|                      |                     THE TREELINE      |                         |
 +----------------------+--------------------+------------------+-------------------------+
 | Upper montane        | > 6.4°C & ≤ 10 °C  | ---              | Montane                 |
 +----------------------+--------------------+                  |                         |
