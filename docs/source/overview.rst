@@ -62,18 +62,20 @@ For disaggregation purposes, this mountain area is subdivided into bioclimatic b
 
 **Table 1.** Mountain bioclimatic belts as defined by Körner et al. (2011) and reclassification for data disaggregation of SDG Indicator 15.4.2. Growing season is defined as the number of days between daily mean temperature exceeds 0.9 °C then falls below 0.9 °C
 
-==========================================  =======================   ======================   =================================================
- Bioclimatic belts							Mean temperature length	  Growing season		   Bioclimatic belts adopted for SD Indicator 15.4.2     
-------------------------------------------  -----------------------   ----------------------   -------------------------------------------------					  
-``Nival``              						``< 3.5°C``           	  ``< 10 days``            ``Nival``    
-``Upper alpine``      						``< 3.5°C``           	  ``0 days & < 54 days``   ``Alpine``                  
-``Lower alpine``       						``< 6.4°C``           	  ``< 54 days``               
-``THE TREELINE``
-``Upper montane        						``> 6.4°C & ≤ 10°C``  	  ``---``                  ``Montane``                 
-``Lower montane        						``> 10°C & ≤ 15°C``   	  ``---``                  ``Montane``                              
-``Remaining mountain area with frost``   	``> 15°C``            	  ``---``                  ``Remaining mountain area``                                                            
-``Remaining mountain area without frost`` 	``> 15°C``   			  ``---``  				   ``Remaining mountain area``                                                                  
-==========================================  =======================   ======================   =================================================                                                           
+==========================================  ======================= ====================== =================================================
+ Bioclimatic belts							Mean temperature length	Growing season		   Bioclimatic belts adopted for SD Indicator 15.4.2     
+------------------------------------------  ----------------------- ---------------------- -------------------------------------------------					  
+``Nival``              						``< 3.5°C``           	``< 10 days``          ``Nival``    
+``Upper alpine``      						``< 3.5°C``           	``0 days & < 54 days`` ``Alpine``                  
+``Lower alpine``       						``< 6.4°C``           	``< 54 days``          ``Alpine``  
+``THE TREELINE`` 							``THE TREELINE``		``THE TREELINE``       ``THE TREELINE``                     
+``Upper montane        						``> 6.4°C & ≤ 10°C``    ``---``                ``Montane``                 
+``Lower montane        						``> 10°C & ≤ 15°C``     ``---``                ``Montane``                              
+``Remaining mountain area with frost``   	``> 15°C``            	``---``                ``Remaining mountain area``                      
+``Remaining mountain area without frost`` 	``> 15°C``   		    ``---``  			   ``Remaining mountain area``                      
+==========================================  ======================= ====================== =================================================
+
+**Table 1.** 
 
 +----------------------+------------------+-------------------------+-------------------------+
 |                      |                  |                         | Bioclimatic belts       |
@@ -86,13 +88,13 @@ For disaggregation purposes, this mountain area is subdivided into bioclimatic b
 +----------------------+------------------+-------------------------+                         |
 | Lower alpine         | < 6.4°C          | < 54 days               |                         |
 +----------------------+------------------+-------------------------+-------------------------+
-|---------------------------------------- THE TREELINE ---------------------------------------|
+|THE TREELINE                                                                                 |
 +----------------------+------------------+-------------------------+-------------------------+
 | Upper montane        | > 6.4°C & ≤ 10 °C| ---                     | Montane                 |
 +----------------------+------------------+                         |                         |
 | Lower montane        | > 10 °C & ≤ 15 °C|                         |                         |
 +----------------------+------------------+-------------------------+-------------------------+
-| Remaining mountain   | > 15 °C          | ---                     | Remaining mountain area | 
+| Remaining mountain   | > 15 °C          | ---                     | Remaining mountain area |
 | area with frost      |                  |                         |                         |
 +----------------------+------------------+                         |                         |
 | Remaining mountain   |                  |                         |                         |
