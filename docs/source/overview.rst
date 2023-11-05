@@ -63,9 +63,9 @@ For disaggregation purposes, this mountain area is subdivided into bioclimatic b
 **Table 1A.** Mountain bioclimatic belts as defined by Körner et al. (2011) and reclassification for data disaggregation of SDG Indicator 15.4.2. Growing season is defined as the number of days between daily mean temperature exceeds 0.9 °C then falls below 0.9 °C
 
 +----------------------+-----------------------+------------------+-------------------------+
-|                      |                       |                  |**Bioclimatic belts**    |
-|**Bioclimatic belts** |**Growning season**    |**Growing season**| **adopted for SDG**     |
-|                      |  **mean temperature** |    **length**    |   **Indicator 15.4.2**  |
+|                      |                       |                  | **Bioclimatic belts**   |
+| **Bioclimatic**      |  **Growning season**  |**Growing season**|  **adopted for SDG**    |
+|    **Belts**         | **mean temperature**  |   **length**     | **Indicator 15.4.2**    |
 +======================+=======================+==================+=========================+
 | Nival                | < 3.5 °C              | < 10 days        | Nival                   |
 +----------------------+-----------------------+------------------+-------------------------+
@@ -74,7 +74,7 @@ For disaggregation purposes, this mountain area is subdivided into bioclimatic b
 +----------------------+-----------------------+------------------+                         |
 | Lower alpine         | < 6.4°C               | < 54 days        |                         |
 +----------------------+-----------------------+------------------+-------------------------+
-|......................|.......................| THE TREELINE.....|.........................|
+|......................*.......................*....THE TREELINE..*.........................|
 +----------------------+-----------------------+------------------+-------------------------+
 | Upper montane        | > 6.4°C & ≤ 10 °C     | ---              | Montane                 |
 +----------------------+-----------------------+                  |                         |
