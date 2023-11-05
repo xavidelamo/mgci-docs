@@ -152,8 +152,9 @@ Accessing DEM data
 	https://www.usgs.gov/core-science-systems/eros/coastal-changes-and-impacts/gmted2010?qt-science_support_page_related_con=0#qt-science_support_page_related_con
 
 **CGIAR SRTM: 90m, 250m, 500m, and 1 km**
-	**Bulk download (90m, 250m, 500m, and 1 km):**  https://drive.google.com/drive/folders/0B\_J08t5spvd8RWRmYmtFa2puZEE <https://goo.gl/T9YY2W>
-	**Use in Google Earth Engine:**
+	- **Bulk download (90m, 250m, 500m, and 1 km):**  https://drive.google.com/drive/folders/0B\_J08t5spvd8RWRmYmtFa2puZEE <https://goo.gl/T9YY2W>
+	
+	- **Use in Google Earth Engine:**
 	https://developers.google.com/earth-engine/datasets/catalog/CGIAR_SRTM90_V4
 
 Downloading GMTED2010 DEM data from USGS Earth Explorer application
@@ -183,51 +184,51 @@ Downloading GMTED2010 DEM data from USGS Earth Explorer application
 	
 	|dem_usgs2|
 	
-	Using the map extent to select an area of interest. 
+	-  Using the map extent to select an area of interest. 
 
-	Within the ‘KML/Shapefile upload’ tab it is also possible to upload a file of your AOI or to enter coordinates.  
+	- Within the ‘KML/Shapefile upload’ tab it is also possible to upload a file of your AOI or to enter coordinates.  
 	
  - **Select your data to download**
 	Select the ‘Datasets’ tab, scroll to the ‘Digital Elevation Model’ section and expand it.  
 	
 	|dem_usgs3|
 	
-	Select the ‘GMTED2010’ option and press the ‘Results’ button on the bottom right of the datasets box .  
+	- Select the ‘GMTED2010’ option and press the ‘Results’ button on the bottom right of the datasets box .  
 
-	You will now be shown all the results matching your search. Due to the size of the dataset, it is split into 5x5 degree tiles. You can visualise the tiles on the map by selecting the ‘Show browse overlay’ button, the second icon from the left for each tile (Figure XX). 
+	- You will now be shown all the results matching your search. Due to the size of the dataset, it is split into 5x5 degree tiles. You can visualise the tiles on the map by selecting the ‘Show browse overlay’ button, the second icon from the left for each tile (Figure XX). 
 
-	Here you can select the specific imagery you want to download by selecting the relevant tiles. In this case, we will select all tiles as we want to use a global dataset. 
+	- Here you can select the specific imagery you want to download by selecting the relevant tiles. In this case, we will select all tiles as we want to use a global dataset. 
 
 	|dem_usgs4|
 	
-	Two tiles resulting from the data search shown on the map, select the icons second from the left to display the data on the map for each tile.  
+	- Two tiles resulting from the data search shown on the map, select the icons second from the left to display the data on the map for each tile.  
 
-	To speed this process up and avoid individually selecting each tile, we can use the ‘Show results controls’ drop-down menu to select the ‘Add All Results from Current Page to Bulk Download’. 
+	- To speed this process up and avoid individually selecting each tile, we can use the ‘Show results controls’ drop-down menu to select the ‘Add All Results from Current Page to Bulk Download’. 
 	
 	|dem_usgs5|
 	
-	Select ‘Add All Results from Current Page to Bulk Download’ to speed up the process of selecting tiles for download. 
+	- Select ‘Add All Results from Current Page to Bulk Download’ to speed up the process of selecting tiles for download. 
 
 	We then need to repeat this for all pages to download the full dataset. Once complete, press the ‘View Item Basket’ button at the bottom of the page. 
 	
 	|dem_usgs6|
 	
-	Once all tiles in the search have been selected, click ‘View Item Basket’ to move to downloading your data. 
+	- Once all tiles in the search have been selected, click ‘View Item Basket’ to move to downloading your data. 
 	
-	The last step in selecting your data will take you to the Bulk Download page. Select the ‘Start Order’ button.
+	- The last step in selecting your data will take you to the Bulk Download page. Select the ‘Start Order’ button.
 	
 	|dem_usgs7|
 	
-	Select ‘Start Order’ and the GMTED dataset, and then click the ‘30 ARC SEC’ option for each scene. 
+	- Select ‘Start Order’ and the GMTED dataset, and then click the ‘30 ARC SEC’ option for each scene. 
 
 	Before we can download the data, we need to specify the spatial resolution of the data. The GMTED2010 dataset provides several options, 7.5 Arc Seconds (~250m), 15 Arc Seconds (~500m) and 30 Arc Seconds (~1km). As we are using a global dataset, we will download data at the 30 Arc Seconds (~1km) resolution to reduce the file size and computational requirements for working with the data (Figure XX).   
 
-	For each tile, select the 30 Arc Sec option. 
+	- For each tile, select the resolution you wish to download e.g. in this example the 30 Arc Sec option. 
 
-	Scroll down, insert a name (optional) and click “submit product selections”. This submits your order and you will be notified when it is ready to download. If you are downloading a small number of scenes you will be able to download them directly from the website.  
+	- Scroll down, insert a name (optional) and click “submit product selections”. This submits your order and you will be notified when it is ready to download. If you are downloading a small number of scenes you will be able to download them directly from the website.  
 	There is an option to use the 'bulk downloader' but this should not be necessary for country level downloads.
 	
-	If you have not already installed the ‘Bulk Download Application’ you need to do so at this step following the link on the page. If you have trouble downloading the application, please follow the steps below. 
+	- If you have not already installed the ‘Bulk Download Application’ you need to do so at this step following the link on the page. If you have trouble downloading the application, please follow the steps below. 
 	
 	
  - **Using the Bulk Downloader 
@@ -235,21 +236,30 @@ Downloading GMTED2010 DEM data from USGS Earth Explorer application
 	
 	|dem_usgs8|
 
-	Log into the Bulk Download Application and select your order to download. Once selected click ‘Begin Download’.
+	- Log into the Bulk Download Application and select your order to download. Once selected click ‘Begin Download’.
 	Open the Bulk Downloader and log in. This will use the same log in credentials as your USGS account. 
 	When you log in, you are presented with the datasets you have ordered. Select your dataset and click ‘Begin Download’ . Your datasets will start downloading, this may take some time. 
 	
  - **Using the data** 
-	Once your downloads are complete go to the Bulk Downloader Application in your files. There should now be a folder with your order name. Inside this, you will find zipped files for each of the scenes you order. 
+	Once your downloads are complete go to the Bulk Downloader Application in your files. 
+	
+	There should now be a folder with your order name. 	Inside this, you will find zipped files for each of the scenes you order. 
  
-	Unzip all of your files using 7-Zip> Extract Here.
-	Select all of the zipped files in the folder, right click > 7-Zip > ‘Extract Here’. This will start unzipping all of your files. 
-	There are multiple variations of each scene (mean, min, max, standard deviation etc.). Here, we are interested in using only the mean values. In the folder with the unzipped tifs, create an empty folder called ‘means’. We need to copy only the mean tifs into this folder. 
-	To do so, open the command prompt by searching for it in your computer change the directory to the folder with all your unzipped tifs by typing:
-	‘cd /d C:\bda\globalDEM_test’ (after /d replace with your file path)
-	Once your working directory is set, type:
-	‘Xcopy *mea* C:\bda\globalDEM_test\means’ (using your file path to the empty ‘means folder’.
-	Press enter and the command should run, resulting in all the means tifs being in their own folder.
+	- Unzip all of your files using 7-Zip> Extract Here.
+	
+	- Select all of the zipped files in the folder, right click > 7-Zip > ‘Extract Here’. This will start unzipping all of your files. 
+	
+	- There are multiple variations of each scene (mean, min, max, standard deviation etc.). Here, we are interested in using only the mean values. In the folder with the unzipped tifs, create an empty folder called ‘means’. We need to copy only the mean tifs into this folder. 
+	
+	- To do so, open the command prompt by searching for it in your computer change the directory to the folder with all your unzipped tifs by typing:
+	
+	‘‘cd /d C:\bda\globalDEM_test‘‘ (after /d replace with your file path)
+	
+	- Once your working directory is set, type:
+	
+	‘‘Xcopy *mea* C:\bda\globalDEM_test\means‘‘ (using your file path to the empty ‘means folder’.
+	
+	- Press enter and the command should run, resulting in all the means tifs being in their own folder.
 
 
 Downloading DEM data from Copernicus 
@@ -351,41 +361,42 @@ The DEM tiles should now be downloaded.
    Source:
    https://gis.stackexchange.com/questions/13445/creating-latitude-grid-from-dem
    
- **Mosaicking your files using OSGeo4W Shell**
- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Mosaicking your files using OSGeo4W Shell**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	If you country covers more than one DEM tile, you will need to stitch all of these files together into one dataset. There are several options for doing this, you may wish to use the tools in your QGIS software (e.g. the GDAL ‘Merge’ tool). However, it may be quicker to use command line programmes.
 	
 	In your computer, search for ‘OSGeo4W Shell’ and open the application (N.B. you may need to download this application, if you already have a GIS application such as QGIS you should already have it). This should open a blank command prompt window. 
 	
 	First, set your working directory to your folder with all your means .tifs:
-	‘cd /d C:\bda\globalDEM_test\means’ (after /d replace with your file path to the means folder)
+	‘‘cd /d C:\bda\globalDEM_test\means‘‘ (after /d replace with your file path to the means folder)
 
 	Then type:
-	gdalbuildvrt mosaic.vrt *.tif
+	
+	‘‘gdalbuildvrt mosaic.vrt *.tif‘‘
+	
 	This creates a virtual mosaic of all the tiffs in the folder where you have executed the command. 
 	To create a mosaic from the virtual raster, type:
-	gdal_translate virtual_mosaic.vrt mosaic.tif (you can replace the final ‘mosaic’ with your chosen file name).
+	
+	‘‘gdal_translate virtual_mosaic.vrt mosaic.tif‘‘ (you can replace the final ‘mosaic’ with your chosen file name).
+	
 	Press enter and once the command has finished running, you should find your mosaic raster in the folder. Now you have a global raster ready to use in your analysis!  
  
 .. |dem_usgs1| image:: media_QGIS_annex/dem_usgs1.png
-   :width: 6.26806in
-   :height: 3.16875in
+   :width: 700
 .. |dem_usgs2| image:: media_QGIS_annex/dem_usgs2.png
-   :width: 6.26806in
-   :height: 3.16875in
+   :width: 700
 .. |dem_usgs3| image:: media_QGIS_annex/dem_usgs3.png
-   :width: 6.26806in
-   :height: 3.16875in
+   :width: 700
 .. |dem_usgs4| image:: media_QGIS_annex/dem_usgs4.png
-   :width: 6.26806in
-   :height: 3.16875in
+   :width: 700
 .. |dem_usgs5| image:: media_QGIS_annex/dem_usgs5.png
-   :width: 6.26806in
-   :height: 3.16875in
+   :width: 700
 .. |dem_usgs6| image:: media_QGIS_annex/dem_usgs6.png
-   :width: 6.26806in
-   :height: 3.16875in
- 
+   :width: 700
+.. |dem_usgs7| image:: media_QGIS_annex/dem_usgs7.png
+   :width: 700
+.. |dem_usgs8| image:: media_QGIS_annex/dem_usgs8.png
+   :width: 700   
 
 .. |image0| image:: media_QGIS_annex/image2.png
    :width: 6.26806in
