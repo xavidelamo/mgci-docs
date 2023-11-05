@@ -175,7 +175,7 @@ infrastructure and vegetation.
 
 **Open Topography DEM downloader**
 
-Alternatively, there is also a QGIS plugin that provides access to and a way 
+There is a QGIS plugin that provides access to and a way 
 of downloading some open DEMs.  To download the **Open Topography DEM downloader** 
 go to the main menu and click on **Plugins>>Manage and Install Plugins**
 
@@ -207,6 +207,8 @@ To access the installed plugin go to the 'Proccessing toolbox'
  
 - save the output using the following naming convention ISO3_DEM_AOI_EqArea_buffer10km.tif  e.g. COL_DEM_AOI_EqArea_buffer10km.tif
  
+
+For further information on DEMs and downloading them please see Annex 1.
 
 .. |opentopograpy| image:: media_QGIS/opentopograpy.png
    :width: 1200

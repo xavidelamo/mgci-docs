@@ -127,42 +127,110 @@ https://www.rstudio.com/products/rstudio/ and then install:
 
 -  Click Finish when the installation is complete
 
-1. 
 
-2. 
+What is a DEM?
+--------------
+Digital Elevation Models represent bare ground topographic surfaces, where trees, buildings and any other surface models are excluded.  
 
-3. 
+These can be created from a variety of sources; older maps were derived from topographic maps. More recently, technologies including high-resolution lidar are used.  
+
+Several datasets are now available, these can vary in both temporal and spatial resolution as well as extent. 
 
 Accessing DEM data
 ------------------
 
-**Open topography**
+ - **Open topography**
+	https://portal.opentopography.org/dataCatalog?group=global
 
-https://portal.opentopography.org/dataCatalog?group=global
-
-**Copernicus** **SRTM** **30m or 90m**
-
-https://copernicus-dem-30m.s3.amazonaws.com/readme.html
+- **Copernicus** **SRTM** **30m or 90m**
+	https://copernicus-dem-30m.s3.amazonaws.com/readme.html
 
 **USGS SRTM (USGS) 30m or 90m**
-
-https://www.usgs.gov/centers/eros/science/usgs-eros-archive-digital-elevation-shuttle-radar-topography-mission-srtm-non?qt-science_center_objects=0#qt-science_center_objects
+	https://www.usgs.gov/centers/eros/science/usgs-eros-archive-digital-elevation-shuttle-radar-topography-mission-srtm-non?qt-science_center_objects=0#qt-science_center_objects
 
 **GMTED: 230m 500m or 1km**
-
-https://www.usgs.gov/core-science-systems/eros/coastal-changes-and-impacts/gmted2010?qt-science_support_page_related_con=0#qt-science_support_page_related_con
+	https://www.usgs.gov/core-science-systems/eros/coastal-changes-and-impacts/gmted2010?qt-science_support_page_related_con=0#qt-science_support_page_related_con
 
 **CGIAR SRTM: 90m, 250m, 500m, and 1 km**
-
 -  | **Bulk download (90m, 250m, 500m, and 1 km):**
    |  `https://drive.google.com/drive/folders/0B\_J08t5spvd8RWRmYmtFa2puZEE <https://goo.gl/T9YY2W>`__
-
 -  | **Use in Google Earth Engine:**
    | https://developers.google.com/earth-engine/datasets/catalog/CGIAR_SRTM90_V4
 
-Downloading DEM data from USGS
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Downloading GMTED2010 DEM data from USGS Earth Explorer application
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Before you get started** 
+- **Bulk Download Application** 
+	In order to download a large number of files from the USGS website, a bulk download application is required. To install this on your machine, go to https://dds.cr.usgs.gov/bulk and follow the instructions. 
 
+	When downloading the USGS Bulk Download Application, you may come across an error saying the application could not find a Javascript Runtime Environment on your system. You need Java Runtime Environment to be installed on your system prior to download. However, this error may occur even if you have the program installed on your operating system. If this is the case, please follow these steps in Annex 1.  
+
+	N.B If you have a 64 Bit Windows operating system, make sure you select ‘Do you have a different operating system?’ on the bulk download page and choose the 64 Bit option.  
+
+	When installing the Bulk Download Application change the default file path from C:Programs\bda to just C:bda, this helps to avoid errors when opening the application.  
+	
+ - **Making an account** 
+	To download data, you must create a USGS account at https://earthexplorer.usgs.gov/. You can do so by clicking the ‘Register’ button in the top right. Follow the instructions and you will receive an email to activate your account.  
+	If you already have an account, log in.  
+
+- **Set your search criteria (setting an area of interest) 
+	It is possible to define an Area of Interest (AOI) by double clicking on the map in the browser to create a boundary. 
+	
+	|dem_usgs1|
+	
+	- Double click on the map to draw a boundary, you can add as many points as you wish to draw a custom shape. 
+
+	- However, it is easiest to simply zoom into your area of interest and select the ‘Use Map’ button which is in the ‘KML/Shapefile Upload’ tab of ‘1. Enter Search Criteria’. When you then zoom out, the AOI should now be shown on your map. 	
+	
+	|dem_usgs2|
+	
+	Using the map extent to select an area of interest. 
+
+	Within the ‘KML/Shapefile upload’ tab it is also possible to upload a file of your AOI or to enter coordinates.  
+	
+ - **Select your data to download**
+	Select the ‘Datasets’ tab, scroll to the ‘Digital Elevation Model’ section and expand it.  
+	
+	|dem_usgs3|
+	
+	Select the ‘GMTED2010’ option and press the ‘Results’ button on the bottom right of the datasets box .  
+
+	You will now be shown all the results matching your search. Due to the size of the dataset, it is split into 5x5 degree tiles. You can visualise the tiles on the map by selecting the ‘Show browse overlay’ button, the second icon from the left for each tile (Figure XX). 
+
+	Here you can select the specific imagery you want to download by selecting the relevant tiles. In this case, we will select all tiles as we want to use a global dataset. 
+
+	|dem_usgs4|
+	
+	Figure XX. Two tiles resulting from the data search shown on the map, select the icons second from the left to display the data on the map for each tile.  
+
+	To speed this process up and avoid individually selecting each tile, we can use the ‘Show results controls’ drop-down menu to select the ‘Add All Results from Current Page to Bulk Download’. 
+	
+	|dem_usgs5|
+	
+	Select ‘Add All Results from Current Page to Bulk Download’ to speed up the process of selecting tiles for download. 
+
+	We then need to repeat this for all pages to download the full dataset. Once complete, press the ‘View Item Basket’ button at the bottom of the page. 
+	
+	|dem_usgs6|
+	
+	Once all tiles in the search have been selected, click ‘View Item Basket’ to move to downloading your data. 
+	
+	The last step in selecting your data will take you to the Bulk Download page. Select the ‘Start Order’ button.
+	
+	|dem_usgs7|
+	
+	Select ‘Start Order’ and the GMTED dataset, and then click the ‘30 ARC SEC’ option for each scene. 
+
+	Before we can download the data, we need to specify the spatial resolution of the data. The GMTED2010 dataset provides several options, 7.5 Arc Seconds (~250m), 15 Arc Seconds (~500m) and 30 Arc Seconds (~1km). As we are using a global dataset, we will download data at the 30 Arc Seconds (~1km) resolution to reduce the file size and computational requirements for working with the data (Figure XX).   
+
+	For each tile, select the 30 Arc Sec option. 
+
+	Scroll down, insert a name (optional) and click “submit product selections”. This submits your order and you will be notified when it is ready to download. If you are downloading a small number of scenes you will be able to download them directly from the website.  
+	There is an option to use the 'bulk downloader' but this should not be necessary for country level downloads.
+	
+	
+	
+	
 Downloading DEM data from Copernicus 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
