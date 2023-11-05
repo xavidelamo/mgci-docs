@@ -139,10 +139,10 @@ Several datasets are now available, these can vary in both temporal and spatial 
 Accessing DEM data
 ------------------
 
- - **Open topography**
+**Open topography**
 	https://portal.opentopography.org/dataCatalog?group=global
 
-- **Copernicus** **SRTM** **30m or 90m**
+**Copernicus** **SRTM** **30m or 90m**
 	https://copernicus-dem-30m.s3.amazonaws.com/readme.html
 
 **USGS SRTM (USGS) 30m or 90m**
@@ -152,10 +152,8 @@ Accessing DEM data
 	https://www.usgs.gov/core-science-systems/eros/coastal-changes-and-impacts/gmted2010?qt-science_support_page_related_con=0#qt-science_support_page_related_con
 
 **CGIAR SRTM: 90m, 250m, 500m, and 1 km**
--  | **Bulk download (90m, 250m, 500m, and 1 km):**
-   |  `https://drive.google.com/drive/folders/0B\_J08t5spvd8RWRmYmtFa2puZEE <https://goo.gl/T9YY2W>`__
--  | **Use in Google Earth Engine:**
-   | https://developers.google.com/earth-engine/datasets/catalog/CGIAR_SRTM90_V4
+-   **Bulk download (90m, 250m, 500m, and 1 km):**  `https://drive.google.com/drive/folders/0B\_J08t5spvd8RWRmYmtFa2puZEE <https://goo.gl/T9YY2W>`__
+-   **Use in Google Earth Engine:**https://developers.google.com/earth-engine/datasets/catalog/CGIAR_SRTM90_V4
 
 Downloading GMTED2010 DEM data from USGS Earth Explorer application
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -331,7 +329,26 @@ The DEM tiles should now be downloaded.
    https://gis.stackexchange.com/questions/13445/creating-latitude-grid-from-dem
    
    
-   
+ 
+.. |usgsdem1| image:: media_QGIS_annex/usgsdem1.png
+   :width: 6.26806in
+   :height: 3.16875in
+.. |usgsdem2| image:: media_QGIS_annex/usgsdem2.png
+   :width: 6.26806in
+   :height: 3.16875in
+.. |usgsdem3| image:: media_QGIS_annex/usgsdem3.png
+   :width: 6.26806in
+   :height: 3.16875in
+.. |usgsdem4| image:: media_QGIS_annex/usgsdem4.png
+   :width: 6.26806in
+   :height: 3.16875in
+.. |usgsdem5| image:: media_QGIS_annex/usgsdem5.png
+   :width: 6.26806in
+   :height: 3.16875in
+.. |usgsdem6| image:: media_QGIS_annex/usgsdem6.png
+   :width: 6.26806in
+   :height: 3.16875in
+ 
 
 .. |image0| image:: media_QGIS_annex/image2.png
    :width: 6.26806in
