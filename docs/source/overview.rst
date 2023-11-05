@@ -61,8 +61,7 @@ For the purposes of standardization and international comparability of nationall
 For disaggregation purposes, this mountain area is subdivided into bioclimatic belts as defined by Körner et al. (2011). Körner et al. subdivides mountains vertically into seven bioclimatic belts based on average temperatures, therefore accounting the latitudinal change in elevation of thermally similar areas in the world’s mountains. For the purposes of this indicator, these seven bioclimatic belts are aggregated into four (Nival, Alpine, Montane and Remaining mountain areas), as illustrated in Table 1.
 
 **Table 1.** Mountain bioclimatic belts as defined by Körner et al. (2011) and reclassification for data disaggregation of SDG Indicator 15.4.2. Growing season is defined as the number of days between daily mean temperature exceeds 0.9 °C then falls below 0.9 °C
-table:: This is my table
-:widths: 20 30 50
+
 +----------------------+------------------+-------------------------+-------------------------+
 |                      |                  |                         | Bioclimatic belts       |
 + Bioclimatic belts    | Growing season   | Growing season length   | adopted for SDG         |
@@ -98,6 +97,16 @@ classification in order to identify land cover changes consistently over time.
 
 Several global standards of land cover classifications have been developed by international initiatives for this purpose. For the purposes of standardization and harmonization when reporting on SDG Indicator 15.4.2, this indicator has adapted the land cover classification established by the United Nations Statistical Commission’s System of Environmental and Economic Accounting (UN-SEEA)(UN Statistical Division, 2014) by selecting the most relevant SEEA classes for mountain ecosystems and aggregating all croplands classes in the following classification (Table 2).
 
+
+.. table:: This is my table
+    :widths: 20 30 50
+
+    +-------------+-----------------+-----------------------+
+    |Field type   |Description      |Example                |
+    +-------------+-----------------+-----------------------+
+
+
+
 **Table 2.** Adapted UN-SEEA land cover classification for the computation and aggregate reporting on SDG Indicator 15.4.2.
 
 +---------------------------------------+--------------------------------------------------------------+
@@ -112,21 +121,21 @@ Several global standards of land cover classifications have been developed by in
 +---------------------------------------+--------------------------------------------------------------+
 | 2. Croplands                          | The class is composed of cultivated vegetation, including    | 
 |                                       | herbaceous plants, trees and/or shurbs. It includes:         |                                                                                                                                                                                                                                                                                                
-|                                       | - Herbaceous crops used for hay. All the non-perennial       |                                                                                                                                                                                                                                                                                                                                                                                                            
-|                                       |   crops that do not last for more than two growing seasons   |
-|                                       |   and crops like sugar cane, where the upper part of the     | 
-|                                       |   plant is regularly harvested while the root system can     |
-|                                       |   remain for more than one year in the field, are included   | 
-|                                       |   in this class.                                             |                                                                 
+|                                       |- Herbaceous crops used for hay. All the non-perennial        |                                                                                                                                                                                                                                                                                                                                                                                                            
+|                                       |  crops that do not last for more than two growing seasons    |
+|                                       |  and crops like sugar cane, where the upper part of the      | 
+|                                       |  plant is regularly harvested while the root system can      |
+|                                       |  remain for more than one year in the field, are included    | 
+|                                       |  in this class.                                              |                                                                 
 |                                       |                                                              |                                                                                                                                                                                                                                                                                                                                                       
-|                                       | - All types of orchards and plantations (fruit trees,        |
-|                                       |   coffee and tea plantation, oil palms, rubber plantation,   |
-|                                       |   Christmas trees, etc.).                                    |                                                                                                                                                                                                                                         
+|                                       |- All types of orchards and plantations (fruit trees,         |
+|                                       |  coffee and tea plantation, oil palms, rubber plantation,    |
+|                                       |  Christmas trees, etc.).                                     |                                                                                                                                                                                                                                         
 |                                       |                                                              |                                                                                                                                                                                                                                                                                                                                                        
-|                                       | - Multiple or layered crops, including areas with two        |
-|                                       |   layers of different crops and/or areas with the presence   |
-|                                       |   of one important layer of natural vegetation (mainly       |
-|                                       |   trees) that covers one layer of cultivated crop.           |
+|                                       |- Multiple or layered crops, including areas with two         |
+|                                       |  layers of different crops and/or areas with the presence    |
+|                                       |  of one important layer of natural vegetation (mainly        |
+|                                       |  trees) that covers one layer of cultivated crop.            |
 +---------------------------------------+--------------------------------------------------------------+
 | 3. Grasslands                         | This class includes any geographical area dominated by       |
 |                                       | natural herbaceous plants (grasslands, prairies, steppes     |
