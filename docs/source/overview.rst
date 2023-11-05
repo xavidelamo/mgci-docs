@@ -60,6 +60,24 @@ For the purposes of standardization and international comparability of nationall
 
 For disaggregation purposes, this mountain area is subdivided into bioclimatic belts as defined by Körner et al. (2011). Körner et al. subdivides mountains vertically into seven bioclimatic belts based on average temperatures, therefore accounting the latitudinal change in elevation of thermally similar areas in the world’s mountains. For the purposes of this indicator, these seven bioclimatic belts are aggregated into four (Nival, Alpine, Montane and Remaining mountain areas), as illustrated in Table 1.
 
+.. table::
+   :class: word-wrap
+
+   +--------------------------------+-----------------------------+
+   | Column 1                       | Column 2                    |
+   +================================+=============================+
+   | Lorem ipsum dolor sit amet,    | Duis aute irure dolor in    |
+   | adipisicing elit, sed do eius  | voluptate velit esse cillum |
+   | incididunt ut labore et dolor  | fugiat nulla pariatur.      |
+   | aliqua. Ut enim ad minim veni  | Excepteur sint occaecat     |
+   | nostrud exercitation ullamco   | proident, sunt in culpa     |
+   | nisi ut aliquip ex ea commodi. | deserunt mollit anim id.    |
+   +--------------------------------+-----------------------------+
+   | Third Row                      | Third Row continued         |
+   +--------------------------------+-----------------------------+
+
+
+
 **Table 1.** Mountain bioclimatic belts as defined by Körner et al. (2011) and reclassification for data disaggregation of SDG Indicator 15.4.2. Growing season is defined as the number of days between daily mean temperature exceeds 0.9 °C then falls below 0.9 °C
 
 +----------------------+------------------+-------------------------+-------------------------+
