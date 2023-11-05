@@ -75,32 +75,35 @@ For disaggregation purposes, this mountain area is subdivided into bioclimatic b
 ``Remaining mountain area without frost`` 	``> 15°C``   		    ``---``  			   ``Remaining mountain area``                      
 ==========================================  ======================= ====================== =================================================
 
-.. table:: **Table 1 **Mountain bioclimatic belts as defined by Körner et al. (2011) and reclassification for data disaggregation of SDG Indicator 15.4.2. Growing season is defined as the number of days between daily mean temperature exceeds 0.9 °C then falls below 0.9 °C**
+.. table:: **Table 1 **Mountain bioclimatic belts as defined by Körner et al. (2011) and reclassification for data disaggregation of SDG Indicator 15.4.2. Growing season (GS)is defined as the number of days between daily mean temperature exceeds 0.9 °C then falls below 0.9 °C**
     :widths: 10 20 20 30
 
-+----------------------+------------------+-------------------------+-------------------------+
-|                      |                  |                         | Bioclimatic belts       |
-| Bioclimatic belts    | Growing season   | Growing season length   | adopted for SDG         |
-|                      | mean temperature |                         | Indicator 15.4.2        |
-+======================+==================+=========================+=========================+
-| Nival                | < 3.5 °C         | < 10 days               | Nival                   |
-+----------------------+------------------+-------------------------+-------------------------+
-| Upper alpine         | < 3.5 °C         | > 10 days & < 54 days   | Alpine                  |
-+----------------------+------------------+-------------------------+                         |
-| Lower alpine         | < 6.4°C          | < 54 days               |                         |
-+----------------------+------------------+-------------------------+-------------------------+
-|THE TREELINE                                                                                 |
-+----------------------+------------------+-------------------------+-------------------------+
-| Upper montane        | > 6.4°C & ≤ 10 °C| ---                     | Montane                 |
-+----------------------+------------------+                         |                         |
-| Lower montane        | > 10 °C & ≤ 15 °C|                         |                         |
-+----------------------+------------------+-------------------------+-------------------------+
-| Remaining mountain   | > 15 °C          | ---                     | Remaining mountain area |
-| area with frost      |                  |                         |                         |
-+----------------------+------------------+                         |                         |
-| Remaining mountain   |                  |                         |                         |
-| area without frost   | > 15 °C          |                         |                         |
-+----------------------+------------------+-------------------------+-------------------------+
++----------------------+------------------+-------------+-------------------------+
+| Bioclimatic belts    | Growing season   | Growing     | Bioclimatic belts       |
++======================+==================+=============+=========================+
+| Bioclimatic belts    | mean             | season      | adopted for SDG         |
++======================+==================+=============+=========================+
+| Bioclimatic belts    | temperature      | length      | Indicator 15.4.2        |
++======================+==================+=============+=========================+
+| Nival                | < 3.5 °C         | < 10 days   | Nival                   |
++----------------------+------------------+-------------+-------------------------+
+| Upper alpine         | < 3.5 °C         | > 10 days & |                         |
+|                      |                  | < 54 days   | Alpine                  |
++----------------------+------------------+-------------+                         |
+| Lower alpine         | < 6.4°C          | < 54 days   |                         |
++----------------------+------------------+-------------+-------------------------+
+|___________________________________________THE TREELINE__________________________|
++----------------------+------------------+-------------+-------------------------+
+| Upper montane        | > 6.4°C & ≤ 10 °C| ---         | Montane                 |
++----------------------+------------------+             |                         |
+| Lower montane        | > 10 °C & ≤ 15 °C|             |                         |
++----------------------+------------------+-------------+-------------------------+
+| Remaining mountain   | > 15 °C          | ---         | Remaining mountain area |
+| area with frost      |                  |             |                         |
++----------------------+------------------+             |                         |
+| Remaining mountain   |                  |             |                         |
+| area without frost   | > 15 °C          |             |                         |
++----------------------+------------------+-------------+-------------------------+
 
 
 A global mountain area map sub-divided by bioclimatic belts has been developed by FAO and made available to national authorities to facilitate the computation of this indicator. This map is the result of combining a global mountain area map developed from the Global Multi-Resolution Terrain Elevation Data (GMTED2010), following the UNEP-WCMC methodology (Ravilious et al. 2021) and a mountain bioclimatic belt map created by the Global Mountain Biodiversity Assessment
@@ -121,7 +124,7 @@ Several global standards of land cover classifications have been developed by in
 
 
 
-.. table:: **Table 2 **Adapted UN-SEEA land cover classification for the computation and aggregate reporting on SDG Indicator 15.4.2.**
+.. table:: **Table 2 Adapted UN-SEEA land cover classification for the computation and aggregate reporting on SDG Indicator 15.4.2.**
     :widths: 30 50
 
     +---------------------------------------+--------------------------------------------------------------+
