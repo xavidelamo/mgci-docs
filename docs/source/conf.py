@@ -31,7 +31,7 @@ intersphinx_mapping = {
 intersphinx_disabled_domains = ['std']
 
 templates_path = ['_templates']
-html_theme_path = ['_themes']
+#html_theme_path = ['_themes']
 
 # Add this to the top of the conf.py file
 import os
