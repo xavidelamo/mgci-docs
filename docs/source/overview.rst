@@ -98,97 +98,97 @@ classification in order to identify land cover changes consistently over time.
 Several global standards of land cover classifications have been developed by international initiatives for this purpose. For the purposes of standardization and harmonization when reporting on SDG Indicator 15.4.2, this indicator has adapted the land cover classification established by the United Nations Statistical Commission’s System of Environmental and Economic Accounting (UN-SEEA)(UN Statistical Division, 2014) by selecting the most relevant SEEA classes for mountain ecosystems and aggregating all croplands classes in the following classification (Table 2).
 
 
-.. table:: 
-    :widths: 20 30 50
 
-    +-------------+-----------------+-----------------------+
-    |Field type   |Description      |Example                |
-    +-------------+-----------------+-----------------------+
 
-.. table:: **Table 2.**Adapted UN-SEEA land cover classification for the computation and aggregate reporting on SDG Indicator 15.4.2.
-	:widths: 20 30 50
 
-	+---------------------------------------+--------------------------------------------------------------+
-	| **Land cover class**                  | **Description**                                              |
-	+=======================================+==============================================================+
-	| 1. Artificial surfaces                | The class is composed of any type of areas                   |
-	|                                       | with a predominant artificial surface. Any urban             |
-	|                                       | or related feature is included in this class, for            |
-	|                                       | example, urban parks (parks, parkland and laws).             |
-	|                                       | The class also includes industrial areas, and waste          |
-	|                                       | dump deposit and extraction sites.                           |
-	+---------------------------------------+--------------------------------------------------------------+
-	| 2. Croplands                          | The class is composed of cultivated vegetation, including    |
-	|                                       | herbaceous plants, trees and/or shurbs. It includes:         |
-	|                                       |- Herbaceous crops used for hay. All the non-perennial        |
-	|                                       |  crops that do not last for more than two growing seasons    |
-	|                                       |  and crops like sugar cane, where the upper part of the      |
-	|                                       |  plant is regularly harvested while the root system can      |
-	|                                       |  remain for more than one year in the field, are included    |
-	|                                       |  in this class.                                              |
-	|                                       |                                                              |
-	|                                       |- All types of orchards and plantations (fruit trees,         |
-	|                                       |  coffee and tea plantation, oil palms, rubber plantation,    |
-	|                                       |  Christmas trees, etc.).                                     |
-	|                                       |                                                              |
-	|                                       |- Multiple or layered crops, including areas with two         |
-	|                                       |  layers of different crops and/or areas with the presence    |
-	|                                       |  of one important layer of natural vegetation (mainly        |
-	|                                       |  trees) that covers one layer of cultivated crop.            |
-	+---------------------------------------+--------------------------------------------------------------+
-	| 3. Grasslands                         | This class includes any geographical area dominated by       |
-	|                                       | natural herbaceous plants (grasslands, prairies, steppes     |
-	|                                       | and savannahs) with a cover of 10 per cent or more,          |
-	|                                       | irrespective of different human and/or animal activities,    |
-	|                                       | such as grazing or selective fire management. Woody plants   |
-	|                                       | (trees and/or shrubs) can be present, assuming their cover   |
-	|                                       | is less that 10 per cent.                                    |
-	+---------------------------------------+--------------------------------------------------------------+
-	| 4. Tree-covered areas                 | This class includes any geographical area dominated by       |
-	|                                       | natural tree plants with a cover of 10 per cent or more.     |
-	|                                       | Other types of plants (shrubs and/or herbs) can be present,  |
-	|                                       | even with a density higher than that of trees. Areas planted |
-	|                                       | with trees for afforestation purposes and forest plantations |
-	|                                       | are included in this class. This class includes areas        |
-	|                                       | seasonally or permanently flooded with freshwater.           |
-	+---------------------------------------+--------------------------------------------------------------+
-	| 5. Shrub-covered areas                | This class includes any geographical area dominated by       |
-	|                                       | natural shrubs having a cover of 10 per cent or more.        |
-	|                                       | Trees can be present in scattered form if their cover is     |
-	|                                       | less than 10 per cent. Herbaceous plants can also be present |
-	|                                       | at any density. The class includes shrub-covered areas       |
-	|                                       | permanently or regularly flooded by inland fresh water.      |
-	+---------------------------------------+--------------------------------------------------------------+
-	| 6. Shubs and/or herbaceous vegetation,| This class includes any geographical area dominated by       |
-	|    aquatic or regularly flooded       | natural herbaceous vegetation (cover of 10 per cent or more) |
-	|                                       | that is permanently or regularly flooded by fresh or brackish|
-	|                                       | water (swamps, marsh areas, etc.). Flooding must persist for |
-	|                                       | at least two months per year to be considered regular.       |
-	|                                       | Woody vegetation (trees and/or shrubs) can be present if     |
-	|                                       | their cover is less than 10 per cent.                        |
-	+---------------------------------------+--------------------------------------------------------------+
-	| 7. Sparsely natural vegetated areas   | This class includes any geographical areas were the cover of |
-	|                                       | natural vegetation is between 2 per cent and 10 per cent.    |
-	|                                       | This includes permanently or regularly flooded areas.        |
-	+---------------------------------------+--------------------------------------------------------------+
-	| 8. Terrestrial barren land            | This class includes any geographical area dominated by       |
-	|                                       | natural abiotic surfaces (bare soil, sand, rocks, etc.)      |
-	|                                       | where the natural vegetation is absent or almost absent      |
-	|                                       | (covers less than 2 per cent). The class includes areas      |
-	|                                       | regularly flooded by inland water (lake shores, river banks, |
-	|                                       | salt flats, etc.).                                           |
-	+---------------------------------------+--------------------------------------------------------------+
-	| 9. Permanent snow and glaciers        | This class includes any geographical area covered by snow    |
-	|                                       | or glaciers persistently for 10 months or more.              |
-	+---------------------------------------+--------------------------------------------------------------+
-	| 10. Inland water bodies               | This class includes any geographical area covered for most of|
-	|                                       | the year by inland water bodies. In some cases, the water can|
-	|                                       | be frozen for part of the year (less than 10 months). Because|
-	|                                       | the geographical extent of water bodies can change,          |
-	|                                       | boundaries must be set consistently with those set by class  |
-	|                                       | 8, according to the dominant situation during the year and/or|
-	|                                       | across multiple years.                                       |
-	+---------------------------------------+--------------------------------------------------------------+
+
+
+
+
+.. table:: **Table 2 **Adapted UN-SEEA land cover classification for the computation and aggregate reporting on SDG Indicator 15.4.2.**
+    :widths: 30 50
+
+    +---------------------------------------+--------------------------------------------------------------+
+    | **Land cover class**                  | **Description**                                              |
+    +=======================================+==============================================================+
+    | 1. Artificial surfaces                | The class is composed of any type of areas                   |
+    |                                       | with a predominant artificial surface. Any urban             |
+    |                                       | or related feature is included in this class, for            |
+    |                                       | example, urban parks (parks, parkland and laws).             |
+    |                                       | The class also includes industrial areas, and waste          |
+    |                                       | dump deposit and extraction sites.                           |
+    +---------------------------------------+--------------------------------------------------------------+
+    | 2. Croplands                          | The class is composed of cultivated vegetation, including    |
+    |                                       | herbaceous plants, trees and/or shurbs. It includes:         |
+    |                                       |- Herbaceous crops used for hay. All the non-perennial        |
+    |                                       |  crops that do not last for more than two growing seasons    |
+    |                                       |  and crops like sugar cane, where the upper part of the      |
+    |                                       |  plant is regularly harvested while the root system can      |
+    |                                       |  remain for more than one year in the field, are included    |
+    |                                       |  in this class.                                              |
+    |                                       |                                                              |
+    |                                       |- All types of orchards and plantations (fruit trees,         |
+    |                                       |  coffee and tea plantation, oil palms, rubber plantation,    |
+    |                                       |  Christmas trees, etc.).                                     |
+    |                                       |                                                              |
+    |                                       |- Multiple or layered crops, including areas with two         |
+    |                                       |  layers of different crops and/or areas with the presence    |
+    |                                       |  of one important layer of natural vegetation (mainly        |
+    |                                       |  trees) that covers one layer of cultivated crop.            |
+    +---------------------------------------+--------------------------------------------------------------+
+    | 3. Grasslands                         | This class includes any geographical area dominated by       |
+    |                                       | natural herbaceous plants (grasslands, prairies, steppes     |
+    |                                       | and savannahs) with a cover of 10 per cent or more,          |
+    |                                       | irrespective of different human and/or animal activities,    |
+    |                                       | such as grazing or selective fire management. Woody plants   |
+    |                                       | (trees and/or shrubs) can be present, assuming their cover   |
+    |                                       | is less that 10 per cent.                                    |
+    +---------------------------------------+--------------------------------------------------------------+
+    | 4. Tree-covered areas                 | This class includes any geographical area dominated by       |
+    |                                       | natural tree plants with a cover of 10 per cent or more.     |
+    |                                       | Other types of plants (shrubs and/or herbs) can be present,  |
+    |                                       | even with a density higher than that of trees. Areas planted |
+    |                                       | with trees for afforestation purposes and forest plantations |
+    |                                       | are included in this class. This class includes areas        |
+    |                                       | seasonally or permanently flooded with freshwater.           |
+    +---------------------------------------+--------------------------------------------------------------+
+    | 5. Shrub-covered areas                | This class includes any geographical area dominated by       |
+    |                                       | natural shrubs having a cover of 10 per cent or more.        |
+    |                                       | Trees can be present in scattered form if their cover is     |
+    |                                       | less than 10 per cent. Herbaceous plants can also be present |
+    |                                       | at any density. The class includes shrub-covered areas       |
+    |                                       | permanently or regularly flooded by inland fresh water.      |
+    +---------------------------------------+--------------------------------------------------------------+
+    | 6. Shubs and/or herbaceous vegetation,| This class includes any geographical area dominated by       |
+    |    aquatic or regularly flooded       | natural herbaceous vegetation (cover of 10 per cent or more) |
+    |                                       | that is permanently or regularly flooded by fresh or brackish|
+    |                                       | water (swamps, marsh areas, etc.). Flooding must persist for |
+    |                                       | at least two months per year to be considered regular.       |
+    |                                       | Woody vegetation (trees and/or shrubs) can be present if     |
+    |                                       | their cover is less than 10 per cent.                        |
+    +---------------------------------------+--------------------------------------------------------------+
+    | 7. Sparsely natural vegetated areas   | This class includes any geographical areas were the cover of |
+    |                                       | natural vegetation is between 2 per cent and 10 per cent.    |
+    |                                       | This includes permanently or regularly flooded areas.        |
+    +---------------------------------------+--------------------------------------------------------------+
+    | 8. Terrestrial barren land            | This class includes any geographical area dominated by       |
+    |                                       | natural abiotic surfaces (bare soil, sand, rocks, etc.)      |
+    |                                       | where the natural vegetation is absent or almost absent      |
+    |                                       | (covers less than 2 per cent). The class includes areas      |
+    |                                       | regularly flooded by inland water (lake shores, river banks, |
+    |                                       | salt flats, etc.).                                           |
+    +---------------------------------------+--------------------------------------------------------------+
+    | 9. Permanent snow and glaciers        | This class includes any geographical area covered by snow    |
+    |                                       | or glaciers persistently for 10 months or more.              |
+    +---------------------------------------+--------------------------------------------------------------+
+    | 10. Inland water bodies               | This class includes any geographical area covered for most of|
+    |                                       | the year by inland water bodies. In some cases, the water can|
+    |                                       | be frozen for part of the year (less than 10 months). Because|
+    |                                       | the geographical extent of water bodies can change,          |
+    |                                       | boundaries must be set consistently with those set by class  |
+    |                                       | 8, according to the dominant situation during the year and/or|
+    |                                       | across multiple years.                                       |
+    +---------------------------------------+--------------------------------------------------------------+
 
 Land cover maps developed by relevant national authorities will generally provide the most relevant data source to compute this indicator. However, in certain cases, such data may not be available. In those cases, various regional or global products provide a viable alternative.
 
