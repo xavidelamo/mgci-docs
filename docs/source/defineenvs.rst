@@ -82,7 +82,7 @@ indicator’s policy relevance.
 non-green cover.\ * *
 
 +---------------------------------------------------------------------------+------------------------+
-| **SEEA land cover classes **                                              | **Green/Non-green **   |
+| **SEEA land cover classes**                                               | **Green/Non-green**    |
 +===========================================================================+========================+
 | Croplands                                                                 | Green                  |
 +---------------------------------------------------------------------------+------------------------+
@@ -199,8 +199,7 @@ To access the installed plugin go to the 'Proccessing toolbox'
 
 |opentopograpy3|
 
-- Select DEM to download - choose a DEM of resolution similar to your Land cover dataset.
-e.g. if your landcover is 300m resolution you should use a DEM that has a cellsize of 300m or lower,
+- Select DEM to download - choose a DEM of resolution similar to your Land cover dataset. e.g. if your landcover is 300m resolution you should use a DEM that has a cellsize of 300m or lower,
 
 - next define the extent to download. Use the buffeed country boundary layer crated in Step A0. 
  This will ensure correct calculation of the real surface area layer which needs a DEM that goes 
