@@ -62,21 +62,6 @@ For disaggregation purposes, this mountain area is subdivided into bioclimatic b
 
 **Table 1.** Mountain bioclimatic belts as defined by Körner et al. (2011) and reclassification for data disaggregation of SDG Indicator 15.4.2. Growing season is defined as the number of days between daily mean temperature exceeds 0.9 °C then falls below 0.9 °C
 
-
-
-
-
-========================================================  =========================================================
-Source                                                    Destination
---------------------------------------------------------  ---------------------------------------------------------
-``ibis-adapterframework-webapp-7.6-20200325.131312.war``  ``/usr/local/tomcat/webapps/frankframework.war``
-``h2-1.4.199.jar``                                        ``/usr/local/tomcat/lib/h2.jar``
-``jtds-1.3.1.jar``                                        ``/usr/local/tomcat/lib/jtds-1.3.1.jar``
-``geronimo-jms_1.1_spec-1.1.1.jar``                       ``/usr/local/tomcat/lib/geronimo-jms_1.1_spec-1.1.1.jar``
-``commons-dbcp-1.4.jar``                                  ``/usr/local/tomcat/lib/commons-dbcp-1.4.jar``
-``commons-pool-1.5.6.jar``                                ``/usr/local/tomcat/lib/commons-pool-1.5.6.jar``
-========================================================  =========================================================
-
 ==========================================  =======================   ======================   =================================================
  Bioclimatic belts							Mean temperature length	  Growing season		   Bioclimatic belts adopted for SD Indicator 15.4.2     
 ------------------------------------------  -----------------------   ----------------------   -------------------------------------------------					  
@@ -88,15 +73,7 @@ Source                                                    Destination
 ``Lower montane        						``> 10°C & ≤ 15°C``   	  ``---``                  ``Montane``                              
 ``Remaining mountain area with frost``   	``> 15°C``            	  ``---``                  ``Remaining mountain area``                                                            
 ``Remaining mountain area without frost`` 	``> 15°C``   			  ``---``  				   ``Remaining mountain area``                                                                  
-                                                           
-
-
-
-
-
-
-
-
+==========================================  =======================   ======================   =================================================                                                           
 
 +----------------------+------------------+-------------------------+-------------------------+
 |                      |                  |                         | Bioclimatic belts       |
