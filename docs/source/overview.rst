@@ -60,25 +60,43 @@ For the purposes of standardization and international comparability of nationall
 
 For disaggregation purposes, this mountain area is subdivided into bioclimatic belts as defined by Körner et al. (2011). Körner et al. subdivides mountains vertically into seven bioclimatic belts based on average temperatures, therefore accounting the latitudinal change in elevation of thermally similar areas in the world’s mountains. For the purposes of this indicator, these seven bioclimatic belts are aggregated into four (Nival, Alpine, Montane and Remaining mountain areas), as illustrated in Table 1.
 
-.. table::
-   :class: word-wrap
-
-   +--------------------------------+-----------------------------+
-   | Column 1                       | Column 2                    |
-   +================================+=============================+
-   | Lorem ipsum dolor sit amet,    | Duis aute irure dolor in    |
-   | adipisicing elit, sed do eius  | voluptate velit esse cillum |
-   | incididunt ut labore et dolor  | fugiat nulla pariatur.      |
-   | aliqua. Ut enim ad minim veni  | Excepteur sint occaecat     |
-   | nostrud exercitation ullamco   | proident, sunt in culpa     |
-   | nisi ut aliquip ex ea commodi. | deserunt mollit anim id.    |
-   +--------------------------------+-----------------------------+
-   | Third Row                      | Third Row continued         |
-   +--------------------------------+-----------------------------+
-
-
-
 **Table 1.** Mountain bioclimatic belts as defined by Körner et al. (2011) and reclassification for data disaggregation of SDG Indicator 15.4.2. Growing season is defined as the number of days between daily mean temperature exceeds 0.9 °C then falls below 0.9 °C
+
+
+
+
+
+========================================================  =========================================================
+Source                                                    Destination
+--------------------------------------------------------  ---------------------------------------------------------
+``ibis-adapterframework-webapp-7.6-20200325.131312.war``  ``/usr/local/tomcat/webapps/frankframework.war``
+``h2-1.4.199.jar``                                        ``/usr/local/tomcat/lib/h2.jar``
+``jtds-1.3.1.jar``                                        ``/usr/local/tomcat/lib/jtds-1.3.1.jar``
+``geronimo-jms_1.1_spec-1.1.1.jar``                       ``/usr/local/tomcat/lib/geronimo-jms_1.1_spec-1.1.1.jar``
+``commons-dbcp-1.4.jar``                                  ``/usr/local/tomcat/lib/commons-dbcp-1.4.jar``
+``commons-pool-1.5.6.jar``                                ``/usr/local/tomcat/lib/commons-pool-1.5.6.jar``
+========================================================  =========================================================
+
+==========================================  =======================   ======================   =================================================
+ Bioclimatic belts							Mean temperature length	  Growing season		   Bioclimatic belts adopted for SD Indicator 15.4.2     
+------------------------------------------  -----------------------   ----------------------   -------------------------------------------------					  
+``Nival``              						``< 3.5°C``           	  ``< 10 days``            ``Nival``    
+``Upper alpine``      						``< 3.5°C``           	  ``0 days & < 54 days``   ``Alpine``                  
+``Lower alpine``       						``< 6.4°C``           	  ``< 54 days``               
+``THE TREELINE``
+``Upper montane        						``> 6.4°C & ≤ 10°C``  	  ``---``                  ``Montane``                 
+``Lower montane        						``> 10°C & ≤ 15°C``   	  ``---``                  ``Montane``                              
+``Remaining mountain area with frost``   	``> 15°C``            	  ``---``                  ``Remaining mountain area``                                                            
+``Remaining mountain area without frost`` 	``> 15°C``   			  ``---``  				   ``Remaining mountain area``                                                                  
+                                                           
+
+
+
+
+
+
+
+
 
 +----------------------+------------------+-------------------------+-------------------------+
 |                      |                  |                         | Bioclimatic belts       |
