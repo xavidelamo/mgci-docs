@@ -58,10 +58,6 @@ html_css_files = [
     'css/custom.css',
 ]
 
-.wy-table-responsive table td, .wy-table-responsive table th {
-    white-space: inherit;
-}
-
 
 
 # -- Options for EPUB output
