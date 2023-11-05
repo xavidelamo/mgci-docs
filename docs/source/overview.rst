@@ -75,7 +75,8 @@ For disaggregation purposes, this mountain area is subdivided into bioclimatic b
 ``Remaining mountain area without frost`` 	``> 15°C``   		    ``---``  			   ``Remaining mountain area``                      
 ==========================================  ======================= ====================== =================================================
 
-**Table 1.** 
+.. table:: **Table 1 **Mountain bioclimatic belts as defined by Körner et al. (2011) and reclassification for data disaggregation of SDG Indicator 15.4.2. Growing season is defined as the number of days between daily mean temperature exceeds 0.9 °C then falls below 0.9 °C**
+    :widths: 10 20 20 30
 
 +----------------------+------------------+-------------------------+-------------------------+
 |                      |                  |                         | Bioclimatic belts       |
