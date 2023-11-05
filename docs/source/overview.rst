@@ -211,7 +211,7 @@ Recognizing that this indicator cannot fully capture the complexity of mountain 
 - Area estimations based on remote-sensing-derived land cover maps via pixel counting may lead to biased area estimates due to map errors. National authorities are encouraged to further refine those estimates by comparing them against reference datasets and applying bias corrections.
 
 
-Further information on the methdolofy is available at ` <https://unstats.un.org/sdgs/metadata/files/Metadata-15-04-02.pdf>`_.
+Further information on the methdolofy is available at ` <https://unstats.un.org/sdgs/metadata/files/Metadata-15-04-02.pdf>`.
 
 
 Acknowledgements
