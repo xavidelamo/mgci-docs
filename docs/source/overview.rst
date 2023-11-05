@@ -64,7 +64,7 @@ For disaggregation purposes, this mountain area is subdivided into bioclimatic b
 
 +----------------------+-----------------------+------------------+-------------------------------+
 | **Bioclimatic**      |**Growning season**    |**Growing season**|**Bioclimatic belts adopted**  |
-|   **Belts**          |  **mean temperature** |   **length**     |  **for SDG Indicator 15.4.2** |
+|  **Belts**           | **mean temperature**  |  **length**      | **for SDG Indicator 15.4.2**  |
 +======================+=======================+==================+===============================+
 | Nival                | < 3.5 °C              | < 10 days        | Nival                         |
 +----------------------+-----------------------+------------------+-------------------------------+
@@ -98,14 +98,9 @@ classification in order to identify land cover changes consistently over time.
 Several global standards of land cover classifications have been developed by international initiatives for this purpose. For the purposes of standardization and harmonization when reporting on SDG Indicator 15.4.2, this indicator has adapted the land cover classification established by the United Nations Statistical Commission’s System of Environmental and Economic Accounting (UN-SEEA)(UN Statistical Division, 2014) by selecting the most relevant SEEA classes for mountain ecosystems and aggregating all croplands classes in the following classification (Table 2).
 
 
+**Table 2 Adapted UN-SEEA land cover classification for the computation and aggregate reporting on SDG Indicator 15.4.2.**
 
-
-
-
-
-
-
-.. table:: **Table 2 Adapted UN-SEEA land cover classification for the computation and aggregate reporting on SDG Indicator 15.4.2.**
+.. table:: 
     :widths: 30 50
 
     +---------------------------------------+--------------------------------------------------------------+
@@ -231,28 +226,19 @@ We would like to express our special thanks to Jeff Jenness from Jenness Enterpr
 References
 ^^^^^^^^^^
 
-- Jenness, J.S. (2004). Calculating landscape surface area from digital elevation models. Wildlife Society Bulletin, 32: 829-839
+Jenness, J.S. (2004). Calculating landscape surface area from digital elevation models. Wildlife Society Bulletin, 32: 829-839
 
-- IPBES (2018): Summary for policymakers of the assessment report on land degradation and restoration of
-the Intergovernmental Science-Policy Platform on Biodiversity and Ecosystem Services. R. Scholes, L.
-Montanarella, A. Brainich, N. Barger, B. ten Brink, M. Cantele, B. Erasmus, J. Fisher, T. Gardner, T. G. Holland,
-F. Kohler, J. S. Kotiaho, G. Von Maltitz, G. Nangendo, R. Pandit, J. Parrotta, M. D. Potts, S. Prince, M.
-Sankaran and L. Willemen (eds.). IPBES secretariat, Bonn, Germany. 44 pages
+IPBES (2018): Summary for policymakers of the assessment report on land degradation and restoration of the Intergovernmental Science-Policy Platform on Biodiversity and Ecosystem Services. R. Scholes, L. Montanarella, A. Brainich, N. Barger, B. ten Brink, M. Cantele, B. Erasmus, J. Fisher, T. Gardner, T. G. Holland, F. Kohler, J. S. Kotiaho, G. Von Maltitz, G. Nangendo, R. Pandit, J. Parrotta, M. D. Potts, S. Prince, M. Sankaran and L. Willemen (eds.). IPBES secretariat, Bonn, Germany. 44 pages. 
 
-- Sims, N.C., Newnham, G.J., England, J.R., Guerschman, J., Cox, S.J.D., Roxburgh, S.H., Viscarra Rossel, R.A.,
-Fritz, S. and Wheeler, I. (2021). Good Practice Guidance. SDG Indicator 15.3.1, Proportion of Land That Is
-Degraded Over Total Land Area. Version 2.0. United Nations Convention to Combat Desertification, Bonn,
-Germany
+Sims, N.C., Newnham, G.J., England, J.R., Guerschman, J., Cox, S.J.D., Roxburgh, S.H., Viscarra Rossel, R.A., Fritz, S. and Wheeler, I. (2021). Good Practice Guidance. SDG Indicator 15.3.1, Proportion of Land That Is Degraded Over Total Land Area. Version 2.0. United Nations Convention to Combat Desertification, Bonn, Germany.
 
--Körner, C., Paulsen, J., & Spehn, E. (2011). A definition of mountains and their bioclimatic belts for global
-comparisons of biodiversity data. Alpine Botany, 121, 73-78.
+Körner, C., Paulsen, J., & Spehn, E. (2011). A definition of mountains and their bioclimatic belts for global comparisons of biodiversity data. Alpine Botany, 121, 73-78.
 
-- UNEP-WCMC (2002). Mountain Watch: Environmental change and sustainable development in mountains. Cambridge, UK
+UNEP-WCMC (2002). Mountain Watch: Environmental change and sustainable development in mountains. Cambridge, UK
 
-- UN Statistical Division (2014). System of Environmental Economic Accounting 2012 — Central Framework. New York, USA.
+UN Statistical Division (2014). System of Environmental Economic Accounting 2012 — Central Framework. New York, USA.
 
-- UN Statistical Division (2014). System of Environmental Economic Accounting 2012 — Central Framework.
-New York, USA.
+UN Statistical Division (2014). System of Environmental Economic Accounting 2012 — Central Framework. New York, USA.
 
 .. |image2| image:: media_QGIS/image2_orig.png
    :width: 700
