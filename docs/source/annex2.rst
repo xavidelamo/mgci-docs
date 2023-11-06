@@ -1,7 +1,7 @@
 Annex 2
 =======
 
-Step-by-step instructions to calculate Sub-indicator 15.4.2a Mountain Green Cover Index in QGIS 
+Manual steps to calculate Sub-indicator 15.4.2a in QGIS 
 -----------------------------------------------------------------------------------------------
 
 This section of the tutorial explains in detail how to calculate value
@@ -619,7 +619,7 @@ Sub-indicator a is now complete.
 
 
 
-Step-by-step instructions to calculate Sub-indicator 15.4.2b in QGIS
+Manual steps to calculate Sub-indicator 15.4.2b in QGIS
 --------------------------------------------------------------------
 
 This section of the tutorial explains in detail how to calculate value
