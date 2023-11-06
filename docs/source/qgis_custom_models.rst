@@ -805,11 +805,15 @@ Repeat the above step for the next reporting period i.e., using 2015 landcover (
 
 .. |SubB_B2_tool_interface| image:: media_toolbox/SubB_B2_tool_interface.png
    :width: 1200
-.. |SubB_B2_tool_results| image:: media_toolbox/SubB_B2_tool_results.png
+.. |SubB_B2_tool_results1| image:: media_toolbox/SubB_B2_tool_results1.png
+   :width: 1200
+.. |SubB_B2_tool_results2| image:: media_toolbox/SubB_B2_tool_results2.png
    :width: 1200
 .. |SubB_B2_tool_model| image:: media_toolbox/SubB_B2_tool_model.png
    :width: 1200
-
+ 
+   
+   
 .. |SubB_B3_tool_interface| image:: media_toolbox/SubB_B3_tool_interface.png
    :width: 1200
 .. |SubB_B3_tool_results| image:: media_toolbox/SubB_B3_tool_results.png
