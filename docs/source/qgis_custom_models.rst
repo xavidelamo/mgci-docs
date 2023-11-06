@@ -697,8 +697,10 @@ Repeat the above step for the next reporting period i.e., using 2015 landcover (
 |SubB_B6_tool_model|
 
 
-
-
+.. |transition_matrix| image:: media_toolbox/transition_matrix.png
+   :width: 1200
+.. |DML_formula| image:: media_toolbox/DML_formula.png
+   :width: 600
 
 .. |crosswalk_textfile| image:: media_toolbox/crosswalk_textfile.png
    :width: 1200
@@ -758,46 +760,46 @@ Repeat the above step for the next reporting period i.e., using 2015 landcover (
 
 
 
-.. |SubB_B1_tool_interface| image:: media_toolbox/SubA_B1_tool_interface.png
+.. |SubB_B1_tool_interface| image:: media_toolbox/SubB_B1_tool_interface.png
    :width: 1200
-.. |SubB_B1_tool_results| image:: media_toolbox/SubA_B1_tool_results.png
+.. |SubB_B1_tool_results| image:: media_toolbox/SubB_B1_tool_results.png
    :width: 1200
-.. |SubB_B1_tool_model| image:: media_toolbox/SubA_B1_tool_model.png
-   :width: 1200
-
-.. |SubB_B2_tool_interface| image:: media_toolbox/SubA_B2_tool_interface.png
-   :width: 1200
-.. |SubB_B2_tool_results| image:: media_toolbox/SubA_B2_tool_results.png
-   :width: 1200
-.. |SubB_B2_tool_model| image:: media_toolbox/SubA_B2_tool_model.png
+.. |SubB_B1_tool_model| image:: media_toolbox/SubB_B1_tool_model.png
    :width: 1200
 
-.. |SubB_B3_tool_interface| image:: media_toolbox/SubA_B3_tool_interface.png
+.. |SubB_B2_tool_interface| image:: media_toolbox/SubB_B2_tool_interface.png
    :width: 1200
-.. |SubB_B3_tool_results| image:: media_toolbox/SubA_B3_tool_results.png
+.. |SubB_B2_tool_results| image:: media_toolbox/SubB_B2_tool_results.png
    :width: 1200
-.. |SubB_B3_tool_model| image:: media_toolbox/SubA_B3_tool_model.png
-   :width: 1200
-
-.. |SubB_B4_tool_interface| image:: media_toolbox/SubA_B4_tool_interface.png
-   :width: 1200
-.. |SubB_B4_tool_results| image:: media_toolbox/SubA_B4_tool_results.png
-   :width: 1200
-.. |SubB_B4_tool_model| image:: media_toolbox/SubA_B4_tool_model.png
+.. |SubB_B2_tool_model| image:: media_toolbox/SubB_B2_tool_model.png
    :width: 1200
 
-.. |SubB_B5_tool_interface| image:: media_toolbox/SubA_B5_tool_interface.png
+.. |SubB_B3_tool_interface| image:: media_toolbox/SubB_B3_tool_interface.png
    :width: 1200
-.. |SubB_B5_tool_results| image:: media_toolbox/SubA_B5_tool_results.png
+.. |SubB_B3_tool_results| image:: media_toolbox/SubB_B3_tool_results.png
    :width: 1200
-.. |SubB_B5_tool_model| image:: media_toolbox/SubA_B5_tool_model.png
+.. |SubB_B3_tool_model| image:: media_toolbox/SubB_B3_tool_model.png
    :width: 1200
 
-.. |SubB_B6_tool_interface| image:: media_toolbox/SubA_B6_tool_interface.png
+.. |SubB_B4_tool_interface| image:: media_toolbox/SubB_B4_tool_interface.png
    :width: 1200
-.. |SubB_B6_tool_results| image:: media_toolbox/SubA_B6_tool_results.png
+.. |SubB_B4_tool_results| image:: media_toolbox/SubB_B4_tool_results.png
    :width: 1200
-.. |SubB_B6_tool_model| image:: media_toolbox/SubA_B6_tool_model.png
+.. |SubB_B4_tool_model| image:: media_toolbox/SubB_B4_tool_model.png
+   :width: 1200
+
+.. |SubB_B5_tool_interface| image:: media_toolbox/SubB_B5_tool_interface.png
+   :width: 1200
+.. |SubB_B5_tool_results| image:: media_toolbox/SubB_B5_tool_results.png
+   :width: 1200
+.. |SubB_B5_tool_model| image:: media_toolbox/SubB_B5_tool_model.png
+   :width: 1200
+
+.. |SubB_B6_tool_interface| image:: media_toolbox/SubB_B6_tool_interface.png
+   :width: 1200
+.. |SubB_B6_tool_results| image:: media_toolbox/SubB_B6_tool_results.png
+   :width: 1200
+.. |SubB_B6_tool_model| image:: media_toolbox/SubB_B6_tool_model.png
    :width: 1200
 
 
