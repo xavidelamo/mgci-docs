@@ -163,6 +163,8 @@ This section of the tutorial explains in detail how to calculate value estimates
 We provide a custom toolbox to group and run the steps to help speed up the analysis and allow for easier repeat processing and to standardize the naming of outputs and how they appear within the QGIS interface.
 
 |custom_toolbox|
+Annex 2 of the tutorial outlines in detail the main steps each tool undertakes in the SDG 15.4.2 processing toolbox. This can be used as a reference if the user wishes to understand how each tool step would be carried out manually. Note that some plugins such as GroupStats and OpenDEMDownloader (which have been explained in steps in Annex 2) are not supported/easy to implement on model builder in QGIS. Therefore, it was more efficient to use slightly different approaches for the model builder in such cases. 
+
 
 Instructions to calculate Sub-indicator 15.4.2a in QGIS using custom models
 ---------------------------------------------------------------------------
@@ -176,7 +178,7 @@ The first step is to define an Area of Interest (AOI) for the analysis. This sho
 
 Colombia does have a National Projection that preserve both area and distance (see here) and therefore could be used as a custom projection. In case a national projection that minimize area distortion does not exist for a given country, it is recommended to define a custom Equal Area projection centered on the country area following the instructions in described here under **Defining analyses environments and land cover data selection**).  
 
-In the Processing Toolbox, under Models, click on model **A0 Prepare country boundary and buffer to 10 km**
+In the Processing Toolbox, under Models, click on model **A0 Prepare country boundary and buffer to 10 km **
 
 |SubA_A0_tool_interface|
 
@@ -202,37 +204,497 @@ This will generate the country boundary in equal area projection and one with a 
 
 |SubA_A0_tool_model|
 
-Step A1 Prepare and reclassify LULC dataset into UN-SEEA classes
+Now that the country boundary is in the chosen projection, we can generate the land cover and mountain maps for Colombia.
+
+Step A1 Prepare and Reclassify LULC Dataset into UN-SEEA Classes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^  
-Step A2 Prepare mountains and combine with LULC
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+
+To demonstrate the steps for processing a raster LULC dataset we will use the Global ESA CCI LULC dataset. 
+
+If the LULC dataset is a regional or global extent it will need projecting and clipping to the AOI. In this example we are using a global dataset so we will need to clip the raster and save it in the equal area projection. Next, we reclassify the LULC map into the 10 UN-SEEA classes defined for SDG Indicator 15.4.2. QGIS provides several tools for reclassification. The easiest one to use in this instance is the r.reclass tool in the GRASS toolset as it allows the upload of a simple crosswalk text file containing the input LULC types on the left and the UN-SEEA reclass values on the right. Create a text file to crosswalk landuse/landcover (LULC) types from the ESA CCI or National landcover dataset to the 10 UN-SEEA landcover classes.
+
+[IMAGE]
+
+In the Processing Toolbox, under Models, click on model A1 Prepare and reclassify LULC dataset into UN-SEEA classes.
+
+|SubA_A1_tool_interface|
+
+**Input parameters**
+
+- Select country: Select country to process from the dropdown list.
+
+- Input: CSV_containing_UN_country_codes: Set the path to the csv file containing UN country codes (downloaded from the GitHub repository).
+
+- Select type of LULC data to be used: Select the type of LULC data (i.e., either global raster, national raster or national vector).
+
+- Select input landuse landcover dataset: Set the path to the LULC data file.
+
+- Enter year of landcover: Enter the year of the LULC data being used.
+
+- Field containing landcover values: If your LULC data is in vector format, enter the name of the field containing landcover values.
+
+- Input: output resolution: If your LULC data is in vector format, enter the output resolution in metres.
+
+- LULC crosswalk to SEEA classes: You can either upload of a crosswalk text file or enter the crosswalk details directly in this box with the input LULC types on the left and the UN-SEEA reclass values on the right.
+
+- Input: Target CRS (i.e. Select a relevant equal area projection for your area of interest): Select a CRS for your outputs. This should be an equal area projection relevant to the country being processed.
+
+- Input layer style for LULC: Set the path to the layer style file for this dataset. 
+
+- Select folder for outputs: Select an output folder to store your outputs. The output folder should already exist. Make sure the folder name does not have any spaces.
+
+- Input NoData value: Set this as 999.
+
+**Click Run.**
+
+You should now see the unique LULC classes present within the AOI for the country.
+
+|SubA_A1_tool_results|
+
+**Tool A1 model diagram**
+
+|SubA_A1_tool_model|
+
+Step A2 Prepare mountain layer and combine with LULC
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The development of mountain map consists in clipping and reprojecting the SDG 15.4.2. Global Mountain Descriptor Map developed by FAO to area of interest, in this case, the national border of Colombia. Once we have the two raster datasets in their native resolutions, we need to bring the datasets together and ensure that correct aggregation is undertaken and that the all the layers align to a common resolution. As SGD Indicator 15.4.2a requires disaggregation by both the 10 land cover classes and the 4 bioclimatic belts and the tools within QGIS will only allow a single input for zones, we will combine the two datasets. We need to ensure that the layers are aggregated to a common spatial resolution. 
+
+In the Processing Toolbox, under Models, click on model A2 Prepare mountains and combine with LULC.
+
+|SubA_A2_tool_interface|
+
+**Input parameters**:
+
+- Select country: Select country to process from the dropdown list.
+
+- CSV_containing_UN_country_codes: Set the path to the csv file containing UN country codes (downloaded from the GitHub repository).
+
+- LULC in SEEA classes: Set the path to the LULC in SEEA classes (output from previous model layer A1).
+
+- Enter year of landcover: Enter the year of the LULC data being used.
+
+- Input: SDG1542_Mntn_BioclimaticBelts raster layer: Set the path to the Global Mountain Descriptor Map developed by FAO.
+
+- Input: Target CRS (i.e., Select a relevant equal area projection for your area of interest): Select a CRS for your outputs. This should be an equal area projection relevant to the country being processed.
+
+- Input NoData value: Set this as 999.
+
+- Select folder for outputs: Select an output folder to store your outputs. The output folder should already exist. Make sure the folder name does not have any spaces.
+
+- Input: Layer style for mountains: Set the path to the layer style file for the mountain layer.
+
+- Input: Layer style for aggregated vegetation and mountains: Set the path to the layer style file for the aggregated vegetation and mountain layer. 
+
+**Click Run.**
+
+This should produce the following outputs on the map canvas:
+
+- The new clipped mountain descriptor dataset in the national projection. The layer should now show all the mountain area for Colombia classified by Biolimatic belts (where 1 is ‘’Nival”, 2 is “Alpine”, 3 is ‘’Montane” and 4 is “Remaining Mountain Area”.
+
+- The combined mountain and vegetation layer. In order to distinguish the vegetation class from the mountain all the vegetation values will be multiplied by 10. This means for example a value of 35 in the output means the pixel has class 3 in the vegetation descriptor layer and class 5 in the Mountain descriptor layer.
+
+|SubA_A2_tool_results|
+
+**Tool A2 model diagram**
+
+|SubA_A2_tool_model|
+
 Step A3 preparing a DEM for Real Surface Area
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Step A4 Generate real surface area raster
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The final layer that needs generating is the Real Surface Area raster from the DEM. The tools should have all been tested to check your R integration is working in the initial setup. Refer to the workflow diagram in the overview section for an explanation of the process to calculate the real surface area from a DEM.
+
+In the Processing Toolbox, under Models, click on model A4 Generate Real Surface Area Raster.
+
+|SubA_A4_tool_interface|
+
+**Input parameters**:
+
+- Select country: Select country to process from the dropdown list.
+
+- CSV_containing_UN_country_codes: Set the path to the csv file containing UN country codes (downloaded from the GitHub repository).
+
+- Input: DEM raster: Set the path to the DEM raster. See Annex 2 for guidance on downloading DEM rasters.
+
+- Input NoData value: Set this as -9999.
+
+- Input: Target CRS (i.e., Select a relevant equal area projection for your area of interest): Select a CRS for your outputs. This should be an equal area projection relevant to the country being processed.
+
+- Select folder for outputs: Select an output folder to store your outputs. The output folder should already exist. Make sure the folder name does not have any spaces.
+
+- Cellsize: Enter the cell size of the DEM raster.
+
+**Click Run.**
+
+**Tool A4 model diagram**
+
+|SubA_A4_tool_model|
+
 Step A5 Generate planimetric and real surface area statistics
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+
+The data are now in a consistent format, so we can now generate the statistics required for the MGCI reporting. As we want to generate disaggregated statistics by LULC class and bioclimatic belt we will use a zonal statistics tool with the combined Vegetation + mountain layer as the summary unit. The Zonal statistics tool will automatically calculate planimetric area and real surface area in the output.
+
+In the Processing Toolbox, under Models, click on model A5 Generate Planimetric and Real Surface Area Statistics.
+
+|SubA_A5_tool_interface|
+
+**Input parameters**
+
+- What statistics do you wish to calculate?: Select either Planimetric area or Planimetric area and real surface area.
+
+- Select country: Select country to process from the dropdown list.
+
+- CSV_containing_UN_country_codes: Set the path to the csv file containing UN country codes (downloaded from the GitHub repository).
+
+- Enter year of landcover: Enter the year of the LULC data being used.
+
+- Input: Output A1a: LULC_UNSEEA in Equal Area projection: Set the path for the UNSEEA reclassified vegetation layer for the year you are processing (Generated in step A1).
+
+- Enter Output A2c: Set the path for the combined mountain and vegetation layer for the year you are processing (generated in step A2).
+
+- Input: RSA raster: Set the path to the RSA raster (generated in step A4).
+
+- Input: Target CRS (i.e., Select a relevant equal area projection for your area of interest): Select a CRS for your outputs. This should be an equal area projection relevant to the country being processed.
+
+- Select folder for outputs: Select an output folder to store your outputs. The output folder should already exist. Make sure the folder name does not have any spaces.
+
+**Click Run.**
+
+This output is the main statistics table from the analysis, from which other summary statistics tables will be generated.
+
+**Tool A5 model diagram**
+
+|SubA_A5_tool_model|
+
 Step A6 Formatting to reporting tables
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+This statistics table contains the estimates of 15.4.2 sub-indicator a, disaggregated by land cover type. We will remove unwanted fields and calculate the Mountain Green Cover Index estimates. The MGCI is calculated by diving the area of green cover the total area of each bioclimatic belt and the total mountain area and multiplying it by 100. 
+
+In the Processing Toolbox, under Models, click on model A6 Formatting to Reporting Tables.
+
+|SubA_A6_tool_interface|
+
+**Input parameters**
+
+- Select country: Select country to process from the dropdown list.
+
+- CSV_containing_UN_country_codes: Set the path to the csv file containing UN country codes (downloaded from the GitHub repository).
+
+- Input: Statistics table: Set the path to the statistics table (generated in step A5).
+
+- Input: MGCI_template_table1: Set the path to MGCI template table 1 (downloaded from the GitHub repository).
+
+- Input: MGCI_template_table2: Set the path to MGCI template table 2 (downloaded from the GitHub repository).
+
+- Input: MGCI_template_table3: Set the path to MGCI template table 3 (downloaded from the GitHub repository).
+
+- NATURE: Information on the production and dissemination of the data. For what regards to the values produced by countries using the tools only two possible values are allowed: C (Country Data) for data values and N (Non relevant) when a given bioclimatc belt does not occur in a given country. When Nature = N then OBS_VALUE = NA. Linked to OBS_STATUS
+
+- OBS_STATUS: Information on the quality of a value or an unusual or missing value. For what regards to the values produced by countries using the tools only two possible values are allowed: A (Official figure) for data values and M (Missing) when a given bioclimatc belt does not occur in a given country. When Nature = N then OBS_STATUS=M and  OBS_VALUE = NA.
+
+- TIME_DETAIL: Point in time to which the observation actually refers (in practice, the reference year of the land cover product used to compute the values). Same as TIME_PERIOD
+
+- TIME_PERIOD: Point in time to which the observation actually refers (in practice, the reference year of the land cover product used to compute the values). Same as TIME_DETAIL.
+
+- COMMENT_OBS: Descriptive text which can be attached to the observation. Additional information on specific aspects of each observation, such as how the observation was computed/estimated or details that could affect the comparability of this data point with others in a time series (i.e. interpolated value).
+
+- SOURCE_DETAIL: Name of the institution which computed the indicator value (e.g. National Statistical Office of XXX).
+
+- Select folder for outputs: Select an output folder to store your outputs. The output folder should already exist. Make sure the folder name does not have any spaces.
+
+- Join2:
+
+**Click Run.**
+
+Sub-indicator a is now complete.
+
+Repeat for each of the reporting years.
+
+**Tool A6 model diagram**
+
+|SubA_A6_tool_model|
 
 Instructions to calculate Sub-indicator 15.4.2b in QGIS using custom models
 ---------------------------------------------------------------------------
+
+This section of the tutorial explains in detail how to calculate value estimates for sub-indicator 15.4.2b in QGIS, continuing to use Colombia as a case study. Sub-Indicator 15.4.2b is designed to monitor the extent of degraded mountain land as a result of land cover change of a given country and for given reporting year.
+
+This sub-indicator looks at the proportion of degraded mountain area, calculated using a binary score (degraded/non-degraded) showing the extent of degraded land over total mountain area. This is calculated using the following formula:
+
+|DML_formula|
+Where: 
+Degraded mountain area n = Total degraded mountain area (in Km2) in the reporting period n. This is, the sum of the areas where land cover change is considered to constitute degradation from the baseline period.
+Total mountain area = Total area of mountains (in Km2). 
+
+As a reminder, in accordance with the SDG indicator’s metadata countries are required to compute estimates for Sub-Indicator 15.4.2b for a baseline for approximately 2000-2015, and subsequently every three years (2018, 2021, 2024, 2027 and 2030). Therefore, for the example in this tutorial we will use the ESA-CCI landcover products for 2000, 2015 (for the baseline) and 2018 (for the reporting year). ESA-CCI landcover data are not yet available beyond 2021 so we have therefore not yet been able to calculate subsequent years in this example.
+
+This section of the tutorial assumes that the user has already calculated sub-indicator 15.4.2a and has therefore already downloaded and translated the landcover cover datasets to UN-SEEA classes for the baseline and reporting years as presented in the figure below.
+
+**LULC reclassified into UN-SEEA classes for 2000, 2015 and 2018**
+|example1|
+
+SGD Indicator 15.4.2b requires us to identify change between LC classes in each reporting period, therefore the first requirement for sub-indicator 15.4.2b is to develop a transition matrix that specifies the land cover changes occurring in a given land unit (pixel) as being either degradation, improvement or neutral transitions. The definition of degradation adopted for the computation of this indicator is the one established by the Intergovernmental Science-Policy Platform on Biodiversity and Ecosystem Services (IPBES). 
+
+Countries may choose to either calculate degradation using the default land cover legend for this indicator and default transition matrix provided or from a native or simplified legend of a national land use/land cover (LULC) dataset if they have the advantage of better representing degradation transitions compared to the broader default transitions. 
+
+In this tutorial the default method is described using the default legend and transition matrix, while Annex 2 outlines the additional/alternative steps required to generate a transitions matrix using a nationally adapted land cover legend. In both cases the output results in the same 3 classes (stable, degradation and improving) and both needed to be disaggregated and reported by both landcover transition and bioclimatic belt.
+
 Step B1 Combine LULC datasets
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+First, we will generate a single raster containing a value to represent both year 1 landcover and year 2 landcover. We will demonstrate using the default method using the UN-SEEA reclassified landcover rasters in equal area projection that were previously reclassified for the computation of sub-indicator a. As indicated above, users can choose to use the rasters projected to equal area projection containing the full or a simplified national LULC legend if there is a preference/advantage of calculating landcover transitions compared to using the default legend and transition matrix. The processing is the same regardless which method is chosen.
+
+In this example we will use the UN-SEEA reclassified landcover datasets for 2000 and 2015 for the baseline and UN-SEEA classified landcover 2015 to 2018 rasters for the 2018 reporting year. As each dataset has the same LULC values (values 1-10 for UN-SEEA classification) we need to change the values in one of the years to be able to distinguish between classes in year1 and year2. We will multiply year1 land cover classes by 1000 before summing the datasets together. So, for example values for year 1 when using the default legend will range from 1000 – 10000 and values for year 2 will remain 1 -10 and the resultant output will have values ranging from a minimum of 1001 to a maximum of 10010 (depending on which LULC transitions are present).
+
+In the Processing Toolbox, under Models, click on model B1 Combine LULC Datasets.
+
+|SubB_B1_tool_interface|
+
+We will calculate the baseline period first i.e., using 2000 landcover (year 1) and 2015 landcover (year 2).
+
+**Input parameters**
+
+- Select country: Select country to process from the dropdown list.
+
+- CSV_containing_UN_country_codes: Set the path to the csv file containing UN country codes (downloaded from the GitHub repository).
+
+- Enter year of landcover year 1: Enter the year of the LULC data used for year 1.
+
+- Enter year of landcover year 2: Enter the year of the LULC data used for year 2.
+
+- Select folder for outputs: Select an output folder to store your outputs. The output folder should already exist. Make sure the folder name does not have any spaces.
+
+- Input: LULC year 1: Set the path to your LULC data for year 1.
+
+- Input: LULC year 2: Set the path to your LULC data for year 2.
+
+**Click Run.**
+
+Repeat the above step for the next reporting period i.e., using 2015 landcover (year 1) and 2018 landcover (year 2).
+
+When using the default UN-SEEA land cover legend, this means that a value of 2001 means a land cover class 2 in year 1 and a land cover class 1 in year 2. A value of 10010 would mean a land cover class 10 in year 1 and a land cover class 10 in year 2. In other words, year 1 is represented by the first digit for values 1 to 9, and by the first 2 digits for land cover class 10. Year 2, on the other hand, is represented by the right hand digit (for values 1-9) and the right hand 2 digits for value 10.
+
+|SubB_B1_tool_results|
+
+**Tool B1 model diagram**
+
+|SubB_B1_tool_model|
+
 Step B2 Generate transition matrix
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You can either use the default transitions matrix or generate a national one. The default transitions matrix csv file can be downloaded from the GitHub repository showing the unique combination of transitions using the default UN-SEEA classes as presented in the figure below. The default transitions matrix lists the transitions from the LULC classes to the 3 change classes Stable (0), Degradation (-1) and Improving (1). 
+
+|transition_matrix|
+
+Despite the clarity of this format transitions matrix, the reclassification tools in QGIS require a very specific format for the reclassification table. We therefore need to add an additional field and calculate it to be in the required QGIS syntax. This field will then be saved into a new CSV file which can be used by the QGIS geoprocessing tool. 
+
+Note that we are taking the Landcover code for year 1 and multiplying it by 1000 (as described above) and summing it with the landcover code for year 2 before combining it with the rest of the QGIS syntax.
+
+If are using a national land cover transition matrix you can prepare a transitions table in the same format as the default transitions table in Excel or you can generate a csv file from the unique combinations for the LULC types using the combined LULC dataset for the two years. We illustrate this below (although we are using the default UN-SEEA classes for illustration purposes only). 
+
+In the Processing Toolbox, under Models, click on model B2 Generate Transition Matrix.
+
+|SubB_B2_tool_interface|
+
+**Input parameters**
+
+- Select country: Select country to process from the dropdown list.
+
+- Input: CSV_containing_UN_country_codes: Set the path to the csv file containing UN country codes (downloaded from the GitHub repository).
+
+- Are you using the default transitions matrix or generating a National one?: Select the type of transition matrix you are using.
+
+- Default transition_matrix: If you selected default transition matrix, set the path to the transition matrix file (downloaded from the GitHub repository). Skip this step if you selected national transition matrix.
+
+- Pre-generated national transition_matrix: If you selected national transition matrix, set the path to the national transition matrix file. Skip this step if you selected default transition matrix.
+
+- Input: National land cover (yr1): If you are generating a national transition matrix, enter the path to the national land cover data for year 1. Skip this step if you selected default transition matrix.
+
+- Enter year of landcover year 1: Enter the year of the LULC data used for year 1.
+
+- Input: National land cover (yr2): If you are generating a national transition matrix, enter the path to the national land cover data for year 2. Skip this step if you selected default transition matrix.
+
+- Enter year of landcover year 2: Enter the year of the LULC data used for year 2.
+
+- Select folder for outputs: Select an output folder to store your outputs. The output folder should already exist. Make sure the folder name does not have any spaces.
+
+**Click Run.**
+
+The resultant table should look like this:
+
+|SubB_B2_tool_results1|
+
+|SubB_B2_tool_results2|
+
+Important Note: Be careful if using this same table for other time periods as it is based on transitions between two specified time periods. E.g., in this case 2000 and 2015. There may be other possible transitions that are not present in this time period but may be possible for other years. Therefore, before using this transitions matrix for other time periods either check for missing entries and manually add them to this table or generate a new transitions table for the new time period.
+
+**Tool B2 model diagram**
+
+|SubB_B2_tool_model|
+
 Step B3 Reclassify LULC transitions to impacts
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The next step is to reclassify the outputs from the combined landcover datasets for year 1 and year 2, first for the baseline period (2000 to 2015) and then for the reporting period (e.g., 2018). We will use the transitions matrix generated in the previous steps. In this example we use the default transitions matrix, but the steps are the same if a national transitions matrix is being used.
+
+In the Processing Toolbox, under Models, click on model B3 Reclassify LULC Transitions to Impacts.
+
+|SubB_B3_tool_interface|
+
+**Input parameters**
+
+- Select country: Select country to process from the dropdown list.
+
+- CSV_containing_UN_country_codes: Set the path to the csv file containing UN country codes (downloaded from the GitHub repository).
+
+- Input: transitions matrix: Enter the path to the transition matrix in QGIS format (generated in step B2).
+
+- Input: concatenated LULC dataset: Enter the path to the concatenated LULC dataset (generated in step B1).
+
+- Enter year of landcover year 1: Enter the year of the LULC data used for year 1.
+
+- Enter year of landcover year 2: Enter the year of the LULC data used for year 2.
+
+- Select folder for outputs: Select an output folder to store your outputs. The output folder should already exist. Make sure the folder name does not have any spaces.
+
+- Impact style file: Set the path to the layer style file for this dataset.
+
+- Have you assessed impact for a previous reporting period?: Select yes or no.
+
+- Input: previously calculated impact layer for baseline period (2000-2015): If you have already calculated the impact layer for the baseline period (2000-2015), enter the path to it. 
+
+**Click Run.**
+
+- Repeat the above step for the next reporting period i.e., using 2015 landcover (year 1) and 2018 landcover (year 2) 
+
+You can ignore the two warning messages that appear in red– these do not affect the correct generation of the outputs.
+
+- WARNING: Concurrent mapset locking is not supported on Windows
+
+- ERROR 6: C:\workspace\MGCI\outputs\UNSEEA_LULC2000_2015_EqArea_reclassed_impact.tif, band 1: SetColorTable() only supported for Byte or UInt16 bands in TIFF format.
+
+|SubB_B3_tool_results|
+
+**Tool B3 model diagram**
+
+|SubB_B3_tool_model|
+
 Step B4 Combine Bioclimatic belts, LULC transitions and impact layers 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+We now have all the layers we need for generating statistics. To make it easier we will again sum the layers together using different factors to change the values in some of the datasets. We have the following datasets which we need to combine to generate the proportion of degraded mountain area disaggregated by LULC transitions, impact status and bioclimatic belt: 
+
+- LULC transitions (which in our case using have values 1001-10010 where LULC for year 1 has already been multiplied by 1000 and summed with year 2 values)
+We will leave these LULC transitions dataset values as they are. 
+
+- Bioclimatic belts (which have values 1-4 representing the 4 bioclimatic belts)
+We will multiply the bioclimatic belts by 100,000.
+
+- LULC transition impact status (values -1, 0 and 1)
+We will change the impact status by adding 2 to each of the values and multiplying by 1,000,000 thus changing values -1 to 1,000,000 (degradation), 0 to 2,000,000 (stable) and 1 to 3,000,000 (improving)
+
+In the Processing Toolbox, under Models, click on model B4 Combine Bioclimatic Belts, LULC Transitions and Impact Layers.
+
+|SubB_B4_tool_interface|
+
+**Input parameters**
+
+- Select country: Select country to process from the dropdown list.
+
+- CSV_containing_UN_country_codes: Set the path to the csv file containing UN country codes (downloaded from the GitHub repository).
+
+- Bioclimatic belts: Enter the path to the mountain belts (Generated in step A2b).
+
+- Enter year of landcover year 1: Enter the year of the LULC data used for year 1.
+
+- Enter year of landcover year 2: Enter the year of the LULC data used for year 2.
+
+- Select folder for outputs: Select an output folder to store your outputs. The output folder should already exist. Make sure the folder name does not have any spaces.
+
+- LULC transition impact status: Enter the path to the LULC transition impact status (generated in step B3). Use adjusted impact if it is not the initial reporting period. 
+
+- LULC transitions: Enter the path to the LULC transitions (generated in step B1).
+
+**Click Run.**
+
+- Repeat the above step for the next reporting period i.e., using 2015 landcover (year 1) and 2018 landcover (year 2).
+
+|SubB_B4_tool_results|
+
+**Tool B4 model diagram**
+
+|SubB_B4_tool_model|
+
 Step B5 Generate planimetric and real surface area statistics
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
-B6 Formatting to reporting tables
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+The data are now combined and in a format that we can use to generate the statistics required for the sub-indicator 15.4.2b reporting. The Raster layer unique values report tool will automatically calculate planimetric and real surface area statistics in the output and contain all the disaggregation we require. This output is the main statistics table from the analysis, from which other summary statistics tables will be generated.
 
+In the Processing Toolbox, under Models, click on model B5 Generate Planimetric and Real Surface Area Statistics.
 
+|SubB_B5_tool_interface|
+
+**Input parameters**
+
+- What statistics do you wish to calculate?: Select either Planimetric area or Planimetric area and real surface area.
+
+- Select country: Select country to process from the dropdown list.
+
+- CSV_containing_UN_country_codes: Set the path to the csv file containing UN country codes (downloaded from the GitHub repository).
+
+- Enter Output B4: Enter the path to the combined year 1 and year 2 LULC, Impact and Mountain layer for the period that you are processing (generated in step B4).
+
+- Select folder for outputs: Select an output folder to store your outputs. The output folder should already exist. Make sure the folder name does not have any spaces.
+
+- Enter year of landcover year 1: Enter the year of the LULC data used for year 1.
+
+- Enter year of landcover year 2: Enter the year of the LULC data used for year 2.
+
+- Input RSA raster: Enter the path to the resampled or aggregated version of the real surface area raster (generated in step A5a).
+
+- Transition_matrix_for_QGIS: Enter the path to the transition matrix for QGIS (generated in step B2b).
+
+**Click Run.**
+
+|SubB_B5_tool_results|
+
+**Tool B5 model diagram**
+
+|SubB_B5_tool_model|
+
+Step B6 Formatting to reporting tables
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This statistics table contains the estimates of 15.4.2 sub-indicator b. We will remove unwanted fields and calculate the Mountain Green Cover Index estimates. 
+
+In the Processing Toolbox, under Models, click on model B6 Formatting to Reporting Tables.
+
+|SubB_B6_tool_interface|
+
+**Input parameters**
+
+- Select country: Select country to process from the dropdown list.
+
+- CSV_containing_UN_country_codes: Set the path to the csv file containing UN country codes (downloaded from the GitHub repository).
+
+- 
+	
+**Click Run.**
+
+Repeat the above step for the next reporting period i.e., using 2015 landcover (year 1) and 2018 landcover (year 2) and any other reporting periods.
+
+|SubB_B6_tool_results|
+
+**Tool B6 model diagram**
+
+|SubB_B6_tool_model|
 
 
 
