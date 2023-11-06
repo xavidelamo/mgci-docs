@@ -141,6 +141,8 @@ Accessing DEM data
 
 **Open topography**
 	https://portal.opentopography.org/dataCatalog?group=global
+	
+Also see QGIS Open Topography DEM downloader
 
 **Copernicus** **SRTM** **30m or 90m**
 	https://copernicus-dem-30m.s3.amazonaws.com/readme.html
@@ -156,6 +158,43 @@ Accessing DEM data
 	
 	- **Use in Google Earth Engine:**
 	https://developers.google.com/earth-engine/datasets/catalog/CGIAR_SRTM90_V4
+	
+	
+Downloading DEM data using the Open Topography DEM downloader
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+There is a QGIS plugin that provides access to and a way 
+of downloading some open DEMs.  To download the **Open Topography DEM downloader** 
+go to the main menu and click on **Plugins>>Manage and Install Plugins**
+
+- Search for 'opentop'
+- Click on **OpenTopography DEM Downloader**
+
+|opentopograpy|
+
+- Click install plugin
+- Once installed click **Close**
+
+To access the installed plugin go to the 'Proccessing toolbox' 
+
+- Search for 'open'
+- You should see the **OpenTopography DEM Downloader** tool
+
+|opentopograpy2|
+
+
+- Double-click on **OpenTopography DEM Downloader** tool
+
+|opentopograpy3|
+
+- Select DEM to download - choose a DEM of resolution similar to your Land cover dataset. e.g. if your landcover is 300m resolution you should use a DEM that has a cellsize of 300m or lower,
+
+- next define the extent to download. Use the buffeed country boundary layer crated in Step A0. 
+ This will ensure correct calculation of the real surface area layer which needs a DEM that goes 
+ beyond the boundary of the country as it used surrounding (focal) cells during it's calculation. 
+ 
+- save the output using the following naming convention ISO3_DEM_AOI_EqArea_buffer10km.tif  e.g. COL_DEM_AOI_EqArea_buffer10km.tif
+ 
 
 Downloading GMTED2010 DEM data from USGS Earth Explorer application
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -361,8 +400,8 @@ The DEM tiles should now be downloaded.
    Source:
    https://gis.stackexchange.com/questions/13445/creating-latitude-grid-from-dem
    
-**Mosaicking your files using OSGeo4W Shell**
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Mosaicking DEM tile files using OSGeo4W Shell
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	If you country covers more than one DEM tile, you will need to stitch all of these files together into one dataset. There are several options for doing this, you may wish to use the tools in your QGIS software (e.g. the GDAL ‘Merge’ tool). However, it may be quicker to use command line programmes.
 	
 	In your computer, search for ‘OSGeo4W Shell’ and open the application (N.B. you may need to download this application, if you already have a GIS application such as QGIS you should already have it). This should open a blank command prompt window. 
@@ -380,7 +419,17 @@ The DEM tiles should now be downloaded.
 	‘‘gdal_translate virtual_mosaic.vrt mosaic.tif‘‘ (you can replace the final ‘mosaic’ with your chosen file name).
 	
 	Press enter and once the command has finished running, you should find your mosaic raster in the folder. Now you have a global raster ready to use in your analysis!  
- 
+
+
+.. |opentopograpy| image:: media_QGIS/opentopograpy.png
+   :width: 1200
+   
+.. |opentopograpy2| image:: media_QGIS/opentopograpy2.png
+   :width: 400
+   
+.. |opentopograpy3| image:: media_QGIS/opentopograpy3.png
+   :width: 1200   
+   
 .. |dem_usgs1| image:: media_QGIS_annex/dem_usgs1.png
    :width: 700
 .. |dem_usgs2| image:: media_QGIS_annex/dem_usgs2.png

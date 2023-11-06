@@ -164,6 +164,8 @@ chosen land cover dataset when selecting the resolution of their DEM.
 Selecting a DEM that is of similar resolution to the landc cover dataset is
 likely to be the best option. 
 
+The higher the resolution (smaller the grid cells), the more detailed information. Higher resolution DEMs improve the accuracy of analysis such as hydrological modelling. However, they are more computationally expensive to use, particularly over large extents.  
+
 |image167|
 
 Table 1: Sources of DEM datasets with open access. Sources ranging from
@@ -173,52 +175,10 @@ resolutions is the Copernicus DEM which is a Digital Surface Model (DSM)
 which represents the surface of the Earth including buildings,
 infrastructure and vegetation.
 
-**Open Topography DEM downloader**
-
-There is a QGIS plugin that provides access to and a way 
-of downloading some open DEMs.  To download the **Open Topography DEM downloader** 
-go to the main menu and click on **Plugins>>Manage and Install Plugins**
-
-- Search for 'opentop'
-- Click on **OpenTopography DEM Downloader**
-
-|opentopograpy|
-
-- Click install plugin
-- Once installed click **Close**
-
-To access the installed plugin go to the 'Proccessing toolbox' 
-
-- Search for 'open'
-- You should see the **OpenTopography DEM Downloader** tool
-
-|opentopograpy2|
-
-
-- Double-click on **OpenTopography DEM Downloader** tool
-
-|opentopograpy3|
-
-- Select DEM to download - choose a DEM of resolution similar to your Land cover dataset. e.g. if your landcover is 300m resolution you should use a DEM that has a cellsize of 300m or lower,
-
-- next define the extent to download. Use the buffeed country boundary layer crated in Step A0. 
- This will ensure correct calculation of the real surface area layer which needs a DEM that goes 
- beyond the boundary of the country as it used surrounding (focal) cells during it's calculation. 
- 
-- save the output using the following naming convention ISO3_DEM_AOI_EqArea_buffer10km.tif  e.g. COL_DEM_AOI_EqArea_buffer10km.tif
- 
 
 For further information on DEMs and downloading them please see Annex 1.
 
-.. |opentopograpy| image:: media_QGIS/opentopograpy.png
-   :width: 1200
-   
-.. |opentopograpy2| image:: media_QGIS/opentopograpy2.png
-   :width: 400
-   
-.. |opentopograpy3| image:: media_QGIS/opentopograpy3.png
-   :width: 1200   
-  
+
    
 .. |image33| image:: media_QGIS/image33_orig.png
    :width: 1200
