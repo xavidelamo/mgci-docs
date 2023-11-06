@@ -309,7 +309,6 @@ This should produce the following outputs on the map canvas:
 
 Step A3 preparing a DEM for Real Surface Area
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 This Step does not run a tool but provides users with information to guide them to the relevant sections in the resources. 
 
 For reporting on SDG 15.4.2 countries must report planimetric area. Countries also however have the option to also calculate real surface area.  This requires development of a real surface area layer requires a Digital Elevation Model (DEM).
@@ -324,6 +323,8 @@ If you are choosing to calculate Real Surface Area and you already have a countr
  The selection of which DEM to use for this can be chosen by the countries. We do not advise countries which DEM to choose although table in section **Choice of DEM for generating real surface area calculations and data access**  in the **Defining analyses environments and land cover data selection** provides some suggestions for open access sources. There are also some step-by-step guidance in Annex 1 to help use some of the different download options.
  
 |SubA_A3_tool_interface|
+
+For the purposes of this example we will use a global DEM at 230m resolution as the Landuse landcover dataset that we are using in this example is 300m resolution so the DEM has a higher the resolution (smaller the grid cells)
 
 Step A4 Generate real surface area raster
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
