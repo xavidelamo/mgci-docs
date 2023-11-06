@@ -291,7 +291,12 @@ In the Processing Toolbox, under Models, click on model **A2 Prepare mountains a
 
 - Input: Layer style for aggregated vegetation and mountains: Set the path to the layer style file for the aggregated vegetation and mountain layer. 
 
+First we will run for the year 2000
+
 **Click Run.**
+
+You can run subsequent years by 
+then clicking  **Change parameters** and change the LULC  to the 2015 dataset and year to 2015. **Click Run.** Repeat this until you have run all the years you wish to run. .
 
 This should produce the following outputs on the map canvas:
 
@@ -341,7 +346,7 @@ In the Processing Toolbox, under Models, click on model **A4 Generate Real Surfa
 
 - CSV_containing_UN_country_codes: Set the path to the csv file containing UN country codes (downloaded from the GitHub repository).
 
-- Input: DEM raster: Set the path to the DEM raster. See Annex 2 for guidance on downloading DEM rasters.
+- Input: DEM raster: Set the path to the DEM raster chosen in the previous step.
 
 - Input NoData value: Set this as -9999.
 
@@ -349,7 +354,7 @@ In the Processing Toolbox, under Models, click on model **A4 Generate Real Surfa
 
 - Select folder for outputs: Select an output folder to store your outputs. The output folder should already exist. Make sure the folder name does not have any spaces.
 
-- Cellsize: Enter the cell size of the DEM raster.
+- Cellsize: Enter the cell size of the DEM raster in metres.
 
 **Click Run.**
 
