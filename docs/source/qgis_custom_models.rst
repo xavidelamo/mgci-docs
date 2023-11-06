@@ -548,6 +548,12 @@ Step B3 Reclassify LULC transitions to impacts
 
 The next step is to reclassify the outputs from the combined landcover datasets for year 1 and year 2, first for the baseline period (2000 to 2015) and then for the reporting period (e.g., 2018). We will use the transitions matrix generated in the previous steps. In this example we use the default transitions matrix, but the steps are the same if a national transitions matrix is being used.
 
+After calculating the baseline reporting period, for assessing the area of degraded mountain land in subsequent reporting periods , the most recent data point of the reference reporting year needs to be compared to the baseline. This means, if we are to calculate the total degraded mountain land for the first reporting year of the Indicator (2018), we would first (1) calculate the area degraded in the baseline period (2000-2015) and then (2) calculate the degraded land in the period 2016 -2018 based on the following the below figure. There is an option in the tool **Have you assessed impact for a previous reporting period?** which will enable the model to automatically make that adjustment.
+
+|adjusting_impact_matrix|
+
+This basically means that area degraded for the reporting period 2018 is calculated by summing : (i) new areas degraded in 2016-2018 period and (ii) areas identified as degraded in the baseline period that remain degraded. If we were to do the same for the next reporting year (2021), we would calculate the degraded land for the 2016 -2021 period, and follow exactly the same approach. Please let me know if this is not clear.
+ 
 In the Processing Toolbox, under Models, click on model **B3 Reclassify LULC Transitions to Impacts**.
 
 |SubB_B3_tool_interface|
@@ -699,6 +705,10 @@ Repeat the above step for the next reporting period i.e., using 2015 landcover (
 **Tool B6 model diagram**
 
 |SubB_B6_tool_model|
+
+
+.. |adjusting_impact_matrix| image:: media_toolbox/adjusting_impact_matrix.png
+   :width: 1200
 
 .. |example1| image:: media_toolbox/example1.png
    :width: 1200
