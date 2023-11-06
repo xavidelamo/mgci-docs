@@ -178,7 +178,7 @@ The first step is to define an Area of Interest (AOI) for the analysis. This sho
 
 Colombia does have a National Projection that preserve both area and distance (see here) and therefore could be used as a custom projection. In case a national projection that minimize area distortion does not exist for a given country, it is recommended to define a custom Equal Area projection centered on the country area following the instructions in described here under **Defining analyses environments and land cover data selection**).  
 
-In the Processing Toolbox, under Models, click on model **A0 Prepare country boundary and buffer to 10 km **
+In the Processing Toolbox, under Models, click on model **A0 Prepare country boundary and buffer to 10 km**
 
 |SubA_A0_tool_interface|
 
@@ -213,9 +213,9 @@ To demonstrate the steps for processing a raster LULC dataset we will use the Gl
 
 If the LULC dataset is a regional or global extent it will need projecting and clipping to the AOI. In this example we are using a global dataset so we will need to clip the raster and save it in the equal area projection. Next, we reclassify the LULC map into the 10 UN-SEEA classes defined for SDG Indicator 15.4.2. QGIS provides several tools for reclassification. The easiest one to use in this instance is the r.reclass tool in the GRASS toolset as it allows the upload of a simple crosswalk text file containing the input LULC types on the left and the UN-SEEA reclass values on the right. Create a text file to crosswalk landuse/landcover (LULC) types from the ESA CCI or National landcover dataset to the 10 UN-SEEA landcover classes.
 
-[IMAGE]
+[crosswalk_textfile]
 
-In the Processing Toolbox, under Models, click on model A1 Prepare and reclassify LULC dataset into UN-SEEA classes.
+In the Processing Toolbox, under Models, click on model **A1 Prepare and reclassify LULC dataset into UN-SEEA classes**.
 
 |SubA_A1_tool_interface|
 
@@ -260,7 +260,7 @@ Step A2 Prepare mountain layer and combine with LULC
 
 The development of mountain map consists in clipping and reprojecting the SDG 15.4.2. Global Mountain Descriptor Map developed by FAO to area of interest, in this case, the national border of Colombia. Once we have the two raster datasets in their native resolutions, we need to bring the datasets together and ensure that correct aggregation is undertaken and that the all the layers align to a common resolution. As SGD Indicator 15.4.2a requires disaggregation by both the 10 land cover classes and the 4 bioclimatic belts and the tools within QGIS will only allow a single input for zones, we will combine the two datasets. We need to ensure that the layers are aggregated to a common spatial resolution. 
 
-In the Processing Toolbox, under Models, click on model A2 Prepare mountains and combine with LULC.
+In the Processing Toolbox, under Models, click on model **A2 Prepare mountains and combine with LULC**.
 
 |SubA_A2_tool_interface|
 
@@ -308,7 +308,7 @@ Step A4 Generate real surface area raster
 
 The final layer that needs generating is the Real Surface Area raster from the DEM. The tools should have all been tested to check your R integration is working in the initial setup. Refer to the workflow diagram in the overview section for an explanation of the process to calculate the real surface area from a DEM.
 
-In the Processing Toolbox, under Models, click on model A4 Generate Real Surface Area Raster.
+In the Processing Toolbox, under Models, click on model **A4 Generate Real Surface Area Raster**.
 
 |SubA_A4_tool_interface|
 
@@ -339,7 +339,7 @@ Step A5 Generate planimetric and real surface area statistics
 
 The data are now in a consistent format, so we can now generate the statistics required for the MGCI reporting. As we want to generate disaggregated statistics by LULC class and bioclimatic belt we will use a zonal statistics tool with the combined Vegetation + mountain layer as the summary unit. The Zonal statistics tool will automatically calculate planimetric area and real surface area in the output.
 
-In the Processing Toolbox, under Models, click on model A5 Generate Planimetric and Real Surface Area Statistics.
+In the Processing Toolbox, under Models, click on model **A5 Generate Planimetric and Real Surface Area Statistics**.
 
 |SubA_A5_tool_interface|
 
@@ -376,7 +376,7 @@ Step A6 Formatting to reporting tables
 
 This statistics table contains the estimates of 15.4.2 sub-indicator a, disaggregated by land cover type. We will remove unwanted fields and calculate the Mountain Green Cover Index estimates. The MGCI is calculated by diving the area of green cover the total area of each bioclimatic belt and the total mountain area and multiplying it by 100. 
 
-In the Processing Toolbox, under Models, click on model A6 Formatting to Reporting Tables.
+In the Processing Toolbox, under Models, click on model **A6 Formatting to Reporting Tables**.
 
 |SubA_A6_tool_interface|
 
@@ -452,7 +452,7 @@ First, we will generate a single raster containing a value to represent both yea
 
 In this example we will use the UN-SEEA reclassified landcover datasets for 2000 and 2015 for the baseline and UN-SEEA classified landcover 2015 to 2018 rasters for the 2018 reporting year. As each dataset has the same LULC values (values 1-10 for UN-SEEA classification) we need to change the values in one of the years to be able to distinguish between classes in year1 and year2. We will multiply year1 land cover classes by 1000 before summing the datasets together. So, for example values for year 1 when using the default legend will range from 1000 – 10000 and values for year 2 will remain 1 -10 and the resultant output will have values ranging from a minimum of 1001 to a maximum of 10010 (depending on which LULC transitions are present).
 
-In the Processing Toolbox, under Models, click on model B1 Combine LULC Datasets.
+In the Processing Toolbox, under Models, click on model **B1 Combine LULC Datasets**.
 
 |SubB_B1_tool_interface|
 
@@ -499,7 +499,7 @@ Note that we are taking the Landcover code for year 1 and multiplying it by 1000
 
 If are using a national land cover transition matrix you can prepare a transitions table in the same format as the default transitions table in Excel or you can generate a csv file from the unique combinations for the LULC types using the combined LULC dataset for the two years. We illustrate this below (although we are using the default UN-SEEA classes for illustration purposes only). 
 
-In the Processing Toolbox, under Models, click on model B2 Generate Transition Matrix.
+In the Processing Toolbox, under Models, click on model **B2 Generate Transition Matrix**.
 
 |SubB_B2_tool_interface|
 
@@ -544,7 +544,7 @@ Step B3 Reclassify LULC transitions to impacts
 
 The next step is to reclassify the outputs from the combined landcover datasets for year 1 and year 2, first for the baseline period (2000 to 2015) and then for the reporting period (e.g., 2018). We will use the transitions matrix generated in the previous steps. In this example we use the default transitions matrix, but the steps are the same if a national transitions matrix is being used.
 
-In the Processing Toolbox, under Models, click on model B3 Reclassify LULC Transitions to Impacts.
+In the Processing Toolbox, under Models, click on model **B3 Reclassify LULC Transitions to Impacts**.
 
 |SubB_B3_tool_interface|
 
@@ -600,7 +600,7 @@ We will multiply the bioclimatic belts by 100,000.
 - LULC transition impact status (values -1, 0 and 1)
 We will change the impact status by adding 2 to each of the values and multiplying by 1,000,000 thus changing values -1 to 1,000,000 (degradation), 0 to 2,000,000 (stable) and 1 to 3,000,000 (improving)
 
-In the Processing Toolbox, under Models, click on model B4 Combine Bioclimatic Belts, LULC Transitions and Impact Layers.
+In the Processing Toolbox, under Models, click on model **B4 Combine Bioclimatic Belts, LULC Transitions and Impact Layers**.
 
 |SubB_B4_tool_interface|
 
@@ -637,7 +637,7 @@ Step B5 Generate planimetric and real surface area statistics
 
 The data are now combined and in a format that we can use to generate the statistics required for the sub-indicator 15.4.2b reporting. The Raster layer unique values report tool will automatically calculate planimetric and real surface area statistics in the output and contain all the disaggregation we require. This output is the main statistics table from the analysis, from which other summary statistics tables will be generated.
 
-In the Processing Toolbox, under Models, click on model B5 Generate Planimetric and Real Surface Area Statistics.
+In the Processing Toolbox, under Models, click on model **B5 Generate Planimetric and Real Surface Area Statistics**.
 
 |SubB_B5_tool_interface|
 
@@ -674,7 +674,7 @@ Step B6 Formatting to reporting tables
 
 This statistics table contains the estimates of 15.4.2 sub-indicator b. We will remove unwanted fields and calculate the Mountain Green Cover Index estimates. 
 
-In the Processing Toolbox, under Models, click on model B6 Formatting to Reporting Tables.
+In the Processing Toolbox, under Models, click on model **B6 Formatting to Reporting Tables**.
 
 |SubB_B6_tool_interface|
 
@@ -754,6 +754,53 @@ Repeat the above step for the next reporting period i.e., using 2015 landcover (
    :width: 1200
 .. |SubA_A6_tool_model| image:: media_toolbox/SubA_A6_tool_model.png
    :width: 1200
+
+
+
+
+.. |SubA_B1_tool_interface| image:: media_toolbox/SubA_B1_tool_interface.png
+   :width: 1200
+.. |SubA_B1_tool_results| image:: media_toolbox/SubA_B1_tool_results.png
+   :width: 1200
+.. |SubA_B1_tool_model| image:: media_toolbox/SubA_B1_tool_model.png
+   :width: 1200
+
+.. |SubA_B2_tool_interface| image:: media_toolbox/SubA_B2_tool_interface.png
+   :width: 1200
+.. |SubA_B2_tool_results| image:: media_toolbox/SubA_B2_tool_results.png
+   :width: 1200
+.. |SubA_B2_tool_model| image:: media_toolbox/SubA_B2_tool_model.png
+   :width: 1200
+
+.. |SubA_B3_tool_interface| image:: media_toolbox/SubA_B3_tool_interface.png
+   :width: 1200
+.. |SubA_B3_tool_results| image:: media_toolbox/SubA_B3_tool_results.png
+   :width: 1200
+.. |SubA_B3_tool_model| image:: media_toolbox/SubA_B3_tool_model.png
+   :width: 1200
+
+.. |SubA_B4_tool_interface| image:: media_toolbox/SubA_B4_tool_interface.png
+   :width: 1200
+.. |SubA_B4_tool_results| image:: media_toolbox/SubA_B4_tool_results.png
+   :width: 1200
+.. |SubA_B4_tool_model| image:: media_toolbox/SubA_B4_tool_model.png
+   :width: 1200
+
+.. |SubA_B5_tool_interface| image:: media_toolbox/SubA_B5_tool_interface.png
+   :width: 1200
+.. |SubA_B5_tool_results| image:: media_toolbox/SubA_B5_tool_results.png
+   :width: 1200
+.. |SubA_B5_tool_model| image:: media_toolbox/SubA_B5_tool_model.png
+   :width: 1200
+
+.. |SubA_B6_tool_interface| image:: media_toolbox/SubA_B6_tool_interface.png
+   :width: 1200
+.. |SubA_B6_tool_results| image:: media_toolbox/SubA_B6_tool_results.png
+   :width: 1200
+.. |SubA_B6_tool_model| image:: media_toolbox/SubA_B6_tool_model.png
+   :width: 1200
+
+
 
 
 .. |image1| image:: media_QGIS/image1.png
