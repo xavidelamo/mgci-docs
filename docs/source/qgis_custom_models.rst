@@ -211,6 +211,7 @@ Now that the country boundary is in the chosen projection, we can generate the l
 Step A1 Prepare and Reclassify LULC Dataset into UN-SEEA Classes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^  
 
+The next step is to reclassify your chosen land use landcover (LULC)  dataset into the UN-SEEA classification. Preferably a National LULC raster dataset should be used.
 To demonstrate the steps for processing a raster LULC dataset we will use the Global ESA CCI LULC dataset. 
 
 If the LULC dataset is a regional or global extent it will need projecting and clipping to the AOI. In this example we are using a global dataset so we will need to clip the raster and save it in the equal area projection. Next, we reclassify the LULC map into the 10 UN-SEEA classes defined for SDG Indicator 15.4.2. QGIS provides several tools for reclassification. The easiest one to use in this instance is the r.reclass tool in the GRASS toolset as it allows the upload of a simple crosswalk text file containing the input LULC types on the left and the UN-SEEA reclass values on the right. Create a text file to crosswalk landuse/landcover (LULC) types from the ESA CCI or National landcover dataset to the 10 UN-SEEA landcover classes.
