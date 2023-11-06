@@ -200,6 +200,8 @@ This will generate the country boundary in equal area projection and one with a 
 
 |SubA_A0_tool_results|
 
+The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.
+
 **Tool A0 model diagram**
 
 |SubA_A0_tool_model|
@@ -251,6 +253,8 @@ You should now see the unique LULC classes present within the AOI for the countr
 
 |SubA_A1_tool_results|
 
+The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.
+
 **Tool A1 model diagram**
 
 |SubA_A1_tool_model|
@@ -296,6 +300,8 @@ This should produce the following outputs on the map canvas:
 
 |SubA_A2_tool_results|
 
+The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.
+
 **Tool A2 model diagram**
 
 |SubA_A2_tool_model|
@@ -329,6 +335,10 @@ In the Processing Toolbox, under Models, click on model **A4 Generate Real Surfa
 - Cellsize: Enter the cell size of the DEM raster.
 
 **Click Run.**
+
+|SubA_A4_tool_results|
+
+The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.
 
 **Tool A4 model diagram**
 
@@ -443,6 +453,8 @@ This section of the tutorial assumes that the user has already calculated sub-in
 
 |example1|
 
+The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.
+
 SGD Indicator 15.4.2b requires us to identify change between LC classes in each reporting period, therefore the first requirement for sub-indicator 15.4.2b is to develop a transition matrix that specifies the land cover changes occurring in a given land unit (pixel) as being either degradation, improvement or neutral transitions. The definition of degradation adopted for the computation of this indicator is the one established by the Intergovernmental Science-Policy Platform on Biodiversity and Ecosystem Services (IPBES). 
 
 Countries may choose to either calculate degradation using the default land cover legend for this indicator and default transition matrix provided or from a native or simplified legend of a national land use/land cover (LULC) dataset if they have the advantage of better representing degradation transitions compared to the broader default transitions. 
@@ -485,6 +497,8 @@ Repeat the above step for the next reporting period i.e., using 2015 landcover (
 When using the default UN-SEEA land cover legend, this means that a value of 2001 means a land cover class 2 in year 1 and a land cover class 1 in year 2. A value of 10010 would mean a land cover class 10 in year 1 and a land cover class 10 in year 2. In other words, year 1 is represented by the first digit for values 1 to 9, and by the first 2 digits for land cover class 10. Year 2, on the other hand, is represented by the right hand digit (for values 1-9) and the right hand 2 digits for value 10.
 
 |SubB_B1_tool_results|
+
+The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.
 
 **Tool B1 model diagram**
 
@@ -534,6 +548,8 @@ In the Processing Toolbox, under Models, click on model **B2 Generate Transition
 The resultant table should look like this:
 
 |SubB_B2_tool_results1|
+
+The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.
 
 |SubB_B2_tool_results2|
 
@@ -592,6 +608,8 @@ You can ignore the two warning messages that appear in red– these do not affec
 
 |SubB_B3_tool_results|
 
+The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.
+
 **Tool B3 model diagram**
 
 |SubB_B3_tool_model|
@@ -638,6 +656,8 @@ In the Processing Toolbox, under Models, click on model **B4 Combine Bioclimatic
 
 |SubB_B4_tool_results|
 
+The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.
+
 **Tool B4 model diagram**
 
 |SubB_B4_tool_model|
@@ -674,6 +694,7 @@ In the Processing Toolbox, under Models, click on model **B5 Generate Planimetri
 **Click Run.**
 
 |SubB_B5_tool_results|
+
 
 **Tool B5 model diagram**
 

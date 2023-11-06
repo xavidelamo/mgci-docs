@@ -217,11 +217,15 @@ Downloading GMTED2010 DEM data from USGS Earth Explorer application
 	
 	|dem_usgs1|
 	
+	The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.
+	
 	- Double click on the map to draw a boundary, you can add as many points as you wish to draw a custom shape. 
 
 	- However, it is easiest to simply zoom into your area of interest and select the ‘Use Map’ button which is in the ‘KML/Shapefile Upload’ tab of ‘1. Enter Search Criteria’. When you then zoom out, the AOI should now be shown on your map. 	
 	
 	|dem_usgs2|
+	
+	The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.
 	
 	-  Using the map extent to select an area of interest. 
 
@@ -239,6 +243,8 @@ Downloading GMTED2010 DEM data from USGS Earth Explorer application
 	- Here you can select the specific imagery you want to download by selecting the relevant tiles. In this case, we will select all tiles as we want to use a global dataset. 
 
 	|dem_usgs4|
+	
+	The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.
 	
 	- Two tiles resulting from the data search shown on the map, select the icons second from the left to display the data on the map for each tile.  
 
@@ -330,6 +336,8 @@ select tiles covering area of interest. Make sure tiles cover all
 country boundary
 
 |image166|
+
+The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.
 
 Right click on the layer and show attribute table
 
