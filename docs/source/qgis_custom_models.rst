@@ -708,7 +708,7 @@ Repeat the above step for the next reporting period i.e., using 2015 landcover (
 
 
 .. |adjusting_impact_matrix| image:: media_toolbox/adjusting_impact_matrix.png
-   :width: 1200
+   :width: 600
 
 .. |example1| image:: media_toolbox/example1.png
    :width: 1200
