@@ -1,0 +1,197 @@
+<!DOCTYPE model>
+<Option type="Map">
+  <Option type="Map" name="children">
+    <Option type="Map" name="native:condition_1">
+      <Option type="bool" value="true" name="active"/>
+      <Option type="Map" name="alg_config">
+        <Option type="List" name="conditions">
+          <Option type="Map">
+            <Option type="QString" value=" @do_you_already_have_a_dem_covring_10km_around_your_country =0" name="expression"/>
+            <Option type="QString" value="Yes" name="name"/>
+          </Option>
+          <Option type="Map">
+            <Option type="QString" value=" @do_you_already_have_a_dem_covring_10km_around_your_country =1" name="expression"/>
+            <Option type="QString" value="No" name="name"/>
+          </Option>
+        </Option>
+      </Option>
+      <Option type="QString" value="native:condition" name="alg_id"/>
+      <Option type="QString" value="" name="color"/>
+      <Option type="Map" name="comment">
+        <Option type="QString" value="" name="color"/>
+        <Option type="QString" value="" name="component_description"/>
+        <Option type="double" value="60" name="component_height"/>
+        <Option type="double" value="484.8" name="component_pos_x"/>
+        <Option type="double" value="144.60000000000002" name="component_pos_y"/>
+        <Option type="double" value="100" name="component_width"/>
+        <Option type="bool" value="true" name="outputs_collapsed"/>
+        <Option type="bool" value="true" name="parameters_collapsed"/>
+      </Option>
+      <Option type="QString" value="Conditional branch" name="component_description"/>
+      <Option type="double" value="30" name="component_height"/>
+      <Option type="double" value="171.19999999999993" name="component_pos_x"/>
+      <Option type="double" value="333.6" name="component_pos_y"/>
+      <Option type="double" value="200" name="component_width"/>
+      <Option name="dependencies"/>
+      <Option type="QString" value="native:condition_1" name="id"/>
+      <Option name="outputs"/>
+      <Option type="bool" value="true" name="outputs_collapsed"/>
+      <Option type="bool" value="true" name="parameters_collapsed"/>
+      <Option name="params"/>
+    </Option>
+    <Option type="Map" name="native:raisewarning_1">
+      <Option type="bool" value="true" name="active"/>
+      <Option name="alg_config"/>
+      <Option type="QString" value="native:raisewarning" name="alg_id"/>
+      <Option type="QString" value="" name="color"/>
+      <Option type="Map" name="comment">
+        <Option type="QString" value="" name="color"/>
+        <Option type="QString" value="" name="component_description"/>
+        <Option type="double" value="60" name="component_height"/>
+        <Option type="double" value="1185.6" name="component_pos_x"/>
+        <Option type="double" value="509.4000000000001" name="component_pos_y"/>
+        <Option type="double" value="100" name="component_width"/>
+        <Option type="bool" value="true" name="outputs_collapsed"/>
+        <Option type="bool" value="true" name="parameters_collapsed"/>
+      </Option>
+      <Option type="QString" value="Raise warning" name="component_description"/>
+      <Option type="double" value="30" name="component_height"/>
+      <Option type="double" value="202.40000000000003" name="component_pos_x"/>
+      <Option type="double" value="484.0000000000001" name="component_pos_y"/>
+      <Option type="double" value="200" name="component_width"/>
+      <Option type="List" name="dependencies">
+        <Option type="Map">
+          <Option type="QString" value="native:condition_1" name="child_id"/>
+          <Option type="QString" value="Yes" name="conditional_branch"/>
+        </Option>
+      </Option>
+      <Option type="QString" value="native:raisewarning_1" name="id"/>
+      <Option name="outputs"/>
+      <Option type="bool" value="true" name="outputs_collapsed"/>
+      <Option type="bool" value="true" name="parameters_collapsed"/>
+      <Option type="Map" name="params">
+        <Option type="List" name="CONDITION">
+          <Option type="Map">
+            <Option type="int" value="2" name="source"/>
+            <Option type="QString" value=" @do_you_already_have_a_dem_covring_10km_around_your_country =0" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="MESSAGE">
+          <Option type="Map">
+            <Option type="int" value="2" name="source"/>
+            <Option type="QString" value="USER INSTRUCTION: Load your DEM into the QGIS project and move to Step A4" name="static_value"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option type="Map" name="native:raisewarning_2">
+      <Option type="bool" value="true" name="active"/>
+      <Option name="alg_config"/>
+      <Option type="QString" value="native:raisewarning" name="alg_id"/>
+      <Option type="QString" value="" name="color"/>
+      <Option type="Map" name="comment">
+        <Option type="QString" value="" name="color"/>
+        <Option type="QString" value="" name="component_description"/>
+        <Option type="double" value="60" name="component_height"/>
+        <Option type="double" value="1185.6" name="component_pos_x"/>
+        <Option type="double" value="434" name="component_pos_y"/>
+        <Option type="double" value="100" name="component_width"/>
+        <Option type="bool" value="true" name="outputs_collapsed"/>
+        <Option type="bool" value="true" name="parameters_collapsed"/>
+      </Option>
+      <Option type="QString" value="Raise warning" name="component_description"/>
+      <Option type="double" value="30" name="component_height"/>
+      <Option type="double" value="459.99999999999994" name="component_pos_x"/>
+      <Option type="double" value="428.6" name="component_pos_y"/>
+      <Option type="double" value="200" name="component_width"/>
+      <Option type="List" name="dependencies">
+        <Option type="Map">
+          <Option type="QString" value="native:condition_1" name="child_id"/>
+          <Option type="QString" value="No" name="conditional_branch"/>
+        </Option>
+      </Option>
+      <Option type="QString" value="native:raisewarning_2" name="id"/>
+      <Option name="outputs"/>
+      <Option type="bool" value="true" name="outputs_collapsed"/>
+      <Option type="bool" value="true" name="parameters_collapsed"/>
+      <Option type="Map" name="params">
+        <Option type="List" name="CONDITION">
+          <Option type="Map">
+            <Option type="int" value="2" name="source"/>
+            <Option type="QString" value=" @do_you_already_have_a_dem_covring_10km_around_your_country =1" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="MESSAGE">
+          <Option type="Map">
+            <Option type="int" value="2" name="source"/>
+            <Option type="QString" value="USER INSTRUCTION: download a DEM (see guidance for DEM downloads)" name="static_value"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+  </Option>
+  <Option type="Map" name="designerParameterValues">
+    <Option type="int" value="1" name="do_you_already_have_a_dem_covring_10km_around_your_country"/>
+  </Option>
+  <Option name="groupBoxes"/>
+  <Option type="Map" name="help">
+    <Option type="QString" value="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;>&#xa;&lt;html>&lt;head>&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; />&lt;style type=&quot;text/css&quot;>&#xa;p, li { white-space: pre-wrap; }&#xa;&lt;/style>&lt;/head>&lt;body style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:400; font-style:normal;&quot;>&#xa;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;>&lt;br />&lt;/p>&lt;/body>&lt;/html>" name="ALG_DESC"/>
+    <Option type="QString" value="Have you already downloaded a DEM (the DEM needs to extend beyond the country boundary by at least 10km buffer beyond  the country in all directions)" name="do_you_already_have_a_dem"/>
+  </Option>
+  <Option type="QString" value="Version2" name="internal_version"/>
+  <Option name="modelVariables"/>
+  <Option type="QString" value="SDG Indicator 15.4.2\Sub-indicatorA" name="model_group"/>
+  <Option type="QString" value="A3 preparing a DEM for Real Surface Area" name="model_name"/>
+  <Option type="Map" name="parameterDefinitions">
+    <Option type="Map" name="do_you_already_have_a_dem_covring_10km_around_your_country">
+      <Option type="bool" value="false" name="allow_multiple"/>
+      <Option type="invalid" name="default"/>
+      <Option type="invalid" name="defaultGui"/>
+      <Option type="QString" value="Do you already have a DEM covring 10km around your country?" name="description"/>
+      <Option type="int" value="0" name="flags"/>
+      <Option type="QString" value="" name="help"/>
+      <Option name="metadata"/>
+      <Option type="QString" value="do_you_already_have_a_dem_covring_10km_around_your_country" name="name"/>
+      <Option type="StringList" name="options">
+        <Option type="QString" value="Yes"/>
+        <Option type="QString" value="No"/>
+      </Option>
+      <Option type="QString" value="enum" name="parameter_type"/>
+      <Option type="bool" value="false" name="uses_static_strings"/>
+    </Option>
+  </Option>
+  <Option type="StringList" name="parameterOrder">
+    <Option type="QString" value="what_statistics_do_you_wish_to_calculate"/>
+    <Option type="QString" value="select_country"/>
+    <Option type="QString" value="csv_containing_un_country_codes"/>
+    <Option type="QString" value="idfield"/>
+    <Option type="QString" value="input_output_a1c_lulc_unseea_in_equa_area_projection"/>
+    <Option type="QString" value="input_dem_raster"/>
+    <Option type="QString" value="NoDatavalue"/>
+    <Option type="QString" value="input_target_crs"/>
+    <Option type="QString" value="select_folder_for_outputs"/>
+  </Option>
+  <Option type="Map" name="parameters">
+    <Option type="Map" name="do_you_already_have_a_dem_covring_10km_around_your_country">
+      <Option type="QString" value="" name="color"/>
+      <Option type="Map" name="comment">
+        <Option type="QString" value="" name="color"/>
+        <Option type="QString" value="" name="component_description"/>
+        <Option type="double" value="60" name="component_height"/>
+        <Option type="double" value="436" name="component_pos_x"/>
+        <Option type="double" value="330.20000000000005" name="component_pos_y"/>
+        <Option type="double" value="100" name="component_width"/>
+        <Option type="bool" value="true" name="outputs_collapsed"/>
+        <Option type="bool" value="true" name="parameters_collapsed"/>
+      </Option>
+      <Option type="QString" value="do_you_already_have_a_dem_covring_10km_around_your_country" name="component_description"/>
+      <Option type="double" value="95.60000000000002" name="component_height"/>
+      <Option type="double" value="330.7999999999999" name="component_pos_x"/>
+      <Option type="double" value="232.79999999999998" name="component_pos_y"/>
+      <Option type="double" value="285.59999999999997" name="component_width"/>
+      <Option type="QString" value="do_you_already_have_a_dem_covring_10km_around_your_country" name="name"/>
+      <Option type="bool" value="true" name="outputs_collapsed"/>
+      <Option type="bool" value="true" name="parameters_collapsed"/>
+    </Option>
+  </Option>
+</Option>
