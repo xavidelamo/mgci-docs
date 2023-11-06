@@ -10,17 +10,16 @@ study. This section assumes that the user has already downloaded the
 global mountain map made available by FAO to compute this indicator and
 a land cover dataset meeting the requirements described in section 3.2.
 
-Tool step A0 Prepare country boundary and buffer to 10km
----------------------------------------------------------
+Step-by-step equivalent of Tool step A0: Prepare country boundary and buffer to 10km
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The following steps are covered by this tool:
 
-Define projection
-^^^^^^^^^^^^^^^^^
+Define projection and buffer country boundary
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The first step is to define an Area of Interest (AOI) for the analysis.
-This should go beyond the country boundary as outlined in
-the \ **Defining analysis environments** section of the tutorial.
+The first step is to define the projection and an Area of Interest (AOI) for the analysis.
+The AOI should go beyond the country boundary as outlined in the \ **Defining analysis environments** section of the tutorial.
 
 -  Add a country boundary layer to QGIS **Layer>>Add Layer>>Add Vector
    Layer**
@@ -100,29 +99,17 @@ generate the mountains and land cover maps for Colombia.
 
 
 
-SECTION TO BE ADDED HERE  FROM OTHER DOC WHICH IS RUNNING THE TOOLS FROM THE NEW TOOLBOX
-WILL LINK EACH TOOL TO THE STEP BY STEP INSTRUCTIONS BELOW
-
-
-
-
-
-
-Tool step A1 Prepare and reclassify LULC dataset into UN-SEEA classes
----------------------------------------------------------------------
+Step-by-step equivalent of Tool step A1: Prepare and reclassify LULC dataset into UN-SEEA classes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The following steps are covered by this tool:
-
-
-Generate the vegetation descriptor layer
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To demonstrate the steps for processing a raster LULC dataset we will
 use the Global ESA CCI LULC dataset. If you are using a national
 dataset, you can skip the following step.
 
 `Clip and project LULC raster <https://mgci-docs.readthedocs.io/en/latest/qgis.html#id23>`__
---------------------------------------------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The ESA CCI LULC dataset is provided in netcdf (.nc) format. Similarly
 to Geotiffs, these can be added directly to QGIS.
@@ -231,7 +218,7 @@ the country.
 |image25|
 
 Reclassify to UN-SEEA land cover classes
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The next step is to reclassify the LULC map into the 10 UN-SEEA classes
 defined for SDG Indicator 15.4.2
@@ -280,20 +267,20 @@ can see that the actual layer only has 10 values.
 
 |image29|
 
-Tool step A2 Prepare mountains and combine with LULC
-----------------------------------------------------
+Step-by-step equivalent of Tool step A2 Prepare mountains and combine with LULC
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The following steps are covered by this tool:
 
 Generate the mountain map for the chosen country 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The development of mountain map consists in clipping and reprojecting
 the SDG 15.4.2. Global Mountain Descriptor Map developed by FAO to area
 of interest, in this case, the national border of Colombia.
 
-`Clip and project global <https://mgci-docs.readthedocs.io/en/latest/qgis.html#id23>`__ mountain map
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**`Clip and project global mountain map**
+
 
 From the QGIS main toolbar click on \ **Layer>>Add Layer>>Add Raster
 Layer** to add the global mountain map file to your QGIS session.
@@ -359,14 +346,14 @@ and 4 is “Remaining Mountain Area”.
 |image17|
 
 Combine mountain and vegetation descriptor layers
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Now that we have 2 raster datasets in their native resolutions we need
 to bring the datasets together and ensure that correct aggregation is
 undertaken and that the all the layers align to a common resolution.
 
 Aggregate the layers to a common spatial resolution
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this example we have the Mountain Descriptor layer at a 832 meters
 resolution and a vegetation descriptor layer at a 300 m resolution.
@@ -392,7 +379,7 @@ In the processing toolbox search for \ **\*r.resample\***
 |image31|
 
 Combine mountain and vegetation descriptor layers
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 As SGD Indicator 15.4.2a requires disaggregation by both the 10 land
 cover classes and the 4 bioclimatic belts and the tools within QGIS will
@@ -422,35 +409,31 @@ only allow a single input for zones, we will combine the two datasets.
 |image33|
 
 
-Tool Step A3 download DEM using OpenDEMDownloader - maybe make as optional part of A0
--------------------------------------------------------------------------------------
+Step-by-step equivalent of Tool step A3 download DEM
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The step guides users in downloading an appropriate DEM. 
+Please refer to the **Defining environments section** and **Annex 1** for more information download options.
+If you are not calculating Real Surface Area, this step will not be required.
+
+Step-by-step equivalent of Tool step A4 Generate real surface area raster
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This step cannot be carried out manually. Please run the QGIS model Step A4 which runs an R script to calculate Real Surface Area.
+
+
+**Computation of Sub-indicator a Mountain Green Cover Index**
+
+Step-by-step equivalent of Tool Step A5 Generate planimetric and real surface area statistics
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The following steps are covered by this tool:
 
 
-Additional bit of tutorial. Manual steps to be added
-
-Tool Step A4 Generate real surface area raster
-----------------------------------------------
-
-The following steps are covered by this tool:
-
-Additional bit of tutorial. Steps to copy from previous MGCI doc effort
-
-
-Computation of Sub-indicator a Mountain Green Cover Index
----------------------------------------------------------
-
-Tool Step A5 Generate planimetric and real surface area statistics
-------------------------------------------------------------------
-
-The following steps are covered by this tool:
-
-
-NOTE STILL NEED TO ADD ADDITIONAL STEP WHEN RSA IS CALCULATED (copy from previous MGCI doc effort
+NOTE: the step by step instructions only calculate planimetric area. For real Surface Area statistics the toolbox must be used.
 
 Generate area statistics for each land cover class
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The data are now in a consistent format, so we can now generate the
 statistics required for the MGCI reporting. As we want to generate
@@ -580,8 +563,8 @@ END
 Save the edits.
 
 
-Tool Step A6 Formatting to reporting tables
--------------------------------------------
+Step-by-step equivalent of Tool Step A6 Formatting to reporting tables
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The following steps are covered by this tool (although when undertaken manually the steps are slightly different as a QGIS plugin can be used to help with the formatting):
 
