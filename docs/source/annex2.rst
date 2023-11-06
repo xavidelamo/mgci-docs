@@ -429,7 +429,6 @@ Step-by-step equivalent of Tool Step A5 Generate planimetric and real surface ar
 
 The following steps are covered by this tool:
 
-
 NOTE: the step by step instructions only calculate planimetric area. For real Surface Area statistics the toolbox must be used.
 
 Generate area statistics for each land cover class
@@ -568,8 +567,6 @@ Step-by-step equivalent of Tool Step A6 Formatting to reporting tables
 
 The following steps are covered by this tool (although when undertaken manually the steps are slightly different as a QGIS plugin can be used to help with the formatting):
 
-REPLACE SECTION BELOW WITH TEXT IN PREVIOUS DOC FOR GROUPSTATS
-
 Now, we will export this result as an excel file. Before export we will
 also organize the table and remove unwanted fields. In the Processing
 Toolbox, search and select \ **Vector table ‣ Refactor fields**.
@@ -666,10 +663,8 @@ presented in the figure below).
 
 |image45|
 
-1. 
-
-   1. .. rubric:: Generate LULC degradation layers for reporting periods
-         :name: generate-lulc-degradation-layers-for-reporting-periods
+Generate LULC degradation layers for reporting periods
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 SGD Indicator 15.4.2b requires us to identify change between LC classes
 in each reporting period, therefore the first requirement for
@@ -705,8 +700,13 @@ legend, the values may be greater than 1-10. We will therefore multiply
 values in year 1 by 1000 (in order to avoid any overlap between the
 values in year 2).
 
+Step-by-step equivalent of Tool Step B1 Combine LULC datasets
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The following steps are covered by this tool:
+
 Combine the landcover dataset for the baseline and reporting year
------------------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 First, we will generate a single raster containing a value to represent
 both year1 landcover and year2 landcover. We will demonstrate using the
@@ -766,12 +766,15 @@ represented by the right hand digit (for values 1-9) and the right hand
 Repeat the above step for the next reporting period i.e. using 2015
 landcover (year 1) and 2018 landcover (year2)
 
-1. .. rubric:: Generate the transitions Matrix
-      :name: generate-the-transitions-matrix
+Step-by-step equivalent of Tool Step B2 Generate Transition matrix
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-2. .. rubric:: Use the default transitions matrix (using the default
-      LULC legend)
-      :name: use-the-default-transitions-matrix-using-the-default-lulc-legend
+The following steps are covered by this tool:
+
+Generate the transitions Matrix
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Option 1: Use the default transitions matrix (using the default LULC legend)**
 
 Download the default transitions matrix csv file from the `GitHub
 repository <https://github.com/sepal-contrib/sepal_mgci/blob/master/component/parameter/transition_matrix.csv>`__
@@ -836,9 +839,8 @@ The resultant table should look like this:
 
 -  **Return to QGIS**
 
-   1. .. rubric:: Generate a transitions matrix using a national LULC
-         legend
-         :name: generate-a-transitions-matrix-using-a-national-lulc-legend
+**Option 2: Generate a transitions matrix using a national LULC**
+
 
 If are using a national land cover transition matrix you can prepare a
 transitions table in the same format as the default transitions table in
@@ -1004,6 +1006,7 @@ top bar again.
 
 -  The result looks like this
 
+
 -  Next click the **New Field** button to add the following 2 fields
 
     |image67| |image68|
@@ -1105,8 +1108,14 @@ other time periods either check for missing entries and manually add
 them to this table or generate a new transitions table for the new time
 period.*
 
+
+Step-by-step equivalent of Tool B3 Reclassify LULC transitions to impact
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The following steps are covered by this tool:
+
 Reclassify LULC transitions using the transitions matrix
---------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The next step is to reclassify the outputs from step 5.2 (i.e. the
 combined landcover datasets for year1 and year 2), first for the
@@ -1163,9 +1172,13 @@ being used.
    landcover (year 1) and 2018 landcover (year2) i.e. using the layer
    **UNSEEA\_LULC2015\_2018\_EqArea.tif**
 
-   1. .. rubric:: Combine landcover transitions, impact and bioclimatic
-         belts
-         :name: combine-landcover-transitions-impact-and-bioclimatic-belts
+Step-by-step equivalent of Tool B4 Combine Bioclimatic belts, LULC transitions and impact layers 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The following steps are covered by this tool:
+
+Combine landcover transitions, impact and bioclimatic belts
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 We now have all the layers we need for generating statistics. To make it
 easier we will again sum the layers together using different factors to
@@ -1223,12 +1236,17 @@ impact status and bioclimatic belt:
 -  Repeat the above step for the next reporting period i.e. using 2015
    landcover (year 1) and 2018 landcover (year2)
 
-   1. .. rubric:: Computation of Proportion of degraded mountain area
-         :name: computation-of-proportion-of-degraded-mountain-area
+Step-by-step equivalent of Tool B5 Generate planimetric and real surface area statistics
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-      1. .. rubric:: Generate area statistics for each land cover
-            transition
-            :name: generate-area-statistics-for-each-land-cover-transition
+The following steps are covered by this tool:
+
+NOTE: the step by step instructions only calculate planimetric area. For real Surface Area statistics the toolbox must be used.
+
+Computation of Proportion of degraded mountain area
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Generate area statistics for each land cover transition**
 
 The data are now combined and in format we can use to generate the
 statistics required for the sub-indicator 15.4.2b reporting. The
@@ -1393,10 +1411,15 @@ attributes from the transitions matrix file.
 -  Save the refactored file to a new name within the geopackage
 
    e.g. subInd\_b\_Areas\_COL\_basline2000\_2015\_sqkm\_joined
+   
+Step-by-step equivalent of Tool B6 B6 Formatting to reporting tables
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-   1. .. rubric:: Calculate area statistics and format statistics to
-         reporting format
-         :name: calculate-area-statistics-and-format-statistics-to-reporting-format
+The following steps are covered by this tool:   
+   
+Calculate area statistics and format statistics to reporting format
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 -  From the main menu click on **Plugins>>Manage and install plugins**
 
@@ -1472,7 +1495,7 @@ A summary table will appear in the **Group Stats** window
 **END**
 
 Generate multiband raster to help with spatial interrogation of results and QA
-------------------------------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Use the gdal merge tool to combine all the input rasters into a single
 multi-band raster
