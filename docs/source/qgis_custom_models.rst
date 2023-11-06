@@ -170,7 +170,7 @@ Instructions to calculate Sub-indicator 15.4.2a in QGIS using custom models
 This section of the tutorial explains in detail how to use the custom QGIS toolbox to calculate value estimates for sub-indicator 15.4.2a in QGIS, using Colombia as a case study. 
 
 Step A0 Prepare country boundary and buffer to 10 km
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
 
 The first step is to define an Area of Interest (AOI) for the analysis. This should go beyond the country boundary as outlined in the **Defining analyses environments and land cover data selection** of the tutorial. In this example, the input boundary layer is in Geographic coordinate system (EPSG 4326). At this stage we want to set-up the projection for the main parts of the analysis. We therefore want to set the project window to an equal area projection and physically project the country boundary to the same projection. 
 
@@ -202,8 +202,42 @@ This will generate the country boundary in equal area projection and one with a 
 
 |SubA_A0_tool_model|
 
+Step A1 Prepare and reclassify LULC dataset into UN-SEEA classes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^  
+Step A2 Prepare mountains and combine with LULC
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+Step A3 preparing a DEM for Real Surface Area
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Step A4 Generate real surface area raster
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Step A5 Generate planimetric and real surface area statistics
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+Step A6 Formatting to reporting tables
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
 Instructions to calculate Sub-indicator 15.4.2b in QGIS using custom models
 ---------------------------------------------------------------------------
+Step B1 Combine LULC datasets
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Step B2 Generate transition matrix
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+Step B3 Reclassify LULC transitions to impacts
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Step B4 Combine Bioclimatic belts, LULC transitions and impact layers 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Step B5 Generate planimetric and real surface area statistics
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+B6 Formatting to reporting tables
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+
+
+
+
+
+
 .. |crosswalk_textfile| image:: media_toolbox/crosswalk_textfile.png
    :width: 1200
 
