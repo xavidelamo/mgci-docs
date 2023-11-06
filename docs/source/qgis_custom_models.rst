@@ -314,16 +314,16 @@ This Step does not run a tool but provides users with information to guide them 
 
 For reporting on SDG 15.4.2 countries must report planimetric area. Countries also however have the option to also calculate real surface area.  This requires development of a real surface area layer requires a Digital Elevation Model (DEM).
 
-
 If you are choosing **NOT to calculate real surface area**, then you can **go straight to step A4 as the DEM** is only required for this calculation,
 
 Otherwise: 
-
 If you are choosing to calculate Real Surface Area and you already have a country DEM, you need to ensure that it goes at least 7km beyond the country boundary in all directions as the  and is at a resoltion that is the same or higher resolution than your Land use land cover dataset then: Load your DEM into the QGIS project
 
 (Note: The higher the resolution (smaller the grid cells), the more detailed information. Higher resolution DEMs can improve the accuracy of analysis however, they are more computationally expensive to use, particularly over large extents. )
 
  The selection of which DEM to use for this can be chosen by the countries. We do not advise countries which DEM to choose although table in section **Choice of DEM for generating real surface area calculations and data access**  in the **Defining analyses environments and land cover data selection** provides some suggestions for open access sources. There are also some step-by-step guidance in Annex 1 to help use some of the different download options.
+ 
+|SubA_A3_tool_interface|
 
 Step A4 Generate real surface area raster
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
