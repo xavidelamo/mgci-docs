@@ -30,7 +30,7 @@ The AOI should go beyond the country boundary as outlined in the \ **Defining a
 
 |image3|
 
-The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations. 
+*The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.* 
 
 -  Click \ **Add** and **Close** to close the Data Source Manager:
    Vector dialogue window
@@ -69,7 +69,7 @@ example it is the national projection for Colombia.
 
 |image5|
 
-The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.
+*The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.*
 
 -  Once located click on the chosen projection to set your QGIS project
    to be displayed in the chosen projection.
@@ -98,7 +98,7 @@ Next use the reproject tool to project the country boundary layer to the
 
 |image8|
 
-The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.
+*The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.*
 
 Now that the country boundary is in the chosen projection, we can
 generate the mountains and land cover maps for Colombia.
@@ -223,7 +223,7 @@ the country.
 
 |image25|
 
-The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.
+*The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.*
 
 Reclassify to UN-SEEA land cover classes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -275,7 +275,7 @@ can see that the actual layer only has 10 values.
 
 |image29|
 
-The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.
+*The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.*
 
 Step-by-step equivalent of Tool step A2 Prepare mountains and combine with LULC
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -303,7 +303,7 @@ Layer** to add the global mountain map file to your QGIS session.
 
 |image11|
 
-The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.
+*The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.*
 
 -  In the processing toolbox search for \ **Clip**
 
@@ -342,7 +342,7 @@ should be added to the map canvas\ **.**
 
 |image15|
 
-The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.
+*The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.*
 
 -  Right click on the clipped mountain dataset (i.e. in this example the
    Mountains\_Colombia layer) and click \ **properties>>Symbology**
@@ -359,7 +359,7 @@ and 4 is “Remaining Mountain Area”.
 
 |image17|
 
-The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.
+*The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.*
 
 Combine mountain and vegetation descriptor layers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -424,7 +424,7 @@ only allow a single input for zones, we will combine the two datasets.
 
 |image33|
 
-The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.
+*The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.*
 
 Step-by-step equivalent of Tool step A3 download DEM
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -481,7 +481,7 @@ column m2 contains the area for each class in square meters.
 
 |image35|
 
-The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.
+*The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.*
 
 Let’s convert the area to square kilometers. In the Processing Toolbox,
 search and select \ **Vector table >> Field Calculator.**
@@ -682,7 +682,7 @@ presented in the figure below).
 
 |image45|
 
-The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.
+*The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.*
 
 Generate LULC degradation layers for reporting periods
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -768,7 +768,7 @@ We will calculate the baseline period first i.e. using 2000 landcover
 
 |image47|
 
-The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.
+*The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.*
 
  Set the Reference layer as one of the landcover datasets
    to set the extent, cellsize and CRS e.g.
@@ -1193,7 +1193,7 @@ being used.
 
    |image80|
    
-	The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.
+	*The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.*
 
 -  Repeat the above step for the next reporting period i.e. using 2015
    landcover (year 1) and 2018 landcover (year2) i.e. using the layer
@@ -1256,7 +1256,7 @@ impact status and bioclimatic belt:
 
 -  |image82|
 
-	The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.
+	*The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.*
 
  Click **Run.** The output is added to the table of
    contents and the annotated legend below illustrates the meanings of

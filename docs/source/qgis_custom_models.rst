@@ -200,7 +200,7 @@ This will generate the country boundary in equal area projection and one with a 
 
 |SubA_A0_tool_results|
 
-The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.
+*The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.*
 
 **Tool A0 model diagram**
 
@@ -253,7 +253,7 @@ You should now see the unique LULC classes present within the AOI for the countr
 
 |SubA_A1_tool_results|
 
-The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.
+*The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.*
 
 **Tool A1 model diagram**
 
@@ -300,7 +300,7 @@ This should produce the following outputs on the map canvas:
 
 |SubA_A2_tool_results|
 
-The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.
+*The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.*
 
 **Tool A2 model diagram**
 
@@ -338,7 +338,7 @@ In the Processing Toolbox, under Models, click on model **A4 Generate Real Surfa
 
 |SubA_A4_tool_results|
 
-The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.
+*The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.*
 
 **Tool A4 model diagram**
 
@@ -453,7 +453,7 @@ This section of the tutorial assumes that the user has already calculated sub-in
 
 |example1|
 
-The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.
+*The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.*
 
 SGD Indicator 15.4.2b requires us to identify change between LC classes in each reporting period, therefore the first requirement for sub-indicator 15.4.2b is to develop a transition matrix that specifies the land cover changes occurring in a given land unit (pixel) as being either degradation, improvement or neutral transitions. The definition of degradation adopted for the computation of this indicator is the one established by the Intergovernmental Science-Policy Platform on Biodiversity and Ecosystem Services (IPBES). 
 
@@ -498,7 +498,7 @@ When using the default UN-SEEA land cover legend, this means that a value of 200
 
 |SubB_B1_tool_results|
 
-The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.
+*The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.*
 
 **Tool B1 model diagram**
 
@@ -549,7 +549,7 @@ The resultant table should look like this:
 
 |SubB_B2_tool_results1|
 
-The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.
+*The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.*
 
 |SubB_B2_tool_results2|
 
@@ -608,7 +608,7 @@ You can ignore the two warning messages that appear in red– these do not affec
 
 |SubB_B3_tool_results|
 
-The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.
+*The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.*
 
 **Tool B3 model diagram**
 
@@ -656,7 +656,7 @@ In the Processing Toolbox, under Models, click on model **B4 Combine Bioclimatic
 
 |SubB_B4_tool_results|
 
-The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.
+*The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.*
 
 **Tool B4 model diagram**
 
