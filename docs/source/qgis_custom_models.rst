@@ -336,7 +336,11 @@ In the Processing Toolbox, under Models, click on model **A4 Generate Real Surfa
 
 **Click Run.**
 
-|SubA_A4_tool_results|
+This should produce the following outputs (a DEM raster and Real Surace Area raster) on the map canvas:
+
+|SubA_A4_tool_results1|
+
+|SubA_A4_tool_results2|
 
 *The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.*
 
@@ -774,7 +778,9 @@ Repeat the above step for the next reporting period i.e., using 2015 landcover (
 
 .. |SubA_A4_tool_interface| image:: media_toolbox/SubA_A4_tool_interface.png
    :width: 1200
-.. |SubA_A4_tool_results| image:: media_toolbox/SubA_A4_tool_results.png
+.. |SubA_A4_tool_results1| image:: media_toolbox/SubA_A4_tool_results1.png
+   :width: 1200
+.. |SubA_A4_tool_results2| image:: media_toolbox/SubA_A4_tool_results2.png
    :width: 1200
 .. |SubA_A4_tool_model| image:: media_toolbox/SubA_A4_tool_model.png
    :width: 1200
