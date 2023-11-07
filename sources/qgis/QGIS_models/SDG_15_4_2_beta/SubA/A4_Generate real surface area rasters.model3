@@ -364,7 +364,21 @@
     <Option type="QString" value="C:\MGCI_DML\tmp2" name="select_folder_for_outputs"/>
   </Option>
   <Option name="groupBoxes"/>
-  <Option name="help"/>
+  <Option type="Map" name="help">
+    <Option type="QString" value="Corinna Ravilious and Vignesh Kamath Cannanure, UNEP-WCMC " name="ALG_CREATOR"/>
+    <Option type="QString" value="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;>&#xa;&lt;html>&lt;head>&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; />&lt;style type=&quot;text/css&quot;>&#xa;p, li { white-space: pre-wrap; }&#xa;&lt;/style>&lt;/head>&lt;body style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:400; font-style:normal;&quot;>&#xa;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;>&lt;span style=&quot; font-family:'Segoe UI','sans-serif'; font-size:10pt; font-weight:600; color:#1f78b4; background-color:#ffffff;&quot;>Sub-indicator 15.4.2a&lt;/span>&lt;span style=&quot; font-family:'Segoe UI','sans-serif'; font-size:10pt; color:#a6cee3; background-color:#ffffff;&quot;>,&lt;/span>&lt;span style=&quot; font-family:'Segoe UI','sans-serif'; font-size:8.5pt; color:#a6cee3; background-color:#ffffff;&quot;> &lt;/span>&lt;span style=&quot; font-family:'Segoe UI','sans-serif'; font-size:10pt; color:#1f78b4; background-color:#ffffff;&quot;>Mountain Green Cover Index (MGCI), is designed to measure the extent and changes of green cover - i.e. forest, shrubs, trees, pasture land, cropland, etc. – in mountain areas. MGCI is defined as the percentage of green cover over the total surface of the mountain area of a given country and for given reporting year. The aim of the index is to monitor the evolution of the green cover and thus assess the status of conservation of mountain ecosystems.&lt;/span>&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt;&quot;> &lt;/span>&lt;/p>&#xa;&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;>&lt;span style=&quot; font-family:'MS Shell Dlg 2','sans-serif'; font-size:10pt; font-weight:600; color:#1f78b4;&quot;>This step is to generate the real surface area for the analysis. See the  **&lt;/span>&lt;a href=&quot;https://sdg1542-qgis-tool-development.readthedocs.io/en/latest/overview.html#planimetric-area-calculation-vs-real-surface-area-calculation&quot;>&lt;span style=&quot; font-family:'MS Shell Dlg 2','sans-serif'; font-size:10pt; font-weight:600; text-decoration: underline; color:#0000ff;&quot;>Planimetric vs real surace area calculation&lt;/span>&lt;/a>&lt;span style=&quot; font-family:'MS Shell Dlg 2','sans-serif'; font-size:10pt; font-weight:600; color:#1f78b4;&quot;>** section of the SDG 15.4.2 beta tutorial.&lt;/span>&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt;&quot;> &lt;/span>&lt;/p>&lt;/body>&lt;/html>" name="ALG_DESC"/>
+    <Option type="QString" value="Corinna Ravilious and Vignesh Kamath Cannanure, UNEP-WCMC " name="ALG_HELP_CREATOR"/>
+    <Option type="QString" value="Beta V 02 " name="ALG_VERSION"/>
+    <Option type="QString" value="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;>&#xa;&lt;html>&lt;head>&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; />&lt;style type=&quot;text/css&quot;>&#xa;p, li { white-space: pre-wrap; }&#xa;&lt;/style>&lt;/head>&lt;body style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:400; font-style:normal;&quot;>&#xa;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;>&lt;span style=&quot; color:#000000;&quot;>Please&lt;/span> &lt;a href=&quot;https://sdg1542-qgis-tool-development.readthedocs.io/en/latest/qgis_custom_models.html#step-a4-generate-real-surface-area-raster&quot;>&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;>see example for Colombia&lt;/span>&lt;/a> in the SDG 15.4.2 beta tutorial.&lt;/p>&lt;/body>&lt;/html>" name="EXAMPLES"/>
+    <Option type="QString" value="https://sdg1542-qgis-tool-development.readthedocs.io/en/latest/index.html" name="HELP_URL"/>
+    <Option type="QString" value="Set this as -9999." name="NoDatavalue"/>
+    <Option type="QString" value="Enter the cell size of the DEM raster in metres." name="cellsize"/>
+    <Option type="QString" value="Set the path to the csv file containing UN country codes (downloaded from the GitHub repository)." name="csv_containing_un_country_codes"/>
+    <Option type="QString" value="Set the path to the DEM raster chosen in the previous step." name="input_dem_raster"/>
+    <Option type="QString" value="Target CRS (i.e., Select a relevant equal area projection for your area of interest): Select a CRS for your outputs. This should be an equal area projection relevant to the country being processed." name="input_target_crs"/>
+    <Option type="QString" value="Select country to process from the dropdown list." name="select_country"/>
+    <Option type="QString" value="Select an output folder to store your outputs. The output folder should already exist. Make sure the folder name does not have any spaces" name="select_folder_for_outputs"/>
+  </Option>
   <Option type="QString" value="Version2" name="internal_version"/>
   <Option name="modelVariables"/>
   <Option type="QString" value="SDG Indicator 15.4.2\Sub-indicatorA" name="model_group"/>
@@ -376,7 +390,7 @@
       <Option type="invalid" name="defaultGui"/>
       <Option type="QString" value="NoData value" name="description"/>
       <Option type="int" value="0" name="flags"/>
-      <Option type="QString" value="" name="help"/>
+      <Option type="QString" value="Set this as -9999." name="help"/>
       <Option type="double" value="1.7976931348623157e+308" name="max"/>
       <Option name="metadata"/>
       <Option type="double" value="-1.7976931348623157e+308" name="min"/>
@@ -389,7 +403,7 @@
       <Option type="invalid" name="defaultGui"/>
       <Option type="QString" value="cellsize" name="description"/>
       <Option type="int" value="0" name="flags"/>
-      <Option type="QString" value="" name="help"/>
+      <Option type="QString" value="Enter the cell size of the DEM raster in metres." name="help"/>
       <Option type="double" value="1.7976931348623157e+308" name="max"/>
       <Option name="metadata"/>
       <Option type="double" value="-1.7976931348623157e+308" name="min"/>
@@ -404,7 +418,7 @@
       <Option type="invalid" name="defaultGui"/>
       <Option type="QString" value="CSV_containing_UN_country_codes" name="description"/>
       <Option type="int" value="0" name="flags"/>
-      <Option type="QString" value="" name="help"/>
+      <Option type="QString" value="Set the path to the csv file containing UN country codes (downloaded from the GitHub repository)." name="help"/>
       <Option name="metadata"/>
       <Option type="QString" value="csv_containing_un_country_codes" name="name"/>
       <Option type="QString" value="vector" name="parameter_type"/>
@@ -414,7 +428,7 @@
       <Option type="invalid" name="defaultGui"/>
       <Option type="QString" value="Input: DEM raster" name="description"/>
       <Option type="int" value="0" name="flags"/>
-      <Option type="QString" value="" name="help"/>
+      <Option type="QString" value="Set the path to the DEM raster chosen in the previous step." name="help"/>
       <Option name="metadata"/>
       <Option type="QString" value="input_dem_raster" name="name"/>
       <Option type="QString" value="raster" name="parameter_type"/>
@@ -424,7 +438,7 @@
       <Option type="invalid" name="defaultGui"/>
       <Option type="QString" value="Input: Target CRS" name="description"/>
       <Option type="int" value="0" name="flags"/>
-      <Option type="QString" value="" name="help"/>
+      <Option type="QString" value="Target CRS (i.e., Select a relevant equal area projection for your area of interest): Select a CRS for your outputs. This should be an equal area projection relevant to the country being processed." name="help"/>
       <Option name="metadata"/>
       <Option type="QString" value="input_target_crs" name="name"/>
       <Option type="QString" value="crs" name="parameter_type"/>
@@ -435,7 +449,7 @@
       <Option type="invalid" name="defaultGui"/>
       <Option type="QString" value="Select country" name="description"/>
       <Option type="int" value="0" name="flags"/>
-      <Option type="QString" value="" name="help"/>
+      <Option type="QString" value="Select country to process from the dropdown list." name="help"/>
       <Option name="metadata"/>
       <Option type="QString" value="select_country" name="name"/>
       <Option type="StringList" name="options">
@@ -699,7 +713,7 @@
       <Option type="QString" value="" name="extension"/>
       <Option type="QString" value="All files (*.*)" name="filefilter"/>
       <Option type="int" value="0" name="flags"/>
-      <Option type="QString" value="" name="help"/>
+      <Option type="QString" value="Select an output folder to store your outputs. The output folder should already exist. Make sure the folder name does not have any spaces" name="help"/>
       <Option name="metadata"/>
       <Option type="QString" value="select_folder_for_outputs" name="name"/>
       <Option type="QString" value="file" name="parameter_type"/>

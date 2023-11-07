@@ -6,12 +6,12 @@
       <Option type="Map" name="alg_config">
         <Option type="List" name="conditions">
           <Option type="Map">
-            <Option type="QString" value=" @do_you_already_have_a_dem_covring_10km_around_your_country =0" name="expression"/>
-            <Option type="QString" value="Yes" name="name"/>
+            <Option type="QString" value=" @are_you_calculating_real_surface_area = TRUE" name="expression"/>
+            <Option type="QString" value="TRUE" name="name"/>
           </Option>
           <Option type="Map">
-            <Option type="QString" value=" @do_you_already_have_a_dem_covring_10km_around_your_country =1" name="expression"/>
-            <Option type="QString" value="No" name="name"/>
+            <Option type="QString" value="@are_you_calculating_real_surface_area = FALSE" name="expression"/>
+            <Option type="QString" value="FALSE" name="name"/>
           </Option>
         </Option>
       </Option>
@@ -21,16 +21,16 @@
         <Option type="QString" value="" name="color"/>
         <Option type="QString" value="" name="component_description"/>
         <Option type="double" value="60" name="component_height"/>
-        <Option type="double" value="484.8" name="component_pos_x"/>
-        <Option type="double" value="144.60000000000002" name="component_pos_y"/>
+        <Option type="double" value="497.6" name="component_pos_x"/>
+        <Option type="double" value="101.4" name="component_pos_y"/>
         <Option type="double" value="100" name="component_width"/>
         <Option type="bool" value="true" name="outputs_collapsed"/>
         <Option type="bool" value="true" name="parameters_collapsed"/>
       </Option>
       <Option type="QString" value="Conditional branch" name="component_description"/>
       <Option type="double" value="30" name="component_height"/>
-      <Option type="double" value="171.19999999999993" name="component_pos_x"/>
-      <Option type="double" value="333.6" name="component_pos_y"/>
+      <Option type="double" value="297.6" name="component_pos_x"/>
+      <Option type="double" value="146.4" name="component_pos_y"/>
       <Option type="double" value="200" name="component_width"/>
       <Option name="dependencies"/>
       <Option type="QString" value="native:condition_1" name="id"/>
@@ -39,7 +39,7 @@
       <Option type="bool" value="true" name="parameters_collapsed"/>
       <Option name="params"/>
     </Option>
-    <Option type="Map" name="native:raisewarning_1">
+    <Option type="Map" name="native:raisewarning_3">
       <Option type="bool" value="true" name="active"/>
       <Option name="alg_config"/>
       <Option type="QString" value="native:raisewarning" name="alg_id"/>
@@ -48,24 +48,19 @@
         <Option type="QString" value="" name="color"/>
         <Option type="QString" value="" name="component_description"/>
         <Option type="double" value="60" name="component_height"/>
-        <Option type="double" value="1185.6" name="component_pos_x"/>
-        <Option type="double" value="509.4000000000001" name="component_pos_y"/>
+        <Option type="double" value="1291.9999999999998" name="component_pos_x"/>
+        <Option type="double" value="519.6" name="component_pos_y"/>
         <Option type="double" value="100" name="component_width"/>
         <Option type="bool" value="true" name="outputs_collapsed"/>
         <Option type="bool" value="true" name="parameters_collapsed"/>
       </Option>
       <Option type="QString" value="Raise warning" name="component_description"/>
       <Option type="double" value="30" name="component_height"/>
-      <Option type="double" value="202.40000000000003" name="component_pos_x"/>
-      <Option type="double" value="484.0000000000001" name="component_pos_y"/>
+      <Option type="double" value="361.1999999999998" name="component_pos_x"/>
+      <Option type="double" value="199.8" name="component_pos_y"/>
       <Option type="double" value="200" name="component_width"/>
-      <Option type="List" name="dependencies">
-        <Option type="Map">
-          <Option type="QString" value="native:condition_1" name="child_id"/>
-          <Option type="QString" value="Yes" name="conditional_branch"/>
-        </Option>
-      </Option>
-      <Option type="QString" value="native:raisewarning_1" name="id"/>
+      <Option name="dependencies"/>
+      <Option type="QString" value="native:raisewarning_3" name="id"/>
       <Option name="outputs"/>
       <Option type="bool" value="true" name="outputs_collapsed"/>
       <Option type="bool" value="true" name="parameters_collapsed"/>
@@ -73,69 +68,28 @@
         <Option type="List" name="CONDITION">
           <Option type="Map">
             <Option type="int" value="2" name="source"/>
-            <Option type="QString" value=" @do_you_already_have_a_dem_covring_10km_around_your_country =0" name="static_value"/>
+            <Option type="QString" value="" name="static_value"/>
           </Option>
         </Option>
         <Option type="List" name="MESSAGE">
           <Option type="Map">
             <Option type="int" value="2" name="source"/>
-            <Option type="QString" value="USER INSTRUCTION: Load your DEM into the QGIS project and move to Step A4" name="static_value"/>
-          </Option>
-        </Option>
-      </Option>
-    </Option>
-    <Option type="Map" name="native:raisewarning_2">
-      <Option type="bool" value="true" name="active"/>
-      <Option name="alg_config"/>
-      <Option type="QString" value="native:raisewarning" name="alg_id"/>
-      <Option type="QString" value="" name="color"/>
-      <Option type="Map" name="comment">
-        <Option type="QString" value="" name="color"/>
-        <Option type="QString" value="" name="component_description"/>
-        <Option type="double" value="60" name="component_height"/>
-        <Option type="double" value="1185.6" name="component_pos_x"/>
-        <Option type="double" value="434" name="component_pos_y"/>
-        <Option type="double" value="100" name="component_width"/>
-        <Option type="bool" value="true" name="outputs_collapsed"/>
-        <Option type="bool" value="true" name="parameters_collapsed"/>
-      </Option>
-      <Option type="QString" value="Raise warning" name="component_description"/>
-      <Option type="double" value="30" name="component_height"/>
-      <Option type="double" value="459.99999999999994" name="component_pos_x"/>
-      <Option type="double" value="428.6" name="component_pos_y"/>
-      <Option type="double" value="200" name="component_width"/>
-      <Option type="List" name="dependencies">
-        <Option type="Map">
-          <Option type="QString" value="native:condition_1" name="child_id"/>
-          <Option type="QString" value="No" name="conditional_branch"/>
-        </Option>
-      </Option>
-      <Option type="QString" value="native:raisewarning_2" name="id"/>
-      <Option name="outputs"/>
-      <Option type="bool" value="true" name="outputs_collapsed"/>
-      <Option type="bool" value="true" name="parameters_collapsed"/>
-      <Option type="Map" name="params">
-        <Option type="List" name="CONDITION">
-          <Option type="Map">
-            <Option type="int" value="2" name="source"/>
-            <Option type="QString" value=" @do_you_already_have_a_dem_covring_10km_around_your_country =1" name="static_value"/>
-          </Option>
-        </Option>
-        <Option type="List" name="MESSAGE">
-          <Option type="Map">
-            <Option type="int" value="2" name="source"/>
-            <Option type="QString" value="USER INSTRUCTION: download a DEM (see guidance for DEM downloads)" name="static_value"/>
+            <Option type="QString" value="USER INSTRUCTION: Follow instructions in right hand panel or If you are NOT going to calculate Real Surface Area then you can move to Step A4" name="static_value"/>
           </Option>
         </Option>
       </Option>
     </Option>
   </Option>
-  <Option type="Map" name="designerParameterValues">
-    <Option type="int" value="1" name="do_you_already_have_a_dem_covring_10km_around_your_country"/>
-  </Option>
+  <Option name="designerParameterValues"/>
   <Option name="groupBoxes"/>
   <Option type="Map" name="help">
-    <Option type="QString" value="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;>&#xa;&lt;html>&lt;head>&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; />&lt;style type=&quot;text/css&quot;>&#xa;p, li { white-space: pre-wrap; }&#xa;&lt;/style>&lt;/head>&lt;body style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:400; font-style:normal;&quot;>&#xa;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;>&lt;br />&lt;/p>&lt;/body>&lt;/html>" name="ALG_DESC"/>
+    <Option type="QString" value="Corinna Ravilious and Vignesh Kamath Cannanure, UNEP-WCMC " name="ALG_CREATOR"/>
+    <Option type="QString" value="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;>&#xa;&lt;html>&lt;head>&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; />&lt;style type=&quot;text/css&quot;>&#xa;p, li { white-space: pre-wrap; }&#xa;&lt;/style>&lt;/head>&lt;body style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:400; font-style:normal;&quot;>&#xa;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;>&lt;span style=&quot; font-family:'Segoe UI','sans-serif'; font-size:10pt; font-weight:600; color:#1f78b4; background-color:#ffffff;&quot;>Sub-indicator 15.4.2a&lt;/span>&lt;span style=&quot; font-family:'Segoe UI','sans-serif'; font-size:10pt; color:#a6cee3; background-color:#ffffff;&quot;>,&lt;/span>&lt;span style=&quot; font-family:'Segoe UI','sans-serif'; font-size:8.5pt; color:#a6cee3; background-color:#ffffff;&quot;> &lt;/span>&lt;span style=&quot; font-family:'Segoe UI','sans-serif'; font-size:11pt; color:#1f78b4; background-color:#ffffff;&quot;>Mountain Green Cover Index (MGCI), is designed to measure the extent and changes of green cover - i.e. forest, shrubs, trees, pasture land, cropland, etc. – in mountain areas. MGCI is defined as the percentage of green cover over the total surface of the mountain area of a given country and for given reporting year. The aim of the index is to monitor the evolution of the green cover and thus assess the status of conservation of mountain ecosystems.&lt;/span>&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:11pt;&quot;> &lt;/span>&lt;/p>&#xa;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:8.25pt;&quot;>&lt;br />&lt;/p>&#xa;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;>&lt;span style=&quot; font-weight:600; color:#1f78b4;&quot;>This Step does not run a tool but provides users with information to guide them to the relevant sections in the resources. &lt;/span>&lt;/p>&#xa;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;>&lt;span style=&quot; color:#1f78b4;&quot;>For reporting on SDG 15.4.2 countries must report planimetric area. Countries also however have the option to also calculate real surface area.  This requires development of a real surface area layer requires a Digital Elevation Model (DEM).&lt;/span>&lt;/p>&#xa;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#1f78b4;&quot;>&lt;br />&lt;/p>&#xa;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;>&lt;span style=&quot; font-weight:600; color:#000000;&quot;>If you are choosing NOT to calculate real surface area, then you can **go straight to step A4 as the DEM** is only required for this calculation,&lt;/span>&lt;/p>&#xa;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-weight:600; color:#000000;&quot;>&lt;br />&lt;/p>&#xa;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;>&lt;span style=&quot; font-weight:600; color:#1f78b4;&quot;>Otherwise:&lt;/span>&lt;span style=&quot; color:#1f78b4;&quot;> &lt;/span>&lt;/p>&#xa;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;>&lt;span style=&quot; color:#1f78b4;&quot;>If you are choosing to calculate Real Surface Area and you already have a country &lt;/span>&lt;span style=&quot; font-weight:600; color:#1f78b4;&quot;>DEM&lt;/span>&lt;span style=&quot; color:#1f78b4;&quot;>, you need to &lt;/span>&lt;span style=&quot; font-weight:600; color:#1f78b4;&quot;>ensure that it goes at least 7km beyond the country boundary&lt;/span>&lt;span style=&quot; color:#1f78b4;&quot;> in all directions as the  and is at a resoltion that is the same or higher resolution than your Land use land cover dataset then: Load your DEM into the QGIS project&lt;/span>&lt;/p>&#xa;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#1f78b4;&quot;>&lt;br />&lt;/p>&#xa;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;>&lt;span style=&quot; font-size:10pt; font-style:italic; color:#1f78b4;&quot;>(&lt;/span>&lt;span style=&quot; font-size:10pt; font-weight:600; font-style:italic; color:#1f78b4;&quot;>Note&lt;/span>&lt;span style=&quot; font-size:10pt; font-style:italic; color:#1f78b4;&quot;>: The higher the resolution (smaller the grid cells), the more detailed information. Higher resolution DEMs can improve the accuracy of analysis however, they are more computationally expensive to use, particularly over large extents. )&lt;/span>&lt;/p>&#xa;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt; font-style:italic; color:#1f78b4;&quot;>&lt;br />&lt;/p>&#xa;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;>&lt;span style=&quot; color:#1f78b4;&quot;> The selection of which DEM to use for this can be chosen by the countries. We do not advise countries which DEM to choose although table in section &lt;/span>&lt;a href=&quot;https://sdg1542-qgis-tool-development.readthedocs.io/en/latest/defineenvs.html#choice-of-dem-for-generating-real-surface-area-calculations-and-data-access&quot;>&lt;span style=&quot; font-weight:600; text-decoration: underline; color:#0000ff;&quot;>Choice of DEM for generating real surface area calculations and data access&lt;/span>&lt;/a>&lt;span style=&quot; font-weight:600; color:#1f78b4;&quot;> &lt;/span>&lt;span style=&quot; color:#1f78b4;&quot;> in the &lt;/span>&lt;a href=&quot;https://sdg1542-qgis-tool-development.readthedocs.io/en/latest/defineenvs.html&quot;>&lt;span style=&quot; font-weight:600; text-decoration: underline; color:#0000ff;&quot;>Defining analyses environments and land cover data selection&lt;/span>&lt;/a>&lt;span style=&quot; color:#1f78b4;&quot;> provides some suggestions for open access sources. There are also some step-by-step guidance in &lt;/span>&lt;a href=&quot;https://sdg1542-qgis-tool-development.readthedocs.io/en/latest/annex1.html#what-is-a-dem&quot;>&lt;span style=&quot; font-weight:600; text-decoration: underline; color:#0000ff;&quot;>Annex 1&lt;/span>&lt;/a>&lt;span style=&quot; color:#1f78b4;&quot;> to help use some of the different download options.&lt;/span>&lt;/p>&lt;/body>&lt;/html>" name="ALG_DESC"/>
+    <Option type="QString" value="Corinna Ravilious and Vignesh Kamath Cannanure, UNEP-WCMC " name="ALG_HELP_CREATOR"/>
+    <Option type="QString" value="Beta V 02 " name="ALG_VERSION"/>
+    <Option type="QString" value="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;>&#xa;&lt;html>&lt;head>&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; />&lt;style type=&quot;text/css&quot;>&#xa;p, li { white-space: pre-wrap; }&#xa;&lt;/style>&lt;/head>&lt;body style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:400; font-style:normal;&quot;>&#xa;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;>Please &lt;a href=&quot;https://sdg1542-qgis-tool-development.readthedocs.io/en/latest/qgis_custom_models.html#step-a3-preparing-a-dem-for-real-surface-area&quot;>&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;>see example for Colombia&lt;/span>&lt;/a> in the SDG 15.4.2 beta tutorial. &lt;/p>&lt;/body>&lt;/html>" name="EXAMPLES"/>
+    <Option type="QString" value="https://sdg1542-qgis-tool-development.readthedocs.io/en/latest/index.html" name="HELP_URL"/>
+    <Option type="QString" value="" name="SHORT_DESCRIPTION"/>
     <Option type="QString" value="Have you already downloaded a DEM (the DEM needs to extend beyond the country boundary by at least 10km buffer beyond  the country in all directions)" name="do_you_already_have_a_dem"/>
   </Option>
   <Option type="QString" value="Version2" name="internal_version"/>
@@ -143,21 +97,15 @@
   <Option type="QString" value="SDG Indicator 15.4.2\Sub-indicatorA" name="model_group"/>
   <Option type="QString" value="A3 preparing a DEM for Real Surface Area" name="model_name"/>
   <Option type="Map" name="parameterDefinitions">
-    <Option type="Map" name="do_you_already_have_a_dem_covring_10km_around_your_country">
-      <Option type="bool" value="false" name="allow_multiple"/>
-      <Option type="invalid" name="default"/>
+    <Option type="Map" name="are_you_calculating_real_surface_area">
+      <Option type="bool" value="true" name="default"/>
       <Option type="invalid" name="defaultGui"/>
-      <Option type="QString" value="Do you already have a DEM covring 10km around your country?" name="description"/>
+      <Option type="QString" value="Are you calculating Real Surface Area" name="description"/>
       <Option type="int" value="0" name="flags"/>
       <Option type="QString" value="" name="help"/>
       <Option name="metadata"/>
-      <Option type="QString" value="do_you_already_have_a_dem_covring_10km_around_your_country" name="name"/>
-      <Option type="StringList" name="options">
-        <Option type="QString" value="Yes"/>
-        <Option type="QString" value="No"/>
-      </Option>
-      <Option type="QString" value="enum" name="parameter_type"/>
-      <Option type="bool" value="false" name="uses_static_strings"/>
+      <Option type="QString" value="are_you_calculating_real_surface_area" name="name"/>
+      <Option type="QString" value="boolean" name="parameter_type"/>
     </Option>
   </Option>
   <Option type="StringList" name="parameterOrder">
@@ -172,24 +120,24 @@
     <Option type="QString" value="select_folder_for_outputs"/>
   </Option>
   <Option type="Map" name="parameters">
-    <Option type="Map" name="do_you_already_have_a_dem_covring_10km_around_your_country">
+    <Option type="Map" name="are_you_calculating_real_surface_area">
       <Option type="QString" value="" name="color"/>
       <Option type="Map" name="comment">
         <Option type="QString" value="" name="color"/>
         <Option type="QString" value="" name="component_description"/>
         <Option type="double" value="60" name="component_height"/>
-        <Option type="double" value="436" name="component_pos_x"/>
-        <Option type="double" value="330.20000000000005" name="component_pos_y"/>
+        <Option type="double" value="493.6" name="component_pos_x"/>
+        <Option type="double" value="49.400000000000006" name="component_pos_y"/>
         <Option type="double" value="100" name="component_width"/>
         <Option type="bool" value="true" name="outputs_collapsed"/>
         <Option type="bool" value="true" name="parameters_collapsed"/>
       </Option>
-      <Option type="QString" value="do_you_already_have_a_dem_covring_10km_around_your_country" name="component_description"/>
-      <Option type="double" value="95.60000000000002" name="component_height"/>
-      <Option type="double" value="330.7999999999999" name="component_pos_x"/>
-      <Option type="double" value="232.79999999999998" name="component_pos_y"/>
-      <Option type="double" value="285.59999999999997" name="component_width"/>
-      <Option type="QString" value="do_you_already_have_a_dem_covring_10km_around_your_country" name="name"/>
+      <Option type="QString" value="are_you_calculating_real_surface_area" name="component_description"/>
+      <Option type="double" value="30" name="component_height"/>
+      <Option type="double" value="293.6" name="component_pos_x"/>
+      <Option type="double" value="94.4" name="component_pos_y"/>
+      <Option type="double" value="200" name="component_width"/>
+      <Option type="QString" value="are_you_calculating_real_surface_area" name="name"/>
       <Option type="bool" value="true" name="outputs_collapsed"/>
       <Option type="bool" value="true" name="parameters_collapsed"/>
     </Option>
