@@ -401,7 +401,9 @@ In the Processing Toolbox, under Models, click on model **A5 Generate Planimetri
 
 **Click Run.**
 
-This output is the main statistics table from the analysis, from which other summary statistics tables will be generated.
+This output is the main statistics table from the analysis, from which other summary statistics tables will be generated: 
+
+|SubA_A5_tool_results|
 
 **Tool A5 model diagram**
 
