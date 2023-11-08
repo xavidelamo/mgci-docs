@@ -236,8 +236,41 @@ v1.**
 -  docs.qgis.org/3.16/en/docs/user\_manual/processing/3rdParty.html#index-5
 
 
+QGIS custom toolbox download and installation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Users will also need to download the SDG_15_4_2_beta_Toolbox and set of templates and style files from the SDG_15_4_2_beta repository.
+
+|setup1|
+
+Once downloaded users need to navidate to the **sources>>qgis>>QGIS_models folder* and copy the the models and scripts in relevant QGIS folders. Guidance is provided below.
+
+|setup2|
+
+The QGIS R-scripts will need to be placed in R scripts folder and the *SDG_15_4_2_beta* folder placed in the Models folder. You can find the location in QGIS under Settings>>Options. The other style and template files can be stored in your own project working location.
+
+|setup3|
+
+We suggest users create a folder for working in the following strucure.
+
+|setup4|
+
+Check that the *SDG_15_4_2_beta* toolbox is visible in the *processing toolbox*. It is from here that you will run the tools if you choose to use the SDG_15_4_2_beta toolbox rather than the manual steps.
+
+|setup5|
 
 
+.. |setup1| image:: media_toolbox/setup1.png
+   :width: 800
+.. |setup2| image:: media_toolbox/setup2.png
+   :width: 800
+.. |setup3| image:: media_toolbox/setup3.png
+   :width: 800
+.. |setup4| image:: media_toolbox/setup4.png
+   :width: 800
+.. |setup5| image:: media_toolbox/setup5.png
+   :width: 800
+   
 
 .. |image0| image:: media_QGIS/image2_orig.png
    :width: 6.26806in
