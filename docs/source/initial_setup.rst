@@ -1,4 +1,4 @@
-2. Initial set-up 
+Initial set-up 
 =================
 
 R software and packages installation
@@ -237,7 +237,7 @@ v1.**
 
 
 QGIS custom toolbox download and installation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------------------------
 
 Users will also need to download the SDG_15_4_2_beta_Toolbox and set of templates and style files from the SDG_15_4_2_beta repository.
 
