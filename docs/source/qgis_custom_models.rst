@@ -181,6 +181,7 @@ Check that the *SDG_15_4_2_beta* toolbox is visible in the *processing toolbox*.
 
 |setup5|
 
+From the **sources>>raw_data** folder, unzip the SDG1542_WorldMountainMap and save to the input_data folder.
 
 .. |setup1| image:: media_toolbox/setup1.png
    :width: 800
@@ -191,6 +192,8 @@ Check that the *SDG_15_4_2_beta* toolbox is visible in the *processing toolbox*.
 .. |setup4| image:: media_toolbox/setup4.png
    :width: 800
 .. |setup5| image:: media_toolbox/setup5.png
+   :width: 800
+.. |setup7| image:: media_toolbox/setup7.png
    :width: 800
 
 **Running analysis steps using the custom QGIS toolbox**
