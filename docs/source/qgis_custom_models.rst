@@ -157,22 +157,6 @@ processing toolbox menu
 
 |image17orig|
 
-Next add additional resources to the R processing toolbox
-
--  To add other R resources click on **plugins>>resource
-   sharing>>resource sharing**
-
-   |image18orig|
-
--  Click on **All Collections** on the left hand panel and click **QGIS
-   R script collection (QGIS Official Repository)** then click
-   **Install**
-
-   |image19orig|
-
-A wider collection of scripts should now be present in the R-scripts
-collection. These are not required for MGCI but useful for R-Integration
-with QGIS.
 
 QGIS-SDG 15.4.2 custom toolbox download and installation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
