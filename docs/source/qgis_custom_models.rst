@@ -33,27 +33,65 @@ License
 ^^^^^^^
 The QGIS-SDG 15.4.2 :sub:`beta` workflow and its documentation is made available under the terms of the `Creative Commons Attribution 4.0 International License (CC BY 4.0) <https://creativecommons.org/licenses/by/4.0/>`_ .
 
-
 Initial setup
 -------------
-Before using QGIS-SDG 15.4.2 :sub:`beta` to run this workflow you will need have QGIS 3.20 or a higher version installed in your computer.
 
-We suggest users use the Long-Term Release version  of QGIS to undertake their analysis as this is most stable versions and users are less likely to incur technical difficulties and bugs.  There are various installers depending on your operating system but for most users we recommend the QGIS Standalone Installer. Full instructions are on their website: https://qgis.org/en/site/forusers/download.html#
+QGIS software installation
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Whilst the QGIS-SDG 15.4.2 :sub:`beta` analysis runs entirely within the QGIS interface, users
-wishing to use QGIS for the QGIS-SDG 15.4.2 :sub:`beta` analysis are also required to install R
-software. R scripts can be run from within the QGIS interface and no prior 
-knowledge of R is required.
+Before using QGIS-SDG 15.4.2 :sub:`beta` to run this workflow you will need have QGIS 3.22.16 installed on your compute. We suggest users use the Long-Term Release version [1]_ of QGIS to undertake their analysis as this is the most stable version and users are less likely to incur technical difficulties and bugs. There are various installers depending on your operating system but for most users we recommend the QGIS Standalone Installer. Full instructions are on their website: `https://qgis.org/en/site/forusers/download.html# <https://qgis.org/en/site/forusers/download.html>`__\. 
 
+Whilst the QGIS-SDG 15.4.2 :sub:`beta` analysis runs entirely within the QGIS interface, to run this workflow, you will also need to install R Software 4.4.1. R scripts will be run from within the QGIS interface and no prior knowledge of R is required.
 
-and an R script will be only be used for calculating real
-surface area during the QGIS-SDG 15.4.2 :sub:`beta` calculations. Real surface area can be
-calculated using one of the ready to use SAGA tools in the processing
-toolbox, however after initial testing we found the results differed
-from the GEE and R methods and therefore due to the need for consistency
-between calculation methods for this SDG indicator, the best and easiest
-method was to integrate the ‘surfaceArea’ function from package ‘sp in R
-software.
+R software and packages installation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1. Download and install R from https://www.r-project.org/ and then
+   download and install RStudio Desktop from
+   https://www.rstudio.com/products/rstudio/. Once the later has been
+   completed, open RStudio in your computer.
+
+2. Click on ‘File’ (top left corner) and then on ‘Open File…’. Select
+   the file named ‘XXXXXXXX’ Click on …….to run and install all the
+   packages and check that there are no errors.
+
+3. Ensure the ‘sp ‘and ‘raster’ packages are correctly installed. Two of
+   the options to do so are:
+    -   install.packages("name\_of\_package")
+    -  library(name\_of\_package)
+    
+       Or
+    -  (if(!require("name\_of\_package")) install.packages("name\_of\_package")
+
+A step-by-step guide on how to install R and R Studio (with images) can be found in Annex X.
+If you are not installing R and R studio from scratch, please make sure that your installations are upgraded. It is important to use the current version of R software (R-4.1.1 at the time of writing). The R version can be easily checked on the text within the ‘R Console’ box at the beginning of a new session (see Figure XX for standalone R and Figure ZZ for R Studio).
+
+|image5|
+
+|image6|
+
+If you are running R on Windows, package ‘installr’ allows you to
+quickly update the R version and the packages saved in your library
+(please check
+https://www.r-statistics.com/2015/06/a-step-by-step-screenshots-tutorial-for-upgrading-r-on-windows/
+for a step-by-step tutorial on how to do this or type the lines
+bellow on the R Console:
+
+- install.packages("installr") 
+    
+  *you’ll have to select the CRAN mirror for use in this session depending on your geographical location*
+
+ |image7|
+- library(installr)
+
+- updateR()
+    
+  *Answer the questions to complete the update. The final set of questions are about copying your R packages to the new version of R.*
+
+ |image8|
+
+QGIS plugins installation
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Once QGIS and R are both correctly installed users will need to install
 the following plugins:
@@ -136,29 +174,10 @@ A wider collection of scripts should now be present in the R-scripts
 collection. These are not required for MGCI but useful for R-Integration
 with QGIS.
 
+QGIS-SDG 15.4.2 custom toolbox download and installation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Resource sharing plugin:** This plugin is a useful R related
-plugin (which is not essential for the MGCI but useful for users
-wishing to integrate R with QGIS).
-
-Once the resource sharing plugin is installed some scripts should
-also be visible. They are grouped into several categories as in the
-screengrab below.
-
-|image30orig|
-
-For further information see the following sections of the QGIS user
-manual at
-
--  https://docs.qgis.org/3.16/en/docs/user_manual/processing/3rdParty.html#r-scripts
-
--  https://docs.qgis.org/3.16/en/docs/user\_manual/processing/3rdParty.html#index-5
-
-
-QGIS custom toolbox download and installation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Users will also need to download the SDG_15_4_2_beta_Toolbox and set of templates and style files from the SDG_15_4_2_beta repository.
+Users will also need to download the SDG_15_4_2_beta_Toolbox,  set of templates, style files and the SDG1542_WorldMountainsMap.zip from the SDG_15_4_2_beta repository at https://github.com/corinnar/mgci-docs/tree/MGCI_DML.
 
 |setup1|
 
@@ -190,8 +209,8 @@ Check that the *SDG_15_4_2_beta* toolbox is visible in the *processing toolbox*.
 .. |setup5| image:: media_toolbox/setup5.png
    :width: 800
 
-**Running analysis steps using custom QGIS toolbox**
-====================================================
+**Running analysis steps using the custom QGIS toolbox**
+========================================================
 
 This section of the tutorial explains in detail how to calculate value estimates for sub-indicator 15.4.2a in QGIS, using Colombia as a case study. This section assumes that the user has already downloaded the global mountain map made available by FAO to compute this indicator and a land cover dataset meeting the requirements described in the :ref:`**Defining analyses environments and land cover data selection**<Defining analyses environments and land cover data selection>`  section.
 
@@ -201,8 +220,8 @@ We provide a custom toolbox to group and run the steps to help speed up the anal
 Annex 2 of the tutorial outlines in detail the main steps each tool undertakes in the SDG 15.4.2 processing toolbox. This can be used as a reference if the user wishes to understand how each tool step would be carried out manually. Note that some plugins such as GroupStats and OpenDEMDownloader (which have been explained in steps in Annex 2) are not supported/easy to implement on model builder in QGIS. Therefore, it was more efficient to use slightly different approaches for the model builder in such cases. 
 
 
-Instructions to calculate Sub-indicator 15.4.2a in QGIS using custom models
----------------------------------------------------------------------------
+Instructions to calculate Sub-indicator 15.4.2a in QGIS using the custom models
+-------------------------------------------------------------------------------
 
 This section of the tutorial explains in detail how to use the custom QGIS toolbox to calculate value estimates for sub-indicator 15.4.2a in QGIS, using Colombia as a case study. 
 
@@ -493,8 +512,8 @@ Repeat for each of the reporting years.
 
 |SubA_A6_tool_model|
 
-Instructions to calculate Sub-indicator 15.4.2b in QGIS using custom models
----------------------------------------------------------------------------
+Instructions to calculate Sub-indicator 15.4.2b in QGIS using the custom models
+-------------------------------------------------------------------------------
 
 This section of the tutorial explains in detail how to calculate value estimates for sub-indicator 15.4.2b in QGIS, continuing to use Colombia as a case study. Sub-Indicator 15.4.2b is designed to monitor the extent of degraded mountain land as a result of land cover change of a given country and for given reporting year.
 
