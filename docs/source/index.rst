@@ -10,7 +10,6 @@ Contents
    :maxdepth: 1
    
    overview
-   initial_setup
    defineenvs
    qgis_custom_models
    Annexes
