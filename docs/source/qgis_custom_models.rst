@@ -177,9 +177,13 @@ We suggest users create a folder for working in the following strucure.
 
 |setup4|
 
-From the **sources>>raw_data** folder, unzip the SDG1542_WorldMountainMap and save to the input_data folder.
+navigate to the **sources>>raw_data** folder
 
 |setup7|
+
+unzip the SDG1542_WorldMountainMap and save to the input_data folder.
+
+|setup6|
 
 Check that the *SDG_15_4_2_beta* toolbox is visible in the *processing toolbox*. It is from here that you will run the tools if you choose to use the SDG_15_4_2_beta toolbox rather than the manual steps.
 
@@ -196,6 +200,8 @@ Check that the *SDG_15_4_2_beta* toolbox is visible in the *processing toolbox*.
 .. |setup4| image:: media_toolbox/setup4.png
    :width: 800
 .. |setup5| image:: media_toolbox/setup5.png
+   :width: 800
+.. |setup6| image:: media_toolbox/setup6.png
    :width: 800
 .. |setup7| image:: media_toolbox/setup7.png
    :width: 800
