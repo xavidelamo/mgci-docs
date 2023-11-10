@@ -66,9 +66,9 @@ R software and packages installation
 A step-by-step guide on how to install R and R Studio (with images) can be found in Annex X.
 If you are not installing R and R studio from scratch, please make sure that your installations are upgraded. It is important to use the current version of R software (R-4.1.1 at the time of writing). The R version can be easily checked on the text within the ‘R Console’ box at the beginning of a new session (see Figure XX for standalone R and Figure ZZ for R Studio).
 
-|image5|
+|image5_orig|
 
-|image6|
+|image6_orig|
 
 If you are running R on Windows, package ‘installr’ allows you to
 quickly update the R version and the packages saved in your library
@@ -81,14 +81,14 @@ bellow on the R Console:
     
   *you’ll have to select the CRAN mirror for use in this session depending on your geographical location*
 
- |image7|
+ |image7_orig|
 - library(installr)
 
 - updateR()
     
   *Answer the questions to complete the update. The final set of questions are about copying your R packages to the new version of R.*
 
- |image8|
+ |image8_orig|
 
 QGIS plugins installation
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1139,6 +1139,38 @@ Repeat the above step for the next reporting period i.e., using 2015 landcover (
    :width: 1200
 .. |image102| image:: media_QGIS/image102.png
    :width: 1200
+
+
+
+.. |image0_orig| image:: media_QGIS/image2_orig.png
+   :width: 6.26806in
+   :height: 3.16875in
+.. |image1_orig| image:: media_QGIS/image3_orig.png
+   :width: 6.26806in
+   :height: 5.06528in
+.. |image2_orig| image:: media_QGIS/image4_orig.png
+   :width: 6.26806in
+   :height: 0.81458in
+.. |image3_orig| image:: media_QGIS/image5_orig.png
+   :width: 6.26806in
+   :height: 1.65347in
+.. |image4_orig| image:: media_QGIS/image6_orig.png
+   :width: 6.26806in
+   :height: 3.97847in
+.. |image5_orig| image:: media_QGIS/image7_orig.png
+   :width: 5.97917in
+   :height: 4.25867in
+.. |image6_orig| image:: media_QGIS/image8_orig.png
+   :width: 6.03472in
+   :height: 4.75909in
+.. |image7_orig| image:: media_QGIS/image9_orig.png
+   :width: 6.26806in
+   :height: 4.46458in
+.. |image8_orig| image:: media_QGIS/image10_orig.png
+   :width: 6.26806in
+   :height: 3.33742in
+
+
 
 
 .. |image9orig| image:: media_QGIS/image11_install_plugins.png
