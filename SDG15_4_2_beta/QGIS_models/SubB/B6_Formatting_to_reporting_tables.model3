@@ -1,0 +1,14 @@
+<!DOCTYPE model>
+<Option type="Map">
+  <Option name="children"/>
+  <Option name="designerParameterValues"/>
+  <Option name="groupBoxes"/>
+  <Option name="help"/>
+  <Option type="QString" value="Version2" name="internal_version"/>
+  <Option name="modelVariables"/>
+  <Option type="QString" value="SDG Indicator 15.4.2\Sub-indicatorB" name="model_group"/>
+  <Option type="QString" value="B6 Formatting to reporting tables" name="model_name"/>
+  <Option name="parameterDefinitions"/>
+  <Option name="parameterOrder"/>
+  <Option name="parameters"/>
+</Option>
