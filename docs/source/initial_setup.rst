@@ -320,7 +320,26 @@ On the righ-hand side of QGIS you should see the processing Toolbox. (If it is n
    :width: 800
 .. |setup5| image:: media_toolbox/setup5.png
    :width: 800
-   
+.. |setup6| image:: media_toolbox/setup6.png
+   :width: 800
+.. |setup7| image:: media_toolbox/setup7.png
+   :width: 800
+.. |setup8| image:: media_toolbox/setup8.png
+   :width: 800
+.. |setup9| image:: media_toolbox/setup9.png
+   :width: 800
+.. |setup10| image:: media_toolbox/setup10.png
+   :width: 800
+.. |setup11| image:: media_toolbox/setup11.png
+   :width: 800
+.. |setup12| image:: media_toolbox/setup12.png
+   :width: 800
+.. |setup13| image:: media_toolbox/setup13.png
+   :width: 800
+.. |setup14| image:: media_toolbox/setup14.png
+   :width: 800
+.. |setup15| image:: media_toolbox/setup15.png
+   :width: 800   
 
 .. |image0| image:: media_QGIS/image2_orig.png
    :width: 6.26806in
