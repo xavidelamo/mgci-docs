@@ -240,24 +240,74 @@ QGIS custom toolbox download and installation
 ----------------------------------------------
 
 Users will also need to download the SDG_15_4_2_beta_Toolbox and set of templates and style files from the SDG_15_4_2_beta repository.
+In a web browser navigate to the SDG15.4.2 beta repository using the following URL: https://github.com/corinnar/mgci-docs
 
 |setup1|
 
-Once downloaded users need to navidate to the **sources>>qgis>>QGIS_models folder* and copy the the models and scripts in relevant QGIS folders. Guidance is provided below.
+Next open a file explorer window and navigate to the folder where you have downloaded the file. At this stage we would recomment you move the zip file to a sensible location with a short and simple file strucure. e.g. in this example we have moved the downloaded zip file to c:\workspace. Right-click on the file named mgci-docs-MGCI_DML.zip and click on 7-ZIP >> Extract here
 
 |setup2|
 
-The QGIS R-scripts will need to be placed in R scripts folder and the *SDG_15_4_2_beta* folder placed in the Models folder. You can find the location in QGIS under Settings>>Options. The other style and template files can be stored in your own project working location.
+
+Once unzipped you should see a folder of the same name (mgci-docs-MGCI_DML). Navigate inslide this folder and you should see the following file structure and a zip file called SDG15_4_2_beta.zip.
+
+|setup2b|
+
+Right-click on SDG15_4_2_beta.zip and clcik on 7-ZIP >> Extract file . Note we are clicking on extract files this time and not extract here as we want to make some modifications to the path we are unzipping to.
 
 |setup3|
 
-We suggest users create a folder for working in the following strucure.
+you should see the unzip files window below. Do NOT click OK yet as we want to make some changes
 
 |setup4|
 
-Check that the *SDG_15_4_2_beta* toolbox is visible in the *processing toolbox*. It is from here that you will run the tools if you choose to use the SDG_15_4_2_beta toolbox rather than the manual steps.
+First remove 'mgci-docs-MGCI_DML' from the extract to path and then tick Eliminate duplication of root folder
 
 |setup5|
+
+|setup6|
+
+Click okay once you have done these steps. You should now have a folder set up for the QGIS processing. Please do not alter the folder structure as the tools rely on these to remain intact.
+
+|setup7|
+
+The next step is to go into the input_data folder and unzip the Global mountains map. Right-click on SDG1542_WorldMountainMap.zip and click on 7-ZIP >> Extract here
+
+|setup8|
+
+You are now ready to open the QGIS project. Double-click to SDG_15_4_2_beta.qgz to open the project
+
+|setup9|
+
+Next (once QGIS is open) there are a few steps that need to be undertaken to set up the QGIS project correctly and to link it to the custom toolbox and scripts. 
+
+
+From the QGIS main menu goto settings>>options>>Data Sources and change the 'Representation of null values from Null to NA (this will ensure  the correct NA representation of Null values in the output reporting tables)
+
+|setup10|
+
+
+In the same settings window click on processing>>general and change the 'Results group name' to OUTPUTS. Put this in capitals as this is how it will then appear in the QGIS table of contents. It means that any outputs from geoprocessing tools will be stored under this group heading and makes it easier to distinguish from the INPUT data.
+
+|setup11|
+
+In the same settings>>processing window, shrink down the general tab and expand Models. Double click on the models path to expose the three dots. Click on this and click add. Navigate to the QGIS models folder in the SDG15_4_2_beta folder. e.g. in this example C:\workspace\SDG15_4_2_beta\QGIS_models . Then click okay.
+
+|setup12|
+
+In the same settings>>processing>>providers window, shrink down the Models tab and expand R. Double click on the models path to expose the three dots. Click on this and click add. Navigate to the R_scripts folder in the SDG15_4_2_beta folder. e.g. in this example C:\workspace\SDG15_4_2_beta\R_scriptss . Then click okay.
+
+|setup13|
+
+Next double-click on the R folder path and navigate to where you have installed your R software. This is to tell QGIS where to run R from.
+
+|setup14|
+
+Once done click OK to close the setting window and return to the main QGIS interface.
+
+On the righ-hand side of QGIS you should see the processing Toolbox. (If it is not visible, from the main meni select View>>panels>>processing toolbox). In the processing toolbox if you expand models and R you should see the SDG15.4.2 models and scripts present.  It is from the toolbox that you will run the tools if you choose to use the SDG_15_4_2_beta toolbox rather than undertaking the manual steps.
+
+|setup15|
 
 
 .. |setup1| image:: media_toolbox/setup1.png
