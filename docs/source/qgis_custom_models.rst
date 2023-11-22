@@ -160,51 +160,79 @@ processing toolbox menu
 
 QGIS-SDG 15.4.2 custom toolbox download and installation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+QGIS custom toolbox download and installation
+----------------------------------------------
 
-Users will also need to download the SDG_15_4_2_beta_Toolbox,  set of templates, style files and the SDG1542_WorldMountainsMap.zip from the SDG_15_4_2_beta repository at https://github.com/corinnar/mgci-docs/tree/MGCI_DML.
+Users will also need to download the SDG_15_4_2_beta_Toolbox and set of templates and style files from the SDG_15_4_2_beta repository.
+In a web browser navigate to the SDG15.4.2 beta repository using the following URL: https://github.com/corinnar/mgci-docs
 
 |setup1|
 
-Once downloaded users need to navidate to the **sources>>qgis>>QGIS_models folder* and copy the the models and scripts in relevant QGIS folders. Guidance is provided below.
+Next open a file explorer window and navigate to the folder where you have downloaded the file. At this stage we would recomment you move the zip file to a sensible location with a short and simple file strucure. e.g. in this example we have moved the downloaded zip file to c:\workspace. Right-click on the file named mgci-docs-MGCI_DML.zip and click on 7-ZIP >> Extract here
 
 |setup2|
 
-The QGIS R-scripts will need to be placed in R scripts folder and the *SDG_15_4_2_beta* folder placed in the Models folder. You can find the location in QGIS under Settings>>Options. The other style and template files can be stored in your own project working location.
+
+Once unzipped you should see a folder of the same name (mgci-docs-MGCI_DML). Navigate inslide this folder and you should see the following file structure and a zip file called SDG15_4_2_beta.zip.
+
+|setup2b|
+
+Right-click on SDG15_4_2_beta.zip and clcik on 7-ZIP >> Extract file . Note we are clicking on extract files this time and not extract here as we want to make some modifications to the path we are unzipping to.
 
 |setup3|
 
-We suggest users create a folder for working in the following strucure.
+you should see the unzip files window below. Do NOT click OK yet as we want to make some changes
 
 |setup4|
 
-navigate to the **sources>>raw_data** folder
-
-|setup7|
-
-unzip the SDG1542_WorldMountainMap and save to the input_data folder.
-
-|setup6|
-
-Check that the *SDG_15_4_2_beta* toolbox is visible in the *processing toolbox*. It is from here that you will run the tools if you choose to use the SDG_15_4_2_beta toolbox rather than the manual steps.
+First remove 'mgci-docs-MGCI_DML' from the extract to path and then tick Eliminate duplication of root folder
 
 |setup5|
 
+|setup6|
+
+Click okay once you have done these steps. You should now have a folder set up for the QGIS processing. Please do not alter the folder structure as the tools rely on these to remain intact.
+
+|setup7|
+
+The next step is to go into the input_data folder and unzip the Global mountains map. Right-click on SDG1542_WorldMountainMap.zip and click on 7-ZIP >> Extract here
+
+|setup8|
+
+You are now ready to open the QGIS project. Double-click to SDG_15_4_2_beta.qgz to open the project
+
+|setup9|
+
+Next (once QGIS is open) there are a few steps that need to be undertaken to set up the QGIS project correctly and to link it to the custom toolbox and scripts. 
 
 
-.. |setup1| image:: media_toolbox/setup1.png
-   :width: 800
-.. |setup2| image:: media_toolbox/setup2.png
-   :width: 800
-.. |setup3| image:: media_toolbox/setup3.png
-   :width: 800
-.. |setup4| image:: media_toolbox/setup4.png
-   :width: 800
-.. |setup5| image:: media_toolbox/setup5.png
-   :width: 800
-.. |setup6| image:: media_toolbox/setup6.png
-   :width: 800
-.. |setup7| image:: media_toolbox/setup7.png
-   :width: 800
+From the QGIS main menu goto settings>>options>>Data Sources and change the 'Representation of null values from Null to NA (this will ensure  the correct NA representation of Null values in the output reporting tables)
+
+|setup10|
+
+
+In the same settings window click on processing>>general and change the 'Results group name' to OUTPUTS. Put this in capitals as this is how it will then appear in the QGIS table of contents. It means that any outputs from geoprocessing tools will be stored under this group heading and makes it easier to distinguish from the INPUT data.
+
+|setup11|
+
+In the same settings>>processing window, shrink down the general tab and expand Models. Double click on the models path to expose the three dots. Click on this and click add. Navigate to the QGIS models folder in the SDG15_4_2_beta folder. e.g. in this example C:\workspace\SDG15_4_2_beta\QGIS_models . Then click okay.
+
+|setup12|
+
+In the same settings>>processing>>providers window, shrink down the Models tab and expand R. Double click on the models path to expose the three dots. Click on this and click add. Navigate to the R_scripts folder in the SDG15_4_2_beta folder. e.g. in this example C:\workspace\SDG15_4_2_beta\R_scriptss . Then click okay.
+
+|setup13|
+
+Next double-click on the R folder path and navigate to where you have installed your R software. This is to tell QGIS where to run R from.
+
+|setup14|
+
+Once done click OK to close the setting window and return to the main QGIS interface.
+
+On the righ-hand side of QGIS you should see the processing Toolbox. (If it is not visible, from the main meni select View>>panels>>processing toolbox). In the processing toolbox if you expand models and R you should see the SDG15.4.2 models and scripts present.  It is from the toolbox that you will run the tools if you choose to use the SDG_15_4_2_beta toolbox rather than undertaking the manual steps.
+
+|setup15|
+
 
 **Running analysis steps using the custom QGIS toolbox**
 ========================================================
@@ -213,7 +241,8 @@ This section of the tutorial explains in detail how to calculate value estimates
 
 We provide a custom toolbox to group and run the steps to help speed up the analysis and allow for easier repeat processing and to standardize the naming of outputs and how they appear within the QGIS interface.
 
-|custom_toolbox|
+|setup15|
+
 Annex 2 of the tutorial outlines in detail the main steps each tool undertakes in the SDG 15.4.2 processing toolbox. This can be used as a reference if the user wishes to understand how each tool step would be carried out manually. Note that some plugins such as GroupStats and OpenDEMDownloader (which have been explained in steps in Annex 2) are not supported/easy to implement on model builder in QGIS. Therefore, it was more efficient to use slightly different approaches for the model builder in such cases. 
 
 
@@ -222,10 +251,23 @@ Instructions to calculate Sub-indicator 15.4.2a in QGIS using the custom models
 
 This section of the tutorial explains in detail how to use the custom QGIS toolbox to calculate value estimates for sub-indicator 15.4.2a in QGIS, using Colombia as a case study. 
 
+Before we begin running the tools at this stage we want to set-up the projection for the analysis. We therefore want to set the project window to an equal area projection. For choosing an equal are projection for your country please see the **Defining analyses environments and land cover data selection** for guidance).
+
+ - Click on the project projection EPSG: 4326 in the bottom right hand corner of the QGIS project
+
+|setup16|
+
+- In the Project Properties dialogue window search for the chosen projection in the Filter tab, in this case the projection EPSG 9377
+
+|setup17|
+
+|projection|
+
+
 Step A0 Prepare country boundary and buffer to 10 km
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
 
-The first step is to define an Area of Interest (AOI) for the analysis. This should go beyond the country boundary as outlined in the **Defining analyses environments and land cover data selection** of the tutorial. In this example, the input boundary layer is in Geographic coordinate system (EPSG 4326). At this stage we want to set-up the projection for the main parts of the analysis. We therefore want to set the project window to an equal area projection and physically project the country boundary to the same projection. 
+The first step is to define the an Area of Interest (AOI) for the analysis. This should go beyond the country boundary as outlined in the **Defining analyses environments and land cover data selection** of the tutorial. In this example, the input boundary layer is in Geographic coordinate system (EPSG 4326). At this stage we want to set-up the projection for the main parts of the analysis. We therefore want to set the project window to an equal area projection and physically project the country boundary to the same projection. 
 
 Colombia does have a National Projection that preserve both area and distance (see here) and therefore could be used as a custom projection. In case a national projection that minimize area distortion does not exist for a given country, it is recommended to define a custom Equal Area projection centered on the country area following the instructions in described here under **Defining analyses environments and land cover data selection**).  
 
@@ -805,6 +847,47 @@ Repeat the above step for the next reporting period i.e., using 2015 landcover (
 **Tool B6 model diagram**
 
 |SubB_B6_tool_model|
+
+
+
+.. |setup1| image:: media_toolbox/setup1.png
+   :width: 800
+.. |setup2| image:: media_toolbox/setup2.png
+   :width: 800
+.. |setup3| image:: media_toolbox/setup3.png
+   :width: 800
+.. |setup4| image:: media_toolbox/setup4.png
+   :width: 800
+.. |setup5| image:: media_toolbox/setup5.png
+   :width: 800
+.. |setup6| image:: media_toolbox/setup6.png
+   :width: 800
+.. |setup7| image:: media_toolbox/setup7.png
+   :width: 800
+.. |setup8| image:: media_toolbox/setup8.png
+   :width: 800
+.. |setup9| image:: media_toolbox/setup9.png
+   :width: 800
+.. |setup10| image:: media_toolbox/setup10.png
+   :width: 800
+.. |setup11| image:: media_toolbox/setup11.png
+   :width: 800
+.. |setup12| image:: media_toolbox/setup12.png
+   :width: 800
+.. |setup13| image:: media_toolbox/setup13.png
+   :width: 800
+.. |setup14| image:: media_toolbox/setup14.png
+   :width: 800
+.. |setup15| image:: media_toolbox/setup15.png
+   :width: 800  
+.. |setup16| image:: media_toolbox/setup16.png
+   :width: 800  
+.. |setup17| image:: media_toolbox/setup17.png
+   :width: 800  
+.. |projection| image:: media_toolbox/projection.png
+   :width: 800  
+
+
 
 
 .. |adjusting_impact_matrix| image:: media_toolbox/adjusting_impact_matrix.png
