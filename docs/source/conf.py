@@ -26,7 +26,7 @@ extensions = [
     "sphinx_favicon",
     "sphinx_last_updated_by_git",
     "notfound.extension",
-    # "_extentions.line_break",
+    "_extentions.line_break",
     # "_extentions.custom_edit",
     # "_extentions.logos",
 ]

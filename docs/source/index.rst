@@ -1,16 +1,14 @@
-Documentation
-=============
-
-.. line-break::
-
-
 .. image:: _static/logos/main.png
-    :align: center
+    :align: left
     :class: light-dark
-    :width: 60%
+    :width: 20%
+    :alt: SDG 15.4.2 Computation Tools Documentation
 
 .. line-break::
-.. line-break::
+
+SDG 15.4.2 Computation Tools Documentation
+=========================================
+
 
 Welcome to the technical documentation of SDG Indicator 15.4.2 to aid the calculation of SDG Indicator 15.4.2: (a) Mountain Green Cover Index and (b) proportion of degraded mountain land using tools developed by FAO and UNEP-WCMC:
 
