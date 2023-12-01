@@ -1,89 +1,80 @@
 # Configuration file for the Sphinx documentation builder.
 
+import sys
 from datetime import datetime
+from pathlib import Path
+
+sys.path.append(str(Path(".").resolve()))
+
 
 # -- Project information
 
 project = "SDG 15.4.2: (a) Mountain Green Cover Index and (b) proportion of degraded mountain land"
 copyright = f"2023 - FAO SEPAL - UNEP-WCMC"
-author = 'FAO SEPAL - UNEP-WCMC'
+author = "FAO SEPAL - UNEP-WCMC"
 
-release = '0.1'
-version = '0.1.0'
-
-today_fmt = '%B %d, %Y' 
-
-# -- General configuration
+# -- General configuration -----------------------------------------------------
 
 extensions = [
-    'sphinx.ext.duration',
-    'sphinx.ext.doctest',
-    'sphinx.ext.autodoc',
-    'sphinx.ext.autosummary',
-    'sphinx.ext.autosectionlabel'
-    'sphinx.ext.intersphinx',
+    "sphinx.ext.napoleon",
+    "sphinx.ext.graphviz",
+    "sphinxcontrib.images",
+    "sphinxcontrib.icon",
+    "sphinxcontrib.btn",
+    "sphinxcontrib.email",
+    "sphinx_design",
+    "sphinx_togglebutton",
+    "sphinx_favicon",
+    "sphinx_last_updated_by_git",
+    "notfound.extension",
+    # "_extentions.line_break",
+    # "_extentions.custom_edit",
+    # "_extentions.logos",
 ]
 
-intersphinx_mapping = {
-    'python': ('https://docs.python.org/3/', None),
-    'sphinx': ('https://www.sphinx-doc.org/en/master/', None),
+templates_path = ["_templates"]
+exclude_patterns = ["**.ipynb_checkpoints"]
+locale_dirs = ["_locale/"]
+gettext_compact = False
+language = "en"
+
+# -- Options for HTML output ---------------------------------------------------
+
+templates_path = ["_templates"]
+html_theme = "pydata_sphinx_theme"
+html_last_updated_fmt = None
+html_sidebars = {"index": []}
+html_static_path = ["_static"]
+
+html_theme_options = {
+    "logo": {
+        "image_light": "_static/sepal_light.png",
+        "image_dark": "_static/sepal_dark.png",
+    },
+    "header_links_before_dropdown": 7,
+    "navigation_with_keys": False,
+    "show_nav_level": 1,
+    "show_prev_next": True,
+    "icon_links": [
+        {
+            "name": "GitHub",
+            "url": "https://github.com/sepal-contrib/wcmc-mgci",
+            "icon": "fa-brands fa-github",
+        },
+    ],
+    "article_footer_items": ["last-updated"],
+    "footer_start": ["copyright", "sphinx-version"],
 }
-intersphinx_disabled_domains = ['std']
 
-templates_path = ['_templates']
-#html_theme_path = ['_themes']
+# -- Option for Latex output ---------------------------------------------------
 
-# Add this to the top of the conf.py file
-import os
-import sys
-sys.path.insert(0, os.path.abspath('C:\\Program Files\\ArcGIS\\Pro\\bin\\Python\\envs\\arcgispro-py3'))
-import sphinx_rtd_theme
+youtube_cmd = (
+    r"\newcommand{\sphinxcontribyoutube}[3]{\begin{figure}\sphinxincludegraphics{{#2}.jpg}\caption{\url{#1#2#3}}\end{figure}}"
+    + "\n"
+)
+vimeo_cmd = (
+    r"\newcommand{\sphinxcontribvimeo}[3]{\begin{figure}\sphinxincludegraphics{{#2}.jpg}\caption{\url{#1#2#3}}\end{figure}}"
+    + "\n"
+)
 
-
-
-# -- Options for HTML output
-extensions = [
-    'sphinx_rtd_theme',
-]
-
-html_theme = 'sphinx_rtd_theme'
-
-# These folders are copied to the documentation's HTML output
-html_static_path = ['_static']
-
-# These paths are either relative to html_static_path
-# or fully qualified paths (eg. https://...)
-html_css_files = [
-    'css/custom.css',
-]
-
-
-# -- Options for EPUB output
-epub_show_urls = 'footnote'
-
-
-# -- General configuration
-
-latex_elements = {
-     'classoptions': ',oneside',
-    
-# The paper size ('letterpaper' or 'a4paper').
-    'papersize': 'a4paper', 
-
-# The font size ('10pt', '11pt' or '12pt').
-    'pointsize': '12t',
-
-    
-# Additional stuff for the LaTeX preamble.
-    'preamble': r'''
-        \usepackage{charter}
-        \usepackage[sfdefault]{roboto}
-        \usepackage{inconsolata}
-        \usepackage[english]{babel}
-        \usepackage{tocloft}
-        \addto\captionsenglish{\renewcommand\contentsname{Table of Contents}}
-        \renewcommand{\cfttoctitlefont}{\hfill\Large\bfseries}
-        \renewcommand{\cftaftertoctitle}{\hfill\normalsize}
-
-    ''',
-}
+latex_elements = {"preamble": youtube_cmd + vimeo_cmd}

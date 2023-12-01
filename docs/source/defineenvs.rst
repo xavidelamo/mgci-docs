@@ -1,5 +1,6 @@
-Defining analyses environments and land cover data selection
-------------------------------------------------------------
+Relate
+------
+
 Defining projections to be used for the analysis
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 With all map projections there will always be some distortions of area,

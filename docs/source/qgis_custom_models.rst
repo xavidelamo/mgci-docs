@@ -1,5 +1,5 @@
-QGIS-SDG 15.4.2 :sub:`beta`
-=================================
+QGIS
+====
 
 A QGIS-based workflow to support the computation of SDG Indicator 15.4.2, which includes:
 sub-indicator a (Mountain Green Cover Index) 

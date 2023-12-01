@@ -12,6 +12,4 @@ Contents
    overview
    defineenvs
    qgis_custom_models
-   Annexes
-   annex1
-   annex2
+   Annexes<annexes/index>
