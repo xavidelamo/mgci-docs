@@ -8,6 +8,8 @@ version: 2
 # Set the OS, Python version and other tools you might need
 build:
   os: ubuntu-22.04
+  apt_packages:
+    - graphviz
   tools:
     python: "3.10"
 
@@ -17,7 +19,4 @@ sphinx:
 
 python:
     install:
-    - method: pip
-      path: .
-      extra_requirements:
-        - docs
+      - requirements: requirements.txt
