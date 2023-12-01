@@ -1,8 +1,7 @@
 [91m/home/dguerrero/1_modules/wcmc-mgci/docs/source/annexes/annex1.rst:160: WARNING: Bullet list ends without a blank line; unexpected unindent.[39;49;00m
-[91m/home/dguerrero/1_modules/wcmc-mgci/docs/source/annexes/annex1.rst:193: WARNING: Bullet list ends without a blank line; unexpected unindent.[39;49;00m
 [31m/home/dguerrero/1_modules/wcmc-mgci/docs/source/annexes/annex1.rst:203: ERROR: Unexpected indentation.[39;49;00m
 [91m/home/dguerrero/1_modules/wcmc-mgci/docs/source/annexes/annex1.rst:274: WARNING: Bullet list ends without a blank line; unexpected unindent.[39;49;00m
-[91m/home/dguerrero/1_modules/wcmc-mgci/docs/source/annexes/annex1.rst:286: WARNING: Inline strong start-string without end-string.[39;49;00m
+[91m/home/dguerrero/1_modules/wcmc-mgci/docs/source/annexes/annex1.rst:279: WARNING: Inline strong start-string without end-string.[39;49;00m
 [91m/home/dguerrero/1_modules/wcmc-mgci/docs/source/annexes/annex1.rst:285: WARNING: Bullet list ends without a blank line; unexpected unindent.[39;49;00m
 [91m/home/dguerrero/1_modules/wcmc-mgci/docs/source/annexes/annex1.rst:422: WARNING: Inline emphasis start-string without end-string.[39;49;00m
 [91m/home/dguerrero/1_modules/wcmc-mgci/docs/source/annexes/annex1.rst:384: WARNING: Footnote [1] is not referenced.[39;49;00m

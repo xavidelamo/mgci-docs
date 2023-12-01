@@ -21,8 +21,8 @@ mountain ecosystems.
 
 **Sub-indicator 15.4.2b**, Proportion of degraded mountain land, is designed to
 monitor the extent of degraded mountain land as a result of land cover change of
-a given country and for given reporting year. Similarly to sub-indicator ‘’trends
-in land cover” under SDG Indicator 15.3.1 (Sims et al. 2021), mountain ecosystem
+a given country and for given reporting year. Similarly to sub-indicator "trends
+in land cover" under SDG Indicator 15.3.1 (Sims et al. 2021), mountain ecosystem
 degradation and recovery is assessed based on the definition of land cover type
 transitions that constitute degradation, as either improving, stable or degraded.
 The definition of degradation adopted for the computation of this indicator is the
@@ -53,9 +53,7 @@ summaries.
 from 2 different software:**
 
 - Step-by-Step instructions in **QGIS (with R integration)**
-- SEPAL app: Users can register and log into the SEPAL data portal where a
-user-friendly interface will guide technicians through a series of menu-driven
-steps to prepare the layers and run the calculations
+- SEPAL app: Users can register and log into the SEPAL data portal where a user-friendly interface will guide technicians through a series of menu-driven steps to prepare the layers and run the calculations
 
 |imageworkflow|
 

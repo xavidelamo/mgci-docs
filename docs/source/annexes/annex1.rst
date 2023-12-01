@@ -157,7 +157,7 @@ Also see QGIS Open Topography DEM downloader
    - **Bulk download (90m, 250m, 500m, and 1 km):**  https://drive.google.com/drive/folders/0B\_J08t5spvd8RWRmYmtFa2puZEE <https://goo.gl/T9YY2W>
 
    - **Use in Google Earth Engine:**
-   https://developers.google.com/earth-engine/datasets/catalog/CGIAR_SRTM90_V4
+     https://developers.google.com/earth-engine/datasets/catalog/CGIAR_SRTM90_V4
 
 
 Downloading DEM data using the Open Topography DEM downloader
@@ -190,8 +190,8 @@ To access the installed plugin go to the 'Proccessing toolbox'
 - Select DEM to download - choose a DEM of resolution similar to your Land cover dataset. e.g. if your landcover is 300m resolution you should use a DEM that has a cellsize of 300m or lower,
 
 - next define the extent to download. Use the buffeed country boundary layer created in Step A0.
- This will ensure correct calculation of the real surface area layer which needs a DEM that goes
- beyond the boundary of the country as it used surrounding (focal) cells during it's calculation.
+   This will ensure correct calculation of the real surface area layer which needs a DEM that goes
+   beyond the boundary of the country as it used surrounding (focal) cells during it's calculation.
 
 - save the output using the following naming convention ISO3_DEM_AOI_EqArea_buffer10km.tif  e.g. COL_DEM_AOI_EqArea_buffer10km.tif
 
