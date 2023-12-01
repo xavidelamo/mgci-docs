@@ -22,5 +22,6 @@ Contents
    
    overview
    defineenvs
+   SEPAL<sepal/index>
    qgis_custom_models
    Annexes<annexes/index>
