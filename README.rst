@@ -1,4 +1,4 @@
-Introduction to MGCI
+Introduction to SDG Indicator 15.4.2
 ====================
 
 SDG Indicator 15.4.2 – Mountain Green Cover Index (MGCI) is one of the
