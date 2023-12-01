@@ -2,8 +2,8 @@ QGIS
 ====
 
 A QGIS-based workflow to support the computation of SDG Indicator 15.4.2, which includes:
-sub-indicator a (Mountain Green Cover Index) 
-and 
+sub-indicator a (Mountain Green Cover Index)
+and
 sub-indicator b (Proportion of degraded mountain land)
 
 .. contents:: **Table of Contents**
@@ -14,7 +14,7 @@ General Information
 About QGIS-SDG 15.4.2 :sub:`beta`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This documentation and geospatial workflow has been developed by the UN Environment Programme World Conservation Monitoring Centre (UNEP-WCMC) in collaboration with the Food and Agriculture Organization (FAO) of the United Nations to support relevant national authorities to compute and report against SDG Indicator 15.4.2.  
+This documentation and geospatial workflow has been developed by the UN Environment Programme World Conservation Monitoring Centre (UNEP-WCMC) in collaboration with the Food and Agriculture Organization (FAO) of the United Nations to support relevant national authorities to compute and report against SDG Indicator 15.4.2.
 
 The geospatial workflow was developed using QGIS 3.22.16, a free and open-source geographic information system licensed under the GNU General Public License. QGIS is an official project of the Open Source Geospatial Foundation (OSGeo). It runs on Linux, Unix, Mac OSX, Windows and Android and supports numerous vector, raster, and database formats and functionalities. We suggest users use the Long-Term Release version [1]_ of QGIS to undertake their analysis as this is the most stable version and users are less likely to incur technical difficulties and bugs. There are various installers depending on your operating system but for most users we recommend the QGIS Standalone Installer. Full instructions are on their website: `https://qgis.org/en/site/forusers/download.html# <https://qgis.org/en/site/forusers/download.html>`__\. To run this workflow, you will also need to have R Software 4.4.1.
 
@@ -24,10 +24,10 @@ If you have specific bugs to report or improvements to the tool that you would l
 <https://github.com/dfguerrerom/wcmc-mgci/issues>`_ of the QGIS-SDG 15.4.2 :sub:`beta` module and do follow the `contribution guidelines
 <https://github.com/dfguerrerom/wcmc-mgci/blob/master/CONTRIBUTE.md>`_.
 
-Authors 
+Authors
 ^^^^^^^
 
-QGIS-SDG 15.4.2 :sub:`beta` has been developed by the UN Environment Programme World Conservation Monitoring Centre (UNEP-WCMC) in collaboration with the Food and Agriculture Organization (FAO) of the United Nations. Contributors to QGIS-SDG 15.4.2 :sub:`beta` and its documentation include Corinna Ravilious, Vignesh Kamath Cannanure, Boipelo Tshwene-Mauchaza, Cristina Telhado and Valerie Kapos. 
+QGIS-SDG 15.4.2 :sub:`beta` has been developed by the UN Environment Programme World Conservation Monitoring Centre (UNEP-WCMC) in collaboration with the Food and Agriculture Organization (FAO) of the United Nations. Contributors to QGIS-SDG 15.4.2 :sub:`beta` and its documentation include Corinna Ravilious, Vignesh Kamath Cannanure, Boipelo Tshwene-Mauchaza, Cristina Telhado and Valerie Kapos.
 
 License
 ^^^^^^^
@@ -39,7 +39,7 @@ Initial setup
 QGIS software installation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Before using QGIS-SDG 15.4.2 :sub:`beta` to run this workflow you will need have QGIS 3.22.16 installed on your compute. We suggest users use the Long-Term Release version [1]_ of QGIS to undertake their analysis as this is the most stable version and users are less likely to incur technical difficulties and bugs. There are various installers depending on your operating system but for most users we recommend the QGIS Standalone Installer. Full instructions are on their website: `https://qgis.org/en/site/forusers/download.html# <https://qgis.org/en/site/forusers/download.html>`__\. 
+Before using QGIS-SDG 15.4.2 :sub:`beta` to run this workflow you will need have QGIS 3.22.16 installed on your compute. We suggest users use the Long-Term Release version [1]_ of QGIS to undertake their analysis as this is the most stable version and users are less likely to incur technical difficulties and bugs. There are various installers depending on your operating system but for most users we recommend the QGIS Standalone Installer. Full instructions are on their website: `https://qgis.org/en/site/forusers/download.html# <https://qgis.org/en/site/forusers/download.html>`__\.
 
 Whilst the QGIS-SDG 15.4.2 :sub:`beta` analysis runs entirely within the QGIS interface, to run this workflow, you will also need to install R Software 4.4.1. R scripts will be run from within the QGIS interface and no prior knowledge of R is required.
 
@@ -59,7 +59,7 @@ R software and packages installation
    the options to do so are:
     -   install.packages("name\_of\_package")
     -  library(name\_of\_package)
-    
+
        Or
     -  (if(!require("name\_of\_package")) install.packages("name\_of\_package")
 
@@ -77,15 +77,15 @@ https://www.r-statistics.com/2015/06/a-step-by-step-screenshots-tutorial-for-upg
 for a step-by-step tutorial on how to do this or type the lines
 bellow on the R Console:
 
-- install.packages("installr") 
-    
+- install.packages("installr")
+
   *you’ll have to select the CRAN mirror for use in this session depending on your geographical location*
 
  |image7_orig|
 - library(installr)
 
 - updateR()
-    
+
   *Answer the questions to complete the update. The final set of questions are about copying your R packages to the new version of R.*
 
  |image8_orig|
@@ -123,7 +123,7 @@ Once installed R will appear as a processing tool in the processing
 toolbox and an R Scripts button in the Processing Toolbox Menu.
 
 |image12orig|
-   
+
 Users may find that the R scripts button is missing at this stage.
 
 -  Click the arrow next to the **R** Tools to expand the R toolset.
@@ -203,7 +203,7 @@ You are now ready to open the QGIS project. Double-click to SDG_15_4_2_beta.qgz 
 
 |setup9|
 
-Next (once QGIS is open) there are a few steps that need to be undertaken to set up the QGIS project correctly and to link it to the custom toolbox and scripts. 
+Next (once QGIS is open) there are a few steps that need to be undertaken to set up the QGIS project correctly and to link it to the custom toolbox and scripts.
 
 
 From the QGIS main menu goto settings>>options>>Data Sources and change the 'Representation of null values from Null to NA (this will ensure  the correct NA representation of Null values in the output reporting tables)
@@ -243,13 +243,13 @@ We provide a custom toolbox to group and run the steps to help speed up the anal
 
 |setup15|
 
-Annex 2 of the tutorial outlines in detail the main steps each tool undertakes in the SDG 15.4.2 processing toolbox. This can be used as a reference if the user wishes to understand how each tool step would be carried out manually. Note that some plugins such as GroupStats and OpenDEMDownloader (which have been explained in steps in Annex 2) are not supported/easy to implement on model builder in QGIS. Therefore, it was more efficient to use slightly different approaches for the model builder in such cases. 
+Annex 2 of the tutorial outlines in detail the main steps each tool undertakes in the SDG 15.4.2 processing toolbox. This can be used as a reference if the user wishes to understand how each tool step would be carried out manually. Note that some plugins such as GroupStats and OpenDEMDownloader (which have been explained in steps in Annex 2) are not supported/easy to implement on model builder in QGIS. Therefore, it was more efficient to use slightly different approaches for the model builder in such cases.
 
 
 Instructions to calculate Sub-indicator 15.4.2a in QGIS using the custom models
 -------------------------------------------------------------------------------
 
-This section of the tutorial explains in detail how to use the custom QGIS toolbox to calculate value estimates for sub-indicator 15.4.2a in QGIS, using Colombia as a case study. 
+This section of the tutorial explains in detail how to use the custom QGIS toolbox to calculate value estimates for sub-indicator 15.4.2a in QGIS, using Colombia as a case study.
 
 Before we begin running the tools at this stage we want to set-up the projection for the analysis. We therefore want to set the project window to an equal area projection. For choosing an equal are projection for your country please see the **Defining analyses environments and land cover data selection** for guidance).
 
@@ -265,11 +265,11 @@ Before we begin running the tools at this stage we want to set-up the projection
 
 
 Step A0 Prepare country boundary and buffer to 10 km
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The first step is to define the an Area of Interest (AOI) for the analysis. This should go beyond the country boundary as outlined in the **Defining analyses environments and land cover data selection** of the tutorial. In this example, the input boundary layer is in Geographic coordinate system (EPSG 4326). At this stage we want to set-up the projection for the main parts of the analysis. We therefore want to set the project window to an equal area projection and physically project the country boundary to the same projection. 
+The first step is to define the an Area of Interest (AOI) for the analysis. This should go beyond the country boundary as outlined in the **Defining analyses environments and land cover data selection** of the tutorial. In this example, the input boundary layer is in Geographic coordinate system (EPSG 4326). At this stage we want to set-up the projection for the main parts of the analysis. We therefore want to set the project window to an equal area projection and physically project the country boundary to the same projection.
 
-Colombia does have a National Projection that preserve both area and distance (see here) and therefore could be used as a custom projection. In case a national projection that minimize area distortion does not exist for a given country, it is recommended to define a custom Equal Area projection centered on the country area following the instructions in described here under **Defining analyses environments and land cover data selection**).  
+Colombia does have a National Projection that preserve both area and distance (see here) and therefore could be used as a custom projection. In case a national projection that minimize area distortion does not exist for a given country, it is recommended to define a custom Equal Area projection centered on the country area following the instructions in described here under **Defining analyses environments and land cover data selection**).
 
 In the Processing Toolbox, under Models, click on model **A0 Prepare country boundary and buffer to 10 km**
 
@@ -277,19 +277,19 @@ In the Processing Toolbox, under Models, click on model **A0 Prepare country bou
 
 **Input parameters**
 
- - Select country: Select country to process from the dropdown list. 
+ - Select country: Select country to process from the dropdown list.
 
-- Input: CSV_containing_UN_country_codes: Set the path to the csv file containing UN country codes (downloaded from the GitHub repository). 
+- Input: CSV_containing_UN_country_codes: Set the path to the csv file containing UN country codes (downloaded from the GitHub repository).
 
-- Input: Vector Country Boundary: Set the path to the country boundary shapefile. 
+- Input: Vector Country Boundary: Set the path to the country boundary shapefile.
 
-- Input: Target CRS (i.e. Select a relevant equal area projection for your area of interest): Select a CRS for your outputs. This should be an equal area projection relevant to the country being processed. 
+- Input: Target CRS (i.e. Select a relevant equal area projection for your area of interest): Select a CRS for your outputs. This should be an equal area projection relevant to the country being processed.
 
-- Select folder for outputs: Select an output folder to store your outputs. The output folder should already exist. Make sure the folder name does not have any spaces. 
+- Select folder for outputs: Select an output folder to store your outputs. The output folder should already exist. Make sure the folder name does not have any spaces.
 
 **Click Run**
 
-This will generate the country boundary in equal area projection and one with a 10 km buffer around the country boundary.  
+This will generate the country boundary in equal area projection and one with a 10 km buffer around the country boundary.
 
 |SubA_A0_tool_results|
 
@@ -302,10 +302,10 @@ This will generate the country boundary in equal area projection and one with a 
 Now that the country boundary is in the chosen projection, we can generate the land cover and mountain maps for Colombia.
 
 Step A1 Prepare and Reclassify LULC Dataset into UN-SEEA Classes
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^  
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The next step is to reclassify your chosen land use landcover (LULC)  dataset into the UN-SEEA classification. Preferably a National LULC raster dataset should be used.
-To demonstrate the steps for processing a raster LULC dataset we will use the Global ESA CCI LULC dataset. 
+To demonstrate the steps for processing a raster LULC dataset we will use the Global ESA CCI LULC dataset.
 
 If the LULC dataset is a regional or global extent it will need projecting and clipping to the AOI. In this example we are using a global dataset so we will need to clip the raster and save it in the equal area projection. Next, we reclassify the LULC map into the 10 UN-SEEA classes defined for SDG Indicator 15.4.2. QGIS provides several tools for reclassification. The easiest one to use in this instance is the r.reclass tool in the GRASS toolset as it allows the upload of a simple crosswalk text file containing the input LULC types on the left and the UN-SEEA reclass values on the right. Create a text file to crosswalk landuse/landcover (LULC) types from the ESA CCI or National landcover dataset to the 10 UN-SEEA landcover classes.
 
@@ -335,7 +335,7 @@ In the Processing Toolbox, under Models, click on model **A1 Prepare and reclass
 
 - Input: Target CRS (i.e. Select a relevant equal area projection for your area of interest): Select a CRS for your outputs. This should be an equal area projection relevant to the country being processed.
 
-- Input layer style for LULC: Set the path to the layer style file for this dataset. 
+- Input layer style for LULC: Set the path to the layer style file for this dataset.
 
 - Select folder for outputs: Select an output folder to store your outputs. The output folder should already exist. Make sure the folder name does not have any spaces.
 
@@ -356,7 +356,7 @@ You should now see the unique LULC classes present within the AOI for the countr
 Step A2 Prepare mountain layer and combine with LULC
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The development of mountain map consists in clipping and reprojecting the SDG 15.4.2. Global Mountain Descriptor Map developed by FAO to area of interest, in this case, the national border of Colombia. Once we have the two raster datasets in their native resolutions, we need to bring the datasets together and ensure that correct aggregation is undertaken and that the all the layers align to a common resolution. As SGD Indicator 15.4.2a requires disaggregation by both the 10 land cover classes and the 4 bioclimatic belts and the tools within QGIS will only allow a single input for zones, we will combine the two datasets. We need to ensure that the layers are aggregated to a common spatial resolution. 
+The development of mountain map consists in clipping and reprojecting the SDG 15.4.2. Global Mountain Descriptor Map developed by FAO to area of interest, in this case, the national border of Colombia. Once we have the two raster datasets in their native resolutions, we need to bring the datasets together and ensure that correct aggregation is undertaken and that the all the layers align to a common resolution. As SGD Indicator 15.4.2a requires disaggregation by both the 10 land cover classes and the 4 bioclimatic belts and the tools within QGIS will only allow a single input for zones, we will combine the two datasets. We need to ensure that the layers are aggregated to a common spatial resolution.
 
 In the Processing Toolbox, under Models, click on model **A2 Prepare mountains and combine with LULC**.
 
@@ -382,13 +382,13 @@ In the Processing Toolbox, under Models, click on model **A2 Prepare mountains a
 
 - Input: Layer style for mountains: Set the path to the layer style file for the mountain layer.
 
-- Input: Layer style for aggregated vegetation and mountains: Set the path to the layer style file for the aggregated vegetation and mountain layer. 
+- Input: Layer style for aggregated vegetation and mountains: Set the path to the layer style file for the aggregated vegetation and mountain layer.
 
 First we will run for the year 2000
 
 **Click Run.**
 
-You can run subsequent years by 
+You can run subsequent years by
 then clicking  **Change parameters** and change the LULC  to the 2015 dataset and year to 2015. **Click Run.** Repeat this until you have run all the years you wish to run. .
 
 This should produce the following outputs on the map canvas:
@@ -407,19 +407,19 @@ This should produce the following outputs on the map canvas:
 
 Step A3 preparing a DEM for Real Surface Area
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-This Step does not run a tool but provides users with information to guide them to the relevant sections in the resources. 
+This Step does not run a tool but provides users with information to guide them to the relevant sections in the resources.
 
 For reporting on SDG 15.4.2 countries must report planimetric area. Countries also however have the option to also calculate real surface area.  This requires development of a real surface area layer requires a Digital Elevation Model (DEM).
 
 If you are choosing **NOT to calculate real surface area**, then you can **go straight to step A4 as the DEM** is only required for this calculation,
 
-Otherwise: 
+Otherwise:
 If you are choosing to calculate Real Surface Area and you already have a country DEM, you need to ensure that it goes at least 7km beyond the country boundary in all directions as the  and is at a resoltion that is the same or higher resolution than your Land use land cover dataset then: Load your DEM into the QGIS project
 
 (Note: The higher the resolution (smaller the grid cells), the more detailed information. Higher resolution DEMs can improve the accuracy of analysis however, they are more computationally expensive to use, particularly over large extents. )
 
  The selection of which DEM to use for this can be chosen by the countries. We do not advise countries which DEM to choose although table in section **Choice of DEM for generating real surface area calculations and data access**  in the **Defining analyses environments and land cover data selection** provides some suggestions for open access sources. There are also some step-by-step guidance in Annex 1 to help use some of the different download options.
- 
+
 |SubA_A3_tool_interface|
 
 For the purposes of this example we will use a global DEM at 230m resolution as the Landuse landcover dataset that we are using in this example is 300m resolution so the DEM has a higher the resolution (smaller the grid cells)
@@ -464,7 +464,7 @@ This should produce the following outputs (a DEM raster and Real Surace Area ras
 |SubA_A4_tool_model|
 
 Step A5 Generate planimetric and real surface area statistics
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The data are now in a consistent format, so we can now generate the statistics required for the MGCI reporting. As we want to generate disaggregated statistics by LULC class and bioclimatic belt we will use a zonal statistics tool with the combined Vegetation + mountain layer as the summary unit. The Zonal statistics tool will automatically calculate planimetric area and real surface area in the output.
 
@@ -494,7 +494,7 @@ In the Processing Toolbox, under Models, click on model **A5 Generate Planimetri
 
 **Click Run.**
 
-This output is the main statistics table from the analysis, from which other summary statistics tables will be generated: 
+This output is the main statistics table from the analysis, from which other summary statistics tables will be generated:
 
 |SubA_A5_tool_results|
 
@@ -505,7 +505,7 @@ This output is the main statistics table from the analysis, from which other sum
 Step A6 Formatting to reporting tables
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This statistics table contains the estimates of 15.4.2 sub-indicator a, disaggregated by land cover type. We will remove unwanted fields and calculate the Mountain Green Cover Index estimates. The MGCI is calculated by diving the area of green cover the total area of each bioclimatic belt and the total mountain area and multiplying it by 100. 
+This statistics table contains the estimates of 15.4.2 sub-indicator a, disaggregated by land cover type. We will remove unwanted fields and calculate the Mountain Green Cover Index estimates. The MGCI is calculated by diving the area of green cover the total area of each bioclimatic belt and the total mountain area and multiplying it by 100.
 
 In the Processing Toolbox, under Models, click on model **A6 Formatting to Reporting Tables**.
 
@@ -560,11 +560,11 @@ This sub-indicator looks at the proportion of degraded mountain area, calculated
 
 |DML_formula|
 
-Where: 
+Where:
 
 Degraded mountain area n = Total degraded mountain area (in Km2) in the reporting period n. This is, the sum of the areas where land cover change is considered to constitute degradation from the baseline period.
 
-Total mountain area = Total area of mountains (in Km2). 
+Total mountain area = Total area of mountains (in Km2).
 
 As a reminder, in accordance with the SDG indicator’s metadata countries are required to compute estimates for Sub-Indicator 15.4.2b for a baseline for approximately 2000-2015, and subsequently every three years (2018, 2021, 2024, 2027 and 2030). Therefore, for the example in this tutorial we will use the ESA-CCI landcover products for 2000, 2015 (for the baseline) and 2018 (for the reporting year). ESA-CCI landcover data are not yet available beyond 2021 so we have therefore not yet been able to calculate subsequent years in this example.
 
@@ -576,9 +576,9 @@ This section of the tutorial assumes that the user has already calculated sub-in
 
 *The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.*
 
-SGD Indicator 15.4.2b requires us to identify change between LC classes in each reporting period, therefore the first requirement for sub-indicator 15.4.2b is to develop a transition matrix that specifies the land cover changes occurring in a given land unit (pixel) as being either degradation, improvement or neutral transitions. The definition of degradation adopted for the computation of this indicator is the one established by the Intergovernmental Science-Policy Platform on Biodiversity and Ecosystem Services (IPBES). 
+SGD Indicator 15.4.2b requires us to identify change between LC classes in each reporting period, therefore the first requirement for sub-indicator 15.4.2b is to develop a transition matrix that specifies the land cover changes occurring in a given land unit (pixel) as being either degradation, improvement or neutral transitions. The definition of degradation adopted for the computation of this indicator is the one established by the Intergovernmental Science-Policy Platform on Biodiversity and Ecosystem Services (IPBES).
 
-Countries may choose to either calculate degradation using the default land cover legend for this indicator and default transition matrix provided or from a native or simplified legend of a national land use/land cover (LULC) dataset if they have the advantage of better representing degradation transitions compared to the broader default transitions. 
+Countries may choose to either calculate degradation using the default land cover legend for this indicator and default transition matrix provided or from a native or simplified legend of a national land use/land cover (LULC) dataset if they have the advantage of better representing degradation transitions compared to the broader default transitions.
 
 In this tutorial the default method is described using the default legend and transition matrix, while Annex 2 outlines the additional/alternative steps required to generate a transitions matrix using a nationally adapted land cover legend. In both cases the output results in the same 3 classes (stable, degradation and improving) and both needed to be disaggregated and reported by both landcover transition and bioclimatic belt.
 
@@ -628,15 +628,15 @@ When using the default UN-SEEA land cover legend, this means that a value of 200
 Step B2 Generate transition matrix
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You can either use the default transitions matrix or generate a national one. The default transitions matrix csv file can be downloaded from the GitHub repository showing the unique combination of transitions using the default UN-SEEA classes as presented in the figure below. The default transitions matrix lists the transitions from the LULC classes to the 3 change classes Stable (0), Degradation (-1) and Improving (1). 
+You can either use the default transitions matrix or generate a national one. The default transitions matrix csv file can be downloaded from the GitHub repository showing the unique combination of transitions using the default UN-SEEA classes as presented in the figure below. The default transitions matrix lists the transitions from the LULC classes to the 3 change classes Stable (0), Degradation (-1) and Improving (1).
 
 |transition_matrix|
 
-Despite the clarity of this format transitions matrix, the reclassification tools in QGIS require a very specific format for the reclassification table. We therefore need to add an additional field and calculate it to be in the required QGIS syntax. This field will then be saved into a new CSV file which can be used by the QGIS geoprocessing tool. 
+Despite the clarity of this format transitions matrix, the reclassification tools in QGIS require a very specific format for the reclassification table. We therefore need to add an additional field and calculate it to be in the required QGIS syntax. This field will then be saved into a new CSV file which can be used by the QGIS geoprocessing tool.
 
 Note that we are taking the Landcover code for year 1 and multiplying it by 1000 (as described above) and summing it with the landcover code for year 2 before combining it with the rest of the QGIS syntax.
 
-If are using a national land cover transition matrix you can prepare a transitions table in the same format as the default transitions table in Excel or you can generate a csv file from the unique combinations for the LULC types using the combined LULC dataset for the two years. We illustrate this below (although we are using the default UN-SEEA classes for illustration purposes only). 
+If are using a national land cover transition matrix you can prepare a transitions table in the same format as the default transitions table in Excel or you can generate a csv file from the unique combinations for the LULC types using the combined LULC dataset for the two years. We illustrate this below (although we are using the default UN-SEEA classes for illustration purposes only).
 
 In the Processing Toolbox, under Models, click on model **B2 Generate Transition Matrix**.
 
@@ -690,7 +690,7 @@ After calculating the baseline reporting period, for assessing the area of degra
 |adjusting_impact_matrix|
 
 This basically means that area degraded for the reporting period 2018 is calculated by summing : (i) new areas degraded in 2016-2018 period and (ii) areas identified as degraded in the baseline period that remain degraded. If we were to do the same for the next reporting year (2021), we would calculate the degraded land for the 2016 -2021 period, and follow exactly the same approach. Please let me know if this is not clear.
- 
+
 In the Processing Toolbox, under Models, click on model **B3 Reclassify LULC Transitions to Impacts**.
 
 |SubB_B3_tool_interface|
@@ -715,11 +715,11 @@ In the Processing Toolbox, under Models, click on model **B3 Reclassify LULC Tra
 
 - Have you assessed impact for a previous reporting period?: Select yes or no.
 
-- Input: previously calculated impact layer for baseline period (2000-2015): If you have already calculated the impact layer for the baseline period (2000-2015), enter the path to it. 
+- Input: previously calculated impact layer for baseline period (2000-2015): If you have already calculated the impact layer for the baseline period (2000-2015), enter the path to it.
 
 **Click Run.**
 
-- Repeat the above step for the next reporting period i.e., using 2015 landcover (year 1) and 2018 landcover (year 2) 
+- Repeat the above step for the next reporting period i.e., using 2015 landcover (year 1) and 2018 landcover (year 2)
 
 You can ignore the two warning messages that appear in red– these do not affect the correct generation of the outputs.
 
@@ -735,13 +735,13 @@ You can ignore the two warning messages that appear in red– these do not affec
 
 |SubB_B3_tool_model|
 
-Step B4 Combine Bioclimatic belts, LULC transitions and impact layers 
+Step B4 Combine Bioclimatic belts, LULC transitions and impact layers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We now have all the layers we need for generating statistics. To make it easier we will again sum the layers together using different factors to change the values in some of the datasets. We have the following datasets which we need to combine to generate the proportion of degraded mountain area disaggregated by LULC transitions, impact status and bioclimatic belt: 
+We now have all the layers we need for generating statistics. To make it easier we will again sum the layers together using different factors to change the values in some of the datasets. We have the following datasets which we need to combine to generate the proportion of degraded mountain area disaggregated by LULC transitions, impact status and bioclimatic belt:
 
 - LULC transitions (which in our case using have values 1001-10010 where LULC for year 1 has already been multiplied by 1000 and summed with year 2 values)
-We will leave these LULC transitions dataset values as they are. 
+We will leave these LULC transitions dataset values as they are.
 
 - Bioclimatic belts (which have values 1-4 representing the 4 bioclimatic belts)
 We will multiply the bioclimatic belts by 100,000.
@@ -767,7 +767,7 @@ In the Processing Toolbox, under Models, click on model **B4 Combine Bioclimatic
 
 - Select folder for outputs: Select an output folder to store your outputs. The output folder should already exist. Make sure the folder name does not have any spaces.
 
-- LULC transition impact status: Enter the path to the LULC transition impact status (generated in step B3). Use adjusted impact if it is not the initial reporting period. 
+- LULC transition impact status: Enter the path to the LULC transition impact status (generated in step B3). Use adjusted impact if it is not the initial reporting period.
 
 - LULC transitions: Enter the path to the LULC transitions (generated in step B1).
 
@@ -784,7 +784,7 @@ In the Processing Toolbox, under Models, click on model **B4 Combine Bioclimatic
 |SubB_B4_tool_model|
 
 Step B5 Generate planimetric and real surface area statistics
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The data are now combined and in a format that we can use to generate the statistics required for the sub-indicator 15.4.2b reporting. The Raster layer unique values report tool will automatically calculate planimetric and real surface area statistics in the output and contain all the disaggregation we require. This output is the main statistics table from the analysis, from which other summary statistics tables will be generated.
 
@@ -824,7 +824,7 @@ In the Processing Toolbox, under Models, click on model **B5 Generate Planimetri
 Step B6 Formatting to reporting tables
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This statistics table contains the estimates of 15.4.2 sub-indicator b. We will remove unwanted fields and calculate the Mountain Green Cover Index estimates. 
+This statistics table contains the estimates of 15.4.2 sub-indicator b. We will remove unwanted fields and calculate the Mountain Green Cover Index estimates.
 
 In the Processing Toolbox, under Models, click on model **B6 Formatting to Reporting Tables**.
 
@@ -836,8 +836,8 @@ In the Processing Toolbox, under Models, click on model **B6 Formatting to Repor
 
 - CSV_containing_UN_country_codes: Set the path to the csv file containing UN country codes (downloaded from the GitHub repository).
 
-- 
-	
+-
+
 **Click Run.**
 
 Repeat the above step for the next reporting period i.e., using 2015 landcover (year 1) and 2018 landcover (year 2) and any other reporting periods.
@@ -879,13 +879,13 @@ Repeat the above step for the next reporting period i.e., using 2015 landcover (
 .. |setup14| image:: media_toolbox/setup14.png
    :width: 800
 .. |setup15| image:: media_toolbox/setup15.png
-   :width: 800  
+   :width: 800
 .. |setup16| image:: media_toolbox/setup16.png
-   :width: 800  
+   :width: 800
 .. |setup17| image:: media_toolbox/setup17.png
-   :width: 800  
+   :width: 800
 .. |projection| image:: media_toolbox/projection.png
-   :width: 800  
+   :width: 800
 
 
 
@@ -975,9 +975,9 @@ Repeat the above step for the next reporting period i.e., using 2015 landcover (
    :width: 1200
 .. |SubB_B2_tool_model| image:: media_toolbox/SubB_B2_tool_model.png
    :width: 1200
- 
-   
-   
+
+
+
 .. |SubB_B3_tool_interface| image:: media_toolbox/SubB_B3_tool_interface.png
    :width: 1200
 .. |SubB_B3_tool_results| image:: media_toolbox/SubB_B3_tool_results.png

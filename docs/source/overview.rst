@@ -1,22 +1,22 @@
 Background
 ==========
-SDG Indicator 15.4.2 is one of the two indicators under SDG Target 15.4, which aims to "*ensure the conservation of mountain ecosystems, including their biodiversity, to enhance their capacity to provide benefits which are essential for sustainable development*". The Food and Agriculture Organization (FAO) of the United Nations is the custodian agency of this indicator.  
+SDG Indicator 15.4.2 is one of the two indicators under SDG Target 15.4, which aims to "*ensure the conservation of mountain ecosystems, including their biodiversity, to enhance their capacity to provide benefits which are essential for sustainable development*". The Food and Agriculture Organization (FAO) of the United Nations is the custodian agency of this indicator.
 
-The indicator is composed of two sub-indicators to monitor progress towards the conservation of mountain ecosystems. 
+The indicator is composed of two sub-indicators to monitor progress towards the conservation of mountain ecosystems.
 
 
 Overview of computation of Sub-Indicator a) Mountain Green Cover Index
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Sub-indicator 15.4.2a**, Mountain Green Cover Index (MGCI), is designed to measure the extent and changes of green cover - i.e. forest, shrubs, trees, pasture land, cropland, etc. – in mountain areas. MGCI is defined as the percentage of green cover over the total surface of the mountain area of a given country and for given reporting year. The aim of the index is to monitor the evolution of the green cover and thus assess the status of conservation of mountain ecosystems. 
+**Sub-indicator 15.4.2a**, Mountain Green Cover Index (MGCI), is designed to measure the extent and changes of green cover - i.e. forest, shrubs, trees, pasture land, cropland, etc. – in mountain areas. MGCI is defined as the percentage of green cover over the total surface of the mountain area of a given country and for given reporting year. The aim of the index is to monitor the evolution of the green cover and thus assess the status of conservation of mountain ecosystems.
 
 .. math::
-    
+
     MGCI = (Mountain Green Cover Area)/(Total Mountain Area)
 
-Where: 
+Where:
 
-- **Mountain Green Cover Area n** = Sum of areas (in km2) covered by (1) tree-covered areas, (2) croplands,(3) grasslands, (4) shrub-covered areas and (5) shrubs and/or herbaceous vegetation, aquatic or regularly flooded classes in the reporting period n 
+- **Mountain Green Cover Area n** = Sum of areas (in km2) covered by (1) tree-covered areas, (2) croplands,(3) grasslands, (4) shrub-covered areas and (5) shrubs and/or herbaceous vegetation, aquatic or regularly flooded classes in the reporting period n
 - **Total mountain area** = Total area of mountains (in km2). In both the numerator and denominator, mountain area is defined according to UNEP-WCMC (2002).
 
 
@@ -27,8 +27,8 @@ Overview of computation of Sub-Indicator b) Proportion of degraded mountain land
 
 .. math::
 
-	Proportion Of Degraded Mountain Land = \\
-	(Degraded Mountain Area n) / (Total Mountain Area) * 100
+   Proportion Of Degraded Mountain Land = \\
+   (Degraded Mountain Area n) / (Total Mountain Area) * 100
 
 Where:
 
@@ -79,7 +79,7 @@ For disaggregation purposes, this mountain area is subdivided into bioclimatic b
 +----------------------+-----------------------+                  |                               |
 | Lower montane        | > 10 °C & ≤ 15 °C     |                  |                               |
 +----------------------+-----------------------+------------------+-------------------------------+
-| Remaining mountain   | > 15 °C               | ---              | Remaining mountain            | 
+| Remaining mountain   | > 15 °C               | ---              | Remaining mountain            |
 | area with frost      |                       |                  | area                          |
 +----------------------+-----------------------+                  |                               |
 | Remaining mountain   |                       |                  |                               |
@@ -100,7 +100,7 @@ Several global standards of land cover classifications have been developed by in
 
 **Table 2 Adapted UN-SEEA land cover classification for the computation and aggregate reporting on SDG Indicator 15.4.2.**
 
-.. table:: 
+.. table::
     :widths: 30 50
 
     +---------------------------------------+--------------------------------------------------------------+
@@ -206,11 +206,11 @@ Potential / known limitations of current methodology
 
 Recognizing that this indicator cannot fully capture the complexity of mountain ecosystems across the world, national authorities are encouraged to use other relevant national or sub-national indicators, data, and information to strengthen their interpretation, as well as taking into account the following limitations:
 
-- Sub-indicator 15.4.2a should be interpreted with care given that: 1) lack of green cover does not necessarily mean that a particular mountain area is degraded (i.e. areas of permanent snow and ice, scree slopes and natural sparsely vegetated areas above the tree line, 2) it does not capture significant drivers of change such as conversion of natural areas to cropland or pastureland, and 3) increase in green cover may due to impacts of climate change in mountain areas (i.e. increase in green cover due to snow and glacier retreat due to global warming). 
+- Sub-indicator 15.4.2a should be interpreted with care given that: 1) lack of green cover does not necessarily mean that a particular mountain area is degraded (i.e. areas of permanent snow and ice, scree slopes and natural sparsely vegetated areas above the tree line, 2) it does not capture significant drivers of change such as conversion of natural areas to cropland or pastureland, and 3) increase in green cover may due to impacts of climate change in mountain areas (i.e. increase in green cover due to snow and glacier retreat due to global warming).
 
 - Because land cover refers to the naturally stable aspects of land and the structure of its key elements, transient aspects such as changes in vegetation phenology, snow or flooding dynamics cannot be captured by land cover transitions as measured in sub-indicator 15.4.2b. In the context of SDG Target 15.4, this is particularly relevant for snow cover dynamics (snow cover duration within a year).
 
-- Both sub-indicators are not able to capture ecosystem degradation drivers that do not necessarily result in changes in land cover. 
+- Both sub-indicators are not able to capture ecosystem degradation drivers that do not necessarily result in changes in land cover.
 
 - Area estimations based on remote-sensing-derived land cover maps via pixel counting may lead to biased area estimates due to map errors. National authorities are encouraged to further refine those estimates by comparing them against reference datasets and applying bias corrections.
 
@@ -228,7 +228,7 @@ References
 
 Jenness, J.S. (2004). Calculating landscape surface area from digital elevation models. Wildlife Society Bulletin, 32: 829-839
 
-IPBES (2018): Summary for policymakers of the assessment report on land degradation and restoration of the Intergovernmental Science-Policy Platform on Biodiversity and Ecosystem Services. R. Scholes, L. Montanarella, A. Brainich, N. Barger, B. ten Brink, M. Cantele, B. Erasmus, J. Fisher, T. Gardner, T. G. Holland, F. Kohler, J. S. Kotiaho, G. Von Maltitz, G. Nangendo, R. Pandit, J. Parrotta, M. D. Potts, S. Prince, M. Sankaran and L. Willemen (eds.). IPBES secretariat, Bonn, Germany. 44 pages. 
+IPBES (2018): Summary for policymakers of the assessment report on land degradation and restoration of the Intergovernmental Science-Policy Platform on Biodiversity and Ecosystem Services. R. Scholes, L. Montanarella, A. Brainich, N. Barger, B. ten Brink, M. Cantele, B. Erasmus, J. Fisher, T. Gardner, T. G. Holland, F. Kohler, J. S. Kotiaho, G. Von Maltitz, G. Nangendo, R. Pandit, J. Parrotta, M. D. Potts, S. Prince, M. Sankaran and L. Willemen (eds.). IPBES secretariat, Bonn, Germany. 44 pages.
 
 Sims, N.C., Newnham, G.J., England, J.R., Guerschman, J., Cox, S.J.D., Roxburgh, S.H., Viscarra Rossel, R.A., Fritz, S. and Wheeler, I. (2021). Good Practice Guidance. SDG Indicator 15.3.1, Proportion of Land That Is Degraded Over Total Land Area. Version 2.0. United Nations Convention to Combat Desertification, Bonn, Germany.
 

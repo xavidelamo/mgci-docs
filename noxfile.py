@@ -19,7 +19,7 @@ def docs(session):
         "-b",
         "html",
         "docs/source",
-        f"docs/build/html",
+        "docs/build/html",
         "-w",
         "warnings.txt",
     )

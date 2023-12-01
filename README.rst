@@ -2,36 +2,36 @@ Introduction to MGCI
 ====================
 
 SDG Indicator 15.4.2 – Mountain Green Cover Index (MGCI) is one of the
-two indicators under SDG Target 15.4, which aims to "*ensure the conservation 
-of mountain ecosystems, including their biodiversity, to enhance their capacity 
-to provide benefits which are essential for sustainable development*". The Food 
-and Agriculture Organization (FAO) of the United Nations is the custodian agency 
-of this indicator. 
+two indicators under SDG Target 15.4, which aims to "*ensure the conservation
+of mountain ecosystems, including their biodiversity, to enhance their capacity
+to provide benefits which are essential for sustainable development*". The Food
+and Agriculture Organization (FAO) of the United Nations is the custodian agency
+of this indicator.
 
-The indicator is composed of two sub-indicators to monitor progress towards the 
-conservation of mountain ecosystems: 
+The indicator is composed of two sub-indicators to monitor progress towards the
+conservation of mountain ecosystems:
 
-**Sub-indicator 15.4.2a**, Mountain Green Cover Index (MGCI), is designed to 
-measure the extent and changes of green cover - i.e. forest, shrubs, trees, 
-pasture land, cropland, etc. – in mountain areas. MGCI is defined as the 
-percentage of green cover over the total surface of the mountain area of a 
-given country and for given reporting year. The aim of the index is to monitor 
-the evolution of the green cover and thus assess the status of conservation of 
-mountain ecosystems. 
+**Sub-indicator 15.4.2a**, Mountain Green Cover Index (MGCI), is designed to
+measure the extent and changes of green cover - i.e. forest, shrubs, trees,
+pasture land, cropland, etc. – in mountain areas. MGCI is defined as the
+percentage of green cover over the total surface of the mountain area of a
+given country and for given reporting year. The aim of the index is to monitor
+the evolution of the green cover and thus assess the status of conservation of
+mountain ecosystems.
 
-**Sub-indicator 15.4.2b**, Proportion of degraded mountain land, is designed to 
-monitor the extent of degraded mountain land as a result of land cover change of 
-a given country and for given reporting year. Similarly to sub-indicator ‘’trends 
-in land cover” under SDG Indicator 15.3.1 (Sims et al. 2021), mountain ecosystem 
-degradation and recovery is assessed based on the definition of land cover type 
-transitions that constitute degradation, as either improving, stable or degraded. 
-The definition of degradation adopted for the computation of this indicator is the 
-one established Intergovernmental Science-Policy Platform on Biodiversity and 
+**Sub-indicator 15.4.2b**, Proportion of degraded mountain land, is designed to
+monitor the extent of degraded mountain land as a result of land cover change of
+a given country and for given reporting year. Similarly to sub-indicator ‘’trends
+in land cover” under SDG Indicator 15.3.1 (Sims et al. 2021), mountain ecosystem
+degradation and recovery is assessed based on the definition of land cover type
+transitions that constitute degradation, as either improving, stable or degraded.
+The definition of degradation adopted for the computation of this indicator is the
+one established Intergovernmental Science-Policy Platform on Biodiversity and
 Ecosystem Services (IPBES)footnote reference [#]_.
 
 
-.. [#]IPBES defines land degradation as “the many human-caused processes that 
-drive the decline or loss in biodiversity, ecosystem functions or ecosystem 
+.. [#]IPBES defines land degradation as “the many human-caused processes that
+drive the decline or loss in biodiversity, ecosystem functions or ecosystem
 services in any terrestrial and associated aquatic ecosystems” (IPBES, 2018)
 
 Please see the full metadata
@@ -53,8 +53,8 @@ summaries.
 from 2 different software:**
 
 - Step-by-Step instructions in **QGIS (with R integration)**
-- SEPAL app: Users can register and log into the SEPAL data portal where a 
-user-friendly interface will guide technicians through a series of menu-driven 
+- SEPAL app: Users can register and log into the SEPAL data portal where a
+user-friendly interface will guide technicians through a series of menu-driven
 steps to prepare the layers and run the calculations
 
 |imageworkflow|
@@ -64,26 +64,26 @@ Figure 1: Simplified Workflow (still need to edit and upload latest)
 Overview of Mountain Area Map
 -----------------------------
 
-Several methodologies have been developed in the last decades to consistently 
-classify and map global mountain systems, using a variety of parameters such 
+Several methodologies have been developed in the last decades to consistently
+classify and map global mountain systems, using a variety of parameters such
 as elevation, topography, climate and ecology.
 
-For the purposes of standardization and international comparability of nationally 
-derived-estimates, this indicator adheres to the UNEP-WCMC mountain definition 
-(UNEP-WCMC, 2002). The UNEP-WCMC method defines total global mountain area as the 
-sum of seven classes (commonly known as ‘Kapos mountain classes’), based on elevation, 
-slope and local elevation ranges parameters. The mapping of mountain areas using this 
+For the purposes of standardization and international comparability of nationally
+derived-estimates, this indicator adheres to the UNEP-WCMC mountain definition
+(UNEP-WCMC, 2002). The UNEP-WCMC method defines total global mountain area as the
+sum of seven classes (commonly known as ‘Kapos mountain classes’), based on elevation,
+slope and local elevation ranges parameters. The mapping of mountain areas using this
 methodology requires a Digital Elevation Model (DEM).
 
-For disaggregation purposes, this mountain area is subdivided into bioclimatic belts 
-as defined by Körner et al. (2011). Körner et al. subdivides mountains vertically into 
-seven bioclimatic belts based on average temperatures, therefore accounting the 
-latitudinal change in elevation of thermally similar areas in the world’s mountains. 
-For the purposes of this indicator, these seven bioclimatic belts are aggregated into 
+For disaggregation purposes, this mountain area is subdivided into bioclimatic belts
+as defined by Körner et al. (2011). Körner et al. subdivides mountains vertically into
+seven bioclimatic belts based on average temperatures, therefore accounting the
+latitudinal change in elevation of thermally similar areas in the world’s mountains.
+For the purposes of this indicator, these seven bioclimatic belts are aggregated into
 four (Nival, Alpine, Montane and Remaining mountain areas), as illustrated in Table 1.
 
 **Table 1.** Mountain bioclimatic belts as defined by Körner et al. (2011) and reclassification
- for data disaggregation of SDG Indicator 15.4.2. Growing season is defined as the number of days 
+ for data disaggregation of SDG Indicator 15.4.2. Growing season is defined as the number of days
  between daily mean temperature exceeds 0.9 °C then falls below 0.9 °C
 
 +-----------------------------------------+-----------------------------------+-------------------------+------------------------------------------------------+
@@ -106,29 +106,29 @@ four (Nival, Alpine, Montane and Remaining mountain areas), as illustrated in Ta
 | Remaining mountain area without frost   | > 15 °C                           |                         |                                                      |
 +-----------------------------------------+-----------------------------------+-------------------------+------------------------------------------------------+
 
-A global mountain area map sub-divided by bioclimatic belts has been developed by FAO and made 
-available to national authorities to facilitate the computation of this indicator. This map is 
-the result of combining a global mountain area map developed from the Global Multi-Resolution 
-Terrain Elevation Data (GMTED2010), following the UNEP-WCMC methodology (Ravilious et al. 2021) 
+A global mountain area map sub-divided by bioclimatic belts has been developed by FAO and made
+available to national authorities to facilitate the computation of this indicator. This map is
+the result of combining a global mountain area map developed from the Global Multi-Resolution
+Terrain Elevation Data (GMTED2010), following the UNEP-WCMC methodology (Ravilious et al. 2021)
 and a mountain bioclimatic belt map created by the Global Mountain Biodiversity Assessment
 
 Overview of the land cover data
 -------------------------------
 
-Land cover refers to the observed physical cover of the Earth’s surface. It includes vegetation 
-and manmade features as well as bare rock, bare soil and inland water surfaces (FAO-GTOS, 2009). 
-The primary units for characterizing land cover are categories (e.g. Forest or Open Water). These 
+Land cover refers to the observed physical cover of the Earth’s surface. It includes vegetation
+and manmade features as well as bare rock, bare soil and inland water surfaces (FAO-GTOS, 2009).
+The primary units for characterizing land cover are categories (e.g. Forest or Open Water). These
 categories must be defined following a standardized land cover
 classification in order to identify land cover changes consistently over time.
 
-Several global standards of land cover classifications have been developed by international 
-initiatives for this purpose. For the purposes of standardization and harmonization when reporting 
-on SDG Indicator 15.4.2, this indicator has adapted the land cover classification established by the 
-United Nations Statistical Commission’s System of Environmental and Economic Accounting (UN-SEEA)(UN 
-Statistical Division, 2014) by selecting the most relevant SEEA classes for mountain ecosystems and 
+Several global standards of land cover classifications have been developed by international
+initiatives for this purpose. For the purposes of standardization and harmonization when reporting
+on SDG Indicator 15.4.2, this indicator has adapted the land cover classification established by the
+United Nations Statistical Commission’s System of Environmental and Economic Accounting (UN-SEEA)(UN
+Statistical Division, 2014) by selecting the most relevant SEEA classes for mountain ecosystems and
 aggregating all croplands classes in the following classification (Table 2).
 
-**Table 2.** Adapted UN-SEEA land cover classification for the computation and aggregate reporting 
+**Table 2.** Adapted UN-SEEA land cover classification for the computation and aggregate reporting
 on SDG Indicator 15.4.2.
 
 +-----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -161,16 +161,16 @@ on SDG Indicator 15.4.2.
 | 10. Inland water bodies                                               | This class includes any geographical area covered for most of the year by inland water bodies. In some cases, the water can be frozen for part of the year (less than 10 months). Because the geographical extent of water bodies can change, boundaries must be set consistently with those set by class 8, according to the dominant situation during the year and/or across multiple years.                   |
 +-----------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Land cover maps developed by relevant national authorities will generally provide the most relevant 
-data source to compute this indicator. However, in certain cases, such data may not be available. 
+Land cover maps developed by relevant national authorities will generally provide the most relevant
+data source to compute this indicator. However, in certain cases, such data may not be available.
 In those cases, various regional or global products provide a viable alternative.
 
-The global default source of land cover data for this indicator is the European Space Agency Climate 
-Change Initiative (ESA-CCI) Land Cover product (ESA, 2017). The ESA-CCI product consists of a series 
-of annual Land Cover maps at 300 m resolution, providing 22 land cover classes based on 300m MERIS, 
-1km SPOT – VEGETATION, 1km PROBA –V and 1km AVHRR. The ESA CCI adheres to the Cover Classification 
-System of the United Nations Food and Agriculture Organization (UN FAO) (Santoro et al. 2015). 
-Annual updates are currently available from 1992 to 2020. Additional years will be made available 
+The global default source of land cover data for this indicator is the European Space Agency Climate
+Change Initiative (ESA-CCI) Land Cover product (ESA, 2017). The ESA-CCI product consists of a series
+of annual Land Cover maps at 300 m resolution, providing 22 land cover classes based on 300m MERIS,
+1km SPOT – VEGETATION, 1km PROBA –V and 1km AVHRR. The ESA CCI adheres to the Cover Classification
+System of the United Nations Food and Agriculture Organization (UN FAO) (Santoro et al. 2015).
+Annual updates are currently available from 1992 to 2020. Additional years will be made available
 by the European Space Agency
 
 Overview of computation of Mountain Green Cover Index
@@ -181,15 +181,15 @@ Planimetric area calculation vs Real surface area calculation
 
 Area calculations for reporting purposes should be undertaken using
 standard planimetric area butfor improved accuracy we offer an additional
-real surface area. The real surface area takes into account the third 
+real surface area. The real surface area takes into account the third
 dimension of mountain surfaces (Jenness 2004), giving a better and more accurate
-estimate of the true mountain area in a country (Bian et al., 2020). To calculate 
+estimate of the true mountain area in a country (Bian et al., 2020). To calculate
 the real surface area we use elevation data and the following the triangulation method
 developed by Jenness (2004).
 
 |image2|
 
-Disaggregation and standardised reporting tables 
+Disaggregation and standardised reporting tables
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The results of the MGCI are output to standard reporting tables in
@@ -217,7 +217,7 @@ presented here, for the generation of MGCI values.
 Acknowledgements
 ----------------
 
-We would like to express our special thanks to Jeff Jenness from Jenness Enterprises, GIS Analysis and Application Design, 
+We would like to express our special thanks to Jeff Jenness from Jenness Enterprises, GIS Analysis and Application Design,
 for his help in the development of the real surface area.
 
 (still to complete this section)

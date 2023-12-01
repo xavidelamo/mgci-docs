@@ -41,27 +41,27 @@ Understanding scale vs resolution
 
 The scale of a vector dataset is usually expressed in a similar way to paper maps, i.e. in a ratio to show the amount of reduction from the real world e.g.  1:50,000. A country’s vector LULC map will have been created at a particular scale. determined by the Minimum Mapping Unit. i.e. the size of the smallest feature. A nominal scale is will have been assigned to the dataset to reflect the scale at which the data were collected and mapped. Conversion to raster requires this scale to be converted to a resolution, i.e. an appropriate pixel size for the scale of the data.                                                              |
 
-To calculate map scale there are two parameters:  ground resolution and screen resolution.  
+To calculate map scale there are two parameters:  ground resolution and screen resolution.
 
-.. math:: scale = 1: (resolution * PPI / 0.0254) \\ 
+.. math:: scale = 1: (resolution * PPI / 0.0254) \\
 
-or   
+or
 
-.. math:: resolution = scale * 0.0254/PPI 
+.. math:: resolution = scale * 0.0254/PPI
 
-**Where**:   
+**Where**:
 
-**resolution** =  ground resolution (the size in (m) that a pixel represents. 
+**resolution** =  ground resolution (the size in (m) that a pixel represents.
 
-**PPI** =  the screen resolution (pixels number that every inch contains on the screen (default 96dpi). 
+**PPI** =  the screen resolution (pixels number that every inch contains on the screen (default 96dpi).
 
-**0.0254** = (m/inch),  the unit conversion between meter and inches. 
+**0.0254** = (m/inch),  the unit conversion between meter and inches.
 
-**scale** = nominal scale of vector dataset                                                                                                                        
+**scale** = nominal scale of vector dataset
 
-Some examples are provided in the table below:        
+Some examples are provided in the table below:
 
-|imagescale_table| 
+|imagescale_table|
 
 (source: https://enonline.supermap.com/iExpress9D/Appendix/scale.htm)
 
@@ -147,9 +147,9 @@ Choice of DEM for generating real surface area calculations and data access
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Development of a real surface area layer requires a Digital
-Elevation Model (DEM). The selection of which DEM to use for this 
-can be chosen by the countries. We do not advise countries which DEM to 
-choose although table X provides some suggestions for open access sources. 
+Elevation Model (DEM). The selection of which DEM to use for this
+can be chosen by the countries. We do not advise countries which DEM to
+choose although table X provides some suggestions for open access sources.
 DEM selection may be influenced by several factors including:
 
 -  resolution of landcover dataset being used as the land cover layer
@@ -163,9 +163,9 @@ DEM selection may be influenced by several factors including:
 Countries may want to pay particular attention to the scale of their
 chosen land cover dataset when selecting the resolution of their DEM.
 Selecting a DEM that is of similar resolution to the landc cover dataset is
-likely to be the best option. 
+likely to be the best option.
 
-The higher the resolution (smaller the grid cells), the more detailed information. Higher resolution DEMs improve the accuracy of analysis such as hydrological modelling. However, they are more computationally expensive to use, particularly over large extents.  
+The higher the resolution (smaller the grid cells), the more detailed information. Higher resolution DEMs improve the accuracy of analysis such as hydrological modelling. However, they are more computationally expensive to use, particularly over large extents.
 
 |image167|
 
@@ -180,12 +180,12 @@ infrastructure and vegetation.
 For further information on DEMs and downloading them please see Annex 1.
 
 
-   
+
 .. |image33| image:: media_QGIS/image33_orig.png
    :width: 1200
 
 .. |image167| image:: media_QGIS/image167.png
    :width: 1200
-   
+
 .. |imagescale_table| image:: media_QGIS/scale_table.png
    :width: 500

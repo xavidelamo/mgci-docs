@@ -1,7 +1,6 @@
 # Configuration file for the Sphinx documentation builder.
 
 import sys
-from datetime import datetime
 from pathlib import Path
 
 sys.path.append(str(Path(".").resolve()))
@@ -10,7 +9,7 @@ sys.path.append(str(Path(".").resolve()))
 # -- Project information
 
 project = "SDG 15.4.2: (a) Mountain Green Cover Index and (b) proportion of degraded mountain land"
-copyright = f"2023 - FAO SEPAL - UNEP-WCMC"
+copyright = "2023 - FAO SEPAL - UNEP-WCMC"
 author = "FAO SEPAL - UNEP-WCMC"
 
 # -- General configuration -----------------------------------------------------

@@ -1,4 +1,4 @@
-Initial set-up 
+Initial set-up
 =================
 
 R software and packages installation
@@ -17,7 +17,7 @@ R software and packages installation
    the options to do so are:
     -   install.packages("name\_of\_package")
     -  library(name\_of\_package)
-    
+
        Or
     -  (if(!require("name\_of\_package")) install.packages("name\_of\_package")
 
@@ -35,15 +35,15 @@ https://www.r-statistics.com/2015/06/a-step-by-step-screenshots-tutorial-for-upg
 for a step-by-step tutorial on how to do this or type the lines
 bellow on the R Console:
 
-- install.packages("installr") 
-    
+- install.packages("installr")
+
   *you’ll have to select the CRAN mirror for use in this session depending on your geographical location*
 
  |image7|
 - library(installr)
 
 - updateR()
-    
+
   *Answer the questions to complete the update. The final set of questions are about copying your R packages to the new version of R.*
 
  |image8|
@@ -279,7 +279,7 @@ You are now ready to open the QGIS project. Double-click to SDG_15_4_2_beta.qgz 
 
 |setup9|
 
-Next (once QGIS is open) there are a few steps that need to be undertaken to set up the QGIS project correctly and to link it to the custom toolbox and scripts. 
+Next (once QGIS is open) there are a few steps that need to be undertaken to set up the QGIS project correctly and to link it to the custom toolbox and scripts.
 
 
 From the QGIS main menu goto settings>>options>>Data Sources and change the 'Representation of null values from Null to NA (this will ensure  the correct NA representation of Null values in the output reporting tables)
@@ -339,7 +339,7 @@ On the righ-hand side of QGIS you should see the processing Toolbox. (If it is n
 .. |setup14| image:: media_toolbox/setup14.png
    :width: 800
 .. |setup15| image:: media_toolbox/setup15.png
-   :width: 800   
+   :width: 800
 
 .. |image0| image:: media_QGIS/image2_orig.png
    :width: 6.26806in

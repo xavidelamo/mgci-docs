@@ -19,7 +19,7 @@ Contents
 
 .. toctree::
    :maxdepth: 2
-   
+
    overview
    defineenvs
    SEPAL<sepal/index>

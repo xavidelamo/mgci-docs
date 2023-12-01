@@ -28,6 +28,15 @@ Generate LULC degradation layers for reporting periods
 [31m/home/dguerrero/1_modules/wcmc-mgci/docs/source/annexes/index.rst:23: ERROR: Unknown directive type "line-break".
 
 .. line-break::[39;49;00m
+[31m/home/dguerrero/1_modules/wcmc-mgci/docs/source/index.rst:4: ERROR: Unknown directive type "line-break".
+
+.. line-break::[39;49;00m
+[31m/home/dguerrero/1_modules/wcmc-mgci/docs/source/index.rst:12: ERROR: Unknown directive type "line-break".
+
+.. line-break::[39;49;00m
+[31m/home/dguerrero/1_modules/wcmc-mgci/docs/source/index.rst:13: ERROR: Unknown directive type "line-break".
+
+.. line-break::[39;49;00m
 [31m/home/dguerrero/1_modules/wcmc-mgci/docs/source/initial_setup.rst:18: ERROR: Unexpected indentation.[39;49;00m
 [91m/home/dguerrero/1_modules/wcmc-mgci/docs/source/initial_setup.rst:43: WARNING: Block quote ends without a blank line; unexpected unindent.[39;49;00m
 [91m/home/dguerrero/1_modules/wcmc-mgci/docs/source/initial_setup.rst:158: WARNING: Block quote ends without a blank line; unexpected unindent.[39;49;00m
@@ -57,8 +66,18 @@ QGIS-SDG 15.4.2 custom toolbox download and installation
 [91m/home/dguerrero/1_modules/wcmc-mgci/docs/source/qgis_custom_models.rst:932: WARNING: image file not readable: media_toolbox/SubA_A3_tool_results.png[39;49;00m
 [91m/home/dguerrero/1_modules/wcmc-mgci/docs/source/qgis_custom_models.rst:955: WARNING: image file not readable: media_toolbox/SubA_A6_tool_results.png[39;49;00m
 [91m/home/dguerrero/1_modules/wcmc-mgci/docs/source/qgis_custom_models.rst:1174: WARNING: image file not readable: media_QGIS/image79.png:width:1200[39;49;00m
+[91m/home/dguerrero/1_modules/wcmc-mgci/docs/source/sepal/index.rst:2: WARNING: Duplicate explicit target name: "google earth engine".[39;49;00m
+[91m/home/dguerrero/1_modules/wcmc-mgci/docs/source/sepal/index.rst:49: WARNING: Block quote ends without a blank line; unexpected unindent.[39;49;00m
+[91m/home/dguerrero/1_modules/wcmc-mgci/docs/source/sepal/index.rst:2: WARNING: Duplicate explicit target name: "registration steps".[39;49;00m
+[91m/home/dguerrero/1_modules/wcmc-mgci/docs/source/sepal/index.rst:275: WARNING: Explicit markup ends without a blank line; unexpected unindent.[39;49;00m
+[91m/home/dguerrero/1_modules/wcmc-mgci/docs/source/sepal/index.rst:293: WARNING: Explicit markup ends without a blank line; unexpected unindent.[39;49;00m
+[91m/home/dguerrero/1_modules/wcmc-mgci/docs/source/sepal/index.rst:304: WARNING: Explicit markup ends without a blank line; unexpected unindent.[39;49;00m
+[91m/home/dguerrero/1_modules/wcmc-mgci/docs/source/sepal/index.rst:305: WARNING: Line block ends without a blank line.[39;49;00m
+[91m/home/dguerrero/1_modules/wcmc-mgci/docs/source/sepal/index.rst:306: WARNING: Explicit markup ends without a blank line; unexpected unindent.[39;49;00m
+[31m/home/dguerrero/1_modules/wcmc-mgci/docs/source/sepal/index.rst:320: ERROR: Unknown interpreted text role "guilable".[39;49;00m
 [91m/home/dguerrero/1_modules/wcmc-mgci/docs/source/annexes/annex1.rst: WARNING: document isn't included in any toctree[39;49;00m
 [91m/home/dguerrero/1_modules/wcmc-mgci/docs/source/annexes/annex2.rst: WARNING: document isn't included in any toctree[39;49;00m
 [91m/home/dguerrero/1_modules/wcmc-mgci/docs/source/initial_setup.rst: WARNING: document isn't included in any toctree[39;49;00m
 [91m/home/dguerrero/1_modules/wcmc-mgci/docs/source/special.rst: WARNING: document isn't included in any toctree[39;49;00m
 [91m/home/dguerrero/1_modules/wcmc-mgci/docs/source/qgis_custom_models.rst:240: WARNING: undefined label: 'defining analyses environments and land cover data selection'[39;49;00m
+[91m/home/dguerrero/1_modules/wcmc-mgci/docs/source/sepal/index.rst:217: WARNING: undefined label: 'ipcc_classes'[39;49;00m

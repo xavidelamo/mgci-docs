@@ -1,7 +1,7 @@
 Annex 2
 =======
 
-Manual steps to calculate Sub-indicator 15.4.2a in QGIS 
+Manual steps to calculate Sub-indicator 15.4.2a in QGIS
 -----------------------------------------------------------------------------------------------
 
 This section of the tutorial explains in detail how to calculate value
@@ -30,7 +30,7 @@ The AOI should go beyond the country boundary as outlined in the \ **Defining a
 
 |image3|
 
-*The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.* 
+*The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.*
 
 -  Click \ **Add** and **Close** to close the Data Source Manager:
    Vector dialogue window
@@ -282,7 +282,7 @@ Step-by-step equivalent of Tool step A2 Prepare mountains and combine with LULC
 
 The following steps are covered by this tool:
 
-Generate the mountain map for the chosen country 
+Generate the mountain map for the chosen country
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The development of mountain map consists in clipping and reprojecting
@@ -429,7 +429,7 @@ only allow a single input for zones, we will combine the two datasets.
 Step-by-step equivalent of Tool step A3 download DEM
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The step guides users in downloading an appropriate DEM. 
+The step guides users in downloading an appropriate DEM.
 Please refer to the **Defining environments section** and **Annex 1** for more information download options.
 If you are not calculating Real Surface Area, this step will not be required.
 
@@ -489,7 +489,7 @@ search and select \ **Vector table >> Field Calculator.**
 -  In the Field Calculator dialog, select the LULC\_Areas\_COL\_2020
    layer
 
--  Enter the Field name as Area\_sqkm. 
+-  Enter the Field name as Area\_sqkm.
 
 -  In the Result field type choose **Float**
 
@@ -1192,14 +1192,14 @@ being used.
    degradation and 1 = improving)
 
    |image80|
-   
-	*The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.*
+
+   *The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.*
 
 -  Repeat the above step for the next reporting period i.e. using 2015
    landcover (year 1) and 2018 landcover (year2) i.e. using the layer
    **UNSEEA\_LULC2015\_2018\_EqArea.tif**
 
-Step-by-step equivalent of Tool B4 Combine Bioclimatic belts, LULC transitions and impact layers 
+Step-by-step equivalent of Tool B4 Combine Bioclimatic belts, LULC transitions and impact layers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The following steps are covered by this tool:
@@ -1256,7 +1256,7 @@ impact status and bioclimatic belt:
 
 -  |image82|
 
-	*The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.*
+   *The boundaries and names shown, and the designations used on this map do not imply official endorsement or acceptance by the United Nations.*
 
  Click **Run.** The output is added to the table of
    contents and the annotated legend below illustrates the meanings of
@@ -1319,7 +1319,7 @@ search and select \ **Vector table >> Field Calculator.**
 -  In the Field Calculator dialog, select
    the \ **subIndicator\_b\_Areas\_COL\_basline2000\_2015** layer
 
--  Enter the Field name as **Area\_sqkm**. 
+-  Enter the Field name as **Area\_sqkm**.
 
 -  In the Result field type choose **Float  **
 
@@ -1442,12 +1442,12 @@ attributes from the transitions matrix file.
 -  Save the refactored file to a new name within the geopackage
 
    e.g. subInd\_b\_Areas\_COL\_basline2000\_2015\_sqkm\_joined
-   
+
 Step-by-step equivalent of Tool B6 B6 Formatting to reporting tables
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The following steps are covered by this tool:   
-   
+The following steps are covered by this tool:
+
 Calculate area statistics and format statistics to reporting format
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
