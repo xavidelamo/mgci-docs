@@ -218,7 +218,7 @@ To allow SEPAL-MGCI :sub:`beta` to create an IPCC land cover class map using the
 
 - Upload a table in a csv format (reclassification matrix) showing how the IPCC land cover equivalent of the classes of your land cover map. See its structure in :ref:`reclassification matrix <reclass_table>`. To provide the information in this way, click on :guilabel:`yes` below the question 'Do you have a reclassification matrix table in a csv format'?.
 
-  After having the table in the SEPAL enviroment, click over the :guilabel:`Filename`, navigate trhough the folders, select your table and click over the :guilabel:`load` button.
+  After having the table in the SEPAL environment, click over the :guilabel:`Filename`, navigate through the folders, select your table and click over the :guilabel:`load` button.
 
 
   .. image:: https://raw.githubusercontent.com/dfguerrerom/sepal_mgci/master/doc/img/3_search_table_and_load.PNG

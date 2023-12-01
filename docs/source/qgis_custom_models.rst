@@ -75,7 +75,7 @@ quickly update the R version and the packages saved in your library
 (please check
 https://www.r-statistics.com/2015/06/a-step-by-step-screenshots-tutorial-for-upgrading-r-on-windows/
 for a step-by-step tutorial on how to do this or type the lines
-bellow on the R Console:
+below on the R Console:
 
 - install.packages("installr")
 
@@ -168,7 +168,7 @@ In a web browser navigate to the SDG15.4.2 beta repository using the following U
 
 |setup1|
 
-Next open a file explorer window and navigate to the folder where you have downloaded the file. At this stage we would recomment you move the zip file to a sensible location with a short and simple file strucure. e.g. in this example we have moved the downloaded zip file to c:\workspace. Right-click on the file named mgci-docs-MGCI_DML.zip and click on 7-ZIP >> Extract here
+Next open a file explorer window and navigate to the folder where you have downloaded the file. At this stage we would recomment you move the zip file to a sensible location with a short and simple file structure. e.g. in this example we have moved the downloaded zip file to c:\workspace. Right-click on the file named mgci-docs-MGCI_DML.zip and click on 7-ZIP >> Extract here
 
 |setup2|
 
@@ -229,7 +229,7 @@ Next double-click on the R folder path and navigate to where you have installed 
 
 Once done click OK to close the setting window and return to the main QGIS interface.
 
-On the righ-hand side of QGIS you should see the processing Toolbox. (If it is not visible, from the main meni select View>>panels>>processing toolbox). In the processing toolbox if you expand models and R you should see the SDG15.4.2 models and scripts present.  It is from the toolbox that you will run the tools if you choose to use the SDG_15_4_2_beta toolbox rather than undertaking the manual steps.
+On the righ-hand side of QGIS you should see the processing Toolbox. (If it is not visible, from the main menu select View>>panels>>processing toolbox). In the processing toolbox if you expand models and R you should see the SDG15.4.2 models and scripts present.  It is from the toolbox that you will run the tools if you choose to use the SDG_15_4_2_beta toolbox rather than undertaking the manual steps.
 
 |setup15|
 
@@ -414,7 +414,7 @@ For reporting on SDG 15.4.2 countries must report planimetric area. Countries al
 If you are choosing **NOT to calculate real surface area**, then you can **go straight to step A4 as the DEM** is only required for this calculation,
 
 Otherwise:
-If you are choosing to calculate Real Surface Area and you already have a country DEM, you need to ensure that it goes at least 7km beyond the country boundary in all directions as the  and is at a resoltion that is the same or higher resolution than your Land use land cover dataset then: Load your DEM into the QGIS project
+If you are choosing to calculate Real Surface Area and you already have a country DEM, you need to ensure that it goes at least 7km beyond the country boundary in all directions as the  and is at a resolution that is the same or higher resolution than your Land use land cover dataset then: Load your DEM into the QGIS project
 
 (Note: The higher the resolution (smaller the grid cells), the more detailed information. Higher resolution DEMs can improve the accuracy of analysis however, they are more computationally expensive to use, particularly over large extents. )
 

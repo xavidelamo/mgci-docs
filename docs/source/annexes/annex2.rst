@@ -48,7 +48,7 @@ Colombia does have a `National Projection <https://epsg.io/9377>`__ that
 preserve both area and distance (see
 `here <https://origen.igac.gov.co/documentos.html>`__) and therefore
 could be used as a custom projection. In case a national projection that
-minimize area distorsion does not exist for a given country, it is
+minimize area distortion does not exist for a given country, it is
 recommended to define a custom Equal Area projection centered on the
 country area following the instructions described
 `here <https://mgci-docs.readthedocs.io/en/latest/qgis.html>`__ under
@@ -1497,7 +1497,7 @@ A summary table will appear in the **Group Stats** window
 
    |image98|
 
--  Calculate Total to be the sum of colums C to E
+-  Calculate Total to be the sum of columns C to E
 
 -  Calculate ProportionDegraded to be column C dived by column F
 

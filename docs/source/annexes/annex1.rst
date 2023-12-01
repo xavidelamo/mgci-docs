@@ -189,7 +189,7 @@ To access the installed plugin go to the 'Proccessing toolbox'
 
 - Select DEM to download - choose a DEM of resolution similar to your Land cover dataset. e.g. if your landcover is 300m resolution you should use a DEM that has a cellsize of 300m or lower,
 
-- next define the extent to download. Use the buffeed country boundary layer crated in Step A0.
+- next define the extent to download. Use the buffeed country boundary layer created in Step A0.
  This will ensure correct calculation of the real surface area layer which needs a DEM that goes
  beyond the boundary of the country as it used surrounding (focal) cells during it's calculation.
 
