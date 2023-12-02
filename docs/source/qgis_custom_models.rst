@@ -1,4 +1,4 @@
-QGIS
+QGIS-SDG 15.4.2 :sub:`beta`
 ====
 
 A QGIS-based workflow to support the computation of SDG Indicator 15.4.2, which includes:
